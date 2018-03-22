@@ -9,6 +9,7 @@
 #import "Control.h"
 #import "SampleListAPI.h"
 #import "HUD.h"
+#import "CardListModel.h"
 
 @interface Control()
 {
@@ -23,7 +24,7 @@
 - (void)testRequest
 {
     refreshAPI = [[SampleListAPI alloc] init];
-    [refreshAPI startWithJsonModelClass:nil success:^(FMRequest *request, id modelObj) {
+    [refreshAPI startWithJsonModelClass:[CardListModel class] success:^(FMRequest *request, id modelObj) {
         if ([request responseIsNormal]) {
             [HUD showTipWithText:request.responseJMMessage];
             TTDPRINT(@"\n%@\n", modelObj);

@@ -119,8 +119,9 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
         } else if ([code isKindOfClass:[NSString class]]) {
             jmCode = [code integerValue];
         }
-        
-        obj = obj[@"list"];
+#warning todo
+        // 暂时全部字段返回
+//        obj = obj[@"list"];
     }
     
     _responseJMCode = jmCode;

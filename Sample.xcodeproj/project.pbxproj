@@ -14,6 +14,8 @@
 		572E6A7820637F1D008114EA /* btnCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A7220637F1D008114EA /* btnCheck@2x.png */; };
 		572E6A7920637F1D008114EA /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A7420637F1D008114EA /* HUD.m */; };
 		572E6A7A20637F1D008114EA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A7620637F1D008114EA /* MBProgressHUD.m */; };
+		572E6A842063ABD1008114EA /* CardInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A832063ABD1008114EA /* CardInfoModel.m */; };
+		572E6A872063AFE3008114EA /* CardListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A862063AFE3008114EA /* CardListModel.m */; };
 		57B543FE2062727F00701F9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B543FD2062727F00701F9C /* AppDelegate.m */; };
 		57B544042062727F00701F9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B544022062727F00701F9C /* Main.storyboard */; };
 		57B544072062727F00701F9C /* Sample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57B544052062727F00701F9C /* Sample.xcdatamodeld */; };
@@ -67,6 +69,10 @@
 		572E6A7520637F1D008114EA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		572E6A7620637F1D008114EA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		572E6A7B20637F64008114EA /* FMColorMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMColorMacro.h; sourceTree = "<group>"; };
+		572E6A822063ABD1008114EA /* CardInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardInfoModel.h; sourceTree = "<group>"; };
+		572E6A832063ABD1008114EA /* CardInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardInfoModel.m; sourceTree = "<group>"; };
+		572E6A852063AFE3008114EA /* CardListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardListModel.h; sourceTree = "<group>"; };
+		572E6A862063AFE3008114EA /* CardListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardListModel.m; sourceTree = "<group>"; };
 		57B543F92062727F00701F9C /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B543FC2062727F00701F9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57B543FD2062727F00701F9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -317,6 +323,10 @@
 		57B5443E206278B600701F9C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				572E6A852063AFE3008114EA /* CardListModel.h */,
+				572E6A862063AFE3008114EA /* CardListModel.m */,
+				572E6A822063ABD1008114EA /* CardInfoModel.h */,
+				572E6A832063ABD1008114EA /* CardInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -740,6 +750,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B544802062841400701F9C /* SvUDIDTools.m in Sources */,
+				572E6A842063ABD1008114EA /* CardInfoModel.m in Sources */,
 				57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */,
 				572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */,
 				57B544072062727F00701F9C /* Sample.xcdatamodeld in Sources */,
@@ -747,6 +758,7 @@
 				57B5440F2062727F00701F9C /* main.m in Sources */,
 				57B54440206278B600701F9C /* ViewController.m in Sources */,
 				57B5444920627C2C00701F9C /* PulledTableView.m in Sources */,
+				572E6A872063AFE3008114EA /* CardListModel.m in Sources */,
 				57B543FE2062727F00701F9C /* AppDelegate.m in Sources */,
 				57B5448D2062881E00701F9C /* FMRuntimeEngine.m in Sources */,
 				572E6A7920637F1D008114EA /* HUD.m in Sources */,
