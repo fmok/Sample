@@ -1,0 +1,23 @@
+//
+//  PrefixHeader.pch
+//  Sample
+//
+//  Created by wjy on 2018/3/21.
+//  Copyright © 2018年 wjy. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "FMSystemMacro.h"
+#import "FMUtility.h"
+#import "APPSettingManager.h"
+#import "FMURLMacro.h"
+
+#import "Masonry.h"
+#import <AFNetworking/AFNetworking.h>
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */

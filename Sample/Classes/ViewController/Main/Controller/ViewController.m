@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "Control.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) Control *control;
 
 @end
 
@@ -17,6 +20,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor redColor];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.control requestData];
+}
+
+
+#pragma mark - getter & setter
+- (Control *)control
+{
+    if (!_control) {
+        _control = [[Control alloc] init];
+    }
+    return _control;
 }
 
 
