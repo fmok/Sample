@@ -17,16 +17,45 @@
 
 @implementation ViewController
 
+#pragma mark - life cycle
+- (void)dealloc
+{
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor redColor];
+//    [self.control testRequest];
 }
 
+#pragma mark - Override methods
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self.control requestData];
+    [self.control testRequest];
 }
+
+#pragma mark - Private methods
 
 
 #pragma mark - getter & setter

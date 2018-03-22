@@ -11,8 +11,8 @@
 @interface SampleListAPI : FMRequest
 
 @property (nonatomic, assign) NSInteger page;
-@property (nonatomic, copy) NSString *lastTime;
+//@property (nonatomic, copy) NSString *lastTime;
 
-- (instancetype)initWithUrl:(NSString *)url unistr:(NSString *)unistr;
+//- (instancetype)initWithUrl:(NSString *)url unistr:(NSString *)unistr;
 
 @end

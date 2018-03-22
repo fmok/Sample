@@ -8,6 +8,7 @@
 
 #import "Control.h"
 #import "SampleListAPI.h"
+#import "HUD.h"
 
 @interface Control()
 {
@@ -18,15 +19,27 @@
 
 @implementation Control
 
-- (void)requestData
+#pragma mark - Public methods
+- (void)testRequest
 {
-    refreshAPI = [[SampleListAPI alloc] initWithUrl:@"cate/643/" unistr:@"643"];
+    refreshAPI = [[SampleListAPI alloc] init];
     [refreshAPI startWithJsonModelClass:nil success:^(FMRequest *request, id modelObj) {
-        
+        if ([request responseIsNormal]) {
+            [HUD showTipWithText:request.responseJMMessage];
+            TTDPRINT(@"\n%@\n", modelObj);
+        } else {
+            // 业务错误
+            [HUD showTipWithText:request.responseJMMessage];
+        }
     } failure:^(FMRequest *request, id modelObj) {
-        
+        // 网络错误
+        [HUD showTipWithText:modelObj];
     }];
 }
+
+#pragma mark - Private methods
+
+#pragma mark - 
 
 
 @end

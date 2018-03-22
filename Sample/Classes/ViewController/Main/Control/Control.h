@@ -13,6 +13,6 @@
 
 @property (nonatomic, weak) ViewController *vc;
 
-- (void)requestData;
+- (void)testRequest;
 
 @end

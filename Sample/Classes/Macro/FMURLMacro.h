@@ -10,11 +10,9 @@
 #define FMURLMacro_h
 
 // base url
-#define kJiemianURL     (@"jiemian.com")
 #define kProtocol       (@"https")
-#define kAppapiDoman    ([NSString stringWithFormat:@"appapi.%@",kJiemianURL])
-#define kAPIBaseURL     ([NSString stringWithFormat:@"%@://%@/",kProtocol,kAppapiDoman])
-#define kAJiemianURL    ([NSString stringWithFormat:@"%@://a.%@/",kProtocol,kJiemianURL])
+#define kCCURL          (@"www.xxwolo.com")
+#define kAPIBaseURL     ([NSString stringWithFormat:@"%@://%@/ccsrv",kProtocol,kCCURL])
 
 
 #endif /* FMURLMacro_h */

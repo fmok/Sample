@@ -12,8 +12,6 @@
 #import "UIDeviceHardware.h"
 
 NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
-NSString *const kAPPIDiPhone = @"1000";
-
 
 @interface FMRequest()
 {
@@ -31,10 +29,7 @@ NSString *const kAPPIDiPhone = @"1000";
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
-// 重写父类方法，过滤一些操作
-- (void)responseJsonModelCompleteWithModel:(id)model
-{
-    
+- (void)responseJsonModelCompleteWithModel:(id)model {
 }
 
 - (id)cacheJsonWithModelClass:(Class)modelClass
@@ -113,7 +108,7 @@ NSString *const kAPPIDiPhone = @"1000";
     
     if (obj && [obj isKindOfClass:[NSDictionary class]]) {
         
-        id code = obj[@"code"];
+        id code = obj[@"error"];
         message = CHANGE_TO_STRING(obj[@"message"]);
         
         if ([code isKindOfClass:[NSNumber class]]) {
@@ -122,7 +117,7 @@ NSString *const kAPPIDiPhone = @"1000";
             jmCode = [code integerValue];
         }
         
-        obj = obj[@"result"];
+        obj = obj[@"list"];
     }
     
     _responseJMCode = jmCode;
@@ -241,7 +236,7 @@ NSString *const kAPPIDiPhone = @"1000";
 
 - (NSString *)baseUrl
 {
-    return [NSString stringWithFormat:@"%@v4/%@/%@/", kAPIBaseURL, [APPSettingManager appVersion], kAPPIDiPhone];
+    return [NSString stringWithFormat:@"%@",kAPIBaseURL];
 }
 
 - (NSTimeInterval)requestTimeoutInterval {
@@ -253,7 +248,6 @@ NSString *const kAPPIDiPhone = @"1000";
              @"udid": [APPSettingManager udid],
              @"systemVersion": [APPSettingManager osVersion],
              @"User-Agent": [[self class] userAgent]
-//             @"Cookie": ([JiemianUserManager shareInstance].pptidCookie ?: @"")
              };
 }
 
