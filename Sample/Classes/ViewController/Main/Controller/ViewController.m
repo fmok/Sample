@@ -63,8 +63,17 @@
 {
     if (!_control) {
         _control = [[Control alloc] init];
+        _control.vc = self;
     }
     return _control;
+}
+
+- (NSMutableArray *)cardInfoArr
+{
+    if (!_cardInfoArr) {
+        _cardInfoArr = [[NSMutableArray alloc] init];
+    }
+    return _cardInfoArr;
 }
 
 

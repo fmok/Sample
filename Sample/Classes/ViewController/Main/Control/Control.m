@@ -23,11 +23,11 @@
 #pragma mark - Public methods
 - (void)testRequest
 {
+    WS(weakSelf);
     refreshAPI = [[SampleListAPI alloc] init];
     [refreshAPI startWithJsonModelClass:[CardListModel class] success:^(FMRequest *request, id modelObj) {
         if ([request responseIsNormal]) {
-            [HUD showTipWithText:request.responseJMMessage];
-            TTDPRINT(@"\n%@\n", modelObj);
+            [weakSelf serializeData:modelObj];
         } else {
             // 业务错误
             [HUD showTipWithText:request.responseJMMessage];
@@ -39,6 +39,15 @@
 }
 
 #pragma mark - Private methods
+- (void)serializeData:(CardListModel *)modelObj
+{
+    [self.vc.cardInfoArr removeAllObjects];
+    for (CardListModel *model in modelObj.list) {
+        [self.vc.cardInfoArr addObject:model];
+    }
+    TTDPRINT(@"/n********************************/n%@/n****************************/n", self.vc.cardInfoArr);
+}
+
 
 #pragma mark - 
 
