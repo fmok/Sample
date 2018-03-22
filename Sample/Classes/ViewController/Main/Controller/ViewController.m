@@ -46,7 +46,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor redColor];
-//    [self.control testRequest];
+    [self.view addSubview:self.tmpImgView];
+    WS(weakSelf);
+    [self.tmpImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(weakSelf.view).offset(100.f);
+        make.leading.mas_equalTo(weakSelf.view).offset(20.f);
+        make.size.mas_equalTo(CGSizeMake(100.f, 100.f));
+    }];
 }
 
 #pragma mark - Override methods
@@ -74,6 +80,17 @@
         _cardInfoArr = [[NSMutableArray alloc] init];
     }
     return _cardInfoArr;
+}
+
+- (UIImageView *)tmpImgView
+{
+    if (!_tmpImgView) {
+        _tmpImgView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _tmpImgView.backgroundColor = [UIColor yellowColor];
+        _tmpImgView.contentMode = UIViewContentModeScaleAspectFill;
+        _tmpImgView.clipsToBounds = YES;
+    }
+    return _tmpImgView;
 }
 
 

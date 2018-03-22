@@ -11,6 +11,7 @@
 @interface ViewController : UIViewController
 
 @property (nonatomic, strong) NSMutableArray *cardInfoArr;
+@property (nonatomic, strong) UIImageView *tmpImgView;
 
 @end
 

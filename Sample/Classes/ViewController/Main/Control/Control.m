@@ -10,6 +10,8 @@
 #import "SampleListAPI.h"
 #import "HUD.h"
 #import "CardListModel.h"
+#import "UIImageView+WebCache.h"
+#import "JSONKit.h"
 
 @interface Control()
 {
@@ -45,6 +47,10 @@
     for (CardListModel *model in modelObj.list) {
         [self.vc.cardInfoArr addObject:model];
     }
+    CardInfoModel *model = self.vc.cardInfoArr[2];
+    
+    NSArray *imageUrls = [model.img_url objectFromJSONString];
+    [self.vc.tmpImgView sd_setImageWithURL:[NSURL URLWithString:[imageUrls firstObject]] placeholderImage:nil options:SDWebImageRetryFailed];
     TTDPRINT(@"/n********************************/n%@/n****************************/n", self.vc.cardInfoArr);
 }
 

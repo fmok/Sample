@@ -7,6 +7,7 @@
 //
 
 #import <JSONModel/JSONModel.h>
+#import "CardInfoModel.h"
 
 @protocol CardInfoModel;
 
