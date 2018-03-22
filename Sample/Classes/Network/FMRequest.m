@@ -82,7 +82,10 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
     return obj;
 }
 
-// 过滤掉response的外层
+/**
+    过滤掉response的外层
+    根据接口返回数据结构的格式修改
+ */
 - (id)responseJSONObjectFilter:(id)obj_
 {
     id obj = nil;
