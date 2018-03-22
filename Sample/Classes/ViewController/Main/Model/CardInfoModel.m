@@ -10,4 +10,11 @@
 
 @implementation CardInfoModel
 
+//+ (JSONKeyMapper*)keyMapper
+//{
+//    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+//                                                                  @""/*接口返回*/: @""/*自己定义*/,
+//                                                                  }];
+//}
+
 @end
