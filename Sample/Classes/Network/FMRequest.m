@@ -29,107 +29,7 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
-- (void)responseJsonModelCompleteWithModel:(id)model {
-}
-
-- (id)cacheJsonWithModelClass:(Class)modelClass
-{
-    BOOL isExsitCache = [self loadCacheWithError:nil];
-    
-    if (!isExsitCache) {
-        return nil;
-    }
-    
-    id obj = [self responseJSONObject];
-    
-    NSError *err = nil;
-    JSONModel *model = nil;
-    
-    if (obj && [obj isKindOfClass:[NSArray class]] && !modelClass) {
-        return obj;
-    }
-    
-    if (obj && [obj isKindOfClass:[NSDictionary class]]) {
-        
-        if (modelClass) {
-            model = [(JSONModel *)[modelClass alloc] initWithDictionary:obj error:&err];
-            if (!err) {// TODO 缓存里是否过滤
-                _isCacheData = YES;
-                [self responseJsonModelCompleteWithModel:model];
-            }else {
-                TTDPRINT(@"JSONModel解析错误[数据类型不匹配]");
-            }
-        } else {
-            NSDictionary *dic = (NSDictionary *)obj;
-            if (dic.count > 0) {
-                model = obj;
-            }
-        }
-    }
-    return model;
-}
-
-- (id)responseJSONObject {
-    
-    id obj = [super responseJSONObject];
-    
-    if ([[self.response MIMEType] isEqualToString:@"text/html"]) {
-        obj = [super responseString];
-    }
-    
-    obj = [self responseJSONObjectFilter:obj];
-    
-    return obj;
-}
-
-/**
-    过滤掉response的外层
-    根据接口返回数据结构的格式修改
- */
-- (id)responseJSONObjectFilter:(id)obj_
-{
-    id obj = nil;
-    
-    if ([obj_ isKindOfClass:[NSString class]]) {
-        NSError *serializationError = nil;
-        NSData *data = nil;
-        NSString *resultstr = obj_;
-        if (resultstr && ![resultstr isEqualToString:@" "]) {
-            data = [resultstr dataUsingEncoding:NSUTF8StringEncoding];
-            if (data) {
-                if ([data length] > 0) {
-                    obj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&serializationError];
-                }
-            }
-        }
-    } else if ([obj_ isKindOfClass:[NSDictionary class]]) {
-        obj = obj_;
-    }
-    
-    NSInteger jmCode = -1;
-    NSString *message = @"";
-    
-    if (obj && [obj isKindOfClass:[NSDictionary class]]) {
-        
-        id code = obj[@"error"];
-        message = CHANGE_TO_STRING(obj[@"message"]);
-        
-        if ([code isKindOfClass:[NSNumber class]]) {
-            jmCode = [code integerValue];
-        } else if ([code isKindOfClass:[NSString class]]) {
-            jmCode = [code integerValue];
-        }
-#warning todo
-        // 暂时全部字段返回
-//        obj = obj[@"list"];
-    }
-    
-    _responseJMCode = jmCode;
-    _responseJMMessage = message;
-    
-    return obj;
-}
-
+#pragma mark - Public methods
 - (void)startWithNoBack
 {
     [self startWithJsonModelClass:nil success:nil failure:nil];
@@ -229,6 +129,43 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
     [super startWithCompletionBlockWithSuccess:SuccessBlock failure:FailureBlock];
 }
 
+- (id)cacheJsonWithModelClass:(Class)modelClass
+{
+    BOOL isExsitCache = [self loadCacheWithError:nil];
+    
+    if (!isExsitCache) {
+        return nil;
+    }
+    
+    id obj = [self responseJSONObject];
+    
+    NSError *err = nil;
+    JSONModel *model = nil;
+    
+    if (obj && [obj isKindOfClass:[NSArray class]] && !modelClass) {
+        return obj;
+    }
+    
+    if (obj && [obj isKindOfClass:[NSDictionary class]]) {
+        
+        if (modelClass) {
+            model = [(JSONModel *)[modelClass alloc] initWithDictionary:obj error:&err];
+            if (!err) {// TODO 缓存里是否过滤
+                _isCacheData = YES;
+                [self responseJsonModelCompleteWithModel:model];
+            }else {
+                TTDPRINT(@"JSONModel解析错误[数据类型不匹配]");
+            }
+        } else {
+            NSDictionary *dic = (NSDictionary *)obj;
+            if (dic.count > 0) {
+                model = obj;
+            }
+        }
+    }
+    return model;
+}
+
 - (BOOL)responseIsNormal
 {
     BOOL isNormal = NO;
@@ -238,6 +175,10 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
     return isNormal;
 }
 
+- (void)responseJsonModelCompleteWithModel:(id)model {
+}
+
+#pragma mark - Override
 - (NSString *)baseUrl
 {
     return [NSString stringWithFormat:@"%@",kAPIBaseURL];
@@ -256,6 +197,67 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
 }
 
 #pragma mark - Private function
+- (id)responseJSONObject {
+    
+    id obj = [super responseJSONObject];
+    
+    if ([[self.response MIMEType] isEqualToString:@"text/html"]) {
+        obj = [super responseString];
+    }
+    
+    obj = [self responseJSONObjectFilter:obj];
+    
+    return obj;
+}
+
+/**
+    过滤掉response的外层
+    根据接口返回数据结构的格式修改
+ */
+- (id)responseJSONObjectFilter:(id)obj_
+{
+    id obj = nil;
+    
+    if ([obj_ isKindOfClass:[NSString class]]) {
+        NSError *serializationError = nil;
+        NSData *data = nil;
+        NSString *resultstr = obj_;
+        if (resultstr && ![resultstr isEqualToString:@" "]) {
+            data = [resultstr dataUsingEncoding:NSUTF8StringEncoding];
+            if (data) {
+                if ([data length] > 0) {
+                    obj = [NSJSONSerialization JSONObjectWithData:data options:0 error:&serializationError];
+                }
+            }
+        }
+    } else if ([obj_ isKindOfClass:[NSDictionary class]]) {
+        obj = obj_;
+    }
+    
+    NSInteger jmCode = -1;
+    NSString *message = @"";
+    
+    if (obj && [obj isKindOfClass:[NSDictionary class]]) {
+        
+        id code = obj[@"error"];
+        message = CHANGE_TO_STRING(obj[@"message"]);
+        
+        if ([code isKindOfClass:[NSNumber class]]) {
+            jmCode = [code integerValue];
+        } else if ([code isKindOfClass:[NSString class]]) {
+            jmCode = [code integerValue];
+        }
+#warning todo
+        // 暂时全部字段返回
+//        obj = obj[@"list"];
+    }
+    
+    _responseJMCode = jmCode;
+    _responseJMMessage = message;
+    
+    return obj;
+}
+
 + (NSString *)userAgent
 {
     // User-Agent Header; see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.43
