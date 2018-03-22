@@ -11,5 +11,7 @@
 @interface FMUtility : NSObject
 
 + (BOOL)isEmptyString:(NSString *)string;
++ (NSString *)md5Hash:(NSString *)content;
++ (NSString *)refreshNameWithKey:(NSString *)key;
 
 @end
