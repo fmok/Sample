@@ -41,15 +41,14 @@
     _pageCount = 1;
     
     WS(weakSelf);
-    // 下拉刷新
     
+    // 下拉刷新
     MJRefreshHeader *header = [MJRefreshHeader headerWithRefreshingBlock:^{
         if (weakSelf.pulledDelegate && [weakSelf.pulledDelegate respondsToSelector:@selector(refreshWithPulledTableView:)]) {
             [weakSelf.pulledDelegate refreshWithPulledTableView:weakSelf];
         }
     }];
     self.isHeader = YES;
-    
     self.mj_header = header;
     
     // 上拉加载
@@ -65,10 +64,9 @@
     self.isFooter = NO;
     MJRefreshAutoNormalFooter *mj_footer = (MJRefreshAutoNormalFooter *)self.mj_footer;
     mj_footer.triggerAutomaticallyRefreshPercent = -10.f;
-    
 }
 
-#pragma mark - public methods
+#pragma mark - Public methods
 - (void)finishRefreshTableWithType:(PulledTableViewType)type
 {
     [self finishRefreshTableWithType:type isUpdateTime:YES];
