@@ -13,5 +13,6 @@
 + (NSString *)udid;
 + (NSString *)appVersion;
 + (NSString *)osVersion;
++ (NSString *)idfaString;
 
 @end

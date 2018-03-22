@@ -8,6 +8,7 @@
 
 #import "APPSettingManager.h"
 #import "SvUDIDTools.h"
+#import <AdSupport/ASIdentifierManager.h>
 
 @implementation APPSettingManager
 
@@ -24,6 +25,19 @@
 + (NSString *)osVersion
 {
     return [[UIDevice currentDevice] systemVersion];
+}
+
++ (NSString *)idfaString
+{
+    return [self getIdentifierForAdvertising];
+}
+
+#pragma mark 获取广告idfa
++ (NSString *)getIdentifierForAdvertising{
+    if (NSClassFromString(@"ASIdentifierManager")){
+        return [[ASIdentifierManager sharedManager].advertisingIdentifier UUIDString];
+    }
+    return @"00000000-0000-0000-0000-000000000000";
 }
 
 @end

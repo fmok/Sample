@@ -43,7 +43,7 @@
              @"hash" : @"94534067356eac3bbd004ebf2db46842",
              @"vs" : @"7.8.18",
              @"userDevice" : @"10.3.3",
-             @"iosidfa" : @"37D56885-83E0-4590-9189-384C8A02FE7A"
+             @"iosidfa" : [APPSettingManager idfaString]
              };
 }
 
