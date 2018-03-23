@@ -78,35 +78,24 @@ static CGFloat const leftGap_header = 10.f;
         make.size.mas_equalTo(CGSizeMake(W_infoImgView, H_infoImgView));
     }];
     
-#warning todo remake 方法待优化
-    [self.titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.headerImgView.mas_bottom).offset(10.f);
         make.left.equalTo(weakSelf).offset(gap_left_right);
         if (isHaveInfoImg) {
-            make.right.equalTo(weakSelf.infoImgView.mas_left).offset(-10.f);
+            make.right.equalTo(weakSelf).offset(-10.f-W_infoImgView-gap_left_right);
         } else {
             make.right.equalTo(weakSelf).offset(-gap_left_right);
         }
-//        if (isHaveInfoImg) {
-//            make.right.equalTo(weakSelf).offset(-(weakSelf.infoImgView.frame.size.width+10+gap_left_right));
-//        } else {
-//            make.right.equalTo(weakSelf).offset(-gap_left_right);
-//        }
     }];
     
-    [self.contentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+    [self.contentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.titleLabel.mas_bottom).offset(10.f);
         make.left.equalTo(weakSelf).offset(gap_left_right);
         if (isHaveInfoImg) {
-            make.right.equalTo(weakSelf.infoImgView.mas_left).offset(-10.f);
+            make.right.equalTo(weakSelf).offset(-10.f-W_infoImgView-gap_left_right);
         } else {
             make.right.equalTo(weakSelf).offset(-gap_left_right);
         }
-//        if (isHaveInfoImg) {
-//            make.right.equalTo(weakSelf).offset(-(weakSelf.infoImgView.frame.size.width+10+gap_left_right));
-//        } else {
-//            make.right.equalTo(weakSelf).offset(-gap_left_right);
-//        }
     }];
     
     [self.bottomLine mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -141,7 +130,6 @@ static CGFloat const leftGap_header = 10.f;
     self.contentLabel.numberOfLines = (isHaveInfoImg ? 4 : 0);
     
     [self setNeedsUpdateConstraints];
-    [self updateConstraintsIfNeeded];
 }
 #pragma mark - Override methods
 - (CGSize)sizeThatFits:(CGSize)size
