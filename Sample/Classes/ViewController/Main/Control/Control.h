@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "ViewController.h"
 
-@interface Control : NSObject
+@interface Control : NSObject<
+    UITableViewDelegate,
+    UITableViewDataSource,
+    PulledTableViewDelegate>
 
 @property (nonatomic, weak) ViewController *vc;
 
+- (void)registerCell;
 - (void)testRequest;
 
 @end

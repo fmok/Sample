@@ -43,7 +43,7 @@
     WS(weakSelf);
     
     // 下拉刷新
-    MJRefreshHeader *header = [MJRefreshHeader headerWithRefreshingBlock:^{
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         if (weakSelf.pulledDelegate && [weakSelf.pulledDelegate respondsToSelector:@selector(refreshWithPulledTableView:)]) {
             [weakSelf.pulledDelegate refreshWithPulledTableView:weakSelf];
         }

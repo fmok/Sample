@@ -13,6 +13,8 @@
 #import "UIImageView+WebCache.h"
 #import "JSONKit.h"
 
+static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
+
 @interface Control()
 {
     SampleListAPI *refreshAPI;
@@ -23,6 +25,11 @@
 @implementation Control
 
 #pragma mark - Public methods
+- (void)registerCell
+{
+    [self.vc.pulledTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellReusedIdentifier];
+}
+
 - (void)testRequest
 {
     WS(weakSelf);
@@ -43,19 +50,81 @@
 #pragma mark - Private methods
 - (void)serializeData:(CardListModel *)modelObj
 {
-    [self.vc.cardInfoArr removeAllObjects];
-    for (CardListModel *model in modelObj.list) {
-        [self.vc.cardInfoArr addObject:model];
-    }
-    CardInfoModel *model = self.vc.cardInfoArr[2];
+    [self.vc.cardInfoArr addObjectsFromArray:modelObj.list];
     
-    NSArray *imageUrls = [model.img_url objectFromJSONString];
-    [self.vc.tmpImgView sd_setImageWithURL:[NSURL URLWithString:[imageUrls firstObject]] placeholderImage:nil options:SDWebImageRetryFailed];
-    TTDPRINT(@"/n********************************/n%@/n****************************/n", self.vc.cardInfoArr);
+//    NSArray *imageUrls = [model.img_url objectFromJSONString];
+//    [self.vc.tmpImgView sd_setImageWithURL:[NSURL URLWithString:[imageUrls firstObject]] placeholderImage:nil options:SDWebImageRetryFailed];
 }
 
 
-#pragma mark - 
+#pragma mark - PulledTableViewDelegate
+- (void)refreshWithPulledTableView:(PulledTableView *)tableView
+{
+    
+}
 
+- (void)loadMoreWithPulledTableView:(PulledTableView *)tableView
+{
+    
+}
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 50.f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.view.backgroundColor = [UIColor whiteColor];
+    vc.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
+    [self.vc.navigationController pushViewController:vc animated:YES];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return CGFLOAT_MIN;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    return CGFLOAT_MIN;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    return nil;
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 20;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellReusedIdentifier forIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"**%@**", @(indexPath.row)];
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
 
 @end
+
+
+
+
+
+
+

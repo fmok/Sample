@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PulledTableView.h"
 
 @interface ViewController : UIViewController
 
 @property (nonatomic, strong) NSMutableArray *cardInfoArr;
-@property (nonatomic, strong) UIImageView *tmpImgView;
+@property (nonatomic, strong) PulledTableView *pulledTableView;
 
 @end
 

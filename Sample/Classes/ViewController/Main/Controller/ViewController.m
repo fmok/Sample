@@ -20,44 +20,19 @@
 #pragma mark - life cycle
 - (void)dealloc
 {
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.view.backgroundColor = [UIColor redColor];
-    [self.view addSubview:self.tmpImgView];
     WS(weakSelf);
-    [self.tmpImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(weakSelf.view).offset(100.f);
-        make.leading.mas_equalTo(weakSelf.view).offset(20.f);
-        make.size.mas_equalTo(CGSizeMake(100.f, 100.f));
+    [self.view addSubview:self.pulledTableView];
+    [self.pulledTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(weakSelf.view);
     }];
-}
-
-#pragma mark - Override methods
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+    [self.control registerCell];
     [self.control testRequest];
 }
 
@@ -74,6 +49,22 @@
     return _control;
 }
 
+- (PulledTableView *)pulledTableView
+{
+    if (!_pulledTableView) {
+        _pulledTableView = [[PulledTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _pulledTableView.backgroundColor = [UIColor whiteColor];
+        _pulledTableView.isHeader = YES;
+        _pulledTableView.isFooter = YES;
+        _pulledTableView.showsVerticalScrollIndicator = NO;
+        _pulledTableView.estimatedRowHeight = 0;
+        _pulledTableView.delegate = self.control;
+        _pulledTableView.dataSource = self.control;
+        _pulledTableView.pulledDelegate = self.control;
+    }
+    return _pulledTableView;
+}
+
 - (NSMutableArray *)cardInfoArr
 {
     if (!_cardInfoArr) {
@@ -81,18 +72,6 @@
     }
     return _cardInfoArr;
 }
-
-- (UIImageView *)tmpImgView
-{
-    if (!_tmpImgView) {
-        _tmpImgView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        _tmpImgView.backgroundColor = [UIColor yellowColor];
-        _tmpImgView.contentMode = UIViewContentModeScaleAspectFill;
-        _tmpImgView.clipsToBounds = YES;
-    }
-    return _tmpImgView;
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
