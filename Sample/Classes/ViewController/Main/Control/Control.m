@@ -11,7 +11,7 @@
 #import "HUD.h"
 #import "CardListModel.h"
 #import "UIImageView+WebCache.h"
-#import "JSONKit.h"
+#import "UITableView+FDTemplateLayoutCell.h"
 
 static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 
@@ -36,7 +36,7 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 #pragma mark - Public methods
 - (void)registerCell
 {
-    [self.vc.pulledTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellReusedIdentifier];
+    [self.vc.pulledTableView registerClass:[InfoCell class] forCellReuseIdentifier:kCellReusedIdentifier];
 }
 
 - (void)loadData
@@ -56,13 +56,20 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 {
     [self.vc.cardInfoArr addObjectsFromArray:modelObj.list];
     [self.vc.pulledTableView reloadData];
-//    NSArray *imageUrls = [model.img_url objectFromJSONString];
-//    [self.vc.tmpImgView sd_setImageWithURL:[NSURL URLWithString:[imageUrls firstObject]] placeholderImage:nil options:SDWebImageRetryFailed];
 }
 
 - (void)cleanDataSource
 {
     [self.vc.cardInfoArr removeAllObjects];
+}
+
+- (void)configureCell:(InfoCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    CardInfoModel *model = self.vc.cardInfoArr[indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.tag = 100 + indexPath.row;
+    cell.fd_enforceFrameLayout = NO; // Enable to use "-sizeThatFits:"
+    [cell updateContent:model];
 }
 
 #pragma mark - PulledTableViewDelegate
@@ -115,7 +122,9 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50.f;
+    return [tableView fd_heightForCellWithIdentifier:kCellReusedIdentifier cacheByIndexPath:indexPath configuration:^(InfoCell *cell) {
+        [self configureCell:cell atIndexPath:indexPath];
+    }];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -154,8 +163,8 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellReusedIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"**%@**", @(indexPath.row)];
+    InfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellReusedIdentifier forIndexPath:indexPath];
+    [self configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 

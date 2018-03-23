@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "ViewController.h"
+#import "InfoCell.h"
 
 @interface Control : NSObject<
     UITableViewDelegate,

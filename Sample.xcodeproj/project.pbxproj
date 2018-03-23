@@ -20,6 +20,10 @@
 		572E6A8E2063CA55008114EA /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A8B2063CA55008114EA /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		572E6A8F2063CA55008114EA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A8C2063CA55008114EA /* README.md */; };
 		575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA12064D0DF0031BC49 /* InfoCell.m */; };
+		575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA52064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m */; };
+		575F9AAD2064EC710031BC49 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA72064EC710031BC49 /* UITableView+FDKeyedHeightCache.m */; };
+		575F9AAE2064EC710031BC49 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA92064EC710031BC49 /* UITableView+FDTemplateLayoutCell.m */; };
+		575F9AAF2064EC710031BC49 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AAB2064EC710031BC49 /* UITableView+FDTemplateLayoutCellDebug.m */; };
 		57B543FE2062727F00701F9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B543FD2062727F00701F9C /* AppDelegate.m */; };
 		57B544042062727F00701F9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B544022062727F00701F9C /* Main.storyboard */; };
 		57B544072062727F00701F9C /* Sample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57B544052062727F00701F9C /* Sample.xcdatamodeld */; };
@@ -83,6 +87,14 @@
 		572E6A8C2063CA55008114EA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		575F9AA02064D0DF0031BC49 /* InfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
 		575F9AA12064D0DF0031BC49 /* InfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoCell.m; sourceTree = "<group>"; };
+		575F9AA42064EC710031BC49 /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
+		575F9AA52064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDIndexPathHeightCache.m"; sourceTree = "<group>"; };
+		575F9AA62064EC710031BC49 /* UITableView+FDKeyedHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDKeyedHeightCache.h"; sourceTree = "<group>"; };
+		575F9AA72064EC710031BC49 /* UITableView+FDKeyedHeightCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDKeyedHeightCache.m"; sourceTree = "<group>"; };
+		575F9AA82064EC710031BC49 /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
+		575F9AA92064EC710031BC49 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
+		575F9AAA2064EC710031BC49 /* UITableView+FDTemplateLayoutCellDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCellDebug.h"; sourceTree = "<group>"; };
+		575F9AAB2064EC710031BC49 /* UITableView+FDTemplateLayoutCellDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCellDebug.m"; sourceTree = "<group>"; };
 		57B543F92062727F00701F9C /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B543FC2062727F00701F9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57B543FD2062727F00701F9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -183,6 +195,21 @@
 				572E6A8C2063CA55008114EA /* README.md */,
 			);
 			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		575F9AA32064EC710031BC49 /* FDTemplateLayout */ = {
+			isa = PBXGroup;
+			children = (
+				575F9AA42064EC710031BC49 /* UITableView+FDIndexPathHeightCache.h */,
+				575F9AA52064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m */,
+				575F9AA62064EC710031BC49 /* UITableView+FDKeyedHeightCache.h */,
+				575F9AA72064EC710031BC49 /* UITableView+FDKeyedHeightCache.m */,
+				575F9AA82064EC710031BC49 /* UITableView+FDTemplateLayoutCell.h */,
+				575F9AA92064EC710031BC49 /* UITableView+FDTemplateLayoutCell.m */,
+				575F9AAA2064EC710031BC49 /* UITableView+FDTemplateLayoutCellDebug.h */,
+				575F9AAB2064EC710031BC49 /* UITableView+FDTemplateLayoutCellDebug.m */,
+			);
+			path = FDTemplateLayout;
 			sourceTree = "<group>";
 		};
 		57B543F02062727F00701F9C = {
@@ -401,6 +428,7 @@
 		57B5445B206282CF00701F9C /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				575F9AA32064EC710031BC49 /* FDTemplateLayout */,
 				572E6A882063CA55008114EA /* JSONKit */,
 				572E6A7020637F1D008114EA /* MBProgressHUD */,
 				57B544852062863D00701F9C /* UIDevice */,
@@ -775,18 +803,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				575F9AAD2064EC710031BC49 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				57B544802062841400701F9C /* SvUDIDTools.m in Sources */,
 				572E6A842063ABD1008114EA /* CardInfoModel.m in Sources */,
 				57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */,
 				572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */,
 				57B544072062727F00701F9C /* Sample.xcdatamodeld in Sources */,
 				572E6A8E2063CA55008114EA /* JSONKit.m in Sources */,
+				575F9AAF2064EC710031BC49 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
+				575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				57B5444620627B8B00701F9C /* Control.m in Sources */,
 				57B5440F2062727F00701F9C /* main.m in Sources */,
 				57B54440206278B600701F9C /* ViewController.m in Sources */,
 				575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */,
 				57B5444920627C2C00701F9C /* PulledTableView.m in Sources */,
 				572E6A872063AFE3008114EA /* CardListModel.m in Sources */,
+				575F9AAE2064EC710031BC49 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				57B543FE2062727F00701F9C /* AppDelegate.m in Sources */,
 				57B5448D2062881E00701F9C /* FMRuntimeEngine.m in Sources */,
 				572E6A7920637F1D008114EA /* HUD.m in Sources */,
