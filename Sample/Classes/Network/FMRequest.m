@@ -44,8 +44,8 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         id obj = [weakSelf responseJSONObject];
         
-        TTDPRINT(@"\n----------------%@-----------------\nCode:%@\nMessage:%@\n%@\n----------------------------------------\n",
-                 (weakSelf.responseJMCode==0)?@"Success":@"业务错误", @(weakSelf.responseJMCode), weakSelf.responseJMMessage,[request.requestUrl hasPrefix:@"http"]?(request.requestUrl):([NSString stringWithFormat:@"%@%@",request.baseUrl,request.requestUrl]));
+        TTDPRINT(@"\n----------------%@-----------------\nCode:%@\nMessage:%@\n%@\nrequest.requestArgument:\n%@\n----------------------------------------\n",
+                 (weakSelf.responseJMCode==0)?@"Success":@"业务错误", @(weakSelf.responseJMCode), weakSelf.responseJMMessage,[request.requestUrl hasPrefix:@"http"]?(request.requestUrl):([NSString stringWithFormat:@"%@%@",request.baseUrl,request.requestUrl]), request.requestArgument);
         
         
         if (success) {
