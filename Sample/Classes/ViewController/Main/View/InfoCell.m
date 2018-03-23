@@ -11,7 +11,7 @@
 #import "JSONKit.h"
 
 static CGFloat const gap_top_bottom = 20.f;
-static CGFloat const gap_left_right = 10.f;
+static CGFloat const gap_left_right = 15.f;
 static CGFloat const W_H_headerImgView = 25.f;
 static CGFloat const leftGap_header = 10.f;
 
@@ -78,24 +78,35 @@ static CGFloat const leftGap_header = 10.f;
         make.size.mas_equalTo(CGSizeMake(W_infoImgView, H_infoImgView));
     }];
     
-    [self.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+#warning todo remake 方法待优化
+    [self.titleLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.headerImgView.mas_bottom).offset(10.f);
         make.left.equalTo(weakSelf).offset(gap_left_right);
         if (isHaveInfoImg) {
             make.right.equalTo(weakSelf.infoImgView.mas_left).offset(-10.f);
         } else {
-            make.right.equalTo(weakSelf).offset(-10.f);
+            make.right.equalTo(weakSelf).offset(-gap_left_right);
         }
+//        if (isHaveInfoImg) {
+//            make.right.equalTo(weakSelf).offset(-(weakSelf.infoImgView.frame.size.width+10+gap_left_right));
+//        } else {
+//            make.right.equalTo(weakSelf).offset(-gap_left_right);
+//        }
     }];
     
-    [self.contentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+    [self.contentLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.titleLabel.mas_bottom).offset(10.f);
         make.left.equalTo(weakSelf).offset(gap_left_right);
         if (isHaveInfoImg) {
             make.right.equalTo(weakSelf.infoImgView.mas_left).offset(-10.f);
         } else {
-            make.right.equalTo(weakSelf).offset(-10.f);
+            make.right.equalTo(weakSelf).offset(-gap_left_right);
         }
+//        if (isHaveInfoImg) {
+//            make.right.equalTo(weakSelf).offset(-(weakSelf.infoImgView.frame.size.width+10+gap_left_right));
+//        } else {
+//            make.right.equalTo(weakSelf).offset(-gap_left_right);
+//        }
     }];
     
     [self.bottomLine mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -111,22 +122,24 @@ static CGFloat const leftGap_header = 10.f;
 #pragma mark - Public methods
 - (void)updateContent:(CardInfoModel *)model
 {
+    //
     [self.headerImgView sd_setImageWithURL:[NSURL URLWithString:CHANGE_TO_STRING(model.cc_icon)] placeholderImage:nil options:SDWebImageRetryFailed];
-    
+    //
     self.authorLabel.text = CHANGE_TO_STRING(model.uname);
-    
+    //
     self.timeLabel.text = CHANGE_TO_STRING(model.addTime);
-    
+    //
     NSArray *imageUrls = [model.img_url objectFromJSONString];
     NSString *imgUrl = CHANGE_TO_STRING([imageUrls firstObject]);
     isHaveInfoImg = ![FMUtility isEmptyString:imgUrl];
     self.infoImgView.hidden = !isHaveInfoImg;
     [self.infoImgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil options:SDWebImageRetryFailed];
-    
+    //
     self.titleLabel.text = @"这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长";//CHANGE_TO_STRING(model.text);
-    
-    self.contentLabel.text = @"这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长";//CHANGE_TO_STRING(model.desc);
+    //
+    self.contentLabel.text = @"这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长";//CHANGE_TO_STRING(model.desc);
     self.contentLabel.numberOfLines = (isHaveInfoImg ? 4 : 0);
+    
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
@@ -186,7 +199,7 @@ static CGFloat const leftGap_header = 10.f;
         _titleLabel.font = [UIFont systemFontOfSize:16.f];
         _titleLabel.textColor = SRGBCOLOR_HEX(0x000000);
         _titleLabel.numberOfLines = 2;
-        _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        _titleLabel.lineBreakMode = NSLineBreakByWordWrapping|NSLineBreakByTruncatingTail;
     }
     return _titleLabel;
 }
