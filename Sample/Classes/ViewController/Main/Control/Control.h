@@ -17,6 +17,6 @@
 @property (nonatomic, weak) ViewController *vc;
 
 - (void)registerCell;
-- (void)testRequest;
+- (void)loadData;
 
 @end

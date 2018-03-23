@@ -23,17 +23,13 @@
     return [NSString stringWithFormat:@"%@/%@?page=%@", kAPIBaseURL, @"community/get_notice_list", @(_page)];
 }
 
-#warning todo
-/**
-    由于未加入读取缓存的方法，暂时注释该方法，默认不缓存
- */
-//- (NSInteger)cacheTimeInSeconds
-//{
-//    if (_page > 1) {
-//        return -1;
-//    }
-//    return INT_MAX;
-//}
+- (NSInteger)cacheTimeInSeconds
+{
+    if (_page > 1) {
+        return -1;
+    }
+    return INT_MAX;
+}
 
 - (id)requestArgument
 {

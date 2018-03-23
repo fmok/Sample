@@ -33,7 +33,7 @@
         make.edges.mas_equalTo(weakSelf.view);
     }];
     [self.control registerCell];
-    [self.control testRequest];
+    [self.control loadData];
 }
 
 #pragma mark - Private methods

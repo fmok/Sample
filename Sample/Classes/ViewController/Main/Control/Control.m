@@ -17,12 +17,21 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 
 @interface Control()
 {
+    SampleListAPI *cacheAPI;
     SampleListAPI *refreshAPI;
+    SampleListAPI *loadMoreAPI;
 }
 
 @end
 
 @implementation Control
+
+- (void)dealloc
+{
+    [cacheAPI stop];
+    [refreshAPI stop];
+    [loadMoreAPI stop];
+}
 
 #pragma mark - Public methods
 - (void)registerCell
@@ -30,42 +39,77 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
     [self.vc.pulledTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellReusedIdentifier];
 }
 
-- (void)testRequest
+- (void)loadData
 {
-    WS(weakSelf);
-    refreshAPI = [[SampleListAPI alloc] init];
-    [refreshAPI startWithJsonModelClass:[CardListModel class] success:^(FMRequest *request, id modelObj) {
-        if ([request responseIsNormal]) {
-            [weakSelf serializeData:modelObj];
-        } else {
-            // 业务错误
-            [HUD showTipWithText:request.responseJMMessage];
-        }
-    } failure:^(FMRequest *request, id modelObj) {
-        // 网络错误
-        [HUD showTipWithText:modelObj];
-    }];
+    cacheAPI = [[SampleListAPI alloc] init];
+    CardListModel *modelObj = [[CardListModel alloc] initWithDictionary:[cacheAPI cacheJsonWithModelClass:[CardListModel class]] error:nil];
+    if (modelObj) {
+        [self cleanDataSource];
+        [self serializeData:modelObj];
+    } else {
+        [self.vc.pulledTableView beginRefreshing];
+    }
 }
 
 #pragma mark - Private methods
 - (void)serializeData:(CardListModel *)modelObj
 {
     [self.vc.cardInfoArr addObjectsFromArray:modelObj.list];
-    
+    [self.vc.pulledTableView reloadData];
 //    NSArray *imageUrls = [model.img_url objectFromJSONString];
 //    [self.vc.tmpImgView sd_setImageWithURL:[NSURL URLWithString:[imageUrls firstObject]] placeholderImage:nil options:SDWebImageRetryFailed];
 }
 
+- (void)cleanDataSource
+{
+    [self.vc.cardInfoArr removeAllObjects];
+}
 
 #pragma mark - PulledTableViewDelegate
 - (void)refreshWithPulledTableView:(PulledTableView *)tableView
 {
-    
+    WS(weakSelf);
+    refreshAPI = [[SampleListAPI alloc] init];
+    refreshAPI.ignoreCache = YES;
+    [refreshAPI startWithJsonModelClass:[CardListModel class] success:^(FMRequest *request, id modelObj) {
+        BOOL isRight = [request responseIsNormal];
+        if (isRight) {
+            [weakSelf cleanDataSource];
+            [weakSelf serializeData:modelObj];
+        } else {
+            // 业务错误
+            [HUD showTipWithText:request.responseJMMessage];
+        }
+        [weakSelf.vc.pulledTableView finishRefreshTableWithType:PulledTableViewTypeDown isUpdateTime:isRight];
+    } failure:^(FMRequest *request, id modelObj) {
+        // 网络错误
+        [HUD showTipWithText:modelObj];
+        [weakSelf.vc.pulledTableView finishRefreshTableWithType:PulledTableViewTypeDown isUpdateTime:NO];
+    }];
 }
 
 - (void)loadMoreWithPulledTableView:(PulledTableView *)tableView
 {
-    
+    WS(weakSelf);
+    loadMoreAPI = [[SampleListAPI alloc] init];
+    if (self.vc.pulledTableView.pageCount > self.vc.pulledTableView.page) {
+        loadMoreAPI.page = self.vc.pulledTableView.page + 1;
+    } else {
+        [self.vc.pulledTableView setFooterNoMoreData];
+        return;
+    }
+    [loadMoreAPI startWithJsonModelClass:[CardListModel class] success:^(FMRequest *request, id modelObj) {
+        BOOL isRight = [request responseIsNormal];
+        if (isRight) {
+            [weakSelf serializeData:modelObj];
+        } else {
+            [HUD showTipWithText:request.responseJMMessage];
+        }
+        [weakSelf.vc.pulledTableView finishRefreshTableWithType:PulledTableViewTypeUp isUpdateTime:isRight];
+    } failure:^(FMRequest *request, id modelObj) {
+        [HUD showTipWithText:modelObj];
+        [weakSelf.vc.pulledTableView finishRefreshTableWithType:PulledTableViewTypeUp isUpdateTime:NO];
+    }];
 }
 
 #pragma mark - UITableViewDelegate
@@ -105,7 +149,7 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return self.vc.cardInfoArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -121,10 +165,3 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 }
 
 @end
-
-
-
-
-
-
-
