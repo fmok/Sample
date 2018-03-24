@@ -47,7 +47,7 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
         [self cleanDataSource];
         [self serializeData:modelObj];
     } else {
-        [self.vc.pulledTableView beginRefreshing];
+        [self.vc.pulledTableView refreshingDataSourceImmediately:YES];
     }
 }
 

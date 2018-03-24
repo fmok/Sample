@@ -67,6 +67,21 @@
 }
 
 #pragma mark - Public methods
+- (void)refreshingDataSourceImmediately:(BOOL)immediately
+{
+    if (immediately) {
+        [self beginRefreshing];
+    } else {
+        NSDate *updatedTime = self.mj_header.lastUpdatedTime;
+        if (updatedTime) {
+            NSDate *nextUpdateDate = [[NSDate alloc] initWithTimeInterval:10 sinceDate:updatedTime];
+            if ([nextUpdateDate compare:[NSDate date]] == NSOrderedAscending) {
+                [self.mj_header beginRefreshing];
+            }
+        }
+    }
+}
+
 - (void)finishRefreshTableWithType:(PulledTableViewType)type
 {
     [self finishRefreshTableWithType:type isUpdateTime:YES];
@@ -79,9 +94,7 @@
     if (type == PulledTableViewTypeDown) {
         refreshView = self.mj_header;
 #warning todo
-        /**
-            暂时未处理“记录刷新时间”
-         */
+        //暂时未处理“记录刷新时间”
 //        [(MJRefreshNormalHeader *)refreshView endRefreshingWithUpdateTime:isUpdate];
     } else if (type == PulledTableViewTypeUp) {
         refreshView = self.mj_footer;
@@ -90,37 +103,36 @@
     [self resetFooterData];
 }
 
-- (void)autoBeginRefreshing
-{
-    // 是否自动下拉 10分钟
-    if (self.mj_header.lastUpdatedTime) {
-        NSDate *nextUpdateDate = [[NSDate alloc] initWithTimeInterval:60*10 sinceDate:self.mj_header.lastUpdatedTime];
-        if ([nextUpdateDate compare:[NSDate date]] == NSOrderedAscending) {
-            [self beginRefreshing];
-        }
-    } else {
-        // 之前的缓存时间没有，自动下拉
-        [self beginRefreshing];
-    }
-}
+//- (void)autoBeginRefreshing
+//{
+//    // 是否自动下拉 10分钟
+//    if (self.mj_header.lastUpdatedTime) {
+//        NSDate *nextUpdateDate = [[NSDate alloc] initWithTimeInterval:60*10 sinceDate:self.mj_header.lastUpdatedTime];
+//        if ([nextUpdateDate compare:[NSDate date]] == NSOrderedAscending) {
+//            [self beginRefreshing];
+//        }
+//    } else {
+//        // 之前的缓存时间没有，自动下拉
+//        [self beginRefreshing];
+//    }
+//}
 
-- (void)autoBeginRefreshingWithFirstRequestNoRefresh
-{
-    // 是否自动下拉 10分钟
-    if (self.mj_header.lastUpdatedTime) {
-        NSDate *nextUpdateDate = [[NSDate alloc] initWithTimeInterval:60*10 sinceDate:self.mj_header.lastUpdatedTime];
-        if ([nextUpdateDate compare:[NSDate date]] == NSOrderedAscending) {
-            [self beginRefreshing];
-        }
-    } else {
-        // 之前的缓存时间没有，无操作
-    }
-}
+//- (void)autoBeginRefreshingWithFirstRequestNoRefresh
+//{
+//    // 是否自动下拉 10分钟
+//    if (self.mj_header.lastUpdatedTime) {
+//        NSDate *nextUpdateDate = [[NSDate alloc] initWithTimeInterval:60*10 sinceDate:self.mj_header.lastUpdatedTime];
+//        if ([nextUpdateDate compare:[NSDate date]] == NSOrderedAscending) {
+//            [self beginRefreshing];
+//        }
+//    } else {
+//        // 之前的缓存时间没有，无操作
+//    }
+//}
 
 - (void)beginRefreshing
 {
     if (self.mj_header.state == MJRefreshStateIdle) {
-        
         [self.mj_header beginRefreshing];
     }
 }

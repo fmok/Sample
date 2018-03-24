@@ -24,7 +24,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self.pulledTableView autoBeginRefreshing];
+    [self.pulledTableView refreshingDataSourceImmediately:NO];
 }
 
 - (void)viewDidLoad {
