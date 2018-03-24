@@ -42,7 +42,7 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 - (void)loadData
 {
     cacheAPI = [[SampleListAPI alloc] init];
-    CardListModel *modelObj = [[CardListModel alloc] initWithDictionary:[cacheAPI cacheJsonWithModelClass:[CardListModel class]] error:nil];
+    CardListModel *modelObj = [cacheAPI cacheJsonWithModelClass:[CardListModel class]];
     if (modelObj) {
         [self cleanDataSource];
         [self serializeData:modelObj];

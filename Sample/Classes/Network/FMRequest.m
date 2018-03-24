@@ -51,13 +51,11 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
         if (success) {
             
             if (weakSelf.responseJMCode != 0) {
-                // 业务错误
                 success((FMRequest *)request, _responseJMMessage);
                 return ;
             }
             
             if (!obj) {
-                // 数据不存在
                 if (failure) {
                     failure((FMRequest *)request, @"");
                 }
@@ -141,19 +139,18 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
     
     NSError *err = nil;
     JSONModel *model = nil;
-    
+    //
     if (obj && [obj isKindOfClass:[NSArray class]] && !modelClass) {
         return obj;
     }
-    
+    // responseSerializerType: YTKResponseSerializerTypeJSON (application/json) (recommend)
     if (obj && [obj isKindOfClass:[NSDictionary class]]) {
-        
         if (modelClass) {
             model = [(JSONModel *)[modelClass alloc] initWithDictionary:obj error:&err];
-            if (!err) {// TODO 缓存里是否过滤
+            if (!err) {
                 _isCacheData = YES;
                 [self responseJsonModelCompleteWithModel:model];
-            }else {
+            } else {
                 TTDPRINT(@"JSONModel解析错误[数据类型不匹配]");
             }
         } else {
@@ -163,6 +160,27 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
             }
         }
     }
+    // responseSerializerType: YTKResponseSerializerTypeHTTP (default) (text/html or nil)
+    if (!obj) {
+        obj = self.responseString;
+        if (obj && [obj isKindOfClass:[NSString class]]) {
+            if (modelClass) {
+                model = [(JSONModel *)[modelClass alloc] initWithString:obj error:&err];
+                if (!err) {
+                    _isCacheData = YES;
+                    [self responseJsonModelCompleteWithModel:model];
+                } else {
+                    TTDPRINT(@"JSONModel解析错误[数据类型不匹配]");
+                }
+            } else {
+                NSString *str = (NSString *)obj;
+                if (str.length > 0) {
+                    model = obj;
+                }
+            }
+        }
+    }
+    
     return model;
 }
 

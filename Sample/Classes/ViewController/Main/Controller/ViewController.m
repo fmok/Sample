@@ -18,9 +18,13 @@
 @implementation ViewController
 
 #pragma mark - life cycle
-- (void)dealloc
+- (void)dealloc {
+}
+
+- (void)viewDidAppear:(BOOL)animated
 {
-    
+    [super viewDidAppear:animated];
+    [self.pulledTableView autoBeginRefreshing];
 }
 
 - (void)viewDidLoad {

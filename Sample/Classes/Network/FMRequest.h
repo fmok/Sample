@@ -23,11 +23,12 @@ typedef NS_ENUM(NSInteger, NetworkAPIHelperErrorCode) {
 @property (nonatomic, strong, readonly) NSString *responseJMMessage;
 @property (nonatomic, assign, readonly) BOOL isCacheData;
 
-//
+/***/
 - (void)startWithNoBack;
 - (void)startWithJsonModelClass:(Class)modelClass
                         success:(void (^)(FMRequest *request, id modelObj))success
                         failure:(void (^)(FMRequest *request, id modelObj))failure;
+// 注：若传入modelClass，返回即为该model类型；若不传modelClass，返回为NSDictionary或NSString
 - (id)cacheJsonWithModelClass:(Class)modelClass;
 
 /**
@@ -36,10 +37,10 @@ typedef NS_ENUM(NSInteger, NetworkAPIHelperErrorCode) {
  */
 - (void)responseJsonModelCompleteWithModel:(id)model;
 
-//
+/***/
 - (BOOL)responseIsNormal;
 
-//
+/***/
 + (NSString *)userAgent;
 
 @end
