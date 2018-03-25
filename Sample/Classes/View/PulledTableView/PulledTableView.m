@@ -74,7 +74,7 @@
     } else {
         NSDate *updatedTime = self.mj_header.lastUpdatedTime;
         if (updatedTime) {
-            NSDate *nextUpdateDate = [[NSDate alloc] initWithTimeInterval:10 sinceDate:updatedTime];
+            NSDate *nextUpdateDate = [[NSDate alloc] initWithTimeInterval:60*10 sinceDate:updatedTime];
             if ([nextUpdateDate compare:[NSDate date]] == NSOrderedAscending) {
                 [self.mj_header beginRefreshing];
             }

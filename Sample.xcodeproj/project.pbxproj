@@ -44,6 +44,21 @@
 		57B544842062850000701F9C /* APPSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B544832062850000701F9C /* APPSettingManager.m */; };
 		57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B544872062863D00701F9C /* UIDeviceHardware.m */; };
 		57B5448D2062881E00701F9C /* FMRuntimeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5448C2062881E00701F9C /* FMRuntimeEngine.m */; };
+		57DED5452067C81700E24607 /* FMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5442067C81700E24607 /* FMTabBarViewController.m */; };
+		57DED5502067CF7B00E24607 /* tabbar_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5482067CF7B00E24607 /* tabbar_home@2x.png */; };
+		57DED5512067CF7B00E24607 /* tabbar_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5492067CF7B00E24607 /* tabbar_home@3x.png */; };
+		57DED5522067CF7B00E24607 /* tabbar_home_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED54A2067CF7B00E24607 /* tabbar_home_selected@2x.png */; };
+		57DED5532067CF7B00E24607 /* tabbar_home_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED54B2067CF7B00E24607 /* tabbar_home_selected@3x.png */; };
+		57DED5542067CF7B00E24607 /* tabbar_me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED54C2067CF7B00E24607 /* tabbar_me@2x.png */; };
+		57DED5552067CF7B00E24607 /* tabbar_me@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED54D2067CF7B00E24607 /* tabbar_me@3x.png */; };
+		57DED5562067CF7B00E24607 /* tabbar_me_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED54E2067CF7B00E24607 /* tabbar_me_selected@2x.png */; };
+		57DED5572067CF7B00E24607 /* tabbar_me_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED54F2067CF7B00E24607 /* tabbar_me_selected@3x.png */; };
+		57DED55B2067D23500E24607 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED55A2067D23500E24607 /* UIImage+Resize.m */; };
+		57DED55E2067D36500E24607 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED55C2067D36500E24607 /* UIImage+RoundedCorner.m */; };
+		57DED5612067D39600E24607 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED55F2067D39600E24607 /* UIImage+Alpha.m */; };
+		57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5672067D42100E24607 /* UIImage+ImageEffects.m */; };
+		57DED56D2067D42100E24607 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5692067D42100E24607 /* UIImageEffects.m */; };
+		57DED56E2067D42100E24607 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED56B2067D42100E24607 /* UIImageView+LBBlurredImage.m */; };
 		8646EF97853BD87ABD83D2D1 /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF9E3C2A30A459CB6D5BCFF /* Pods_Sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +152,28 @@
 		57B54489206286D700701F9C /* FMURLMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMURLMacro.h; sourceTree = "<group>"; };
 		57B5448B2062881E00701F9C /* FMRuntimeEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMRuntimeEngine.h; sourceTree = "<group>"; };
 		57B5448C2062881E00701F9C /* FMRuntimeEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMRuntimeEngine.m; sourceTree = "<group>"; };
+		57DED5432067C81700E24607 /* FMTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMTabBarViewController.h; sourceTree = "<group>"; };
+		57DED5442067C81700E24607 /* FMTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTabBarViewController.m; sourceTree = "<group>"; };
+		57DED5482067CF7B00E24607 /* tabbar_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_home@2x.png"; sourceTree = "<group>"; };
+		57DED5492067CF7B00E24607 /* tabbar_home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_home@3x.png"; sourceTree = "<group>"; };
+		57DED54A2067CF7B00E24607 /* tabbar_home_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_home_selected@2x.png"; sourceTree = "<group>"; };
+		57DED54B2067CF7B00E24607 /* tabbar_home_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_home_selected@3x.png"; sourceTree = "<group>"; };
+		57DED54C2067CF7B00E24607 /* tabbar_me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_me@2x.png"; sourceTree = "<group>"; };
+		57DED54D2067CF7B00E24607 /* tabbar_me@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_me@3x.png"; sourceTree = "<group>"; };
+		57DED54E2067CF7B00E24607 /* tabbar_me_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_me_selected@2x.png"; sourceTree = "<group>"; };
+		57DED54F2067CF7B00E24607 /* tabbar_me_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_me_selected@3x.png"; sourceTree = "<group>"; };
+		57DED5592067D23500E24607 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		57DED55A2067D23500E24607 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		57DED55C2067D36500E24607 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		57DED55D2067D36500E24607 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		57DED55F2067D39600E24607 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		57DED5602067D39600E24607 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		57DED5662067D42100E24607 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		57DED5672067D42100E24607 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		57DED5682067D42100E24607 /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
+		57DED5692067D42100E24607 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
+		57DED56A2067D42100E24607 /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
+		57DED56B2067D42100E24607 /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
 		653BD37EA248C6612B6D4B63 /* Pods-SampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleTests/Pods-SampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C23F3861CA5B9F7966F887D /* Pods-SampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleUITests/Pods-SampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D84C02F3A80B149BED8BD63 /* Pods-SampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleTests/Pods-SampleTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -273,6 +310,7 @@
 		57B544312062760B00701F9C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				57DED5462067CF7B00E24607 /* Resource */,
 				57B54481206284EE00701F9C /* DataManager */,
 				57B54457206281E300701F9C /* Utility */,
 				57B544552062800D00701F9C /* Macro */,
@@ -304,6 +342,7 @@
 		57B544352062780E00701F9C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57DED5422067C7FE00E24607 /* TabBar */,
 				57B5444D20627CB700701F9C /* Navigation */,
 				57B544362062787700701F9C /* PulledCollectionView */,
 				57B544372062787700701F9C /* PulledTableView */,
@@ -428,6 +467,8 @@
 		57B5445B206282CF00701F9C /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				57DED5652067D42100E24607 /* LBBlurredImage */,
+				57DED5582067D22400E24607 /* FMCategories */,
 				575F9AA32064EC710031BC49 /* FDTemplateLayout */,
 				572E6A882063CA55008114EA /* JSONKit */,
 				572E6A7020637F1D008114EA /* MBProgressHUD */,
@@ -472,6 +513,64 @@
 				57B5448C2062881E00701F9C /* FMRuntimeEngine.m */,
 			);
 			path = RuntimeEngine;
+			sourceTree = "<group>";
+		};
+		57DED5422067C7FE00E24607 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				57DED5432067C81700E24607 /* FMTabBarViewController.h */,
+				57DED5442067C81700E24607 /* FMTabBarViewController.m */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		57DED5462067CF7B00E24607 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				57DED5472067CF7B00E24607 /* TabBar */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		57DED5472067CF7B00E24607 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				57DED5482067CF7B00E24607 /* tabbar_home@2x.png */,
+				57DED5492067CF7B00E24607 /* tabbar_home@3x.png */,
+				57DED54A2067CF7B00E24607 /* tabbar_home_selected@2x.png */,
+				57DED54B2067CF7B00E24607 /* tabbar_home_selected@3x.png */,
+				57DED54C2067CF7B00E24607 /* tabbar_me@2x.png */,
+				57DED54D2067CF7B00E24607 /* tabbar_me@3x.png */,
+				57DED54E2067CF7B00E24607 /* tabbar_me_selected@2x.png */,
+				57DED54F2067CF7B00E24607 /* tabbar_me_selected@3x.png */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		57DED5582067D22400E24607 /* FMCategories */ = {
+			isa = PBXGroup;
+			children = (
+				57DED5602067D39600E24607 /* UIImage+Alpha.h */,
+				57DED55F2067D39600E24607 /* UIImage+Alpha.m */,
+				57DED55D2067D36500E24607 /* UIImage+RoundedCorner.h */,
+				57DED55C2067D36500E24607 /* UIImage+RoundedCorner.m */,
+				57DED5592067D23500E24607 /* UIImage+Resize.h */,
+				57DED55A2067D23500E24607 /* UIImage+Resize.m */,
+			);
+			path = FMCategories;
+			sourceTree = "<group>";
+		};
+		57DED5652067D42100E24607 /* LBBlurredImage */ = {
+			isa = PBXGroup;
+			children = (
+				57DED5662067D42100E24607 /* UIImage+ImageEffects.h */,
+				57DED5672067D42100E24607 /* UIImage+ImageEffects.m */,
+				57DED5682067D42100E24607 /* UIImageEffects.h */,
+				57DED5692067D42100E24607 /* UIImageEffects.m */,
+				57DED56A2067D42100E24607 /* UIImageView+LBBlurredImage.h */,
+				57DED56B2067D42100E24607 /* UIImageView+LBBlurredImage.m */,
+			);
+			path = LBBlurredImage;
 			sourceTree = "<group>";
 		};
 		5FBE49CCB59ACFE1DD51C69F /* Frameworks */ = {
@@ -614,11 +713,19 @@
 			files = (
 				572E6A7820637F1D008114EA /* btnCheck@2x.png in Resources */,
 				572E6A8D2063CA55008114EA /* CHANGELOG.md in Resources */,
+				57DED5542067CF7B00E24607 /* tabbar_me@2x.png in Resources */,
+				57DED5522067CF7B00E24607 /* tabbar_home_selected@2x.png in Resources */,
+				57DED5572067CF7B00E24607 /* tabbar_me_selected@3x.png in Resources */,
 				57B5440C2062727F00701F9C /* LaunchScreen.storyboard in Resources */,
+				57DED5502067CF7B00E24607 /* tabbar_home@2x.png in Resources */,
+				57DED5532067CF7B00E24607 /* tabbar_home_selected@3x.png in Resources */,
+				57DED5562067CF7B00E24607 /* tabbar_me_selected@2x.png in Resources */,
 				572E6A8F2063CA55008114EA /* README.md in Resources */,
 				572E6A7720637F1D008114EA /* btnCheck.png in Resources */,
 				57B544092062727F00701F9C /* Assets.xcassets in Resources */,
 				57B544042062727F00701F9C /* Main.storyboard in Resources */,
+				57DED5512067CF7B00E24607 /* tabbar_home@3x.png in Resources */,
+				57DED5552067CF7B00E24607 /* tabbar_me@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,12 +916,17 @@
 				57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */,
 				572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */,
 				57B544072062727F00701F9C /* Sample.xcdatamodeld in Sources */,
+				57DED5452067C81700E24607 /* FMTabBarViewController.m in Sources */,
 				572E6A8E2063CA55008114EA /* JSONKit.m in Sources */,
+				57DED5612067D39600E24607 /* UIImage+Alpha.m in Sources */,
 				575F9AAF2064EC710031BC49 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				57B5444620627B8B00701F9C /* Control.m in Sources */,
+				57DED56E2067D42100E24607 /* UIImageView+LBBlurredImage.m in Sources */,
+				57DED56D2067D42100E24607 /* UIImageEffects.m in Sources */,
 				57B5440F2062727F00701F9C /* main.m in Sources */,
 				57B54440206278B600701F9C /* ViewController.m in Sources */,
+				57DED55B2067D23500E24607 /* UIImage+Resize.m in Sources */,
 				575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */,
 				57B5444920627C2C00701F9C /* PulledTableView.m in Sources */,
 				572E6A872063AFE3008114EA /* CardListModel.m in Sources */,
@@ -826,6 +938,8 @@
 				57B5445420627EF700701F9C /* SHError.m in Sources */,
 				572E6A7A20637F1D008114EA /* MBProgressHUD.m in Sources */,
 				57B5444C20627C5800701F9C /* PulledCollectionView.m in Sources */,
+				57DED55E2067D36500E24607 /* UIImage+RoundedCorner.m in Sources */,
+				57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */,
 				57B5445A206281F400701F9C /* FMUtility.m in Sources */,
 				57B5444320627B6900701F9C /* FMRequest.m in Sources */,
 				57B544842062850000701F9C /* APPSettingManager.m in Sources */,

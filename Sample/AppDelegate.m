@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "FMTabBarViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,8 +22,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     
-    ViewController *vc = [[ViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+    FMTabBarViewController *tabVC = [[FMTabBarViewController alloc] initWithNibName:nil bundle:nil];
+    ZLNavigationController *nav = [[ZLNavigationController alloc] initWithRootViewController:tabVC];
     
     self.window.rootViewController = nav;
     

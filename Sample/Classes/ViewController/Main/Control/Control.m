@@ -132,7 +132,7 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
     UIViewController *vc = [[UIViewController alloc] init];
     vc.view.backgroundColor = [UIColor whiteColor];
     vc.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
-    [self.vc.navigationController pushViewController:vc animated:YES];
+    [self.vc.zl_navigationController pushViewController:vc animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

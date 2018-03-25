@@ -30,6 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.zl_automaticallyAdjustsScrollViewInsets = YES;
     self.view.backgroundColor = [UIColor redColor];
     WS(weakSelf);
     [self.view addSubview:self.pulledTableView];
@@ -60,7 +61,7 @@
         _pulledTableView.backgroundColor = [UIColor whiteColor];
         _pulledTableView.isHeader = YES;
         _pulledTableView.isFooter = YES;
-        _pulledTableView.showsVerticalScrollIndicator = NO;
+        _pulledTableView.showsVerticalScrollIndicator = YES;
         _pulledTableView.estimatedRowHeight = 0;
         _pulledTableView.delegate = self.control;
         _pulledTableView.dataSource = self.control;
