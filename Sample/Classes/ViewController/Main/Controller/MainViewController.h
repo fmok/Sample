@@ -8,11 +8,13 @@
 
 #import "FMBaseViewController.h"
 #import "PulledTableView.h"
+#import "MainHeaderView.h"
 
 @interface MainViewController : FMBaseViewController
 
 @property (nonatomic, strong) NSMutableArray *cardInfoArr;
 @property (nonatomic, strong) PulledTableView *pulledTableView;
+@property (nonatomic, strong) MainHeaderView *headerView;
 
 @end
 

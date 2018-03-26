@@ -67,6 +67,16 @@
         _pulledTableView.delegate = self.control;
         _pulledTableView.dataSource = self.control;
         _pulledTableView.pulledDelegate = self.control;
+        _pulledTableView.tableHeaderView = self.headerView;
+#ifdef __IPHONE_11_0
+        if ([_pulledTableView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
+            if (@available(iOS 11.0, *)) {
+                _pulledTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+#endif
     }
     return _pulledTableView;
 }
@@ -77,6 +87,15 @@
         _cardInfoArr = [[NSMutableArray alloc] init];
     }
     return _cardInfoArr;
+}
+
+- (MainHeaderView *)headerView
+{
+    if (!_headerView) {
+        _headerView = [[MainHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth*9.f/16.f)];
+        _headerView.backgroundColor = [UIColor purpleColor];
+    }
+    return _headerView;
 }
 
 - (void)didReceiveMemoryWarning {

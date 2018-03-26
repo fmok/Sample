@@ -49,6 +49,7 @@
 		57C3D559206898CA00E0B8BA /* MeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D558206898CA00E0B8BA /* MeControl.m */; };
 		57C3D55E20689BF400E0B8BA /* CardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D55D20689BF400E0B8BA /* CardDetailViewController.m */; };
 		57C3D5612068A11700E0B8BA /* top_navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C3D5602068A11700E0B8BA /* top_navigation_back@2x.png */; };
+		57C3D5672068A7DB00E0B8BA /* MainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5662068A7DB00E0B8BA /* MainHeaderView.m */; };
 		57DED5452067C81700E24607 /* FMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5442067C81700E24607 /* FMTabBarViewController.m */; };
 		57DED5502067CF7B00E24607 /* tabbar_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5482067CF7B00E24607 /* tabbar_home@2x.png */; };
 		57DED5512067CF7B00E24607 /* tabbar_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5492067CF7B00E24607 /* tabbar_home@3x.png */; };
@@ -166,6 +167,8 @@
 		57C3D55C20689BF400E0B8BA /* CardDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardDetailViewController.h; sourceTree = "<group>"; };
 		57C3D55D20689BF400E0B8BA /* CardDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardDetailViewController.m; sourceTree = "<group>"; };
 		57C3D5602068A11700E0B8BA /* top_navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_navigation_back@2x.png"; sourceTree = "<group>"; };
+		57C3D5652068A7DB00E0B8BA /* MainHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainHeaderView.h; sourceTree = "<group>"; };
+		57C3D5662068A7DB00E0B8BA /* MainHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainHeaderView.m; sourceTree = "<group>"; };
 		57DED5432067C81700E24607 /* FMTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMTabBarViewController.h; sourceTree = "<group>"; };
 		57DED5442067C81700E24607 /* FMTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTabBarViewController.m; sourceTree = "<group>"; };
 		57DED5482067CF7B00E24607 /* tabbar_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_home@2x.png"; sourceTree = "<group>"; };
@@ -440,6 +443,8 @@
 			children = (
 				575F9AA02064D0DF0031BC49 /* InfoCell.h */,
 				575F9AA12064D0DF0031BC49 /* InfoCell.m */,
+				57C3D5652068A7DB00E0B8BA /* MainHeaderView.h */,
+				57C3D5662068A7DB00E0B8BA /* MainHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1024,6 +1029,7 @@
 				57B5444C20627C5800701F9C /* PulledCollectionView.m in Sources */,
 				57DED55E2067D36500E24607 /* UIImage+RoundedCorner.m in Sources */,
 				57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */,
+				57C3D5672068A7DB00E0B8BA /* MainHeaderView.m in Sources */,
 				57B5445A206281F400701F9C /* FMUtility.m in Sources */,
 				57B5444320627B6900701F9C /* FMRequest.m in Sources */,
 				57B544842062850000701F9C /* APPSettingManager.m in Sources */,

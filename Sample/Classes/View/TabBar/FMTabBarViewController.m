@@ -51,21 +51,6 @@
     [self.tabBar setBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
 }
 
-#pragma mark - 处理statusBar
-//- (void)setNeedsStatusBarAppearanceUpdateToHide:(BOOL)hidden {
-//    self.statusBarHidden = hidden;
-//    [self setNeedsStatusBarAppearanceUpdate];
-//}
-
-//- (BOOL)prefersStatusBarHidden {
-//    return self.statusBarHidden;
-//}
-
-//- (UIStatusBarStyle)preferredStatusBarStyle {
-//    return UIStatusBarStyleDefault;  // UIStatusBarStyleLightContent
-//}
-
-#pragma mark - getter & setter
 - (NSArray *)viewControllersForTab
 {
     return @[
@@ -108,6 +93,21 @@
     }
 }
 
+#pragma mark - 处理statusBar
+//- (void)setNeedsStatusBarAppearanceUpdateToHide:(BOOL)hidden {
+//    self.statusBarHidden = hidden;
+//    [self setNeedsStatusBarAppearanceUpdate];
+//}
+
+//- (BOOL)prefersStatusBarHidden {
+//    return self.statusBarHidden;
+//}
+
+//- (UIStatusBarStyle)preferredStatusBarStyle {
+//    return UIStatusBarStyleDefault;  // UIStatusBarStyleLightContent
+//}
+
+#pragma mark - getter & setter
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
