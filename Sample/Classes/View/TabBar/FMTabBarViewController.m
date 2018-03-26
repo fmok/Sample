@@ -33,6 +33,7 @@
     [self updateTabBarItemForViewControllers];
 }
 
+#pragma mark - Private methods
 - (void)updateTabBarItemForViewControllers
 {
     for (NSInteger i = 0; i < self.viewControllers.count; i++) {
