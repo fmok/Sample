@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "InfoCell.h"
 
-@interface Control : NSObject<
+@interface MainControl : NSObject<
     UITableViewDelegate,
     UITableViewDataSource,
     PulledTableViewDelegate>
 
-@property (nonatomic, weak) ViewController *vc;
+@property (nonatomic, weak) MainViewController *vc;
 
 - (void)registerCell;
 - (void)loadData;

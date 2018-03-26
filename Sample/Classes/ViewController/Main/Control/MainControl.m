@@ -6,7 +6,7 @@
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
-#import "Control.h"
+#import "MainControl.h"
 #import "SampleListAPI.h"
 #import "CardListModel.h"
 #import "UIImageView+WebCache.h"
@@ -14,7 +14,7 @@
 
 static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 
-@interface Control()
+@interface MainControl()
 {
     SampleListAPI *cacheAPI;
     SampleListAPI *refreshAPI;
@@ -23,7 +23,7 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 
 @end
 
-@implementation Control
+@implementation MainControl
 
 - (void)dealloc
 {

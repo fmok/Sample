@@ -6,16 +6,16 @@
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "Control.h"
+#import "MainViewController.h"
+#import "MainControl.h"
 
-@interface ViewController ()
+@interface MainViewController ()
 
-@property (nonatomic, strong) Control *control;
+@property (nonatomic, strong) MainControl *control;
 
 @end
 
-@implementation ViewController
+@implementation MainViewController
 
 #pragma mark - life cycle
 - (void)dealloc {
@@ -45,10 +45,10 @@
 
 
 #pragma mark - getter & setter
-- (Control *)control
+- (MainControl *)control
 {
     if (!_control) {
-        _control = [[Control alloc] init];
+        _control = [[MainControl alloc] init];
         _control.vc = self;
     }
     return _control;
