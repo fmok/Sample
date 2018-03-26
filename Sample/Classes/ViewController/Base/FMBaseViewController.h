@@ -13,5 +13,6 @@
 @property (nonatomic, weak) UINavigationController *nav;
 
 - (void)showHUDTip:(NSString *)string;
+- (void)constraintNavigationBar:(UINavigationBar *)navigationBar;
 
 @end

@@ -7,8 +7,11 @@
 //
 
 #import "MeViewController.h"
+#import "MeControl.h"
 
 @interface MeViewController ()
+
+@property (nonatomic, strong) MeControl *control;
 
 @end
 
@@ -17,6 +20,51 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor redColor];
+    [self customNav];
+    WS(weakSelf);
+    [self.view addSubview:self.mePulledTableView];
+    [self.mePulledTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        if (@available(iOS 11.0, *)) {
+            make.top.equalTo(weakSelf.view.mas_safeAreaLayoutGuideTop).offset(44.f);
+        } else {
+            make.top.equalTo(weakSelf.mas_topLayoutGuide).offset(44.f);
+        }
+        make.left.and.right.and.bottom.equalTo(weakSelf.view);
+    }];
+    [self.control registerCell];
+    [self.view bringSubviewToFront:self.zl_navigationBar];
+}
+
+#pragma mark - Private methods
+- (void)customNav
+{
+    UINavigationItem *item = [[UINavigationItem alloc] init];
+    item.title = @"我的账户";
+    [self.zl_navigationBar pushNavigationItem:item animated:NO];
+    [self.view addSubview:self.zl_navigationBar];
+    [self constraintNavigationBar:self.zl_navigationBar];
+}
+
+#pragma mark - getter & setter
+- (MeControl *)control
+{
+    if (!_control) {
+        _control = [[MeControl alloc] init];
+        _control.vc = self;
+    }
+    return _control;
+}
+
+- (PulledTableView *)mePulledTableView
+{
+    if (!_mePulledTableView) {
+        _mePulledTableView = [[PulledTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _mePulledTableView.backgroundColor = [UIColor whiteColor];
+        _mePulledTableView.delegate = self.control;
+        _mePulledTableView.dataSource = self.control;
+    }
+    return _mePulledTableView;
 }
 
 - (void)didReceiveMemoryWarning {

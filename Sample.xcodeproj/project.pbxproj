@@ -46,6 +46,9 @@
 		57B5448D2062881E00701F9C /* FMRuntimeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5448C2062881E00701F9C /* FMRuntimeEngine.m */; };
 		57C3D5522068944600E0B8BA /* FMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5512068944600E0B8BA /* FMBaseViewController.m */; };
 		57C3D555206896A900E0B8BA /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D554206896A900E0B8BA /* MeViewController.m */; };
+		57C3D559206898CA00E0B8BA /* MeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D558206898CA00E0B8BA /* MeControl.m */; };
+		57C3D55E20689BF400E0B8BA /* CardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D55D20689BF400E0B8BA /* CardDetailViewController.m */; };
+		57C3D5612068A11700E0B8BA /* top_navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C3D5602068A11700E0B8BA /* top_navigation_back@2x.png */; };
 		57DED5452067C81700E24607 /* FMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5442067C81700E24607 /* FMTabBarViewController.m */; };
 		57DED5502067CF7B00E24607 /* tabbar_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5482067CF7B00E24607 /* tabbar_home@2x.png */; };
 		57DED5512067CF7B00E24607 /* tabbar_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5492067CF7B00E24607 /* tabbar_home@3x.png */; };
@@ -158,6 +161,11 @@
 		57C3D5512068944600E0B8BA /* FMBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMBaseViewController.m; sourceTree = "<group>"; };
 		57C3D553206896A900E0B8BA /* MeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		57C3D554206896A900E0B8BA /* MeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
+		57C3D557206898CA00E0B8BA /* MeControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeControl.h; sourceTree = "<group>"; };
+		57C3D558206898CA00E0B8BA /* MeControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeControl.m; sourceTree = "<group>"; };
+		57C3D55C20689BF400E0B8BA /* CardDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardDetailViewController.h; sourceTree = "<group>"; };
+		57C3D55D20689BF400E0B8BA /* CardDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardDetailViewController.m; sourceTree = "<group>"; };
+		57C3D5602068A11700E0B8BA /* top_navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_navigation_back@2x.png"; sourceTree = "<group>"; };
 		57DED5432067C81700E24607 /* FMTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMTabBarViewController.h; sourceTree = "<group>"; };
 		57DED5442067C81700E24607 /* FMTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTabBarViewController.m; sourceTree = "<group>"; };
 		57DED5482067CF7B00E24607 /* tabbar_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_home@2x.png"; sourceTree = "<group>"; };
@@ -343,6 +351,7 @@
 				57C3D54F2068940100E0B8BA /* Base */,
 				57B54438206278B600701F9C /* Main */,
 				57C3D54D206893BA00E0B8BA /* Me */,
+				57C3D55A20689BCA00E0B8BA /* CardDetail */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -526,6 +535,7 @@
 		57C3D54D206893BA00E0B8BA /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				57C3D556206898B400E0B8BA /* Control */,
 				57C3D54E206893CB00E0B8BA /* ViewController */,
 			);
 			path = Me;
@@ -549,6 +559,40 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		57C3D556206898B400E0B8BA /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				57C3D557206898CA00E0B8BA /* MeControl.h */,
+				57C3D558206898CA00E0B8BA /* MeControl.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		57C3D55A20689BCA00E0B8BA /* CardDetail */ = {
+			isa = PBXGroup;
+			children = (
+				57C3D55B20689BE000E0B8BA /* ViewController */,
+			);
+			path = CardDetail;
+			sourceTree = "<group>";
+		};
+		57C3D55B20689BE000E0B8BA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				57C3D55C20689BF400E0B8BA /* CardDetailViewController.h */,
+				57C3D55D20689BF400E0B8BA /* CardDetailViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		57C3D55F2068A10800E0B8BA /* Nav */ = {
+			isa = PBXGroup;
+			children = (
+				57C3D5602068A11700E0B8BA /* top_navigation_back@2x.png */,
+			);
+			path = Nav;
+			sourceTree = "<group>";
+		};
 		57DED5422067C7FE00E24607 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,6 +605,7 @@
 		57DED5462067CF7B00E24607 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				57C3D55F2068A10800E0B8BA /* Nav */,
 				57DED5472067CF7B00E24607 /* TabBar */,
 			);
 			path = Resource;
@@ -754,6 +799,7 @@
 				57DED5502067CF7B00E24607 /* tabbar_home@2x.png in Resources */,
 				57DED5532067CF7B00E24607 /* tabbar_home_selected@3x.png in Resources */,
 				57DED5562067CF7B00E24607 /* tabbar_me_selected@2x.png in Resources */,
+				57C3D5612068A11700E0B8BA /* top_navigation_back@2x.png in Resources */,
 				572E6A8F2063CA55008114EA /* README.md in Resources */,
 				572E6A7720637F1D008114EA /* btnCheck.png in Resources */,
 				57B544092062727F00701F9C /* Assets.xcassets in Resources */,
@@ -960,11 +1006,13 @@
 				57B5444620627B8B00701F9C /* MainControl.m in Sources */,
 				57DED56E2067D42100E24607 /* UIImageView+LBBlurredImage.m in Sources */,
 				57DED56D2067D42100E24607 /* UIImageEffects.m in Sources */,
+				57C3D55E20689BF400E0B8BA /* CardDetailViewController.m in Sources */,
 				57B5440F2062727F00701F9C /* main.m in Sources */,
 				57B54440206278B600701F9C /* MainViewController.m in Sources */,
 				57DED55B2067D23500E24607 /* UIImage+Resize.m in Sources */,
 				575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */,
 				57B5444920627C2C00701F9C /* PulledTableView.m in Sources */,
+				57C3D559206898CA00E0B8BA /* MeControl.m in Sources */,
 				572E6A872063AFE3008114EA /* CardListModel.m in Sources */,
 				575F9AAE2064EC710031BC49 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				57B543FE2062727F00701F9C /* AppDelegate.m in Sources */,

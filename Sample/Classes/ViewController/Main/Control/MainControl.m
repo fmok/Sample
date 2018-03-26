@@ -11,6 +11,7 @@
 #import "CardListModel.h"
 #import "UIImageView+WebCache.h"
 #import "UITableView+FDTemplateLayoutCell.h"
+#import "CardDetailViewController.h"
 
 static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 
@@ -128,8 +129,7 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.backgroundColor = [UIColor whiteColor];
+    CardDetailViewController *vc = [[CardDetailViewController alloc] init];
     vc.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
     [self.vc.zl_navigationController pushViewController:vc animated:YES];
 }

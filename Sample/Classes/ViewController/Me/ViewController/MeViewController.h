@@ -7,7 +7,10 @@
 //
 
 #import "FMBaseViewController.h"
+#import "PulledTableView.h"
 
 @interface MeViewController : FMBaseViewController
+
+@property (nonatomic, strong) PulledTableView *mePulledTableView;
 
 @end

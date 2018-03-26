@@ -30,8 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.zl_automaticallyAdjustsScrollViewInsets = YES;
-    self.view.backgroundColor = [UIColor redColor];
+//    self.zl_automaticallyAdjustsScrollViewInsets = YES;
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.zl_navigationBarHidden = YES;
     WS(weakSelf);
     [self.view addSubview:self.pulledTableView];
     [self.pulledTableView mas_makeConstraints:^(MASConstraintMaker *make) {

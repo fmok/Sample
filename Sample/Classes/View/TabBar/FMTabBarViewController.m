@@ -8,6 +8,7 @@
 
 #import "FMTabBarViewController.h"
 #import "MainViewController.h"
+#import "MeViewController.h"
 #import "UIImage+Resize.h"
 
 @interface FMTabBarViewController ()
@@ -69,7 +70,7 @@
 {
     return @[
              [[MainViewController alloc] init],
-             [[UIViewController alloc] init]
+             [[MeViewController alloc] init]
              ];
 }
 
