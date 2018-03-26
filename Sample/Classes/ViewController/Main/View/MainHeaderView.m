@@ -14,9 +14,30 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
+        self.backgroundColor = [UIColor grayColor];
+        [self addSubview:self.imgView];
     }
     return self;
+}
+
+- (void)updateConstraints
+{
+    WS(weakSelf);
+    [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(weakSelf);
+    }];
+    [super updateConstraints];
+}
+
+
+#pragma mark - getter & setter
+- (UIImageView *)imgView
+{
+    if (!_imgView) {
+        _imgView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _imgView.backgroundColor = [UIColor purpleColor];
+    }
+    return _imgView;
 }
 
 /*

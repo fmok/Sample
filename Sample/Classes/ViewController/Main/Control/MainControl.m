@@ -172,4 +172,17 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
     return 1;
 }
 
+#pragma mark - KVO
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    //头部放大相关
+    if ([change[@"new"] CGPointValue].y <= 0) {
+        CGFloat multi = H_MainHeaderView/W_MainHeaderView;
+        CGFloat tmp = 1 + (fabs([change[@"new"] CGPointValue].y)/(self.vc.pulledTableView.ml_width*multi));
+        self.vc.headerView.imgView.transform = CGAffineTransformMake(tmp, 0, 0, tmp, 0, ([change[@"new"] CGPointValue].y)/2.f);
+    } else {
+        self.vc.headerView.imgView.transform = CGAffineTransformIdentity;
+    }
+}
+
 @end

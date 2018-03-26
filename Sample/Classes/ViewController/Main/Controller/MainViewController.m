@@ -37,8 +37,11 @@
     [self.pulledTableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(weakSelf.view);
     }];
+    
     [self.control registerCell];
     [self.control loadData];
+    
+    [self.pulledTableView addObserver:self.control forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
 }
 
 #pragma mark - Private methods
@@ -67,6 +70,9 @@
         _pulledTableView.dataSource = self.control;
         _pulledTableView.pulledDelegate = self.control;
         _pulledTableView.tableHeaderView = self.headerView;
+        _pulledTableView.estimatedRowHeight = 0;
+        _pulledTableView.estimatedSectionHeaderHeight = 0;
+        _pulledTableView.estimatedSectionFooterHeight = 0;
 #ifdef __IPHONE_11_0
         if ([_pulledTableView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
             if (@available(iOS 11.0, *)) {
@@ -91,8 +97,7 @@
 - (MainHeaderView *)headerView
 {
     if (!_headerView) {
-        _headerView = [[MainHeaderView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth*9.f/16.f)];
-        _headerView.backgroundColor = [UIColor purpleColor];
+        _headerView = [[MainHeaderView alloc] initWithFrame:CGRectMake(0, 0, W_MainHeaderView, H_MainHeaderView)];
     }
     return _headerView;
 }

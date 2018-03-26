@@ -51,6 +51,8 @@
 		57C3D5612068A11700E0B8BA /* top_navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C3D5602068A11700E0B8BA /* top_navigation_back@2x.png */; };
 		57C3D5672068A7DB00E0B8BA /* MainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5662068A7DB00E0B8BA /* MainHeaderView.m */; };
 		57C3D56A2068BBAE00E0B8BA /* FMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5692068BBAE00E0B8BA /* FMConstants.m */; };
+		57C3D56D2068C45F00E0B8BA /* UIView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D56B2068C45E00E0B8BA /* UIView+Utilities.m */; };
+		57C3D5702068C4D300E0B8BA /* CGGeometryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D56E2068C4D200E0B8BA /* CGGeometryAdditions.m */; };
 		57DED5452067C81700E24607 /* FMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5442067C81700E24607 /* FMTabBarViewController.m */; };
 		57DED5502067CF7B00E24607 /* tabbar_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5482067CF7B00E24607 /* tabbar_home@2x.png */; };
 		57DED5512067CF7B00E24607 /* tabbar_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5492067CF7B00E24607 /* tabbar_home@3x.png */; };
@@ -172,6 +174,10 @@
 		57C3D5662068A7DB00E0B8BA /* MainHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainHeaderView.m; sourceTree = "<group>"; };
 		57C3D5682068BBAE00E0B8BA /* FMConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMConstants.h; sourceTree = "<group>"; };
 		57C3D5692068BBAE00E0B8BA /* FMConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMConstants.m; sourceTree = "<group>"; };
+		57C3D56B2068C45E00E0B8BA /* UIView+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utilities.m"; sourceTree = "<group>"; };
+		57C3D56C2068C45F00E0B8BA /* UIView+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utilities.h"; sourceTree = "<group>"; };
+		57C3D56E2068C4D200E0B8BA /* CGGeometryAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGeometryAdditions.m; sourceTree = "<group>"; };
+		57C3D56F2068C4D200E0B8BA /* CGGeometryAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometryAdditions.h; sourceTree = "<group>"; };
 		57DED5432067C81700E24607 /* FMTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMTabBarViewController.h; sourceTree = "<group>"; };
 		57DED5442067C81700E24607 /* FMTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTabBarViewController.m; sourceTree = "<group>"; };
 		57DED5482067CF7B00E24607 /* tabbar_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_home@2x.png"; sourceTree = "<group>"; };
@@ -639,6 +645,10 @@
 		57DED5582067D22400E24607 /* FMCategories */ = {
 			isa = PBXGroup;
 			children = (
+				57C3D56F2068C4D200E0B8BA /* CGGeometryAdditions.h */,
+				57C3D56E2068C4D200E0B8BA /* CGGeometryAdditions.m */,
+				57C3D56C2068C45F00E0B8BA /* UIView+Utilities.h */,
+				57C3D56B2068C45E00E0B8BA /* UIView+Utilities.m */,
 				57DED5602067D39600E24607 /* UIImage+Alpha.h */,
 				57DED55F2067D39600E24607 /* UIImage+Alpha.m */,
 				57DED55D2067D36500E24607 /* UIImage+RoundedCorner.h */,
@@ -1006,6 +1016,7 @@
 				572E6A842063ABD1008114EA /* CardInfoModel.m in Sources */,
 				57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */,
 				572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */,
+				57C3D5702068C4D300E0B8BA /* CGGeometryAdditions.m in Sources */,
 				57B544072062727F00701F9C /* Sample.xcdatamodeld in Sources */,
 				57DED5452067C81700E24607 /* FMTabBarViewController.m in Sources */,
 				572E6A8E2063CA55008114EA /* JSONKit.m in Sources */,
@@ -1037,6 +1048,7 @@
 				57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */,
 				57C3D5672068A7DB00E0B8BA /* MainHeaderView.m in Sources */,
 				57B5445A206281F400701F9C /* FMUtility.m in Sources */,
+				57C3D56D2068C45F00E0B8BA /* UIView+Utilities.m in Sources */,
 				57B5444320627B6900701F9C /* FMRequest.m in Sources */,
 				57B544842062850000701F9C /* APPSettingManager.m in Sources */,
 			);

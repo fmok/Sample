@@ -63,6 +63,9 @@
         _mePulledTableView.backgroundColor = [UIColor whiteColor];
         _mePulledTableView.delegate = self.control;
         _mePulledTableView.dataSource = self.control;
+        _mePulledTableView.estimatedRowHeight = 0;
+        _mePulledTableView.estimatedSectionHeaderHeight = 0;
+        _mePulledTableView.estimatedSectionFooterHeight = 0;
     }
     return _mePulledTableView;
 }

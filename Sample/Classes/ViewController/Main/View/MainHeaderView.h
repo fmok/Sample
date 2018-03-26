@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+#define W_MainHeaderView kScreenWidth
+#define H_MainHeaderView (W_MainHeaderView*9.f/16.f)
+
 @interface MainHeaderView : UIView
+
+@property (nonatomic, strong) UIImageView *imgView;
 
 @end
