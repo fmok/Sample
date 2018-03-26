@@ -50,6 +50,7 @@
 		57C3D55E20689BF400E0B8BA /* CardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D55D20689BF400E0B8BA /* CardDetailViewController.m */; };
 		57C3D5612068A11700E0B8BA /* top_navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C3D5602068A11700E0B8BA /* top_navigation_back@2x.png */; };
 		57C3D5672068A7DB00E0B8BA /* MainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5662068A7DB00E0B8BA /* MainHeaderView.m */; };
+		57C3D56A2068BBAE00E0B8BA /* FMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5692068BBAE00E0B8BA /* FMConstants.m */; };
 		57DED5452067C81700E24607 /* FMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5442067C81700E24607 /* FMTabBarViewController.m */; };
 		57DED5502067CF7B00E24607 /* tabbar_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5482067CF7B00E24607 /* tabbar_home@2x.png */; };
 		57DED5512067CF7B00E24607 /* tabbar_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5492067CF7B00E24607 /* tabbar_home@3x.png */; };
@@ -169,6 +170,8 @@
 		57C3D5602068A11700E0B8BA /* top_navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_navigation_back@2x.png"; sourceTree = "<group>"; };
 		57C3D5652068A7DB00E0B8BA /* MainHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainHeaderView.h; sourceTree = "<group>"; };
 		57C3D5662068A7DB00E0B8BA /* MainHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainHeaderView.m; sourceTree = "<group>"; };
+		57C3D5682068BBAE00E0B8BA /* FMConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMConstants.h; sourceTree = "<group>"; };
+		57C3D5692068BBAE00E0B8BA /* FMConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMConstants.m; sourceTree = "<group>"; };
 		57DED5432067C81700E24607 /* FMTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMTabBarViewController.h; sourceTree = "<group>"; };
 		57DED5442067C81700E24607 /* FMTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTabBarViewController.m; sourceTree = "<group>"; };
 		57DED5482067CF7B00E24607 /* tabbar_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_home@2x.png"; sourceTree = "<group>"; };
@@ -473,6 +476,8 @@
 				57B544562062801D00701F9C /* FMSystemMacro.h */,
 				57B54489206286D700701F9C /* FMURLMacro.h */,
 				572E6A7B20637F64008114EA /* FMColorMacro.h */,
+				57C3D5682068BBAE00E0B8BA /* FMConstants.h */,
+				57C3D5692068BBAE00E0B8BA /* FMConstants.m */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -1011,6 +1016,7 @@
 				57B5444620627B8B00701F9C /* MainControl.m in Sources */,
 				57DED56E2067D42100E24607 /* UIImageView+LBBlurredImage.m in Sources */,
 				57DED56D2067D42100E24607 /* UIImageEffects.m in Sources */,
+				57C3D56A2068BBAE00E0B8BA /* FMConstants.m in Sources */,
 				57C3D55E20689BF400E0B8BA /* CardDetailViewController.m in Sources */,
 				57B5440F2062727F00701F9C /* main.m in Sources */,
 				57B54440206278B600701F9C /* MainViewController.m in Sources */,
