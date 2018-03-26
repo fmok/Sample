@@ -278,6 +278,7 @@
 				57B543FC2062727F00701F9C /* AppDelegate.h */,
 				57B543FD2062727F00701F9C /* AppDelegate.m */,
 				57B5445B206282CF00701F9C /* Dependencies */,
+				57DED5462067CF7B00E24607 /* Resource */,
 				57B544022062727F00701F9C /* Main.storyboard */,
 				57B544082062727F00701F9C /* Assets.xcassets */,
 				57B5440A2062727F00701F9C /* LaunchScreen.storyboard */,
@@ -310,7 +311,6 @@
 		57B544312062760B00701F9C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				57DED5462067CF7B00E24607 /* Resource */,
 				57B54481206284EE00701F9C /* DataManager */,
 				57B54457206281E300701F9C /* Utility */,
 				57B544552062800D00701F9C /* Macro */,
