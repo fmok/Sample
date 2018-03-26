@@ -8,7 +8,6 @@
 
 #import "Control.h"
 #import "SampleListAPI.h"
-#import "HUD.h"
 #import "CardListModel.h"
 #import "UIImageView+WebCache.h"
 #import "UITableView+FDTemplateLayoutCell.h"
@@ -85,12 +84,12 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
             [weakSelf serializeData:modelObj];
         } else {
             // 业务错误
-            [HUD showTipWithText:request.responseJMMessage];
+            [weakSelf.vc showHUDTip:request.responseJMMessage];
         }
         [weakSelf.vc.pulledTableView finishRefreshTableWithType:PulledTableViewTypeDown isUpdateTime:isRight];
     } failure:^(FMRequest *request, id modelObj) {
         // 网络错误
-        [HUD showTipWithText:modelObj];
+        [weakSelf.vc showHUDTip:modelObj];
         [weakSelf.vc.pulledTableView finishRefreshTableWithType:PulledTableViewTypeDown isUpdateTime:NO];
     }];
 }
@@ -110,11 +109,11 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
         if (isRight) {
             [weakSelf serializeData:modelObj];
         } else {
-            [HUD showTipWithText:request.responseJMMessage];
+            [weakSelf.vc showHUDTip:request.responseJMMessage];
         }
         [weakSelf.vc.pulledTableView finishRefreshTableWithType:PulledTableViewTypeUp isUpdateTime:isRight];
     } failure:^(FMRequest *request, id modelObj) {
-        [HUD showTipWithText:modelObj];
+        [weakSelf.vc showHUDTip:modelObj];
         [weakSelf.vc.pulledTableView finishRefreshTableWithType:PulledTableViewTypeUp isUpdateTime:NO];
     }];
 }

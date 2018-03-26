@@ -51,18 +51,18 @@
 }
 
 #pragma mark - 处理statusBar
-- (void)setNeedsStatusBarAppearanceUpdateToHide:(BOOL)hidden {
-    self.statusBarHidden = hidden;
-    [self setNeedsStatusBarAppearanceUpdate];
-}
+//- (void)setNeedsStatusBarAppearanceUpdateToHide:(BOOL)hidden {
+//    self.statusBarHidden = hidden;
+//    [self setNeedsStatusBarAppearanceUpdate];
+//}
 
-- (BOOL)prefersStatusBarHidden {
-    return self.statusBarHidden;
-}
+//- (BOOL)prefersStatusBarHidden {
+//    return self.statusBarHidden;
+//}
 
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleDefault;  // UIStatusBarStyleLightContent
-}
+//- (UIStatusBarStyle)preferredStatusBarStyle {
+//    return UIStatusBarStyleDefault;  // UIStatusBarStyleLightContent
+//}
 
 #pragma mark - getter & setter
 - (NSArray *)viewControllersForTab

@@ -44,6 +44,7 @@
 		57B544842062850000701F9C /* APPSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B544832062850000701F9C /* APPSettingManager.m */; };
 		57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B544872062863D00701F9C /* UIDeviceHardware.m */; };
 		57B5448D2062881E00701F9C /* FMRuntimeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5448C2062881E00701F9C /* FMRuntimeEngine.m */; };
+		57C3D5522068944600E0B8BA /* FMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5512068944600E0B8BA /* FMBaseViewController.m */; };
 		57DED5452067C81700E24607 /* FMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5442067C81700E24607 /* FMTabBarViewController.m */; };
 		57DED5502067CF7B00E24607 /* tabbar_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5482067CF7B00E24607 /* tabbar_home@2x.png */; };
 		57DED5512067CF7B00E24607 /* tabbar_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5492067CF7B00E24607 /* tabbar_home@3x.png */; };
@@ -152,6 +153,8 @@
 		57B54489206286D700701F9C /* FMURLMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMURLMacro.h; sourceTree = "<group>"; };
 		57B5448B2062881E00701F9C /* FMRuntimeEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMRuntimeEngine.h; sourceTree = "<group>"; };
 		57B5448C2062881E00701F9C /* FMRuntimeEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMRuntimeEngine.m; sourceTree = "<group>"; };
+		57C3D5502068944600E0B8BA /* FMBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMBaseViewController.h; sourceTree = "<group>"; };
+		57C3D5512068944600E0B8BA /* FMBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMBaseViewController.m; sourceTree = "<group>"; };
 		57DED5432067C81700E24607 /* FMTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMTabBarViewController.h; sourceTree = "<group>"; };
 		57DED5442067C81700E24607 /* FMTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTabBarViewController.m; sourceTree = "<group>"; };
 		57DED5482067CF7B00E24607 /* tabbar_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_home@2x.png"; sourceTree = "<group>"; };
@@ -334,7 +337,9 @@
 		57B544332062760B00701F9C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				57C3D54F2068940100E0B8BA /* Base */,
 				57B54438206278B600701F9C /* Main */,
+				57C3D54D206893BA00E0B8BA /* Me */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -513,6 +518,30 @@
 				57B5448C2062881E00701F9C /* FMRuntimeEngine.m */,
 			);
 			path = RuntimeEngine;
+			sourceTree = "<group>";
+		};
+		57C3D54D206893BA00E0B8BA /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				57C3D54E206893CB00E0B8BA /* ViewController */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		57C3D54E206893CB00E0B8BA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		57C3D54F2068940100E0B8BA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				57C3D5502068944600E0B8BA /* FMBaseViewController.h */,
+				57C3D5512068944600E0B8BA /* FMBaseViewController.m */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		57DED5422067C7FE00E24607 /* TabBar */ = {
@@ -912,6 +941,7 @@
 			files = (
 				575F9AAD2064EC710031BC49 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				57B544802062841400701F9C /* SvUDIDTools.m in Sources */,
+				57C3D5522068944600E0B8BA /* FMBaseViewController.m in Sources */,
 				572E6A842063ABD1008114EA /* CardInfoModel.m in Sources */,
 				57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */,
 				572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */,
