@@ -8,9 +8,11 @@
 
 #import "FMBaseViewController.h"
 #import "PulledTableView.h"
+#import "MeHeaderView.h"
 
 @interface MeViewController : FMBaseViewController
 
 @property (nonatomic, strong) PulledTableView *mePulledTableView;
+@property (nonatomic, strong) MeHeaderView *headerView;
 
 @end

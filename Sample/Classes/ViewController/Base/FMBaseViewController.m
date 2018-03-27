@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor redColor];
     self.zl_automaticallyAdjustsScrollViewInsets = YES;
     [self setNavLeftBarButtonItem];
 }
@@ -28,9 +28,7 @@
 - (void)setNavLeftBarButtonItem
 {
     UIBarButtonItem *backBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"top_navigation_back"] style:UIBarButtonItemStylePlain target:self action:@selector(popVC)];
-    
     self.zl_navigationItem.leftBarButtonItems = @[backBtn];
-    [self.zl_navigationBar setBarTintColor:SRGBCOLOR_HEX(0xffffff)];
     self.zl_navigationBar.tintColor = [UIColor grayColor];
 }
 

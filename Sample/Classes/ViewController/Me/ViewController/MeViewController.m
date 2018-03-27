@@ -8,6 +8,7 @@
 
 #import "MeViewController.h"
 #import "MeControl.h"
+#import "UIImage+Resize.h"
 
 @interface MeViewController ()
 
@@ -21,28 +22,43 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor redColor];
-    [self customNav];
     WS(weakSelf);
     [self.view addSubview:self.mePulledTableView];
     [self.mePulledTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (@available(iOS 11.0, *)) {
-            make.top.equalTo(weakSelf.view.mas_safeAreaLayoutGuideTop).offset(44.f);
-        } else {
-            make.top.equalTo(weakSelf.mas_topLayoutGuide).offset(44.f);
-        }
-        make.left.and.right.and.bottom.equalTo(weakSelf.view);
+//        if (@available(iOS 11.0, *)) {
+//            make.top.equalTo(weakSelf.view.mas_safeAreaLayoutGuideTop).offset(44.f);
+//        } else {
+//            make.top.equalTo(weakSelf.mas_topLayoutGuide).offset(44.f);
+//        }
+//        make.left.and.right.and.bottom.equalTo(weakSelf.view);
+        make.edges.equalTo(weakSelf.view);
     }];
     [self.control registerCell];
-    [self.view bringSubviewToFront:self.zl_navigationBar];
+    [self customNav];
+    [self.mePulledTableView addObserver:self.control forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
 }
 
 #pragma mark - Private methods
 - (void)customNav
 {
-    UINavigationItem *item = [[UINavigationItem alloc] init];
-    item.title = @"我的账户";
-    [self.zl_navigationBar pushNavigationItem:item animated:NO];
     [self.view addSubview:self.zl_navigationBar];
+    // item
+    UINavigationItem *item = [[UINavigationItem alloc] init];
+    item.title = self.title;
+    [self.zl_navigationBar pushNavigationItem:item animated:NO];
+    self.zl_navigationBar.titleTextAttributes = @{
+                                                  NSFontAttributeName: [UIFont boldSystemFontOfSize:20.f],
+                                                  NSForegroundColorAttributeName: [UIColor whiteColor]
+                                                  };
+    [self.zl_navigationBar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:NSClassFromString(@"_UIBarBackground")]) {
+            obj.hidden = YES;
+        }
+    }];
+    // 背景
+    [self.zl_navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    // 底部线
+    [self.zl_navigationBar setShadowImage:[[UIImage alloc] init]];
     [self constraintNavigationBar:self.zl_navigationBar];
 }
 
@@ -66,8 +82,28 @@
         _mePulledTableView.estimatedRowHeight = 0;
         _mePulledTableView.estimatedSectionHeaderHeight = 0;
         _mePulledTableView.estimatedSectionFooterHeight = 0;
+        _mePulledTableView.isHeader = NO;
+        _mePulledTableView.isFooter = NO;
+        _mePulledTableView.tableHeaderView = self.headerView;
+#ifdef __IPHONE_11_0
+        if ([_mePulledTableView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
+            if (@available(iOS 11.0, *)) {
+                _mePulledTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+#endif
     }
     return _mePulledTableView;
+}
+
+- (MeHeaderView *)headerView
+{
+    if (!_headerView) {
+        _headerView = [[MeHeaderView alloc] initWithFrame:CGRectMake(0, 0, W_MeHeaderView, H_MeHeaderView)];
+    }
+    return _headerView;
 }
 
 - (void)didReceiveMemoryWarning {

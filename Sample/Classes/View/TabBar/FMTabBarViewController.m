@@ -39,7 +39,7 @@
 {
     for (NSInteger i = 0; i < self.viewControllers.count; i++) {
         UIViewController *viewController = self.viewControllers[i];
-        
+        viewController.title = [self titleStrForTabVC:i];
         UIImage *image = [self imageForState:UIControlStateNormal atIndex:i];
         UIImage *selectedImage = [self imageForState:UIControlStateSelected atIndex:i];
         
@@ -91,6 +91,20 @@
         }
             break;
     }
+}
+
+- (NSString *)titleStrForTabVC:(NSInteger)index
+{
+    NSArray *titleArr = [self titlesForTabVC];
+    return [titleArr objectAtIndex:index];
+}
+
+- (NSArray *)titlesForTabVC
+{
+    return @[
+             @"",
+             @"我的账户"
+             ];
 }
 
 #pragma mark - 处理statusBar

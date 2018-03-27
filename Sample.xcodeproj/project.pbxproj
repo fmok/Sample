@@ -19,6 +19,7 @@
 		572E6A8D2063CA55008114EA /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A892063CA55008114EA /* CHANGELOG.md */; };
 		572E6A8E2063CA55008114EA /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A8B2063CA55008114EA /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		572E6A8F2063CA55008114EA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A8C2063CA55008114EA /* README.md */; };
+		5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57572589206A17BB0085D6BF /* MeHeaderView.m */; };
 		575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA12064D0DF0031BC49 /* InfoCell.m */; };
 		575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA52064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m */; };
 		575F9AAD2064EC710031BC49 /* UITableView+FDKeyedHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA72064EC710031BC49 /* UITableView+FDKeyedHeightCache.m */; };
@@ -109,6 +110,8 @@
 		572E6A8A2063CA55008114EA /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		572E6A8B2063CA55008114EA /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		572E6A8C2063CA55008114EA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		57572588206A17BB0085D6BF /* MeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeHeaderView.h; sourceTree = "<group>"; };
+		57572589206A17BB0085D6BF /* MeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeHeaderView.m; sourceTree = "<group>"; };
 		575F9AA02064D0DF0031BC49 /* InfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
 		575F9AA12064D0DF0031BC49 /* InfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoCell.m; sourceTree = "<group>"; };
 		575F9AA42064EC710031BC49 /* UITableView+FDIndexPathHeightCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDIndexPathHeightCache.h"; sourceTree = "<group>"; };
@@ -258,6 +261,15 @@
 				572E6A8C2063CA55008114EA /* README.md */,
 			);
 			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		57572587206A17A40085D6BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57572588206A17BB0085D6BF /* MeHeaderView.h */,
+				57572589206A17BB0085D6BF /* MeHeaderView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		575F9AA32064EC710031BC49 /* FDTemplateLayout */ = {
@@ -551,6 +563,7 @@
 		57C3D54D206893BA00E0B8BA /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				57572587206A17A40085D6BF /* View */,
 				57C3D556206898B400E0B8BA /* Control */,
 				57C3D54E206893CB00E0B8BA /* ViewController */,
 			);
@@ -1047,6 +1060,7 @@
 				57DED55E2067D36500E24607 /* UIImage+RoundedCorner.m in Sources */,
 				57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */,
 				57C3D5672068A7DB00E0B8BA /* MainHeaderView.m in Sources */,
+				5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */,
 				57B5445A206281F400701F9C /* FMUtility.m in Sources */,
 				57C3D56D2068C45F00E0B8BA /* UIView+Utilities.m in Sources */,
 				57B5444320627B6900701F9C /* FMRequest.m in Sources */,
