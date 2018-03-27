@@ -8,6 +8,8 @@
 
 #import "FMAlertView.h"
 
+static CGFloat const backgroundAlpha = 0.5;
+
 @interface FMAlertView()
 
 @property(nonatomic, strong) UIView *mainView;  // 弹窗 view
@@ -64,7 +66,7 @@
 - (void)viewInitUI
 {
     UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
-    [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.8]];
+    [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:backgroundAlpha]];
     [window addSubview:self];
     
     [self addSubview:self.mainView];
@@ -210,7 +212,7 @@
 {
     [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0]];
     [UIView animateWithDuration:0.1 animations:^{
-        [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.8]];
+        [self setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:backgroundAlpha]];
     }];
     
     self.mainView.transform = CGAffineTransformMakeScale(0.4, 0.4);
