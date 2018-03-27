@@ -10,13 +10,13 @@
 
 @interface FMAlertView()
 
-@property(nonatomic,strong)UIView *mainView;  // 弹窗 view
-@property (nonatomic,strong)UIView *contentView;  // 弹窗内容的View
-@property(nonatomic,strong)UILabel *headerTitleLabel;  // 头部的标题 label
-@property(nonatomic,strong)UILabel *contentTextLabel;  // 弹窗内容 label
-@property(nonatomic,strong)UIButton *closedButton;  // 关闭按钮 button
-@property(nonatomic,strong)UIButton *confirmButton;  // 确认按钮 button
-@property(nonatomic,strong)UIButton *cancelButton;  // 取消按钮 button
+@property(nonatomic, strong) UIView *mainView;  // 弹窗 view
+@property (nonatomic, strong) UIView *contentView;  // 弹窗内容的View
+@property(nonatomic, strong) UILabel *headerTitleLabel;  // 头部的标题 label
+@property(nonatomic, strong) UILabel *contentTextLabel;  // 弹窗内容 label
+@property(nonatomic, strong) UIButton *closedButton;  // 关闭按钮 button
+@property(nonatomic, strong) UIButton *confirmButton;  // 确认按钮 button
+@property(nonatomic, strong) UIButton *cancelButton;  // 取消按钮 button
 
 @end
 
@@ -45,14 +45,14 @@
     [self viewInitUI];
     
     switch (style) {
-        case SimpleAlert:
+        case AlertStyleSimpleAlert:
             [self simpleAlertViewInitUI];
             break;
-        case ConfirmAlert:
+        case AlertStyleConfirmAlert:
             [self confirmAlertViewInitUI];
             
             break;
-        case CancelAndConfirmAlert:
+        case AlertStyleCancelAndConfirmAlert:
             [self cancelAndConfirmAlertViewInitUI];
             break;
     }
@@ -179,9 +179,9 @@
     [self.contentView addSubview:self.contentTextLabel];
     
     [self.contentTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(10);
-        make.left.equalTo(self.contentView);
-        make.right.equalTo(self.contentView);
+        make.top.equalTo(self.contentView).offset(24.f);
+        make.left.equalTo(self.contentView).offset(10.f);
+        make.right.equalTo(self.contentView).offset(-10.f);
     }];
     
     NSMutableArray *arrayM = @[].mutableCopy;
@@ -192,7 +192,7 @@
     [arrayM mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@40);
         make.bottom.equalTo(self.mainView);
-        make.top.equalTo(self.contentTextLabel.mas_bottom).offset(10);
+        make.top.equalTo(self.contentTextLabel.mas_bottom).offset(30);
     }];
 }
 
@@ -252,8 +252,8 @@
  */
 - (void)setIsClickBackgroundCloseWindow:(BOOL)isClickBackgroundCloseWindow
 {
-    if(isClickBackgroundCloseWindow){
-        UITapGestureRecognizer*tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(exit)];
+    if (isClickBackgroundCloseWindow) {
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(exit)];
         [self addGestureRecognizer:tapGesture];
     }
 }
@@ -310,7 +310,7 @@
         _closedButton = [[UIButton alloc]init];
         [_closedButton setImage:[UIImage imageNamed:@"closed.png"] forState:UIControlStateNormal];
         [_closedButton addTarget:self action:@selector(closedButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-        _closedButton.hidden = YES;
+//        _closedButton.hidden = YES;
     }
     return _closedButton;
 }

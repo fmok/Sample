@@ -31,9 +31,7 @@ static NSString *const kCellReusedIdentifierStr = @"cellReusedIdentifierStr";
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-#if 1
-    FMAlertView *alert = [[FMAlertView alloc] initWithStyle:CancelAndConfirmAlert width:0.8];
-    alert.isClickBackgroundCloseWindow = YES;
+    FMAlertView *alert = [[FMAlertView alloc] initWithStyle:AlertStyleConfirmAlert width:0.8];
     [alert setTitleText:@"当前价格: 500LUK" contentText:@"每位用户在该卡牌预售期仅能持有一张" confirmBtnText:@"确认购买" cancelBtnText:@"取消"];
     alert.confirm = ^(){
         TTDPRINT(@"Confirm");
@@ -42,12 +40,6 @@ static NSString *const kCellReusedIdentifierStr = @"cellReusedIdentifierStr";
         TTDPRINT(@"Cancel");
     };
     [alert show];
-#else
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"当前价格: 500LUK" message:@"每位用户在该卡牌预售期仅能持有一张" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确认购买", nil];
-    [alert show];
-#endif
-    
-    
     
 //    CardDetailViewController *vc = [[CardDetailViewController alloc] init];
 //    vc.title = [NSString stringWithFormat:@"%@ - %@", @(indexPath.section), @(indexPath.row)];

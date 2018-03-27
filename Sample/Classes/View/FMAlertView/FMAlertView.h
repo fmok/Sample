@@ -16,22 +16,22 @@
  - CancelAndConfirmAlert: 有两个按钮的弹窗样式
  */
 typedef NS_ENUM(NSInteger,AlertStyle) {
-    SimpleAlert = 0,
-    ConfirmAlert,
-    CancelAndConfirmAlert
+    AlertStyleSimpleAlert = 0,
+    AlertStyleConfirmAlert,
+    AlertStyleCancelAndConfirmAlert
 };
 
 @interface FMAlertView : UIView
 
-@property (nonatomic, copy) void(^confirm)(void);
-@property (nonatomic, copy) void(^cancel)(void);
+@property (nonatomic, copy) void (^confirm)(void);
+@property (nonatomic, copy) void (^cancel)(void);
 
 @property (nonatomic,assign) UIColor *confirmBackgroundColor;
 
 /**
  点击背景是否可关闭弹窗
  */
-@property (nonatomic,assign) BOOL isClickBackgroundCloseWindow;
+@property (nonatomic, assign) BOOL isClickBackgroundCloseWindow;
 
 - (instancetype)initWithStyle:(AlertStyle)style;
 - (instancetype)initWithStyle:(AlertStyle)style width:(CGFloat)width;
