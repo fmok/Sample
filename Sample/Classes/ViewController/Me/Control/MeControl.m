@@ -8,6 +8,7 @@
 
 #import "MeControl.h"
 #import "CardDetailViewController.h"
+#import "FMAlertView.h"
 
 static NSString *const kCellReusedIdentifierStr = @"cellReusedIdentifierStr";
 
@@ -28,9 +29,26 @@ static NSString *const kCellReusedIdentifierStr = @"cellReusedIdentifierStr";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CardDetailViewController *vc = [[CardDetailViewController alloc] init];
-    vc.title = [NSString stringWithFormat:@"%@ - %@", @(indexPath.section), @(indexPath.row)];
-    [self.vc.zl_navigationController pushViewController:vc animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+#if 1
+    FMAlertView *alert = [[FMAlertView alloc] initWithStyle:ConfirmAlert width:0.8];
+    alert.isClickBackgroundCloseWindow = YES;
+    [alert setTitleText:@"当前价格: 500LUK" contentText:@"每位用户在该卡牌预售期仅能持有一张" confirmBtnText:@"确认购买"];
+    alert.confirm = ^(){
+        TTDPRINT(@"Click on the Ok");
+    };
+    [alert show];
+#else
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"当前价格: 500LUK" message:@"每位用户在该卡牌预售期仅能持有一张" delegate:self cancelButtonTitle:nil otherButtonTitles:@"确认购买", nil];
+    [alert show];
+#endif
+    
+    
+    
+//    CardDetailViewController *vc = [[CardDetailViewController alloc] init];
+//    vc.title = [NSString stringWithFormat:@"%@ - %@", @(indexPath.section), @(indexPath.row)];
+//    [self.vc.zl_navigationController pushViewController:vc animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
