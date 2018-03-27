@@ -32,11 +32,14 @@ static NSString *const kCellReusedIdentifierStr = @"cellReusedIdentifierStr";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
 #if 1
-    FMAlertView *alert = [[FMAlertView alloc] initWithStyle:ConfirmAlert width:0.8];
+    FMAlertView *alert = [[FMAlertView alloc] initWithStyle:CancelAndConfirmAlert width:0.8];
     alert.isClickBackgroundCloseWindow = YES;
-    [alert setTitleText:@"当前价格: 500LUK" contentText:@"每位用户在该卡牌预售期仅能持有一张" confirmBtnText:@"确认购买"];
+    [alert setTitleText:@"当前价格: 500LUK" contentText:@"每位用户在该卡牌预售期仅能持有一张" confirmBtnText:@"确认购买" cancelBtnText:@"取消"];
     alert.confirm = ^(){
-        TTDPRINT(@"Click on the Ok");
+        TTDPRINT(@"Confirm");
+    };
+    alert.cancel = ^(){
+        TTDPRINT(@"Cancel");
     };
     [alert show];
 #else

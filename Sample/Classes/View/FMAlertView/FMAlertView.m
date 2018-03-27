@@ -100,11 +100,12 @@
 }
 
 #pragma mark - Public methods
-- (void)setTitleText:(NSString *)title contentText:(NSString *)content confirmBtnText:(NSString *)confirmText
+- (void)setTitleText:(NSString *)title contentText:(NSString *)content confirmBtnText:(NSString *)confirmText cancelBtnText:(NSString *)cancelText
 {
     self.headerTitleLabel.text = CHANGE_TO_STRING(title);
     self.contentTextLabel.attributedText = [self attributedStringForString:content lineSpacing:5];
     [self.confirmButton setTitle:confirmText forState:UIControlStateNormal];
+    [self.cancelButton setTitle:cancelText forState:UIControlStateNormal];
 }
 
 /**
@@ -263,7 +264,6 @@
 - (void)setConfirmBackgroundColor:(UIColor *)confirmBackgroundColor
 {
     [self.confirmButton setBackgroundColor:confirmBackgroundColor];
-    [self.confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 - (UIView*)mainView
@@ -282,7 +282,7 @@
     if(!_confirmButton) {
         _confirmButton = [[UIButton alloc]init];
         [_confirmButton setBackgroundColor:[UIColor blueColor]];
-        [_confirmButton setTitle:@"Ok" forState:UIControlStateNormal];
+        [_confirmButton setTitle:@"确认" forState:UIControlStateNormal];
         [_confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
         [_confirmButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
@@ -295,7 +295,7 @@
     if(!_cancelButton) {
         _cancelButton = [[UIButton alloc]init];
         [_cancelButton setBackgroundColor:SRGBCOLOR_HEX(0XEBECED)];
-        [_cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+        [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
         [_cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_cancelButton setTitleColor:SRGBCOLOR_HEX(0X3d3d3d) forState:UIControlStateNormal];
         [_cancelButton.titleLabel setFont:[UIFont systemFontOfSize:15]];

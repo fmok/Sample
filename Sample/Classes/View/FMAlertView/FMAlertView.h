@@ -18,7 +18,7 @@
 typedef NS_ENUM(NSInteger,AlertStyle) {
     SimpleAlert = 0,
     ConfirmAlert,
-    CancelAndConfirmAlert,
+    CancelAndConfirmAlert
 };
 
 @interface FMAlertView : UIView
@@ -31,12 +31,12 @@ typedef NS_ENUM(NSInteger,AlertStyle) {
 /**
  点击背景是否可关闭弹窗
  */
-@property (nonatomic,assign)BOOL isClickBackgroundCloseWindow;
+@property (nonatomic,assign) BOOL isClickBackgroundCloseWindow;
 
 - (instancetype)initWithStyle:(AlertStyle)style;
 - (instancetype)initWithStyle:(AlertStyle)style width:(CGFloat)width;
 
-- (void)setTitleText:(NSString *)title contentText:(NSString *)content confirmBtnText:(NSString *)confirmText;
+- (void)setTitleText:(NSString *)title contentText:(NSString *)content confirmBtnText:(NSString *)confirmText cancelBtnText:(NSString *)cancelText;
 
 - (void)show;
 
