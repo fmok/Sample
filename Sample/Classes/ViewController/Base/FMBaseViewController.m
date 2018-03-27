@@ -20,16 +20,27 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     self.zl_automaticallyAdjustsScrollViewInsets = YES;
-    [self setNavLeftBarButtonItem];
+    [self setNavInitialSetup];
 }
 
 #pragma mark - Private methods
-//统一设置导航栏返回按钮
-- (void)setNavLeftBarButtonItem
+/**
+ 导航初始设置
+ */
+- (void)setNavInitialSetup
 {
+    // 返回按钮
     UIBarButtonItem *backBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"top_navigation_back"] style:UIBarButtonItemStylePlain target:self action:@selector(popVC)];
     self.zl_navigationItem.leftBarButtonItems = @[backBtn];
-    self.zl_navigationBar.tintColor = [UIColor grayColor];
+    // 线条颜色
+    self.zl_navigationBar.tintColor = [UIColor whiteColor];
+    // 透明度
+    [self.zl_navigationBar setValue:@(0)forKeyPath:@"backgroundView.alpha"];
+    // 文字样式
+    self.zl_navigationBar.titleTextAttributes = @{
+                                                  NSFontAttributeName: [UIFont boldSystemFontOfSize:20.f],
+                                                  NSForegroundColorAttributeName: [UIColor whiteColor]
+                                                  };
 }
 
 #pragma mark - Public methods

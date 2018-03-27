@@ -41,24 +41,10 @@
 #pragma mark - Private methods
 - (void)customNav
 {
-    [self.view addSubview:self.zl_navigationBar];
-    // item
     UINavigationItem *item = [[UINavigationItem alloc] init];
     item.title = self.title;
     [self.zl_navigationBar pushNavigationItem:item animated:NO];
-    self.zl_navigationBar.titleTextAttributes = @{
-                                                  NSFontAttributeName: [UIFont boldSystemFontOfSize:20.f],
-                                                  NSForegroundColorAttributeName: [UIColor whiteColor]
-                                                  };
-    [self.zl_navigationBar.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if ([obj isKindOfClass:NSClassFromString(@"_UIBarBackground")]) {
-            obj.hidden = YES;
-        }
-    }];
-    // 背景
-    [self.zl_navigationBar setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-    // 底部线
-    [self.zl_navigationBar setShadowImage:[[UIImage alloc] init]];
+    [self.view addSubview:self.zl_navigationBar];
     [self constraintNavigationBar:self.zl_navigationBar];
 }
 
