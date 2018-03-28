@@ -10,4 +10,6 @@
 
 @interface MainHeaderView : UIView
 
+- (void)updateContent;
+
 @end

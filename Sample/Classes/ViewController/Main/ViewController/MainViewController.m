@@ -37,6 +37,7 @@
         make.right.equalTo(weakSelf.view).offset(-Insert_left_right);
     }];
     [self.control registerCell];
+    [self.control loadData];
 }
 
 #pragma mark - getter & setter

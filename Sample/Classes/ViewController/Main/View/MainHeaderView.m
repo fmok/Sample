@@ -16,6 +16,7 @@ static CGFloat H_SignIn_Btn = 40.f;
 @property (nonatomic, strong) UIImageView *bgImgView;
 @property (nonatomic, strong) UIView *tipsView;
 @property (nonatomic, strong) UIButton *signInBtn;
+@property (nonatomic, strong) UIImageView *trumpetImgView;  // 喇叭
 
 @end
 
@@ -29,6 +30,7 @@ static CGFloat H_SignIn_Btn = 40.f;
         [self addSubview:self.bgImgView];
         [self addSubview:self.tipsView];
         [self addSubview:self.signInBtn];
+        [self addSubview:self.trumpetImgView];
     }
     return self;
 }
@@ -45,15 +47,27 @@ static CGFloat H_SignIn_Btn = 40.f;
         make.bottom.equalTo(weakSelf);
         make.left.equalTo(weakSelf).offset(15.f);
         make.right.equalTo(weakSelf).offset(-15.f);
-        make.height.mas_equalTo(50.f);
+        make.height.mas_equalTo(55.f);
     }];
     [self.signInBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(weakSelf.tipsView.mas_top).offset(H_SignIn_Btn/2.f-4.f);
+        make.bottom.equalTo(weakSelf.tipsView.mas_top).offset(H_SignIn_Btn/2.f-8.f);
         make.centerX.equalTo(weakSelf.tipsView);
         make.size.mas_equalTo(CGSizeMake(W_SignIn_Btn, H_SignIn_Btn));
     }];
-    
+    [self.trumpetImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.tipsView).offset(12.f);
+        make.bottom.equalTo(weakSelf.tipsView).offset(-12.f);
+        make.size.mas_equalTo(CGSizeMake(20.f, 20.f));
+    }];
     [super updateConstraints];
+}
+
+#pragma mark - Public methods
+- (void)updateContent
+{
+    
+    [self setNeedsUpdateConstraints];
+    [self updateConstraintsIfNeeded];
 }
 
 #pragma mark - Events
@@ -96,6 +110,15 @@ static CGFloat H_SignIn_Btn = 40.f;
         [_signInBtn addTarget:self action:@selector(tapSignIn:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _signInBtn;
+}
+
+- (UIImageView *)trumpetImgView
+{
+    if (!_trumpetImgView) {
+        _trumpetImgView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        _trumpetImgView.backgroundColor = [UIColor redColor];
+    }
+    return _trumpetImgView;
 }
 
 /*

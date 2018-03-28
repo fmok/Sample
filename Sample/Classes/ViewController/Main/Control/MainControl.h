@@ -17,5 +17,6 @@
 @property (nonatomic, weak) MainViewController *vc;
 
 - (void)registerCell;
+- (void)loadData;
 
 @end

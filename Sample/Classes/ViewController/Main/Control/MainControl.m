@@ -27,13 +27,23 @@ static NSString *const kCollectionSectionHeaderViewReusedIdentifierStr = @"kColl
     [self.vc.pulledCollectionView registerClass:[CollectionSectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCollectionSectionHeaderViewReusedIdentifierStr];
 }
 
+- (void)loadData
+{
+    [self.vc.pulledCollectionView refreshingDataSourceImmediately:YES];
+}
+
 #pragma mark - Private methods
+- (void)serializeData
+{
+    [self.vc.headerView updateContent];
+}
 
 #pragma mark - PulledCollectionViewTypeDelegate
 - (void)refreshWithPulledCollectionView:(PulledCollectionView *)collectionView
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [collectionView finishRefreshCollectionViewWithType:PulledCollectionViewTypeDown];
+        [self serializeData];
     });
 }
 
