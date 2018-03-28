@@ -53,7 +53,7 @@
 - (void)configNavBarBackgroundImage:(UIImage *)image
 {
     if (@available(iOS 11, *)) {
-        
+        self.zl_navigationBar.translucent = NO;
     } else {
         [self.zl_navigationBar setValue:@(1)forKeyPath:@"backgroundView.alpha"];
     }

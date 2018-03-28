@@ -20,6 +20,8 @@
 		572E6A8E2063CA55008114EA /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A8B2063CA55008114EA /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		572E6A8F2063CA55008114EA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A8C2063CA55008114EA /* README.md */; };
 		5737957D206B39AB00388BCC /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 5737957C206B39AB00388BCC /* nav.png */; };
+		57379581206B4ACB00388BCC /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379580206B4ACA00388BCC /* SwipeView.m */; };
+		57379585206B4B4700388BCC /* FMSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379584206B4B4700388BCC /* FMSegmentControl.m */; };
 		5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57572589206A17BB0085D6BF /* MeHeaderView.m */; };
 		575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA12064D0DF0031BC49 /* InfoCell.m */; };
 		575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA52064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m */; };
@@ -116,6 +118,10 @@
 		572E6A8B2063CA55008114EA /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		572E6A8C2063CA55008114EA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5737957C206B39AB00388BCC /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav.png; sourceTree = "<group>"; };
+		5737957F206B4ACA00388BCC /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
+		57379580206B4ACA00388BCC /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
+		57379583206B4B4700388BCC /* FMSegmentControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMSegmentControl.h; sourceTree = "<group>"; };
+		57379584206B4B4700388BCC /* FMSegmentControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMSegmentControl.m; sourceTree = "<group>"; };
 		57572588206A17BB0085D6BF /* MeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeHeaderView.h; sourceTree = "<group>"; };
 		57572589206A17BB0085D6BF /* MeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeHeaderView.m; sourceTree = "<group>"; };
 		575F9AA02064D0DF0031BC49 /* InfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
@@ -274,6 +280,24 @@
 			path = JSONKit;
 			sourceTree = "<group>";
 		};
+		5737957E206B4ACA00388BCC /* SwipeView */ = {
+			isa = PBXGroup;
+			children = (
+				5737957F206B4ACA00388BCC /* SwipeView.h */,
+				57379580206B4ACA00388BCC /* SwipeView.m */,
+			);
+			path = SwipeView;
+			sourceTree = "<group>";
+		};
+		57379582206B4B2500388BCC /* SegmentControl */ = {
+			isa = PBXGroup;
+			children = (
+				57379583206B4B4700388BCC /* FMSegmentControl.h */,
+				57379584206B4B4700388BCC /* FMSegmentControl.m */,
+			);
+			path = SegmentControl;
+			sourceTree = "<group>";
+		};
 		57572587206A17A40085D6BF /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +430,7 @@
 		57B544352062780E00701F9C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57379582206B4B2500388BCC /* SegmentControl */,
 				578320B4206A53BD00E2D67F /* FMAlertView */,
 				57DED5422067C7FE00E24607 /* TabBar */,
 				57B5444D20627CB700701F9C /* Navigation */,
@@ -536,6 +561,7 @@
 		57B5445B206282CF00701F9C /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				5737957E206B4ACA00388BCC /* SwipeView */,
 				57DED5652067D42100E24607 /* LBBlurredImage */,
 				57DED5582067D22400E24607 /* FMCategories */,
 				575F9AA32064EC710031BC49 /* FDTemplateLayout */,
@@ -1053,6 +1079,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				575F9AAD2064EC710031BC49 /* UITableView+FDKeyedHeightCache.m in Sources */,
+				57379581206B4ACB00388BCC /* SwipeView.m in Sources */,
 				57B544802062841400701F9C /* SvUDIDTools.m in Sources */,
 				57C3D5522068944600E0B8BA /* FMBaseViewController.m in Sources */,
 				572E6A842063ABD1008114EA /* CardInfoModel.m in Sources */,
@@ -1071,6 +1098,7 @@
 				57DED56E2067D42100E24607 /* UIImageView+LBBlurredImage.m in Sources */,
 				57DED56D2067D42100E24607 /* UIImageEffects.m in Sources */,
 				57C3D56A2068BBAE00E0B8BA /* FMConstants.m in Sources */,
+				57379585206B4B4700388BCC /* FMSegmentControl.m in Sources */,
 				57C3D55E20689BF400E0B8BA /* CardDetailViewController.m in Sources */,
 				57B5440F2062727F00701F9C /* main.m in Sources */,
 				57B54440206278B600701F9C /* MainViewController.m in Sources */,
