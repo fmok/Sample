@@ -15,6 +15,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.f green:arc4random()%255/255.f blue:arc4random()%255/255.f alpha:1];
+        self.layer.cornerRadius = 10.f;
+        self.clipsToBounds = YES;
     }
     return self;
 }

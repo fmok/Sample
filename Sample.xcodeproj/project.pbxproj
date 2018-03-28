@@ -24,6 +24,8 @@
 		57379585206B4B4700388BCC /* FMSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379584206B4B4700388BCC /* FMSegmentControl.m */; };
 		5737958E206B6EC900388BCC /* CardDetailControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737958D206B6EC900388BCC /* CardDetailControl.m */; };
 		57379591206B714300388BCC /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379590206B714300388BCC /* CollectionViewCell.m */; };
+		57379594206B789F00388BCC /* CollectionSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379593206B789F00388BCC /* CollectionSectionHeaderView.m */; };
+		57379597206B826A00388BCC /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379596206B826A00388BCC /* HeaderView.m */; };
 		5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57572589206A17BB0085D6BF /* MeHeaderView.m */; };
 		575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA12064D0DF0031BC49 /* InfoCell.m */; };
 		575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA52064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m */; };
@@ -128,6 +130,10 @@
 		5737958D206B6EC900388BCC /* CardDetailControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardDetailControl.m; sourceTree = "<group>"; };
 		5737958F206B714300388BCC /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		57379590206B714300388BCC /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		57379592206B789F00388BCC /* CollectionSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionSectionHeaderView.h; sourceTree = "<group>"; };
+		57379593206B789F00388BCC /* CollectionSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionSectionHeaderView.m; sourceTree = "<group>"; };
+		57379595206B826A00388BCC /* HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
+		57379596206B826A00388BCC /* HeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		57572588206A17BB0085D6BF /* MeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeHeaderView.h; sourceTree = "<group>"; };
 		57572589206A17BB0085D6BF /* MeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeHeaderView.m; sourceTree = "<group>"; };
 		575F9AA02064D0DF0031BC49 /* InfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
@@ -318,6 +324,10 @@
 			children = (
 				5737958F206B714300388BCC /* CollectionViewCell.h */,
 				57379590206B714300388BCC /* CollectionViewCell.m */,
+				57379592206B789F00388BCC /* CollectionSectionHeaderView.h */,
+				57379593206B789F00388BCC /* CollectionSectionHeaderView.m */,
+				57379595206B826A00388BCC /* HeaderView.h */,
+				57379596206B826A00388BCC /* HeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1136,6 +1146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57379597206B826A00388BCC /* HeaderView.m in Sources */,
 				575F9AAD2064EC710031BC49 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				57379581206B4ACB00388BCC /* SwipeView.m in Sources */,
 				57B544802062841400701F9C /* SvUDIDTools.m in Sources */,
@@ -1165,6 +1176,7 @@
 				575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */,
 				57B5444920627C2C00701F9C /* PulledTableView.m in Sources */,
 				57C3D559206898CA00E0B8BA /* MeControl.m in Sources */,
+				57379594206B789F00388BCC /* CollectionSectionHeaderView.m in Sources */,
 				572E6A872063AFE3008114EA /* CardListModel.m in Sources */,
 				575F9AAE2064EC710031BC49 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				57B543FE2062727F00701F9C /* AppDelegate.m in Sources */,

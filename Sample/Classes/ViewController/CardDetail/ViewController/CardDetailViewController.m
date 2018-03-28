@@ -20,15 +20,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self configNavBarBackgroundImage:[UIImage imageNamed:@"nav.png"]];
+//    [self configNavBarBackgroundImage:[UIImage imageNamed:@"nav.png"]];
+    self.zl_automaticallyAdjustsScrollViewInsets = NO;
+    self.view.backgroundColor = SRGBCOLOR_HEX(0xf5f6f8);
     WS(weakSelf);
+    [self.view addSubview:self.headerView];
+    CGFloat H_header = kScreenWidth*9.f/16.f+20.f;
+    [self.headerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.and.left.and.right.equalTo(weakSelf.view);
+        make.height.mas_equalTo(H_header);
+    }];
     [self.view addSubview:self.pulledCollectionView];
     [self.pulledCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(weakSelf.view);
+        make.top.equalTo(weakSelf.headerView.mas_bottom).offset(10.f);
+        make.bottom.equalTo(weakSelf.view);
+        make.left.equalTo(weakSelf.view).offset(Insert_left_right);
+        make.right.equalTo(weakSelf.view).offset(-Insert_left_right);
     }];
     [self.control registerCell];
 }
-
 
 #pragma mark - getter & setter
 - (PulledCollectionView *)pulledCollectionView
@@ -36,14 +46,17 @@
     if (!_pulledCollectionView) {
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         _pulledCollectionView = [[PulledCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-        _pulledCollectionView.backgroundColor = [UIColor clearColor];
+        _pulledCollectionView.backgroundColor = [UIColor whiteColor];
         _pulledCollectionView.bounces = YES;
         _pulledCollectionView.alwaysBounceVertical = YES;
+        _pulledCollectionView.showsVerticalScrollIndicator = NO;
         _pulledCollectionView.delegate = self.control;
         _pulledCollectionView.dataSource = self.control;
         _pulledCollectionView.pulledDelegate = self.control;
         _pulledCollectionView.isHeader = YES;
-        _pulledCollectionView.isFooter = YES;
+        _pulledCollectionView.isFooter = NO;
+        _pulledCollectionView.layer.cornerRadius = 10.f;
+        _pulledCollectionView.clipsToBounds = YES;
     }
     return _pulledCollectionView;
 }
@@ -55,6 +68,14 @@
         _control.vc = self;
     }
     return _control;
+}
+
+- (HeaderView *)headerView
+{
+    if (!_headerView) {
+        _headerView = [[HeaderView alloc] initWithFrame:CGRectZero];
+    }
+    return _headerView;
 }
 
 - (void)didReceiveMemoryWarning {

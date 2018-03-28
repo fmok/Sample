@@ -130,7 +130,7 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CardDetailViewController *vc = [[CardDetailViewController alloc] init];
-    vc.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
+//    vc.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
     [self.vc.zl_navigationController pushViewController:vc animated:YES];
 }
 

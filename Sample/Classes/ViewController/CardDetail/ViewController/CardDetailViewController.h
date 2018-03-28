@@ -8,9 +8,13 @@
 
 #import "FMBaseViewController.h"
 #import "PulledCollectionView.h"
+#import "HeaderView.h"
+
+#define Insert_left_right 15.f
 
 @interface CardDetailViewController : FMBaseViewController
 
 @property (nonatomic, strong) PulledCollectionView *pulledCollectionView;
+@property (nonatomic, strong) HeaderView *headerView;
 
 @end

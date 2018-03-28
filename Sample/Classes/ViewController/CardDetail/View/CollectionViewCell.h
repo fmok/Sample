@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-#define Gap_MylistenInAlbumCell 27.f  // item 内部间隙
-#define Gap_MylistenInAlnumEdges 12.f  // item 外部间隙
-#define W_H_MylistenInAlbumCell_Image ((kScreenWidth-2*Gap_MylistenInAlnumEdges-2*Gap_MylistenInAlbumCell)/3.f)  // 图片宽高
-#define H_MylistenInAlbumCell (W_H_MylistenInAlbumCell_Image+55.f)  // item 高度
+#define CountHorizontalDirection 2
+
+#define Gap_CollectionViewCell 24.f  // 内部间隔
+#define Gap_CollectionViewEdges 12.f  // 外部间隔
+#define W_CollectionViewCell ((kScreenWidth-2*Gap_CollectionViewEdges-2*Insert_left_right-(CountHorizontalDirection-1)*Gap_CollectionViewCell)/2.f)  // item 宽度
+
+#define H_CollectionViewCell (W_CollectionViewCell+55.f)  // item 高度
 
 @interface CollectionViewCell : UICollectionViewCell
 

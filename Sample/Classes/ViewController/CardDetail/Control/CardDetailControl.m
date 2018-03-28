@@ -8,8 +8,10 @@
 
 #import "CardDetailControl.h"
 #import "CollectionViewCell.h"
+#import "CollectionSectionHeaderView.h"
 
 static NSString *const kCollectionViewCellReusedIdentifierStr = @"kCollectionViewCellReusedIdentifierStr";
+static NSString *const kCollectionSectionHeaderViewReusedIdentifierStr = @"kCollectionSectionHeaderViewReusedIdentifierStr";
 
 @implementation CardDetailControl
 
@@ -21,6 +23,7 @@ static NSString *const kCollectionViewCellReusedIdentifierStr = @"kCollectionVie
 - (void)registerCell
 {
     [self.vc.pulledCollectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:kCollectionViewCellReusedIdentifierStr];
+    [self.vc.pulledCollectionView registerClass:[CollectionSectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCollectionSectionHeaderViewReusedIdentifierStr];
 }
 
 #pragma mark - Private methods
@@ -41,13 +44,23 @@ static NSString *const kCollectionViewCellReusedIdentifierStr = @"kCollectionVie
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    TTDPRINT(@"\n*** %@ - %@ ***\n", @(indexPath.section), @(indexPath.item));
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        CollectionSectionHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCollectionSectionHeaderViewReusedIdentifierStr forIndexPath:indexPath];
+        
+        return header;
+    }
+    return nil;
 }
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return 12;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -66,17 +79,30 @@ static NSString *const kCollectionViewCellReusedIdentifierStr = @"kCollectionVie
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(W_H_MylistenInAlbumCell_Image, H_MylistenInAlbumCell);
+    return CGSizeMake(W_CollectionViewCell, H_CollectionViewCell);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return Gap_MylistenInAlnumEdges;
+    return Gap_CollectionViewEdges;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(Gap_MylistenInAlnumEdges, Gap_MylistenInAlnumEdges, Gap_MylistenInAlnumEdges, Gap_MylistenInAlnumEdges);
+    return UIEdgeInsetsMake(Gap_CollectionViewEdges, Gap_CollectionViewEdges, Gap_CollectionViewEdges, Gap_CollectionViewEdges);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return CGSizeMake(kScreenWidth-2*Insert_left_right, 40.f);
+    }
+    return CGSizeZero;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
+{
+    return CGSizeZero;
 }
 
 
