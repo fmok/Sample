@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MeViewController.h"
+#import "MeCell.h"
 
 @interface MeControl : NSObject<
     UITableViewDelegate,

@@ -26,6 +26,7 @@
 		57379591206B714300388BCC /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379590206B714300388BCC /* CollectionViewCell.m */; };
 		57379594206B789F00388BCC /* CollectionSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379593206B789F00388BCC /* CollectionSectionHeaderView.m */; };
 		57379597206B826A00388BCC /* MainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379596206B826A00388BCC /* MainHeaderView.m */; };
+		5737959A206B95C400388BCC /* MeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379599206B95C400388BCC /* MeCell.m */; };
 		5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57572589206A17BB0085D6BF /* MeHeaderView.m */; };
 		575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA12064D0DF0031BC49 /* InfoCell.m */; };
 		575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA52064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m */; };
@@ -134,6 +135,8 @@
 		57379593206B789F00388BCC /* CollectionSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionSectionHeaderView.m; sourceTree = "<group>"; };
 		57379595206B826A00388BCC /* MainHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainHeaderView.h; sourceTree = "<group>"; };
 		57379596206B826A00388BCC /* MainHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainHeaderView.m; sourceTree = "<group>"; };
+		57379598206B95C400388BCC /* MeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeCell.h; sourceTree = "<group>"; };
+		57379599206B95C400388BCC /* MeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeCell.m; sourceTree = "<group>"; };
 		57572588206A17BB0085D6BF /* MeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeHeaderView.h; sourceTree = "<group>"; };
 		57572589206A17BB0085D6BF /* MeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeHeaderView.m; sourceTree = "<group>"; };
 		575F9AA02064D0DF0031BC49 /* InfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
@@ -365,6 +368,8 @@
 			children = (
 				57572588206A17BB0085D6BF /* MeHeaderView.h */,
 				57572589206A17BB0085D6BF /* MeHeaderView.m */,
+				57379598206B95C400388BCC /* MeCell.h */,
+				57379599206B95C400388BCC /* MeCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1149,6 +1154,7 @@
 				57379597206B826A00388BCC /* MainHeaderView.m in Sources */,
 				575F9AAD2064EC710031BC49 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				57379581206B4ACB00388BCC /* SwipeView.m in Sources */,
+				5737959A206B95C400388BCC /* MeCell.m in Sources */,
 				57B544802062841400701F9C /* SvUDIDTools.m in Sources */,
 				57C3D5522068944600E0B8BA /* FMBaseViewController.m in Sources */,
 				572E6A842063ABD1008114EA /* CardInfoModel.m in Sources */,

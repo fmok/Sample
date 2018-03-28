@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = SRGBCOLOR_HEX(0xf5f6f8);
     self.zl_automaticallyAdjustsScrollViewInsets = YES;
     [self setNavInitialSetup];
 }

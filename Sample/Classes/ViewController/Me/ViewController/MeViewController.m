@@ -21,7 +21,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor redColor];
     WS(weakSelf);
     [self.view addSubview:self.mePulledTableView];
     [self.mePulledTableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -62,7 +61,7 @@
 {
     if (!_mePulledTableView) {
         _mePulledTableView = [[PulledTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _mePulledTableView.backgroundColor = [UIColor whiteColor];
+        _mePulledTableView.backgroundColor = [UIColor clearColor];
         _mePulledTableView.delegate = self.control;
         _mePulledTableView.dataSource = self.control;
         _mePulledTableView.estimatedRowHeight = 0;

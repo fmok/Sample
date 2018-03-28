@@ -22,7 +22,6 @@
     // Do any additional setup after loading the view.
 //    [self configNavBarBackgroundImage:[UIImage imageNamed:@"nav.png"]];
     self.zl_automaticallyAdjustsScrollViewInsets = NO;
-    self.view.backgroundColor = SRGBCOLOR_HEX(0xf5f6f8);
     WS(weakSelf);
     [self.view addSubview:self.headerView];
     CGFloat H_header = kScreenWidth*9.f/16.f+20.f;

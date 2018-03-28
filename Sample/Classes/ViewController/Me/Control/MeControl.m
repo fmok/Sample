@@ -10,21 +10,21 @@
 #import "TestViewController.h"
 #import "FMAlertView.h"
 
-static NSString *const kCellReusedIdentifierStr = @"cellReusedIdentifierStr";
+static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr";
 
 @implementation MeControl
 
 #pragma mark - Public methods
 - (void)registerCell
 {
-    [self.vc.mePulledTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCellReusedIdentifierStr];
+    [self.vc.mePulledTableView registerClass:[MeCell class] forCellReuseIdentifier:kMeCellReusedIdentifierStr];
 }
 
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 50.f;
+    return 60.f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -70,22 +70,19 @@ static NSString *const kCellReusedIdentifierStr = @"cellReusedIdentifierStr";
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 3;
-    }
-    return 20;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellReusedIdentifierStr forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"** %@ **", @(indexPath.row)];
+    MeCell *cell = [tableView dequeueReusableCellWithIdentifier:kMeCellReusedIdentifierStr forIndexPath:indexPath];
+    [cell updateContent];
     return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 1;
 }
 
 #pragma mark - KVO
