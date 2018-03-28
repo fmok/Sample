@@ -12,6 +12,7 @@
 
 @property (nonatomic, weak) UINavigationController *nav;
 
+- (void)configNavBarBackgroundImage:(UIImage *)image;
 - (void)showHUDTip:(NSString *)string;
 - (void)constraintNavigationBar:(UINavigationBar *)navigationBar;
 

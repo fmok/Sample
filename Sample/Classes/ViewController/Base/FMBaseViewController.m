@@ -35,7 +35,11 @@
     // 线条颜色
     self.zl_navigationBar.tintColor = [UIColor whiteColor];
     // 透明度
-    [self.zl_navigationBar setValue:@(0)forKeyPath:@"backgroundView.alpha"];
+    if (@available(iOS 11, *)) {
+        
+    } else {
+        [self.zl_navigationBar setValue:@(0)forKeyPath:@"backgroundView.alpha"];
+    }
     // 文字样式
     self.zl_navigationBar.titleTextAttributes = @{
                                                   NSFontAttributeName: [UIFont boldSystemFontOfSize:20.f],
@@ -44,6 +48,13 @@
 }
 
 #pragma mark - Public methods
+- (void)configNavBarBackgroundImage:(UIImage *)image
+{
+    [self.zl_navigationBar setValue:@(1)forKeyPath:@"backgroundView.alpha"];
+    UIImage *bgImage = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0) resizingMode:UIImageResizingModeStretch];
+    [self.zl_navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
+}
+
 - (void)showHUDTip:(NSString *)string
 {
     [HUD showTipOfView:self.view text:string];
