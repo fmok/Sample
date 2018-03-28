@@ -6,16 +6,20 @@
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
-#import "HeaderView.h"
+#import "MainHeaderView.h"
 
-@interface HeaderView ()
+static CGFloat W_SignIn_Btn = 200.f;
+static CGFloat H_SignIn_Btn = 40.f;
+
+@interface MainHeaderView ()
 
 @property (nonatomic, strong) UIImageView *bgImgView;
 @property (nonatomic, strong) UIView *tipsView;
+@property (nonatomic, strong) UIButton *signInBtn;
 
 @end
 
-@implementation HeaderView
+@implementation MainHeaderView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -24,6 +28,7 @@
         self.backgroundColor = SRGBCOLOR_HEX(0xf5f6f8);
         [self addSubview:self.bgImgView];
         [self addSubview:self.tipsView];
+        [self addSubview:self.signInBtn];
     }
     return self;
 }
@@ -42,10 +47,20 @@
         make.right.equalTo(weakSelf).offset(-15.f);
         make.height.mas_equalTo(50.f);
     }];
+    [self.signInBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(weakSelf.tipsView.mas_top).offset(H_SignIn_Btn/2.f-4.f);
+        make.centerX.equalTo(weakSelf.tipsView);
+        make.size.mas_equalTo(CGSizeMake(W_SignIn_Btn, H_SignIn_Btn));
+    }];
     
     [super updateConstraints];
 }
 
+#pragma mark - Events
+- (void)tapSignIn:(UIButton *)sender
+{
+    TTDPRINT(@"签到");
+}
 
 #pragma mark - getter & setter
 - (UIImageView *)bgImgView
@@ -66,6 +81,21 @@
         _tipsView.clipsToBounds = YES;
     }
     return _tipsView;
+}
+
+- (UIButton *)signInBtn
+{
+    if (!_signInBtn) {
+        _signInBtn = [[UIButton alloc] initWithFrame:CGRectZero];
+        _signInBtn.backgroundColor = [UIColor blueColor];
+        _signInBtn.layer.cornerRadius = H_SignIn_Btn/2.f;
+        _signInBtn.clipsToBounds = YES;
+        [_signInBtn setTitle:@"签到" forState:UIControlStateNormal];
+        _signInBtn.titleLabel.textColor = [UIColor whiteColor];
+        _signInBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14.f];
+        [_signInBtn addTarget:self action:@selector(tapSignIn:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _signInBtn;
 }
 
 /*

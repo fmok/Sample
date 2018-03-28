@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HeaderView : UIView
+@interface MainHeaderView : UIView
 
 @end

@@ -8,13 +8,13 @@
 
 #import "FMBaseViewController.h"
 #import "PulledCollectionView.h"
-#import "HeaderView.h"
+#import "MainHeaderView.h"
 
 #define Insert_left_right 15.f
 
 @interface MainViewController : FMBaseViewController
 
 @property (nonatomic, strong) PulledCollectionView *pulledCollectionView;
-@property (nonatomic, strong) HeaderView *headerView;
+@property (nonatomic, strong) MainHeaderView *headerView;
 
 @end

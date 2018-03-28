@@ -70,10 +70,10 @@
     return _control;
 }
 
-- (HeaderView *)headerView
+- (MainHeaderView *)headerView
 {
     if (!_headerView) {
-        _headerView = [[HeaderView alloc] initWithFrame:CGRectZero];
+        _headerView = [[MainHeaderView alloc] initWithFrame:CGRectZero];
     }
     return _headerView;
 }

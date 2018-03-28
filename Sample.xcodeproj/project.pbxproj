@@ -25,7 +25,7 @@
 		5737958E206B6EC900388BCC /* MainControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737958D206B6EC900388BCC /* MainControl.m */; };
 		57379591206B714300388BCC /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379590206B714300388BCC /* CollectionViewCell.m */; };
 		57379594206B789F00388BCC /* CollectionSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379593206B789F00388BCC /* CollectionSectionHeaderView.m */; };
-		57379597206B826A00388BCC /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379596206B826A00388BCC /* HeaderView.m */; };
+		57379597206B826A00388BCC /* MainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379596206B826A00388BCC /* MainHeaderView.m */; };
 		5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57572589206A17BB0085D6BF /* MeHeaderView.m */; };
 		575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA12064D0DF0031BC49 /* InfoCell.m */; };
 		575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA52064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m */; };
@@ -61,7 +61,7 @@
 		57C3D559206898CA00E0B8BA /* MeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D558206898CA00E0B8BA /* MeControl.m */; };
 		57C3D55E20689BF400E0B8BA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D55D20689BF400E0B8BA /* MainViewController.m */; };
 		57C3D5612068A11700E0B8BA /* top_navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C3D5602068A11700E0B8BA /* top_navigation_back@2x.png */; };
-		57C3D5672068A7DB00E0B8BA /* MainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5662068A7DB00E0B8BA /* MainHeaderView.m */; };
+		57C3D5672068A7DB00E0B8BA /* TestHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5662068A7DB00E0B8BA /* TestHeaderView.m */; };
 		57C3D56A2068BBAE00E0B8BA /* FMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5692068BBAE00E0B8BA /* FMConstants.m */; };
 		57C3D56D2068C45F00E0B8BA /* UIView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D56B2068C45E00E0B8BA /* UIView+Utilities.m */; };
 		57C3D5702068C4D300E0B8BA /* CGGeometryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D56E2068C4D200E0B8BA /* CGGeometryAdditions.m */; };
@@ -132,8 +132,8 @@
 		57379590206B714300388BCC /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		57379592206B789F00388BCC /* CollectionSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionSectionHeaderView.h; sourceTree = "<group>"; };
 		57379593206B789F00388BCC /* CollectionSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionSectionHeaderView.m; sourceTree = "<group>"; };
-		57379595206B826A00388BCC /* HeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
-		57379596206B826A00388BCC /* HeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
+		57379595206B826A00388BCC /* MainHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainHeaderView.h; sourceTree = "<group>"; };
+		57379596206B826A00388BCC /* MainHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainHeaderView.m; sourceTree = "<group>"; };
 		57572588206A17BB0085D6BF /* MeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeHeaderView.h; sourceTree = "<group>"; };
 		57572589206A17BB0085D6BF /* MeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeHeaderView.m; sourceTree = "<group>"; };
 		575F9AA02064D0DF0031BC49 /* InfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
@@ -202,8 +202,8 @@
 		57C3D55C20689BF400E0B8BA /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		57C3D55D20689BF400E0B8BA /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		57C3D5602068A11700E0B8BA /* top_navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_navigation_back@2x.png"; sourceTree = "<group>"; };
-		57C3D5652068A7DB00E0B8BA /* MainHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainHeaderView.h; sourceTree = "<group>"; };
-		57C3D5662068A7DB00E0B8BA /* MainHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainHeaderView.m; sourceTree = "<group>"; };
+		57C3D5652068A7DB00E0B8BA /* TestHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestHeaderView.h; sourceTree = "<group>"; };
+		57C3D5662068A7DB00E0B8BA /* TestHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestHeaderView.m; sourceTree = "<group>"; };
 		57C3D5682068BBAE00E0B8BA /* FMConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMConstants.h; sourceTree = "<group>"; };
 		57C3D5692068BBAE00E0B8BA /* FMConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMConstants.m; sourceTree = "<group>"; };
 		57C3D56B2068C45E00E0B8BA /* UIView+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utilities.m"; sourceTree = "<group>"; };
@@ -326,8 +326,8 @@
 				57379590206B714300388BCC /* CollectionViewCell.m */,
 				57379592206B789F00388BCC /* CollectionSectionHeaderView.h */,
 				57379593206B789F00388BCC /* CollectionSectionHeaderView.m */,
-				57379595206B826A00388BCC /* HeaderView.h */,
-				57379596206B826A00388BCC /* HeaderView.m */,
+				57379595206B826A00388BCC /* MainHeaderView.h */,
+				57379596206B826A00388BCC /* MainHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -575,8 +575,8 @@
 			children = (
 				575F9AA02064D0DF0031BC49 /* InfoCell.h */,
 				575F9AA12064D0DF0031BC49 /* InfoCell.m */,
-				57C3D5652068A7DB00E0B8BA /* MainHeaderView.h */,
-				57C3D5662068A7DB00E0B8BA /* MainHeaderView.m */,
+				57C3D5652068A7DB00E0B8BA /* TestHeaderView.h */,
+				57C3D5662068A7DB00E0B8BA /* TestHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1146,7 +1146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57379597206B826A00388BCC /* HeaderView.m in Sources */,
+				57379597206B826A00388BCC /* MainHeaderView.m in Sources */,
 				575F9AAD2064EC710031BC49 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				57379581206B4ACB00388BCC /* SwipeView.m in Sources */,
 				57B544802062841400701F9C /* SvUDIDTools.m in Sources */,
@@ -1188,7 +1188,7 @@
 				57B5444C20627C5800701F9C /* PulledCollectionView.m in Sources */,
 				57DED55E2067D36500E24607 /* UIImage+RoundedCorner.m in Sources */,
 				57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */,
-				57C3D5672068A7DB00E0B8BA /* MainHeaderView.m in Sources */,
+				57C3D5672068A7DB00E0B8BA /* TestHeaderView.m in Sources */,
 				5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */,
 				57B5445A206281F400701F9C /* FMUtility.m in Sources */,
 				57C3D56D2068C45F00E0B8BA /* UIView+Utilities.m in Sources */,

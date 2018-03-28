@@ -95,10 +95,10 @@
     return _cardInfoArr;
 }
 
-- (MainHeaderView *)headerView
+- (TestHeaderView *)headerView
 {
     if (!_headerView) {
-        _headerView = [[MainHeaderView alloc] initWithFrame:CGRectMake(0, 0, W_MainHeaderView, H_MainHeaderView)];
+        _headerView = [[TestHeaderView alloc] initWithFrame:CGRectMake(0, 0, W_MainHeaderView, H_MainHeaderView)];
     }
     return _headerView;
 }

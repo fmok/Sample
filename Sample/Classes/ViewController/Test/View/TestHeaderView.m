@@ -6,9 +6,9 @@
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
-#import "MainHeaderView.h"
+#import "TestHeaderView.h"
 
-@implementation MainHeaderView
+@implementation TestHeaderView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
