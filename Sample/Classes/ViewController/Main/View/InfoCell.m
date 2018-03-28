@@ -124,9 +124,9 @@ static CGFloat const leftGap_header = 10.f;
     self.infoImgView.hidden = !isHaveInfoImg;
     [self.infoImgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil options:SDWebImageRetryFailed];
     //
-    self.titleLabel.text = @"这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长";//CHANGE_TO_STRING(model.text);
+    self.titleLabel.text = CHANGE_TO_STRING(model.text);//@"这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长这个标题特别的长";//CHANGE_TO_STRING(model.text);
     //
-    self.contentLabel.text = @"这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长";//CHANGE_TO_STRING(model.desc);
+    self.contentLabel.text = CHANGE_TO_STRING(model.desc);//@"这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长这个内容特别的长";//CHANGE_TO_STRING(model.desc);
     self.contentLabel.numberOfLines = (isHaveInfoImg ? 4 : 0);
     
     [self setNeedsUpdateConstraints];

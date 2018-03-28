@@ -28,20 +28,18 @@ typedef NS_ENUM(NSUInteger, PulledTableViewType){
 
 @property (nonatomic, weak  ) id<PulledTableViewDelegate>pulledDelegate;
 @property (nonatomic, assign) BOOL isHeader; //是否开启下拉刷新
-@property (nonatomic, assign) BOOL isFooter; //是否开启下拉加载
+@property (nonatomic, assign) BOOL isFooter; //是否开启上拉加载
 @property (nonatomic, assign) NSUInteger page;
 @property (nonatomic, assign) NSUInteger pageCount;
-@property (nonatomic, assign) CGFloat appearencePercentTriggerAutoRefresh;
 
-//
+/***/
 - (void)refreshingDataSourceImmediately:(BOOL)immediately;
-// 完成刷新；isUpdateTime：是否记录时间
+/** 完成刷新；isUpdateTime：是否记录时间 */
 - (void)finishRefreshTableWithType:(PulledTableViewType)type;
 - (void)finishRefreshTableWithType:(PulledTableViewType)type isUpdateTime:(BOOL)isUpdate;
-//- (void)autoBeginRefreshing; // 检测是否需要自动下拉
-//- (void)autoBeginRefreshingWithFirstRequestNoRefresh;
-//- (void)beginRefreshing; // 强制刷新
+/***/
 - (void)setDataKey:(NSString *)key; // 设置下拉刷新的key
+/***/
 - (void)setFooterNoMoreData; //提示没有更多的数据
 - (void)resetFooterNoMoreData;//重置没有更多的数据（消除没有更多数据的状态）
 

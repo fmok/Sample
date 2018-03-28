@@ -103,40 +103,6 @@
     [self resetFooterData];
 }
 
-//- (void)autoBeginRefreshing
-//{
-//    // 是否自动下拉 10分钟
-//    if (self.mj_header.lastUpdatedTime) {
-//        NSDate *nextUpdateDate = [[NSDate alloc] initWithTimeInterval:60*10 sinceDate:self.mj_header.lastUpdatedTime];
-//        if ([nextUpdateDate compare:[NSDate date]] == NSOrderedAscending) {
-//            [self beginRefreshing];
-//        }
-//    } else {
-//        // 之前的缓存时间没有，自动下拉
-//        [self beginRefreshing];
-//    }
-//}
-
-//- (void)autoBeginRefreshingWithFirstRequestNoRefresh
-//{
-//    // 是否自动下拉 10分钟
-//    if (self.mj_header.lastUpdatedTime) {
-//        NSDate *nextUpdateDate = [[NSDate alloc] initWithTimeInterval:60*10 sinceDate:self.mj_header.lastUpdatedTime];
-//        if ([nextUpdateDate compare:[NSDate date]] == NSOrderedAscending) {
-//            [self beginRefreshing];
-//        }
-//    } else {
-//        // 之前的缓存时间没有，无操作
-//    }
-//}
-
-- (void)beginRefreshing
-{
-    if (self.mj_header.state == MJRefreshStateIdle) {
-        [self.mj_header beginRefreshing];
-    }
-}
-
 - (void)setDataKey:(NSString *)key
 {
     self.mj_header.lastUpdatedTimeKey = [FMUtility refreshNameWithKey:key];
@@ -156,15 +122,18 @@
     }
 }
 
+#pragma mark - Private methods
+- (void)beginRefreshing
+{
+    if (self.mj_header.state == MJRefreshStateIdle) {
+        [self.mj_header beginRefreshing];
+    }
+}
+
 - (void)resetFooterData
 {
     [self setFooterNoMoreData];
     [self resetFooterNoMoreData];
-}
-
-- (void)setAppearencePercentTriggerAutoRefresh:(CGFloat)space
-{
-    //self.mj_footer.appearencePercentTriggerAutoRefresh = space;
 }
 
 #pragma mark - getters and setters
