@@ -7,7 +7,10 @@
 //
 
 #import "FMBaseViewController.h"
+#import "PulledCollectionView.h"
 
 @interface CardDetailViewController : FMBaseViewController
+
+@property (nonatomic, strong) PulledCollectionView *pulledCollectionView;
 
 @end

@@ -19,8 +19,8 @@ typedef NS_ENUM(NSUInteger, PulledCollectionViewType){
 
 @optional
 
-- (void)refreshWithPulledTableView:(PulledCollectionView *)tableView;
-- (void)loadMoreWithPulledTableView:(PulledCollectionView *)tableView;
+- (void)refreshWithPulledCollectionView:(PulledCollectionView *)collectionView;
+- (void)loadMoreWithPulledCollectionView:(PulledCollectionView *)collectionView;
 
 @end
 
@@ -35,8 +35,8 @@ typedef NS_ENUM(NSUInteger, PulledCollectionViewType){
 /***/
 - (void)refreshingDataSourceImmediately:(BOOL)immediately;
 /** 完成刷新；isUpdateTime：是否记录时间 */
-- (void)finishRefreshTableWithType:(PulledCollectionViewType)type;
-- (void)finishRefreshTableWithType:(PulledCollectionViewType)type isUpdateTime:(BOOL)isUpdate;
+- (void)finishRefreshCollectionViewWithType:(PulledCollectionViewType)type;
+- (void)finishRefreshCollectionViewWithType:(PulledCollectionViewType)type isUpdateTime:(BOOL)isUpdate;
 /***/
 - (void)setDataKey:(NSString *)key; // 设置下拉刷新的key
 /***/

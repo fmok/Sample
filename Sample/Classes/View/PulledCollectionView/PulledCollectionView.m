@@ -43,8 +43,8 @@
     
     // 下拉刷新
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        if (weakSelf.pulledDelegate && [weakSelf.pulledDelegate respondsToSelector:@selector(refreshWithPulledTableView:)]) {
-            [weakSelf.pulledDelegate refreshWithPulledTableView:weakSelf];
+        if (weakSelf.pulledDelegate && [weakSelf.pulledDelegate respondsToSelector:@selector(refreshWithPulledCollectionView:)]) {
+            [weakSelf.pulledDelegate refreshWithPulledCollectionView:weakSelf];
         }
     }];
     self.isHeader = YES;
@@ -52,12 +52,12 @@
     
     // 上拉加载
     self.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        if (weakSelf.pulledDelegate && [weakSelf.pulledDelegate respondsToSelector:@selector(loadMoreWithPulledTableView:)]) {
+        if (weakSelf.pulledDelegate && [weakSelf.pulledDelegate respondsToSelector:@selector(loadMoreWithPulledCollectionView:)]) {
             if(weakSelf.page >= weakSelf.pageCount) {
                 weakSelf.mj_footer.state = MJRefreshStateNoMoreData;
                 return;
             };
-            [weakSelf.pulledDelegate loadMoreWithPulledTableView:weakSelf];
+            [weakSelf.pulledDelegate loadMoreWithPulledCollectionView:weakSelf];
         }
     }];
     self.isFooter = NO;
@@ -81,12 +81,12 @@
     }
 }
 
-- (void)finishRefreshTableWithType:(PulledCollectionViewType)type
+- (void)finishRefreshCollectionViewWithType:(PulledCollectionViewType)type
 {
-    [self finishRefreshTableWithType:type isUpdateTime:YES];
+    [self finishRefreshCollectionViewWithType:type isUpdateTime:YES];
 }
 
-- (void)finishRefreshTableWithType:(PulledCollectionViewType)type isUpdateTime:(BOOL)isUpdate
+- (void)finishRefreshCollectionViewWithType:(PulledCollectionViewType)type isUpdateTime:(BOOL)isUpdate
 {
     // 完成刷新
     MJRefreshComponent *refreshView = nil;

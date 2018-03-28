@@ -7,8 +7,11 @@
 //
 
 #import "CardDetailViewController.h"
+#import "CardDetailControl.h"
 
 @interface CardDetailViewController ()
+
+@property (nonatomic, strong) CardDetailControl *control;
 
 @end
 
@@ -18,8 +21,41 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self configNavBarBackgroundImage:[UIImage imageNamed:@"nav.png"]];
+    WS(weakSelf);
+    [self.view addSubview:self.pulledCollectionView];
+    [self.pulledCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(weakSelf.view);
+    }];
+    [self.control registerCell];
 }
 
+
+#pragma mark - getter & setter
+- (PulledCollectionView *)pulledCollectionView
+{
+    if (!_pulledCollectionView) {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        _pulledCollectionView = [[PulledCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        _pulledCollectionView.backgroundColor = [UIColor clearColor];
+        _pulledCollectionView.bounces = YES;
+        _pulledCollectionView.alwaysBounceVertical = YES;
+        _pulledCollectionView.delegate = self.control;
+        _pulledCollectionView.dataSource = self.control;
+        _pulledCollectionView.pulledDelegate = self.control;
+        _pulledCollectionView.isHeader = YES;
+        _pulledCollectionView.isFooter = YES;
+    }
+    return _pulledCollectionView;
+}
+
+- (CardDetailControl *)control
+{
+    if (!_control) {
+        _control = [[CardDetailControl alloc] init];
+        _control.vc = self;
+    }
+    return _control;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
