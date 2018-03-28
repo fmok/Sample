@@ -6,16 +6,16 @@
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
-#import "CardDetailViewController.h"
-#import "CardDetailControl.h"
+#import "MainViewController.h"
+#import "MainControl.h"
 
-@interface CardDetailViewController ()
+@interface MainViewController ()
 
-@property (nonatomic, strong) CardDetailControl *control;
+@property (nonatomic, strong) MainControl *control;
 
 @end
 
-@implementation CardDetailViewController
+@implementation MainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -61,10 +61,10 @@
     return _pulledCollectionView;
 }
 
-- (CardDetailControl *)control
+- (MainControl *)control
 {
     if (!_control) {
-        _control = [[CardDetailControl alloc] init];
+        _control = [[MainControl alloc] init];
         _control.vc = self;
     }
     return _control;

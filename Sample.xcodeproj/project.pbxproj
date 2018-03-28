@@ -22,7 +22,7 @@
 		5737957D206B39AB00388BCC /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 5737957C206B39AB00388BCC /* nav.png */; };
 		57379581206B4ACB00388BCC /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379580206B4ACA00388BCC /* SwipeView.m */; };
 		57379585206B4B4700388BCC /* FMSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379584206B4B4700388BCC /* FMSegmentControl.m */; };
-		5737958E206B6EC900388BCC /* CardDetailControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737958D206B6EC900388BCC /* CardDetailControl.m */; };
+		5737958E206B6EC900388BCC /* MainControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737958D206B6EC900388BCC /* MainControl.m */; };
 		57379591206B714300388BCC /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379590206B714300388BCC /* CollectionViewCell.m */; };
 		57379594206B789F00388BCC /* CollectionSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379593206B789F00388BCC /* CollectionSectionHeaderView.m */; };
 		57379597206B826A00388BCC /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379596206B826A00388BCC /* HeaderView.m */; };
@@ -44,9 +44,9 @@
 		57B5440F2062727F00701F9C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5440E2062727F00701F9C /* main.m */; };
 		57B544192062727F00701F9C /* SampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B544182062727F00701F9C /* SampleTests.m */; };
 		57B544242062727F00701F9C /* SampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B544232062727F00701F9C /* SampleUITests.m */; };
-		57B54440206278B600701F9C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5443D206278B600701F9C /* MainViewController.m */; };
+		57B54440206278B600701F9C /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5443D206278B600701F9C /* TestViewController.m */; };
 		57B5444320627B6900701F9C /* FMRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5444220627B6900701F9C /* FMRequest.m */; };
-		57B5444620627B8B00701F9C /* MainControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5444520627B8B00701F9C /* MainControl.m */; };
+		57B5444620627B8B00701F9C /* TestControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5444520627B8B00701F9C /* TestControl.m */; };
 		57B5444920627C2C00701F9C /* PulledTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5444820627C2C00701F9C /* PulledTableView.m */; };
 		57B5444C20627C5800701F9C /* PulledCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5444B20627C5800701F9C /* PulledCollectionView.m */; };
 		57B5445020627CB700701F9C /* ZLNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5444F20627CB700701F9C /* ZLNavigationController.m */; };
@@ -59,7 +59,7 @@
 		57C3D5522068944600E0B8BA /* FMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5512068944600E0B8BA /* FMBaseViewController.m */; };
 		57C3D555206896A900E0B8BA /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D554206896A900E0B8BA /* MeViewController.m */; };
 		57C3D559206898CA00E0B8BA /* MeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D558206898CA00E0B8BA /* MeControl.m */; };
-		57C3D55E20689BF400E0B8BA /* CardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D55D20689BF400E0B8BA /* CardDetailViewController.m */; };
+		57C3D55E20689BF400E0B8BA /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D55D20689BF400E0B8BA /* MainViewController.m */; };
 		57C3D5612068A11700E0B8BA /* top_navigation_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57C3D5602068A11700E0B8BA /* top_navigation_back@2x.png */; };
 		57C3D5672068A7DB00E0B8BA /* MainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5662068A7DB00E0B8BA /* MainHeaderView.m */; };
 		57C3D56A2068BBAE00E0B8BA /* FMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5692068BBAE00E0B8BA /* FMConstants.m */; };
@@ -126,8 +126,8 @@
 		57379580206B4ACA00388BCC /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
 		57379583206B4B4700388BCC /* FMSegmentControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMSegmentControl.h; sourceTree = "<group>"; };
 		57379584206B4B4700388BCC /* FMSegmentControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMSegmentControl.m; sourceTree = "<group>"; };
-		5737958C206B6EC900388BCC /* CardDetailControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardDetailControl.h; sourceTree = "<group>"; };
-		5737958D206B6EC900388BCC /* CardDetailControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardDetailControl.m; sourceTree = "<group>"; };
+		5737958C206B6EC900388BCC /* MainControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainControl.h; sourceTree = "<group>"; };
+		5737958D206B6EC900388BCC /* MainControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainControl.m; sourceTree = "<group>"; };
 		5737958F206B714300388BCC /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		57379590206B714300388BCC /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		57379592206B789F00388BCC /* CollectionSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionSectionHeaderView.h; sourceTree = "<group>"; };
@@ -167,12 +167,12 @@
 		57B544232062727F00701F9C /* SampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleUITests.m; sourceTree = "<group>"; };
 		57B544252062727F00701F9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57B544342062775100701F9C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		57B5443C206278B600701F9C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		57B5443D206278B600701F9C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		57B5443C206278B600701F9C /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		57B5443D206278B600701F9C /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		57B5444120627B6900701F9C /* FMRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMRequest.h; sourceTree = "<group>"; };
 		57B5444220627B6900701F9C /* FMRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMRequest.m; sourceTree = "<group>"; };
-		57B5444420627B8B00701F9C /* MainControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainControl.h; sourceTree = "<group>"; };
-		57B5444520627B8B00701F9C /* MainControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainControl.m; sourceTree = "<group>"; };
+		57B5444420627B8B00701F9C /* TestControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestControl.h; sourceTree = "<group>"; };
+		57B5444520627B8B00701F9C /* TestControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestControl.m; sourceTree = "<group>"; };
 		57B5444720627C2C00701F9C /* PulledTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PulledTableView.h; sourceTree = "<group>"; };
 		57B5444820627C2C00701F9C /* PulledTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PulledTableView.m; sourceTree = "<group>"; };
 		57B5444A20627C5800701F9C /* PulledCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PulledCollectionView.h; sourceTree = "<group>"; };
@@ -199,8 +199,8 @@
 		57C3D554206896A900E0B8BA /* MeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
 		57C3D557206898CA00E0B8BA /* MeControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeControl.h; sourceTree = "<group>"; };
 		57C3D558206898CA00E0B8BA /* MeControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeControl.m; sourceTree = "<group>"; };
-		57C3D55C20689BF400E0B8BA /* CardDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardDetailViewController.h; sourceTree = "<group>"; };
-		57C3D55D20689BF400E0B8BA /* CardDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardDetailViewController.m; sourceTree = "<group>"; };
+		57C3D55C20689BF400E0B8BA /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		57C3D55D20689BF400E0B8BA /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		57C3D5602068A11700E0B8BA /* top_navigation_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_navigation_back@2x.png"; sourceTree = "<group>"; };
 		57C3D5652068A7DB00E0B8BA /* MainHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainHeaderView.h; sourceTree = "<group>"; };
 		57C3D5662068A7DB00E0B8BA /* MainHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainHeaderView.m; sourceTree = "<group>"; };
@@ -313,8 +313,8 @@
 		57379586206B6E8800388BCC /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				5737958C206B6EC900388BCC /* CardDetailControl.h */,
-				5737958D206B6EC900388BCC /* CardDetailControl.m */,
+				5737958C206B6EC900388BCC /* MainControl.h */,
+				5737958D206B6EC900388BCC /* MainControl.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -482,9 +482,9 @@
 			isa = PBXGroup;
 			children = (
 				57C3D54F2068940100E0B8BA /* Base */,
-				57B54438206278B600701F9C /* Main */,
+				57B54438206278B600701F9C /* Test */,
+				57C3D55A20689BCA00E0B8BA /* Main */,
 				57C3D54D206893BA00E0B8BA /* Me */,
-				57C3D55A20689BCA00E0B8BA /* CardDetail */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -520,7 +520,7 @@
 			path = PulledTableView;
 			sourceTree = "<group>";
 		};
-		57B54438206278B600701F9C /* Main */ = {
+		57B54438206278B600701F9C /* Test */ = {
 			isa = PBXGroup;
 			children = (
 				57B54439206278B600701F9C /* API */,
@@ -529,7 +529,7 @@
 				57B5443E206278B600701F9C /* Model */,
 				57B5443F206278B600701F9C /* View */,
 			);
-			path = Main;
+			path = Test;
 			sourceTree = "<group>";
 		};
 		57B54439206278B600701F9C /* API */ = {
@@ -544,8 +544,8 @@
 		57B5443A206278B600701F9C /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				57B5444420627B8B00701F9C /* MainControl.h */,
-				57B5444520627B8B00701F9C /* MainControl.m */,
+				57B5444420627B8B00701F9C /* TestControl.h */,
+				57B5444520627B8B00701F9C /* TestControl.m */,
 			);
 			path = Control;
 			sourceTree = "<group>";
@@ -553,8 +553,8 @@
 		57B5443B206278B600701F9C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				57B5443C206278B600701F9C /* MainViewController.h */,
-				57B5443D206278B600701F9C /* MainViewController.m */,
+				57B5443C206278B600701F9C /* TestViewController.h */,
+				57B5443D206278B600701F9C /* TestViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -711,7 +711,7 @@
 			path = Control;
 			sourceTree = "<group>";
 		};
-		57C3D55A20689BCA00E0B8BA /* CardDetail */ = {
+		57C3D55A20689BCA00E0B8BA /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				5737958B206B6EB300388BCC /* API */,
@@ -720,14 +720,14 @@
 				57379586206B6E8800388BCC /* Control */,
 				57C3D55B20689BE000E0B8BA /* ViewController */,
 			);
-			path = CardDetail;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		57C3D55B20689BE000E0B8BA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				57C3D55C20689BF400E0B8BA /* CardDetailViewController.h */,
-				57C3D55D20689BF400E0B8BA /* CardDetailViewController.m */,
+				57C3D55C20689BF400E0B8BA /* MainViewController.h */,
+				57C3D55D20689BF400E0B8BA /* MainViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1163,15 +1163,15 @@
 				57DED5612067D39600E24607 /* UIImage+Alpha.m in Sources */,
 				575F9AAF2064EC710031BC49 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */,
-				57B5444620627B8B00701F9C /* MainControl.m in Sources */,
+				57B5444620627B8B00701F9C /* TestControl.m in Sources */,
 				57DED56E2067D42100E24607 /* UIImageView+LBBlurredImage.m in Sources */,
 				57DED56D2067D42100E24607 /* UIImageEffects.m in Sources */,
 				57C3D56A2068BBAE00E0B8BA /* FMConstants.m in Sources */,
 				57379585206B4B4700388BCC /* FMSegmentControl.m in Sources */,
 				57379591206B714300388BCC /* CollectionViewCell.m in Sources */,
-				57C3D55E20689BF400E0B8BA /* CardDetailViewController.m in Sources */,
+				57C3D55E20689BF400E0B8BA /* MainViewController.m in Sources */,
 				57B5440F2062727F00701F9C /* main.m in Sources */,
-				57B54440206278B600701F9C /* MainViewController.m in Sources */,
+				57B54440206278B600701F9C /* TestViewController.m in Sources */,
 				57DED55B2067D23500E24607 /* UIImage+Resize.m in Sources */,
 				575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */,
 				57B5444920627C2C00701F9C /* PulledTableView.m in Sources */,
@@ -1193,7 +1193,7 @@
 				57B5445A206281F400701F9C /* FMUtility.m in Sources */,
 				57C3D56D2068C45F00E0B8BA /* UIView+Utilities.m in Sources */,
 				57B5444320627B6900701F9C /* FMRequest.m in Sources */,
-				5737958E206B6EC900388BCC /* CardDetailControl.m in Sources */,
+				5737958E206B6EC900388BCC /* MainControl.m in Sources */,
 				57B544842062850000701F9C /* APPSettingManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

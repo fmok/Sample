@@ -1,23 +1,21 @@
 //
-//  Control.h
+//  CardDetailControl.h
 //  Sample
 //
-//  Created by wjy on 2018/3/21.
+//  Created by wjy on 2018/3/28.
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "MainViewController.h"
-#import "InfoCell.h"
 
 @interface MainControl : NSObject<
-    UITableViewDelegate,
-    UITableViewDataSource,
-    PulledTableViewDelegate>
+    UICollectionViewDelegate,
+    UICollectionViewDataSource,
+    PulledCollectionViewTypeDelegate>
 
 @property (nonatomic, weak) MainViewController *vc;
 
 - (void)registerCell;
-- (void)loadData;
 
 @end

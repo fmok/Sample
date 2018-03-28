@@ -12,7 +12,7 @@
 
 #define Insert_left_right 15.f
 
-@interface CardDetailViewController : FMBaseViewController
+@interface MainViewController : FMBaseViewController
 
 @property (nonatomic, strong) PulledCollectionView *pulledCollectionView;
 @property (nonatomic, strong) HeaderView *headerView;

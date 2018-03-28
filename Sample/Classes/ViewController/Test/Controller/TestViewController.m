@@ -6,19 +6,20 @@
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
-#import "MainViewController.h"
-#import "MainControl.h"
+#import "TestViewController.h"
+#import "TestControl.h"
 
-@interface MainViewController ()
+@interface TestViewController ()
 
-@property (nonatomic, strong) MainControl *control;
+@property (nonatomic, strong) TestControl *control;
 
 @end
 
-@implementation MainViewController
+@implementation TestViewController
 
 #pragma mark - life cycle
 - (void)dealloc {
+    [self.pulledTableView removeObserver:self.control forKeyPath:@"contentOffset"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -48,10 +49,10 @@
 
 
 #pragma mark - getter & setter
-- (MainControl *)control
+- (TestControl *)control
 {
     if (!_control) {
-        _control = [[MainControl alloc] init];
+        _control = [[TestControl alloc] init];
         _control.vc = self;
     }
     return _control;

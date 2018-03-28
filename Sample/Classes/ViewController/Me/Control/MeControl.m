@@ -7,7 +7,7 @@
 //
 
 #import "MeControl.h"
-#import "CardDetailViewController.h"
+#import "TestViewController.h"
 #import "FMAlertView.h"
 
 static NSString *const kCellReusedIdentifierStr = @"cellReusedIdentifierStr";
@@ -42,8 +42,7 @@ static NSString *const kCellReusedIdentifierStr = @"cellReusedIdentifierStr";
         };
         [alert show];
     } else {
-        CardDetailViewController *vc = [[CardDetailViewController alloc] init];
-        vc.title = [NSString stringWithFormat:@"%@ - %@", @(indexPath.section), @(indexPath.row)];
+        TestViewController *vc = [[TestViewController alloc] init];
         [self.vc.zl_navigationController pushViewController:vc animated:YES];
     }
 }
@@ -72,7 +71,7 @@ static NSString *const kCellReusedIdentifierStr = @"cellReusedIdentifierStr";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 5;
+        return 3;
     }
     return 20;
 }
