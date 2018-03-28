@@ -36,7 +36,9 @@
     self.zl_navigationBar.tintColor = [UIColor whiteColor];
     // 透明度
     if (@available(iOS 11, *)) {
-        
+        [self.zl_navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+        self.zl_navigationBar.shadowImage = [UIImage new];
+        self.zl_navigationBar.translucent = YES;
     } else {
         [self.zl_navigationBar setValue:@(0)forKeyPath:@"backgroundView.alpha"];
     }
