@@ -61,6 +61,27 @@
     [self.zl_navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
 }
 
+- (void)configNavBarOpaque:(BOOL)isOpaque
+{
+    if (isOpaque) {
+        if (@available(iOS 11, *)) {
+            [self.zl_navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+            self.zl_navigationBar.shadowImage = nil;
+            self.zl_navigationBar.translucent = NO;
+        } else {
+            [self.zl_navigationBar setValue:@(1)forKeyPath:@"backgroundView.alpha"];
+        }
+    } else {
+        if (@available(iOS 11, *)) {
+            [self.zl_navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+            self.zl_navigationBar.shadowImage = [UIImage new];
+            self.zl_navigationBar.translucent = YES;
+        } else {
+            [self.zl_navigationBar setValue:@(0)forKeyPath:@"backgroundView.alpha"];
+        }
+    }
+}
+
 - (void)showHUDTip:(NSString *)string
 {
     [HUD showTipOfView:self.view text:string];

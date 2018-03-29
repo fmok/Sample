@@ -9,6 +9,7 @@
 #import "MainControl.h"
 #import "CollectionViewCell.h"
 #import "TestViewController.h"
+#import "BuyDetailViewController.h"
 
 static NSString *const kCollectionViewCellReusedIdentifierStr = @"kCollectionViewCellReusedIdentifierStr";
 static NSString *const kCollectionSectionHeaderViewReusedIdentifierStr = @"kCollectionSectionHeaderViewReusedIdentifierStr";
@@ -55,6 +56,8 @@ static NSString *const kCollectionSectionHeaderViewReusedIdentifierStr = @"kColl
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     TTDPRINT(@"\n*** %@ - %@ ***\n", @(indexPath.section), @(indexPath.item));
+    BuyDetailViewController *vc = [[BuyDetailViewController alloc] init];
+    [self.vc.zl_navigationController pushViewController:vc animated:YES];
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
