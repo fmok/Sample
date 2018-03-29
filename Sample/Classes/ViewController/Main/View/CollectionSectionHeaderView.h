@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, SortType) {
+    SortTypeNULL,
+    SortTypeByValue,  // 按价值排序
+    SortTypeBtRest  // 按剩余排序
+};
+
+@protocol CollectionSectionHeaderViewDelegate<NSObject>
+
+- (void)sortByType:(SortType)type;
+
+@end
+
 @interface CollectionSectionHeaderView : UICollectionReusableView
+
+@property (nonatomic, weak) id<CollectionSectionHeaderViewDelegate>delegate;
 
 @end

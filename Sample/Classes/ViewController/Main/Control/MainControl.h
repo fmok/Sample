@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "MainViewController.h"
+#import "CollectionSectionHeaderView.h"
 
 @interface MainControl : NSObject<
     UICollectionViewDelegate,
     UICollectionViewDataSource,
-    PulledCollectionViewTypeDelegate>
+    PulledCollectionViewTypeDelegate,
+    CollectionSectionHeaderViewDelegate>
 
 @property (nonatomic, weak) MainViewController *vc;
 

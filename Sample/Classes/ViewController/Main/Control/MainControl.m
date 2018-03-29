@@ -8,7 +8,6 @@
 
 #import "MainControl.h"
 #import "CollectionViewCell.h"
-#import "CollectionSectionHeaderView.h"
 #import "TestViewController.h"
 
 static NSString *const kCollectionViewCellReusedIdentifierStr = @"kCollectionViewCellReusedIdentifierStr";
@@ -64,7 +63,7 @@ static NSString *const kCollectionSectionHeaderViewReusedIdentifierStr = @"kColl
 {
     if (indexPath.section == 0) {
         CollectionSectionHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCollectionSectionHeaderViewReusedIdentifierStr forIndexPath:indexPath];
-        
+        header.delegate = self;
         return header;
     }
     return nil;
@@ -116,6 +115,27 @@ static NSString *const kCollectionSectionHeaderViewReusedIdentifierStr = @"kColl
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
 {
     return CGSizeZero;
+}
+
+#pragma mark - CollectionSectionHeaderViewDelegate
+- (void)sortByType:(SortType)type
+{
+    switch (type) {
+        case SortTypeByValue:
+        {
+            TTDPRINT(@"按价值排序");
+            [self.vc.pulledCollectionView refreshingDataSourceImmediately:YES];
+        }
+            break;
+        case SortTypeBtRest:
+        {
+            TTDPRINT(@"按剩余排序");
+            [self.vc.pulledCollectionView refreshingDataSourceImmediately:YES];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 
