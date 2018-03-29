@@ -12,7 +12,7 @@ static CGFloat const W_Line = 4.f;
 static CGFloat const W_Btn = 60.f;
 static CGFloat const H_Btn = 26.f;
 
-static CGFloat const gap_left_right = 10.f;
+static CGFloat const gap_left_right_main = 10.f;
 
 @interface CollectionSectionHeaderView ()
 
@@ -38,16 +38,16 @@ static CGFloat const gap_left_right = 10.f;
         [self addSubview:self.valueBtn];
         WS(weakSelf);
         [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(weakSelf).offset(gap_left_right);
+            make.left.equalTo(weakSelf).offset(gap_left_right_main);
             make.bottom.equalTo(weakSelf).offset(-5.f);
             make.size.mas_equalTo(CGSizeMake(W_Line, 20.f));
         }];
         [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(weakSelf.lineView);
-            make.left.equalTo(weakSelf.lineView).offset(gap_left_right);
+            make.left.equalTo(weakSelf.lineView).offset(gap_left_right_main);
         }];
         [self.restBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.equalTo(weakSelf).offset(-gap_left_right);
+            make.right.equalTo(weakSelf).offset(-gap_left_right_main);
             make.centerY.equalTo(weakSelf.lineView);
             make.size.mas_equalTo(CGSizeMake(W_Btn, H_Btn));
         }];

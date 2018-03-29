@@ -57,6 +57,7 @@ static NSString *const kCollectionSectionHeaderViewReusedIdentifierStr = @"kColl
 {
     TTDPRINT(@"\n*** %@ - %@ ***\n", @(indexPath.section), @(indexPath.item));
     BuyDetailViewController *vc = [[BuyDetailViewController alloc] init];
+    vc.title = @"双鱼座·风向";
     [self.vc.zl_navigationController pushViewController:vc animated:YES];
 }
 

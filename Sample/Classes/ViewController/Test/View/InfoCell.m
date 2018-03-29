@@ -11,7 +11,7 @@
 #import "JSONKit.h"
 
 static CGFloat const gap_top_bottom = 20.f;
-static CGFloat const gap_left_right = 15.f;
+static CGFloat const gap_left_right_test = 15.f;
 static CGFloat const W_H_headerImgView = 25.f;
 static CGFloat const leftGap_header = 10.f;
 
@@ -57,7 +57,7 @@ static CGFloat const leftGap_header = 10.f;
 {
     WS(weakSelf);
     [self.headerImgView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf).offset(gap_left_right);
+        make.left.equalTo(weakSelf).offset(gap_left_right_test);
         make.top.equalTo(weakSelf).offset(gap_top_bottom);
         make.size.mas_equalTo(CGSizeMake(W_H_headerImgView, W_H_headerImgView));
     }];
@@ -73,34 +73,34 @@ static CGFloat const leftGap_header = 10.f;
     }];
     
     [self.infoImgView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(weakSelf).offset(-gap_left_right);
+        make.right.equalTo(weakSelf).offset(-gap_left_right_test);
         make.top.equalTo(weakSelf.headerImgView.mas_bottom).offset(10.f);
         make.size.mas_equalTo(CGSizeMake(W_infoImgView, H_infoImgView));
     }];
     
     [self.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.headerImgView.mas_bottom).offset(10.f);
-        make.left.equalTo(weakSelf).offset(gap_left_right);
+        make.left.equalTo(weakSelf).offset(gap_left_right_test);
         if (isHaveInfoImg) {
-            make.right.equalTo(weakSelf).offset(-10.f-W_infoImgView-gap_left_right);
+            make.right.equalTo(weakSelf).offset(-10.f-W_infoImgView-gap_left_right_test);
         } else {
-            make.right.equalTo(weakSelf).offset(-gap_left_right);
+            make.right.equalTo(weakSelf).offset(-gap_left_right_test);
         }
     }];
     
     [self.contentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.titleLabel.mas_bottom).offset(10.f);
-        make.left.equalTo(weakSelf).offset(gap_left_right);
+        make.left.equalTo(weakSelf).offset(gap_left_right_test);
         if (isHaveInfoImg) {
-            make.right.equalTo(weakSelf).offset(-10.f-W_infoImgView-gap_left_right);
+            make.right.equalTo(weakSelf).offset(-10.f-W_infoImgView-gap_left_right_test);
         } else {
-            make.right.equalTo(weakSelf).offset(-gap_left_right);
+            make.right.equalTo(weakSelf).offset(-gap_left_right_test);
         }
     }];
     
     [self.bottomLine mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(weakSelf).offset(gap_left_right);
-        make.right.equalTo(weakSelf).offset(-gap_left_right);
+        make.left.equalTo(weakSelf).offset(gap_left_right_test);
+        make.right.equalTo(weakSelf).offset(-gap_left_right_test);
         make.bottom.equalTo(weakSelf);
         make.height.mas_equalTo(.5f);
     }];
@@ -142,7 +142,7 @@ static CGFloat const leftGap_header = 10.f;
         totalHeight += H_infoImgView;
     } else {
         CGSize contentSize = size;
-        contentSize.width -= gap_left_right*2.f;
+        contentSize.width -= gap_left_right_test*2.f;
         totalHeight += [self.titleLabel sizeThatFits:contentSize].height;
         totalHeight += 10.f;
         totalHeight += [self.contentLabel sizeThatFits:contentSize].height;

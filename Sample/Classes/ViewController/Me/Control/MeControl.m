@@ -41,20 +41,8 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.section == 0) {
-        FMAlertView *alert = [[FMAlertView alloc] initWithStyle:AlertStyleConfirmAlert width:0.8];
-        [alert setTitleText:@"当前价格: 500LUK" contentText:@"每位用户在该卡牌预售期仅能持有一张" confirmBtnText:@"确认购买" cancelBtnText:@"取消"];
-        alert.confirm = ^(){
-            TTDPRINT(@"Confirm");
-        };
-        alert.cancel = ^(){
-            TTDPRINT(@"Cancel");
-        };
-        [alert show];
-    } else {
-        TestViewController *vc = [[TestViewController alloc] init];
-        [self.vc.zl_navigationController pushViewController:vc animated:YES];
-    }
+    TestViewController *vc = [[TestViewController alloc] init];
+    [self.vc.zl_navigationController pushViewController:vc animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

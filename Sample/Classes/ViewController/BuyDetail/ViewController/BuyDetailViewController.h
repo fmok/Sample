@@ -7,7 +7,10 @@
 //
 
 #import "FMBaseViewController.h"
+#import "BuyDetailCardView.h"
 
 @interface BuyDetailViewController : FMBaseViewController
+
+@property (nonatomic, strong) BuyDetailCardView *cardView;
 
 @end

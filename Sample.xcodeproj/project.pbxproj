@@ -31,6 +31,7 @@
 		5740FA3B206CBA97006F20A5 /* FMScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA3A206CBA97006F20A5 /* FMScrollLabel.m */; };
 		5740FA45206CE6F0006F20A5 /* BuyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA44206CE6F0006F20A5 /* BuyDetailViewController.m */; };
 		5740FA48206CE705006F20A5 /* BuyDetailControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA47206CE705006F20A5 /* BuyDetailControl.m */; };
+		5740FA4B206CEEAA006F20A5 /* BuyDetailCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA4A206CEEAA006F20A5 /* BuyDetailCardView.m */; };
 		5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57572589206A17BB0085D6BF /* MeHeaderView.m */; };
 		575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA12064D0DF0031BC49 /* InfoCell.m */; };
 		575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA52064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m */; };
@@ -148,6 +149,9 @@
 		5740FA44206CE6F0006F20A5 /* BuyDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailViewController.m; sourceTree = "<group>"; };
 		5740FA46206CE705006F20A5 /* BuyDetailControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyDetailControl.h; sourceTree = "<group>"; };
 		5740FA47206CE705006F20A5 /* BuyDetailControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailControl.m; sourceTree = "<group>"; };
+		5740FA49206CEEAA006F20A5 /* BuyDetailCardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyDetailCardView.h; sourceTree = "<group>"; };
+		5740FA4A206CEEAA006F20A5 /* BuyDetailCardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailCardView.m; sourceTree = "<group>"; };
+		5740FA4C206D02DF006F20A5 /* FMSizeNumMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMSizeNumMacro.h; sourceTree = "<group>"; };
 		57572588206A17BB0085D6BF /* MeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeHeaderView.h; sourceTree = "<group>"; };
 		57572589206A17BB0085D6BF /* MeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeHeaderView.m; sourceTree = "<group>"; };
 		575F9AA02064D0DF0031BC49 /* InfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
@@ -424,6 +428,8 @@
 		5740FA40206CE6CB006F20A5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5740FA49206CEEAA006F20A5 /* BuyDetailCardView.h */,
+				5740FA4A206CEEAA006F20A5 /* BuyDetailCardView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -693,6 +699,7 @@
 				572E6A7B20637F64008114EA /* FMColorMacro.h */,
 				57C3D5682068BBAE00E0B8BA /* FMConstants.h */,
 				57C3D5692068BBAE00E0B8BA /* FMConstants.m */,
+				5740FA4C206D02DF006F20A5 /* FMSizeNumMacro.h */,
 			);
 			path = Macro;
 			sourceTree = "<group>";
@@ -1248,6 +1255,7 @@
 				57B544072062727F00701F9C /* Sample.xcdatamodeld in Sources */,
 				578320B7206A53D400E2D67F /* FMAlertView.m in Sources */,
 				57DED5452067C81700E24607 /* FMTabBarViewController.m in Sources */,
+				5740FA4B206CEEAA006F20A5 /* BuyDetailCardView.m in Sources */,
 				572E6A8E2063CA55008114EA /* JSONKit.m in Sources */,
 				57C3D555206896A900E0B8BA /* MeViewController.m in Sources */,
 				57DED5612067D39600E24607 /* UIImage+Alpha.m in Sources */,

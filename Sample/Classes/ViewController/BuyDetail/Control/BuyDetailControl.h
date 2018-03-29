@@ -13,4 +13,7 @@
 
 @property (nonatomic, weak) BuyDetailViewController *vc;
 
+- (void)loadData;
+- (void)buyCardAction;
+
 @end

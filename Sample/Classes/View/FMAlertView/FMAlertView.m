@@ -110,23 +110,6 @@ static CGFloat const backgroundAlpha = 0.5;
     [self.cancelButton setTitle:cancelText forState:UIControlStateNormal];
 }
 
-/**
- 设置弹框的宽度
- @param width width 宽度值  范围 0-1  百分比
- */
-- (void)setAlertWidth:(CGFloat)width
-{
-    [self.mainView mas_updateConstraints:^(MASConstraintMaker *make) {
-        if (width > 1) {
-            make.width.offset(width);
-        } else if(width > 0 && width <= 1){
-            make.width.offset([UIScreen mainScreen].bounds.size.width * width);
-        } else{
-            make.width.offset([UIScreen mainScreen].bounds.size.width * 0.7);
-        }
-    }];
-}
-
 - (void)show
 {
     [self animate];
@@ -195,6 +178,23 @@ static CGFloat const backgroundAlpha = 0.5;
         make.height.equalTo(@40);
         make.bottom.equalTo(self.mainView);
         make.top.equalTo(self.contentTextLabel.mas_bottom).offset(30);
+    }];
+}
+
+/**
+ 设置弹框的宽度
+ @param width width 宽度值  范围 0-1  百分比
+ */
+- (void)setAlertWidth:(CGFloat)width
+{
+    [self.mainView mas_updateConstraints:^(MASConstraintMaker *make) {
+        if (width > 1) {
+            make.width.offset(width);
+        } else if(width > 0 && width <= 1){
+            make.width.offset([UIScreen mainScreen].bounds.size.width * width);
+        } else{
+            make.width.offset([UIScreen mainScreen].bounds.size.width * 0.7);
+        }
     }];
 }
 
