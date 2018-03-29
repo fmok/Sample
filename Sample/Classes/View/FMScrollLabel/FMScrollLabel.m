@@ -31,21 +31,25 @@ static double const pauseTime = .5f;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor clearColor];
         [self commitInit];
     }
     return self;
 }
 
 #pragma mark - Public methods
-- (void)beginAnimation
+- (void)commitInitWithBackgroundColor:(UIColor *)bgColor textColor:(UIColor *)textColor textFont:(UIFont *)textFont
 {
-    [self addTimer];
-}
-
-- (void)pauseAnimation
-{
-    [displayLink setPaused:YES];
+    self.backgroundColor = bgColor;
+    for (NSInteger i = 0; i < NumOfLabels; i++) {
+        labels[i] = [[UILabel alloc] init];
+        labels[i].backgroundColor = [UIColor clearColor];
+        labels[i].textColor = textColor;
+        labels[i].font = textFont;
+        [self addSubview:labels[i]];
+    }
+    self.showsVerticalScrollIndicator = NO;
+    self.showsHorizontalScrollIndicator = NO;
+    self.userInteractionEnabled = NO;
 }
 
 #pragma mark - Private methods
@@ -66,16 +70,7 @@ static double const pauseTime = .5f;
 
 - (void)commitInit
 {
-    for (NSInteger i = 0; i < NumOfLabels; i++) {
-        labels[i] = [[UILabel alloc] init];
-        labels[i].textColor = [UIColor blackColor];
-        labels[i].backgroundColor = [UIColor clearColor];
-        labels[i].font = [UIFont systemFontOfSize:17.f];
-        [self addSubview:labels[i]];
-    }
-    self.showsVerticalScrollIndicator = NO;
-    self.showsHorizontalScrollIndicator = NO;
-    self.userInteractionEnabled = NO;
+    [self commitInitWithBackgroundColor:[UIColor clearColor] textColor:[UIColor blackColor] textFont:[UIFont systemFontOfSize:17.f]];
 }
 
 - (void)installConfigation
@@ -126,6 +121,17 @@ static double const pauseTime = .5f;
         center.x = self.center.x - self.frame.origin.x;
         labels[0].center = center;
     }
+}
+
+#pragma mark - Animation
+- (void)beginAnimation
+{
+    [self addTimer];
+}
+
+- (void)pauseAnimation
+{
+    [displayLink setPaused:YES];
 }
 
 #pragma mark - Events

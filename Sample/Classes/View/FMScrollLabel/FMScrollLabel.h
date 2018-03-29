@@ -12,4 +12,6 @@
 
 @property (nonatomic, strong) NSString *text;
 
+- (void)commitInitWithBackgroundColor:(UIColor *)bgColor textColor:(UIColor *)textColor textFont:(UIFont *)textFont;
+
 @end
