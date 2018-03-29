@@ -11,7 +11,7 @@
 #import "MeViewController.h"
 #import "UIImage+Resize.h"
 
-@interface FMTabBarViewController ()
+@interface FMTabBarViewController ()<UITabBarControllerDelegate>
 
 @property (nonatomic, assign) BOOL statusBarHidden;
 
@@ -24,6 +24,7 @@
     // Do any additional setup after loading the view.
     [UITabBar appearance].translucent = NO;
     self.zl_navigationBarHidden = YES;
+    self.delegate = self;
     [self setUp];
 }
 
@@ -105,6 +106,12 @@
              @"",
              @"我的账户"
              ];
+}
+
+#pragma mark - UITabBarControllerDelegate
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    TTDPRINT(@"\n*** %@ ***\n", viewController);
 }
 
 #pragma mark - 处理statusBar
