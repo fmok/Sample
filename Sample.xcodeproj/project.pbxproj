@@ -29,6 +29,7 @@
 		5737959A206B95C400388BCC /* MeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379599206B95C400388BCC /* MeCell.m */; };
 		5740FA33206C8ADE006F20A5 /* FMAutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA32206C8ADE006F20A5 /* FMAutoScrollLabel.m */; };
 		5740FA38206C9805006F20A5 /* upDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5740FA37206C9805006F20A5 /* upDown@2x.png */; };
+		5740FA3B206CBA97006F20A5 /* FMScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA3A206CBA97006F20A5 /* FMScrollLabel.m */; };
 		5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57572589206A17BB0085D6BF /* MeHeaderView.m */; };
 		575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA12064D0DF0031BC49 /* InfoCell.m */; };
 		575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA52064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m */; };
@@ -142,6 +143,8 @@
 		5740FA31206C8ADE006F20A5 /* FMAutoScrollLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMAutoScrollLabel.h; sourceTree = "<group>"; };
 		5740FA32206C8ADE006F20A5 /* FMAutoScrollLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMAutoScrollLabel.m; sourceTree = "<group>"; };
 		5740FA37206C9805006F20A5 /* upDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upDown@2x.png"; sourceTree = "<group>"; };
+		5740FA39206CBA97006F20A5 /* FMScrollLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMScrollLabel.h; sourceTree = "<group>"; };
+		5740FA3A206CBA97006F20A5 /* FMScrollLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMScrollLabel.m; sourceTree = "<group>"; };
 		57572588206A17BB0085D6BF /* MeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeHeaderView.h; sourceTree = "<group>"; };
 		57572589206A17BB0085D6BF /* MeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeHeaderView.m; sourceTree = "<group>"; };
 		575F9AA02064D0DF0031BC49 /* InfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
@@ -373,6 +376,8 @@
 			children = (
 				5740FA31206C8ADE006F20A5 /* FMAutoScrollLabel.h */,
 				5740FA32206C8ADE006F20A5 /* FMAutoScrollLabel.m */,
+				5740FA39206CBA97006F20A5 /* FMScrollLabel.h */,
+				5740FA3A206CBA97006F20A5 /* FMScrollLabel.m */,
 			);
 			path = FMAutoScrollLabel;
 			sourceTree = "<group>";
@@ -1204,6 +1209,7 @@
 				57B5440F2062727F00701F9C /* main.m in Sources */,
 				57B54440206278B600701F9C /* TestViewController.m in Sources */,
 				57DED55B2067D23500E24607 /* UIImage+Resize.m in Sources */,
+				5740FA3B206CBA97006F20A5 /* FMScrollLabel.m in Sources */,
 				575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */,
 				57B5444920627C2C00701F9C /* PulledTableView.m in Sources */,
 				57C3D559206898CA00E0B8BA /* MeControl.m in Sources */,
