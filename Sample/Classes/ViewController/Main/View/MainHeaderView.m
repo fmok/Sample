@@ -20,7 +20,6 @@ static CGFloat const gap_tips_left_right = 15.f;
 @property (nonatomic, strong) UIView *tipsView;
 @property (nonatomic, strong) UIButton *signInBtn;
 @property (nonatomic, strong) UIImageView *trumpetImgView;  // 喇叭
-//@property (nonatomic, strong) FMAutoScrollLabel *scrollLabel;
 @property (nonatomic, strong) FMScrollLabel *scrollLabel;
 
 @end
