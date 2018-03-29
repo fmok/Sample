@@ -59,7 +59,9 @@ static double const pauseTime = .5f;
         displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleDisplayLink)];
         [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     }
-    [displayLink setPaused:NO];
+    if (displayLink.isPaused) {
+        [displayLink setPaused:NO];
+    }
 }
 
 - (void)removeTimer
@@ -131,7 +133,9 @@ static double const pauseTime = .5f;
 
 - (void)pauseAnimation
 {
-    [displayLink setPaused:YES];
+    if (!displayLink.isPaused) {
+        [displayLink setPaused:YES];
+    }
 }
 
 #pragma mark - Events
