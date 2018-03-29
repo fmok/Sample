@@ -14,5 +14,7 @@
 
 @property (nonatomic, strong) PulledTableView *mePulledTableView;
 @property (nonatomic, strong) MeHeaderView *headerView;
+@property (nonatomic, copy) NSArray *ImgArr;
+@property (nonatomic, copy) NSArray *titleArr;
 
 @end

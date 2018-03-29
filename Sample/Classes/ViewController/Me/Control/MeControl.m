@@ -76,7 +76,7 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MeCell *cell = [tableView dequeueReusableCellWithIdentifier:kMeCellReusedIdentifierStr forIndexPath:indexPath];
-    [cell updateContent];
+    [cell updateContentWithImg:self.vc.ImgArr[indexPath.row] contentText:self.vc.titleArr[indexPath.row]];
     return cell;
 }
 

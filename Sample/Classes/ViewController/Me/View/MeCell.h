@@ -10,6 +10,6 @@
 
 @interface MeCell : UITableViewCell
 
-- (void)updateContent;
+- (void)updateContentWithImg:(NSString *)imgUrl contentText:(NSString *)text;
 
 @end

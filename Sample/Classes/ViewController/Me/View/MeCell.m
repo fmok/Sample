@@ -7,10 +7,15 @@
 //
 
 #import "MeCell.h"
+#import "UIImageView+WebCache.h"
+
+static CGFloat const leftImageW_H = 40.f;
 
 @interface MeCell ()
 
 @property (nonatomic, strong) UIImageView *bgContentView;
+@property (nonatomic, strong) UIImageView *leftImgView;
+@property (nonatomic, strong) UILabel *contenLabel;
 
 @end
 
@@ -22,6 +27,8 @@
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         [self addSubview:self.bgContentView];
+        [self.bgContentView addSubview:self.leftImgView];
+        [self.bgContentView addSubview:self.contenLabel];
     }
     return self;
 }
@@ -35,12 +42,24 @@
         make.top.equalTo(weakSelf).offset(10.f);
         make.bottom.equalTo(weakSelf);
     }];
+    [self.leftImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.bgContentView).offset(10.f);
+        make.centerY.equalTo(weakSelf.bgContentView);
+        make.size.mas_equalTo(CGSizeMake(leftImageW_H, leftImageW_H));
+    }];
+    [self.contenLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.leftImgView.mas_right).offset(20.f);
+        make.centerY.equalTo(weakSelf.bgContentView);
+    }];
+    
     [super updateConstraints];
 }
 
 #pragma mark - Public methods
-- (void)updateContent
+- (void)updateContentWithImg:(NSString *)imgStr contentText:(NSString *)text
 {
+    self.leftImgView.image = [UIImage imageNamed:imgStr];
+    self.contenLabel.text = CHANGE_TO_STRING(text);
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
@@ -55,6 +74,24 @@
         _bgContentView.clipsToBounds = YES;
     }
     return _bgContentView;
+}
+
+- (UIImageView *)leftImgView
+{
+    if (!_leftImgView) {
+        _leftImgView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    }
+    return _leftImgView;
+}
+
+- (UILabel *)contenLabel
+{
+    if (!_contenLabel) {
+        _contenLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        _contenLabel.textColor = [UIColor blackColor];
+        _contenLabel.font = [UIFont systemFontOfSize:17.f];
+    }
+    return _contenLabel;
 }
 
 - (void)awakeFromNib {

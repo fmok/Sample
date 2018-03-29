@@ -91,6 +91,22 @@
     return _headerView;
 }
 
+- (NSArray *)ImgArr
+{
+    if (!_ImgArr) {
+        _ImgArr = [[NSArray alloc] initWithObjects:@"upDown", @"upDown", nil];
+    }
+    return _ImgArr;
+}
+
+- (NSArray *)titleArr
+{
+    if (!_titleArr) {
+        _titleArr = [[NSArray alloc] initWithObjects:@"钱包", @"我的购买", nil];
+    }
+    return _titleArr;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
