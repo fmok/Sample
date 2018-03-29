@@ -45,6 +45,14 @@
         make.height.mas_equalTo(H_Card);
     }];
     
+    [self.view addSubview:self.cardSendWordView];
+    [self.cardSendWordView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.view).offset(gap_left_right_buyDetail);
+        make.right.equalTo(weakSelf.view).offset(-gap_left_right_buyDetail);
+        make.top.equalTo(weakSelf.cardView.mas_bottom).offset(8.f);
+        make.height.mas_equalTo(H_Card_sendWord);
+    }];
+    
     [self.view addSubview:self.buyBtn];
     [self.buyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(weakSelf.view);
@@ -86,6 +94,14 @@
         _cardView = [[BuyDetailCardView alloc] initWithFrame:CGRectZero];
     }
     return _cardView;
+}
+
+- (BuyDetailCardSendWordView *)cardSendWordView
+{
+    if (!_cardSendWordView) {
+        _cardSendWordView = [[BuyDetailCardSendWordView alloc] initWithFrame:CGRectZero];
+    }
+    return _cardSendWordView;
 }
 
 - (UIButton *)buyBtn

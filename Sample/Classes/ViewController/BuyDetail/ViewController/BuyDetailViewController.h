@@ -8,9 +8,11 @@
 
 #import "FMBaseViewController.h"
 #import "BuyDetailCardView.h"
+#import "BuyDetailCardSendWordView.h"
 
 @interface BuyDetailViewController : FMBaseViewController
 
 @property (nonatomic, strong) BuyDetailCardView *cardView;
+@property (nonatomic, strong) BuyDetailCardSendWordView *cardSendWordView;
 
 @end
