@@ -15,10 +15,10 @@ typedef NS_ENUM(NSInteger, AutoScrollDirection) {
 
 @interface FMAutoScrollLabel : UIScrollView
 
-@property(nonatomic) enum AutoScrollDirection scrollDirection;
-@property(nonatomic) float scrollSpeed;
+@property (nonatomic, assign) AutoScrollDirection scrollDirection;
+@property(nonatomic, assign) CGFloat scrollSpeed;
 @property(nonatomic) NSTimeInterval pauseInterval;
-@property(nonatomic) CGFloat bufferSpaceBetweenLabels;
+@property(nonatomic, assign) CGFloat bufferSpaceBetweenLabels;
 // normal UILabel properties
 @property(nonatomic,retain) UIColor *textColor;
 @property(nonatomic, retain) UIFont *font;

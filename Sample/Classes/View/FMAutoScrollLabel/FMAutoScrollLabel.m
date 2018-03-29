@@ -16,7 +16,7 @@
 @interface FMAutoScrollLabel ()
 {
     UILabel *label[NUM_LABELS];
-    enum AutoScrollDirection scrollDirection;
+    AutoScrollDirection scrollDirection;
     CGFloat scrollSpeed;
     NSTimeInterval pauseInterval;
     CGFloat bufferSpaceBetweenLabels;
@@ -231,24 +231,24 @@
 }
 
 
-- (void)setScrollSpeed:(float)speed
+- (void)setScrollSpeed:(CGFloat)speed
 {
     scrollSpeed = speed;
     [self readjustLabels];
 }
 
-- (float)scrollSpeed
+- (CGFloat)scrollSpeed
 {
     return scrollSpeed;
 }
 
-- (void)setScrollDirection: (enum AutoScrollDirection)direction
+- (void)setScrollDirection:(AutoScrollDirection)scrollDirection
 {
-    scrollDirection = direction;
+    scrollDirection = scrollDirection;
     [self readjustLabels];
 }
 
-- (enum AutoScrollDirection)scrollDirection
+- (AutoScrollDirection)scrollDirection
 {
     return scrollDirection;
 }
