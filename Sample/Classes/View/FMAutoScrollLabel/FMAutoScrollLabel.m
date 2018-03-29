@@ -166,7 +166,7 @@
             label[i].hidden = NO;
         }
         [self scroll];
-    }else{
+    } else {
         // Hide the other labels out of view
         for (NSInteger i = 1; i < NUM_LABELS; i++){
             label[i].hidden = YES;
