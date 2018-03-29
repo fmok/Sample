@@ -7,7 +7,7 @@
 //
 
 #import "MainHeaderView.h"
-#import "AutoScrollLabel.h"
+#import "FMAutoScrollLabel.h"
 
 #define W_SignIn_Btn kScreenWidth/2.f
 #define H_SignIn_Btn 40.f
@@ -20,7 +20,7 @@ static CGFloat const gap_tips_left_right = 15.f;
 @property (nonatomic, strong) UIView *tipsView;
 @property (nonatomic, strong) UIButton *signInBtn;
 @property (nonatomic, strong) UIImageView *trumpetImgView;  // 喇叭
-@property (nonatomic, strong) AutoScrollLabel *scrollLabel;
+@property (nonatomic, strong) FMAutoScrollLabel *scrollLabel;
 
 @end
 
@@ -73,7 +73,7 @@ static CGFloat const gap_tips_left_right = 15.f;
         CGFloat scroll_X = gap_tips_left_right+W_H_trumpetImgView+12.f;
         CGFloat scroll_Y = self.trumpetImgView.ml_top;
         CGFloat scroll_W = self.tipsView.ml_width-2*gap_tips_left_right-W_H_trumpetImgView-12.f;
-        _scrollLabel = [[AutoScrollLabel alloc] initWithFrame:CGRectMake(scroll_X, scroll_Y, scroll_W, W_H_trumpetImgView)];
+        _scrollLabel = [[FMAutoScrollLabel alloc] initWithFrame:CGRectMake(scroll_X, scroll_Y, scroll_W, W_H_trumpetImgView)];
         _scrollLabel.font = [UIFont systemFontOfSize:17.f];
         _scrollLabel.textColor = SRGBCOLOR_HEX(0x000000);
         [self.tipsView addSubview:_scrollLabel];

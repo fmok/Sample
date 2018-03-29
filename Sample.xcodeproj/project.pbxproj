@@ -27,6 +27,7 @@
 		57379594206B789F00388BCC /* CollectionSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379593206B789F00388BCC /* CollectionSectionHeaderView.m */; };
 		57379597206B826A00388BCC /* MainHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379596206B826A00388BCC /* MainHeaderView.m */; };
 		5737959A206B95C400388BCC /* MeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379599206B95C400388BCC /* MeCell.m */; };
+		5740FA33206C8ADE006F20A5 /* FMAutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA32206C8ADE006F20A5 /* FMAutoScrollLabel.m */; };
 		5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57572589206A17BB0085D6BF /* MeHeaderView.m */; };
 		575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA12064D0DF0031BC49 /* InfoCell.m */; };
 		575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA52064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m */; };
@@ -37,7 +38,6 @@
 		578320B0206A3B7400E2D67F /* closed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 578320A9206A3B7400E2D67F /* closed@2x.png */; };
 		578320B1206A3B7400E2D67F /* closed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 578320AA206A3B7400E2D67F /* closed@3x.png */; };
 		578320B7206A53D400E2D67F /* FMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578320B6206A53D400E2D67F /* FMAlertView.m */; };
-		579DFAC7206BB96600835B63 /* AutoScrollLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 579DFAC6206BB96600835B63 /* AutoScrollLabel.m */; };
 		57B543FE2062727F00701F9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B543FD2062727F00701F9C /* AppDelegate.m */; };
 		57B544042062727F00701F9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B544022062727F00701F9C /* Main.storyboard */; };
 		57B544072062727F00701F9C /* Sample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57B544052062727F00701F9C /* Sample.xcdatamodeld */; };
@@ -138,6 +138,8 @@
 		57379596206B826A00388BCC /* MainHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainHeaderView.m; sourceTree = "<group>"; };
 		57379598206B95C400388BCC /* MeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeCell.h; sourceTree = "<group>"; };
 		57379599206B95C400388BCC /* MeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeCell.m; sourceTree = "<group>"; };
+		5740FA31206C8ADE006F20A5 /* FMAutoScrollLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMAutoScrollLabel.h; sourceTree = "<group>"; };
+		5740FA32206C8ADE006F20A5 /* FMAutoScrollLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMAutoScrollLabel.m; sourceTree = "<group>"; };
 		57572588206A17BB0085D6BF /* MeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeHeaderView.h; sourceTree = "<group>"; };
 		57572589206A17BB0085D6BF /* MeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeHeaderView.m; sourceTree = "<group>"; };
 		575F9AA02064D0DF0031BC49 /* InfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
@@ -155,8 +157,6 @@
 		578320AA206A3B7400E2D67F /* closed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closed@3x.png"; sourceTree = "<group>"; };
 		578320B5206A53D400E2D67F /* FMAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMAlertView.h; sourceTree = "<group>"; };
 		578320B6206A53D400E2D67F /* FMAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMAlertView.m; sourceTree = "<group>"; };
-		579DFAC5206BB96600835B63 /* AutoScrollLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoScrollLabel.h; sourceTree = "<group>"; };
-		579DFAC6206BB96600835B63 /* AutoScrollLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoScrollLabel.m; sourceTree = "<group>"; };
 		57B543F92062727F00701F9C /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B543FC2062727F00701F9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57B543FD2062727F00701F9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -366,6 +366,15 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		5740FA30206C8A9A006F20A5 /* FMAutoScrollLabel */ = {
+			isa = PBXGroup;
+			children = (
+				5740FA31206C8ADE006F20A5 /* FMAutoScrollLabel.h */,
+				5740FA32206C8ADE006F20A5 /* FMAutoScrollLabel.m */,
+			);
+			path = FMAutoScrollLabel;
+			sourceTree = "<group>";
+		};
 		57572587206A17A40085D6BF /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,15 +411,6 @@
 				578320B6206A53D400E2D67F /* FMAlertView.m */,
 			);
 			path = FMAlertView;
-			sourceTree = "<group>";
-		};
-		579DFAC4206BB96600835B63 /* AutoScrollLabel */ = {
-			isa = PBXGroup;
-			children = (
-				579DFAC5206BB96600835B63 /* AutoScrollLabel.h */,
-				579DFAC6206BB96600835B63 /* AutoScrollLabel.m */,
-			);
-			path = AutoScrollLabel;
 			sourceTree = "<group>";
 		};
 		57B543F02062727F00701F9C = {
@@ -509,6 +509,7 @@
 		57B544352062780E00701F9C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5740FA30206C8A9A006F20A5 /* FMAutoScrollLabel */,
 				57379582206B4B2500388BCC /* SegmentControl */,
 				578320B4206A53BD00E2D67F /* FMAlertView */,
 				57DED5422067C7FE00E24607 /* TabBar */,
@@ -640,7 +641,6 @@
 		57B5445B206282CF00701F9C /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				579DFAC4206BB96600835B63 /* AutoScrollLabel */,
 				5737957E206B4ACA00388BCC /* SwipeView */,
 				57DED5652067D42100E24607 /* LBBlurredImage */,
 				57DED5582067D22400E24607 /* FMCategories */,
@@ -1174,7 +1174,6 @@
 				57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */,
 				572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */,
 				57C3D5702068C4D300E0B8BA /* CGGeometryAdditions.m in Sources */,
-				579DFAC7206BB96600835B63 /* AutoScrollLabel.m in Sources */,
 				57B544072062727F00701F9C /* Sample.xcdatamodeld in Sources */,
 				578320B7206A53D400E2D67F /* FMAlertView.m in Sources */,
 				57DED5452067C81700E24607 /* FMTabBarViewController.m in Sources */,
@@ -1205,6 +1204,7 @@
 				57B5445020627CB700701F9C /* ZLNavigationController.m in Sources */,
 				57B5445420627EF700701F9C /* SHError.m in Sources */,
 				572E6A7A20637F1D008114EA /* MBProgressHUD.m in Sources */,
+				5740FA33206C8ADE006F20A5 /* FMAutoScrollLabel.m in Sources */,
 				57B5444C20627C5800701F9C /* PulledCollectionView.m in Sources */,
 				57DED55E2067D36500E24607 /* UIImage+RoundedCorner.m in Sources */,
 				57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */,
