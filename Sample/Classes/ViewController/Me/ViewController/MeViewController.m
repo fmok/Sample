@@ -34,6 +34,7 @@
     }];
     [self.control registerCell];
     [self customNav];
+    [self.control loadData];
     [self.mePulledTableView addObserver:self.control forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
 }
 

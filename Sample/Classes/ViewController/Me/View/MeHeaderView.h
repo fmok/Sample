@@ -15,4 +15,6 @@
 
 @property (nonatomic, strong) UIImageView *imgView;
 
+- (void)updateContent;
+
 @end

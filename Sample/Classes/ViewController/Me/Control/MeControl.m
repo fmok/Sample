@@ -20,6 +20,16 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
     [self.vc.mePulledTableView registerClass:[MeCell class] forCellReuseIdentifier:kMeCellReusedIdentifierStr];
 }
 
+- (void)loadData
+{
+    [self serializeData];
+}
+
+#pragma mark - Private methods
+- (void)serializeData
+{
+    [self.vc.headerView updateContent];
+}
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -17,5 +17,6 @@
 @property (nonatomic, weak) MeViewController *vc;
 
 - (void)registerCell;
+- (void)loadData;
 
 @end
