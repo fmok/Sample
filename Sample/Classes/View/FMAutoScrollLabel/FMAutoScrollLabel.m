@@ -94,9 +94,9 @@
 - (void)scroll
 {
     // Prevent multiple calls
-    if (isScrolling){
-        //        return;
-    }
+//    if (isScrolling){
+//        return;
+//    }
     isScrolling = YES;
     
     if (scrollDirection == AutoScrollDirectionLeft){
