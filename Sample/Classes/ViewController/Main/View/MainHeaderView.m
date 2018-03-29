@@ -7,9 +7,12 @@
 //
 
 #import "MainHeaderView.h"
+#import "AutoScrollLabel.h"
 
-static CGFloat W_SignIn_Btn = 200.f;
-static CGFloat H_SignIn_Btn = 40.f;
+#define W_SignIn_Btn kScreenWidth/2.f
+#define H_SignIn_Btn 40.f
+static CGFloat const W_H_trumpetImgView = 20.f;
+static CGFloat const gap_tips_left_right = 15.f;
 
 @interface MainHeaderView ()
 
@@ -17,6 +20,7 @@ static CGFloat H_SignIn_Btn = 40.f;
 @property (nonatomic, strong) UIView *tipsView;
 @property (nonatomic, strong) UIButton *signInBtn;
 @property (nonatomic, strong) UIImageView *trumpetImgView;  // 喇叭
+@property (nonatomic, strong) AutoScrollLabel *scrollLabel;
 
 @end
 
@@ -30,7 +34,7 @@ static CGFloat H_SignIn_Btn = 40.f;
         [self addSubview:self.bgImgView];
         [self addSubview:self.tipsView];
         [self addSubview:self.signInBtn];
-        [self addSubview:self.trumpetImgView];
+        [self.tipsView addSubview:self.trumpetImgView];
     }
     return self;
 }
@@ -45,8 +49,8 @@ static CGFloat H_SignIn_Btn = 40.f;
     }];
     [self.tipsView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(weakSelf);
-        make.left.equalTo(weakSelf).offset(15.f);
-        make.right.equalTo(weakSelf).offset(-15.f);
+        make.left.equalTo(weakSelf).offset(gap_tips_left_right);
+        make.right.equalTo(weakSelf).offset(-gap_tips_left_right);
         make.height.mas_equalTo(55.f);
     }];
     [self.signInBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -57,7 +61,7 @@ static CGFloat H_SignIn_Btn = 40.f;
     [self.trumpetImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.tipsView).offset(12.f);
         make.bottom.equalTo(weakSelf.tipsView).offset(-12.f);
-        make.size.mas_equalTo(CGSizeMake(20.f, 20.f));
+        make.size.mas_equalTo(CGSizeMake(W_H_trumpetImgView, W_H_trumpetImgView));
     }];
     [super updateConstraints];
 }
@@ -65,7 +69,18 @@ static CGFloat H_SignIn_Btn = 40.f;
 #pragma mark - Public methods
 - (void)updateContent
 {
-    
+    if (!_scrollLabel) {
+        CGFloat scroll_X = gap_tips_left_right+W_H_trumpetImgView+12.f;
+        CGFloat scroll_Y = self.trumpetImgView.ml_top;
+        CGFloat scroll_W = self.tipsView.ml_width-2*gap_tips_left_right-W_H_trumpetImgView-12.f;
+        _scrollLabel = [[AutoScrollLabel alloc] initWithFrame:CGRectMake(scroll_X, scroll_Y, scroll_W, W_H_trumpetImgView)];
+        _scrollLabel.font = [UIFont systemFontOfSize:17.f];
+        _scrollLabel.textColor = SRGBCOLOR_HEX(0x000000);
+        [self.tipsView addSubview:_scrollLabel];
+    } else {
+        [_scrollLabel removeAnimations];
+    }
+    _scrollLabel.text = @"每天上午9:00系统发放100LUK，抢完为止！后面的就是为了凑个字数，哈哈哈哈哈哈哈！！！";
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
