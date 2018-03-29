@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-static CGFloat const gap_left_right_buyDetail = 14.5f;
 #define W_Card (kScreenWidth-2*gap_left_right_buyDetail)
 #define H_Card (W_Card*(265.5f/345.f))
 

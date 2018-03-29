@@ -9,6 +9,7 @@
 #import "BuyDetailViewController.h"
 #import "BuyDetailControl.h"
 
+static CGFloat const gap_left_right_buyDetail = 14.5f;
 #define H_TopView (kScreenWidth*(120.f/375.f))
 
 @interface BuyDetailViewController ()
@@ -65,6 +66,14 @@
         make.height.mas_equalTo(kTabBarHeight);
     }];
     
+    [self.view addSubview:self.cardRelatedView];
+    [self.cardRelatedView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(weakSelf.view).offset(gap_left_right_buyDetail);
+        make.right.equalTo(weakSelf.view).offset(-gap_left_right_buyDetail);
+        make.top.equalTo(weakSelf.cardSendWordView.mas_bottom).offset(8.f);
+        make.bottom.equalTo(weakSelf.buyBtn.mas_top).offset(-gap_left_right_buyDetail);
+    }];
+    
     [self.control loadData];
 }
 
@@ -102,6 +111,14 @@
         _cardSendWordView = [[BuyDetailCardSendWordView alloc] initWithFrame:CGRectZero];
     }
     return _cardSendWordView;
+}
+
+- (BuyDetailCardRelatedView *)cardRelatedView
+{
+    if (!_cardRelatedView) {
+        _cardRelatedView = [[BuyDetailCardRelatedView alloc] initWithFrame:CGRectZero];
+    }
+    return _cardRelatedView;
 }
 
 - (UIButton *)buyBtn

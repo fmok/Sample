@@ -33,6 +33,7 @@
 		5740FA48206CE705006F20A5 /* BuyDetailControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA47206CE705006F20A5 /* BuyDetailControl.m */; };
 		5740FA4B206CEEAA006F20A5 /* BuyDetailCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA4A206CEEAA006F20A5 /* BuyDetailCardView.m */; };
 		5740FA4F206D0645006F20A5 /* BuyDetailCardSendWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA4E206D0645006F20A5 /* BuyDetailCardSendWordView.m */; };
+		5740FA52206D09FD006F20A5 /* BuyDetailCardRelatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA51206D09FD006F20A5 /* BuyDetailCardRelatedView.m */; };
 		5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57572589206A17BB0085D6BF /* MeHeaderView.m */; };
 		575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA12064D0DF0031BC49 /* InfoCell.m */; };
 		575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA52064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m */; };
@@ -155,6 +156,8 @@
 		5740FA4C206D02DF006F20A5 /* FMSizeNumMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMSizeNumMacro.h; sourceTree = "<group>"; };
 		5740FA4D206D0645006F20A5 /* BuyDetailCardSendWordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyDetailCardSendWordView.h; sourceTree = "<group>"; };
 		5740FA4E206D0645006F20A5 /* BuyDetailCardSendWordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailCardSendWordView.m; sourceTree = "<group>"; };
+		5740FA50206D09FD006F20A5 /* BuyDetailCardRelatedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyDetailCardRelatedView.h; sourceTree = "<group>"; };
+		5740FA51206D09FD006F20A5 /* BuyDetailCardRelatedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailCardRelatedView.m; sourceTree = "<group>"; };
 		57572588206A17BB0085D6BF /* MeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeHeaderView.h; sourceTree = "<group>"; };
 		57572589206A17BB0085D6BF /* MeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeHeaderView.m; sourceTree = "<group>"; };
 		575F9AA02064D0DF0031BC49 /* InfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
@@ -435,6 +438,8 @@
 				5740FA4A206CEEAA006F20A5 /* BuyDetailCardView.m */,
 				5740FA4D206D0645006F20A5 /* BuyDetailCardSendWordView.h */,
 				5740FA4E206D0645006F20A5 /* BuyDetailCardSendWordView.m */,
+				5740FA50206D09FD006F20A5 /* BuyDetailCardRelatedView.h */,
+				5740FA51206D09FD006F20A5 /* BuyDetailCardRelatedView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1284,6 +1289,7 @@
 				572E6A872063AFE3008114EA /* CardListModel.m in Sources */,
 				575F9AAE2064EC710031BC49 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				57B543FE2062727F00701F9C /* AppDelegate.m in Sources */,
+				5740FA52206D09FD006F20A5 /* BuyDetailCardRelatedView.m in Sources */,
 				57B5448D2062881E00701F9C /* FMRuntimeEngine.m in Sources */,
 				572E6A7920637F1D008114EA /* HUD.m in Sources */,
 				57B5445020627CB700701F9C /* ZLNavigationController.m in Sources */,
