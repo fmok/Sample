@@ -84,7 +84,9 @@ static CGFloat const gap_tips_left_right = 15.f;
 #pragma mark - Events
 - (void)tapSignIn:(UIButton *)sender
 {
-    TTDPRINT(@"签到");
+    if (self.delegate && [self.delegate respondsToSelector:@selector(siginAction)]) {
+        [self.delegate siginAction];
+    }
 }
 
 #pragma mark - getter & setter

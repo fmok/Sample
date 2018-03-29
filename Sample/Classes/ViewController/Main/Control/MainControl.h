@@ -14,7 +14,8 @@
     UICollectionViewDelegate,
     UICollectionViewDataSource,
     PulledCollectionViewTypeDelegate,
-    CollectionSectionHeaderViewDelegate>
+    CollectionSectionHeaderViewDelegate,
+    MainHeaderViewDelegate>
 
 @property (nonatomic, weak) MainViewController *vc;
 

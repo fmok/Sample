@@ -55,8 +55,6 @@ static NSString *const kCollectionSectionHeaderViewReusedIdentifierStr = @"kColl
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     TTDPRINT(@"\n*** %@ - %@ ***\n", @(indexPath.section), @(indexPath.item));
-    TestViewController *vc = [[TestViewController alloc] init];
-    [self.vc.zl_navigationController pushViewController:vc animated:YES];
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -115,6 +113,14 @@ static NSString *const kCollectionSectionHeaderViewReusedIdentifierStr = @"kColl
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
 {
     return CGSizeZero;
+}
+
+#pragma mark - MainHeaderViewDelegate
+- (void)siginAction
+{
+    TTDPRINT(@"签到");
+    TestViewController *vc = [[TestViewController alloc] init];
+    [self.vc.zl_navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - CollectionSectionHeaderViewDelegate

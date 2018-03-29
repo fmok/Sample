@@ -74,6 +74,7 @@
 {
     if (!_headerView) {
         _headerView = [[MainHeaderView alloc] initWithFrame:CGRectZero];
+        _headerView.delegate = self.control;
     }
     return _headerView;
 }

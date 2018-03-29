@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol MainHeaderViewDelegate <NSObject>
+
+- (void)siginAction;
+
+@end
+
 @interface MainHeaderView : UIView
+
+@property (nonatomic, weak) id<MainHeaderViewDelegate>delegate;
 
 - (void)updateContent;
 
