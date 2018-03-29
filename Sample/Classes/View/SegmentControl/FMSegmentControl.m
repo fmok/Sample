@@ -10,9 +10,7 @@
 
 #define kFontTitleLabel [UIFont systemFontOfSize:14.0]
 #define kFontColorTitleNormal SRGBCOLOR_HEX(0xf12b35)
-#define kFontColorTitleNormal_night SRGBCOLOR_HEX(0xb62e2c)
 #define kFontColorTitleSelected [UIColor whiteColor]
-#define kFontColorTitleSelected_night SRGBCOLOR_HEX(0xb8b8b8)
 
 @interface FMMaskView : UIView
 
