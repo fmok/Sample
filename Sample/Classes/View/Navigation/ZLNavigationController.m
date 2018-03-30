@@ -10,7 +10,6 @@
 
 #import <objc/runtime.h>
 
-//static CGFloat kZLNavigationBarHeight = 64.0f;
 static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
 
 @interface ZLNavigationBar: UINavigationBar <UINavigationBarDelegate>

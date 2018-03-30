@@ -39,9 +39,9 @@ static CGFloat const gap_left_right_buyDetail = 15.f;
         make.left.equalTo(weakSelf.view).offset(gap_left_right_buyDetail);
         make.right.equalTo(weakSelf.view).offset(-gap_left_right_buyDetail);
         if (@available(iOS 11.0, *)) {
-            make.top.equalTo(weakSelf.view.mas_safeAreaLayoutGuideTop).offset(44.f);
+            make.top.equalTo(weakSelf.view.mas_safeAreaLayoutGuideTop).offset(kNavBarHeight);
         } else {
-            make.top.equalTo(weakSelf.mas_topLayoutGuide).offset(44.f);
+            make.top.equalTo(weakSelf.mas_topLayoutGuide).offset(kNavBarHeight);
         }
         make.height.mas_equalTo(H_Card);
     }];
@@ -62,7 +62,7 @@ static CGFloat const gap_left_right_buyDetail = 15.f;
         } else {
             make.bottom.equalTo(weakSelf.mas_bottomLayoutGuide);
         }
-        make.height.mas_equalTo(49.f);
+        make.height.mas_equalTo(kTabBarHeight);
     }];
     
     [self.view addSubview:self.cardRelatedView];
