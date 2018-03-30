@@ -25,6 +25,7 @@ static CGFloat const H_topView_myPurchaseCell = 32.f;
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self addSubview:self.bgContentView];
         [self.bgContentView addSubview:self.topView];
     }
