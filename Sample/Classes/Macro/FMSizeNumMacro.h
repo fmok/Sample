@@ -10,7 +10,7 @@
 #define FMSizeNumMacro_h
 
 // navBar
-#define kNavBarAndStateHeight  ((IS_IPHONEX) ? 88.f :kNavBarAndStateHeight)
+#define kNavBarAndStateHeight  ((IS_IPHONEX) ? 88.f :64.f)
 
 // tabBar
 #define kTabBarHeight ((IS_IPHONEX) ? (49.f+44.f) :49.f)
