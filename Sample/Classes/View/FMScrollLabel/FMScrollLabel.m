@@ -10,8 +10,8 @@
 
 static NSInteger const NumOfLabels = 2;
 static double const gapBetweenLabels = 30.f;
-//static double const RateOfScreenRefresh = 60.f;
 static double const pauseTime = .5f;
+static double const perStepIncrease = .5f;  // 每次刷新的增量（像素）
 
 @interface FMScrollLabel ()
 {
@@ -102,7 +102,7 @@ static double const pauseTime = .5f;
 
     [self setContentOffset:CGPointMake(0,0) animated:NO];
     
-    stepDistance = 1.f;//(labels[0].frame.size.width+gapBetweenLabels)/(RateOfScreenRefresh);
+    stepDistance = perStepIncrease;
     totalDistance = 0;
     for (NSInteger i = 1; i < NumOfLabels; i++) {
         totalDistance += labels[i].frame.size.width + gapBetweenLabels;
@@ -143,7 +143,7 @@ static double const pauseTime = .5f;
 - (void)handleDisplayLink
 {
     self.contentOffset = CGPointMake(stepDistance,0);
-    stepDistance++;
+    stepDistance += perStepIncrease;
     if (stepDistance >= totalDistance) {
         stepDistance = 0;
         @autoreleasepool {
