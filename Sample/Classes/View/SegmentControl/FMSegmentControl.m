@@ -47,9 +47,9 @@
 {
 }
 
-- (instancetype)initWithItems:(NSArray *)items configureDic:(NSDictionary *)configureDic currentIndex:(NSInteger)currentIndex
+- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items configureDic:(NSDictionary *)configureDic currentIndex:(NSInteger)currentIndex
 {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
         if (configureDic) {
             [self.configureDic setValuesForKeysWithDictionary:configureDic];

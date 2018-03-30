@@ -82,7 +82,7 @@ static NSString *const segmentControl_purchaseRecords = @"购买记录";
 - (FMSegmentControl *)segmentControl
 {
     if (!_segmentControl) {
-        _segmentControl = [[FMSegmentControl alloc] initWithItems:@[segmentControl_description, segmentControl_purchaseRecords] configureDic:nil currentIndex:0];
+        _segmentControl = [[FMSegmentControl alloc] initWithFrame:CGRectZero items:@[segmentControl_description, segmentControl_purchaseRecords] configureDic:nil currentIndex:0];
         _segmentControl.delegate = self;
     }
     return _segmentControl;

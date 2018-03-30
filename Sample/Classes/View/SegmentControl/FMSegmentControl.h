@@ -32,7 +32,7 @@ static NSString *const kSegmentControlBorderWidth = @"borderWidth";
 @property (nonatomic, weak) id<FMSegmentControlDelegate> delegate;
 @property (nonatomic, strong) NSMutableDictionary *configureDic;
 
-- (instancetype)initWithItems:(NSArray *)items configureDic:(NSDictionary *)configureDic currentIndex:(NSInteger)currentIndex;
+- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items configureDic:(NSDictionary *)configureDic currentIndex:(NSInteger)currentIndex;
 
 - (void)scrollToIndex:(NSInteger)index;
 - (void)scrollByProgress:(CGFloat)progress;  // 0.0 - index.progress  if you want to scroll to index 2, set progress 0.0 - 2.0;
