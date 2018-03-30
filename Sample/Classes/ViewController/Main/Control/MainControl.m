@@ -109,7 +109,7 @@ static NSString *const kCollectionSectionHeaderViewReusedIdentifierStr = @"kColl
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
     if (section == 0) {
-        return CGSizeMake(kScreenWidth-2*Insert_left_right, 40.f);
+        return CGSizeMake(kScreenWidth-2*gap_left_right_main, 40.f);
     }
     return CGSizeZero;
 }

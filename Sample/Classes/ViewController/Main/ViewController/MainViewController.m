@@ -33,8 +33,8 @@
     [self.pulledCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.headerView.mas_bottom).offset(10.f);
         make.bottom.equalTo(weakSelf.view);
-        make.left.equalTo(weakSelf.view).offset(Insert_left_right);
-        make.right.equalTo(weakSelf.view).offset(-Insert_left_right);
+        make.left.equalTo(weakSelf.view).offset(gap_left_right_main);
+        make.right.equalTo(weakSelf.view).offset(-gap_left_right_main);
     }];
     [self.control registerCell];
     [self.control loadData];

@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "MyPurchaseViewController.h"
+#import "MyPurchaseCell.h"
 
-@interface MyPurchaseControl : NSObject
+@interface MyPurchaseControl : NSObject<
+    UICollectionViewDelegate,
+    UICollectionViewDataSource>
 
 @property (nonatomic, strong) MyPurchaseViewController *vc;
+
+- (void)registerCell;
+- (void)loadData;
 
 @end

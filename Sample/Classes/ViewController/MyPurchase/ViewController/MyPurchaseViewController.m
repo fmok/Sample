@@ -9,7 +9,6 @@
 #import "MyPurchaseViewController.h"
 #import "MyPurchaseControl.h"
 
-static CGFloat const gap_left_right_myPurchase = 15.f;
 #define H_TopView (kScreenWidth*(120.f/375.f))
 
 @interface MyPurchaseViewController ()
@@ -30,6 +29,19 @@ static CGFloat const gap_left_right_myPurchase = 15.f;
         make.top.and.left.and.right.equalTo(weakSelf.view);
         make.height.mas_equalTo(H_TopView);
     }];
+    [self.view addSubview:self.pulledCollectionView];
+    [self.pulledCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        if (@available(iOS 11.0, *)) {
+            make.top.equalTo(weakSelf.view.mas_safeAreaLayoutGuideTop).offset(kNavBarHeight);
+        } else {
+            make.top.equalTo(weakSelf.mas_topLayoutGuide).offset(kNavBarHeight);
+        }
+        make.left.equalTo(weakSelf.view).offset(gap_left_right_myPurchase);
+        make.right.equalTo(weakSelf.view).offset(-gap_left_right_myPurchase);
+        make.bottom.equalTo(weakSelf.view);
+    }];
+    [self.control registerCell];
+    [self.control loadData];
 }
 
 #pragma mark - getter & setter
@@ -49,6 +61,25 @@ static CGFloat const gap_left_right_myPurchase = 15.f;
         _topImgView.backgroundColor = [UIColor purpleColor];
     }
     return _topImgView;
+}
+
+- (PulledCollectionView *)pulledCollectionView
+{
+    if (!_pulledCollectionView) {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        _pulledCollectionView = [[PulledCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        _pulledCollectionView.backgroundColor = [UIColor whiteColor];
+        _pulledCollectionView.bounces = YES;
+        _pulledCollectionView.alwaysBounceVertical = YES;
+        _pulledCollectionView.showsVerticalScrollIndicator = NO;
+        _pulledCollectionView.delegate = self.control;
+        _pulledCollectionView.dataSource = self.control;
+        _pulledCollectionView.isHeader = NO;
+        _pulledCollectionView.isFooter = NO;
+        _pulledCollectionView.layer.cornerRadius = 10.f;
+        _pulledCollectionView.clipsToBounds = YES;
+    }
+    return _pulledCollectionView;
 }
 
 - (void)didReceiveMemoryWarning {

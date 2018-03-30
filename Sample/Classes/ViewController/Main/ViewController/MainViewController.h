@@ -10,7 +10,7 @@
 #import "PulledCollectionView.h"
 #import "MainHeaderView.h"
 
-#define Insert_left_right 15.f
+static CGFloat const gap_left_right_main = 14.5f;
 
 @interface MainViewController : FMBaseViewController
 

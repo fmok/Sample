@@ -7,7 +7,12 @@
 //
 
 #import "FMBaseViewController.h"
+#import "PulledCollectionView.h"
+
+static CGFloat const gap_left_right_myPurchase = 14.5f;
 
 @interface MyPurchaseViewController : FMBaseViewController
+
+@property (nonatomic, strong) PulledCollectionView *pulledCollectionView;
 
 @end
