@@ -8,11 +8,19 @@
 
 #import "BuyDetailCardRelatedView.h"
 #import "PulledTableView.h"
+#import "FMSegmentControl.h"
+
+static NSString *const segmentControl_description = @"描述";
+static NSString *const segmentControl_purchaseRecords = @"购买记录";
+
+#define H_SegmentControl 39.f
 
 @interface BuyDetailCardRelatedView ()<
     UITableViewDelegate,
-    UITableViewDataSource>
+    UITableViewDataSource,
+    FMSegmentControlDelegate>
 
+@property (nonatomic, strong) FMSegmentControl *segmentControl;
 @property (nonatomic, strong) PulledTableView *purchaseRecordsList;
 
 @end
@@ -26,8 +34,26 @@
         self.backgroundColor = [UIColor whiteColor];
         self.layer.cornerRadius = 10.f;
         self.clipsToBounds = YES;
+        [self addSubview:self.segmentControl];
     }
     return self;
+}
+
+- (void)updateConstraints
+{
+    WS(weakSelf);
+    [self.segmentControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.and.left.and.right.equalTo(weakSelf);
+        make.height.mas_equalTo(H_SegmentControl);
+    }];
+    
+    [super updateConstraints];
+}
+
+#pragma mark - FMSegmentControlDelegate
+- (void)segmentedControl:(FMSegmentControl *)segment didSeletedItemAtIndex:(NSInteger)index
+{
+    TTDPRINT(@"segmentControl: %@", @(index));
 }
 
 #pragma mark - UITableViewDelegate
@@ -52,8 +78,18 @@
     return nil;
 }
 
-
 #pragma mark - getter & setter
+- (FMSegmentControl *)segmentControl
+{
+    if (!_segmentControl) {
+        _segmentControl = [[FMSegmentControl alloc] initWithItems:@[segmentControl_description, segmentControl_purchaseRecords]];
+        _segmentControl.delegate = self;
+        _segmentControl.currentIndex = 0;
+//        [_segmentControl commitInitWithBorderColor:[UIColor redColor] borderWidth:1 cornerRadius:0];
+    }
+    return _segmentControl;
+}
+
 - (PulledTableView *)purchaseRecordsList
 {
     if (!_purchaseRecordsList) {

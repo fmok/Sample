@@ -18,16 +18,15 @@
 
 @interface FMSegmentControl : UIControl
 
-- (instancetype)initWithItems:(NSArray *)items;
-
 @property (nonatomic, weak) id<FMSegmentControlDelegate> delegate;
-
 @property (nonatomic, assign) NSInteger currentIndex;
 
-@property (nonatomic, strong) NSArray *items;
+- (instancetype)initWithItems:(NSArray *)items;
+- (void)commitInitWithTitleNormalColor:(UIColor *)normalColor selectedColor:(UIColor *)selectedColor font:(UIFont *)font;
+- (void)commitInitWithSegBgColorNormal:(UIColor *)segBgNormal segBgColorSelected:(UIColor *)segBgSelected;
+- (void)commitInitWithBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth cornerRadius:(CGFloat)cornerRadius;
 
 - (void)scrollToIndex:(NSInteger)index;
-
 - (void)scrollByProgress:(CGFloat)progress;  // 0.0 - index.progress  if you want to scroll to index 2, set progress 0.0 - 2.0;
 
 @end
