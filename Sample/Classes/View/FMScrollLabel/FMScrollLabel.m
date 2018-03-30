@@ -57,6 +57,7 @@ static double const pauseTime = .5f;
 {
     if (!displayLink) {
         displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleDisplayLink)];
+//        displayLink.frameInterval = 2;
         [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     }
     if (displayLink.isPaused) {
@@ -101,7 +102,7 @@ static double const pauseTime = .5f;
 
     [self setContentOffset:CGPointMake(0,0) animated:NO];
     
-    stepDistance = (labels[0].frame.size.width+gapBetweenLabels)/(RateOfScreenRefresh*2);
+    stepDistance = (labels[0].frame.size.width+gapBetweenLabels)/(RateOfScreenRefresh);
     totalDistance = 0;
     for (NSInteger i = 1; i < NumOfLabels; i++) {
         totalDistance += labels[i].frame.size.width + gapBetweenLabels;

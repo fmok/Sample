@@ -76,7 +76,7 @@ static CGFloat const gap_tips_left_right = 15.f;
         _scrollLabel = [[FMScrollLabel alloc] initWithFrame:CGRectMake(scroll_X, scroll_Y, scroll_W, W_H_trumpetImgView)];
         [self.tipsView addSubview:_scrollLabel];
     } 
-    _scrollLabel.text = @"每天上午9:00系统发放100LUK，抢完为止！后面的就是为了凑个字数，哈哈哈哈哈哈哈！！！";
+    _scrollLabel.text = @"每天上午9:00系统发放100LUK，抢完为止！";
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
