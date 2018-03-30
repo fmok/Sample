@@ -10,11 +10,14 @@
 #import "PulledTableView.h"
 #import "MeHeaderView.h"
 
+static NSString *const kMeVCTitle = @"title";
+static NSString *const kMeVCClassName = @"className";
+static NSString *const kMeVCLogoStr = @"logoStr";
+
 @interface MeViewController : FMBaseViewController
 
 @property (nonatomic, strong) PulledTableView *mePulledTableView;
 @property (nonatomic, strong) MeHeaderView *headerView;
-@property (nonatomic, copy) NSArray *ImgArr;
-@property (nonatomic, copy) NSArray *titleArr;
+@property (nonatomic, copy) NSArray *settingArr;
 
 @end

@@ -9,7 +9,7 @@
 #import "BuyDetailViewController.h"
 #import "BuyDetailControl.h"
 
-static CGFloat const gap_left_right_buyDetail = 14.5f;
+static CGFloat const gap_left_right_buyDetail = 15.f;
 #define H_TopView (kScreenWidth*(120.f/375.f))
 
 @interface BuyDetailViewController ()

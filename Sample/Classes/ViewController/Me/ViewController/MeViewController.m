@@ -9,6 +9,8 @@
 #import "MeViewController.h"
 #import "MeControl.h"
 #import "UIImage+Resize.h"
+#import "TestViewController.h"
+#import "MyPurchaseViewController.h"
 
 @interface MeViewController ()
 
@@ -92,20 +94,22 @@
     return _headerView;
 }
 
-- (NSArray *)ImgArr
+- (NSArray *)settingArr
 {
-    if (!_ImgArr) {
-        _ImgArr = [[NSArray alloc] initWithObjects:@"upDown", @"upDown", nil];
+    if (!_settingArr) {
+        _settingArr = [[NSArray alloc] initWithObjects:@{
+                                                         kMeVCTitle: @"钱包",
+                                                         kMeVCClassName: NSStringFromClass([TestViewController class]),
+                                                         kMeVCLogoStr: @"upDown"
+                                                         },
+                       @{
+                         kMeVCTitle: @"我的购买",
+                         kMeVCClassName: NSStringFromClass([MyPurchaseViewController class]),
+                         kMeVCLogoStr: @"upDown"
+                         },
+                       nil];
     }
-    return _ImgArr;
-}
-
-- (NSArray *)titleArr
-{
-    if (!_titleArr) {
-        _titleArr = [[NSArray alloc] initWithObjects:@"钱包", @"我的购买", nil];
-    }
-    return _titleArr;
+    return _settingArr;
 }
 
 - (void)didReceiveMemoryWarning {

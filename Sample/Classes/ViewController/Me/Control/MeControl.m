@@ -9,6 +9,7 @@
 #import "MeControl.h"
 #import "TestViewController.h"
 #import "FMAlertView.h"
+#import "MyPurchaseViewController.h"
 
 static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr";
 
@@ -40,8 +41,9 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    TestViewController *vc = [[TestViewController alloc] init];
+    NSString *cls = [self.vc.settingArr[indexPath.row] objectForKey:kMeVCClassName];
+    FMBaseViewController *vc = [[NSClassFromString(cls) alloc] init];
+    vc.title = [self.vc.settingArr[indexPath.row] objectForKey:kMeVCTitle];
     [self.vc.zl_navigationController pushViewController:vc animated:YES];
 }
 
@@ -74,7 +76,7 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MeCell *cell = [tableView dequeueReusableCellWithIdentifier:kMeCellReusedIdentifierStr forIndexPath:indexPath];
-    [cell updateContentWithImg:self.vc.ImgArr[indexPath.row] contentText:self.vc.titleArr[indexPath.row]];
+    [cell updateContentWithImg:[self.vc.settingArr[indexPath.row] objectForKey:kMeVCLogoStr] contentText:[self.vc.settingArr[indexPath.row] objectForKey:kMeVCTitle]];
     return cell;
 }
 
