@@ -17,10 +17,10 @@ static CGFloat const gap_tips_left_right = 15.f;
 @interface MainHeaderView ()
 
 @property (nonatomic, strong) UIImageView *bgImgView;
-@property (nonatomic, strong) UIView *tipsView;
-@property (nonatomic, strong) UIButton *signInBtn;
+@property (nonatomic, strong) UIView *tipsView;  // 喇叭 + 跑马灯 承载
+@property (nonatomic, strong) UIButton *signInBtn;  // 签到
 @property (nonatomic, strong) UIImageView *trumpetImgView;  // 喇叭
-@property (nonatomic, strong) FMScrollLabel *scrollLabel;
+@property (nonatomic, strong) FMScrollLabel *scrollLabel;  // 跑马灯 label
 
 @end
 
