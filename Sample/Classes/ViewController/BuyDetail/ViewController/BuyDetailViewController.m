@@ -57,13 +57,13 @@ static CGFloat const gap_left_right_buyDetail = 14.5f;
     [self.view addSubview:self.buyBtn];
     [self.buyBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.equalTo(weakSelf.view);
-        make.bottom.equalTo(weakSelf.view);
-//        if (@available(iOS 11.0, *)) {
-//            make.bottom.equalTo(weakSelf.view.mas_safeAreaLayoutGuideBottom);
-//        } else {
-//            make.bottom.equalTo(weakSelf.mas_bottomLayoutGuide);
-//        }
-        make.height.mas_equalTo(kTabBarHeight);
+//        make.bottom.equalTo(weakSelf.view);
+        if (@available(iOS 11.0, *)) {
+            make.bottom.equalTo(weakSelf.view.mas_safeAreaLayoutGuideBottom);
+        } else {
+            make.bottom.equalTo(weakSelf.mas_bottomLayoutGuide);
+        }
+        make.height.mas_equalTo(49.f);
     }];
     
     [self.view addSubview:self.cardRelatedView];

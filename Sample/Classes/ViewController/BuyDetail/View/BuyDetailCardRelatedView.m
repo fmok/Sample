@@ -82,10 +82,8 @@ static NSString *const segmentControl_purchaseRecords = @"购买记录";
 - (FMSegmentControl *)segmentControl
 {
     if (!_segmentControl) {
-        _segmentControl = [[FMSegmentControl alloc] initWithItems:@[segmentControl_description, segmentControl_purchaseRecords]];
+        _segmentControl = [[FMSegmentControl alloc] initWithItems:@[segmentControl_description, segmentControl_purchaseRecords] configureDic:nil currentIndex:0];
         _segmentControl.delegate = self;
-        _segmentControl.currentIndex = 0;
-//        [_segmentControl commitInitWithBorderColor:[UIColor redColor] borderWidth:1 cornerRadius:0];
     }
     return _segmentControl;
 }

@@ -30,22 +30,10 @@
 
 @end
 
-
 @interface FMSegmentControl ()
-{
-    UIColor *titleColorNormal;
-    UIColor *titleColorSelected;
-    UIFont *titleFont;
-    
-    UIColor *segBgColorNormal;
-    UIColor *segBgColorSelected;
-    
-    UIColor *borderColor;
-    CGFloat cornerRadius;
-    CGFloat borderWidth;
-}
 
 @property (nonatomic, strong) NSArray *items;
+@property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, strong) FMMaskView *indicatorView;
 @property (nonatomic, strong) UIView *titleLabelsView;
 @property (nonatomic, strong) UIView *selectedTitlesLabelView;
@@ -59,14 +47,16 @@
 {
 }
 
-- (instancetype)initWithItems:(NSArray *)items
+- (instancetype)initWithItems:(NSArray *)items configureDic:(NSDictionary *)configureDic currentIndex:(NSInteger)currentIndex
 {
     self = [super init];
     if (self) {
-        [self commitInit];
-        self.backgroundColor = segBgColorNormal;
+        if (configureDic) {
+            [self.configureDic setValuesForKeysWithDictionary:configureDic];
+        }
         [self setUp];
         self.items = items;
+        self.currentIndex = currentIndex;
     }
     return self;
 }
@@ -75,9 +65,6 @@
 {
     [super layoutSubviews];
     
-    self.layer.cornerRadius = cornerRadius;
-    self.layer.borderWidth = borderWidth;
-    self.layer.borderColor = borderColor.CGColor;
     _titleLabelsView.frame = self.bounds;
     _selectedTitlesLabelView.frame = self.bounds;
     
@@ -89,30 +76,10 @@
     }
     
     _indicatorView.frame = [self elementFrameAtIndex:self.currentIndex];
-    _indicatorView.layer.cornerRadius = cornerRadius;
+    _indicatorView.layer.cornerRadius = [[self.configureDic objectForKey:kSegmentControlCornerRadius] floatValue];
 }
 
 #pragma mark - Publice Method
-- (void)commitInitWithTitleNormalColor:(UIColor *)normalColor selectedColor:(UIColor *)selectedColor font:(UIFont *)font
-{
-    titleColorNormal = normalColor;
-    titleColorSelected = selectedColor;
-    titleFont = font;
-}
-
-- (void)commitInitWithSegBgColorNormal:(UIColor *)segBgNormal segBgColorSelected:(UIColor *)segBgSelected
-{
-    segBgColorNormal = segBgNormal;
-    segBgColorSelected = segBgSelected;
-}
-
-- (void)commitInitWithBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth cornerRadius:(CGFloat)cornerRadius
-{
-    borderColor = borderColor;
-    borderWidth = borderWidth;
-    cornerRadius = cornerRadius;
-}
-
 - (void)scrollToIndex:(NSInteger)index
 {
     if (self.currentIndex == index) {
@@ -127,16 +94,12 @@
 }
 
 #pragma mark - Private methods
-- (void)commitInit
-{
-    // default
-    [self commitInitWithSegBgColorNormal:SRGBCOLOR_HEX(0x6075FB) segBgColorSelected:SRGBCOLOR_HEX(0xBED2EF)];
-    [self commitInitWithTitleNormalColor:[UIColor whiteColor] selectedColor:[UIColor whiteColor] font:[UIFont systemFontOfSize:14.f]];
-    [self commitInitWithBorderColor:[UIColor clearColor] borderWidth:0 cornerRadius:0];
-}
-
 - (void)setUp
 {
+    self.backgroundColor = [self.configureDic objectForKey:kSegmentControlSegBgColorNormal];
+    self.layer.cornerRadius = [[self.configureDic objectForKey:kSegmentControlCornerRadius] floatValue];
+    self.layer.borderWidth = [[self.configureDic objectForKey:kSegmentControlBorderWidth] floatValue];
+    self.layer.borderColor = ((UIColor *)[self.configureDic objectForKey:kSegmentControlBorderColor]).CGColor;
     self.layer.masksToBounds = YES;
     
     [self addSubview:self.titleLabelsView];
@@ -154,15 +117,15 @@
     for (int i = 0; i < self.items.count; i ++) {
         UILabel *titleLabel = [[UILabel alloc] init];
         titleLabel.text = self.items[i];
-        titleLabel.font = titleFont;
-        titleLabel.textColor = titleColorNormal;
+        titleLabel.font = [self.configureDic objectForKey:kSegmentControlTitleFont];
+        titleLabel.textColor = [self.configureDic objectForKey:kSegmentControlTitleColorNormal];
         titleLabel.textAlignment = NSTextAlignmentCenter;
         [_titleLabelsView addSubview:titleLabel];
         
         UILabel *selectedTitleLabel = [[UILabel alloc] init];
         selectedTitleLabel.text = self.items[i];
-        selectedTitleLabel.font = titleFont;
-        selectedTitleLabel.textColor = titleColorSelected;
+        selectedTitleLabel.font = [self.configureDic objectForKey:kSegmentControlTitleFont];
+        selectedTitleLabel.textColor = [self.configureDic objectForKey:kSegmentControlTitleColorSelected];
         selectedTitleLabel.textAlignment = NSTextAlignmentCenter;
         [_selectedTitlesLabelView addSubview:selectedTitleLabel];
     }
@@ -265,10 +228,27 @@
 {
     if (!_indicatorView) {
         _indicatorView = [[FMMaskView alloc] init];
-        _indicatorView.backgroundColor = segBgColorSelected;
+        _indicatorView.backgroundColor = [self.configureDic objectForKey:kSegmentControlSegBgColorSelected];
         _indicatorView.layer.masksToBounds = YES;
     }
     return _indicatorView;
+}
+
+- (NSMutableDictionary *)configureDic
+{
+    if (!_configureDic) {
+        _configureDic = [[NSMutableDictionary alloc] initWithDictionary:@{
+                                                                          kSegmentControlTitleColorNormal:[UIColor whiteColor],
+                                                                          kSegmentControlTitleColorSelected:[UIColor whiteColor],
+                                                                          kSegmentControlTitleFont:[UIFont systemFontOfSize:14.f],
+                                                                          kSegmentControlSegBgColorNormal:SRGBCOLOR_HEX(0x6075FB),
+                                                                          kSegmentControlSegBgColorSelected:SRGBCOLOR_HEX(0xBED2EF),
+                                                                          kSegmentControlBorderColor:[UIColor clearColor],
+                                                                          kSegmentControlBorderWidth:@(0.f),
+                                                                          kSegmentControlCornerRadius:@(0.f)
+                                                                          }];
+    }
+    return _configureDic;
 }
 
 /*

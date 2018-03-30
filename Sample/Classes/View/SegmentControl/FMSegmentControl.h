@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *const kSegmentControlTitleColorNormal = @"titleColorNormal";
+static NSString *const kSegmentControlTitleColorSelected = @"titleColorSelected";
+static NSString *const kSegmentControlTitleFont = @"titleFont";
+
+static NSString *const kSegmentControlSegBgColorNormal = @"segBgColorNormal";
+static NSString *const kSegmentControlSegBgColorSelected = @"segBgColorSelected";
+
+static NSString *const kSegmentControlBorderColor = @"borderColor";
+static NSString *const kSegmentControlCornerRadius = @"cornerRadius";
+static NSString *const kSegmentControlBorderWidth = @"borderWidth";
+
 @class FMSegmentControl;
 
 @protocol FMSegmentControlDelegate<NSObject>
@@ -19,12 +30,9 @@
 @interface FMSegmentControl : UIControl
 
 @property (nonatomic, weak) id<FMSegmentControlDelegate> delegate;
-@property (nonatomic, assign) NSInteger currentIndex;
+@property (nonatomic, strong) NSMutableDictionary *configureDic;
 
-- (instancetype)initWithItems:(NSArray *)items;
-- (void)commitInitWithTitleNormalColor:(UIColor *)normalColor selectedColor:(UIColor *)selectedColor font:(UIFont *)font;
-- (void)commitInitWithSegBgColorNormal:(UIColor *)segBgNormal segBgColorSelected:(UIColor *)segBgSelected;
-- (void)commitInitWithBorderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth cornerRadius:(CGFloat)cornerRadius;
+- (instancetype)initWithItems:(NSArray *)items configureDic:(NSDictionary *)configureDic currentIndex:(NSInteger)currentIndex;
 
 - (void)scrollToIndex:(NSInteger)index;
 - (void)scrollByProgress:(CGFloat)progress;  // 0.0 - index.progress  if you want to scroll to index 2, set progress 0.0 - 2.0;
