@@ -8,9 +8,9 @@
 
 #import "CollectionSectionHeaderView.h"
 
-static CGFloat const W_Line = 4.f;
-static CGFloat const W_Btn = 60.f;
-static CGFloat const H_Btn = 26.f;
+static CGFloat const W_Line_main = 3.f;
+static CGFloat const W_Btn_main = 60.f;
+static CGFloat const H_Btn_main = 26.f;
 
 static CGFloat const gap_left_right_main = 10.f;
 
@@ -40,7 +40,7 @@ static CGFloat const gap_left_right_main = 10.f;
         [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(weakSelf).offset(gap_left_right_main);
             make.bottom.equalTo(weakSelf).offset(-5.f);
-            make.size.mas_equalTo(CGSizeMake(W_Line, 20.f));
+            make.size.mas_equalTo(CGSizeMake(W_Line_main, 14.f));
         }];
         [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(weakSelf.lineView);
@@ -49,12 +49,12 @@ static CGFloat const gap_left_right_main = 10.f;
         [self.restBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(weakSelf).offset(-gap_left_right_main);
             make.centerY.equalTo(weakSelf.lineView);
-            make.size.mas_equalTo(CGSizeMake(W_Btn, H_Btn));
+            make.size.mas_equalTo(CGSizeMake(W_Btn_main, H_Btn_main));
         }];
         [self.valueBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.equalTo(weakSelf.restBtn.mas_left).offset(-5);
             make.centerY.equalTo(weakSelf.lineView);
-            make.size.mas_equalTo(CGSizeMake(W_Btn, H_Btn));
+            make.size.mas_equalTo(CGSizeMake(W_Btn_main, H_Btn_main));
         }];
     }
     return self;
@@ -83,7 +83,7 @@ static CGFloat const gap_left_right_main = 10.f;
     if (!_lineView) {
         _lineView = [[UIView alloc] initWithFrame:CGRectZero];
         _lineView.backgroundColor = SRGBCOLOR_HEX(0x7B99FB);
-        _lineView.layer.cornerRadius = W_Line/2.f;
+        _lineView.layer.cornerRadius = W_Line_main/2.f;
         _lineView.clipsToBounds = YES;
     }
     return _lineView;
@@ -109,7 +109,7 @@ static CGFloat const gap_left_right_main = 10.f;
         [_valueBtn setTitle:@"价值" forState:UIControlStateNormal];
         _valueBtn.titleLabel.font = [UIFont systemFontOfSize:12.f];
         [_valueBtn setTitleColor:SRGBCOLOR_HEX(0x7B99FB) forState:UIControlStateNormal];
-        _valueBtn.layer.cornerRadius = H_Btn/2.f;
+        _valueBtn.layer.cornerRadius = H_Btn_main/2.f;
         [_valueBtn.layer setBorderColor:SRGBCOLOR_HEX(0x7B99FB).CGColor];
         [_valueBtn.layer setBorderWidth:1.f];
         CGFloat imageWidth = _valueBtn.imageView.image.size.width;
@@ -130,7 +130,7 @@ static CGFloat const gap_left_right_main = 10.f;
         [_restBtn setTitle:@"剩余" forState:UIControlStateNormal];
         _restBtn.titleLabel.font = [UIFont systemFontOfSize:12.f];
         [_restBtn setTitleColor:SRGBCOLOR_HEX(0x7B99FB) forState:UIControlStateNormal];
-        _restBtn.layer.cornerRadius = H_Btn/2.f;
+        _restBtn.layer.cornerRadius = H_Btn_main/2.f;
         [_restBtn.layer setBorderColor:SRGBCOLOR_HEX(0x7B99FB).CGColor];
         [_restBtn.layer setBorderWidth:1.f];
         CGFloat imageWidth = _restBtn.imageView.image.size.width;

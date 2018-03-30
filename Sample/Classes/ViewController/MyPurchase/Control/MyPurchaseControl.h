@@ -11,8 +11,11 @@
 #import "MyPurchaseCell.h"
 
 @interface MyPurchaseControl : NSObject<
-    UICollectionViewDelegate,
-    UICollectionViewDataSource>
+    UITableViewDelegate,
+    UITableViewDataSource
+//    UICollectionViewDelegate,
+//    UICollectionViewDataSource
+    >
 
 @property (nonatomic, strong) MyPurchaseViewController *vc;
 

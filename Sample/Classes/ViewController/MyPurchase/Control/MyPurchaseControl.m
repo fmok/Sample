@@ -7,6 +7,7 @@
 //
 
 #import "MyPurchaseControl.h"
+#import "MyPurchaseCell.h"
 
 static NSString *const kMyPurchaseCellReusedIdentifier = @"kMyPurchaseCellReusedIdentifier";
 
@@ -15,7 +16,7 @@ static NSString *const kMyPurchaseCellReusedIdentifier = @"kMyPurchaseCellReused
 #pragma mark - Public methods
 - (void)registerCell
 {
-    [self.vc.pulledCollectionView registerClass:[MyPurchaseCell class] forCellWithReuseIdentifier:kMyPurchaseCellReusedIdentifier];
+    [self.vc.pulledTableView registerClass:[MyPurchaseCell class] forCellReuseIdentifier:kMyPurchaseCellReusedIdentifier];
 }
 
 - (void)loadData
@@ -25,64 +26,34 @@ static NSString *const kMyPurchaseCellReusedIdentifier = @"kMyPurchaseCellReused
 
 #pragma mark - Private methods
 
-#pragma mark - UICollectionViewDelegate
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TTDPRINT(@"\n*** %@ - %@ ***\n", @(indexPath.section), @(indexPath.item));
-    
+    TTDPRINT(@"*** %@ ***", @(indexPath.row));
 }
 
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-//{
-//    return nil;
-//}
-
-#pragma mark - UICollectionViewDataSource
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 4;
+    return 1;
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return 12;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MyPurchaseCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kMyPurchaseCellReusedIdentifier forIndexPath:indexPath];
-
+    MyPurchaseCell *cell = [tableView dequeueReusableCellWithIdentifier:kMyPurchaseCellReusedIdentifier forIndexPath:indexPath];
+    [cell updateContent];
     return cell;
 }
 
-#pragma mark - UICollectionViewDelegateFlowLayout
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(W_MyPurchaseCell, H_MyPurchaseCell);
+    return 100.f;
 }
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
-{
-    return Gap_MyPurchaseCellEdges;
-}
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(Gap_MyPurchaseCellEdges, Gap_MyPurchaseCellEdges, Gap_MyPurchaseCellEdges, Gap_MyPurchaseCellEdges);
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
-{
-//    if (section == 0) {
-//        return CGSizeMake(kScreenWidth-2*gap_left_right_myPurchase, 40.f);
-//    }
-    return CGSizeZero;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
-{
-    return CGSizeZero;
-}
-
 
 @end

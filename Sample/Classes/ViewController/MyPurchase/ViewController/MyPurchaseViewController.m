@@ -29,13 +29,10 @@
         make.top.and.left.and.right.equalTo(weakSelf.view);
         make.height.mas_equalTo(H_TopView);
     }];
-    [self.view addSubview:self.pulledCollectionView];
-    [self.pulledCollectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (@available(iOS 11.0, *)) {
-            make.top.equalTo(weakSelf.view.mas_safeAreaLayoutGuideTop).offset(kNavBarHeight);
-        } else {
-            make.top.equalTo(weakSelf.mas_topLayoutGuide).offset(kNavBarHeight);
-        }
+    
+    [self.view addSubview:self.pulledTableView];
+    [self.pulledTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.view);
         make.left.equalTo(weakSelf.view).offset(gap_left_right_myPurchase);
         make.right.equalTo(weakSelf.view).offset(-gap_left_right_myPurchase);
         make.bottom.equalTo(weakSelf.view);
@@ -63,23 +60,24 @@
     return _topImgView;
 }
 
-- (PulledCollectionView *)pulledCollectionView
+- (PulledTableView *)pulledTableView
 {
-    if (!_pulledCollectionView) {
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        _pulledCollectionView = [[PulledCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-        _pulledCollectionView.backgroundColor = [UIColor whiteColor];
-        _pulledCollectionView.bounces = YES;
-        _pulledCollectionView.alwaysBounceVertical = YES;
-        _pulledCollectionView.showsVerticalScrollIndicator = NO;
-        _pulledCollectionView.delegate = self.control;
-        _pulledCollectionView.dataSource = self.control;
-        _pulledCollectionView.isHeader = NO;
-        _pulledCollectionView.isFooter = NO;
-        _pulledCollectionView.layer.cornerRadius = 10.f;
-        _pulledCollectionView.clipsToBounds = YES;
+    if (!_pulledTableView) {
+        _pulledTableView = [[PulledTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _pulledTableView.backgroundColor = [UIColor clearColor];
+        _pulledTableView.delegate = self.control;
+        _pulledTableView.dataSource = self.control;
+        _pulledTableView.showsVerticalScrollIndicator = NO;
+        _pulledTableView.isHeader = NO;
+        _pulledTableView.isFooter = NO;
+        _pulledTableView.estimatedRowHeight = 0;
+        _pulledTableView.estimatedSectionHeaderHeight = 0;
+        _pulledTableView.estimatedSectionFooterHeight = 0;
+        UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth-2*gap_left_right_myPurchase, (IS_IPHONEX?44.f:64.f))];
+        header.backgroundColor = [UIColor clearColor];
+        _pulledTableView.tableHeaderView = header;
     }
-    return _pulledCollectionView;
+    return _pulledTableView;
 }
 
 - (void)didReceiveMemoryWarning {

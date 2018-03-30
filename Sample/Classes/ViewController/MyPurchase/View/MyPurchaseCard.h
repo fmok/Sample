@@ -1,5 +1,5 @@
 //
-//  MyPurchaseCell.h
+//  MyPurchaseCard.h
 //  Sample
 //
 //  Created by wjy on 2018/3/30.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyPurchaseCell : UITableViewCell
-
-- (void)updateContent;
+@interface MyPurchaseCard : UIView
 
 @end
