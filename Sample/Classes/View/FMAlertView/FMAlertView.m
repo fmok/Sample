@@ -9,11 +9,11 @@
 #import "FMAlertView.h"
 
 static CGFloat const backgroundAlpha = 0.5;
+#define gap_left_right 15.f
 
 @interface FMAlertView()
 
 @property(nonatomic, strong) UIView *mainView;  // 弹窗 view
-@property (nonatomic, strong) UIView *contentView;  // 弹窗内容的View
 @property(nonatomic, strong) UILabel *headerTitleLabel;  // 头部的标题 label
 @property(nonatomic, strong) UILabel *contentTextLabel;  // 弹窗内容 label
 @property(nonatomic, strong) UIButton *closedButton;  // 关闭按钮 button
@@ -72,7 +72,6 @@ static CGFloat const backgroundAlpha = 0.5;
     [self addSubview:self.mainView];
     [self.mainView insertSubview:self.closedButton atIndex:999];
     [self.mainView addSubview:self.headerTitleLabel];
-    [self.mainView insertSubview:self.contentView atIndex:0];
     
     [self mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(window);
@@ -89,15 +88,9 @@ static CGFloat const backgroundAlpha = 0.5;
         make.width.height.offset(35);
     }];
     [self.headerTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mainView).offset(36);
-        make.left.equalTo(self.mainView).offset(15);
-        make.right.equalTo(self.mainView).offset(-30);
-    }];
-    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.headerTitleLabel.mas_bottom).offset(5);
-        make.left.equalTo(self.headerTitleLabel);
-        make.right.equalTo(self.mainView).offset(-15);
-        make.bottom.equalTo(self.mainView).offset(-10);
+        make.top.equalTo(self.mainView).offset(37.5f);
+        make.left.equalTo(self.mainView).offset(15.f);
+        make.right.equalTo(self.mainView).offset(-15.f);
     }];
 }
 
@@ -121,15 +114,13 @@ static CGFloat const backgroundAlpha = 0.5;
  */
 - (void)simpleAlertViewInitUI
 {
-    [self.contentTextLabel setFont:[UIFont systemFontOfSize:15]];
-    [self.contentView addSubview:self.contentTextLabel];
     [self.contentTextLabel sizeToFit];
     
     [self.contentTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(10);
-        make.left.equalTo(self.contentView);
-        make.right.equalTo(self.contentView);
-        make.bottom.equalTo(self.contentView).offset(-10);
+        make.top.equalTo(self.headerTitleLabel.mas_bottom).offset(23.f);
+        make.left.equalTo(self.mainView).offset(gap_left_right);
+        make.right.equalTo(self.mainView).offset(-gap_left_right);
+        make.bottom.equalTo(self.mainView).offset(-23.f);
     }];
 }
 
@@ -139,18 +130,18 @@ static CGFloat const backgroundAlpha = 0.5;
 - (void)confirmAlertViewInitUI
 {
     [self.mainView addSubview:self.confirmButton];
-    [self.contentView addSubview:self.contentTextLabel];
+    [self.mainView addSubview:self.contentTextLabel];
     
     [self.contentTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(24.f);
-        make.left.equalTo(self.contentView).offset(10.f);
-        make.right.equalTo(self.contentView).offset(-10.f);
+        make.top.equalTo(self.headerTitleLabel.mas_bottom).offset(23.f);
+        make.left.equalTo(self.mainView).offset(gap_left_right);
+        make.right.equalTo(self.mainView).offset(-gap_left_right);
     }];
     [self.confirmButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentTextLabel.mas_bottom).offset(30.f);
+        make.top.equalTo(self.contentTextLabel.mas_bottom).offset(28.f);
         make.left.right.equalTo(self.mainView);
         make.bottom.equalTo(self.mainView);
-        make.height.offset(50.f);
+        make.height.offset(55.f);
     }];
 }
 
@@ -161,12 +152,12 @@ static CGFloat const backgroundAlpha = 0.5;
 {
     [self.mainView addSubview:self.cancelButton];
     [self.mainView addSubview:self.confirmButton];
-    [self.contentView addSubview:self.contentTextLabel];
+    [self.mainView addSubview:self.contentTextLabel];
     
     [self.contentTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.contentView).offset(24.f);
-        make.left.equalTo(self.contentView).offset(10.f);
-        make.right.equalTo(self.contentView).offset(-10.f);
+        make.top.equalTo(self.headerTitleLabel.mas_bottom).offset(23.f);
+        make.left.equalTo(self.mainView).offset(gap_left_right);
+        make.right.equalTo(self.mainView).offset(-gap_left_right);
     }];
     
     NSMutableArray *arrayM = @[].mutableCopy;
@@ -175,7 +166,7 @@ static CGFloat const backgroundAlpha = 0.5;
     
     [arrayM mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
     [arrayM mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@40);
+        make.height.mas_equalTo(55.f);
         make.bottom.equalTo(self.mainView);
         make.top.equalTo(self.contentTextLabel.mas_bottom).offset(30);
     }];
@@ -283,11 +274,11 @@ static CGFloat const backgroundAlpha = 0.5;
 {
     if(!_confirmButton) {
         _confirmButton = [[UIButton alloc]init];
-        [_confirmButton setBackgroundColor:[UIColor blueColor]];
+        [_confirmButton setBackgroundColor:SRGBCOLOR_HEX(0x6075FB)];
         [_confirmButton setTitle:@"确认" forState:UIControlStateNormal];
         [_confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_confirmButton setTitleColor:[UIColor whiteColor] forState:UIControlStateSelected];
-        [_confirmButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
+        [_confirmButton.titleLabel setFont:[UIFont systemFontOfSize:14.f]];
         [_confirmButton addTarget:self action:@selector(confirmButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _confirmButton;
@@ -300,7 +291,7 @@ static CGFloat const backgroundAlpha = 0.5;
         [_cancelButton setTitle:@"取消" forState:UIControlStateNormal];
         [_cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_cancelButton setTitleColor:SRGBCOLOR_HEX(0X3d3d3d) forState:UIControlStateNormal];
-        [_cancelButton.titleLabel setFont:[UIFont systemFontOfSize:15]];
+        [_cancelButton.titleLabel setFont:[UIFont systemFontOfSize:14.f]];
         [_cancelButton addTarget:self action:@selector(cancelButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelButton;
@@ -321,29 +312,20 @@ static CGFloat const backgroundAlpha = 0.5;
 {
     if (!_headerTitleLabel) {
         _headerTitleLabel = [[UILabel alloc]init];
-        [_headerTitleLabel setFont:[UIFont systemFontOfSize:17]];
+        [_headerTitleLabel setFont:[UIFont systemFontOfSize:18.f]];
         [_headerTitleLabel setTextAlignment:NSTextAlignmentCenter];
-        [_headerTitleLabel setTextColor:SRGBCOLOR_HEX(0X3d3d3d)];
+        [_headerTitleLabel setTextColor:SRGBCOLOR_HEX(0X666666)];
     }
     return _headerTitleLabel;
-}
-
-- (UIView *)contentView
-{
-    if(!_contentView) {
-        _contentView =[[UIView alloc]init];
-        [_contentView setBackgroundColor:[UIColor whiteColor]];
-    }
-    return _contentView;
 }
 
 - (UILabel*)contentTextLabel
 {
     if (!_contentTextLabel) {
         _contentTextLabel = [[UILabel alloc]init];
-        [_contentTextLabel setFont:[UIFont systemFontOfSize:13]];
+        [_contentTextLabel setFont:[UIFont systemFontOfSize:12.f]];
         [_contentTextLabel setTextAlignment:NSTextAlignmentCenter];
-        [_contentTextLabel setTextColor:SRGBCOLOR_HEX(0X898989)];
+        [_contentTextLabel setTextColor:SRGBCOLOR_HEX(0X666666)];
         _contentTextLabel.numberOfLines = 0;
     }
     return _contentTextLabel;
