@@ -99,6 +99,7 @@ static CGFloat const backgroundAlpha = 0.5;
 {
     self.headerTitleLabel.text = CHANGE_TO_STRING(title);
     self.contentTextLabel.attributedText = [self attributedStringForString:content lineSpacing:5];
+    self.contentTextLabel.textAlignment = NSTextAlignmentCenter;
     [self.confirmButton setTitle:confirmText forState:UIControlStateNormal];
     [self.cancelButton setTitle:cancelText forState:UIControlStateNormal];
 }
@@ -191,8 +192,8 @@ static CGFloat const backgroundAlpha = 0.5;
 
 - (NSMutableAttributedString *)attributedStringForString:(NSString *)str lineSpacing:(CGFloat)lineSpacing
 {
-    NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:str];
-    NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:str];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:lineSpacing];
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [str length])];
     return attributedString;
