@@ -7,8 +7,10 @@
 //
 
 #import "BuyDetailCardRelatedView.h"
-#import "PulledTableView.h"
 #import "FMSegmentControl.h"
+#import "SwipeView.h"
+#import "PurchaseRecordsViewController.h"
+#import "DescripationViewController.h"
 
 static NSString *const segmentControl_description = @"描述";
 static NSString *const segmentControl_purchaseRecords = @"购买记录";
@@ -16,12 +18,13 @@ static NSString *const segmentControl_purchaseRecords = @"购买记录";
 #define H_SegmentControl 39.f
 
 @interface BuyDetailCardRelatedView ()<
-    UITableViewDelegate,
-    UITableViewDataSource,
-    FMSegmentControlDelegate>
+    FMSegmentControlDelegate,
+    SwipeViewDelegate,
+    SwipeViewDataSource>
 
 @property (nonatomic, strong) FMSegmentControl *segmentControl;
-@property (nonatomic, strong) PulledTableView *purchaseRecordsList;
+@property (nonatomic, strong) SwipeView *swipeView;
+@property (nonatomic, strong) NSMutableArray<FMBaseViewController *> *viewControllerStack;
 
 @end
 
@@ -35,6 +38,7 @@ static NSString *const segmentControl_purchaseRecords = @"购买记录";
         self.layer.cornerRadius = 10.f;
         self.clipsToBounds = YES;
         [self addSubview:self.segmentControl];
+        [self addSubview:self.swipeView];
     }
     return self;
 }
@@ -46,7 +50,10 @@ static NSString *const segmentControl_purchaseRecords = @"购买记录";
         make.top.and.left.and.right.equalTo(weakSelf);
         make.height.mas_equalTo(H_SegmentControl);
     }];
-    
+    [self.swipeView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.segmentControl.mas_bottom);
+        make.left.and.right.and.bottom.equalTo(weakSelf);
+    }];
     [super updateConstraints];
 }
 
@@ -54,28 +61,69 @@ static NSString *const segmentControl_purchaseRecords = @"购买记录";
 - (void)segmentedControl:(FMSegmentControl *)segment didSeletedItemAtIndex:(NSInteger)index
 {
     TTDPRINT(@"segmentControl: %@", @(index));
+    [self.swipeView scrollToItemAtIndex:index duration:0];
 }
 
-#pragma mark - UITableViewDelegate
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - SwipeViewDataSource
+- (NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView
 {
-    return 20.f;
+    return self.viewControllerStack.count;
 }
 
-#pragma mark - UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
-    return 1;
+    return self.viewControllerStack[index].view;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+#pragma mark - SwipeViewDelegate
+- (CGSize)swipeViewItemSize:(SwipeView *)swipeView
 {
-    return 10;
+    return CGSizeMake(self.ml_width, self.ml_height-H_SegmentControl);
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)swipeViewDidScroll:(SwipeView *)swipeView
 {
-    return nil;
+    [self.segmentControl scrollByProgress:swipeView.scrollOffset];
+}
+
+- (void)swipeViewCurrentItemIndexDidChange:(SwipeView *)swipeView
+{
+    
+}
+
+- (void)swipeViewWillBeginDragging:(SwipeView *)swipeView
+{
+    
+}
+
+- (void)swipeViewDidEndDragging:(SwipeView *)swipeView willDecelerate:(BOOL)decelerate
+{
+    
+}
+
+- (void)swipeViewWillBeginDecelerating:(SwipeView *)swipeView
+{
+    
+}
+
+- (void)swipeViewDidEndDecelerating:(SwipeView *)swipeView
+{
+    
+}
+
+- (void)swipeViewDidEndScrollingAnimation:(SwipeView *)swipeView
+{
+    
+}
+
+- (BOOL)swipeView:(SwipeView *)swipeView shouldSelectItemAtIndex:(NSInteger)index
+{
+    return YES;
+}
+
+- (void)swipeView:(SwipeView *)swipeView didSelectItemAtIndex:(NSInteger)index
+{
+    
 }
 
 #pragma mark - getter & setter
@@ -88,21 +136,23 @@ static NSString *const segmentControl_purchaseRecords = @"购买记录";
     return _segmentControl;
 }
 
-- (PulledTableView *)purchaseRecordsList
+- (SwipeView *)swipeView
 {
-    if (!_purchaseRecordsList) {
-        _purchaseRecordsList = [[PulledTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _purchaseRecordsList.estimatedRowHeight = 0;
-        _purchaseRecordsList.estimatedSectionHeaderHeight = 0;
-        _purchaseRecordsList.estimatedSectionFooterHeight = 0;
-        _purchaseRecordsList.isHeader = NO;
-        _purchaseRecordsList.isFooter = NO;
-        _purchaseRecordsList.delegate = self;
-        _purchaseRecordsList.dataSource = self;
+    if (!_swipeView) {
+        _swipeView = [[SwipeView alloc] initWithFrame:CGRectZero];
+        _swipeView.delegate = self;
+        _swipeView.dataSource = self;
     }
-    return _purchaseRecordsList;
+    return _swipeView;
 }
 
+- (NSMutableArray<FMBaseViewController *> *)viewControllerStack
+{
+    if (!_viewControllerStack) {
+        _viewControllerStack = [[NSMutableArray alloc] initWithObjects:[[DescripationViewController alloc] init], [[PurchaseRecordsViewController alloc] init], nil];
+    }
+    return _viewControllerStack;
+}
 
 /*
 // Only override drawRect: if you perform custom drawing.
