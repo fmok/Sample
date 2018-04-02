@@ -9,8 +9,8 @@
 #import "CollectionSectionHeaderView.h"
 
 static CGFloat const W_Line_main = 3.f;
-static CGFloat const W_Btn_main = 60.f;
-static CGFloat const H_Btn_main = 26.f;
+static CGFloat const W_Btn_main = 50.f;
+static CGFloat const H_Btn_main = 20.f;
 
 static CGFloat const gap_left_right_main = 10.f;
 
