@@ -8,8 +8,7 @@
 
 #import "FMBaseViewController.h"
 #import "PulledTableView.h"
-
-static CGFloat const gap_left_right_myPurchase = 14.5f;
+#import "MyPurchaseSizeMacro.h"
 
 @interface MyPurchaseViewController : FMBaseViewController
 

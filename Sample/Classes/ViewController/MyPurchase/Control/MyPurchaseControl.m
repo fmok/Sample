@@ -11,12 +11,20 @@
 
 static NSString *const kMyPurchaseCellReusedIdentifier = @"kMyPurchaseCellReusedIdentifier";
 
+@interface MyPurchaseControl ()
+{
+    NSArray *testArr;
+}
+
+@end
+
 @implementation MyPurchaseControl
 
 #pragma mark - Public methods
 - (void)registerCell
 {
     [self.vc.pulledTableView registerClass:[MyPurchaseCell class] forCellReuseIdentifier:kMyPurchaseCellReusedIdentifier];
+    testArr = [[NSArray alloc] initWithObjects:@(1),@(2),@(3),@(4),@(5),@(6),@(7),@(8),@(9),@(10),@(11),@(12), nil];
 }
 
 - (void)loadData
@@ -41,19 +49,23 @@ static NSString *const kMyPurchaseCellReusedIdentifier = @"kMyPurchaseCellReused
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 12;
+    return testArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MyPurchaseCell *cell = [tableView dequeueReusableCellWithIdentifier:kMyPurchaseCellReusedIdentifier forIndexPath:indexPath];
-    [cell updateContent];
+    [cell testUpdateContent:[testArr[indexPath.row] integerValue]];
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100.f;
+    NSInteger cardCount = [testArr[indexPath.row] integerValue];
+    NSInteger rowsCount = cardCount%2 + cardCount/2;
+    CGFloat H_listView = H_MyPurchaseCard*rowsCount;
+    return H_topView_myPurchaseCell + H_listView + gap_PurchaseCell_bottom_MyPurchase;
 }
+
 
 @end

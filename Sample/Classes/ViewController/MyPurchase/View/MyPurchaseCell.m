@@ -8,13 +8,14 @@
 
 #import "MyPurchaseCell.h"
 #import "MyPurchaseCellTopView.h"
-
-static CGFloat const H_topView_myPurchaseCell = 32.f;
+#import "MyPurchaseCellListView.h"
+#import "MyPurchaseSizeMacro.h"
 
 @interface MyPurchaseCell()
 
-@property (nonatomic, strong) UIView *bgContentView;
-@property (nonatomic, strong) MyPurchaseCellTopView *topView;
+@property (nonatomic, strong) UIView *bgContentView;  // 带圆角背景
+@property (nonatomic, strong) MyPurchaseCellTopView *topView;  // 顶部透明区域
+@property (nonatomic, strong) MyPurchaseCellListView *listView;
 
 @end
 
@@ -28,6 +29,7 @@ static CGFloat const H_topView_myPurchaseCell = 32.f;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self addSubview:self.bgContentView];
         [self.bgContentView addSubview:self.topView];
+        [self.bgContentView addSubview:self.listView];
     }
     return self;
 }
@@ -37,21 +39,25 @@ static CGFloat const H_topView_myPurchaseCell = 32.f;
     WS(weakSelf);
     [self.bgContentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.and.top.equalTo(weakSelf);
-        make.bottom.equalTo(weakSelf).offset(-12.f);
+        make.bottom.equalTo(weakSelf).offset(-gap_PurchaseCell_bottom_MyPurchase);
     }];
     [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.and.left.and.right.equalTo(weakSelf);
         make.height.mas_equalTo(H_topView_myPurchaseCell);
+    }];
+    [self.listView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.topView.mas_bottom);
+        make.left.and.right.and.bottom.equalTo(weakSelf.bgContentView);
     }];
     
     [super updateConstraints];
 }
 
 #pragma mark - Public methods
-- (void)updateContent
+- (void)testUpdateContent:(NSInteger)count
 {
     [self.topView updateContentWithNameText:@"金牛座" count:@"2"];
-    
+    [self.listView testUpdateContent:count];
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }
@@ -74,6 +80,14 @@ static CGFloat const H_topView_myPurchaseCell = 32.f;
         _topView = [[MyPurchaseCellTopView alloc] initWithFrame:CGRectZero];
     }
     return _topView;
+}
+
+- (MyPurchaseCellListView *)listView
+{
+    if (!_listView) {
+        _listView = [[MyPurchaseCellListView alloc] initWithFrame:CGRectZero];
+    }
+    return _listView;
 }
 
 

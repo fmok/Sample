@@ -13,8 +13,6 @@
 @interface MyPurchaseControl : NSObject<
     UITableViewDelegate,
     UITableViewDataSource
-//    UICollectionViewDelegate,
-//    UICollectionViewDataSource
     >
 
 @property (nonatomic, strong) MyPurchaseViewController *vc;

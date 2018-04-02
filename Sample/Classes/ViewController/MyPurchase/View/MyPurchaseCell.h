@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyPurchaseCellListView.h"
 
 @interface MyPurchaseCell : UITableViewCell
 
-- (void)updateContent;
+- (void)testUpdateContent:(NSInteger)count;
 
 @end

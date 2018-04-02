@@ -1,5 +1,5 @@
 //
-//  MyPurchaseCard.h
+//  MyPurchaseCellListView.h
 //  Sample
 //
 //  Created by wjy on 2018/4/2.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MyPurchaseCard : UICollectionViewCell
+@interface MyPurchaseCellListView : UIView
 
-- (void)testUpdateContent;
+- (void)testUpdateContent:(NSInteger)count;
 
 @end

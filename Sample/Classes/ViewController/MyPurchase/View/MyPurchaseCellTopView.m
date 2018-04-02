@@ -23,6 +23,7 @@ static CGFloat const W_Line_myPurchase = 3.f;
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor clearColor];
         [self addSubview:self.lineView];
         [self addSubview:self.titleLabel];
     }
