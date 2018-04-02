@@ -43,4 +43,24 @@
     return filename;
 }
 
++ (ZLNavigationController *)topNav
+{
+    UIViewController *topController = nil;
+    for (UIWindow *window in [[UIApplication sharedApplication] windows]) {
+        if (window.hidden) {
+            continue;
+        } else {
+            topController = window.rootViewController;
+        }
+    }
+    while (topController.presentedViewController) {
+        topController = topController.presentedViewController;
+    }
+    
+    if ([topController isKindOfClass:[ZLNavigationController class]]) {
+        return (ZLNavigationController *)topController;
+    }
+    return nil;
+}
+
 @end

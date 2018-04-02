@@ -72,6 +72,9 @@
 		57B5448D2062881E00701F9C /* FMRuntimeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5448C2062881E00701F9C /* FMRuntimeEngine.m */; };
 		57C21B712071CA3400F70562 /* MyPurchaseCellListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C21B702071CA3400F70562 /* MyPurchaseCellListView.m */; };
 		57C21B742071CC9F00F70562 /* MyPurchaseCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C21B732071CC9F00F70562 /* MyPurchaseCard.m */; };
+		57C21B7E2071FC6500F70562 /* PetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C21B7D2071FC6500F70562 /* PetDetailViewController.m */; };
+		57C21B812071FC7900F70562 /* PetDetailControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C21B802071FC7900F70562 /* PetDetailControl.m */; };
+		57C21B842071FD4400F70562 /* UIResponder+Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C21B832071FD4400F70562 /* UIResponder+Router.m */; };
 		57C3D5522068944600E0B8BA /* FMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5512068944600E0B8BA /* FMBaseViewController.m */; };
 		57C3D555206896A900E0B8BA /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D554206896A900E0B8BA /* MeViewController.m */; };
 		57C3D559206898CA00E0B8BA /* MeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D558206898CA00E0B8BA /* MeControl.m */; };
@@ -242,6 +245,12 @@
 		57C21B722071CC9F00F70562 /* MyPurchaseCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPurchaseCard.h; sourceTree = "<group>"; };
 		57C21B732071CC9F00F70562 /* MyPurchaseCard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPurchaseCard.m; sourceTree = "<group>"; };
 		57C21B752071DAF300F70562 /* MyPurchaseSizeMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPurchaseSizeMacro.h; sourceTree = "<group>"; };
+		57C21B7C2071FC6500F70562 /* PetDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetDetailViewController.h; sourceTree = "<group>"; };
+		57C21B7D2071FC6500F70562 /* PetDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetDetailViewController.m; sourceTree = "<group>"; };
+		57C21B7F2071FC7900F70562 /* PetDetailControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetDetailControl.h; sourceTree = "<group>"; };
+		57C21B802071FC7900F70562 /* PetDetailControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetDetailControl.m; sourceTree = "<group>"; };
+		57C21B822071FD4400F70562 /* UIResponder+Router.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIResponder+Router.h"; sourceTree = "<group>"; };
+		57C21B832071FD4400F70562 /* UIResponder+Router.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+Router.m"; sourceTree = "<group>"; };
 		57C3D5502068944600E0B8BA /* FMBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMBaseViewController.h; sourceTree = "<group>"; };
 		57C3D5512068944600E0B8BA /* FMBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMBaseViewController.m; sourceTree = "<group>"; };
 		57C3D553206896A900E0B8BA /* MeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
@@ -676,6 +685,7 @@
 				57C3D54D206893BA00E0B8BA /* Me */,
 				5740FA3D206CE69F006F20A5 /* BuyDetail */,
 				573F2E80206E2BD50011C77A /* MyPurchase */,
+				57C21B762071FC1300F70562 /* PetDetail */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -865,6 +875,57 @@
 			path = RuntimeEngine;
 			sourceTree = "<group>";
 		};
+		57C21B762071FC1300F70562 /* PetDetail */ = {
+			isa = PBXGroup;
+			children = (
+				57C21B7B2071FC5200F70562 /* API */,
+				57C21B7A2071FC4C00F70562 /* Model */,
+				57C21B792071FC4600F70562 /* View */,
+				57C21B782071FC4100F70562 /* Control */,
+				57C21B772071FC3800F70562 /* ViewController */,
+			);
+			path = PetDetail;
+			sourceTree = "<group>";
+		};
+		57C21B772071FC3800F70562 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				57C21B7C2071FC6500F70562 /* PetDetailViewController.h */,
+				57C21B7D2071FC6500F70562 /* PetDetailViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		57C21B782071FC4100F70562 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				57C21B7F2071FC7900F70562 /* PetDetailControl.h */,
+				57C21B802071FC7900F70562 /* PetDetailControl.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		57C21B792071FC4600F70562 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		57C21B7A2071FC4C00F70562 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		57C21B7B2071FC5200F70562 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		57C3D54D206893BA00E0B8BA /* Me */ = {
 			isa = PBXGroup;
 			children = (
@@ -981,6 +1042,8 @@
 				57DED55C2067D36500E24607 /* UIImage+RoundedCorner.m */,
 				57DED5592067D23500E24607 /* UIImage+Resize.h */,
 				57DED55A2067D23500E24607 /* UIImage+Resize.m */,
+				57C21B822071FD4400F70562 /* UIResponder+Router.h */,
+				57C21B832071FD4400F70562 /* UIResponder+Router.m */,
 			);
 			path = FMCategories;
 			sourceTree = "<group>";
@@ -1391,7 +1454,9 @@
 				572E6A7A20637F1D008114EA /* MBProgressHUD.m in Sources */,
 				57B5444C20627C5800701F9C /* PulledCollectionView.m in Sources */,
 				57DED55E2067D36500E24607 /* UIImage+RoundedCorner.m in Sources */,
+				57C21B812071FC7900F70562 /* PetDetailControl.m in Sources */,
 				57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */,
+				57C21B842071FD4400F70562 /* UIResponder+Router.m in Sources */,
 				573F2E91206E586E0011C77A /* MyPurchaseCell.m in Sources */,
 				5740FA4F206D0645006F20A5 /* BuyDetailCardSendWordView.m in Sources */,
 				57C3D5672068A7DB00E0B8BA /* TestHeaderView.m in Sources */,
@@ -1400,6 +1465,7 @@
 				573F2E8B206E2C2B0011C77A /* MyPurchaseControl.m in Sources */,
 				573F2E88206E2C180011C77A /* MyPurchaseViewController.m in Sources */,
 				57B5445A206281F400701F9C /* FMUtility.m in Sources */,
+				57C21B7E2071FC6500F70562 /* PetDetailViewController.m in Sources */,
 				57C3D56D2068C45F00E0B8BA /* UIView+Utilities.m in Sources */,
 				57B5444320627B6900701F9C /* FMRequest.m in Sources */,
 				5737958E206B6EC900388BCC /* MainControl.m in Sources */,

@@ -23,9 +23,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-//        self.backgroundColor = [UIColor colorWithRed:arc4random()%255/255.f green:arc4random()%255/255.f blue:arc4random()%255/255.f alpha:1]
         self.backgroundColor = [UIColor clearColor];
-        ;
         [self addSubview:self.cardImgView];
         [self addSubview:self.growUpValue];
         [self addSubview:self.restValue];

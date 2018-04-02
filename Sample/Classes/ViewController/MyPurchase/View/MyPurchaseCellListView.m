@@ -10,6 +10,7 @@
 #import "PulledCollectionView.h"
 #import "MyPurchaseCard.h"
 #import "MyPurchaseSizeMacro.h"
+#import "PetDetailViewController.h"
 
 static NSString *const kMyPurchaseCardReusedIdentifier = @"MyPurchaseCard";
 
@@ -59,6 +60,8 @@ static NSString *const kMyPurchaseCardReusedIdentifier = @"MyPurchaseCard";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     TTDPRINT(@"\n*** %@ - %@ ***\n", @(indexPath.section), @(indexPath.item));
+    PetDetailViewController *vc = [[PetDetailViewController alloc] init];
+    [[FMUtility topNav] pushViewController:vc animated:YES];
 }
 
 #pragma mark - UICollectionViewDataSource
