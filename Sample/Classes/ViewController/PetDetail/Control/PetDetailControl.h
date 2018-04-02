@@ -13,4 +13,6 @@
 
 @property (nonatomic, weak) PetDetailViewController *vc;
 
+- (void)loadData;
+
 @end

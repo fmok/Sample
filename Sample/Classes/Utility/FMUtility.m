@@ -51,6 +51,7 @@
             continue;
         } else {
             topController = window.rootViewController;
+            break;
         }
     }
     while (topController.presentedViewController) {

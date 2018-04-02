@@ -75,6 +75,7 @@
 		57C21B7E2071FC6500F70562 /* PetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C21B7D2071FC6500F70562 /* PetDetailViewController.m */; };
 		57C21B812071FC7900F70562 /* PetDetailControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C21B802071FC7900F70562 /* PetDetailControl.m */; };
 		57C21B842071FD4400F70562 /* UIResponder+Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C21B832071FD4400F70562 /* UIResponder+Router.m */; };
+		57C21BD72072524B00F70562 /* PetDetailTopTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C21BD62072524B00F70562 /* PetDetailTopTabView.m */; };
 		57C3D5522068944600E0B8BA /* FMBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5512068944600E0B8BA /* FMBaseViewController.m */; };
 		57C3D555206896A900E0B8BA /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D554206896A900E0B8BA /* MeViewController.m */; };
 		57C3D559206898CA00E0B8BA /* MeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D558206898CA00E0B8BA /* MeControl.m */; };
@@ -251,6 +252,8 @@
 		57C21B802071FC7900F70562 /* PetDetailControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetDetailControl.m; sourceTree = "<group>"; };
 		57C21B822071FD4400F70562 /* UIResponder+Router.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIResponder+Router.h"; sourceTree = "<group>"; };
 		57C21B832071FD4400F70562 /* UIResponder+Router.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+Router.m"; sourceTree = "<group>"; };
+		57C21BD52072524B00F70562 /* PetDetailTopTabView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetDetailTopTabView.h; sourceTree = "<group>"; };
+		57C21BD62072524B00F70562 /* PetDetailTopTabView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetDetailTopTabView.m; sourceTree = "<group>"; };
 		57C3D5502068944600E0B8BA /* FMBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMBaseViewController.h; sourceTree = "<group>"; };
 		57C3D5512068944600E0B8BA /* FMBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMBaseViewController.m; sourceTree = "<group>"; };
 		57C3D553206896A900E0B8BA /* MeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
@@ -359,13 +362,13 @@
 			path = SwipeView;
 			sourceTree = "<group>";
 		};
-		57379582206B4B2500388BCC /* SegmentControl */ = {
+		57379582206B4B2500388BCC /* FMSegmentControl */ = {
 			isa = PBXGroup;
 			children = (
 				57379583206B4B4700388BCC /* FMSegmentControl.h */,
 				57379584206B4B4700388BCC /* FMSegmentControl.m */,
 			);
-			path = SegmentControl;
+			path = FMSegmentControl;
 			sourceTree = "<group>";
 		};
 		57379586206B6E8800388BCC /* Control */ = {
@@ -694,7 +697,7 @@
 			isa = PBXGroup;
 			children = (
 				5740FA30206C8A9A006F20A5 /* FMScrollLabel */,
-				57379582206B4B2500388BCC /* SegmentControl */,
+				57379582206B4B2500388BCC /* FMSegmentControl */,
 				578320B4206A53BD00E2D67F /* FMAlertView */,
 				57DED5422067C7FE00E24607 /* TabBar */,
 				57B5444D20627CB700701F9C /* Navigation */,
@@ -880,7 +883,7 @@
 			children = (
 				57C21B7B2071FC5200F70562 /* API */,
 				57C21B7A2071FC4C00F70562 /* Model */,
-				57C21B792071FC4600F70562 /* View */,
+				57C21BD42072517C00F70562 /* View */,
 				57C21B782071FC4100F70562 /* Control */,
 				57C21B772071FC3800F70562 /* ViewController */,
 			);
@@ -905,13 +908,6 @@
 			path = Control;
 			sourceTree = "<group>";
 		};
-		57C21B792071FC4600F70562 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		57C21B7A2071FC4C00F70562 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -924,6 +920,15 @@
 			children = (
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		57C21BD42072517C00F70562 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57C21BD52072524B00F70562 /* PetDetailTopTabView.h */,
+				57C21BD62072524B00F70562 /* PetDetailTopTabView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		57C3D54D206893BA00E0B8BA /* Me */ = {
@@ -1405,6 +1410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57379597206B826A00388BCC /* MainHeaderView.m in Sources */,
+				57C21BD72072524B00F70562 /* PetDetailTopTabView.m in Sources */,
 				575F9AAD2064EC710031BC49 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				5740FA45206CE6F0006F20A5 /* BuyDetailViewController.m in Sources */,
 				57379581206B4ACB00388BCC /* SwipeView.m in Sources */,
