@@ -9,7 +9,7 @@
 #import "MyPurchaseViewController.h"
 #import "MyPurchaseControl.h"
 
-#define H_TopView (kScreenWidth*(120.f/375.f))
+#define H_TopView_MyPurchase (kScreenWidth*(120.f/375.f))
 
 @interface MyPurchaseViewController ()
 
@@ -27,7 +27,7 @@
     [self.view addSubview:self.topImgView];
     [self.topImgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.and.left.and.right.equalTo(weakSelf.view);
-        make.height.mas_equalTo(H_TopView);
+        make.height.mas_equalTo(H_TopView_MyPurchase);
     }];
     
     [self.view addSubview:self.pulledTableView];
@@ -73,7 +73,7 @@
         _pulledTableView.estimatedRowHeight = 0;
         _pulledTableView.estimatedSectionHeaderHeight = 0;
         _pulledTableView.estimatedSectionFooterHeight = 0;
-        UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth-2*gap_left_right_myPurchase, (IS_IPHONEX?44.f:64.f))];
+        UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth-2*gap_left_right_myPurchase, (IS_IPHONEX?44.f:64.f)+kGap_NavBarBottom)];
         header.backgroundColor = [UIColor clearColor];
         _pulledTableView.tableHeaderView = header;
     }

@@ -17,5 +17,7 @@
 #define kTabBarHeight 49.f
 #define kTabBarHeightAndSafeArea ((IS_IPHONEX) ? (kTabBarHeight+44.f) :kTabBarHeight)
 
+// gap(navBar) the bottom of titleView
+#define kGap_NavBarBottom 20.f
 
 #endif /* FMSizeNumMacro_h */

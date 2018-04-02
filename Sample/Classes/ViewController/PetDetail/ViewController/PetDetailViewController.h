@@ -7,7 +7,10 @@
 //
 
 #import "FMBaseViewController.h"
+#import "FMSegmentControl.h"
 
 @interface PetDetailViewController : FMBaseViewController
+
+- (void)updatePetDes:(NSString *)petDes;
 
 @end

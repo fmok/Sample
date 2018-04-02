@@ -39,9 +39,9 @@ static CGFloat const gap_left_right_buyDetail = 15.f;
         make.left.equalTo(weakSelf.view).offset(gap_left_right_buyDetail);
         make.right.equalTo(weakSelf.view).offset(-gap_left_right_buyDetail);
         if (@available(iOS 11.0, *)) {
-            make.top.equalTo(weakSelf.view.mas_safeAreaLayoutGuideTop).offset(kNavBarHeight);
+            make.top.equalTo(weakSelf.view.mas_safeAreaLayoutGuideTop).offset(kNavBarHeight+kGap_NavBarBottom);
         } else {
-            make.top.equalTo(weakSelf.mas_topLayoutGuide).offset(kNavBarHeight);
+            make.top.equalTo(weakSelf.mas_topLayoutGuide).offset(kNavBarHeight+kGap_NavBarBottom);
         }
         make.height.mas_equalTo(H_Card);
     }];
