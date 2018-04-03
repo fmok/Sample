@@ -96,6 +96,8 @@
     if (!_topTabView) {
         _topTabView = [[PetDetailTopTabView alloc] initWithFrame:CGRectZero];
         _topTabView.isNeedVerticalBar = YES;
+        _topTabView.layer.cornerRadius = 10.f;
+        _topTabView.clipsToBounds = YES;
     }
     return _topTabView;
 }

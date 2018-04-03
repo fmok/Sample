@@ -16,7 +16,7 @@
     UIColor *_verticalBarColor;
 }
 
-@property (nonatomic, assign) BOOL isCreated;
+@property (nonatomic, assign) BOOL isCreated;  // 初创
 @property (nonatomic, strong) NSMutableArray *tabsArr;
 
 @end
@@ -27,8 +27,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.layer.cornerRadius = 10.f;
-        self.clipsToBounds = YES;
         self.isNeedVerticalBar = NO;
         self.isCreated = NO;
         _bgColor = [UIColor whiteColor];
@@ -68,19 +66,22 @@
     [self.tabsArr removeAllObjects];
     for (NSInteger i = 0; i < self.items.count; i++) {
         @autoreleasepool {
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(i*tabWidth, 0, tabWidth, height)];
-            label.textColor = _textColor;
-            label.font = _textFont;
-            label.textAlignment = NSTextAlignmentCenter;
-            label.lineBreakMode = NSLineBreakByTruncatingTail;
-            label.text = CHANGE_TO_STRING([self.items objectAtIndex:i]);
-            [self addSubview:label];
-            [self.tabsArr addObject:label];
+            UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(i*tabWidth, 0, tabWidth, height)];
+            [btn setTitleColor:_textColor forState:UIControlStateNormal];
+            btn.titleLabel.font = _textFont;
+            btn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+            btn.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+            btn.titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+            [btn setTitle:CHANGE_TO_STRING([self.items objectAtIndex:i]) forState:UIControlStateNormal];
+            btn.tag = 1000+i;
+            [btn addTarget:self action:@selector(tabClick:) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:btn];
+            [self.tabsArr addObject:btn];
             if (_isNeedVerticalBar) {
                 if (i < self.items.count-1) {
                     CGFloat barHeight = 16.5f;
                     CGFloat barWidth = .5f;
-                    UIView *verticalBar = [[UIView alloc] initWithFrame:CGRectMake(label.ml_left+label.ml_width-barWidth, (height-barHeight)/2.f, barWidth, barHeight)];
+                    UIView *verticalBar = [[UIView alloc] initWithFrame:CGRectMake(btn.ml_left+btn.ml_width-barWidth, (height-barHeight)/2.f, barWidth, barHeight)];
                     verticalBar.backgroundColor = _verticalBarColor;
                     [self addSubview:verticalBar];
                 }
@@ -95,9 +96,17 @@
         @throw [NSException exceptionWithName:@"count error" reason:@"items内容个数必须和初始状态的一致" userInfo:nil];
     } else {
         _items = items;
-        [self.tabsArr enumerateObjectsUsingBlock:^(UILabel *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            obj.text = CHANGE_TO_STRING([_items objectAtIndex:idx]);
+        [self.tabsArr enumerateObjectsUsingBlock:^(UIButton *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [obj setTitle:CHANGE_TO_STRING([_items objectAtIndex:idx]) forState:UIControlStateNormal];
         }];
+    }
+}
+
+#pragma mark - Events
+- (void)tabClick:(UIButton *)sender
+{
+    if (self.delegate && [self.delegate respondsToSelector:@selector(clickTabIndex:)]) {
+        [self.delegate clickTabIndex:sender.tag-1000];
     }
 }
 
