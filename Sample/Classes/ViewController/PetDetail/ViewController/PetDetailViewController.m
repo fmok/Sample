@@ -8,8 +8,6 @@
 
 #import "PetDetailViewController.h"
 #import "PetDetailControl.h"
-#import "FMTabsView.h"
-#import "FMCardsStackScrollView.h"
 
 #define H_TopView_PetDetail (kScreenWidth*(120.f/375.f))
 
@@ -18,8 +16,6 @@
 @property (nonatomic, strong) PetDetailControl *control;
 @property (nonatomic, strong) UIImageView *topImgView;
 @property (nonatomic, strong) UILabel *petDesLabel;
-@property (nonatomic, strong) FMTabsView *topTabView;
-@property (nonatomic, strong) FMCardsStackScrollView *petScrollView;
 
 @end
 
@@ -28,8 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    [self.zl_navigationController setNavInteractivePopGestureType:ZLNavInteractivePopGestureTypeScreenEdgeLeft];
-    self.zl_navigationController.navInteractivePopGestureType = ZLNavInteractivePopGestureTypeScreenEdgeLeft;
+    [self.zl_navigationController setNavInteractivePopGestureType:ZLNavInteractivePopGestureTypeScreenEdgeLeft];
     WS(weakSelf);
     [self.view addSubview:self.topImgView];
     [self.topImgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -54,9 +49,9 @@
     [self.view addSubview:self.petScrollView];
     [self.petScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.topTabView.mas_bottom).offset(10.f);
-        make.left.equalTo(weakSelf.view).offset(gap_left_right_PetDetail);
-        make.right.equalTo(weakSelf.view).offset(-gap_left_right_PetDetail);
-        make.bottom.equalTo(weakSelf.view);
+        make.left.equalTo(weakSelf.view);
+        make.right.equalTo(weakSelf.view);
+        make.height.mas_equalTo(H_CardsStackSingleCell);
     }];
     [self.control loadData];
 }
@@ -67,10 +62,10 @@
     self.petDesLabel.text = CHANGE_TO_STRING(petDes);
 }
 
-- (void)updatePetTabs:(NSArray *)items
-{
-    self.topTabView.items = items;
-}
+//- (void)updatePetTabs:(NSArray *)items
+//{
+//    self.topTabView.items = items;
+//}
 
 #pragma mark - getter & setter
 - (PetDetailControl *)control

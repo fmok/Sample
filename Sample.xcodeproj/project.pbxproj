@@ -29,6 +29,7 @@
 		5737959A206B95C400388BCC /* MeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379599206B95C400388BCC /* MeCell.m */; };
 		5737E60C2073338E008AF33C /* FMTabsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737E60B2073338E008AF33C /* FMTabsView.m */; };
 		5737E61020735375008AF33C /* FMCardsStackScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737E60F20735375008AF33C /* FMCardsStackScrollView.m */; };
+		5737E6132073A12B008AF33C /* CardStackSingleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737E6122073A12B008AF33C /* CardStackSingleCell.m */; };
 		573F2E7C206E19E40011C77A /* PurchaseRecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F2E7B206E19E40011C77A /* PurchaseRecordsViewController.m */; };
 		573F2E7F206E1BA40011C77A /* DescripationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F2E7E206E1BA40011C77A /* DescripationViewController.m */; };
 		573F2E88206E2C180011C77A /* MyPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F2E87206E2C180011C77A /* MyPurchaseViewController.m */; };
@@ -161,6 +162,8 @@
 		5737E60B2073338E008AF33C /* FMTabsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMTabsView.m; sourceTree = "<group>"; };
 		5737E60E20735375008AF33C /* FMCardsStackScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMCardsStackScrollView.h; sourceTree = "<group>"; };
 		5737E60F20735375008AF33C /* FMCardsStackScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMCardsStackScrollView.m; sourceTree = "<group>"; };
+		5737E6112073A12B008AF33C /* CardStackSingleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardStackSingleCell.h; sourceTree = "<group>"; };
+		5737E6122073A12B008AF33C /* CardStackSingleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardStackSingleCell.m; sourceTree = "<group>"; };
 		573F2E7A206E19E40011C77A /* PurchaseRecordsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseRecordsViewController.h; sourceTree = "<group>"; };
 		573F2E7B206E19E40011C77A /* PurchaseRecordsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseRecordsViewController.m; sourceTree = "<group>"; };
 		573F2E7D206E1BA40011C77A /* DescripationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DescripationViewController.h; sourceTree = "<group>"; };
@@ -438,6 +441,8 @@
 			children = (
 				5737E60E20735375008AF33C /* FMCardsStackScrollView.h */,
 				5737E60F20735375008AF33C /* FMCardsStackScrollView.m */,
+				5737E6112073A12B008AF33C /* CardStackSingleCell.h */,
+				5737E6122073A12B008AF33C /* CardStackSingleCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1454,6 +1459,7 @@
 				57B54440206278B600701F9C /* TestViewController.m in Sources */,
 				57DED55B2067D23500E24607 /* UIImage+Resize.m in Sources */,
 				5740FA3B206CBA97006F20A5 /* FMScrollLabel.m in Sources */,
+				5737E6132073A12B008AF33C /* CardStackSingleCell.m in Sources */,
 				575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */,
 				57B5444920627C2C00701F9C /* PulledTableView.m in Sources */,
 				57C3D559206898CA00E0B8BA /* MeControl.m in Sources */,
