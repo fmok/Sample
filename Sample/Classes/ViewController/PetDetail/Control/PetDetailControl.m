@@ -19,9 +19,15 @@
 #pragma mark - Private nethods
 - (void)serializeData
 {
-    [self.vc updatePetTabs:@[@"成长：1", @"智慧：1.5", @"生育：2", @"魅力：1.5"]];
+    [self.vc updatePetTabs:@[[NSString stringWithFormat:@"成长：%@", @(((arc4random()%10) + 1))],
+                             [NSString stringWithFormat:@"智慧：%@", @(((arc4random()%10) + 1))],
+                             [NSString stringWithFormat:@"生育：%@", @(((arc4random()%10) + 1))],
+                             [NSString stringWithFormat:@"魅力：%@", @(((arc4random()%10) + 1))]]];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.vc updatePetTabs:@[@"成长：2", @"智慧：3", @"生育：4", @"魅力：3"]];
+        [self.vc updatePetTabs:@[[NSString stringWithFormat:@"成长：%@", @(((arc4random()%10) + 1))],
+                                 [NSString stringWithFormat:@"智慧：%@", @(((arc4random()%10) + 1))],
+                                 [NSString stringWithFormat:@"生育：%@", @(((arc4random()%10) + 1))],
+                                 [NSString stringWithFormat:@"魅力：%@", @(((arc4random()%10) + 1))]]];
     });
 }
 
