@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) ZLPercentDrivenInteractiveTransition *percentDrivenInteractiveTransition;
 
+@property (nonatomic, assign) BOOL isFullScreenSidsSlipUnable;  // default == NO
+
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController;
 - (instancetype)initWithViewController:(NSArray<UIViewController *> *)viewControllers;
 

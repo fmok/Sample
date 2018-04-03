@@ -614,6 +614,14 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     }
     return _percentDrivenInteractiveTransition;
 }
+
+#pragma mark - setter
+- (void)setIsFullScreenSidsSlipUnable:(BOOL)isFullScreenSidsSlipUnable
+{
+    _isFullScreenSidsSlipUnable = isFullScreenSidsSlipUnable;
+//    self.interactiveGestureRecognizer.enabled = !_isFullScreenSidsSlipUnable;
+}
+
 @end
 
 #pragma mark -

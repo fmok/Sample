@@ -8,6 +8,8 @@
 
 #import "FMBaseViewController.h"
 
+#define gap_left_right_PetDetail 15.5f
+
 @interface PetDetailViewController : FMBaseViewController
 
 - (void)updatePetDes:(NSString *)petDes;
