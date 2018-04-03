@@ -351,6 +351,7 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
                                            [self releaseViewControllersAfterPopToViewController:toViewController];
                                            
                                            [self.zl_containerView bringSubviewToFront:toViewController.view];
+                                           // pop 成功，设置为默认 mainType : fullScreen
                                            [self setNavInteractivePopGestureType:ZLNavInteractivePopGestureTypeFullScreen];
                                        }
                                        self.transitionMaskView.hidden = YES;
@@ -581,14 +582,6 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
 }
 
 - (void)handleNavigationTransition:(UIPanGestureRecognizer *)recognizer {
-    
-//    if ((recognizer.superclass == [UIPanGestureRecognizer class]) && (self.navInteractivePopGestureType == ZLNavInteractivePopGestureTypeFullScreen)) {
-//        return;
-//    }
-//    if ((recognizer.superclass == [UIGestureRecognizer class]) && (self.navInteractivePopGestureType == ZLNavInteractivePopGestureTypeScreenEdgeLeft)) {
-//        return;
-//    }
-    
     CGFloat translate = [recognizer translationInView:self.view].x;
     double percent = (double)translate / (double)CGRectGetWidth(self.view.bounds);
     if (recognizer.state == UIGestureRecognizerStateBegan) {

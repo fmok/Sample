@@ -15,17 +15,17 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor redColor];
-//        UISwipeGestureRecognizer *swipeGes = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeHandler:)];
-//        swipeGes.direction = UISwipeGestureRecognizerDirectionLeft | UISwipeGestureRecognizerDirectionRight;
-//        [self addGestureRecognizer:swipeGes];
+        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesHandler:)];
+        [self addGestureRecognizer:pan];
     }
     return self;
 }
 
 #pragma mark - UISwipeGestureRecognizer
-- (void)swipeHandler:(UISwipeGestureRecognizer *)swipe
+- (void)panGesHandler:(UIPanGestureRecognizer *)pan
 {
-    
+    CGFloat translate = [pan translationInView:self].x;
+    TTDPRINT(@"\n*** %@ ***\n", @(translate));
 }
 
 
