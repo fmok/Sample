@@ -1,14 +1,14 @@
 //
-//  PetDetailTopTabView.m
+//  FMTabsView.m
 //  Sample
 //
 //  Created by wjy on 2018/4/2.
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
-#import "PetDetailTopTabView.h"
+#import "FMTabsView.h"
 
-@interface PetDetailTopTabView ()
+@interface FMTabsView ()
 {
     UIColor *_bgColor;
     UIColor *_textColor;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation PetDetailTopTabView
+@implementation FMTabsView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

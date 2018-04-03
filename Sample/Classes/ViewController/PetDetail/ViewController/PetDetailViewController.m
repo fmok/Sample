@@ -8,7 +8,7 @@
 
 #import "PetDetailViewController.h"
 #import "PetDetailControl.h"
-#import "PetDetailTopTabView.h"
+#import "FMTabsView.h"
 
 #define H_TopView_PetDetail (kScreenWidth*(120.f/375.f))
 
@@ -17,7 +17,7 @@
 @property (nonatomic, strong) PetDetailControl *control;
 @property (nonatomic, strong) UIImageView *topImgView;
 @property (nonatomic, strong) UILabel *petDesLabel;
-@property (nonatomic, strong) PetDetailTopTabView *topTabView;
+@property (nonatomic, strong) FMTabsView *topTabView;
 
 @end
 
@@ -91,10 +91,10 @@
     return _petDesLabel;
 }
 
-- (PetDetailTopTabView *)topTabView
+- (FMTabsView *)topTabView
 {
     if (!_topTabView) {
-        _topTabView = [[PetDetailTopTabView alloc] initWithFrame:CGRectZero];
+        _topTabView = [[FMTabsView alloc] initWithFrame:CGRectZero];
         _topTabView.isNeedVerticalBar = YES;
         _topTabView.layer.cornerRadius = 10.f;
         _topTabView.clipsToBounds = YES;
