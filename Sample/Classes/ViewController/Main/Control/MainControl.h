@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "MainViewController.h"
-#import "CollectionSectionHeaderView.h"
 
 @interface MainControl : NSObject<
     UICollectionViewDelegate,

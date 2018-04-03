@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, SortType) {
     SortTypeBtRest  // 按剩余排序
 };
 
-@protocol CollectionSectionHeaderViewDelegate<NSObject>
+@protocol CollectionSectionHeaderViewDelegate <NSObject>
 
 - (void)sortByType:(SortType)type;
 

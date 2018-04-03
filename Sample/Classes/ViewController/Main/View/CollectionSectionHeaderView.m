@@ -30,8 +30,6 @@ static CGFloat const gap_left_right_main = 10.f;
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-        self.layer.cornerRadius = 10.f;
-        self.clipsToBounds = YES;
         [self addSubview:self.lineView];
         [self addSubview:self.textLabel];
         [self addSubview:self.restBtn];
@@ -39,7 +37,7 @@ static CGFloat const gap_left_right_main = 10.f;
         WS(weakSelf);
         [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(weakSelf).offset(gap_left_right_main);
-            make.bottom.equalTo(weakSelf).offset(-5.f);
+            make.centerY.equalTo(weakSelf);
             make.size.mas_equalTo(CGSizeMake(W_Line_main, 14.f));
         }];
         [self.textLabel mas_makeConstraints:^(MASConstraintMaker *make) {

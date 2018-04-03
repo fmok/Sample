@@ -9,6 +9,7 @@
 #import "FMBaseViewController.h"
 #import "PulledCollectionView.h"
 #import "MainHeaderView.h"
+#import "CollectionSectionHeaderView.h"
 
 static CGFloat const gap_left_right_main = 14.5f;
 
