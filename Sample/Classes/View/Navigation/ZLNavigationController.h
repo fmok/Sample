@@ -10,6 +10,11 @@
 @class ZLPercentDrivenInteractiveTransition;
 typedef void(^ZLCompletionBlock)(BOOL isCancel);
 
+typedef NS_ENUM(NSInteger, ZLNavInteractivePopGestureType) {
+    ZLNavInteractivePopGestureTypeFullScreen,  // default
+    ZLNavInteractivePopGestureTypeScreenEdgeLeft
+};
+
 NS_ASSUME_NONNULL_BEGIN
 @interface ZLNavigationController : UIViewController 
 @property (nonatomic, strong, readonly) NSArray *viewControllers;
@@ -19,10 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak, readonly) UIViewController *rootViewController;
 
 @property (nonatomic, strong, readonly) UIPanGestureRecognizer *interactiveGestureRecognizer;
+@property (nonatomic, strong, readonly) UIScreenEdgePanGestureRecognizer *interactiveEdgeGestureRecognizer;
 
 @property (nonatomic, strong, readonly) ZLPercentDrivenInteractiveTransition *percentDrivenInteractiveTransition;
-
-@property (nonatomic, assign) BOOL isFullScreenSidsSlipUnable;  // default == NO
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController;
 - (instancetype)initWithViewController:(NSArray<UIViewController *> *)viewControllers;
@@ -35,25 +39,28 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)popToRootViewControllerAnimated:(BOOL)animated;
 
 - (void)removeViewController:(UIViewController *)viewController;
+/** 全换侧拉方案，mainType默认为fullScreen，如有特殊页面切换为edgeLeft，需要每次进入设置 */
+- (void)setNavInteractivePopGestureType:(ZLNavInteractivePopGestureType)type;
 @end
 
 
 
 @interface UIViewController(ZLNavigationController)
 @property (nonatomic, weak, readonly) ZLNavigationController *zl_navigationController;
-
 @property (nonatomic, assign) BOOL zl_navigationBarHidden;
-
 @property (nonatomic, assign) BOOL zl_automaticallyAdjustsScrollViewInsets;
 @end
+
 
 @interface UIViewController(ZLNavigationBar)
 @property (nonatomic, weak) UINavigationBar *zl_navigationBar;
 @end
 
+
 @interface UIViewController(ZLNavigationItem)
 @property (nonatomic, weak) UINavigationItem *zl_navigationItem;
 @end
+
 
 @protocol ZLViewControllerContextTransitioning;
 @interface ZLPercentDrivenInteractiveTransition : NSObject

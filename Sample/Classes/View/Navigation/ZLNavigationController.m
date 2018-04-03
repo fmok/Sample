@@ -94,7 +94,6 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     CAAnimationDelegate>
 {
     BOOL _isAnimationInProgress;
-    //    BOOL _popAnimationInProgress;
 }
 @property (nonatomic, strong, readwrite) NSArray *viewControllers;
 
@@ -105,6 +104,7 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
 @property (nonatomic, strong) ZLMaskView *transitionMaskView;
 
 @property (nonatomic, strong, readwrite) UIPanGestureRecognizer *interactiveGestureRecognizer;
+@property (nonatomic, strong, readwrite) UIScreenEdgePanGestureRecognizer *interactiveEdgeGestureRecognizer;
 
 @property (nonatomic, strong, readwrite) ZLPercentDrivenInteractiveTransition *percentDrivenInteractiveTransition;
 
@@ -114,8 +114,8 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
 @property (nonatomic, strong) UIView *zl_containerView;
 
 @property (nonatomic, weak, readwrite) UIViewController *topViewController;
-
 @property (nonatomic, weak, readwrite) UIViewController *rootViewController;
+
 @end
 
 
@@ -166,9 +166,16 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     self.zl_containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.zl_containerView];
     
+    // 全屏侧拉
     self.interactiveGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNavigationTransition:)];
     self.interactiveGestureRecognizer.delegate = self;
     [self.zl_containerView addGestureRecognizer:self.interactiveGestureRecognizer];
+    // 边缘侧拉
+    self.interactiveEdgeGestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNavigationTransition:)];
+    self.interactiveEdgeGestureRecognizer.edges = UIRectEdgeLeft;
+    [self.zl_containerView addGestureRecognizer:self.interactiveEdgeGestureRecognizer];
+    // 默认全屏侧拉
+    [self setNavInteractivePopGestureType:ZLNavInteractivePopGestureTypeFullScreen];
     
     self.transitionMaskView = [[ZLMaskView alloc] initWithFrame:self.view.bounds];
     self.transitionMaskView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -344,6 +351,7 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
                                            [self releaseViewControllersAfterPopToViewController:toViewController];
                                            
                                            [self.zl_containerView bringSubviewToFront:toViewController.view];
+                                           [self setNavInteractivePopGestureType:ZLNavInteractivePopGestureTypeFullScreen];
                                        }
                                        self.transitionMaskView.hidden = YES;
                                        [self.contextTransitioning finishInteractiveTransition];
@@ -573,6 +581,14 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
 }
 
 - (void)handleNavigationTransition:(UIPanGestureRecognizer *)recognizer {
+    
+//    if ((recognizer.superclass == [UIPanGestureRecognizer class]) && (self.navInteractivePopGestureType == ZLNavInteractivePopGestureTypeFullScreen)) {
+//        return;
+//    }
+//    if ((recognizer.superclass == [UIGestureRecognizer class]) && (self.navInteractivePopGestureType == ZLNavInteractivePopGestureTypeScreenEdgeLeft)) {
+//        return;
+//    }
+    
     CGFloat translate = [recognizer translationInView:self.view].x;
     double percent = (double)translate / (double)CGRectGetWidth(self.view.bounds);
     if (recognizer.state == UIGestureRecognizerStateBegan) {
@@ -615,11 +631,26 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     return _percentDrivenInteractiveTransition;
 }
 
-#pragma mark - setter
-- (void)setIsFullScreenSidsSlipUnable:(BOOL)isFullScreenSidsSlipUnable
+#pragma mark - Public methods
+- (void)setNavInteractivePopGestureType:(ZLNavInteractivePopGestureType)type
 {
-    _isFullScreenSidsSlipUnable = isFullScreenSidsSlipUnable;
-//    self.interactiveGestureRecognizer.enabled = !_isFullScreenSidsSlipUnable;
+    switch (type) {
+        case ZLNavInteractivePopGestureTypeScreenEdgeLeft:
+        {
+            self.interactiveGestureRecognizer.enabled = NO;
+            self.interactiveEdgeGestureRecognizer.enabled = YES;
+        }
+            break;
+        case ZLNavInteractivePopGestureTypeFullScreen:
+        {
+            self.interactiveGestureRecognizer.enabled = YES;
+            self.interactiveEdgeGestureRecognizer.enabled = NO;
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end
