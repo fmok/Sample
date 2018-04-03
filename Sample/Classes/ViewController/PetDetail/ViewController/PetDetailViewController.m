@@ -45,7 +45,7 @@
             make.top.equalTo(weakSelf.mas_topLayoutGuide).offset(kNavBarHeight+kGap_NavBarBottom);
         }
         make.centerX.equalTo(weakSelf.view);
-        make.size.mas_equalTo(CGSizeMake(345.f, H_TopTabView_PetDetail));
+        make.size.mas_equalTo(CGSizeMake(345.f, 49.f));
     }];
     [self.control loadData];
 }
@@ -95,6 +95,7 @@
 {
     if (!_topTabView) {
         _topTabView = [[PetDetailTopTabView alloc] initWithFrame:CGRectZero];
+        _topTabView.isNeedVerticalBar = YES;
     }
     return _topTabView;
 }

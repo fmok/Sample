@@ -8,15 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-static NSString *const PetDetailTopTab_growUp = @"成长";
-static NSString *const PetDetailTopTab_wisdom = @"智慧";
-static NSString *const PetDetailTopTab_giveBirth = @"生育";
-static NSString *const PetDetailTopTab_charm = @"魅力";
-
-#define H_TopTabView_PetDetail 49.f
-
 @interface PetDetailTopTabView : UIView
 
 @property (nonatomic, strong) NSArray *items;
+@property (nonatomic, assign) BOOL isNeedVerticalBar;
+
+- (void)updateTabContent:(NSArray *)items;
+- (void)initConfigurationBgColor:(UIColor *)bgColor textColor:(UIColor *)textColor textFont:(UIFont *)textFont verticalBarColor:(UIColor *)verticalBarColor;
 
 @end
