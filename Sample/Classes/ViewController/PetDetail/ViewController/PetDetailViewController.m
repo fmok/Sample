@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.zl_navigationController setNavInteractivePopGestureType:ZLNavInteractivePopGestureTypeScreenEdgeLeft];
+//    [self.zl_navigationController setNavInteractivePopGestureType:ZLNavInteractivePopGestureTypeScreenEdgeLeft];
     WS(weakSelf);
     [self.view addSubview:self.topImgView];
     [self.topImgView mas_makeConstraints:^(MASConstraintMaker *make) {

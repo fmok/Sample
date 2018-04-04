@@ -15,6 +15,7 @@ static NSString *const kCardStackSingleCellReusedIdentifier = @"CardStackSingleC
     UICollectionViewDelegate,
     UICollectionViewDataSource>
 {
+    NSInteger currentCardIndex;
     NSArray *testUrlArr;
 }
 
@@ -31,6 +32,7 @@ static NSString *const kCardStackSingleCellReusedIdentifier = @"CardStackSingleC
         self.backgroundColor = [UIColor clearColor];
         [self addSubview:self.cardCollectionView];
         [self.cardCollectionView registerClass:[CardStackSingleCell class] forCellWithReuseIdentifier:kCardStackSingleCellReusedIdentifier];
+        currentCardIndex = 0;
         testUrlArr = @[
                        @"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1003875183,1486960090&fm=27&gp=0.jpg",
                        @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522832855285&di=03335c88fd6f213a141900b34dcf68f2&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F11%2F71%2F05%2F04A58PICRuB.jpg",
@@ -57,6 +59,7 @@ static NSString *const kCardStackSingleCellReusedIdentifier = @"CardStackSingleC
 
 - (void)setInitailIndexCard:(NSInteger)idx
 {
+    currentCardIndex = idx;
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:0];
     [self.cardCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 }
@@ -95,6 +98,7 @@ static NSString *const kCardStackSingleCellReusedIdentifier = @"CardStackSingleC
     CGPoint pInView = [self convertPoint:self.cardCollectionView.center toView:self.cardCollectionView];
     NSIndexPath *indexPathNow = [self.cardCollectionView indexPathForItemAtPoint:pInView];
     if (self.cardStackScrollDelegate && [self.cardStackScrollDelegate respondsToSelector:@selector(cardScrollToIndex:)]) {
+        currentCardIndex = indexPathNow.item;
         [self.cardStackScrollDelegate cardScrollToIndex:indexPathNow.item];
     }
 }
@@ -114,7 +118,7 @@ static NSString *const kCardStackSingleCellReusedIdentifier = @"CardStackSingleC
         _cardCollectionView.pagingEnabled = YES;
         _cardCollectionView.bounces = NO;
         _cardCollectionView.alwaysBounceHorizontal = YES;
-        _cardCollectionView.showsHorizontalScrollIndicator = NO;
+        _cardCollectionView.showsHorizontalScrollIndicator = YES;
         _cardCollectionView.delegate = self;
         _cardCollectionView.dataSource = self;
         _cardCollectionView.isHeader = NO;
