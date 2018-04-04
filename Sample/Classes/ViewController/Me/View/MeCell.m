@@ -36,18 +36,18 @@ static CGFloat const leftImageW_H = 40.f;
 - (void)updateConstraints
 {
     WS(weakSelf);
-    [self.bgContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.bgContentView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf).offset(15.f);
         make.right.equalTo(weakSelf).offset(-15.f);
         make.top.equalTo(weakSelf).offset(10.f);
         make.bottom.equalTo(weakSelf);
     }];
-    [self.leftImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.leftImgView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.bgContentView).offset(10.f);
         make.centerY.equalTo(weakSelf.bgContentView);
         make.size.mas_equalTo(CGSizeMake(leftImageW_H, leftImageW_H));
     }];
-    [self.contenLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.contenLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.leftImgView.mas_right).offset(20.f);
         make.centerY.equalTo(weakSelf.bgContentView);
     }];

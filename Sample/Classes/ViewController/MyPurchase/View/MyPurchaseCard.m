@@ -34,15 +34,15 @@
 - (void)updateConstraints
 {
     WS(weakSelf);
-    [self.cardImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.cardImgView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.and.top.equalTo(weakSelf);
         make.height.mas_equalTo(H_MyPurchaseCardImgView);
     }];
-    [self.growUpValue mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.growUpValue mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf);
         make.top.equalTo(weakSelf.cardImgView.mas_bottom).offset(10.f);
     }];
-    [self.restValue mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.restValue mas_updateConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(weakSelf);
         make.top.equalTo(weakSelf.cardImgView.mas_bottom).offset(10.f);
     }];

@@ -23,7 +23,7 @@
 - (void)updateConstraints
 {
     WS(weakSelf);
-    [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.imgView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(weakSelf);
     }];
     [super updateConstraints];

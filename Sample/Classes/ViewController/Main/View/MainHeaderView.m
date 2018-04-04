@@ -43,22 +43,22 @@ static CGFloat const gap_tips_left_right = 15.f;
 {
     WS(weakSelf);
     CGFloat H_bg = kScreenWidth*9.f/16.f;
-    [self.bgImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.bgImgView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.and.top.and.right.equalTo(weakSelf);
         make.height.mas_equalTo(H_bg);
     }];
-    [self.tipsView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.tipsView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(weakSelf);
         make.left.equalTo(weakSelf).offset(gap_tips_left_right);
         make.right.equalTo(weakSelf).offset(-gap_tips_left_right);
         make.height.mas_equalTo(55.f);
     }];
-    [self.signInBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.signInBtn mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(weakSelf.tipsView.mas_top).offset(H_SignIn_Btn/2.f-8.f);
         make.centerX.equalTo(weakSelf.tipsView);
         make.size.mas_equalTo(CGSizeMake(W_SignIn_Btn, H_SignIn_Btn));
     }];
-    [self.trumpetImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.trumpetImgView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.tipsView).offset(12.f);
         make.bottom.equalTo(weakSelf.tipsView).offset(-12.f);
         make.size.mas_equalTo(CGSizeMake(W_H_trumpetImgView, W_H_trumpetImgView));

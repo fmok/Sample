@@ -46,11 +46,11 @@ static NSString *const segmentControl_purchaseRecords = @"购买记录";
 - (void)updateConstraints
 {
     WS(weakSelf);
-    [self.segmentControl mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.segmentControl mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.and.left.and.right.equalTo(weakSelf);
         make.height.mas_equalTo(H_SegmentControl);
     }];
-    [self.swipeView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.swipeView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.segmentControl.mas_bottom);
         make.left.and.right.and.bottom.equalTo(weakSelf);
     }];

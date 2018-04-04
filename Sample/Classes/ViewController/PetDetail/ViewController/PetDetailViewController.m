@@ -8,6 +8,7 @@
 
 #import "PetDetailViewController.h"
 #import "PetDetailControl.h"
+#import "PetDetailBottomPetDesView.h"
 
 #define H_TopView_PetDetail (kScreenWidth*(120.f/375.f))
 
@@ -16,6 +17,7 @@
 @property (nonatomic, strong) PetDetailControl *control;
 @property (nonatomic, strong) UIImageView *topImgView;
 @property (nonatomic, strong) UILabel *petDesLabel;
+@property (nonatomic, strong) PetDetailBottomPetDesView *bottomPetDesView;
 
 @end
 
@@ -52,6 +54,16 @@
         make.left.and.right.equalTo(weakSelf.view);
         make.height.mas_equalTo(H_CardsStackSingleCell);
     }];
+    [self.view addSubview:self.bottomPetDesView];
+    [self.bottomPetDesView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.petScrollView.mas_bottom).offset(10.f);
+        make.centerX.equalTo(weakSelf.view);
+        CGFloat width = (kScreenWidth-2*Gap_CardsStackSingleCellEdges);
+        CGFloat height = ((75.f/345.f)*width);
+        make.width.mas_equalTo(width);
+        make.height.mas_equalTo(height);
+    }];
+    
     [self.control loadData];
 }
 
@@ -110,6 +122,14 @@
         _petScrollView.cardStackScrollDelegate = self.control;
     }
     return _petScrollView;
+}
+
+- (PetDetailBottomPetDesView *)bottomPetDesView
+{
+    if (!_bottomPetDesView) {
+        _bottomPetDesView = [[PetDetailBottomPetDesView alloc] initWithFrame:CGRectZero];
+    }
+    return _bottomPetDesView;
 }
 
 - (NSMutableArray *)dataSource

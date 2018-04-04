@@ -32,13 +32,13 @@
 - (void)updateConstraints
 {
     WS(weakSelf);
-    [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.imgView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(weakSelf);
     }];
-    [self.LUKLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.LUKLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(weakSelf);
     }];
-    [self.accountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.accountLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.LUKLabel.mas_bottom).offset(20.f);
         make.centerX.equalTo(weakSelf);
     }];

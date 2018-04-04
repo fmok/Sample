@@ -87,6 +87,7 @@
 		57C3D56A2068BBAE00E0B8BA /* FMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D5692068BBAE00E0B8BA /* FMConstants.m */; };
 		57C3D56D2068C45F00E0B8BA /* UIView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D56B2068C45E00E0B8BA /* UIView+Utilities.m */; };
 		57C3D5702068C4D300E0B8BA /* CGGeometryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D56E2068C4D200E0B8BA /* CGGeometryAdditions.m */; };
+		57D5CC752074ABB7009E65C6 /* PetDetailBottomPetDesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D5CC742074ABB7009E65C6 /* PetDetailBottomPetDesView.m */; };
 		57DED5452067C81700E24607 /* FMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5442067C81700E24607 /* FMTabBarViewController.m */; };
 		57DED5502067CF7B00E24607 /* tabbar_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5482067CF7B00E24607 /* tabbar_home@2x.png */; };
 		57DED5512067CF7B00E24607 /* tabbar_home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5492067CF7B00E24607 /* tabbar_home@3x.png */; };
@@ -277,6 +278,8 @@
 		57C3D56C2068C45F00E0B8BA /* UIView+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utilities.h"; sourceTree = "<group>"; };
 		57C3D56E2068C4D200E0B8BA /* CGGeometryAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGGeometryAdditions.m; sourceTree = "<group>"; };
 		57C3D56F2068C4D200E0B8BA /* CGGeometryAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometryAdditions.h; sourceTree = "<group>"; };
+		57D5CC732074ABB7009E65C6 /* PetDetailBottomPetDesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetDetailBottomPetDesView.h; sourceTree = "<group>"; };
+		57D5CC742074ABB7009E65C6 /* PetDetailBottomPetDesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetDetailBottomPetDesView.m; sourceTree = "<group>"; };
 		57DED5432067C81700E24607 /* FMTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMTabBarViewController.h; sourceTree = "<group>"; };
 		57DED5442067C81700E24607 /* FMTabBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMTabBarViewController.m; sourceTree = "<group>"; };
 		57DED5482067CF7B00E24607 /* tabbar_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_home@2x.png"; sourceTree = "<group>"; };
@@ -443,6 +446,8 @@
 				5737E60F20735375008AF33C /* FMCardsStackScrollView.m */,
 				5737E6112073A12B008AF33C /* CardStackSingleCell.h */,
 				5737E6122073A12B008AF33C /* CardStackSingleCell.m */,
+				57D5CC732074ABB7009E65C6 /* PetDetailBottomPetDesView.h */,
+				57D5CC742074ABB7009E65C6 /* PetDetailBottomPetDesView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1454,6 +1459,7 @@
 				57C3D56A2068BBAE00E0B8BA /* FMConstants.m in Sources */,
 				57379585206B4B4700388BCC /* FMSegmentControl.m in Sources */,
 				57379591206B714300388BCC /* CollectionViewCell.m in Sources */,
+				57D5CC752074ABB7009E65C6 /* PetDetailBottomPetDesView.m in Sources */,
 				57C3D55E20689BF400E0B8BA /* MainViewController.m in Sources */,
 				57B5440F2062727F00701F9C /* main.m in Sources */,
 				57B54440206278B600701F9C /* TestViewController.m in Sources */,

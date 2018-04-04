@@ -37,15 +37,15 @@
 - (void)updateConstraints
 {
     WS(weakSelf);
-    [self.bgContentView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.bgContentView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.and.top.equalTo(weakSelf);
         make.bottom.equalTo(weakSelf).offset(-gap_PurchaseCell_bottom_MyPurchase);
     }];
-    [self.topView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.topView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.and.left.and.right.equalTo(weakSelf);
         make.height.mas_equalTo(H_topView_myPurchaseCell);
     }];
-    [self.listView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.listView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.topView.mas_bottom);
         make.left.and.right.and.bottom.equalTo(weakSelf.bgContentView);
     }];

@@ -35,10 +35,10 @@ static CGFloat const H_costLabel = 22.f;
 - (void)updateConstraints
 {
     WS(weakSelf);
-    [self.cardImgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.cardImgView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(weakSelf);
     }];
-    [self.costLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.costLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf).offset(7.f);
         make.bottom.equalTo(weakSelf).offset(-7.f);
         make.height.mas_equalTo(H_costLabel);

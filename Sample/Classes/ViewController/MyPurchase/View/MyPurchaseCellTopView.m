@@ -33,12 +33,12 @@ static CGFloat const W_Line_myPurchase = 3.f;
 - (void)updateConstraints
 {
     WS(weakSelf);
-    [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.lineView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(weakSelf);
         make.left.equalTo(weakSelf).offset(10.f);
         make.size.mas_equalTo(CGSizeMake(W_Line_myPurchase, 14.f));
     }];
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.titleLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.lineView.mas_right).offset(5.f);
         make.centerY.equalTo(weakSelf);
     }];
