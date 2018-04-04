@@ -7,13 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CardStackSingleCell.h"
 
-#define Gap_CardsStackSingleCellEdges 15.5f
-#define W_CardsStackSingleCell (kScreenWidth-Gap_CardsStackSingleCellEdges*2)
-#define H_CardsStackSingleCell ((265.5f/345.f)*W_CardsStackSingleCell)
+@protocol FMCardsStackScrollViewDelegate <NSObject>
+
+//@optional
+- (void)cardScrollToIndex:(NSInteger)idx;
+
+@end
 
 @interface FMCardsStackScrollView : UIScrollView
 
+@property (nonatomic, weak) id<FMCardsStackScrollViewDelegate>cardStackScrollDelegate;
+
 - (void)updateContent;
+- (void)setInitailIndexCard:(NSInteger)idx;
 
 @end

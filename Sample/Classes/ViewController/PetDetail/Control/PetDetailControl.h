@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "PetDetailViewController.h"
 
-@interface PetDetailControl : NSObject
+@interface PetDetailControl : NSObject<
+    FMCardsStackScrollViewDelegate>
 
 @property (nonatomic, weak) PetDetailViewController *vc;
 

@@ -61,8 +61,8 @@ static NSString *const kMyPurchaseCardReusedIdentifier = @"MyPurchaseCard";
 {
     TTDPRINT(@"\n*** %@ - %@ ***\n", @(indexPath.section), @(indexPath.item));
     PetDetailViewController *vc = [[PetDetailViewController alloc] init];
-    vc.title = @"双鱼座·风向";
-    [vc updatePetDes:@"植物系 T1002-01代"];
+    [vc updatePetName:@"双鱼座·风向" petDes:@"植物系 T1002-01代"];
+    vc.currentIndexForCardScrollView = indexPath.item;
     [[FMUtility topNav] pushViewController:vc animated:YES];
 }
 

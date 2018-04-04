@@ -49,23 +49,18 @@
     [self.view addSubview:self.petScrollView];
     [self.petScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.topTabView.mas_bottom).offset(10.f);
-        make.left.equalTo(weakSelf.view);
-        make.right.equalTo(weakSelf.view);
+        make.left.and.right.equalTo(weakSelf.view);
         make.height.mas_equalTo(H_CardsStackSingleCell);
     }];
     [self.control loadData];
 }
 
 #pragma mark - Public methods
-- (void)updatePetDes:(NSString *)petDes
+- (void)updatePetName:(NSString *)name petDes:(NSString *)petDes
 {
+    self.title = CHANGE_TO_STRING(name);
     self.petDesLabel.text = CHANGE_TO_STRING(petDes);
 }
-
-//- (void)updatePetTabs:(NSArray *)items
-//{
-//    self.topTabView.items = items;
-//}
 
 #pragma mark - getter & setter
 - (PetDetailControl *)control
@@ -112,8 +107,17 @@
 {
     if (!_petScrollView) {
         _petScrollView = [[FMCardsStackScrollView alloc] initWithFrame:CGRectZero];
+        _petScrollView.cardStackScrollDelegate = self.control;
     }
     return _petScrollView;
+}
+
+- (NSMutableArray *)dataSource
+{
+    if (!_dataSource) {
+        _dataSource = [[NSMutableArray alloc] init];
+    }
+    return _dataSource;
 }
 
 - (void)didReceiveMemoryWarning {
