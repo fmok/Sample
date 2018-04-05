@@ -88,6 +88,7 @@
 //        _purchaseRecordsList.estimatedSectionFooterHeight = 0;
         _purchaseRecordsList.isHeader = NO;
         _purchaseRecordsList.isFooter = NO;
+        _purchaseRecordsList.scrollsToTop = NO;
         _purchaseRecordsList.delegate = self;
         _purchaseRecordsList.dataSource = self;
     }
