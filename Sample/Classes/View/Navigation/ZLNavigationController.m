@@ -147,11 +147,9 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
         self.contextTransitioning = self;
         self.rootViewController = viewControllers.firstObject;
         
-        for (int i = 0; i < viewControllers.count - 1; i ++) {
-            UIViewController *vc = viewControllers[i];
-            [self addChildViewController:vc];
-        }
-
+        [self.viewControllers enumerateObjectsUsingBlock:^(UIViewController *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [self addChildViewController:obj];
+        }];
     }
     return self;
 }
