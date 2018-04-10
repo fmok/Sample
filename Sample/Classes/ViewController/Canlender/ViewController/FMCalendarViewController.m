@@ -1,0 +1,92 @@
+//
+//  FMCalendarViewController.m
+//  Sample
+//
+//  Created by wjy on 2018/4/10.
+//  Copyright © 2018年 wjy. All rights reserved.
+//
+
+#import "FMCalendarViewController.h"
+#import "FMCalendarControl.h"
+
+static CGFloat const W_H_TodayBtn = 20.f;
+
+@interface FMCalendarViewController ()<LTSCalendarEventSource>
+
+@property (nonatomic, strong) FMCalendarControl *control;
+@property (nonatomic, strong) UIButton *todayBtn;
+
+@end
+
+@implementation FMCalendarViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    [self configNavBarBackgroundImage:[UIImage imageNamed:@"nav.png"]];
+    [self setNav];
+    self.manager = [LTSCalendarManager new];
+    self.manager.eventSource = self.control;
+    
+    self.manager.weekDayView = [[LTSCalendarWeekDayView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 30)];
+    [self.view addSubview:self.manager.weekDayView];
+    
+    self.manager.calenderScrollView = [[LTSCalendarScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.manager.weekDayView.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(self.manager.weekDayView.frame))];
+    [self.view addSubview:self.manager.calenderScrollView];
+    
+    [self.control createRandomEvents];
+//    self.automaticallyAdjustsScrollViewInsets = false;
+// Do any additional setup after loading the view.
+
+}
+
+#pragma mark - Private methods
+- (void)setNav
+{
+    UIBarButtonItem *todayItem = [[UIBarButtonItem alloc] initWithCustomView:self.todayBtn];
+    self.zl_navigationItem.rightBarButtonItems = @[todayItem];
+}
+
+
+#pragma mark - getter & setter
+- (FMCalendarControl *)control
+{
+    if (!_control) {
+        _control = [[FMCalendarControl alloc] init];
+        _control.vc = self;
+    }
+    return _control;
+}
+
+- (UIButton *)todayBtn
+{
+    if (!_todayBtn) {
+        _todayBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, W_H_TodayBtn, W_H_TodayBtn)];
+        [_todayBtn setTitle:@"今" forState:UIControlStateNormal];
+        [_todayBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _todayBtn.titleLabel.font = [UIFont boldSystemFontOfSize:12.f];
+        _todayBtn.layer.cornerRadius = W_H_TodayBtn/2.f;
+        _todayBtn.clipsToBounds = YES;
+        [_todayBtn.layer setBorderColor:[UIColor whiteColor].CGColor];
+        [_todayBtn.layer setBorderWidth:2.f];
+        [_todayBtn addTarget:self.control action:@selector(cilckToday:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _todayBtn;
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

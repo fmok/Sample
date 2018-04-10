@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FMBaseViewController.h"
 
-@interface LTSCalendarViewController : FMBaseViewController
+@interface LTSCalendarViewController : UIViewController
 
 
 

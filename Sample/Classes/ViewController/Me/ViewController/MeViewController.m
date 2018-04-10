@@ -11,7 +11,7 @@
 #import "UIImage+Resize.h"
 #import "TestViewController.h"
 #import "MyPurchaseViewController.h"
-#import "LTSCalendarViewController.h"
+#import "FMCalendarViewController.h"
 
 @interface MeViewController ()
 
@@ -110,7 +110,7 @@
                          },
                        @{
                          kMeVCTitle: @"万年历",
-                         kMeVCClassName: NSStringFromClass([LTSCalendarViewController class]),
+                         kMeVCClassName: NSStringFromClass([FMCalendarViewController class]),
                          kMeVCLogoStr: @"upDown"
                          },
                        nil];
