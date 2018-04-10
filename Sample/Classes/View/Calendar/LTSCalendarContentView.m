@@ -11,7 +11,7 @@
 #import "LTSCalendarDayItem.h"
 #import "LTSCalendarManager.h"
 
-#define NUMBER_PAGES_LOADED 5
+#define NUMBER_PAGES_LOADED 3
 
 @interface LTSCalendarContentView()<UICollectionViewDataSource,UICollectionViewDelegate>{
     //是否是在点击日期或者滑动改变页数
@@ -38,13 +38,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [LTSCalendarAppearance share].calendarBgColor;
-        WS(weakSelf);
         [self addSubview:self.collectionView];
-//        [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.top.and.left.equalTo(weakSelf);
-//            make.width.equalTo(weakSelf);
-//            make.height.equalTo(weakSelf);
-//        }];
         // 初始化数据
         [self getDateDatas];
         //
