@@ -9,7 +9,9 @@
 #import "LTSCalendarCollectionCell.h"
 #import "LTSCircleView.h"
 #import "LTSCalendarAppearance.h"
-@interface LTSCalendarCollectionCell(){
+
+@interface LTSCalendarCollectionCell()
+{
     UIView *backgroundView;
     LTSCircleView *circleView;
     UILabel *textLabel;
@@ -19,10 +21,11 @@
     NSString *cacheCurrentDateText;
     
 }
+
 @end
 
-
 @implementation LTSCalendarCollectionCell
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
