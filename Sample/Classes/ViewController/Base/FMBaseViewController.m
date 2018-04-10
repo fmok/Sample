@@ -87,6 +87,11 @@
     [HUD showTipOfView:self.view text:string];
 }
 
+- (void)changeNavBarTitle:(NSString *)title
+{
+    self.zl_navigationItem.title = title;
+}
+
 - (void)constraintNavigationBar:(UINavigationBar *)navigationBar
 {
     navigationBar.translatesAutoresizingMaskIntoConstraints = NO;

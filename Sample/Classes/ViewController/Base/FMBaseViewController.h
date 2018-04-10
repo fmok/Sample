@@ -28,5 +28,9 @@
  navBar 约束适配iOS 11
  */
 - (void)constraintNavigationBar:(UINavigationBar *)navigationBar;
+/**
+ 
+ */
+- (void)changeNavBarTitle:(NSString *)title;
 
 @end

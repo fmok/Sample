@@ -53,6 +53,16 @@
 		578320B0206A3B7400E2D67F /* closed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 578320A9206A3B7400E2D67F /* closed@2x.png */; };
 		578320B1206A3B7400E2D67F /* closed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 578320AA206A3B7400E2D67F /* closed@3x.png */; };
 		578320B7206A53D400E2D67F /* FMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578320B6206A53D400E2D67F /* FMAlertView.m */; };
+		578E7B0D207C5990001D351D /* LTSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7AF9207C5990001D351D /* LTSCalendarAppearance.m */; };
+		578E7B0E207C5990001D351D /* LTSCalendarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7AFB207C5990001D351D /* LTSCalendarCollectionCell.m */; };
+		578E7B0F207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7AFD207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.m */; };
+		578E7B10207C5990001D351D /* LTSCalendarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7AFF207C5990001D351D /* LTSCalendarContentView.m */; };
+		578E7B11207C5990001D351D /* LTSCalendarDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B01207C5990001D351D /* LTSCalendarDayItem.m */; };
+		578E7B12207C5990001D351D /* LTSCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B04207C5990001D351D /* LTSCalendarManager.m */; };
+		578E7B13207C5990001D351D /* LTSCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B06207C5990001D351D /* LTSCalendarScrollView.m */; };
+		578E7B14207C5990001D351D /* LTSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B08207C5990001D351D /* LTSCalendarViewController.m */; };
+		578E7B15207C5990001D351D /* LTSCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B0A207C5990001D351D /* LTSCalendarWeekDayView.m */; };
+		578E7B16207C5990001D351D /* LTSCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B0C207C5990001D351D /* LTSCircleView.m */; };
 		5797133E2079C52D0014AB4F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5797133D2079C52D0014AB4F /* Images.xcassets */; };
 		57B543FE2062727F00701F9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B543FD2062727F00701F9C /* AppDelegate.m */; };
 		57B544042062727F00701F9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B544022062727F00701F9C /* Main.storyboard */; };
@@ -209,6 +219,27 @@
 		578320AA206A3B7400E2D67F /* closed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closed@3x.png"; sourceTree = "<group>"; };
 		578320B5206A53D400E2D67F /* FMAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMAlertView.h; sourceTree = "<group>"; };
 		578320B6206A53D400E2D67F /* FMAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMAlertView.m; sourceTree = "<group>"; };
+		578E7AF8207C5990001D351D /* LTSCalendarAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarAppearance.h; sourceTree = "<group>"; };
+		578E7AF9207C5990001D351D /* LTSCalendarAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarAppearance.m; sourceTree = "<group>"; };
+		578E7AFA207C5990001D351D /* LTSCalendarCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarCollectionCell.h; sourceTree = "<group>"; };
+		578E7AFB207C5990001D351D /* LTSCalendarCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarCollectionCell.m; sourceTree = "<group>"; };
+		578E7AFC207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		578E7AFD207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		578E7AFE207C5990001D351D /* LTSCalendarContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarContentView.h; sourceTree = "<group>"; };
+		578E7AFF207C5990001D351D /* LTSCalendarContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarContentView.m; sourceTree = "<group>"; };
+		578E7B00207C5990001D351D /* LTSCalendarDayItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarDayItem.h; sourceTree = "<group>"; };
+		578E7B01207C5990001D351D /* LTSCalendarDayItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarDayItem.m; sourceTree = "<group>"; };
+		578E7B02207C5990001D351D /* LTSCalendarEventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarEventSource.h; sourceTree = "<group>"; };
+		578E7B03207C5990001D351D /* LTSCalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarManager.h; sourceTree = "<group>"; };
+		578E7B04207C5990001D351D /* LTSCalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarManager.m; sourceTree = "<group>"; };
+		578E7B05207C5990001D351D /* LTSCalendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarScrollView.h; sourceTree = "<group>"; };
+		578E7B06207C5990001D351D /* LTSCalendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarScrollView.m; sourceTree = "<group>"; };
+		578E7B07207C5990001D351D /* LTSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarViewController.h; sourceTree = "<group>"; };
+		578E7B08207C5990001D351D /* LTSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarViewController.m; sourceTree = "<group>"; };
+		578E7B09207C5990001D351D /* LTSCalendarWeekDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarWeekDayView.h; sourceTree = "<group>"; };
+		578E7B0A207C5990001D351D /* LTSCalendarWeekDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarWeekDayView.m; sourceTree = "<group>"; };
+		578E7B0B207C5990001D351D /* LTSCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCircleView.h; sourceTree = "<group>"; };
+		578E7B0C207C5990001D351D /* LTSCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCircleView.m; sourceTree = "<group>"; };
 		5797133D2079C52D0014AB4F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		57B543F92062727F00701F9C /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B543FC2062727F00701F9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -630,6 +661,73 @@
 			path = FMAlertView;
 			sourceTree = "<group>";
 		};
+		578E7AF7207C5990001D351D /* LTSCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				578E7AF8207C5990001D351D /* LTSCalendarAppearance.h */,
+				578E7AF9207C5990001D351D /* LTSCalendarAppearance.m */,
+				578E7AFA207C5990001D351D /* LTSCalendarCollectionCell.h */,
+				578E7AFB207C5990001D351D /* LTSCalendarCollectionCell.m */,
+				578E7AFC207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.h */,
+				578E7AFD207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.m */,
+				578E7AFE207C5990001D351D /* LTSCalendarContentView.h */,
+				578E7AFF207C5990001D351D /* LTSCalendarContentView.m */,
+				578E7B00207C5990001D351D /* LTSCalendarDayItem.h */,
+				578E7B01207C5990001D351D /* LTSCalendarDayItem.m */,
+				578E7B02207C5990001D351D /* LTSCalendarEventSource.h */,
+				578E7B03207C5990001D351D /* LTSCalendarManager.h */,
+				578E7B04207C5990001D351D /* LTSCalendarManager.m */,
+				578E7B05207C5990001D351D /* LTSCalendarScrollView.h */,
+				578E7B06207C5990001D351D /* LTSCalendarScrollView.m */,
+				578E7B07207C5990001D351D /* LTSCalendarViewController.h */,
+				578E7B08207C5990001D351D /* LTSCalendarViewController.m */,
+				578E7B09207C5990001D351D /* LTSCalendarWeekDayView.h */,
+				578E7B0A207C5990001D351D /* LTSCalendarWeekDayView.m */,
+				578E7B0B207C5990001D351D /* LTSCircleView.h */,
+				578E7B0C207C5990001D351D /* LTSCircleView.m */,
+			);
+			path = LTSCalendar;
+			sourceTree = "<group>";
+		};
+		578E7B17207C59E6001D351D /* Canlender */ = {
+			isa = PBXGroup;
+			children = (
+				578E7B1B207C5A26001D351D /* Model */,
+				578E7B1A207C5A20001D351D /* View */,
+				578E7B19207C5A19001D351D /* Control */,
+				578E7B18207C5A0F001D351D /* ViewController */,
+			);
+			path = Canlender;
+			sourceTree = "<group>";
+		};
+		578E7B18207C5A0F001D351D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		578E7B19207C5A19001D351D /* Control */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		578E7B1A207C5A20001D351D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		578E7B1B207C5A26001D351D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		57B543F02062727F00701F9C = {
 			isa = PBXGroup;
 			children = (
@@ -723,6 +821,7 @@
 				5740FA3D206CE69F006F20A5 /* BuyDetail */,
 				573F2E80206E2BD50011C77A /* MyPurchase */,
 				57C21B762071FC1300F70562 /* PetDetail */,
+				578E7B17207C59E6001D351D /* Canlender */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -730,6 +829,7 @@
 		57B544352062780E00701F9C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				578E7AF7207C5990001D351D /* LTSCalendar */,
 				5737E6092073338E008AF33C /* FMTabsView */,
 				5740FA30206C8A9A006F20A5 /* FMScrollLabel */,
 				57379582206B4B2500388BCC /* FMSegmentControl */,
@@ -1442,6 +1542,7 @@
 				57379581206B4ACB00388BCC /* SwipeView.m in Sources */,
 				5737959A206B95C400388BCC /* MeCell.m in Sources */,
 				57B544802062841400701F9C /* SvUDIDTools.m in Sources */,
+				578E7B12207C5990001D351D /* LTSCalendarManager.m in Sources */,
 				57C3D5522068944600E0B8BA /* FMBaseViewController.m in Sources */,
 				572E6A842063ABD1008114EA /* CardInfoModel.m in Sources */,
 				57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */,
@@ -1476,8 +1577,10 @@
 				57379594206B789F00388BCC /* CollectionSectionHeaderView.m in Sources */,
 				572E6A872063AFE3008114EA /* CardListModel.m in Sources */,
 				5737E61020735375008AF33C /* FMCardsStackScrollView.m in Sources */,
+				578E7B16207C5990001D351D /* LTSCircleView.m in Sources */,
 				575F9AAE2064EC710031BC49 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				57C21B742071CC9F00F70562 /* MyPurchaseCard.m in Sources */,
+				578E7B14207C5990001D351D /* LTSCalendarViewController.m in Sources */,
 				57B543FE2062727F00701F9C /* AppDelegate.m in Sources */,
 				5740FA52206D09FD006F20A5 /* BuyDetailCardRelatedView.m in Sources */,
 				57B5448D2062881E00701F9C /* FMRuntimeEngine.m in Sources */,
@@ -1489,24 +1592,31 @@
 				572E6A7A20637F1D008114EA /* MBProgressHUD.m in Sources */,
 				57B5444C20627C5800701F9C /* PulledCollectionView.m in Sources */,
 				57DED55E2067D36500E24607 /* UIImage+RoundedCorner.m in Sources */,
+				578E7B11207C5990001D351D /* LTSCalendarDayItem.m in Sources */,
 				57C21B812071FC7900F70562 /* PetDetailControl.m in Sources */,
 				57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */,
 				57C21B842071FD4400F70562 /* UIResponder+Router.m in Sources */,
 				573F2E91206E586E0011C77A /* MyPurchaseCell.m in Sources */,
+				578E7B13207C5990001D351D /* LTSCalendarScrollView.m in Sources */,
 				5740FA4F206D0645006F20A5 /* BuyDetailCardSendWordView.m in Sources */,
 				57C3D5672068A7DB00E0B8BA /* TestHeaderView.m in Sources */,
 				5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */,
 				573F2E7F206E1BA40011C77A /* DescripationViewController.m in Sources */,
 				573F2E8B206E2C2B0011C77A /* MyPurchaseControl.m in Sources */,
+				578E7B0E207C5990001D351D /* LTSCalendarCollectionCell.m in Sources */,
 				573F2E88206E2C180011C77A /* MyPurchaseViewController.m in Sources */,
 				57B5445A206281F400701F9C /* FMUtility.m in Sources */,
+				578E7B15207C5990001D351D /* LTSCalendarWeekDayView.m in Sources */,
 				57C21B7E2071FC6500F70562 /* PetDetailViewController.m in Sources */,
 				57C3D56D2068C45F00E0B8BA /* UIView+Utilities.m in Sources */,
 				5737E60C2073338E008AF33C /* FMTabsView.m in Sources */,
+				578E7B10207C5990001D351D /* LTSCalendarContentView.m in Sources */,
 				57B5444320627B6900701F9C /* FMRequest.m in Sources */,
 				5737958E206B6EC900388BCC /* MainControl.m in Sources */,
 				57B544842062850000701F9C /* APPSettingManager.m in Sources */,
 				5740FA48206CE705006F20A5 /* BuyDetailControl.m in Sources */,
+				578E7B0F207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
+				578E7B0D207C5990001D351D /* LTSCalendarAppearance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
