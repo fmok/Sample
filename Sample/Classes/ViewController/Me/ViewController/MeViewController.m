@@ -109,7 +109,7 @@
                          kMeVCLogoStr: @"upDown"
                          },
                        @{
-                         kMeVCTitle: @"万年历",
+                         kMeVCTitle: @"Calendar",
                          kMeVCClassName: NSStringFromClass([FMCalendarViewController class]),
                          kMeVCLogoStr: @"upDown"
                          },
