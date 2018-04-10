@@ -11,6 +11,9 @@
 #import "LTSCalendarCollectionViewFlowLayout.h"
 #import "LTSCalendarEventSource.h"
 
+#define W_CalendarScrollView (kScreenWidth)
+#define W_CalendarItem (W_CalendarScrollView/7.f)
+
 @interface LTSCalendarContentView : UIView
 
 @property (nonatomic,strong) UICollectionView *collectionView;

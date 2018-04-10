@@ -24,10 +24,12 @@ static CGFloat const W_H_TodayBtn = 20.f;
     [super viewDidLoad];
     [self configNavBarBackgroundImage:[UIImage imageNamed:@"nav.png"]];
     [self setNav];
+    self.zl_automaticallyAdjustsScrollViewInsets = NO;
     self.manager = [LTSCalendarManager new];
     self.manager.eventSource = self.control;
     
     WS(weakSelf);
+    //
     self.manager.weekDayView = [[FMCalendarWeekDayView alloc]initWithFrame:CGRectZero];
     [self.view addSubview:self.manager.weekDayView];
     [self.manager.weekDayView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -39,17 +41,18 @@ static CGFloat const W_H_TodayBtn = 20.f;
         }
         make.height.mas_equalTo(30.f);
     }];
-    
-    self.manager.calenderScrollView = [[FMCalendarScrollView alloc] initWithFrame:CGRectMake(0, 150, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-150)];
-//    self.manager.calenderScrollView = [[LTSCalendarScrollView alloc] initWithFrame:CGRectZero];
+    //
+    self.manager.calenderScrollView = [[FMCalendarScrollView alloc] initWithFrame:CGRectZero];
+    self.manager.calenderScrollView.bgColor = [UIColor redColor];
     [self.view addSubview:self.manager.calenderScrollView];
-//    [self.manager.calenderScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.and.right.and.bottom.equalTo(weakSelf.view);
-//        make.top.equalTo(weakSelf.manager.weekDayView.mas_bottom);
-//    }];
-    
-    [self.control createRandomEventsForTest];
-//    self.automaticallyAdjustsScrollViewInsets = false;
+    [self.manager.calenderScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(weakSelf.manager.weekDayView.mas_bottom);
+        make.bottom.equalTo(weakSelf.view);
+        make.centerX.equalTo(weakSelf.view);
+        make.width.mas_equalTo(W_CalendarScrollView);
+    }];
+    //
+//    [self.control createRandomEventsForTest];
 // Do any additional setup after loading the view.
 
 }

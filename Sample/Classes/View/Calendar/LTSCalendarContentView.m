@@ -33,50 +33,42 @@
 
 @implementation LTSCalendarContentView
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        [self initUI];
-    }
-    return self;
-}
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initUI];
+        self.backgroundColor = [LTSCalendarAppearance share].calendarBgColor;
+        WS(weakSelf);
+        [self addSubview:self.collectionView];
+//        [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.and.left.equalTo(weakSelf);
+//            make.width.equalTo(weakSelf);
+//            make.height.equalTo(weakSelf);
+//        }];
+        // 初始化数据
+        [self getDateDatas];
+        //
+        UIView *maskView = [[UIView alloc] initWithFrame:self.bounds];
+        maskView.backgroundColor = [LTSCalendarAppearance share].calendarBgColor;
+        maskView.alpha = 0;
+        maskView.userInteractionEnabled = false;
+        self.maskView = maskView;
+        [self addSubview:maskView];
+        //创建一个CAShapeLayer 图层
+        CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+        //添加图层蒙板
+        maskView.layer.mask = shapeLayer;
+        [self setUpVisualRegion];
     }
     return self;
 }
+
 - (void)setEventSource:(id<LTSCalendarEventSource>)eventSource{
     _eventSource = eventSource;
     [self updatePageWithNewDate:NO];
     [UIView performWithoutAnimation:^{
         [self.collectionView reloadData];
     }];
-}
-
-- (void)initUI
-{
-    self.backgroundColor = [LTSCalendarAppearance share].calendarBgColor;
-    [self addSubview:self.collectionView];
-    
-    // 初始化数据
-    [self getDateDatas];
-    
-    UIView *maskView = [[UIView alloc] initWithFrame:self.bounds];
-    maskView.backgroundColor = [LTSCalendarAppearance share].calendarBgColor;
-    maskView.alpha = 0;
-    maskView.userInteractionEnabled = false;
-    self.maskView = maskView;
-    [self addSubview:maskView];
-    
-    //创建一个CAShapeLayer 图层
-    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-    //添加图层蒙板
-    maskView.layer.mask = shapeLayer;
-    [self setUpVisualRegion];
 }
 
 - (void)setSingleWeek:(BOOL)singleWeek {
@@ -533,7 +525,7 @@
 {
     if (!_collectionView) {
         LTSCalendarCollectionViewFlowLayout *flowLayout = [[LTSCalendarCollectionViewFlowLayout alloc] init];
-        flowLayout.itemSize = CGSizeMake(self.frame.size.width/7, [LTSCalendarAppearance share].weekDayHeight);
+        flowLayout.itemSize = CGSizeMake(W_CalendarItem, [LTSCalendarAppearance share].weekDayHeight);
         flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         flowLayout.itemCountPerRow = 7;
         flowLayout.rowCount = [LTSCalendarAppearance share].weeksToDisplay;

@@ -18,15 +18,19 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self initUI];
+        self.delegate = self;
+        self.bounces = NO;
+        self.showsVerticalScrollIndicator = NO;
+        self.backgroundColor = [LTSCalendarAppearance share].scrollBgcolor;
+        [self addSubview:self.calendarView];
+        if ([LTSCalendarAppearance share].isShowSingleWeek) {
+            [self scrollToSingleWeek];
+        } else {
+            [self scrollToAllWeek];
+        }
     }
     return self;
 }
-
-//- (void)layoutSubviews
-//{
-//    [super layoutSubviews];
-//}
 
 //- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
 //{
@@ -46,18 +50,8 @@
 //}
 
 #pragma mark - Private methods
-- (void)initUI
-{
-    self.delegate = self;
-    self.bounces = NO;
-    self.showsVerticalScrollIndicator = NO;
-    self.backgroundColor = [LTSCalendarAppearance share].scrollBgcolor;
-    LTSCalendarContentView *calendarView = [[LTSCalendarContentView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, [LTSCalendarAppearance share].weekDayHeight*[LTSCalendarAppearance share].weeksToDisplay)];
-    calendarView.currentDate = [NSDate date];
-    [self addSubview:calendarView];
-    self.calendarView = calendarView;
-    [LTSCalendarAppearance share].isShowSingleWeek ? [self scrollToSingleWeek]:[self scrollToAllWeek];
-}
+
+
 
 #pragma mark - Public methods
 - (void)scrollToSingleWeek
@@ -78,6 +72,15 @@
 {
     _bgColor = bgColor;
     self.backgroundColor = bgColor;
+}
+
+- (LTSCalendarContentView *)calendarView
+{
+    if (!_calendarView) {
+        _calendarView = [[LTSCalendarContentView alloc] initWithFrame:CGRectMake(0, 0, W_CalendarScrollView, [LTSCalendarAppearance share].weekDayHeight*[LTSCalendarAppearance share].weeksToDisplay)];
+        _calendarView.currentDate = [NSDate date];
+    }
+    return _calendarView;
 }
 
 @end
