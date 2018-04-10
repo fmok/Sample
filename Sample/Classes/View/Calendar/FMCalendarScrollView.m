@@ -23,27 +23,27 @@
     return self;
 }
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-}
+//- (void)layoutSubviews
+//{
+//    [super layoutSubviews];
+//}
 
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
-{
-    LTSCalendarAppearance *appearce =  [LTSCalendarAppearance share];
-    CGFloat tableCountDistance = appearce.weekDayHeight*(appearce.weeksToDisplay-1);
-    if ( appearce.isShowSingleWeek) {
-        if (self.contentOffset.y != tableCountDistance) {
-            return  nil;
-        }
-    }
-    if ( !appearce.isShowSingleWeek) {
-        if (self.contentOffset.y != 0 ) {
-            return  nil;
-        }
-    }
-    return  [super hitTest:point withEvent:event];
-}
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event
+//{
+//    LTSCalendarAppearance *appearce =  [LTSCalendarAppearance share];
+//    CGFloat tableCountDistance = appearce.weekDayHeight*(appearce.weeksToDisplay-1);
+//    if ( appearce.isShowSingleWeek) {
+//        if (self.contentOffset.y != tableCountDistance) {
+//            return  nil;
+//        }
+//    }
+//    if ( !appearce.isShowSingleWeek) {
+//        if (self.contentOffset.y != 0 ) {
+//            return  nil;
+//        }
+//    }
+//    return  [super hitTest:point withEvent:event];
+//}
 
 #pragma mark - Private methods
 - (void)initUI

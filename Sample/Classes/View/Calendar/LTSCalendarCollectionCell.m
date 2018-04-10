@@ -75,7 +75,7 @@
     if(!dateFormatter){
         dateFormatter = [NSDateFormatter new];
         dateFormatter.timeZone = [LTSCalendarAppearance share].calendar.timeZone;
-        [dateFormatter setDateFormat:@"dd"];
+        [dateFormatter setDateFormat:@"d"];
     }
     
     
