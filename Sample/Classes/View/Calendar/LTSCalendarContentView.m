@@ -315,7 +315,7 @@
             
         }
         self.daysInWeeks = daysInWeeks;
-    }else{
+    } else {
         NSMutableArray *daysInMonths = [@[] mutableCopy];
         for(int i = 0; i < NUMBER_PAGES_LOADED; i++){
             

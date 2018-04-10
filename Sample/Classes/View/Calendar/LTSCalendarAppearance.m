@@ -42,7 +42,7 @@
      self.weekDayTextColor = [UIColor colorWithRed:200./256. green:200./256. blue:200./256. alpha:1.];
     self.weeksToDisplay = 6;
     self.weekDayHeight = 50;
-    self.isShowSingleWeek = true;
+    self.isShowSingleWeek = NO;
     self.firstWeekday = 1;
     self.defaultDate = [NSDate date];
     self.dayTextFont = [UIFont systemFontOfSize:16];
