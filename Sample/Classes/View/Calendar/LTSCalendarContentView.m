@@ -59,25 +59,8 @@
 
 - (void)initUI
 {
-    self.flowLayout = [LTSCalendarCollectionViewFlowLayout new];
-    self.flowLayout.itemSize = CGSizeMake(self.frame.size.width/7, [LTSCalendarAppearance share].weekDayHeight);
-    self.flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.flowLayout.itemCountPerRow = 7;
-    self.flowLayout.rowCount = [LTSCalendarAppearance share].weeksToDisplay;
-    self.flowLayout.minimumLineSpacing = 0;
-    self.flowLayout.minimumInteritemSpacing = 0;
-    self.collectionView = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:self.flowLayout];
-    [self addSubview:self.collectionView];
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-    self.collectionView.pagingEnabled = YES;
-    self.collectionView.showsHorizontalScrollIndicator = YES;
-    self.collectionView.backgroundColor =  [UIColor clearColor];
-    if (@available(iOS 11.0, *)) {
-        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }
-    [self.collectionView registerClass:[LTSCalendarCollectionCell class] forCellWithReuseIdentifier:@"dayCell"];
     self.backgroundColor = [LTSCalendarAppearance share].calendarBgColor;
+    [self addSubview:self.collectionView];
     
     // 初始化数据
     [self getDateDatas];
@@ -543,6 +526,31 @@
     
     return [[dateFormatter stringFromDate:date1] isEqualToString:[dateFormatter stringFromDate:date2]];
     
+}
+
+#pragma mark - getter & setter
+- (UICollectionView *)collectionView
+{
+    if (!_collectionView) {
+        LTSCalendarCollectionViewFlowLayout *flowLayout = [[LTSCalendarCollectionViewFlowLayout alloc] init];
+        flowLayout.itemSize = CGSizeMake(self.frame.size.width/7, [LTSCalendarAppearance share].weekDayHeight);
+        flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        flowLayout.itemCountPerRow = 7;
+        flowLayout.rowCount = [LTSCalendarAppearance share].weeksToDisplay;
+        flowLayout.minimumLineSpacing = 0;
+        flowLayout.minimumInteritemSpacing = 0;
+        _collectionView = [[UICollectionView alloc] initWithFrame:self.bounds collectionViewLayout:flowLayout];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        _collectionView.pagingEnabled = YES;
+        _collectionView.showsHorizontalScrollIndicator = YES;
+        _collectionView.backgroundColor =  [UIColor clearColor];
+        if (@available(iOS 11.0, *)) {
+            _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
+        [_collectionView registerClass:[LTSCalendarCollectionCell class] forCellWithReuseIdentifier:@"dayCell"];
+    }
+    return _collectionView;
 }
 
 @end
