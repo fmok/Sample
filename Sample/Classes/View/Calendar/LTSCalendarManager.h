@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LTSCalendarScrollView.h"
+#import "FMCalendarScrollView.h"
 #import "LTSCalendarEventSource.h"
 #import "FMCalendarWeekDayView.h"
 
 @interface LTSCalendarManager : NSObject
-@property (nonatomic,strong) LTSCalendarScrollView *calenderScrollView;
+@property (nonatomic,strong) FMCalendarScrollView *calenderScrollView;
 
 @property (nonatomic,strong) FMCalendarWeekDayView *weekDayView;
 

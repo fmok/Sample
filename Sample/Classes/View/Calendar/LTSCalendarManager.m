@@ -9,7 +9,7 @@
 #import "LTSCalendarManager.h"
 
 @implementation LTSCalendarManager
-- (void)setCalenderScrollView:(LTSCalendarScrollView *)calenderScrollView{
+- (void)setCalenderScrollView:(FMCalendarScrollView *)calenderScrollView{
     _calenderScrollView = calenderScrollView;
     calenderScrollView.calendarView.eventSource = self.eventSource;
 

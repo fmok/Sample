@@ -13,8 +13,6 @@
 
 @interface LTSCalendarContentView : UIView
 
-//@property (nonatomic,strong) LTSCalendarCollectionViewFlowLayout *flowLayout;
-
 @property (nonatomic,strong) UICollectionView *collectionView;
 //遮罩
 @property (nonatomic,strong)UIView *maskView;

@@ -1,17 +1,17 @@
 //
-//  LTSCalendarScrollView.h
-//  LTSCalendar
+//  FMCalendarScrollView.h
+//  Sample
 //
-//  Created by 李棠松 on 2018/1/13.
-//  Copyright © 2018年 leetangsong. All rights reserved.
+//  Created by wjy on 2018/4/10.
+//  Copyright © 2018年 wjy. All rights reserved.
 //
+
 
 #import <UIKit/UIKit.h>
 #import "LTSCalendarContentView.h"
 
-@interface LTSCalendarScrollView : UIScrollView
+@interface FMCalendarScrollView : UIScrollView
 
-@property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) LTSCalendarContentView *calendarView;
 
 @property (nonatomic,strong) UIColor *bgColor;

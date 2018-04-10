@@ -59,7 +59,7 @@
 		578E7B10207C5990001D351D /* LTSCalendarContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7AFF207C5990001D351D /* LTSCalendarContentView.m */; };
 		578E7B11207C5990001D351D /* LTSCalendarDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B01207C5990001D351D /* LTSCalendarDayItem.m */; };
 		578E7B12207C5990001D351D /* LTSCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B04207C5990001D351D /* LTSCalendarManager.m */; };
-		578E7B13207C5990001D351D /* LTSCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B06207C5990001D351D /* LTSCalendarScrollView.m */; };
+		578E7B13207C5990001D351D /* FMCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B06207C5990001D351D /* FMCalendarScrollView.m */; };
 		578E7B15207C5990001D351D /* FMCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B0A207C5990001D351D /* FMCalendarWeekDayView.m */; };
 		578E7B16207C5990001D351D /* LTSCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B0C207C5990001D351D /* LTSCircleView.m */; };
 		578E7B1E207C6679001D351D /* FMCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B1D207C6679001D351D /* FMCalendarViewController.m */; };
@@ -233,8 +233,8 @@
 		578E7B02207C5990001D351D /* LTSCalendarEventSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarEventSource.h; sourceTree = "<group>"; };
 		578E7B03207C5990001D351D /* LTSCalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarManager.h; sourceTree = "<group>"; };
 		578E7B04207C5990001D351D /* LTSCalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarManager.m; sourceTree = "<group>"; };
-		578E7B05207C5990001D351D /* LTSCalendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarScrollView.h; sourceTree = "<group>"; };
-		578E7B06207C5990001D351D /* LTSCalendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarScrollView.m; sourceTree = "<group>"; };
+		578E7B05207C5990001D351D /* FMCalendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMCalendarScrollView.h; sourceTree = "<group>"; };
+		578E7B06207C5990001D351D /* FMCalendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMCalendarScrollView.m; sourceTree = "<group>"; };
 		578E7B09207C5990001D351D /* FMCalendarWeekDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMCalendarWeekDayView.h; sourceTree = "<group>"; };
 		578E7B0A207C5990001D351D /* FMCalendarWeekDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMCalendarWeekDayView.m; sourceTree = "<group>"; };
 		578E7B0B207C5990001D351D /* LTSCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCircleView.h; sourceTree = "<group>"; };
@@ -680,8 +680,8 @@
 				578E7B02207C5990001D351D /* LTSCalendarEventSource.h */,
 				578E7B03207C5990001D351D /* LTSCalendarManager.h */,
 				578E7B04207C5990001D351D /* LTSCalendarManager.m */,
-				578E7B05207C5990001D351D /* LTSCalendarScrollView.h */,
-				578E7B06207C5990001D351D /* LTSCalendarScrollView.m */,
+				578E7B05207C5990001D351D /* FMCalendarScrollView.h */,
+				578E7B06207C5990001D351D /* FMCalendarScrollView.m */,
 				578E7B09207C5990001D351D /* FMCalendarWeekDayView.h */,
 				578E7B0A207C5990001D351D /* FMCalendarWeekDayView.m */,
 				578E7B0B207C5990001D351D /* LTSCircleView.h */,
@@ -1602,7 +1602,7 @@
 				57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */,
 				57C21B842071FD4400F70562 /* UIResponder+Router.m in Sources */,
 				573F2E91206E586E0011C77A /* MyPurchaseCell.m in Sources */,
-				578E7B13207C5990001D351D /* LTSCalendarScrollView.m in Sources */,
+				578E7B13207C5990001D351D /* FMCalendarScrollView.m in Sources */,
 				5740FA4F206D0645006F20A5 /* BuyDetailCardSendWordView.m in Sources */,
 				57C3D5672068A7DB00E0B8BA /* TestHeaderView.m in Sources */,
 				5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */,

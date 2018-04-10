@@ -543,7 +543,7 @@
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.pagingEnabled = YES;
-        _collectionView.showsHorizontalScrollIndicator = YES;
+        _collectionView.showsHorizontalScrollIndicator = NO;
         _collectionView.backgroundColor =  [UIColor clearColor];
         if (@available(iOS 11.0, *)) {
             _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
