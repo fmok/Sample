@@ -34,8 +34,8 @@
 - (void)initUI
 {
     self.delegate = self;
-    self.bounces = false;
-    self.showsVerticalScrollIndicator = false;
+    self.bounces = NO;
+    self.showsVerticalScrollIndicator = NO;
     self.backgroundColor = [LTSCalendarAppearance share].scrollBgcolor;
     LTSCalendarContentView *calendarView = [[LTSCalendarContentView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, [LTSCalendarAppearance share].weekDayHeight*[LTSCalendarAppearance share].weeksToDisplay)];
     calendarView.currentDate = [NSDate date];
@@ -101,24 +101,24 @@
     self.calendarView.maskView.alpha = offsetY/tableCountDistance;
     calendarFrame.origin.y = offsetY-offsetY*scale;
     if(ABS(offsetY) >= tableCountDistance) {
-         self.tableView.scrollEnabled = true;
+         self.tableView.scrollEnabled = YES;
         //为了使滑动更加顺滑，这部操作根据 手指的操作去设置
-//         [self.calendarView setSingleWeek:true];
+//         [self.calendarView setSingleWeek:YES];
         
     }else{
         
-        self.tableView.scrollEnabled = false;
+        self.tableView.scrollEnabled = NO;
         if ([LTSCalendarAppearance share].isShowSingleWeek) {
            
-            [self.calendarView setSingleWeek:false];
+            [self.calendarView setSingleWeek:NO];
         }
     }
     CGRect tableFrame = self.tableView.frame;
     tableFrame.size.height = CGRectGetHeight(self.frame)-CGRectGetHeight(self.calendarView.frame)+offsetY;
     self.tableView.frame = tableFrame;
-    self.bounces = false;
+    self.bounces = NO;
     if (offsetY<=0) {
-        self.bounces = true;
+        self.bounces = YES;
         calendarFrame.origin.y = offsetY;
         tableFrame.size.height = CGRectGetHeight(self.frame)-CGRectGetHeight(self.calendarView.frame);
         self.tableView.frame = tableFrame;
@@ -153,7 +153,7 @@
     CGFloat tableCountDistance = appearce.weekDayHeight*(appearce.weeksToDisplay-1);
 
     if (scrollView.contentOffset.y>=tableCountDistance) {
-        [self.calendarView setSingleWeek:true];
+        [self.calendarView setSingleWeek:YES];
     }
     
 }
@@ -195,7 +195,7 @@
     if (point.y<=0) {
         if (scrollView.contentOffset.y>=20) {
             if (scrollView.contentOffset.y>=tableCountDistance) {
-                [self.calendarView setSingleWeek:true];
+                [self.calendarView setSingleWeek:YES];
             }
             [self scrollToSingleWeek];
         }else{
@@ -223,13 +223,13 @@
     LTSCalendarAppearance *appearce =  [LTSCalendarAppearance share];
     ///表需要滑动的距离
     CGFloat tableCountDistance = appearce.weekDayHeight*(appearce.weeksToDisplay-1);
-    [self setContentOffset:CGPointMake(0, tableCountDistance) animated:true];
+    [self setContentOffset:CGPointMake(0, tableCountDistance) animated:YES];
     
     
 }
 
 - (void)scrollToAllWeek{
-    [self setContentOffset:CGPointMake(0, 0) animated:true];
+    [self setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
 
