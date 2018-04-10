@@ -12,6 +12,7 @@
 #import "LTSCalendarManager.h"
 
 #define NUMBER_PAGES_LOADED 5
+
 @interface LTSCalendarContentView()<UICollectionViewDataSource,UICollectionViewDelegate>{
     //是否是在点击日期或者滑动改变页数
     BOOL isOwnChangePage;
@@ -62,7 +63,6 @@
     self.flowLayout.itemSize = CGSizeMake(self.frame.size.width/7, [LTSCalendarAppearance share].weekDayHeight);
     self.flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     self.flowLayout.itemCountPerRow = 7;
-//    self.flowLayout.rowCount = [LTSCalendarAppearance share].isShowSingleWeek ? 1:[LTSCalendarAppearance share].weeksToDisplay;
     self.flowLayout.rowCount = [LTSCalendarAppearance share].weeksToDisplay;
     self.flowLayout.minimumLineSpacing = 0;
     self.flowLayout.minimumInteritemSpacing = 0;
@@ -77,10 +77,9 @@
         self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     [self.collectionView registerClass:[LTSCalendarCollectionCell class] forCellWithReuseIdentifier:@"dayCell"];
-//    self.collectionView.contentInset = UIEdgeInsetsMake(0, 0,[LTSCalendarAppearance share].isShowSingleWeek ? [LTSCalendarAppearance share].weekDayHeight*([LTSCalendarAppearance share].weeksToDisplay-1) : 0, 0);
     self.backgroundColor = [LTSCalendarAppearance share].calendarBgColor;
     
-    ///先初始化数据
+    // 初始化数据
     [self getDateDatas];
     
     UIView *maskView = [[UIView alloc] initWithFrame:self.bounds];
@@ -97,17 +96,13 @@
     [self setUpVisualRegion];
 }
 
-- (void)setSingleWeek:(BOOL)singleWeek{
+- (void)setSingleWeek:(BOOL)singleWeek {
     [LTSCalendarAppearance share].isShowSingleWeek = singleWeek;
-//    self.flowLayout.rowCount = singleWeek ? 1:[LTSCalendarAppearance share].weeksToDisplay;
-//   self.collectionView.contentInset = UIEdgeInsetsMake(0, 0,(singleWeek ? appearance.weekDayHeight*(appearance.weeksToDisplay-1) : 0), 0);
     beginWeekIndexPath = nil;
- 
     [self getDateDatas];
     [UIView performWithoutAnimation:^{
         [self.collectionView reloadData];
     }];
-    
 }
 
 ///获取当前选中的frame
@@ -123,18 +118,19 @@
     
     ((CAShapeLayer *)self.maskView.layer.mask).path = bpath.CGPath;
 }
-#pragma mark -- UICollectionViewDataSource --
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+#pragma mark - UICollectionViewDataSource
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
     return NUMBER_PAGES_LOADED;
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-//    if ([LTSCalendarAppearance share].isShowSingleWeek) {
-//        return  7;
-//    }
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
     return 7*[LTSCalendarAppearance share].weeksToDisplay;
 }
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
     LTSCalendarCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"dayCell" forIndexPath:indexPath];
     LTSCalendarDayItem *item = self.daysInMonth[indexPath.section][indexPath.row];
     if ([LTSCalendarAppearance share].isShowSingleWeek) {
@@ -144,8 +140,9 @@
     return cell;
 }
 
-#pragma mark -- UICollectionViewDelegate --
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
     isOwnChangePage = false;
     
     beginWeekIndexPath = indexPath;
@@ -156,7 +153,7 @@
     NSArray *dataSource;
     if ([LTSCalendarAppearance share].isShowSingleWeek) {
         dataSource = self.daysInWeeks;
-    }else{
+    } else {
         dataSource = self.daysInMonth;
     }
 
@@ -164,7 +161,7 @@
     if ( [LTSCalendarAppearance share].isShowSingleWeek) {
         itemLast = dataSource[self.currentSelectedIndexPath.section][self.currentSelectedIndexPath.item%7];
         itemCurrent = dataSource[indexPath.section][indexPath.item%7];
-    }else{
+    } else {
         itemCurrent = dataSource[indexPath.section][indexPath.item];
         itemLast = dataSource[self.currentSelectedIndexPath.section][self.currentSelectedIndexPath.item];
     }
@@ -195,20 +192,19 @@
     if ([LTSCalendarAppearance share].isShowSingleWeek) {
         self.currentSelectedIndexPath = indexPath;
         self.currentDate = itemCurrent.date;
-    }else{
+    } else {
         self.currentSelectedIndexPath = [NSIndexPath indexPathForItem:(comps.weekOfMonth-1)*7+index inSection:round(NUMBER_PAGES_LOADED / 2)];
         touchMonthIndex = touchMonthIndex % 12;
         
-        if(touchMonthIndex == (currentMonth + 1) % 12){
+        if (touchMonthIndex == (currentMonth + 1) % 12){
             _currentDate = itemCurrent.date;
              isOwnChangePage = true;
             [self loadNextPage];
-        }
-        else if(touchMonthIndex == (currentMonth + 12 - 1) % 12){
+        } else if(touchMonthIndex == (currentMonth + 12 - 1) % 12){
              _currentDate = itemCurrent.date;
             isOwnChangePage = true;
             [self loadPreviousPage];
-        }else{
+        } else {
             self.currentDate = itemCurrent.date;
         }
     }
@@ -218,8 +214,7 @@
     
     
 }
-#pragma mark -- UIScrollView --
-
+#pragma mark - UIScrollViewDelegate
 //点击滑动
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
@@ -235,7 +230,6 @@
     isOwnChangePage = false;
     
 }
-
 //手指滑动
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
@@ -260,14 +254,11 @@
     if (self.eventSource && [self.eventSource respondsToSelector:@selector(calendarDidLoadPageCurrentDate:)]) {
         [self.eventSource calendarDidLoadPageCurrentDate:self.currentDate];
     }
-    
 }
 
-
-
-#pragma mark -- Function --
-
-- (void)goBackToday{
+#pragma mark - Public methods
+- (void)goBackToday
+{
     beginWeekIndexPath = nil;
     [self getDateDatas];
     [UIView performWithoutAnimation:^{
@@ -276,11 +267,13 @@
     
 }
 
-- (void)reloadDefaultDate{
+- (void)reloadDefaultDate
+{
     _currentDate = nil;
 }
 
-- (void)reloadAppearance{
+- (void)reloadAppearance
+{
     self.backgroundColor = [LTSCalendarAppearance share].calendarBgColor;
     self.maskView.backgroundColor = self.backgroundColor;
     [self getDateDatas];
@@ -299,28 +292,24 @@
     if ([LTSCalendarAppearance share].isShowSingleWeek) {
         NSMutableArray *daysInWeeks = [@[] mutableCopy];
         //获取前两周和后两周的日期
-        for(int i = 0; i < NUMBER_PAGES_LOADED; i++){
+        for(NSInteger i = 0; i < NUMBER_PAGES_LOADED; i++){
             
             NSDateComponents *dayComponent = [NSDateComponents new];
             
-            //            NSDate *weekBegin =
             dayComponent.weekOfYear = i - NUMBER_PAGES_LOADED / 2;
             //获取前两周和后两周的日期
             NSDate *weakDate = [calendar dateByAddingComponents:dayComponent toDate:[self beginningOfWeek:self.currentDate] options:0];
             
             self.currentMonthIndex = [self monthIndexForDate:self.currentDate];
             
-            
             [daysInWeeks addObject:[self getDaysOfWeek:weakDate]];
-            
         }
         self.daysInWeeks = daysInWeeks;
     } else {
         NSMutableArray *daysInMonths = [@[] mutableCopy];
-        for(int i = 0; i < NUMBER_PAGES_LOADED; i++){
+        for(NSInteger i = 0; i < NUMBER_PAGES_LOADED; i++){
             
             NSDateComponents *dayComponent = [NSDateComponents new];
-            
             
             dayComponent.month = i - NUMBER_PAGES_LOADED / 2;
             //当前日期前两个月  与  后两个月
@@ -328,29 +317,24 @@
             
             monthDate = [self beginningOfMonth:monthDate];
             [daysInMonths addObject:[self getDaysOfMonth:monthDate]];
-            
         }
-        
         self.daysInMonth = daysInMonths;
-        
     }
-    
-    
     [self repositionViews];
 }
-///下一页
-- (void)loadNextPage{
+// 下一页
+- (void)loadNextPage
+{
     isLoadPrevious = false;
     isLoadNext = true;
     [self.collectionView setContentOffset:CGPointMake(self.frame.size.width*(round(NUMBER_PAGES_LOADED/2)+1), 0) animated:YES];
-    
 }
-///上一页
-- (void)loadPreviousPage{
+// 上一页
+- (void)loadPreviousPage
+{
     isLoadPrevious = true;
     isLoadNext = false;
     [self.collectionView setContentOffset:CGPointMake(self.frame.size.width*(round(NUMBER_PAGES_LOADED/2)-1), 0) animated:YES];
-    
 }
 
 - (void)updatePageWithNewDate:(BOOL)isNew
@@ -374,7 +358,6 @@
     self.currentDate = currentDate;
     [self getDateDatas];
 }
-
 
 ///滚动到中间的位置，停止滚动后 始终滚动是在中间
 - (void)repositionViews{
@@ -409,7 +392,7 @@
     return currentDate;
 }
 
-- (CGFloat)singleWeekOffsetY{
+- (CGFloat)singleWeekOffsetY {
     return  self.currentSelectedIndexPath.row/7*[LTSCalendarAppearance share].weekDayHeight;
 }
 - (void)setCurrentDate:(NSDate *)currentDate{
@@ -420,18 +403,14 @@
 }
 
 /**
- *  返回该日期月数第一周开始的第一天
- *
- *  @param date  date
- *
- *  @return date
+ 返回该日期月数第一周开始的第一天
  */
 - (NSDate *)beginningOfMonth:(NSDate *)date{
     NSCalendar *calendar = [LTSCalendarAppearance share].calendar;
     
     NSDateComponents *componentsCurrentDate =[calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay|NSCalendarUnitWeekday|NSCalendarUnitWeekOfMonth fromDate:date];
     
-    
+
     NSDateComponents *componentsNewDate = [NSDateComponents new];
     
     componentsNewDate.year = componentsCurrentDate.year;
@@ -450,11 +429,7 @@
     return components.weekOfMonth;
 }
 /**
- *  返回该日期周开始的第一天
- *
- *  @param date  date
- *
- *  @return date
+ 返回该日期周开始的第一天
  */
 - (NSDate *)beginningOfWeek:(NSDate *)date{
     NSCalendar *calendar = [LTSCalendarAppearance share].calendar;
@@ -499,15 +474,10 @@
                     if ([self isEqual:currentDate other:[LTSCalendarAppearance share].defaultDate]) {
                         row += i;
                     }
-//                    if ([LTSCalendarAppearance share].weeksToDisplay == 1) {
-//                        
-//                    }
                     self.currentSelectedIndexPath = [NSIndexPath indexPathForRow:row inSection:round(NUMBER_PAGES_LOADED / 2)];
                 }
                 beginWeekIndexPath = self.currentSelectedIndexPath;
             }
-           
-            
         }
         
         item.eventDotColor = [LTSCalendarAppearance share].dayDotColor;
