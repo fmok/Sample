@@ -40,7 +40,7 @@ static CGFloat const W_H_TodayBtn = 20.f;
         make.height.mas_equalTo(30.f);
     }];
     
-    self.manager.calenderScrollView = [[LTSCalendarScrollView alloc] initWithFrame:CGRectMake(0, 150, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(self.manager.weekDayView.frame))];
+    self.manager.calenderScrollView = [[LTSCalendarScrollView alloc] initWithFrame:CGRectMake(0, 150, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-150)];
 //    self.manager.calenderScrollView = [[LTSCalendarScrollView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.manager.calenderScrollView];
 //    [self.manager.calenderScrollView mas_makeConstraints:^(MASConstraintMaker *make) {

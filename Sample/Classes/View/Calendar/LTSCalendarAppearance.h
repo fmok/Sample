@@ -25,48 +25,48 @@ typedef NS_ENUM(NSInteger, LTSCalendarWeekDayFormat) {
 
 
 ///每一周视图的高度
-@property (nonatomic,assign)CGFloat weekDayHeight;
+@property (nonatomic,assign) CGFloat weekDayHeight;
 ///每个月显示多少周
-@property (nonatomic,assign)NSInteger weeksToDisplay;
+@property (nonatomic,assign) NSInteger weeksToDisplay;
 
-@property (nonatomic,assign)BOOL isShowSingleWeek;
+@property (nonatomic,assign) BOOL isShowSingleWeek;
 ///日历背景颜色
-@property (nonatomic,strong)UIColor *calendarBgColor;
+@property (nonatomic,strong) UIColor *calendarBgColor;
 ///星期view背景颜色
 @property (nonatomic,strong) UIColor *weekDayBgColor;
 ///滚动试图背景颜色
 @property (nonatomic,strong) UIColor *scrollBgcolor;
 ///  阳历字体大小
-@property (nonatomic,strong)UIFont *dayTextFont;
+@property (nonatomic,strong) UIFont *dayTextFont;
 
 /// 农历字体大小
-@property (nonatomic,strong)UIFont *lunarDayTextFont;
+@property (nonatomic,strong) UIFont *lunarDayTextFont;
 
 
 ///  阳历文本颜色
-@property (nonatomic,strong)UIColor *dayTextColor;
+@property (nonatomic,strong) UIColor *dayTextColor;
 ///阳历选择后的文本颜色
-@property (strong,nonatomic)UIColor *dayTextColorSelected;
+@property (strong,nonatomic) UIColor *dayTextColorSelected;
 ///  农历文本颜色
-@property (nonatomic,strong)UIColor *lunarDayTextColor;
+@property (nonatomic,strong) UIColor *lunarDayTextColor;
 /// 农历选择后的文本颜色
-@property (nonatomic,strong)UIColor *lunarDayTextColorSelected;
+@property (nonatomic,strong) UIColor *lunarDayTextColorSelected;
 /// 今天文本颜色
 @property (strong, nonatomic) UIColor *dayTextColorToday;
 
-@property (nonatomic,strong)UIColor *lineBgColor;
+@property (nonatomic,strong) UIColor *lineBgColor;
 //日历首次选中的时间  默认为今天
-@property (nonatomic,strong)NSDate *defaultDate;
+@property (nonatomic,strong) NSDate *defaultDate;
 // 其他月份
 
 /// 其他月份阳历字体大小
-@property (nonatomic,strong)UIFont *dayTextFontOtherMonth;
+@property (nonatomic,strong) UIFont *dayTextFontOtherMonth;
 ///  其他月份农历字体大小
-@property (nonatomic,strong)UIFont *lunarDayTextFontOtherMonth;
+@property (nonatomic,strong) UIFont *lunarDayTextFontOtherMonth;
 ///  其他月份阳历文本颜色
-@property (nonatomic,strong)UIColor *dayTextColorOtherMonth;
+@property (nonatomic,strong) UIColor *dayTextColorOtherMonth;
 ///  其他月份农历文本颜色
-@property (nonatomic,strong)UIColor *lunarDayTextColorOtherMonth;
+@property (nonatomic,strong) UIColor *lunarDayTextColorOtherMonth;
 
 /// 选中时日期实心圆的颜色
 @property (strong, nonatomic) UIColor *dayCircleColorSelected;

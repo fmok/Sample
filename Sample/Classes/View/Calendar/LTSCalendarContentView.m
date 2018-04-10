@@ -71,7 +71,7 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.collectionView.pagingEnabled = YES;
-    self.collectionView.showsHorizontalScrollIndicator = false;
+    self.collectionView.showsHorizontalScrollIndicator = YES;
     self.collectionView.backgroundColor =  [UIColor clearColor];
     if (@available(iOS 11.0, *)) {
         self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -289,10 +289,9 @@
     }];
 }
 
-- (void)getDateDatas{
+- (void)getDateDatas
+{
     NSCalendar *calendar = [LTSCalendarAppearance share].calendar;
-    
-   
     if (self.currentDate == nil) {
         self.currentDate = [LTSCalendarAppearance share].defaultDate;
     }
