@@ -1,9 +1,9 @@
 //
-//  LTSCalendarWeekDayView.h
-//  scrollTest
+//  FMCalendarWeekDayView.h
+//  Sample
 //
-//  Created by leetangsong_macbk on 16/5/27.
-//  Copyright © 2016年 macbook. All rights reserved.
+//  Created by wjy on 2018/4/10.
+//  Copyright © 2018年 wjy. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

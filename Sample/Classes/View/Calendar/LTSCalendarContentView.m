@@ -7,7 +7,6 @@
 //
 
 #import "LTSCalendarContentView.h"
-
 #import "LTSCalendarCollectionCell.h"
 #import "LTSCalendarDayItem.h"
 #import "LTSCalendarManager.h"
@@ -24,11 +23,11 @@
     BOOL isLoadNext;
 }
 
-@property (nonatomic,assign)NSInteger currentMonthIndex;
-@property (nonatomic,strong)NSArray *daysInMonth;
-@property (nonatomic,strong)NSArray *daysInWeeks;
-@property (nonatomic,strong)NSIndexPath *currentSelectedIndexPath;
-//@property (nonatomic,st)
+@property (nonatomic,assign) NSInteger currentMonthIndex;
+@property (nonatomic,strong) NSArray *daysInMonth;
+@property (nonatomic,strong) NSArray *daysInWeeks;
+@property (nonatomic,strong) NSIndexPath *currentSelectedIndexPath;
+
 @end
 
 @implementation LTSCalendarContentView
@@ -59,9 +58,6 @@
 
 - (void)initUI
 {
-    
-    
-    
     self.flowLayout = [LTSCalendarCollectionViewFlowLayout new];
     self.flowLayout.itemSize = CGSizeMake(self.frame.size.width/7, [LTSCalendarAppearance share].weekDayHeight);
     self.flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;

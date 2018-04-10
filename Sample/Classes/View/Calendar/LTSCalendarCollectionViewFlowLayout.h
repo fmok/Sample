@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface LTSCalendarCollectionViewFlowLayout : UICollectionViewFlowLayout
-@property (nonatomic,assign) NSUInteger itemCountPerRow;
 
-//    一页显示多少行
-@property (nonatomic,assign) NSUInteger rowCount;
+@property (nonatomic,assign) NSUInteger itemCountPerRow;
+@property (nonatomic,assign) NSUInteger rowCount;  // 一页显示多少行
+
 @end

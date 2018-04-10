@@ -7,9 +7,13 @@
 //
 
 #import "LTSCalendarCollectionViewFlowLayout.h"
+
 @interface LTSCalendarCollectionViewFlowLayout()
-@property (strong, nonatomic) NSMutableArray *allAttributes;  
+
+@property (strong, nonatomic) NSMutableArray *allAttributes;
+
 @end
+
 @implementation LTSCalendarCollectionViewFlowLayout
 
 - (void)prepareLayout

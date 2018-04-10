@@ -10,25 +10,29 @@
 
 
 @interface LTSCalendarScrollView()<UITableViewDelegate,UITableViewDataSource>
+
 @property (nonatomic,strong)UIView *line;
+
 @end
+
+
 @implementation LTSCalendarScrollView
 
-- (instancetype)initWithFrame:(CGRect)frame{
+- (instancetype)initWithFrame:(CGRect)frame {
     if (self == [super initWithFrame:frame]) {
         [self initUI];
     }
     return self;
 }
-- (void)setBgColor:(UIColor *)bgColor{
+- (void)setBgColor:(UIColor *)bgColor {
     _bgColor = bgColor;
     self.backgroundColor = bgColor;
     self.tableView.backgroundColor = bgColor;
     self.line.backgroundColor = bgColor;
 }
 
-- (void)initUI{
-    
+- (void)initUI
+{
     self.delegate = self;
     self.bounces = false;
     self.showsVerticalScrollIndicator = false;
@@ -55,25 +59,29 @@
     [LTSCalendarAppearance share].isShowSingleWeek ? [self scrollToSingleWeek]:[self scrollToAllWeek];
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return  100;
 }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     UITableViewCell *cell =[UITableViewCell new];
     cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
     
     return cell;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-   
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
     CGFloat offsetY = scrollView.contentOffset.y;
     
     
