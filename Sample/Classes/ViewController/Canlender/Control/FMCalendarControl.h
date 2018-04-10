@@ -15,7 +15,7 @@
 
 @property (nonatomic, weak) FMCalendarViewController *vc;
 
-- (void)createRandomEvents;
+- (void)createRandomEventsForTest;
 - (void)cilckToday:(UIButton *)sender;
 
 @end

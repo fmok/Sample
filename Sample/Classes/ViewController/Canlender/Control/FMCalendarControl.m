@@ -19,7 +19,7 @@
 
 
 #pragma mark - Public methods
-- (void)createRandomEvents
+- (void)createRandomEventsForTest
 {
     eventsByDate = [NSMutableDictionary new];
     

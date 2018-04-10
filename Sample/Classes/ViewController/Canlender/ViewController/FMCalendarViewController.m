@@ -33,7 +33,7 @@ static CGFloat const W_H_TodayBtn = 20.f;
     self.manager.calenderScrollView = [[LTSCalendarScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.manager.weekDayView.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(self.manager.weekDayView.frame))];
     [self.view addSubview:self.manager.calenderScrollView];
     
-    [self.control createRandomEvents];
+    [self.control createRandomEventsForTest];
 //    self.automaticallyAdjustsScrollViewInsets = false;
 // Do any additional setup after loading the view.
 
