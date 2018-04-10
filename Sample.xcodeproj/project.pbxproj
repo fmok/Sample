@@ -60,8 +60,7 @@
 		578E7B11207C5990001D351D /* LTSCalendarDayItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B01207C5990001D351D /* LTSCalendarDayItem.m */; };
 		578E7B12207C5990001D351D /* LTSCalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B04207C5990001D351D /* LTSCalendarManager.m */; };
 		578E7B13207C5990001D351D /* LTSCalendarScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B06207C5990001D351D /* LTSCalendarScrollView.m */; };
-		578E7B14207C5990001D351D /* LTSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B08207C5990001D351D /* LTSCalendarViewController.m */; };
-		578E7B15207C5990001D351D /* LTSCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B0A207C5990001D351D /* LTSCalendarWeekDayView.m */; };
+		578E7B15207C5990001D351D /* FMCalendarWeekDayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B0A207C5990001D351D /* FMCalendarWeekDayView.m */; };
 		578E7B16207C5990001D351D /* LTSCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B0C207C5990001D351D /* LTSCircleView.m */; };
 		578E7B1E207C6679001D351D /* FMCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B1D207C6679001D351D /* FMCalendarViewController.m */; };
 		578E7B21207C6690001D351D /* FMCalendarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B20207C6690001D351D /* FMCalendarControl.m */; };
@@ -236,10 +235,8 @@
 		578E7B04207C5990001D351D /* LTSCalendarManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarManager.m; sourceTree = "<group>"; };
 		578E7B05207C5990001D351D /* LTSCalendarScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarScrollView.h; sourceTree = "<group>"; };
 		578E7B06207C5990001D351D /* LTSCalendarScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarScrollView.m; sourceTree = "<group>"; };
-		578E7B07207C5990001D351D /* LTSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarViewController.h; sourceTree = "<group>"; };
-		578E7B08207C5990001D351D /* LTSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarViewController.m; sourceTree = "<group>"; };
-		578E7B09207C5990001D351D /* LTSCalendarWeekDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarWeekDayView.h; sourceTree = "<group>"; };
-		578E7B0A207C5990001D351D /* LTSCalendarWeekDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarWeekDayView.m; sourceTree = "<group>"; };
+		578E7B09207C5990001D351D /* FMCalendarWeekDayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMCalendarWeekDayView.h; sourceTree = "<group>"; };
+		578E7B0A207C5990001D351D /* FMCalendarWeekDayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMCalendarWeekDayView.m; sourceTree = "<group>"; };
 		578E7B0B207C5990001D351D /* LTSCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCircleView.h; sourceTree = "<group>"; };
 		578E7B0C207C5990001D351D /* LTSCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCircleView.m; sourceTree = "<group>"; };
 		578E7B1C207C6679001D351D /* FMCalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMCalendarViewController.h; sourceTree = "<group>"; };
@@ -667,7 +664,7 @@
 			path = FMAlertView;
 			sourceTree = "<group>";
 		};
-		578E7AF7207C5990001D351D /* LTSCalendar */ = {
+		578E7AF7207C5990001D351D /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
 				578E7AF8207C5990001D351D /* LTSCalendarAppearance.h */,
@@ -685,14 +682,12 @@
 				578E7B04207C5990001D351D /* LTSCalendarManager.m */,
 				578E7B05207C5990001D351D /* LTSCalendarScrollView.h */,
 				578E7B06207C5990001D351D /* LTSCalendarScrollView.m */,
-				578E7B07207C5990001D351D /* LTSCalendarViewController.h */,
-				578E7B08207C5990001D351D /* LTSCalendarViewController.m */,
-				578E7B09207C5990001D351D /* LTSCalendarWeekDayView.h */,
-				578E7B0A207C5990001D351D /* LTSCalendarWeekDayView.m */,
+				578E7B09207C5990001D351D /* FMCalendarWeekDayView.h */,
+				578E7B0A207C5990001D351D /* FMCalendarWeekDayView.m */,
 				578E7B0B207C5990001D351D /* LTSCircleView.h */,
 				578E7B0C207C5990001D351D /* LTSCircleView.m */,
 			);
-			path = LTSCalendar;
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		578E7B17207C59E6001D351D /* Canlender */ = {
@@ -839,7 +834,7 @@
 		57B544352062780E00701F9C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				578E7AF7207C5990001D351D /* LTSCalendar */,
+				578E7AF7207C5990001D351D /* Calendar */,
 				5737E6092073338E008AF33C /* FMTabsView */,
 				5740FA30206C8A9A006F20A5 /* FMScrollLabel */,
 				57379582206B4B2500388BCC /* FMSegmentControl */,
@@ -1590,7 +1585,6 @@
 				578E7B16207C5990001D351D /* LTSCircleView.m in Sources */,
 				575F9AAE2064EC710031BC49 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				57C21B742071CC9F00F70562 /* MyPurchaseCard.m in Sources */,
-				578E7B14207C5990001D351D /* LTSCalendarViewController.m in Sources */,
 				57B543FE2062727F00701F9C /* AppDelegate.m in Sources */,
 				5740FA52206D09FD006F20A5 /* BuyDetailCardRelatedView.m in Sources */,
 				578E7B21207C6690001D351D /* FMCalendarControl.m in Sources */,
@@ -1617,7 +1611,7 @@
 				578E7B0E207C5990001D351D /* LTSCalendarCollectionCell.m in Sources */,
 				573F2E88206E2C180011C77A /* MyPurchaseViewController.m in Sources */,
 				57B5445A206281F400701F9C /* FMUtility.m in Sources */,
-				578E7B15207C5990001D351D /* LTSCalendarWeekDayView.m in Sources */,
+				578E7B15207C5990001D351D /* FMCalendarWeekDayView.m in Sources */,
 				57C21B7E2071FC6500F70562 /* PetDetailViewController.m in Sources */,
 				57C3D56D2068C45F00E0B8BA /* UIView+Utilities.m in Sources */,
 				5737E60C2073338E008AF33C /* FMTabsView.m in Sources */,

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LTSCalendarWeekDayView : UIView
+@interface FMCalendarWeekDayView : UIView
 
 + (void)beforeReloadAppearance;
 - (void)reloadAppearance;
+
 @end

@@ -27,11 +27,26 @@ static CGFloat const W_H_TodayBtn = 20.f;
     self.manager = [LTSCalendarManager new];
     self.manager.eventSource = self.control;
     
-    self.manager.weekDayView = [[LTSCalendarWeekDayView alloc]initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 30)];
+    WS(weakSelf);
+    self.manager.weekDayView = [[FMCalendarWeekDayView alloc]initWithFrame:CGRectZero];
     [self.view addSubview:self.manager.weekDayView];
+    [self.manager.weekDayView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(weakSelf.view);
+        if (@available(iOS 11.0, *)) {
+            make.top.equalTo(weakSelf.view.mas_safeAreaLayoutGuideTop).offset(kNavBarHeight);
+        } else {
+            make.top.equalTo(weakSelf.mas_topLayoutGuide).offset(kNavBarHeight);
+        }
+        make.height.mas_equalTo(30.f);
+    }];
     
-    self.manager.calenderScrollView = [[LTSCalendarScrollView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.manager.weekDayView.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(self.manager.weekDayView.frame))];
+    self.manager.calenderScrollView = [[LTSCalendarScrollView alloc] initWithFrame:CGRectMake(0, 150, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)-CGRectGetMaxY(self.manager.weekDayView.frame))];
+//    self.manager.calenderScrollView = [[LTSCalendarScrollView alloc] initWithFrame:CGRectZero];
     [self.view addSubview:self.manager.calenderScrollView];
+//    [self.manager.calenderScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.and.right.and.bottom.equalTo(weakSelf.view);
+//        make.top.equalTo(weakSelf.manager.weekDayView.mas_bottom);
+//    }];
     
     [self.control createRandomEventsForTest];
 //    self.automaticallyAdjustsScrollViewInsets = false;

@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "LTSCalendarContentView.h"
-#import "LTSCalendarWeekDayView.h"
 
 @interface LTSCalendarScrollView : UIScrollView
 
