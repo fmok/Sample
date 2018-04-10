@@ -143,9 +143,9 @@ static NSArray *cacheDaysOfWeeks;
 }
 
 #pragma mark - Class methods
-+ (void)beforeReloadAppearance
-{
-    cacheDaysOfWeeks = nil;
-}
+//+ (void)beforeReloadAppearance
+//{
+//    cacheDaysOfWeeks = nil;
+//}
 
 @end

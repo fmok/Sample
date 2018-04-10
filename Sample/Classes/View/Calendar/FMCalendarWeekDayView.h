@@ -10,7 +10,7 @@
 
 @interface FMCalendarWeekDayView : UIView
 
-+ (void)beforeReloadAppearance;
+//+ (void)beforeReloadAppearance;
 - (void)reloadAppearance;
 
 @end
