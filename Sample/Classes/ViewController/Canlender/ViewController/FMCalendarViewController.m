@@ -58,6 +58,12 @@ static CGFloat const W_H_TodayBtn = 20.f;
 
 }
 
+#pragma mark - Public methods
+- (void)setTodayBtnHiddenState:(BOOL)hidden
+{
+    self.todayBtn.hidden = hidden;
+}
+
 #pragma mark - Private methods
 - (void)setNav
 {

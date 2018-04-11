@@ -45,22 +45,34 @@
 }
 
 #pragma mark - LTSCalendarEventSource
-- (void)calendarDidLoadPageCurrentDate:(NSDate *)date {
+- (void)calendarDidLoadPageCurrentDate:(NSDate *)date
+{
     
 }
 
-- (void)calendarDidSelectedDate:(NSDate *)date {
+- (void)calendarDidSelectedDate:(NSDate *)date
+{
+    TTDPRINT(@"%@",date);
+    // 判断隐藏 今 按钮
+    NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setDateFormat:@"yyyy-MM-d"];
+    NSString *selectedDateStr = [NSString stringWithFormat:@"%@", [formatter stringFromDate:date]];
+    NSString *currentDateStr = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[NSDate date]]];
+    [self.vc setTodayBtnHiddenState:[selectedDateStr isEqualToString:currentDateStr]];
+    // 记录当前显示的日期
     [LTSCalendarAppearance share].currentShowDate = date;
+    // 改变VC上的title
     NSString *key = [[self dateFormatter] stringFromDate:date];
     [self.vc changeNavBarTitle:key];
+    // 获取当前日期事件
     NSArray *events = eventsByDate[key];
-    TTDPRINT(@"%@",date);
     if (events.count>0) {
         //该日期有事件    tableView 加载数据
     }
 }
 
-- (BOOL)calendarHaveEventWithDate:(NSDate *)date {
+- (BOOL)calendarHaveEventWithDate:(NSDate *)date
+{
     
     NSString *key = [[self dateFormatter] stringFromDate:date];
     
