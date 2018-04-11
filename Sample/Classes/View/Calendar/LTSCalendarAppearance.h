@@ -20,9 +20,9 @@ typedef NS_ENUM(NSInteger, LTSCalendarWeekDayFormat) {
 // 是否显示日历
 @property (nonatomic,assign) BOOL isShowLunarCalender;
 
-// 每一周视图的高度
+// 每一周视图的高度 (default == 50.f)
 @property (nonatomic,assign) CGFloat weekDayHeight;
-// 每个月显示多少周
+// 每个月显示多少周 (default == 6)
 @property (nonatomic,assign) NSInteger weeksToDisplay;
 // 是否只显示一行日历（default == NO）
 @property (nonatomic,assign) BOOL isShowSingleWeek;

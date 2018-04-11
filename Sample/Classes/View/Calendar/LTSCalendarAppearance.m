@@ -43,7 +43,7 @@
     self.weekendDayTextColor = SRGBCOLOR_HEX(0xc14945);
     self.weekendDayTextColorForOtherMonth = SRGBCOLOR_HEX(0xf7e1e5);
     self.weeksToDisplay = 6;
-    self.weekDayHeight = 50;
+    self.weekDayHeight = 50.f;
     self.isShowSingleWeek = NO;
     self.firstWeekday = 1;
     self.defaultDate = [NSDate date];
