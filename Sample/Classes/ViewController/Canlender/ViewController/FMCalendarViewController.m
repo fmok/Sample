@@ -35,7 +35,7 @@ static CGFloat const W_H_TodayBtn = 20.f;
     self.manager.eventSource = self.control;
     
     WS(weakSelf);
-    // week
+    // week bar
     self.manager.weekDayView = [[FMCalendarWeekDayView alloc]initWithFrame:CGRectZero];
     [self.view addSubview:self.manager.weekDayView];
     [self.manager.weekDayView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -50,13 +50,6 @@ static CGFloat const W_H_TodayBtn = 20.f;
     // calendar
     self.manager.calenderScrollView = [[FMCalendarScrollView alloc] initWithFrame:CGRectMake(0, 0, W_CalendarScrollView, [FMCalendarScrollView heightForCalendarScrollView])];
     self.manager.calenderScrollView.bgColor = [UIColor redColor];
-//    [self.view addSubview:self.manager.calenderScrollView];
-//    [self.manager.calenderScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(weakSelf.manager.weekDayView.mas_bottom);
-//        make.centerX.equalTo(weakSelf.view);
-//        make.width.mas_equalTo(W_CalendarScrollView);
-//        make.height.mas_equalTo([weakSelf.manager.calenderScrollView heightForCalendarScrollView]);
-//    }];
     // tableView
     [self.view addSubview:self.calendarTableView];
     [self.calendarTableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -67,8 +60,6 @@ static CGFloat const W_H_TodayBtn = 20.f;
     [self.calendarTableView addObserver:self.control forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
     
 //    [self.control createRandomEventsForTest];
-// Do any additional setup after loading the view.
-
 }
 
 #pragma mark - Public methods
