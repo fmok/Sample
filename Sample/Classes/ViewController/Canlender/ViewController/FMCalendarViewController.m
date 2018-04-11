@@ -8,6 +8,7 @@
 
 #import "FMCalendarViewController.h"
 #import "FMCalendarControl.h"
+#import "UIImage+Resize.h"
 
 static CGFloat const W_H_TodayBtn = 20.f;
 
@@ -22,7 +23,7 @@ static CGFloat const W_H_TodayBtn = 20.f;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configNavBarBackgroundImage:[UIImage imageNamed:@"nav.png"]];
+    [self configNavBarBackgroundImage:[UIImage imageWithColor:SRGBCOLOR_HEX(0xc14945)]];
     [self setNav];
     self.zl_automaticallyAdjustsScrollViewInsets = NO;
     self.manager = [LTSCalendarManager new];

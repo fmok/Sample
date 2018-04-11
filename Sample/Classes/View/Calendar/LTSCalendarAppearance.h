@@ -92,6 +92,7 @@ typedef NS_ENUM(NSInteger, LTSCalendarWeekDayFormat) {
 @property (strong, nonatomic) UIFont *weekDayTextFont;
 // 周末 阳历 文字颜色
 @property (nonatomic, strong) UIColor *weekendDayTextColor;
+@property (nonatomic, strong) UIColor *weekendDayTextColorForOtherMonth;
 
 + (instancetype)share;
 - (NSCalendar *)calendar;

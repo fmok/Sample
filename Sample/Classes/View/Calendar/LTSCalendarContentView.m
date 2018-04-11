@@ -449,6 +449,8 @@
             }
         }
         
+        item.isWeekend = (i == 0 || i == 6);
+        
         item.eventDotColor = [LTSCalendarAppearance share].dayDotColor;
         if (self.eventSource && [self.eventSource respondsToSelector:@selector(calendarHaveEventWithDate:)]) {
             item.showEventDot = [self.eventSource calendarHaveEventWithDate:currentDate];

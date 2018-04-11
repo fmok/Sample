@@ -160,8 +160,8 @@
     
     if ([LTSCalendarAppearance share].isShowLunarCalender) {
         lunarTextLabel.hidden =  NO;
-        textLabel.center =  CGPointMake(circleView.center.x, circleView.center.y- CGRectGetHeight(textLabel.frame)/2);
-        lunarTextLabel.center = CGPointMake(circleView.center.x, circleView.center.y + CGRectGetHeight(lunarTextLabel.frame)/2+2);
+        textLabel.center =  CGPointMake(circleView.center.x, circleView.center.y- CGRectGetHeight(textLabel.frame)/2+3);
+        lunarTextLabel.center = CGPointMake(circleView.center.x, circleView.center.y + CGRectGetHeight(lunarTextLabel.frame)/2+4);
     }
     else{
         textLabel.center = circleView.center;
@@ -227,8 +227,11 @@
             
             circleView.layer.borderColor = [LTSCalendarAppearance share].dayBorderColorToday.CGColor;
             
-            
-            textLabel.textColor = [LTSCalendarAppearance share].dayTextColor;
+            if (self.item.isWeekend) {
+                textLabel.textColor = [LTSCalendarAppearance share].weekendDayTextColor;
+            } else {
+                textLabel.textColor = [LTSCalendarAppearance share].dayTextColor;
+            }
             lunarTextLabel.textColor = [LTSCalendarAppearance share].lunarDayTextColor;
             
             
@@ -238,12 +241,20 @@
         else{
             if(!self.item.isOtherMonth ){
                 
-                textLabel.textColor = [LTSCalendarAppearance share].dayTextColor;
+                if (self.item.isWeekend) {
+                    textLabel.textColor = [LTSCalendarAppearance share].weekendDayTextColor;
+                } else {
+                    textLabel.textColor = [LTSCalendarAppearance share].dayTextColor;
+                }
                 lunarTextLabel.textColor = [LTSCalendarAppearance share].lunarDayTextColor;
                 
             }
             else{
-                textLabel.textColor = [LTSCalendarAppearance share].dayTextColorOtherMonth;
+                if (self.item.isWeekend) {
+                    textLabel.textColor = [LTSCalendarAppearance share].weekendDayTextColorForOtherMonth;
+                } else {
+                    textLabel.textColor = [LTSCalendarAppearance share].dayTextColorOtherMonth;
+                }
                 lunarTextLabel.textColor = [LTSCalendarAppearance share].lunarDayTextColorOtherMonth;
             }
             
