@@ -56,6 +56,14 @@ static CGFloat const W_H_TodayBtn = 20.f;
         make.left.and.right.and.bottom.equalTo(weakSelf.view);
         make.top.equalTo(weakSelf.manager.weekDayView.mas_bottom);
     }];
+    // singleCalendarView
+    [self.view addSubview:self.singleCalendarView];
+    [self.singleCalendarView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(weakSelf.view);
+        make.top.equalTo(weakSelf.manager.weekDayView.mas_bottom);
+        make.height.mas_equalTo([LTSCalendarAppearance share].weekDayHeight);
+    }];
+    
     // add observer
     [self.calendarTableView addObserver:self.control forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
     
@@ -118,8 +126,19 @@ static CGFloat const W_H_TodayBtn = 20.f;
         _calendarTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _calendarTableView.showsVerticalScrollIndicator = NO;
         _calendarTableView.tableHeaderView = self.manager.calenderScrollView;
+        _calendarTableView.bounces = NO;
     }
     return _calendarTableView;
+}
+
+- (UIView *)singleCalendarView
+{
+    if (!_singleCalendarView) {
+        _singleCalendarView = [[UIView alloc] initWithFrame:CGRectZero];
+        _singleCalendarView.backgroundColor = [UIColor blueColor];
+        _singleCalendarView.hidden = YES;
+    }
+    return _singleCalendarView;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -113,14 +113,32 @@
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
+//    CGPoint vel = [self.vc.calendarTableView.panGestureRecognizer velocityInView:self.vc.calendarTableView];
+//    if (vel.y > 0) {
+//        TTDPRINT(@"下拉");
+//    } else if (vel.y < 0) {
+//        TTDPRINT(@"上拉");
+//    }
+    
     CGFloat change_Y = [change[@"new"] CGPointValue].y;
-//    TTDPRINT(@"\n*** %@ ***", @(change_Y));
-    if (change_Y <= 0) {
-        
-    } else {
-        if (change_Y >= [FMCalendarScrollView heightForCalendarScrollView]) {
-//            CGFloat distance = change_Y-[FMCalendarScrollView heightForCalendarScrollView];
-//            TTDPRINT(@"%@", @(distance));
+    CGFloat change_Y_Old = [change[@"old"] CGPointValue].y;
+    
+//    NSIndexPath *indexPath = self.vc.manager.calenderScrollView.calendarView.currentSelectedIndexPath;
+    CGFloat currentItem_Y = self.vc.manager.calenderScrollView.calendarView.singleWeekOffsetY;
+    
+    if (change_Y >= 0) {
+        if (change_Y > change_Y_Old) {  // 上拉
+            if (change_Y >= currentItem_Y) {
+                TTDPRINT(@"show");
+                self.vc.singleCalendarView.hidden = NO;
+            } else {
+                
+            }
+        } else if (change_Y < change_Y_Old) {  // 下拉
+            if (change_Y <= currentItem_Y) {
+                TTDPRINT(@"hidden");
+                self.vc.singleCalendarView.hidden = YES;
+            }
         }
     }
 }

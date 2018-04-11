@@ -27,7 +27,7 @@
 @property (nonatomic, assign) NSInteger currentMonthIndex;
 @property (nonatomic, strong) NSArray *daysInMonth;
 @property (nonatomic, strong) NSArray *daysInWeeks;
-@property (nonatomic, strong) NSIndexPath *currentSelectedIndexPath;
+@property (nonatomic, strong, readwrite) NSIndexPath *currentSelectedIndexPath;
 
 @property (nonatomic, strong) UIView *bottomLine;
 
