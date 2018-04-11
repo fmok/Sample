@@ -57,8 +57,8 @@
     self.dayTextColor = [UIColor blackColor];
     self.lunarDayTextColor = [UIColor colorWithRed:152./256. green:147./256. blue:157./256. alpha:1.];;
     
-    self.dayTextColorOtherMonth  = [UIColor colorWithRed:152./256. green:147./256. blue:157./256. alpha:1.];
-    self.lunarDayTextColorOtherMonth = [UIColor colorWithRed:152./256. green:147./256. blue:157./256. alpha:1.];
+    self.dayTextColorOtherMonth = SRGBCOLOR_HEX(0xd1d1d1);
+    self.lunarDayTextColorOtherMonth = SRGBCOLOR_HEX(0xd1d1d1);
     
     self.dayTextColorSelected = [UIColor whiteColor];
     self.lunarDayTextColorSelected = [UIColor whiteColor];
