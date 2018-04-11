@@ -19,6 +19,6 @@
 - (void)setTodayBtnHiddenState:(BOOL)hidden;
 
 - (void)setSingleCalendarViewHiddenState:(BOOL)hidden;
-- (void)setSingleCalendarViewAnimation:(BOOL)isShow;
+- (void)setSingleCalendarViewAnimation:(BOOL)isShow duration:(CGFloat)duration;
 
 @end

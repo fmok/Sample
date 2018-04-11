@@ -82,16 +82,18 @@ static CGFloat const W_H_TodayBtn = 20.f;
     self.singleCalendarView.hidden = hidden;
 }
 
-- (void)setSingleCalendarViewAnimation:(BOOL)isShow
+- (void)setSingleCalendarViewAnimation:(BOOL)isShow duration:(CGFloat)duration
 {
     if (isShow) {
-        [UIView animateKeyframesWithDuration:.8 delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
+        CGFloat realDuration = 0.8 - (duration/[FMCalendarScrollView heightForCalendarScrollView])*0.8;
+        [UIView animateKeyframesWithDuration:realDuration delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
             [self.calendarTableView setContentOffset:CGPointMake(0, [FMCalendarScrollView heightForCalendarScrollView]-[LTSCalendarAppearance share].weekDayHeight)];
         } completion:^(BOOL finished) {
         }];
     } else {
-        [UIView animateKeyframesWithDuration:.8 delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
-            [self.calendarTableView setContentOffset:CGPointMake(0, [FMCalendarScrollView heightForCalendarScrollView]-[LTSCalendarAppearance share].weekDayHeight)];
+        CGFloat realDuration = (duration/[FMCalendarScrollView heightForCalendarScrollView])*0.8;
+        [UIView animateKeyframesWithDuration:realDuration delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
+            [self.calendarTableView setContentOffset:CGPointMake(0, 0)];
         } completion:^(BOOL finished) {
         }];
     }
