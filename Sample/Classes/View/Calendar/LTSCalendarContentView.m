@@ -24,10 +24,12 @@
     BOOL isLoadNext;
 }
 
-@property (nonatomic,assign) NSInteger currentMonthIndex;
-@property (nonatomic,strong) NSArray *daysInMonth;
-@property (nonatomic,strong) NSArray *daysInWeeks;
-@property (nonatomic,strong) NSIndexPath *currentSelectedIndexPath;
+@property (nonatomic, assign) NSInteger currentMonthIndex;
+@property (nonatomic, strong) NSArray *daysInMonth;
+@property (nonatomic, strong) NSArray *daysInWeeks;
+@property (nonatomic, strong) NSIndexPath *currentSelectedIndexPath;
+
+@property (nonatomic, strong) UIView *bottomLine;
 
 @end
 
@@ -39,6 +41,7 @@
     if (self) {
         self.backgroundColor = [LTSCalendarAppearance share].calendarBgColor;
         [self addSubview:self.collectionView];
+        [self addSubview:self.bottomLine];
         // 初始化数据
         [self getDateDatas];
         //
@@ -539,6 +542,15 @@
         [_collectionView registerClass:[LTSCalendarCollectionCell class] forCellWithReuseIdentifier:@"dayCell"];
     }
     return _collectionView;
+}
+
+- (UIView *)bottomLine
+{
+    if (!_bottomLine) {
+        _bottomLine = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.frame)-.5f, CGRectGetWidth(self.frame), .5f)];
+        _bottomLine.backgroundColor = [UIColor lightGrayColor];
+    }
+    return _bottomLine;
 }
 
 @end

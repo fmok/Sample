@@ -8,7 +8,8 @@
 
 #import "FMCalendarScrollView.h"
 
-@interface FMCalendarScrollView() <UIScrollViewDelegate>
+@interface FMCalendarScrollView() <
+    UIScrollViewDelegate>
 
 @end
 
@@ -23,11 +24,6 @@
         self.showsVerticalScrollIndicator = NO;
         self.backgroundColor = [LTSCalendarAppearance share].scrollBgcolor;
         [self addSubview:self.calendarView];
-        if ([LTSCalendarAppearance share].isShowSingleWeek) {
-            [self scrollToSingleWeek];
-        } else {
-            [self scrollToAllWeek];
-        }
     }
     return self;
 }
@@ -65,6 +61,11 @@
 - (void)scrollToAllWeek
 {
     [self setContentOffset:CGPointMake(0, 0) animated:YES];
+}
+
+- (CGFloat)heightForCalendarScrollView
+{
+    return [LTSCalendarAppearance share].weekDayHeight*[LTSCalendarAppearance share].weeksToDisplay;
 }
 
 #pragma mark - getter & setter

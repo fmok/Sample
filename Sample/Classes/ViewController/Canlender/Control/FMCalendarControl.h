@@ -10,8 +10,12 @@
 #import "FMCalendarViewController.h"
 #import "LTSCalendarManager.h"
 
+static NSString *const kCalendarScrollViewCellReusedIdentifier = @"kCalendarScrollViewCellReusedIdentifier";
+
 @interface FMCalendarControl : NSObject <
-    LTSCalendarEventSource>
+    LTSCalendarEventSource,
+    UITableViewDelegate,
+    UITableViewDataSource>
 
 @property (nonatomic, weak) FMCalendarViewController *vc;
 

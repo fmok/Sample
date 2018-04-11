@@ -7,11 +7,14 @@
 //
 
 #import "FMBaseViewController.h"
+#import "PulledTableView.h"
+
 
 @class LTSCalendarManager;
 @interface FMCalendarViewController : FMBaseViewController
 
 @property (nonatomic, strong) LTSCalendarManager *manager;
+@property (nonatomic, strong) PulledTableView *calendarTableView;
 
 - (void)setTodayBtnHiddenState:(BOOL)hidden;
 

@@ -44,15 +44,21 @@ static CGFloat const W_H_TodayBtn = 20.f;
     }];
     //
     self.manager.calenderScrollView = [[FMCalendarScrollView alloc] initWithFrame:CGRectZero];
-    self.manager.calenderScrollView.bgColor = [UIColor redColor];
+    self.manager.calenderScrollView.bgColor = [UIColor whiteColor];
     [self.view addSubview:self.manager.calenderScrollView];
     [self.manager.calenderScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.manager.weekDayView.mas_bottom);
-        make.bottom.equalTo(weakSelf.view);
         make.centerX.equalTo(weakSelf.view);
         make.width.mas_equalTo(W_CalendarScrollView);
+        make.height.mas_equalTo([weakSelf.manager.calenderScrollView heightForCalendarScrollView]);
     }];
     //
+    [self.view addSubview:self.calendarTableView];
+    [self.calendarTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.and.bottom.equalTo(weakSelf.view);
+        make.top.equalTo(weakSelf.manager.calenderScrollView.mas_bottom);
+    }];
+    
 //    [self.control createRandomEventsForTest];
 // Do any additional setup after loading the view.
 
@@ -98,6 +104,24 @@ static CGFloat const W_H_TodayBtn = 20.f;
     return _todayBtn;
 }
 
+- (PulledTableView *)calendarTableView
+{
+    if (!_calendarTableView) {
+        _calendarTableView = [[PulledTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _calendarTableView.delegate = self.control;
+        _calendarTableView.dataSource = self.control;
+        _calendarTableView.isHeader = NO;
+        _calendarTableView.isFooter = NO;
+        _calendarTableView.backgroundColor = [UIColor whiteColor];
+        [_calendarTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:kCalendarScrollViewCellReusedIdentifier];
+        _calendarTableView.estimatedSectionHeaderHeight = 0;
+        _calendarTableView.estimatedSectionFooterHeight = 0;
+        _calendarTableView.estimatedRowHeight = 0;
+        _calendarTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+        _calendarTableView.showsVerticalScrollIndicator = NO;
+    }
+    return _calendarTableView;
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

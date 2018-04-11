@@ -18,4 +18,6 @@
 - (void)scrollToSingleWeek;
 - (void)scrollToAllWeek;
 
+- (CGFloat)heightForCalendarScrollView;
+
 @end
