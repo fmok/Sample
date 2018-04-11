@@ -110,6 +110,30 @@
     return cell;
 }
 
+#pragma mark - KVO
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
+{
+    CGFloat change_Y = [change[@"new"] CGPointValue].y;
+    TTDPRINT(@"\n*** %@ ***", @(change_Y));
+    if (change_Y <= 0) {
+        
+    } else {
+        if (change_Y >= [FMCalendarScrollView heightForCalendarScrollView]) {
+//            CGFloat distance = change_Y-[FMCalendarScrollView heightForCalendarScrollView];
+//            CGRect frame = self.vc.manager.weekDayView.frame;
+//            frame.origin.y -= distance;
+//            self.vc.manager.weekDayView.frame = frame;
+//            [self.vc.manager.weekDayView mas_updateConstraints:^(MASConstraintMaker *make) {
+//                if (@available(iOS 11.0, *)) {
+//                    make.top.equalTo(weakSelf.vc.view.mas_safeAreaLayoutGuideTop).offset(kNavBarHeight-distance);
+//                } else {
+//                    make.top.equalTo(weakSelf.vc.mas_topLayoutGuide).offset(kNavBarHeight-distance);
+//                }
+//            }];
+        }
+    }
+}
+
 #pragma mark - getter && setter
 - (NSDateFormatter *)dateFormatter
 {

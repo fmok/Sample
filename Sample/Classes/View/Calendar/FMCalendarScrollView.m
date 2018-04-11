@@ -63,7 +63,7 @@
     [self setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 
-- (CGFloat)heightForCalendarScrollView
++ (CGFloat)heightForCalendarScrollView
 {
     return [LTSCalendarAppearance share].weekDayHeight*[LTSCalendarAppearance share].weeksToDisplay;
 }
