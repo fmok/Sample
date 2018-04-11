@@ -52,6 +52,10 @@ typedef NS_ENUM(NSInteger, LTSCalendarWeekDayFormat) {
 @property (nonatomic,strong) UIColor *lineBgColor;
 // 日历首次选中的时间  默认为今天
 @property (nonatomic,strong) NSDate *defaultDate;
+// 当前显示的时间（年、月、日）
+@property (nonatomic, strong) NSDate *currentShowDate;
+
+
 // 其他月份
 
 // 其他月份阳历字体大小

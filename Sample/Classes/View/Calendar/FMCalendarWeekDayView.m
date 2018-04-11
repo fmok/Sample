@@ -23,6 +23,7 @@ static NSArray *cacheDaysOfWeeks;
 {
     self = [super initWithFrame:frame];
     if(self){
+        self.backgroundColor = [LTSCalendarAppearance share].weekDayBgColor;
         [self.daysViewsForWeekArr removeAllObjects];
         for (NSInteger i = 0; i < [self daysOfWeek].count; i++) {
             @autoreleasepool {
@@ -68,6 +69,7 @@ static NSArray *cacheDaysOfWeeks;
 #pragma mark - Public methods
 - (void)reloadAppearance
 {
+    self.backgroundColor = [LTSCalendarAppearance share].weekDayBgColor;
     for (NSInteger i = 0; i < [self daysOfWeek].count; i++) {
         @autoreleasepool {
             NSString *day = [[self daysOfWeek] objectAtIndex:i];
@@ -78,7 +80,6 @@ static NSArray *cacheDaysOfWeeks;
             view.text = day;
         }
     }
-    self.backgroundColor = [LTSCalendarAppearance share].weekDayBgColor;
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
 }

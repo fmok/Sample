@@ -50,6 +50,7 @@
 }
 
 - (void)calendarDidSelectedDate:(NSDate *)date {
+    [LTSCalendarAppearance share].currentShowDate = date;
     NSString *key = [[self dateFormatter] stringFromDate:date];
     [self.vc changeNavBarTitle:key];
     NSArray *events = eventsByDate[key];

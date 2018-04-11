@@ -22,9 +22,12 @@
 
 - (void)goToDate:(NSDate *)date{
     NSDateFormatter *formatter = [NSDateFormatter new];
-    [formatter setDateFormat:@"yyyy-MM"];
+    [formatter setDateFormat:@"yyyy-MM-d"];
     NSString *toDateStr = [NSString stringWithFormat:@"%@", [formatter stringFromDate:date]];
-    NSString *currentDateStr = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[LTSCalendarAppearance share].defaultDate]];
+    NSString *currentDateStr = [NSString stringWithFormat:@"%@", [formatter stringFromDate:[LTSCalendarAppearance share].currentShowDate]];
+    if ([toDateStr isEqualToString:currentDateStr]) {
+        return;
+    }
     [LTSCalendarAppearance share].defaultDate = date;
     [self.calenderScrollView.calendarView reloadDefaultDate];
     [self.calenderScrollView.calendarView reloadAppearance];
