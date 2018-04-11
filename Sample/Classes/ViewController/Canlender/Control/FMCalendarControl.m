@@ -8,9 +8,10 @@
 
 #import "FMCalendarControl.h"
 
-@interface FMCalendarControl ()
+@interface FMCalendarControl ()<UIScrollViewDelegate>
 {
     NSMutableDictionary *eventsByDate;
+    CGFloat _contentOffset_Y;
 }
 
 @end
@@ -113,34 +114,48 @@
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
-//    CGPoint vel = [self.vc.calendarTableView.panGestureRecognizer velocityInView:self.vc.calendarTableView];
-//    if (vel.y > 0) {
-//        TTDPRINT(@"下拉");
-//    } else if (vel.y < 0) {
-//        TTDPRINT(@"上拉");
-//    }
-    
-    CGFloat change_Y = [change[@"new"] CGPointValue].y;
+    _contentOffset_Y = [change[@"new"] CGPointValue].y;
     CGFloat change_Y_Old = [change[@"old"] CGPointValue].y;
     
 //    NSIndexPath *indexPath = self.vc.manager.calenderScrollView.calendarView.currentSelectedIndexPath;
     CGFloat currentItem_Y = self.vc.manager.calenderScrollView.calendarView.singleWeekOffsetY;
     
-    if (change_Y >= 0) {
-        if (change_Y > change_Y_Old) {  // 上拉
-            if (change_Y >= currentItem_Y) {
+    if (_contentOffset_Y >= 0) {
+        if (_contentOffset_Y > change_Y_Old) {  // 上拉
+            if (_contentOffset_Y >= currentItem_Y) {
                 TTDPRINT(@"show");
-                self.vc.singleCalendarView.hidden = NO;
+                [self.vc setSingleCalendarViewHiddenState:NO];
             } else {
-                
+
             }
-        } else if (change_Y < change_Y_Old) {  // 下拉
-            if (change_Y <= currentItem_Y) {
+        } else if (_contentOffset_Y < change_Y_Old) {  // 下拉
+            if (_contentOffset_Y <= currentItem_Y) {
                 TTDPRINT(@"hidden");
-                self.vc.singleCalendarView.hidden = YES;
+                [self.vc setSingleCalendarViewHiddenState:YES];
             }
         }
     }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    CGFloat H = [FMCalendarScrollView heightForCalendarScrollView];
+    CGFloat h = [LTSCalendarAppearance share].weekDayHeight;
+    CGPoint vel = [self.vc.calendarTableView.panGestureRecognizer velocityInView:self.vc.calendarTableView];
+    CGFloat currentItem_Y = self.vc.manager.calenderScrollView.calendarView.singleWeekOffsetY;
+//    if (vel.y < 0) {  // 上拉
+//        if (_contentOffset_Y >= currentItem_Y/2.f) {
+//            [self.vc setSingleCalendarViewAnimation:YES];
+//        } else {
+//            [self.vc setSingleCalendarViewAnimation:NO];
+//        }
+//    } else if (vel.y > 0) {  // 下拉
+//        if ((H-h)-_contentOffset_Y >= (H-(currentItem_Y+h))/2.f) {
+//            [self.vc setSingleCalendarViewAnimation:NO];
+//        } else {
+//            [self.vc setSingleCalendarViewAnimation:YES];
+//        }
+//    }
 }
 
 #pragma mark - getter && setter

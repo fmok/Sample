@@ -15,8 +15,10 @@
 
 @property (nonatomic, strong) LTSCalendarManager *manager;
 @property (nonatomic, strong) PulledTableView *calendarTableView;
-@property (nonatomic, strong) UIView *singleCalendarView;
 
 - (void)setTodayBtnHiddenState:(BOOL)hidden;
+
+- (void)setSingleCalendarViewHiddenState:(BOOL)hidden;
+- (void)setSingleCalendarViewAnimation:(BOOL)isShow;
 
 @end

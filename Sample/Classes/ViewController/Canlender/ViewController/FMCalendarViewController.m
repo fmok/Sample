@@ -16,6 +16,7 @@ static CGFloat const W_H_TodayBtn = 20.f;
 
 @property (nonatomic, strong) FMCalendarControl *control;
 @property (nonatomic, strong) UIButton *todayBtn;
+@property (nonatomic, strong) UIView *singleCalendarView;
 
 @end
 
@@ -74,6 +75,26 @@ static CGFloat const W_H_TodayBtn = 20.f;
 - (void)setTodayBtnHiddenState:(BOOL)hidden
 {
     self.todayBtn.hidden = hidden;
+}
+
+- (void)setSingleCalendarViewHiddenState:(BOOL)hidden
+{
+    self.singleCalendarView.hidden = hidden;
+}
+
+- (void)setSingleCalendarViewAnimation:(BOOL)isShow
+{
+    if (isShow) {
+        [UIView animateKeyframesWithDuration:.8 delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
+            [self.calendarTableView setContentOffset:CGPointMake(0, [FMCalendarScrollView heightForCalendarScrollView]-[LTSCalendarAppearance share].weekDayHeight)];
+        } completion:^(BOOL finished) {
+        }];
+    } else {
+        [UIView animateKeyframesWithDuration:.8 delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
+            [self.calendarTableView setContentOffset:CGPointMake(0, [FMCalendarScrollView heightForCalendarScrollView]-[LTSCalendarAppearance share].weekDayHeight)];
+        } completion:^(BOOL finished) {
+        }];
+    }
 }
 
 #pragma mark - Private methods
@@ -135,7 +156,7 @@ static CGFloat const W_H_TodayBtn = 20.f;
 {
     if (!_singleCalendarView) {
         _singleCalendarView = [[UIView alloc] initWithFrame:CGRectZero];
-        _singleCalendarView.backgroundColor = [UIColor blueColor];
+        _singleCalendarView.backgroundColor = [UIColor whiteColor];
         _singleCalendarView.hidden = YES;
     }
     return _singleCalendarView;
