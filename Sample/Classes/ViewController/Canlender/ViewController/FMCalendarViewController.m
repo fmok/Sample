@@ -39,7 +39,7 @@ static CGFloat const W_H_TodayBtn = 20.f;
         } else {
             make.top.equalTo(weakSelf.mas_topLayoutGuide).offset(kNavBarHeight);
         }
-        make.height.mas_equalTo(30.f);
+        make.height.mas_equalTo(40.f);
     }];
     //
     self.manager.calenderScrollView = [[FMCalendarScrollView alloc] initWithFrame:CGRectZero];

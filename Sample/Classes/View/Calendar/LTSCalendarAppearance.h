@@ -49,7 +49,7 @@ typedef NS_ENUM(NSInteger, LTSCalendarWeekDayFormat) {
 // 今天文本颜色
 @property (strong, nonatomic) UIColor *dayTextColorToday;
 
-@property (nonatomic,strong) UIColor *lineBgColor;
+//@property (nonatomic,strong) UIColor *lineBgColor;
 // 日历首次选中的时间  默认为今天
 @property (nonatomic,strong) NSDate *defaultDate;
 // 当前显示的时间（年、月、日）
@@ -60,11 +60,11 @@ typedef NS_ENUM(NSInteger, LTSCalendarWeekDayFormat) {
 
 // 其他月份阳历字体大小
 @property (nonatomic,strong) UIFont *dayTextFontOtherMonth;
-//  其他月份农历字体大小
+// 其他月份农历字体大小
 @property (nonatomic,strong) UIFont *lunarDayTextFontOtherMonth;
-//  其他月份阳历文本颜色
+// 其他月份阳历文本颜色
 @property (nonatomic,strong) UIColor *dayTextColorOtherMonth;
-//  其他月份农历文本颜色
+// 其他月份农历文本颜色
 @property (nonatomic,strong) UIColor *lunarDayTextColorOtherMonth;
 
 // 选中时日期实心圆的颜色
@@ -90,6 +90,8 @@ typedef NS_ENUM(NSInteger, LTSCalendarWeekDayFormat) {
 @property (strong, nonatomic) UIColor *weekDayTextColor;
 // 周  标识  字体大小
 @property (strong, nonatomic) UIFont *weekDayTextFont;
+// 周末 阳历 文字颜色
+@property (nonatomic, strong) UIColor *weekendDayTextColor;
 
 + (instancetype)share;
 - (NSCalendar *)calendar;

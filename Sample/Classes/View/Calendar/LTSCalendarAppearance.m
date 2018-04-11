@@ -39,13 +39,14 @@
     self.dayDotSize= self.dayCircleSize*1. / 9. ;
     self.weekDayFormat = LTSCalendarWeekDayFormatSingle;
     self.weekDayTextFont = [UIFont systemFontOfSize:11];
-     self.weekDayTextColor = [UIColor colorWithRed:200./256. green:200./256. blue:200./256. alpha:1.];
+    self.weekDayTextColor = [UIColor colorWithRed:200./256. green:200./256. blue:200./256. alpha:1.];
+    self.weekendDayTextColor = [UIColor redColor];
     self.weeksToDisplay = 6;
     self.weekDayHeight = 50;
     self.isShowSingleWeek = NO;
     self.firstWeekday = 1;
     self.defaultDate = [NSDate date];
-    self.dayTextFont = [UIFont systemFontOfSize:16];
+    self.dayTextFont = [UIFont systemFontOfSize:20];
     self.lunarDayTextFont =[UIFont systemFontOfSize:10];
     
     [self setDayDotColorForAll:[UIColor colorWithRed:43./256. green:88./256. blue:134./256. alpha:1.]];

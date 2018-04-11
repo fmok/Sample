@@ -30,7 +30,11 @@ static NSArray *cacheDaysOfWeeks;
                 NSString *day = [[self daysOfWeek] objectAtIndex:i];
                 UILabel *view = [[UILabel alloc] initWithFrame:CGRectZero];
                 view.font = [LTSCalendarAppearance share].weekDayTextFont;
-                view.textColor = [LTSCalendarAppearance share].weekDayTextColor;
+                if (i == 0 || i == [self daysOfWeek].count-1) {
+                    view.textColor = [LTSCalendarAppearance share].weekendDayTextColor;
+                } else {
+                    view.textColor = [LTSCalendarAppearance share].weekDayTextColor;
+                }
                 view.textAlignment = NSTextAlignmentCenter;
                 view.text = day;
                 [self addSubview:view];
