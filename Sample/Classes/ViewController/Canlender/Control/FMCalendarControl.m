@@ -116,17 +116,18 @@
 {
     _contentOffset_Y = [change[@"new"] CGPointValue].y;
     CGFloat change_Y_Old = [change[@"old"] CGPointValue].y;
-    
 //    NSIndexPath *indexPath = self.vc.manager.calenderScrollView.calendarView.currentSelectedIndexPath;
     CGFloat currentItem_Y = self.vc.manager.calenderScrollView.calendarView.singleWeekOffsetY;
+    
+//    CGFloat H = [FMCalendarScrollView heightForCalendarScrollView];
+//    CGFloat h = [LTSCalendarAppearance share].weekDayHeight;
+//    CGPoint vel = [self.vc.calendarTableView.panGestureRecognizer velocityInView:self.vc.calendarTableView];
     
     if (_contentOffset_Y >= 0) {
         if (_contentOffset_Y > change_Y_Old) {  // 上拉
             if (_contentOffset_Y >= currentItem_Y) {
                 TTDPRINT(@"show");
                 [self.vc setSingleCalendarViewHiddenState:NO];
-            } else {
-
             }
         } else if (_contentOffset_Y < change_Y_Old) {  // 下拉
             if (_contentOffset_Y <= currentItem_Y) {
@@ -143,18 +144,24 @@
     CGFloat h = [LTSCalendarAppearance share].weekDayHeight;
     CGPoint vel = [self.vc.calendarTableView.panGestureRecognizer velocityInView:self.vc.calendarTableView];
     CGFloat currentItem_Y = self.vc.manager.calenderScrollView.calendarView.singleWeekOffsetY;
-    if (vel.y <= 0) {  // 上拉
-        if (_contentOffset_Y >= currentItem_Y/2.f) {
+    if (vel.y < 0) {  // 上拉
+        if (_contentOffset_Y >= (H/2.f-h) && _contentOffset_Y <= H) {
             [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeShow duration:_contentOffset_Y];
-        } else if (_contentOffset_Y < currentItem_Y/2.f) {
+        } else if (_contentOffset_Y < (H/2.f-h)) {
             [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeHidden duration:_contentOffset_Y];
         }
     } else if (vel.y > 0) {  // 下拉
-//        if ((H-h)-_contentOffset_Y >= (H-(currentItem_Y+h))/2.f) {
-//            [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeHidden];
-//        } else {
-//            [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeShow];
-//        }
+        if (H-_contentOffset_Y >= (H-(currentItem_Y+h))/2.f) {
+            [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeHidden duration:_contentOffset_Y];
+        } else {
+            [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeShow duration:_contentOffset_Y];
+        }
+    } else {  // vel == 0 无法判断上滑下滑方向
+        if (_contentOffset_Y >= (H/2.f-h) && _contentOffset_Y <= H) {
+            [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeShow duration:_contentOffset_Y];
+        } else if (_contentOffset_Y < (H/2.f-h)) {
+            [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeHidden duration:_contentOffset_Y];
+        }
     }
 }
 
