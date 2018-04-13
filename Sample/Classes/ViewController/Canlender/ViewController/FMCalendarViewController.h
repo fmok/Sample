@@ -9,6 +9,10 @@
 #import "FMBaseViewController.h"
 #import "PulledTableView.h"
 
+typedef NS_ENUM(NSInteger, CalendarAnimationType) {
+    CalendarAnimationTypeShow = 100,
+    CalendarAnimationTypeHidden
+};
 
 @class LTSCalendarManager;
 @interface FMCalendarViewController : FMBaseViewController
@@ -19,6 +23,6 @@
 - (void)setTodayBtnHiddenState:(BOOL)hidden;
 
 - (void)setSingleCalendarViewHiddenState:(BOOL)hidden;
-- (void)setSingleCalendarViewAnimation:(BOOL)isShow duration:(CGFloat)duration;
+- (void)setSingleCalendarViewAnimation:(CalendarAnimationType)type duration:(CGFloat)duration;
 
 @end

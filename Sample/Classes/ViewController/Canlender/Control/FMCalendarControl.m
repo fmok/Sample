@@ -145,15 +145,15 @@
     CGFloat currentItem_Y = self.vc.manager.calenderScrollView.calendarView.singleWeekOffsetY;
     if (vel.y <= 0) {  // 上拉
         if (_contentOffset_Y >= currentItem_Y/2.f) {
-            [self.vc setSingleCalendarViewAnimation:YES duration:_contentOffset_Y];
+            [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeShow duration:_contentOffset_Y];
         } else if (_contentOffset_Y < currentItem_Y/2.f) {
-            [self.vc setSingleCalendarViewAnimation:NO duration:_contentOffset_Y];
+            [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeHidden duration:_contentOffset_Y];
         }
     } else if (vel.y > 0) {  // 下拉
 //        if ((H-h)-_contentOffset_Y >= (H-(currentItem_Y+h))/2.f) {
-//            [self.vc setSingleCalendarViewAnimation:NO];
+//            [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeHidden];
 //        } else {
-//            [self.vc setSingleCalendarViewAnimation:YES];
+//            [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeShow];
 //        }
     }
 }

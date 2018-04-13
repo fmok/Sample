@@ -82,20 +82,30 @@ static CGFloat const W_H_TodayBtn = 20.f;
     self.singleCalendarView.hidden = hidden;
 }
 
-- (void)setSingleCalendarViewAnimation:(BOOL)isShow duration:(CGFloat)duration
+- (void)setSingleCalendarViewAnimation:(CalendarAnimationType)type duration:(CGFloat)duration
 {
-    if (isShow) {
-        CGFloat realDuration = 0.8 - (duration/[FMCalendarScrollView heightForCalendarScrollView])*0.8;
-        [UIView animateKeyframesWithDuration:realDuration delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
-            [self.calendarTableView setContentOffset:CGPointMake(0, [FMCalendarScrollView heightForCalendarScrollView]-[LTSCalendarAppearance share].weekDayHeight)];
-        } completion:^(BOOL finished) {
-        }];
-    } else {
-        CGFloat realDuration = (duration/[FMCalendarScrollView heightForCalendarScrollView])*0.8;
-        [UIView animateKeyframesWithDuration:realDuration delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
-            [self.calendarTableView setContentOffset:CGPointMake(0, 0)];
-        } completion:^(BOOL finished) {
-        }];
+    switch (type) {
+        case CalendarAnimationTypeShow:
+        {
+            CGFloat realDuration = 0.8 - (duration/[FMCalendarScrollView heightForCalendarScrollView])*0.8;
+            [UIView animateKeyframesWithDuration:realDuration delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
+                [self.calendarTableView setContentOffset:CGPointMake(0, [FMCalendarScrollView heightForCalendarScrollView]-[LTSCalendarAppearance share].weekDayHeight)];
+            } completion:^(BOOL finished) {
+            }];
+        }
+            break;
+        case CalendarAnimationTypeHidden:
+        {
+            CGFloat realDuration = (duration/[FMCalendarScrollView heightForCalendarScrollView])*0.8;
+            [UIView animateKeyframesWithDuration:realDuration delay:0 options:UIViewKeyframeAnimationOptionLayoutSubviews animations:^{
+                [self.calendarTableView setContentOffset:CGPointMake(0, 0)];
+            } completion:^(BOOL finished) {
+            }];
+        }
+            break;
+            
+        default:
+            break;
     }
 }
 
