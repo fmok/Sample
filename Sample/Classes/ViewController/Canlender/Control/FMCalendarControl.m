@@ -114,14 +114,10 @@
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context
 {
+    /** KVO 控制显隐 */
     _contentOffset_Y = [change[@"new"] CGPointValue].y;
     CGFloat change_Y_Old = [change[@"old"] CGPointValue].y;
-//    NSIndexPath *indexPath = self.vc.manager.calenderScrollView.calendarView.currentSelectedIndexPath;
     CGFloat currentItem_Y = self.vc.manager.calenderScrollView.calendarView.singleWeekOffsetY;
-    
-//    CGFloat H = [FMCalendarScrollView heightForCalendarScrollView];
-//    CGFloat h = [LTSCalendarAppearance share].weekDayHeight;
-//    CGPoint vel = [self.vc.calendarTableView.panGestureRecognizer velocityInView:self.vc.calendarTableView];
     
     if (_contentOffset_Y >= 0) {
         if (_contentOffset_Y > change_Y_Old) {  // 上拉
@@ -140,6 +136,7 @@
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
+    /** 控制 上拉、下拉、加速度相关情况 */
     CGFloat H = [FMCalendarScrollView heightForCalendarScrollView];
     CGFloat h = [LTSCalendarAppearance share].weekDayHeight;
     CGPoint vel = [self.vc.calendarTableView.panGestureRecognizer velocityInView:self.vc.calendarTableView];
@@ -162,6 +159,18 @@
         } else if (_contentOffset_Y < (H/2.f-h)) {
             [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeHidden duration:_contentOffset_Y];
         }
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    /** 控制 停止滚动后的归位情况 */
+    CGFloat H = [FMCalendarScrollView heightForCalendarScrollView];
+    CGFloat h = [LTSCalendarAppearance share].weekDayHeight;
+    if (_contentOffset_Y >= (H/2.f-h) && _contentOffset_Y < H) {
+        [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeShow duration:_contentOffset_Y];
+    } else if (_contentOffset_Y < (H/2.f-h)) {
+        [self.vc setSingleCalendarViewAnimation:CalendarAnimationTypeHidden duration:_contentOffset_Y];
     }
 }
 
