@@ -13,6 +13,7 @@
 		57206A54208451120017F7F8 /* top_navigation_close_h5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57206A53208451120017F7F8 /* top_navigation_close_h5@2x.png */; };
 		57206A57208451820017F7F8 /* reader_toolbar_share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57206A55208451820017F7F8 /* reader_toolbar_share@3x.png */; };
 		57206A58208451820017F7F8 /* reader_toolbar_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57206A56208451820017F7F8 /* reader_toolbar_share@2x.png */; };
+		57206A6F20848DF20017F7F8 /* FMFuncButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 57206A6E20848DF20017F7F8 /* FMFuncButton.m */; };
 		572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A6E20635B5C008114EA /* SampleListAPI.m */; };
 		572E6A7720637F1D008114EA /* btnCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A7120637F1D008114EA /* btnCheck.png */; };
 		572E6A7820637F1D008114EA /* btnCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A7220637F1D008114EA /* btnCheck@2x.png */; };
@@ -148,6 +149,8 @@
 		57206A53208451120017F7F8 /* top_navigation_close_h5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_navigation_close_h5@2x.png"; sourceTree = "<group>"; };
 		57206A55208451820017F7F8 /* reader_toolbar_share@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reader_toolbar_share@3x.png"; sourceTree = "<group>"; };
 		57206A56208451820017F7F8 /* reader_toolbar_share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reader_toolbar_share@2x.png"; sourceTree = "<group>"; };
+		57206A6D20848DF20017F7F8 /* FMFuncButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMFuncButton.h; sourceTree = "<group>"; };
+		57206A6E20848DF20017F7F8 /* FMFuncButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMFuncButton.m; sourceTree = "<group>"; };
 		572E6A6D20635B5C008114EA /* SampleListAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleListAPI.h; sourceTree = "<group>"; };
 		572E6A6E20635B5C008114EA /* SampleListAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleListAPI.m; sourceTree = "<group>"; };
 		572E6A7120637F1D008114EA /* btnCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnCheck.png; sourceTree = "<group>"; };
@@ -408,6 +411,15 @@
 				57206A53208451120017F7F8 /* top_navigation_close_h5@2x.png */,
 			);
 			path = H5;
+			sourceTree = "<group>";
+		};
+		57206A6C20848DCD0017F7F8 /* FMFuncButton */ = {
+			isa = PBXGroup;
+			children = (
+				57206A6D20848DF20017F7F8 /* FMFuncButton.h */,
+				57206A6E20848DF20017F7F8 /* FMFuncButton.m */,
+			);
+			path = FMFuncButton;
 			sourceTree = "<group>";
 		};
 		572E6A7020637F1D008114EA /* MBProgressHUD */ = {
@@ -871,6 +883,7 @@
 		57B544352062780E00701F9C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57206A6C20848DCD0017F7F8 /* FMFuncButton */,
 				578E7AF7207C5990001D351D /* Calendar */,
 				5737E6092073338E008AF33C /* FMTabsView */,
 				5740FA30206C8A9A006F20A5 /* FMScrollLabel */,
@@ -1582,6 +1595,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57206A6F20848DF20017F7F8 /* FMFuncButton.m in Sources */,
 				57379597206B826A00388BCC /* MainHeaderView.m in Sources */,
 				57206A51208445760017F7F8 /* FMH5ViewController_wk.m in Sources */,
 				575F9AAD2064EC710031BC49 /* UITableView+FDKeyedHeightCache.m in Sources */,
