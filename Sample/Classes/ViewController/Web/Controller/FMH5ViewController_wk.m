@@ -39,6 +39,7 @@
     [self loadRequest:self.request];
 }
 
+#pragma mark - Public methods
 - (instancetype)initWithAddress:(NSString*)urlString
 {
     return [self initWithURL:[NSURL URLWithString:urlString]];
