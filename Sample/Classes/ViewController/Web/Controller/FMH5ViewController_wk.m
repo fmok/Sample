@@ -19,7 +19,7 @@
 
 @property (nonatomic, strong) WKWebView *wkWebView;
 @property (nonatomic, strong) NSMutableURLRequest *request;
-@property (nonatomic, weak) WKUserContentController *userContentController;
+@property (nonatomic, weak) WKUserContentController *userContentController;  // 此处用weak，避免内存泄露
 
 @property (nonatomic, strong) UIProgressView *progressView;
 @property (nonatomic, strong) UIButton *closeBtn;
