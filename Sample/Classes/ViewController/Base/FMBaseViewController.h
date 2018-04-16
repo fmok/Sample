@@ -29,8 +29,11 @@
  */
 - (void)constraintNavigationBar:(UINavigationBar *)navigationBar;
 /**
- 
  */
 - (void)changeNavBarTitle:(NSString *)title;
+
+/**
+ */
+- (void)popVC;
 
 @end

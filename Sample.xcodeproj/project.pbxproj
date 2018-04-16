@@ -10,6 +10,9 @@
 		48B0FD8D8105888DECAABAC3 /* Pods_SampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FBAF6C4DE1FF2792C56EA6 /* Pods_SampleUITests.framework */; };
 		495A144514E097DC2FEF156D /* Pods_SampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE0D9EA9480301327D118D4 /* Pods_SampleTests.framework */; };
 		57206A51208445760017F7F8 /* FMH5ViewController_wk.m in Sources */ = {isa = PBXBuildFile; fileRef = 57206A50208445760017F7F8 /* FMH5ViewController_wk.m */; };
+		57206A54208451120017F7F8 /* top_navigation_close_h5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57206A53208451120017F7F8 /* top_navigation_close_h5@2x.png */; };
+		57206A57208451820017F7F8 /* reader_toolbar_share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57206A55208451820017F7F8 /* reader_toolbar_share@3x.png */; };
+		57206A58208451820017F7F8 /* reader_toolbar_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57206A56208451820017F7F8 /* reader_toolbar_share@2x.png */; };
 		572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A6E20635B5C008114EA /* SampleListAPI.m */; };
 		572E6A7720637F1D008114EA /* btnCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A7120637F1D008114EA /* btnCheck.png */; };
 		572E6A7820637F1D008114EA /* btnCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A7220637F1D008114EA /* btnCheck@2x.png */; };
@@ -142,6 +145,9 @@
 		5379F497DA83897556A33982 /* Pods-SampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleUITests/Pods-SampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		57206A4F208445760017F7F8 /* FMH5ViewController_wk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMH5ViewController_wk.h; sourceTree = "<group>"; };
 		57206A50208445760017F7F8 /* FMH5ViewController_wk.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMH5ViewController_wk.m; sourceTree = "<group>"; };
+		57206A53208451120017F7F8 /* top_navigation_close_h5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_navigation_close_h5@2x.png"; sourceTree = "<group>"; };
+		57206A55208451820017F7F8 /* reader_toolbar_share@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reader_toolbar_share@3x.png"; sourceTree = "<group>"; };
+		57206A56208451820017F7F8 /* reader_toolbar_share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reader_toolbar_share@2x.png"; sourceTree = "<group>"; };
 		572E6A6D20635B5C008114EA /* SampleListAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleListAPI.h; sourceTree = "<group>"; };
 		572E6A6E20635B5C008114EA /* SampleListAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleListAPI.m; sourceTree = "<group>"; };
 		572E6A7120637F1D008114EA /* btnCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnCheck.png; sourceTree = "<group>"; };
@@ -392,6 +398,16 @@
 				57206A50208445760017F7F8 /* FMH5ViewController_wk.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		57206A52208450FD0017F7F8 /* H5 */ = {
+			isa = PBXGroup;
+			children = (
+				57206A56208451820017F7F8 /* reader_toolbar_share@2x.png */,
+				57206A55208451820017F7F8 /* reader_toolbar_share@3x.png */,
+				57206A53208451120017F7F8 /* top_navigation_close_h5@2x.png */,
+			);
+			path = H5;
 			sourceTree = "<group>";
 		};
 		572E6A7020637F1D008114EA /* MBProgressHUD */ = {
@@ -1164,6 +1180,7 @@
 		57DED5462067CF7B00E24607 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				57206A52208450FD0017F7F8 /* H5 */,
 				5740FA34206C91B1006F20A5 /* Main */,
 				57C3D55F2068A10800E0B8BA /* Nav */,
 				57DED5472067CF7B00E24607 /* TabBar */,
@@ -1359,10 +1376,13 @@
 				572E6A7820637F1D008114EA /* btnCheck@2x.png in Resources */,
 				572E6A8D2063CA55008114EA /* CHANGELOG.md in Resources */,
 				57DED5542067CF7B00E24607 /* tabbar_me@2x.png in Resources */,
+				57206A54208451120017F7F8 /* top_navigation_close_h5@2x.png in Resources */,
 				57DED5522067CF7B00E24607 /* tabbar_home_selected@2x.png in Resources */,
 				57DED5572067CF7B00E24607 /* tabbar_me_selected@3x.png in Resources */,
+				57206A58208451820017F7F8 /* reader_toolbar_share@2x.png in Resources */,
 				578320AF206A3B7400E2D67F /* closed.png in Resources */,
 				578320B0206A3B7400E2D67F /* closed@2x.png in Resources */,
+				57206A57208451820017F7F8 /* reader_toolbar_share@3x.png in Resources */,
 				57B5440C2062727F00701F9C /* LaunchScreen.storyboard in Resources */,
 				5740FA38206C9805006F20A5 /* upDown@2x.png in Resources */,
 				57DED5502067CF7B00E24607 /* tabbar_home@2x.png in Resources */,

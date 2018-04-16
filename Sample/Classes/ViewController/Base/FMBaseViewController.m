@@ -113,7 +113,6 @@
     [NSLayoutConstraint activateConstraints:constraint];
 }
 
-#pragma mark - Events
 - (void)popVC
 {
     [self.zl_navigationController popViewControllerAnimated:YES];

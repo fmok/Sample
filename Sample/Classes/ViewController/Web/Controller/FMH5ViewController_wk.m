@@ -9,13 +9,19 @@
 #import "FMH5ViewController_wk.h"
 #import "UIImage+Resize.h"
 
+#define kH5NavBarBackViewCloseSize  25.f
+
 @interface FMH5ViewController_wk ()<
     WKNavigationDelegate,
     WKUIDelegate>
 
 @property (nonatomic, strong) WKWebView *wkWebView;
 @property (nonatomic, strong) NSMutableURLRequest *request;
+
 @property (nonatomic, strong) UIProgressView *progressView;
+@property (nonatomic, strong) UIButton *closeBtn;
+@property (nonatomic, strong) UIButton *shareBtn;
+
 @property (nonatomic, assign) BOOL isFirstLoad;  // 是否是第一次加载
 
 @end
@@ -71,6 +77,14 @@
                                                   NSFontAttributeName: [UIFont boldSystemFontOfSize:20.f],
                                                   NSForegroundColorAttributeName: [UIColor blackColor]
                                                   };
+    
+    UIBarButtonItem *closeItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeBtn];
+    NSArray *h5LeftBarItems = @[closeItem];
+    self.zl_navigationItem.leftBarButtonItems = [self.zl_navigationItem.leftBarButtonItems arrayByAddingObjectsFromArray:h5LeftBarItems];
+    
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithCustomView:self.shareBtn];
+    self.zl_navigationItem.rightBarButtonItems = @[shareItem];
+    
 }
 
 - (void)initLayout
@@ -97,6 +111,33 @@
 - (void)loadRequest:(NSMutableURLRequest*)request
 {
     [self.wkWebView loadRequest:request];
+}
+
+- (void)outVC
+{
+    [super popVC];
+}
+
+- (void)popVC
+{
+    if (self.wkWebView.canGoBack) {
+        [self.wkWebView goBack];
+        self.closeBtn.hidden = NO;
+        return;
+    }
+    [self outVC];
+}
+
+#pragma mark - Events
+- (void)shareBtnAction:(id)sender
+{
+    [self.view endEditing:YES];
+    TTDPRINT(@"to share");
+}
+
+- (void)closeBtnAction:(id)sender
+{
+    [self outVC];
 }
 
 #pragma mark - WKNavigationDelegate
@@ -200,9 +241,33 @@
     if (!_progressView) {
         _progressView = [[UIProgressView alloc] initWithFrame:CGRectZero];
         _progressView.trackTintColor = [UIColor whiteColor];
-        _progressView.tintColor =  [UIColor colorWithRed:22.f / 255.f green:126.f / 255.f blue:251.f / 255.f alpha:1.0];
+        _progressView.tintColor =  SRGBCOLOR_HEX(0x167EFB);
     }
     return _progressView;
+}
+
+- (UIButton *)closeBtn
+{
+    if (!_closeBtn) {
+        _closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _closeBtn.frame = CGRectMake(0, 0, kH5NavBarBackViewCloseSize, kH5NavBarBackViewCloseSize);
+        _closeBtn.transform = CGAffineTransformMakeScale(0.95, 0.95);
+        _closeBtn.hidden = YES;
+        [_closeBtn setImage:[UIImage imageNamed:@"top_navigation_close_h5"] forState:UIControlStateNormal];
+        [_closeBtn addTarget:self action:@selector(closeBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _closeBtn;
+}
+
+- (UIButton *)shareBtn
+{
+    if (!_shareBtn) {
+        _shareBtn =  [UIButton buttonWithType:UIButtonTypeCustom];
+        _shareBtn.frame = CGRectMake(0, 0, kH5NavBarBackViewCloseSize, kH5NavBarBackViewCloseSize);
+        [_shareBtn setImage:[UIImage imageNamed:@"reader_toolbar_share"] forState:UIControlStateNormal];
+        [_shareBtn addTarget:self action:@selector(shareBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _shareBtn;
 }
 
 - (void)didReceiveMemoryWarning {
