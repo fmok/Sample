@@ -12,6 +12,7 @@
 #import "TestViewController.h"
 #import "MyPurchaseViewController.h"
 #import "FMCalendarViewController.h"
+#import "FMH5ViewController_wk.h"
 
 @interface MeViewController ()
 
@@ -111,6 +112,11 @@
                        @{
                          kMeVCTitle: @"Calendar",
                          kMeVCClassName: NSStringFromClass([FMCalendarViewController class]),
+                         kMeVCLogoStr: @"upDown"
+                         },
+                       @{
+                         kMeVCTitle: @"H5_wk",
+                         kMeVCClassName: NSStringFromClass([FMH5ViewController_wk class]),
                          kMeVCLogoStr: @"upDown"
                          },
                        nil];
