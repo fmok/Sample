@@ -8,21 +8,22 @@
 
 #import "FMH5ViewController_wk.h"
 #import "UIImage+Resize.h"
+#import "MJRefresh.h"
 
 #define kH5NavBarBackViewCloseSize  25.f
 
 @interface FMH5ViewController_wk ()<
     WKNavigationDelegate,
-    WKUIDelegate>
+    WKUIDelegate,
+    WKScriptMessageHandler>
 
 @property (nonatomic, strong) WKWebView *wkWebView;
 @property (nonatomic, strong) NSMutableURLRequest *request;
+@property (nonatomic, weak) WKUserContentController *userContentController;
 
 @property (nonatomic, strong) UIProgressView *progressView;
 @property (nonatomic, strong) UIButton *closeBtn;
 @property (nonatomic, strong) UIButton *shareBtn;
-
-@property (nonatomic, assign) BOOL isFirstLoad;  // 是否是第一次加载
 
 @end
 
@@ -60,8 +61,6 @@
 {
     self = [super init];
     if (self) {
-        self.isRefresh = NO;
-        self.isFirstLoad = YES;
         self.request = request;
         self.refreshUpdatedTimeKey = [request.URL absoluteString];
     }
@@ -90,7 +89,6 @@
 - (void)initLayout
 {
     WS(weakSelf);
-    //进度条
     [self.view addSubview:self.progressView];
     [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
         if (@available(iOS 11.0, *)) {
@@ -145,10 +143,17 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
 {
     TTDPRINT(@"%@",navigationAction.request.URL.absoluteString);
+    NSString *urlStr = [navigationAction.request.URL absoluteString];
+    NSString *scheme = [navigationAction.request.URL scheme];
+    if ([scheme isEqualToString:@"http"] || [scheme isEqualToString:@"https"]) {
+        
+    } else {
+        
+    }
     //允许跳转
     decisionHandler(WKNavigationActionPolicyAllow);
     //不允许跳转
-    //decisionHandler(WKNavigationActionPolicyCancel);
+//    decisionHandler(WKNavigationActionPolicyCancel);
 }
 // 页面开始加载时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
@@ -160,12 +165,12 @@
 {
     
 }
-// 页面加载完成之后调用
+// 页面加载完成
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
     
 }
-// 页面加载失败时调用
+// 页面加载失败
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation
 {
     
@@ -179,10 +184,10 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler
 {
     TTDPRINT(@"%@",navigationResponse.response.URL.absoluteString);
-    //允许跳转
+    // 允许跳转
     decisionHandler(WKNavigationResponsePolicyAllow);
-    //不允许跳转
-    //decisionHandler(WKNavigationResponsePolicyCancel);
+    // 不允许跳转
+//    decisionHandler(WKNavigationResponsePolicyCancel);
 }
 
 #pragma mark - WKUIDelegate
@@ -208,6 +213,14 @@
 //    completionHandler();
 //}
 
+#pragma mark - WKScriptMessageHandler
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message
+{
+    if ([message.name isEqualToString:@""]) {
+        
+    }
+}
+
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
@@ -227,6 +240,8 @@
 - (WKWebView *)wkWebView
 {
     if (!_wkWebView) {
+        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+        self.userContentController = configuration.userContentController;
         _wkWebView = [[WKWebView alloc] init];
         _wkWebView.navigationDelegate = self;
 //        _wkWebView.UIDelegate = self;
