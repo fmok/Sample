@@ -10,6 +10,7 @@
 #import "TestViewController.h"
 #import "FMAlertView.h"
 #import "MyPurchaseViewController.h"
+#import "FMH5ViewController_wk.h"
 
 static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr";
 
@@ -42,7 +43,12 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSString *cls = [self.vc.settingArr[indexPath.row] objectForKey:kMeVCClassName];
-    FMBaseViewController *vc = [[NSClassFromString(cls) alloc] init];
+    FMBaseViewController *vc = nil;
+    if ([cls isEqualToString:@"FMH5ViewController_wk"]) {
+        vc = [[FMH5ViewController_wk alloc] initWithAddress:@"https://www.baidu.com"];
+    } else {
+        vc = [[NSClassFromString(cls) alloc] init];
+    }
     vc.title = [self.vc.settingArr[indexPath.row] objectForKey:kMeVCTitle];
     [self.vc.zl_navigationController pushViewController:vc animated:YES];
 }
