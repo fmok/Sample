@@ -44,38 +44,30 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-
+/************************************************************************************
+ Categories
+ ************************************************************************************/
 @interface UIViewController(ZLNavigationController)
 @property (nonatomic, weak, readonly) ZLNavigationController *zl_navigationController;
 @property (nonatomic, assign) BOOL zl_navigationBarHidden;
 @property (nonatomic, assign) BOOL zl_automaticallyAdjustsScrollViewInsets;
 @end
 
-
 @interface UIViewController(ZLNavigationBar)
 @property (nonatomic, weak) UINavigationBar *zl_navigationBar;
 @end
-
 
 @interface UIViewController(ZLNavigationItem)
 @property (nonatomic, weak) UINavigationItem *zl_navigationItem;
 @end
 
 
-@protocol ZLViewControllerContextTransitioning;
-@interface ZLPercentDrivenInteractiveTransition : NSObject
-@property (nonatomic, weak) id<ZLViewControllerContextTransitioning> contextTransitioning;
-
-- (void)startInteractiveTransition;
-- (void)updateInteractiveTransition:(double)percentComplete;
-- (void)finishInteractiveTransition:(CGFloat)percentComplete;
-- (void)cancelInteractiveTransition:(double)percentComplete;
-@end
-
+/************************************************************************************
+ ZLPercentDrivenInteractiveTransition
+ ************************************************************************************/
 @protocol ZLViewControllerAnimatedTransitioning <NSObject>
 @required
 - (CGFloat)transitionDuration;
-
 - (void)pushAnimation:(BOOL)animated withFromViewController:(UIViewController *)fromViewController andToViewController:(UIViewController *)toViewController completion:(ZLCompletionBlock)completedBlock;
 
 - (void)popAnimation:(BOOL)animated withFromViewController:(UIViewController *)fromViewController andToViewController:(UIViewController *)toViewController completion:(ZLCompletionBlock)completedBlock;
@@ -87,7 +79,18 @@ NS_ASSUME_NONNULL_BEGIN
 - (CGFloat)transitionDuration;
 - (void)finishInteractiveTransition;
 - (void)cancelInteractiveTransition;
+@end
+
+@interface ZLPercentDrivenInteractiveTransition : NSObject
+
+@property (nonatomic, weak) id<ZLViewControllerContextTransitioning> contextTransitioning;
+
+- (void)startInteractiveTransition;
+- (void)updateInteractiveTransition:(double)percentComplete;
+- (void)finishInteractiveTransition:(CGFloat)percentComplete;
+- (void)cancelInteractiveTransition:(double)percentComplete;
 
 @end
+
 
 NS_ASSUME_NONNULL_END
