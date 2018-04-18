@@ -6,7 +6,7 @@
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
-#import "UIViewController+ZLNavigationController.h"
+#import "UIViewController+FMNavigationController.h"
 #import <objc/runtime.h>
 
 @implementation UIViewController (FMNavigationController)

@@ -71,8 +71,8 @@
 - (void)setUpNav
 {
     [self configNavBarBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];
-    self.zl_navigationBar.tintColor = [UIColor blackColor];
-    self.zl_navigationBar.titleTextAttributes = @{
+    self.fm_navigationBar.tintColor = [UIColor blackColor];
+    self.fm_navigationBar.titleTextAttributes = @{
                                                   NSFontAttributeName: [UIFont boldSystemFontOfSize:20.f],
                                                   NSForegroundColorAttributeName: [UIColor blackColor]
                                                   };

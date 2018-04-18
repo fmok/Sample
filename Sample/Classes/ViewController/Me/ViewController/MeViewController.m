@@ -47,9 +47,9 @@
 {
     UINavigationItem *item = [[UINavigationItem alloc] init];
     item.title = self.title;
-    [self.zl_navigationBar pushNavigationItem:item animated:NO];
-    [self.view addSubview:self.zl_navigationBar];
-    [self constraintNavigationBar:self.zl_navigationBar];
+    [self.fm_navigationBar pushNavigationItem:item animated:NO];
+    [self.view addSubview:self.fm_navigationBar];
+    [self constraintNavigationBar:self.fm_navigationBar];
 }
 
 #pragma mark - getter & setter

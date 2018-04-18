@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@interface UIViewController (ZLNavigationBar)
+@interface UIViewController (FMNavigationBar)
 
-@property (nonatomic, weak) UINavigationBar *zl_navigationBar;
+@property (nonatomic, weak) UINavigationBar *fm_navigationBar;
 
 @end
 NS_ASSUME_NONNULL_END

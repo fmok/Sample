@@ -33,10 +33,10 @@
         make.top.and.left.and.right.equalTo(weakSelf.view);
         make.height.mas_equalTo(H_TopView_PetDetail);
     }];
-    [self.zl_navigationBar addSubview:self.petDesLabel];
+    [self.fm_navigationBar addSubview:self.petDesLabel];
     [self.petDesLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(weakSelf.zl_navigationBar);
-        make.top.equalTo(weakSelf.zl_navigationBar.mas_bottom).offset(-8.f);
+        make.centerX.equalTo(weakSelf.fm_navigationBar);
+        make.top.equalTo(weakSelf.fm_navigationBar.mas_bottom).offset(-8.f);
     }];
     [self.view addSubview:self.topTabView];
     [self.topTabView mas_makeConstraints:^(MASConstraintMaker *make) {

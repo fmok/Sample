@@ -1,5 +1,5 @@
 //
-//  ZLMaskView.h
+//  FMNavMaskView.h
 //  Sample
 //
 //  Created by wjy on 2018/4/18.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZLMaskView : UIView
+@interface FMNavMaskView : UIView
 
 @end

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZLNavigationBar : UINavigationBar
+@interface FMNavigationBar : UINavigationBar
 
 @end

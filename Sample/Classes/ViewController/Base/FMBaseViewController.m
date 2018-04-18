@@ -33,17 +33,17 @@
     UIBarButtonItem *backBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"top_navigation_back"] style:UIBarButtonItemStylePlain target:self action:@selector(popVC)];
     self.zl_navigationItem.leftBarButtonItems = @[backBtn];
     // 线条颜色
-    self.zl_navigationBar.tintColor = [UIColor whiteColor];
+    self.fm_navigationBar.tintColor = [UIColor whiteColor];
     // 透明度
     if (@available(iOS 11, *)) {
-        [self.zl_navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-        self.zl_navigationBar.shadowImage = [UIImage new];
-        self.zl_navigationBar.translucent = YES;
+        [self.fm_navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+        self.fm_navigationBar.shadowImage = [UIImage new];
+        self.fm_navigationBar.translucent = YES;
     } else {
-        [self.zl_navigationBar setValue:@(0)forKeyPath:@"backgroundView.alpha"];
+        [self.fm_navigationBar setValue:@(0)forKeyPath:@"backgroundView.alpha"];
     }
     // 文字样式
-    self.zl_navigationBar.titleTextAttributes = @{
+    self.fm_navigationBar.titleTextAttributes = @{
                                                   NSFontAttributeName: [UIFont boldSystemFontOfSize:20.f],
                                                   NSForegroundColorAttributeName: [UIColor whiteColor]
                                                   };
@@ -53,31 +53,31 @@
 - (void)configNavBarBackgroundImage:(UIImage *)image
 {
     if (@available(iOS 11, *)) {
-        self.zl_navigationBar.translucent = NO;
+        self.fm_navigationBar.translucent = NO;
     } else {
-        [self.zl_navigationBar setValue:@(1)forKeyPath:@"backgroundView.alpha"];
+        [self.fm_navigationBar setValue:@(1)forKeyPath:@"backgroundView.alpha"];
     }
     UIImage *bgImage = [image resizableImageWithCapInsets:UIEdgeInsetsMake(0, 0, 0, 0) resizingMode:UIImageResizingModeStretch];
-    [self.zl_navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
+    [self.fm_navigationBar setBackgroundImage:bgImage forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)configNavBarOpaque:(BOOL)isOpaque
 {
     if (isOpaque) {
         if (@available(iOS 11, *)) {
-            [self.zl_navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
-            self.zl_navigationBar.shadowImage = nil;
-            self.zl_navigationBar.translucent = NO;
+            [self.fm_navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+            self.fm_navigationBar.shadowImage = nil;
+            self.fm_navigationBar.translucent = NO;
         } else {
-            [self.zl_navigationBar setValue:@(1)forKeyPath:@"backgroundView.alpha"];
+            [self.fm_navigationBar setValue:@(1)forKeyPath:@"backgroundView.alpha"];
         }
     } else {
         if (@available(iOS 11, *)) {
-            [self.zl_navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
-            self.zl_navigationBar.shadowImage = [UIImage new];
-            self.zl_navigationBar.translucent = YES;
+            [self.fm_navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+            self.fm_navigationBar.shadowImage = [UIImage new];
+            self.fm_navigationBar.translucent = YES;
         } else {
-            [self.zl_navigationBar setValue:@(0)forKeyPath:@"backgroundView.alpha"];
+            [self.fm_navigationBar setValue:@(0)forKeyPath:@"backgroundView.alpha"];
         }
     }
 }

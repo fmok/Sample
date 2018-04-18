@@ -1,14 +1,14 @@
 //
-//  ZLMaskView.m
+//  FMNavMaskView.m
 //  Sample
 //
 //  Created by wjy on 2018/4/18.
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
-#import "ZLMaskView.h"
+#import "FMNavMaskView.h"
 
-@implementation ZLMaskView
+@implementation FMNavMaskView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

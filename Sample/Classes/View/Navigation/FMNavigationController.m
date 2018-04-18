@@ -8,8 +8,8 @@
 
 #import "FMNavigationController.h"
 #import <objc/runtime.h>
-#import "ZLNavigationBar.h"
-#import "ZLMaskView.h"
+#import "FMNavigationBar.h"
+#import "FMNavMaskView.h"
 #import "UIViewController+ZLFlag.h"
 #import "ZLPercentDrivenInteractiveTransition.h"
 
@@ -25,7 +25,7 @@
 @property (nonatomic, strong) NSMutableArray *viewControllerStack;
 @property (nonatomic, weak) UIViewController *currentDisplayViewController;
 
-@property (nonatomic, strong) ZLMaskView *transitionMaskView;
+@property (nonatomic, strong) FMNavMaskView *transitionMaskView;
 
 @property (nonatomic, strong, readwrite) UIPanGestureRecognizer *interactiveGestureRecognizer;
 @property (nonatomic, strong, readwrite) UIScreenEdgePanGestureRecognizer *interactiveEdgeGestureRecognizer;
@@ -101,7 +101,7 @@
     // 默认全屏侧拉
     [self setNavInteractivePopGestureType:ZLNavInteractivePopGestureTypeFullScreen];
     
-    self.transitionMaskView = [[ZLMaskView alloc] initWithFrame:self.view.bounds];
+    self.transitionMaskView = [[FMNavMaskView alloc] initWithFrame:self.view.bounds];
     self.transitionMaskView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.transitionMaskView.backgroundColor = [UIColor clearColor];
     self.transitionMaskView.hidden = YES;
@@ -370,13 +370,13 @@
         return;
     }
 
-    [viewController.zl_navigationBar pushNavigationItem:viewController.zl_navigationItem animated:NO];
-    [viewController.view addSubview:viewController.zl_navigationBar];
+    [viewController.fm_navigationBar pushNavigationItem:viewController.zl_navigationItem animated:NO];
+    [viewController.view addSubview:viewController.fm_navigationBar];
     viewController.zl_navigationBarAdded = YES;
 //    [viewController.view layoutIfNeeded];
-    [self constraintNavigationBar:viewController.zl_navigationBar onViewController:viewController];
-//    viewController.zl_navigationBar.frame = CGRectMake(0, 20, CGRectGetWidth(viewController.view.bounds), 44);
-//        viewController.zl_navigationBar.frame = CGRectMake(0, 0, CGRectGetWidth(viewController.view.bounds), 64);
+    [self constraintNavigationBar:viewController.fm_navigationBar onViewController:viewController];
+//    viewController.fm_navigationBar.frame = CGRectMake(0, 20, CGRectGetWidth(viewController.view.bounds), 44);
+//        viewController.fm_navigationBar.frame = CGRectMake(0, 0, CGRectGetWidth(viewController.view.bounds), 64);
     
     if (viewController.zl_automaticallyAdjustsScrollViewInsets) {
         UIScrollView *firstView = viewController.view.subviews.firstObject;
@@ -389,12 +389,12 @@
             
             CGFloat constant = 0;
             if (@available(iOS 11.0, *)) {
-                constant = viewController.zl_navigationBar.intrinsicContentSize.height;
+                constant = viewController.fm_navigationBar.intrinsicContentSize.height;
             } else {
-                constant = viewController.zl_navigationBar.intrinsicContentSize.height + CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
+                constant = viewController.fm_navigationBar.intrinsicContentSize.height + CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
                 if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
                     if (self.presentingViewController && self.modalPresentationStyle == UIModalPresentationFormSheet) {
-                        constant = viewController.zl_navigationBar.intrinsicContentSize.height;
+                        constant = viewController.fm_navigationBar.intrinsicContentSize.height;
                     }
                 }
             }

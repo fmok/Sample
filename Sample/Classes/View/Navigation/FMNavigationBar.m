@@ -6,12 +6,12 @@
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
-#import "ZLNavigationBar.h"
+#import "FMNavigationBar.h"
 
-@interface ZLNavigationBar() <UINavigationBarDelegate>
+@interface FMNavigationBar() <UINavigationBarDelegate>
 @end
 
-@implementation ZLNavigationBar
+@implementation FMNavigationBar
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
