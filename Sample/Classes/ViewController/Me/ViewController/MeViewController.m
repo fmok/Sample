@@ -13,6 +13,7 @@
 #import "MyPurchaseViewController.h"
 #import "FMCalendarViewController.h"
 #import "FMH5ViewController_wk.h"
+#import "FMCardScrollViewController.h"
 
 @interface MeViewController ()
 
@@ -117,6 +118,11 @@
                        @{
                          kMeVCTitle: @"H5_wk",
                          kMeVCClassName: NSStringFromClass([FMH5ViewController_wk class]),
+                         kMeVCLogoStr: @"upDown"
+                         },
+                       @{
+                         kMeVCTitle: @"CardScroll",
+                         kMeVCClassName: NSStringFromClass([FMCardScrollViewController class]),
                          kMeVCLogoStr: @"upDown"
                          },
                        nil];
