@@ -22,9 +22,7 @@
     BOOL _isAnimationInProgress;
 }
 @property (nonatomic, strong, readwrite) NSArray *viewControllers;
-
 @property (nonatomic, strong) NSMutableArray *viewControllerStack;
-
 @property (nonatomic, weak) UIViewController *currentDisplayViewController;
 
 @property (nonatomic, strong) ZLMaskView *transitionMaskView;
