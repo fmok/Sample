@@ -320,7 +320,7 @@
     toAnimation.removedOnCompletion = YES;
     toAnimation.delegate = self;
     [toAnimation setValue:callback forKeyPath:@"callback"];
-    [toViewController.view.layer addAnimation:toAnimation forKey:@"zhoulee.transition.to"];
+    [toViewController.view.layer addAnimation:toAnimation forKey:@"fm.transition.to"];
     
     CABasicAnimation *fromAnimation = [CABasicAnimation animationWithKeyPath:@"position.x"];
     fromAnimation.fromValue = @(CGRectGetWidth(self.view.frame) *.5);
@@ -328,7 +328,7 @@
     fromAnimation.fillMode = kCAFillModeBoth;
     fromAnimation.duration = [self.animatedTransitioning transitionDuration];
     fromAnimation.removedOnCompletion = YES;
-    [fromViewController.view.layer addAnimation:fromAnimation forKey:@"zhoulee.transition.from"];
+    [fromViewController.view.layer addAnimation:fromAnimation forKey:@"fm.transition.from"];
 }
 
 - (void)startPopAnimationWithFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController animated:(BOOL)animated withCompletion:(void(^)(BOOL isCancel))callback {
@@ -346,7 +346,7 @@
     fromAnimation.removedOnCompletion = NO;
     fromAnimation.delegate = self;
     [fromAnimation setValue:callback forKeyPath:@"callback"];
-    [fromViewController.view.layer addAnimation:fromAnimation forKey:@"zhoulee.transition.from"];
+    [fromViewController.view.layer addAnimation:fromAnimation forKey:@"fm.transition.from"];
     
     CABasicAnimation *toAnimation = [CABasicAnimation animationWithKeyPath:@"position.x"];
     toAnimation.fromValue = @(CGRectGetWidth(self.view.frame) * 0.25);
@@ -412,14 +412,14 @@
     NSArray *constraint;
     if (@available(iOS 11.0, *)) {
         UILayoutGuide *safeAreaLayoutGuide = viewController.view.safeAreaLayoutGuide;
-        NSLayoutConstraint *a = [navigationBar.widthAnchor constraintEqualToAnchor:viewController.view.widthAnchor];
-        NSLayoutConstraint *b = [navigationBar.centerXAnchor constraintEqualToAnchor:viewController.view.centerXAnchor constant:0];
-        NSLayoutConstraint *c = [navigationBar.topAnchor constraintEqualToAnchor:safeAreaLayoutGuide.topAnchor constant:0];
+        NSLayoutConstraint *width = [navigationBar.widthAnchor constraintEqualToAnchor:viewController.view.widthAnchor];
+        NSLayoutConstraint *centerX = [navigationBar.centerXAnchor constraintEqualToAnchor:viewController.view.centerXAnchor constant:0];
+        NSLayoutConstraint *top = [navigationBar.topAnchor constraintEqualToAnchor:safeAreaLayoutGuide.topAnchor constant:0];
 
-        constraint = @[a, b, c];
+        constraint = @[width, centerX, top];
     } else {
-        NSLayoutConstraint *a = [NSLayoutConstraint constraintWithItem:navigationBar attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:viewController.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
-        NSLayoutConstraint *b = [NSLayoutConstraint constraintWithItem:navigationBar attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:viewController.view attribute:NSLayoutAttributeRight multiplier:1 constant:0];
+        NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:navigationBar attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:viewController.view attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
+        NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:navigationBar attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:viewController.view attribute:NSLayoutAttributeRight multiplier:1 constant:0];
         CGFloat constant = 0;
         constant = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame);
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
@@ -427,8 +427,8 @@
                 constant = 0;
             }
         }
-        NSLayoutConstraint *c = [NSLayoutConstraint constraintWithItem:navigationBar attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:viewController.view attribute:NSLayoutAttributeTop multiplier:1 constant:constant];
-        constraint = @[a, b, c];
+        NSLayoutConstraint *top = [NSLayoutConstraint constraintWithItem:navigationBar attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:viewController.view attribute:NSLayoutAttributeTop multiplier:1 constant:constant];
+        constraint = @[left, right, top];
     }
     [NSLayoutConstraint activateConstraints:constraint];
 }
