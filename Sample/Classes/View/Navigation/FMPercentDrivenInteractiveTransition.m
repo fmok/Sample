@@ -1,21 +1,21 @@
 //
-//  ZLPercentDrivenInteractiveTransition.m
+//  FMPercentDrivenInteractiveTransition.m
 //  Sample
 //
 //  Created by wjy on 2018/4/18.
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
-#import "ZLPercentDrivenInteractiveTransition.h"
+#import "FMPercentDrivenInteractiveTransition.h"
 
-@interface ZLPercentDrivenInteractiveTransition()
+@interface FMPercentDrivenInteractiveTransition()
 
 @property (nonatomic, assign) CFTimeInterval pausedTime;
 @property (nonatomic, assign) double completeSpeed;
 
 @end
 
-@implementation ZLPercentDrivenInteractiveTransition
+@implementation FMPercentDrivenInteractiveTransition
 
 - (void)startInteractiveTransition {
     [self pauseLayer:[self.contextTransitioning containerView].layer];
@@ -42,7 +42,7 @@
     CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleDisplayLink)];
     [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kZLNavigationControllerPushPopTransitionDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kFMNavigationControllerPushPopTransitionDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [displayLink invalidate];
         containerLayer.timeOffset = 0;
         for (CALayer *subLayer in containerLayer.sublayers) {

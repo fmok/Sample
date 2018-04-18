@@ -1,5 +1,5 @@
 //
-//  ZLPercentDrivenInteractiveTransition.h
+//  FMPercentDrivenInteractiveTransition.h
 //  Sample
 //
 //  Created by wjy on 2018/4/18.
@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
+static CGFloat kFMNavigationControllerPushPopTransitionDuration = .315;
 
 NS_ASSUME_NONNULL_BEGIN
-@protocol ZLViewControllerAnimatedTransitioning <NSObject>
+@protocol FMViewControllerAnimatedTransitioning <NSObject>
 @required
 - (CGFloat)transitionDuration;
 - (void)pushAnimation:(BOOL)animated withFromViewController:(UIViewController *)fromViewController andToViewController:(UIViewController *)toViewController completion:(ZLCompletionBlock)completedBlock;
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)popAnimation:(BOOL)animated withFromViewController:(UIViewController *)fromViewController andToViewController:(UIViewController *)toViewController completion:(ZLCompletionBlock)completedBlock;
 @end
 
-@protocol ZLViewControllerContextTransitioning <NSObject>
+@protocol FMViewControllerContextTransitioning <NSObject>
 @required
 - (UIView *)containerView;
 - (CGFloat)transitionDuration;
@@ -27,9 +27,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cancelInteractiveTransition;
 @end
 
-@interface ZLPercentDrivenInteractiveTransition : NSObject
+@interface FMPercentDrivenInteractiveTransition : NSObject
 
-@property (nonatomic, weak) id<ZLViewControllerContextTransitioning> contextTransitioning;
+@property (nonatomic, weak) id<FMViewControllerContextTransitioning> contextTransitioning;
 
 - (void)startInteractiveTransition;
 - (void)updateInteractiveTransition:(double)percentComplete;

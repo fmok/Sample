@@ -11,12 +11,12 @@
 #import "FMNavigationBar.h"
 #import "FMNavMaskView.h"
 #import "UIViewController+FMFlag.h"
-#import "ZLPercentDrivenInteractiveTransition.h"
+#import "FMPercentDrivenInteractiveTransition.h"
 
 @interface FMNavigationController()<
     UIGestureRecognizerDelegate,
-    ZLViewControllerAnimatedTransitioning,
-    ZLViewControllerContextTransitioning,
+    FMViewControllerAnimatedTransitioning,
+    FMViewControllerContextTransitioning,
     CAAnimationDelegate>
 {
     BOOL _isAnimationInProgress;
@@ -30,10 +30,10 @@
 @property (nonatomic, strong, readwrite) UIPanGestureRecognizer *interactiveGestureRecognizer;
 @property (nonatomic, strong, readwrite) UIScreenEdgePanGestureRecognizer *interactiveEdgeGestureRecognizer;
 
-@property (nonatomic, strong, readwrite) ZLPercentDrivenInteractiveTransition *percentDrivenInteractiveTransition;
+@property (nonatomic, strong, readwrite) FMPercentDrivenInteractiveTransition *percentDrivenInteractiveTransition;
 
-@property (nonatomic, weak) id<ZLViewControllerAnimatedTransitioning> animatedTransitioning;
-@property (nonatomic, weak) id<ZLViewControllerContextTransitioning> contextTransitioning;
+@property (nonatomic, weak) id<FMViewControllerAnimatedTransitioning> animatedTransitioning;
+@property (nonatomic, weak) id<FMViewControllerContextTransitioning> contextTransitioning;
 
 @property (nonatomic, strong) UIView *zl_containerView;
 
@@ -228,7 +228,7 @@
     }
 }
 
-#pragma mark - ZLViewControllerContextTransitioning
+#pragma mark - FMViewControllerContextTransitioning
 - (UIView *)containerView {
     return self.zl_containerView;
 }
@@ -242,9 +242,9 @@
     _isAnimationInProgress = NO;
 }
 
-#pragma mark - ZLViewControllerAnimatedTransitioning
+#pragma mark - FMViewControllerAnimatedTransitioning
 - (CGFloat)transitionDuration {
-    return kZLNavigationControllerPushPopTransitionDuration;
+    return kFMNavigationControllerPushPopTransitionDuration;
 }
 
 - (void)pushAnimation:(BOOL)animated withFromViewController:(UIViewController *)fromViewController andToViewController:(UIViewController *)toViewController completion:(ZLCompletionBlock)completedBlock {
@@ -544,9 +544,9 @@
     return [self.viewControllerStack firstObject];
 }
 
-- (ZLPercentDrivenInteractiveTransition *)percentDrivenInteractiveTransition {
+- (FMPercentDrivenInteractiveTransition *)percentDrivenInteractiveTransition {
     if (!_percentDrivenInteractiveTransition) {
-        _percentDrivenInteractiveTransition = [[ZLPercentDrivenInteractiveTransition alloc] init];
+        _percentDrivenInteractiveTransition = [[FMPercentDrivenInteractiveTransition alloc] init];
         _percentDrivenInteractiveTransition.contextTransitioning = self;
     }
     return _percentDrivenInteractiveTransition;

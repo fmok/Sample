@@ -11,7 +11,7 @@
 #import "UIViewController+FMNavigationBar.h"
 #import "UIViewController+FMNavigationItem.h"
 
-@class ZLPercentDrivenInteractiveTransition;
+@class FMPercentDrivenInteractiveTransition;
 typedef void(^ZLCompletionBlock)(BOOL isCancel);
 
 typedef NS_ENUM(NSInteger, FMNavInteractivePopGestureType) {
@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) UIPanGestureRecognizer *interactiveGestureRecognizer;
 @property (nonatomic, strong, readonly) UIScreenEdgePanGestureRecognizer *interactiveEdgeGestureRecognizer;
-@property (nonatomic, strong, readonly) ZLPercentDrivenInteractiveTransition *percentDrivenInteractiveTransition;
+@property (nonatomic, strong, readonly) FMPercentDrivenInteractiveTransition *percentDrivenInteractiveTransition;
 
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController;
 - (instancetype)initWithViewController:(NSArray<UIViewController *> *)viewControllers;
