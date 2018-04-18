@@ -65,6 +65,7 @@
 		5769D8FC20871E3B00FA0F62 /* FMCardScrollControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5769D8FB20871E3B00FA0F62 /* FMCardScrollControl.m */; };
 		5769D90020871EC100FA0F62 /* CardsScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5769D8FF20871EC100FA0F62 /* CardsScrollView.m */; };
 		5769D90320871EE100FA0F62 /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5769D90220871EE100FA0F62 /* CardView.m */; };
+		5769D9062087348A00FA0F62 /* UIImageView+RoundCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5769D9052087348A00FA0F62 /* UIImageView+RoundCorner.m */; };
 		578320AF206A3B7400E2D67F /* closed.png in Resources */ = {isa = PBXBuildFile; fileRef = 578320A8206A3B7400E2D67F /* closed.png */; };
 		578320B0206A3B7400E2D67F /* closed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 578320A9206A3B7400E2D67F /* closed@2x.png */; };
 		578320B1206A3B7400E2D67F /* closed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 578320AA206A3B7400E2D67F /* closed@3x.png */; };
@@ -260,6 +261,8 @@
 		5769D8FF20871EC100FA0F62 /* CardsScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardsScrollView.m; sourceTree = "<group>"; };
 		5769D90120871EE100FA0F62 /* CardView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		5769D90220871EE100FA0F62 /* CardView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		5769D9042087348A00FA0F62 /* UIImageView+RoundCorner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+RoundCorner.h"; sourceTree = "<group>"; };
+		5769D9052087348A00FA0F62 /* UIImageView+RoundCorner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+RoundCorner.m"; sourceTree = "<group>"; };
 		578320A8206A3B7400E2D67F /* closed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closed.png; sourceTree = "<group>"; };
 		578320A9206A3B7400E2D67F /* closed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closed@2x.png"; sourceTree = "<group>"; };
 		578320AA206A3B7400E2D67F /* closed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closed@3x.png"; sourceTree = "<group>"; };
@@ -1318,6 +1321,8 @@
 				57DED55A2067D23500E24607 /* UIImage+Resize.m */,
 				57C21B822071FD4400F70562 /* UIResponder+Router.h */,
 				57C21B832071FD4400F70562 /* UIResponder+Router.m */,
+				5769D9042087348A00FA0F62 /* UIImageView+RoundCorner.h */,
+				5769D9052087348A00FA0F62 /* UIImageView+RoundCorner.m */,
 			);
 			path = FMCategories;
 			sourceTree = "<group>";
@@ -1694,6 +1699,7 @@
 				57C3D5522068944600E0B8BA /* FMBaseViewController.m in Sources */,
 				5769D8FC20871E3B00FA0F62 /* FMCardScrollControl.m in Sources */,
 				572E6A842063ABD1008114EA /* CardInfoModel.m in Sources */,
+				5769D9062087348A00FA0F62 /* UIImageView+RoundCorner.m in Sources */,
 				57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */,
 				572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */,
 				57C3D5702068C4D300E0B8BA /* CGGeometryAdditions.m in Sources */,

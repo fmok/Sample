@@ -10,14 +10,17 @@
 #import "CardView.h"
 
 #define kCardMaxCount 3
-#define kHorizontalSpacing 25.0f //左右间距
-#define kVerticalSpacting 55.0f //上下间距
-#define kCardSpacting 25.f//卡片距离
+#define kVerticalSpacting_up 0.0f //上间距
+#define kVerticalSpacting_bottom 10.0f //下间距
+#define kCardSpacting 15.f//卡片距离
 
 #define kCGAffineTransformMakeScale(i) CGAffineTransformMakeScale(1-(i > kCardMaxCount?kCardMaxCount:i)*0.05, 1-(i > kCardMaxCount?kCardMaxCount:i)*0.05)
 #define kCGAffineTransformTranslate(i) CGAffineTransformTranslate(cardView.transform, 0, -(i > kCardMaxCount?kCardMaxCount:i)*kCardSpacting)
 
 @interface CardsScrollView()
+{
+    UIPanGestureRecognizer *pan;
+}
 
 // 创建卡片数量，最多三个
 @property (assign, nonatomic) NSInteger itemCount;
@@ -39,11 +42,16 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.contentSize = CGSizeMake(self.ml_width, self.ml_height);
-        
-        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveCards:)];
+        pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(moveCards:)];
         [self addGestureRecognizer:pan];
     }
     return self;
+}
+
+#pragma mark - Public methods
++ (CGFloat)heightForCardScrollView:(NSInteger)count
+{
+    return kCardSpacting*((count>kCardMaxCount?kCardMaxCount:count)-1) + H_CardView + kVerticalSpacting_up + kVerticalSpacting_bottom;
 }
 
 #pragma mark - setter
@@ -51,6 +59,13 @@
 {
     _cards = cards;
     _lastDataIndex = 0;
+    if (_cards.count == 1) {
+        self.scrollEnabled = NO;
+        pan.enabled = NO;
+    } else {
+        self.scrollEnabled = YES;
+        pan.enabled = YES;
+    }
     
     if (_cardViewArray == nil) {
         
@@ -59,10 +74,11 @@
         _itemCount = cardCount;
         
         for (NSInteger i = 0; i < cardCount; i++) {
-            CardView *cardView = [[CardView alloc] initWithFrame:CGRectMake((self.ml_width - (self.ml_width - kHorizontalSpacing * 2))/2.f,
-                                                                            (self.ml_height - (self.ml_height - kVerticalSpacting * 2))/2.f - kCardSpacting/_itemCount,
-                                                                            (self.ml_width - kHorizontalSpacing * 2),
-                                                                            (self.ml_height - kVerticalSpacting * 2-kCardSpacting/_itemCount))];
+            CardView *cardView = [[CardView alloc] initWithFrame:
+                                  CGRectMake((self.ml_width - W_CardView)/2.f,
+                                                                            kVerticalSpacting_up+kCardSpacting*((cardCount>kCardMaxCount?kCardMaxCount:cardCount)-1),
+                                                                            W_CardView,
+                                                                            H_CardView)];
             [self insertSubview:cardView atIndex:0];
             cardView.transform = kCGAffineTransformMakeScale(i);
             cardView.transform = kCGAffineTransformTranslate(i);
@@ -70,7 +86,9 @@
             if (i == 0) {
                 firstCardCenter = cardView.center;
             }
-            lastCardCenter = cardView.center;
+            if (i == cardCount-1) {
+                lastCardCenter = cardView.center;
+            }
             [_cardViewArray addObject:cardView];
         }
     }
@@ -85,8 +103,8 @@
 }
 
 #pragma mark - UIPanGestureRecognizer
-- (void)moveCards:(UIPanGestureRecognizer *)pan {
-    
+- (void)moveCards:(UIPanGestureRecognizer *)pan
+{
 //    CGFloat translate = [pan translationInView:self].x;
     if (pan.state == UIGestureRecognizerStateChanged) {
         
@@ -143,7 +161,7 @@
         cardView.ml_left = left;
     } completion:^(BOOL finished) {
         cardView.alpha = 0;
-        cardView.ml_left = (self.ml_width - (self.ml_width - kHorizontalSpacing * 2))/2.f;
+        cardView.ml_left = (self.ml_width - W_CardView)/2.f;
         
         [_cardViewArray removeObject:cardView];
         [_cardViewArray addObject:cardView];
@@ -210,47 +228,6 @@
         }
     }
     cardView.alpha = 1;
-//    [self changeSubCard:^(BOOL finished) {
-////        CardView *cardView = [_cardViewArray firstObject];
-////        cardView.alpha = 1;
-//        cardView.alpha = 1;
-//    }];
-
-//    [UIView animateWithDuration:0.3 animations:^{
-////        cardView.left = (self.width - (self.width - kHorizontalSpacing * 2))/2.f;
-//
-//
-//    } completion:^(BOOL finished) {
-//        cardView.alpha = 1;
-//        cardView.left = left;
-//
-//        completion(finished);
-//    }];
-
-//    设置最后一张卡牌数据，让后刷新卡牌。
-//    _lastDataIndex = (_cards.count-1) > _lastDataIndex ? _lastDataIndex+1 : 0;
-//    cardView.label.text = _cards[_lastDataIndex];
-//    [cardView setNeedsLayout];
 }
-
-
-#pragma mark -
-//- (void)changeSubCardView
-//{
-//    UIView *cardView = [_cardViewArray firstObject];
-//    NSLog(@"%.2f",cardView.top);
-//    if (_cardViewArray.count > 1) {
-//        for (int i = 1; i < _cardViewArray.count; i++) {
-//            UIView *card = _cardViewArray[i];
-//            if (i == 1) {
-//                card.transform = CGAffineTransformMakeScale(1-(i > 2?2:i)*0.02, 1-(i > 2?2:i)*0.02);
-//                card.transform = CGAffineTransformTranslate(card.transform, 0, (i > 2?2:i)*kCardSpacting/1.5);
-//            } else if(i == 2){
-//                card.transform = CGAffineTransformMakeScale(1-(i > 2?2:i)*0.05, 1-(i > 2?2:i)*0.05);
-//                card.transform = CGAffineTransformTranslate(card.transform, 0, (i > 2?2:i)*kCardSpacting);
-//            }
-//        }
-//    }
-//}
 
 @end

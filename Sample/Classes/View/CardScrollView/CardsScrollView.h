@@ -12,4 +12,6 @@
 
 @property (strong, nonatomic) NSMutableArray *cards;
 
++ (CGFloat)heightForCardScrollView:(NSInteger)count;
+
 @end
