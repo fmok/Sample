@@ -1,16 +1,16 @@
 //
-//  ZLNavigationController.m
-//  ZLNavigationController
+//  FMNavigationController.m
+//  Sample
 //
-//  Created by PatrickChow on 16/7/4.
-//  Copyright © 2016年 ZhouLee. All rights reserved.
+//  Created by wjy on 2018/4/18.
+//  Copyright © 2018年 wjy. All rights reserved.
 //
 
 #import "FMNavigationController.h"
 #import <objc/runtime.h>
 #import "FMNavigationBar.h"
 #import "FMNavMaskView.h"
-#import "UIViewController+ZLFlag.h"
+#import "UIViewController+FMFlag.h"
 #import "ZLPercentDrivenInteractiveTransition.h"
 
 @interface FMNavigationController()<
@@ -99,7 +99,7 @@
     self.interactiveEdgeGestureRecognizer.edges = UIRectEdgeLeft;
     [self.zl_containerView addGestureRecognizer:self.interactiveEdgeGestureRecognizer];
     // 默认全屏侧拉
-    [self setNavInteractivePopGestureType:ZLNavInteractivePopGestureTypeFullScreen];
+    [self setNavInteractivePopGestureType:FMNavInteractivePopGestureTypeFullScreen];
     
     self.transitionMaskView = [[FMNavMaskView alloc] initWithFrame:self.view.bounds];
     self.transitionMaskView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -207,16 +207,16 @@
 }
 
 #pragma mark 设置侧拉方案
-- (void)setNavInteractivePopGestureType:(ZLNavInteractivePopGestureType)type
+- (void)setNavInteractivePopGestureType:(FMNavInteractivePopGestureType)type
 {
     switch (type) {
-        case ZLNavInteractivePopGestureTypeScreenEdgeLeft:
+        case FMNavInteractivePopGestureTypeScreenEdgeLeft:
         {
             self.interactiveGestureRecognizer.enabled = NO;
             self.interactiveEdgeGestureRecognizer.enabled = YES;
         }
             break;
-        case ZLNavInteractivePopGestureTypeFullScreen:
+        case FMNavInteractivePopGestureTypeFullScreen:
         {
             self.interactiveGestureRecognizer.enabled = YES;
             self.interactiveEdgeGestureRecognizer.enabled = NO;
@@ -286,7 +286,7 @@
                                            
                                            [self.zl_containerView bringSubviewToFront:toViewController.view];
                                            // pop 成功，设置为默认 mainType : fullScreen
-                                           [self setNavInteractivePopGestureType:ZLNavInteractivePopGestureTypeFullScreen];
+                                           [self setNavInteractivePopGestureType:FMNavInteractivePopGestureTypeFullScreen];
                                        }
                                        self.transitionMaskView.hidden = YES;
                                        [self.contextTransitioning finishInteractiveTransition];
@@ -362,7 +362,7 @@
         return;
     }
     
-    if (viewController.zl_navigationBarAdded) {
+    if (viewController.fm_navigationBarAdded) {
         return;
     }
 
@@ -370,9 +370,9 @@
         return;
     }
 
-    [viewController.fm_navigationBar pushNavigationItem:viewController.zl_navigationItem animated:NO];
+    [viewController.fm_navigationBar pushNavigationItem:viewController.fm_navigationItem animated:NO];
     [viewController.view addSubview:viewController.fm_navigationBar];
-    viewController.zl_navigationBarAdded = YES;
+    viewController.fm_navigationBarAdded = YES;
 //    [viewController.view layoutIfNeeded];
     [self constraintNavigationBar:viewController.fm_navigationBar onViewController:viewController];
 //    viewController.fm_navigationBar.frame = CGRectMake(0, 20, CGRectGetWidth(viewController.view.bounds), 44);

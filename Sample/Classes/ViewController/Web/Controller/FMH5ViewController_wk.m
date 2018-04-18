@@ -79,10 +79,10 @@
     
     UIBarButtonItem *closeItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeBtn];
     NSArray *h5LeftBarItems = @[closeItem];
-    self.zl_navigationItem.leftBarButtonItems = [self.zl_navigationItem.leftBarButtonItems arrayByAddingObjectsFromArray:h5LeftBarItems];
+    self.fm_navigationItem.leftBarButtonItems = [self.fm_navigationItem.leftBarButtonItems arrayByAddingObjectsFromArray:h5LeftBarItems];
     
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithCustomView:self.shareBtn];
-    self.zl_navigationItem.rightBarButtonItems = @[shareItem];
+    self.fm_navigationItem.rightBarButtonItems = @[shareItem];
     
 }
 

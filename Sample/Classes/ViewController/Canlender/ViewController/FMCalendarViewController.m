@@ -113,7 +113,7 @@ static CGFloat const W_H_TodayBtn = 20.f;
 - (void)setNav
 {
     UIBarButtonItem *todayItem = [[UIBarButtonItem alloc] initWithCustomView:self.todayBtn];
-    self.zl_navigationItem.rightBarButtonItems = @[todayItem];
+    self.fm_navigationItem.rightBarButtonItems = @[todayItem];
 }
 
 

@@ -1,5 +1,5 @@
 //
-//  UIViewController+ZLNavigationItem.h
+//  UIViewController+FMNavigationItem.h
 //  Sample
 //
 //  Created by wjy on 2018/4/18.
@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@interface UIViewController (ZLNavigationItem)
+@interface UIViewController (FMNavigationItem)
 
-@property (nonatomic, weak) UINavigationItem *zl_navigationItem;
+@property (nonatomic, weak) UINavigationItem *fm_navigationItem;
 
 @end
 NS_ASSUME_NONNULL_END

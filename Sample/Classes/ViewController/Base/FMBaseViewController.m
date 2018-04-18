@@ -31,7 +31,7 @@
 {
     // 返回按钮
     UIBarButtonItem *backBtn = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"top_navigation_back"] style:UIBarButtonItemStylePlain target:self action:@selector(popVC)];
-    self.zl_navigationItem.leftBarButtonItems = @[backBtn];
+    self.fm_navigationItem.leftBarButtonItems = @[backBtn];
     // 线条颜色
     self.fm_navigationBar.tintColor = [UIColor whiteColor];
     // 透明度
@@ -89,7 +89,7 @@
 
 - (void)changeNavBarTitle:(NSString *)title
 {
-    self.zl_navigationItem.title = title;
+    self.fm_navigationItem.title = title;
 }
 
 - (void)constraintNavigationBar:(UINavigationBar *)navigationBar

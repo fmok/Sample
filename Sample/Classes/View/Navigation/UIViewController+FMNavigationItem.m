@@ -1,17 +1,17 @@
 //
-//  UIViewController+ZLNavigationItem.m
+//  UIViewController+FMNavigationItem.m
 //  Sample
 //
 //  Created by wjy on 2018/4/18.
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
-#import "UIViewController+ZLNavigationItem.h"
+#import "UIViewController+FMNavigationItem.h"
 #import <objc/runtime.h>
 
-@implementation UIViewController (ZLNavigationItem)
+@implementation UIViewController (FMNavigationItem)
 
-- (UINavigationItem *)zl_navigationItem {
+- (UINavigationItem *)fm_navigationItem {
     UINavigationItem *item = objc_getAssociatedObject(self, _cmd);
     if (!item) {
         item = [[UINavigationItem alloc] init];
@@ -23,8 +23,8 @@
     return item;
 }
 
-- (void)setZl_navigationItem:(UINavigationItem *)zl_navigationItem {
-    objc_setAssociatedObject(self, @selector(zl_navigationItem), zl_navigationItem, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setFm_navigationItem:(UINavigationItem *)fm_navigationItem {
+    objc_setAssociatedObject(self, @selector(fm_navigationItem), fm_navigationItem, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

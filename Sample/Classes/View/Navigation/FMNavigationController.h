@@ -1,22 +1,22 @@
 //
-//  ZLNavigationController.h
-//  ZLNavigationController
+//  FMNavigationController.h
+//  Sample
 //
-//  Created by PatrickChow on 16/7/4.
-//  Copyright © 2016年 ZhouLee. All rights reserved.
+//  Created by wjy on 2018/4/18.
+//  Copyright © 2018年 wjy. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "UIViewController+FMNavigationController.h"
 #import "UIViewController+FMNavigationBar.h"
-#import "UIViewController+ZLNavigationItem.h"
+#import "UIViewController+FMNavigationItem.h"
 
 @class ZLPercentDrivenInteractiveTransition;
 typedef void(^ZLCompletionBlock)(BOOL isCancel);
 
-typedef NS_ENUM(NSInteger, ZLNavInteractivePopGestureType) {
-    ZLNavInteractivePopGestureTypeFullScreen,  // default
-    ZLNavInteractivePopGestureTypeScreenEdgeLeft
+typedef NS_ENUM(NSInteger, FMNavInteractivePopGestureType) {
+    FMNavInteractivePopGestureTypeFullScreen,  // default
+    FMNavInteractivePopGestureTypeScreenEdgeLeft
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)removeViewController:(UIViewController *)viewController;
 /** 侧拉方案，mainType默认为fullScreen（全屏），如有特殊页面切换为edgeLeft（边缘），需要每次进入设置 */
-- (void)setNavInteractivePopGestureType:(ZLNavInteractivePopGestureType)type;
+- (void)setNavInteractivePopGestureType:(FMNavInteractivePopGestureType)type;
 
 @end
 
