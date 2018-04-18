@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [UITabBar appearance].translucent = NO;
-    self.zl_navigationBarHidden = YES;
+    self.fm_navigationBarHidden = YES;
     self.delegate = self;
     [self setUp];
 }

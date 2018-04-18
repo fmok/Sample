@@ -14,9 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol FMViewControllerAnimatedTransitioning <NSObject>
 @required
 - (CGFloat)transitionDuration;
-- (void)pushAnimation:(BOOL)animated withFromViewController:(UIViewController *)fromViewController andToViewController:(UIViewController *)toViewController completion:(ZLCompletionBlock)completedBlock;
+- (void)pushAnimation:(BOOL)animated withFromViewController:(UIViewController *)fromViewController andToViewController:(UIViewController *)toViewController completion:(FMCompletionBlock)completedBlock;
 
-- (void)popAnimation:(BOOL)animated withFromViewController:(UIViewController *)fromViewController andToViewController:(UIViewController *)toViewController completion:(ZLCompletionBlock)completedBlock;
+- (void)popAnimation:(BOOL)animated withFromViewController:(UIViewController *)fromViewController andToViewController:(UIViewController *)toViewController completion:(FMCompletionBlock)completedBlock;
 @end
 
 @protocol FMViewControllerContextTransitioning <NSObject>

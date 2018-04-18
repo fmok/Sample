@@ -31,7 +31,7 @@ static CGFloat const W_H_TodayBtn = 20.f;
     [super viewDidLoad];
     [self configNavBarBackgroundImage:[UIImage imageWithColor:SRGBCOLOR_HEX(0xc14945)]];
     [self setNav];
-    self.zl_automaticallyAdjustsScrollViewInsets = NO;
+    self.fm_automaticallyAdjustsScrollViewInsets = NO;
     self.manager = [LTSCalendarManager new];
     self.manager.eventSource = self.control;
     

@@ -14,8 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIViewController (FMNavigationController)
 
 @property (nonatomic, weak, readonly) FMNavigationController *fm_navigationController;
-@property (nonatomic, assign) BOOL zl_navigationBarHidden;
-@property (nonatomic, assign) BOOL zl_automaticallyAdjustsScrollViewInsets;
+@property (nonatomic, assign) BOOL fm_navigationBarHidden;
+@property (nonatomic, assign) BOOL fm_automaticallyAdjustsScrollViewInsets;
 
 @end
 NS_ASSUME_NONNULL_END

@@ -35,7 +35,7 @@
 @property (nonatomic, weak) id<FMViewControllerAnimatedTransitioning> animatedTransitioning;
 @property (nonatomic, weak) id<FMViewControllerContextTransitioning> contextTransitioning;
 
-@property (nonatomic, strong) UIView *zl_containerView;
+@property (nonatomic, strong) UIView *fm_containerView;
 
 @property (nonatomic, weak, readwrite) UIViewController *topViewController;
 @property (nonatomic, weak, readwrite) UIViewController *rootViewController;
@@ -85,19 +85,19 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.view.frame = [[UIScreen mainScreen] bounds];
     
-    self.zl_containerView = [[UIView alloc] initWithFrame:self.view.bounds];
-    self.zl_containerView.backgroundColor = [UIColor clearColor];
-    self.zl_containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.view addSubview:self.zl_containerView];
+    self.fm_containerView = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.fm_containerView.backgroundColor = [UIColor clearColor];
+    self.fm_containerView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [self.view addSubview:self.fm_containerView];
     
     // 全屏侧拉
     self.interactiveGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNavigationTransition:)];
     self.interactiveGestureRecognizer.delegate = self;
-    [self.zl_containerView addGestureRecognizer:self.interactiveGestureRecognizer];
+    [self.fm_containerView addGestureRecognizer:self.interactiveGestureRecognizer];
     // 边缘侧拉
     self.interactiveEdgeGestureRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNavigationTransition:)];
     self.interactiveEdgeGestureRecognizer.edges = UIRectEdgeLeft;
-    [self.zl_containerView addGestureRecognizer:self.interactiveEdgeGestureRecognizer];
+    [self.fm_containerView addGestureRecognizer:self.interactiveEdgeGestureRecognizer];
     // 默认全屏侧拉
     [self setNavInteractivePopGestureType:FMNavInteractivePopGestureTypeFullScreen];
     
@@ -105,7 +105,7 @@
     self.transitionMaskView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.transitionMaskView.backgroundColor = [UIColor clearColor];
     self.transitionMaskView.hidden = YES;
-    [self.zl_containerView addSubview:self.transitionMaskView];
+    [self.fm_containerView addSubview:self.transitionMaskView];
 }
 
 - (void)viewDidLoad {
@@ -119,7 +119,7 @@
     
     UIView *rootView = rootViewController.view;
     rootView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.zl_containerView addSubview:rootView];
+    [self.fm_containerView addSubview:rootView];
     [self addNavigationBarIfNeededByViewController:rootViewController];
     [rootViewController didMoveToParentViewController:self];
 
@@ -131,7 +131,7 @@
     [self pushViewController:viewController animated:animated completion:nil];
 }
 
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(ZLCompletionBlock __nullable)completedBlock
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(FMCompletionBlock __nullable)completedBlock
 {
     if (!viewController) {
         return;
@@ -149,9 +149,9 @@
     
     UIView *toView = viewController.view;
     toView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    [self.zl_containerView addSubview:toView];
+    [self.fm_containerView addSubview:toView];
     //防止在动画的时候可以点击
-    [self.zl_containerView bringSubviewToFront:self.transitionMaskView];
+    [self.fm_containerView bringSubviewToFront:self.transitionMaskView];
     self.transitionMaskView.hidden = NO;
     
     [self addNavigationBarIfNeededByViewController:viewController];
@@ -172,11 +172,11 @@
     [self popToViewController:viewController animated:animated completion:nil];
 }
 
-- (void)popViewControllerAnimated:(BOOL)animated completion:(ZLCompletionBlock)completedBlock {
+- (void)popViewControllerAnimated:(BOOL)animated completion:(FMCompletionBlock)completedBlock {
     [self popToViewController:self.previousViewController animated:animated completion:completedBlock];
 }
 
-- (void)popToViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(ZLCompletionBlock)completedBlock
+- (void)popToViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(FMCompletionBlock)completedBlock
 {
     if (!viewController) {
         return;
@@ -187,11 +187,11 @@
     _isAnimationInProgress = YES;
     
     [viewController beginAppearanceTransition:YES animated:YES];
-    [self.zl_containerView insertSubview:viewController.view belowSubview:self.currentDisplayViewController.view];
+    [self.fm_containerView insertSubview:viewController.view belowSubview:self.currentDisplayViewController.view];
     [self addNavigationBarIfNeededByViewController:viewController];
     self.transitionMaskView.hidden = NO;
     [self.view bringSubviewToFront:self.transitionMaskView];
-    viewController.view.frame = self.zl_containerView.frame;
+    viewController.view.frame = self.fm_containerView.frame;
     
     [self.animatedTransitioning popAnimation:animated withFromViewController:self.currentDisplayViewController andToViewController:viewController completion:completedBlock];
 }
@@ -230,7 +230,7 @@
 
 #pragma mark - FMViewControllerContextTransitioning
 - (UIView *)containerView {
-    return self.zl_containerView;
+    return self.fm_containerView;
 }
 
 - (void)finishInteractiveTransition {
@@ -247,7 +247,7 @@
     return kFMNavigationControllerPushPopTransitionDuration;
 }
 
-- (void)pushAnimation:(BOOL)animated withFromViewController:(UIViewController *)fromViewController andToViewController:(UIViewController *)toViewController completion:(ZLCompletionBlock)completedBlock {
+- (void)pushAnimation:(BOOL)animated withFromViewController:(UIViewController *)fromViewController andToViewController:(UIViewController *)toViewController completion:(FMCompletionBlock)completedBlock {
     [self addShadowLayerIn:toViewController];
     
     [self startPushAnimationWithFromViewController:fromViewController
@@ -266,7 +266,7 @@
                                     }];
 }
 
-- (void)popAnimation:(BOOL)animated withFromViewController:(UIViewController *)fromViewController andToViewController:(UIViewController *)toViewController completion:(ZLCompletionBlock)completedBlock {
+- (void)popAnimation:(BOOL)animated withFromViewController:(UIViewController *)fromViewController andToViewController:(UIViewController *)toViewController completion:(FMCompletionBlock)completedBlock {
     [self addShadowLayerIn:self.currentDisplayViewController];
     
     [self startPopAnimationWithFromViewController:fromViewController
@@ -284,7 +284,7 @@
                                            self.currentDisplayViewController = toViewController;
                                            [self releaseViewControllersAfterPopToViewController:toViewController];
                                            
-                                           [self.zl_containerView bringSubviewToFront:toViewController.view];
+                                           [self.fm_containerView bringSubviewToFront:toViewController.view];
                                            // pop 成功，设置为默认 mainType : fullScreen
                                            [self setNavInteractivePopGestureType:FMNavInteractivePopGestureTypeFullScreen];
                                        }
@@ -358,7 +358,7 @@
 
 #pragma mark - Private Method
 - (void)addNavigationBarIfNeededByViewController:(UIViewController *)viewController {
-    if (viewController.zl_navigationBarHidden) {
+    if (viewController.fm_navigationBarHidden) {
         return;
     }
     
@@ -378,7 +378,7 @@
 //    viewController.fm_navigationBar.frame = CGRectMake(0, 20, CGRectGetWidth(viewController.view.bounds), 44);
 //        viewController.fm_navigationBar.frame = CGRectMake(0, 0, CGRectGetWidth(viewController.view.bounds), 64);
     
-    if (viewController.zl_automaticallyAdjustsScrollViewInsets) {
+    if (viewController.fm_automaticallyAdjustsScrollViewInsets) {
         UIScrollView *firstView = viewController.view.subviews.firstObject;
         if ([firstView isKindOfClass:[UIWebView class]]) {
             firstView = ((UIWebView *)firstView).scrollView;

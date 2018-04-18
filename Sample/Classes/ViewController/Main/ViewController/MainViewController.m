@@ -23,7 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    [self configNavBarBackgroundImage:[UIImage imageNamed:@"nav.png"]];
-    self.zl_automaticallyAdjustsScrollViewInsets = NO;
+    self.fm_automaticallyAdjustsScrollViewInsets = NO;
     
     WS(weakSelf);
     [self.view addSubview:self.headerView];

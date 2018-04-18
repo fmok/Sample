@@ -11,7 +11,7 @@
 
 @implementation UIViewController (FMNavigationController)
 
-@dynamic fm_navigationController,zl_automaticallyAdjustsScrollViewInsets;
+@dynamic fm_navigationController,fm_automaticallyAdjustsScrollViewInsets;
 
 - (FMNavigationController *)fm_navigationController {
     UIViewController *parentViewController = self.parentViewController;
@@ -21,15 +21,15 @@
     return (FMNavigationController *)parentViewController;
 }
 
-- (BOOL)zl_navigationBarHidden {
+- (BOOL)fm_navigationBarHidden {
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
-- (void)setZl_navigationBarHidden:(BOOL)zl_navigationBarHidden {
-    objc_setAssociatedObject(self, @selector(zl_navigationBarHidden), @(zl_navigationBarHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setFm_navigationBarHidden:(BOOL)fm_navigationBarHidden {
+    objc_setAssociatedObject(self, @selector(fm_navigationBarHidden), @(fm_navigationBarHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (BOOL)zl_automaticallyAdjustsScrollViewInsets {
+- (BOOL)fm_automaticallyAdjustsScrollViewInsets {
     id obj = objc_getAssociatedObject(self, _cmd);
     if (obj == nil) {
         return YES;
@@ -37,8 +37,8 @@
     return [obj boolValue];
 }
 
-- (void)setZl_automaticallyAdjustsScrollViewInsets:(BOOL)zl_automaticallyAdjustsScrollViewInsets {
-    objc_setAssociatedObject(self, @selector(zl_automaticallyAdjustsScrollViewInsets), @(zl_automaticallyAdjustsScrollViewInsets), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setFm_automaticallyAdjustsScrollViewInsets:(BOOL)fm_automaticallyAdjustsScrollViewInsets {
+    objc_setAssociatedObject(self, @selector(fm_automaticallyAdjustsScrollViewInsets), @(fm_automaticallyAdjustsScrollViewInsets), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end

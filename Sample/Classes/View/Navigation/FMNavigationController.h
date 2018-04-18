@@ -12,7 +12,7 @@
 #import "UIViewController+FMNavigationItem.h"
 
 @class FMPercentDrivenInteractiveTransition;
-typedef void(^ZLCompletionBlock)(BOOL isCancel);
+typedef void(^FMCompletionBlock)(BOOL isCancel);
 
 typedef NS_ENUM(NSInteger, FMNavInteractivePopGestureType) {
     FMNavInteractivePopGestureTypeFullScreen,  // default
@@ -34,9 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)initWithViewController:(NSArray<UIViewController *> *)viewControllers;
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated;
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(ZLCompletionBlock __nullable)completedBlock;
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated completion:(FMCompletionBlock __nullable)completedBlock;
 - (void)popViewControllerAnimated:(BOOL)animated;
-- (void)popViewControllerAnimated:(BOOL)animated completion:(ZLCompletionBlock)completedBlock;
+- (void)popViewControllerAnimated:(BOOL)animated completion:(FMCompletionBlock)completedBlock;
 - (void)popToViewController:(UIViewController *)viewController animated:(BOOL)animated;
 - (void)popToRootViewControllerAnimated:(BOOL)animated;
 
