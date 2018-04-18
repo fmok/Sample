@@ -10,14 +10,9 @@
 #import "CardView.h"
 
 #define kCardMaxCount 3
-
 #define kHorizontalSpacing 25.0f //左右间距
-
 #define kVerticalSpacting 55.0f //上下间距
-
 #define kCardSpacting 25.f//卡片距离
-
-#define UIColorFromHexA(hexValue, a) [UIColor colorWithRed:((float)((hexValue & 0xFF0000) >> 16))/255.0 green:((float)((hexValue & 0xFF00) >> 8))/255.0 blue:((float)(hexValue & 0xFF))/255.0 alpha:a]
 
 #define kCGAffineTransformMakeScale(i) CGAffineTransformMakeScale(1-(i > kCardMaxCount?kCardMaxCount:i)*0.05, 1-(i > kCardMaxCount?kCardMaxCount:i)*0.05)
 #define kCGAffineTransformTranslate(i) CGAffineTransformTranslate(cardView.transform, 0, -(i > kCardMaxCount?kCardMaxCount:i)*kCardSpacting)
