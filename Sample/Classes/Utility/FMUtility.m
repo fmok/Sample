@@ -43,7 +43,7 @@
     return filename;
 }
 
-+ (ZLNavigationController *)topNav
++ (FMNavigationController *)topNav
 {
     UIViewController *topController = nil;
     for (UIWindow *window in [[UIApplication sharedApplication] windows]) {
@@ -58,8 +58,8 @@
         topController = topController.presentedViewController;
     }
     
-    if ([topController isKindOfClass:[ZLNavigationController class]]) {
-        return (ZLNavigationController *)topController;
+    if ([topController isKindOfClass:[FMNavigationController class]]) {
+        return (FMNavigationController *)topController;
     }
     return nil;
 }

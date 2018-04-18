@@ -9,16 +9,16 @@
 #import "UIViewController+ZLNavigationController.h"
 #import <objc/runtime.h>
 
-@implementation UIViewController (ZLNavigationController)
+@implementation UIViewController (FMNavigationController)
 
-@dynamic zl_navigationController,zl_automaticallyAdjustsScrollViewInsets;
+@dynamic fm_navigationController,zl_automaticallyAdjustsScrollViewInsets;
 
-- (ZLNavigationController *)zl_navigationController {
+- (FMNavigationController *)fm_navigationController {
     UIViewController *parentViewController = self.parentViewController;
-    while (parentViewController && ![parentViewController isKindOfClass:[ZLNavigationController class]]) {
+    while (parentViewController && ![parentViewController isKindOfClass:[FMNavigationController class]]) {
         parentViewController = parentViewController.parentViewController;
     }
-    return (ZLNavigationController *)parentViewController;
+    return (FMNavigationController *)parentViewController;
 }
 
 - (BOOL)zl_navigationBarHidden {

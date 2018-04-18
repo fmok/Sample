@@ -115,7 +115,7 @@
 
 - (void)popVC
 {
-    [self.zl_navigationController popViewControllerAnimated:YES];
+    [self.fm_navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - getter & setter

@@ -20,7 +20,7 @@ typedef NS_ENUM(NSInteger, ZLNavInteractivePopGestureType) {
 };
 
 NS_ASSUME_NONNULL_BEGIN
-@interface ZLNavigationController : UIViewController
+@interface FMNavigationController : UIViewController
 
 @property (nonatomic, strong, readonly) NSArray *viewControllers;
 @property (nonatomic, weak, readonly) UIViewController *topViewController;

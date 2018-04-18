@@ -50,7 +50,7 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
         vc = [[NSClassFromString(cls) alloc] init];
     }
     vc.title = [self.vc.settingArr[indexPath.row] objectForKey:kMeVCTitle];
-    [self.vc.zl_navigationController pushViewController:vc animated:YES];
+    [self.vc.fm_navigationController pushViewController:vc animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

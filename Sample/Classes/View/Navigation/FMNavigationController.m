@@ -6,14 +6,14 @@
 //  Copyright © 2016年 ZhouLee. All rights reserved.
 //
 
-#import "ZLNavigationController.h"
+#import "FMNavigationController.h"
 #import <objc/runtime.h>
 #import "ZLNavigationBar.h"
 #import "ZLMaskView.h"
 #import "UIViewController+ZLFlag.h"
 #import "ZLPercentDrivenInteractiveTransition.h"
 
-@interface ZLNavigationController()<
+@interface FMNavigationController()<
     UIGestureRecognizerDelegate,
     ZLViewControllerAnimatedTransitioning,
     ZLViewControllerContextTransitioning,
@@ -43,7 +43,7 @@
 @end
 
 
-@implementation ZLNavigationController
+@implementation FMNavigationController
 
 #pragma mark - Instance methods
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController {

@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class ZLNavigationController;
+@class FMNavigationController;
 
 NS_ASSUME_NONNULL_BEGIN
-@interface UIViewController (ZLNavigationController)
+@interface UIViewController (FMNavigationController)
 
-@property (nonatomic, weak, readonly) ZLNavigationController *zl_navigationController;
+@property (nonatomic, weak, readonly) FMNavigationController *fm_navigationController;
 @property (nonatomic, assign) BOOL zl_navigationBarHidden;
 @property (nonatomic, assign) BOOL zl_automaticallyAdjustsScrollViewInsets;
 

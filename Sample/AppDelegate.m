@@ -19,7 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     FMTabBarViewController *tabVC = [[FMTabBarViewController alloc] initWithNibName:nil bundle:nil];
-    ZLNavigationController *nav = [[ZLNavigationController alloc] initWithRootViewController:tabVC];
+    FMNavigationController *nav = [[FMNavigationController alloc] initWithRootViewController:tabVC];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

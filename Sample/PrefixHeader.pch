@@ -15,7 +15,7 @@
 #import "FMURLMacro.h"
 #import "FMColorMacro.h"
 #import "FMSizeNumMacro.h"
-#import "ZLNavigationController.h"
+#import "FMNavigationController.h"
 #import "UIView+Utilities.h"
 
 #import "Masonry.h"

@@ -131,7 +131,7 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
 {
     MainViewController *vc = [[MainViewController alloc] init];
 //    vc.title = [NSString stringWithFormat:@"%@", @(indexPath.row)];
-    [self.vc.zl_navigationController pushViewController:vc animated:YES];
+    [self.vc.fm_navigationController pushViewController:vc animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

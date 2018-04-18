@@ -58,7 +58,7 @@ static NSString *const kCollectionViewCellReusedIdentifierStr = @"kCollectionVie
     TTDPRINT(@"\n*** %@ - %@ ***\n", @(indexPath.section), @(indexPath.item));
     BuyDetailViewController *vc = [[BuyDetailViewController alloc] init];
     vc.title = @"双鱼座·风向";
-    [self.vc.zl_navigationController pushViewController:vc animated:YES];
+    [self.vc.fm_navigationController pushViewController:vc animated:YES];
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
@@ -124,7 +124,7 @@ static NSString *const kCollectionViewCellReusedIdentifierStr = @"kCollectionVie
 {
     TTDPRINT(@"签到");
     TestViewController *vc = [[TestViewController alloc] init];
-    [self.vc.zl_navigationController pushViewController:vc animated:YES];
+    [self.vc.fm_navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - CollectionSectionHeaderViewDelegate

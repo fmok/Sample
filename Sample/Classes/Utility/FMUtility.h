@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ZLNavigationController.h"
+#import "FMNavigationController.h"
 
 @interface FMUtility : NSObject
 
@@ -15,6 +15,6 @@
 + (NSString *)md5Hash:(NSString *)content;
 + (NSString *)refreshNameWithKey:(NSString *)key;
 
-+ (ZLNavigationController *)topNav;
++ (FMNavigationController *)topNav;
 
 @end
