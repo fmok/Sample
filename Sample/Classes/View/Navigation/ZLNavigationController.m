@@ -7,85 +7,11 @@
 //
 
 #import "ZLNavigationController.h"
-
 #import <objc/runtime.h>
-
-static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
-
-@interface ZLNavigationBar: UINavigationBar <UINavigationBarDelegate>
-@end
-
-@implementation ZLNavigationBar
-
-- (instancetype)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.delegate = self;
-        self.translucent = NO;
-    }
-    return self;
-}
-
-- (UIBarPosition)barPosition {
-    return UIBarPositionTopAttached;
-}
-
-- (UIBarPosition)positionForBar:(id<UIBarPositioning>)bar {
-    return UIBarPositionTopAttached;
-}
-
-- (CGSize)intrinsicContentSize {
-    if (@available(iOS 11.0, *)) {
-        if (self.prefersLargeTitles) {
-            UIFont *largeTitleFont = self.largeTitleTextAttributes[NSFontAttributeName];
-            if (largeTitleFont) {
-                return CGSizeMake(0, 44 + round(largeTitleFont.lineHeight));
-            }
-            return CGSizeMake(0, 96);
-        }
-    }
-    return CGSizeMake(0, 44);
-}
-
-@end
-
-
-@interface ZLMaskView : UIView
-
-@end
-
-@implementation ZLMaskView
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFliter)];
-        [self addGestureRecognizer:tap];
-    }
-    return self;
-}
-
-
-- (void)tapFliter {}
-@end
-
-@interface UIViewController(ZLFlag)
-@property (nonatomic, assign) BOOL zl_navigationBarAdded;
-@end
-
-@implementation UIViewController (ZLFlag)
-@dynamic zl_navigationBarAdded;
-
-- (BOOL)zl_navigationBarAdded {
-    return [objc_getAssociatedObject(self, _cmd) boolValue];
-}
-
-- (void)setZl_navigationBarAdded:(BOOL)zl_navigationBarAdded {
-        objc_setAssociatedObject(self, @selector(zl_navigationBarAdded), @(zl_navigationBarAdded), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-@end
+#import "ZLNavigationBar.h"
+#import "ZLMaskView.h"
+#import "UIViewController+ZLFlag.h"
+#import "ZLPercentDrivenInteractiveTransition.h"
 
 @interface ZLNavigationController()<
     UIGestureRecognizerDelegate,
@@ -121,11 +47,7 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
 
 @implementation ZLNavigationController
 
-- (void)dealloc {
-    self.viewControllerStack = nil;
-    self.viewControllers = nil;
-}
-
+#pragma mark - Instance methods
 - (instancetype)initWithRootViewController:(UIViewController *)rootViewController {
     self = [super init];
     if (self) {
@@ -152,6 +74,12 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
         }];
     }
     return self;
+}
+
+#pragma mark - Life cycle
+- (void)dealloc {
+    self.viewControllerStack = nil;
+    self.viewControllers = nil;
 }
 
 - (void)loadView {
@@ -186,7 +114,7 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     [super viewDidLoad];
     UIViewController *rootViewController = self.viewControllerStack.lastObject;
     
-    //    [rootViewController willMoveToParentViewController:self];
+//    [rootViewController willMoveToParentViewController:self];
     if (!rootViewController.parentViewController) {
         [self addChildViewController:rootViewController];
     }
@@ -199,29 +127,7 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
 
 }
 
-#pragma mark - Autorotation support
-- (BOOL)shouldAutorotate {
-    return YES;
-}
-
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-- (void)removeViewController:(UIViewController *)viewController {
-    if (viewController == self.currentDisplayViewController) {
-        return;
-    }
-    if ([self.viewControllerStack containsObject:viewController]) {
-         [self.viewControllerStack removeObject:viewController];
-        [viewController removeFromParentViewController];
-    }
-}
-
-- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
-    return UIStatusBarAnimationNone;
-}
-
+#pragma mark - Public methods
 #pragma mark Push & Pop Method
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     [self pushViewController:viewController animated:animated completion:nil];
@@ -292,6 +198,38 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     [self.animatedTransitioning popAnimation:animated withFromViewController:self.currentDisplayViewController andToViewController:viewController completion:completedBlock];
 }
 
+- (void)removeViewController:(UIViewController *)viewController {
+    if (viewController == self.currentDisplayViewController) {
+        return;
+    }
+    if ([self.viewControllerStack containsObject:viewController]) {
+        [self.viewControllerStack removeObject:viewController];
+        [viewController removeFromParentViewController];
+    }
+}
+
+#pragma mark 设置侧拉方案
+- (void)setNavInteractivePopGestureType:(ZLNavInteractivePopGestureType)type
+{
+    switch (type) {
+        case ZLNavInteractivePopGestureTypeScreenEdgeLeft:
+        {
+            self.interactiveGestureRecognizer.enabled = NO;
+            self.interactiveEdgeGestureRecognizer.enabled = YES;
+        }
+            break;
+        case ZLNavInteractivePopGestureTypeFullScreen:
+        {
+            self.interactiveGestureRecognizer.enabled = YES;
+            self.interactiveEdgeGestureRecognizer.enabled = NO;
+        }
+            break;
+            
+        default:
+            break;
+    }
+}
+
 #pragma mark - ZLViewControllerContextTransitioning
 - (UIView *)containerView {
     return self.zl_containerView;
@@ -341,7 +279,7 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
                                            [toViewController beginAppearanceTransition:NO animated:NO];
                                            [toViewController.view removeFromSuperview];
                                            [toViewController endAppearanceTransition];
-                                       }else {
+                                       } else {
                                            [self.currentDisplayViewController.view removeFromSuperview];
                                            [self.currentDisplayViewController removeFromParentViewController];
                                            [toViewController endAppearanceTransition];
@@ -393,14 +331,6 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     fromAnimation.duration = [self.animatedTransitioning transitionDuration];
     fromAnimation.removedOnCompletion = YES;
     [fromViewController.view.layer addAnimation:fromAnimation forKey:@"zhoulee.transition.from"];
-    
-//    CABasicAnimation *maskAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-//    maskAnimation.fromValue = @(0);
-//    maskAnimation.toValue = @(0);
-//    maskAnimation.fillMode = kCAFillModeBoth;
-//    maskAnimation.duration = [self.animatedTransitioning transitionDuration];
-//    maskAnimation.removedOnCompletion = YES;
-//    [self.transitionMaskView.layer addAnimation:maskAnimation forKey:@"zhoulee.transition.opacity"];
 }
 
 - (void)startPopAnimationWithFromViewController:(UIViewController *)fromViewController toViewController:(UIViewController *)toViewController animated:(BOOL)animated withCompletion:(void(^)(BOOL isCancel))callback {
@@ -426,15 +356,6 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     toAnimation.fillMode = kCAFillModeBoth;
     toAnimation.duration = [self.animatedTransitioning transitionDuration];
     toAnimation.removedOnCompletion = YES;
-    [toViewController.view.layer addAnimation:toAnimation forKey:@"zhoulee.transition.to"];
-    
-//    CABasicAnimation *maskAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-//    maskAnimation.fromValue = @(.4f);
-//    maskAnimation.toValue = @(0);
-//    maskAnimation.fillMode = kCAFillModeBoth;
-//    maskAnimation.duration = [self.animatedTransitioning transitionDuration];
-//    maskAnimation.removedOnCompletion = YES;
-//    [self.transitionMaskView.layer addAnimation:maskAnimation forKey:@"zhoulee.transition.opacity"];
 }
 
 #pragma mark - Private Method
@@ -455,12 +376,9 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     [viewController.view addSubview:viewController.zl_navigationBar];
     viewController.zl_navigationBarAdded = YES;
 //    [viewController.view layoutIfNeeded];
-     [self constraintNavigationBar:viewController.zl_navigationBar onViewController:viewController];
+    [self constraintNavigationBar:viewController.zl_navigationBar onViewController:viewController];
 //    viewController.zl_navigationBar.frame = CGRectMake(0, 20, CGRectGetWidth(viewController.view.bounds), 44);
 //        viewController.zl_navigationBar.frame = CGRectMake(0, 0, CGRectGetWidth(viewController.view.bounds), 64);
-    
-    
-    
     
     if (viewController.zl_automaticallyAdjustsScrollViewInsets) {
         UIScrollView *firstView = viewController.view.subviews.firstObject;
@@ -517,10 +435,6 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     [NSLayoutConstraint activateConstraints:constraint];
 }
 
-- (UIViewController *)rootViewController {
-    return [self.viewControllerStack firstObject];
-}
-
 - (UIViewController *)previousViewController {
     return [self previousViewControllerByViewController:self.currentDisplayViewController];
 }
@@ -532,7 +446,7 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     NSUInteger index = [self.viewControllerStack indexOfObject:viewController];
     if (index) {
         return [self.viewControllerStack objectAtIndex:index - 1];
-    }else {
+    } else {
         return nil;
     }
 }
@@ -585,18 +499,32 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         [self popViewControllerAnimated:YES];
         [self.percentDrivenInteractiveTransition startInteractiveTransition];
-    }else if (recognizer.state == UIGestureRecognizerStateChanged) {
+    } else if (recognizer.state == UIGestureRecognizerStateChanged) {
         [self.percentDrivenInteractiveTransition updateInteractiveTransition:percent];
-    }else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
+    } else if (recognizer.state == UIGestureRecognizerStateEnded || recognizer.state == UIGestureRecognizerStateCancelled) {
         CGFloat velocity = [recognizer velocityInView:self.view].x;
         if (percent > 0.2 || velocity > 100.0f) {
             [self.percentDrivenInteractiveTransition finishInteractiveTransition:percent];
-        }else {
+        } else {
             [self.percentDrivenInteractiveTransition cancelInteractiveTransition:percent];
         }
     }
 }
-#pragma mark -
+
+#pragma mark - Autorotation support
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+#pragma mark - StatusBar Related
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+    return UIStatusBarAnimationNone;
+}
+
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return self.currentDisplayViewController.preferredStatusBarStyle;
 }
@@ -605,13 +533,17 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     return self.currentDisplayViewController.prefersStatusBarHidden;
 }
 
-#pragma mark - Properties Getter
+#pragma mark - Properties Getters
 - (NSArray *)viewControllers {
     return [NSArray arrayWithArray:self.viewControllerStack];
 }
 
 - (UIViewController *)topViewController {
     return self.currentDisplayViewController;
+}
+
+- (UIViewController *)rootViewController {
+    return [self.viewControllerStack firstObject];
 }
 
 - (ZLPercentDrivenInteractiveTransition *)percentDrivenInteractiveTransition {
@@ -622,166 +554,6 @@ static CGFloat kZLNavigationControllerPushPopTransitionDuration = .315;
     return _percentDrivenInteractiveTransition;
 }
 
-#pragma mark - Public methods
-- (void)setNavInteractivePopGestureType:(ZLNavInteractivePopGestureType)type
-{
-    switch (type) {
-        case ZLNavInteractivePopGestureTypeScreenEdgeLeft:
-        {
-            self.interactiveGestureRecognizer.enabled = NO;
-            self.interactiveEdgeGestureRecognizer.enabled = YES;
-        }
-            break;
-        case ZLNavInteractivePopGestureTypeFullScreen:
-        {
-            self.interactiveGestureRecognizer.enabled = YES;
-            self.interactiveEdgeGestureRecognizer.enabled = NO;
-        }
-            break;
-            
-        default:
-            break;
-    }
-}
-
 @end
 
-#pragma mark -
-@implementation UIViewController(ZLNavigationController)
-@dynamic zl_navigationController,zl_automaticallyAdjustsScrollViewInsets;
-
-- (ZLNavigationController *)zl_navigationController {
-    UIViewController *parentViewController = self.parentViewController;
-    while (parentViewController && ![parentViewController isKindOfClass:[ZLNavigationController class]]) {
-        parentViewController = parentViewController.parentViewController;
-    }
-    return (ZLNavigationController *)parentViewController;
-}
-
-- (BOOL)zl_navigationBarHidden {
-    return [objc_getAssociatedObject(self, _cmd) boolValue];
-}
-
-- (void)setZl_navigationBarHidden:(BOOL)zl_navigationBarHidden {
-    objc_setAssociatedObject(self, @selector(zl_navigationBarHidden), @(zl_navigationBarHidden), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (BOOL)zl_automaticallyAdjustsScrollViewInsets {
-    id obj = objc_getAssociatedObject(self, _cmd);
-    if (obj == nil) {
-        return YES;
-    }
-    return [obj boolValue];
-}
-
-- (void)setZl_automaticallyAdjustsScrollViewInsets:(BOOL)zl_automaticallyAdjustsScrollViewInsets {
-    objc_setAssociatedObject(self, @selector(zl_automaticallyAdjustsScrollViewInsets), @(zl_automaticallyAdjustsScrollViewInsets), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-@end
-
-@implementation UIViewController(ZLNavigationBar)
-- (UINavigationBar *)zl_navigationBar {
-    UINavigationBar *navigationBar = objc_getAssociatedObject(self, _cmd);
-    if (!navigationBar) {
-        navigationBar = [[ZLNavigationBar alloc] initWithFrame:
-                         CGRectZero];
-//        navigationBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        objc_setAssociatedObject(self, _cmd, navigationBar, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    return navigationBar;
-}
-
-- (void)setZl_navigationBar:(UINavigationBar *)zl_navigationBar {
-    objc_setAssociatedObject(self, @selector(zl_navigationBar), zl_navigationBar, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-@end
-
-@implementation UIViewController (ZLNavigationItem)
-
-- (UINavigationItem *)zl_navigationItem {
-    UINavigationItem *item = objc_getAssociatedObject(self, _cmd);
-    if (!item) {
-        item = [[UINavigationItem alloc] init];
-        if (self.title) {
-            item.title = self.title;
-        }
-        objc_setAssociatedObject(self, _cmd, item, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    return item;
-}
-
-- (void)setZl_navigationItem:(UINavigationItem *)zl_navigationItem {
-    objc_setAssociatedObject(self, @selector(zl_navigationItem), zl_navigationItem, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-@end
-
-
-@interface ZLPercentDrivenInteractiveTransition()
-
-@property (nonatomic, assign) CFTimeInterval pausedTime;
-
-@property (nonatomic, assign) double completeSpeed;
-@end
-
-@implementation ZLPercentDrivenInteractiveTransition
-- (void)startInteractiveTransition {
-    [self pauseLayer:[self.contextTransitioning containerView].layer];
-}
-
-- (void)updateInteractiveTransition:(double)percentComplete {
-    [self.contextTransitioning containerView].layer.timeOffset =  self.pausedTime + [self.contextTransitioning transitionDuration] * percentComplete;
-}
-
-- (void)finishInteractiveTransition:(CGFloat)percentComplete {
-    [self resumeLayer:[self.contextTransitioning containerView].layer];
-//    CGFloat delay = [self.contextTransitioning transitionDuration] * (1 -  percentComplete) + 0.05;
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self.contextTransitioning finishInteractiveTransition];
-//    });
-}
-
-- (void)cancelInteractiveTransition:(double)percentComplete {
-    CALayer *containerLayer = [self.contextTransitioning containerView].layer;
-    containerLayer.fillMode = kCAFillModeBoth;
-    
-    self.completeSpeed = percentComplete>0.0?percentComplete:0.0;
-    
-    CADisplayLink *displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleDisplayLink)];
-    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(kZLNavigationControllerPushPopTransitionDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [displayLink invalidate];
-        containerLayer.timeOffset = 0;
-        for (CALayer *subLayer in containerLayer.sublayers) {
-            [subLayer removeAllAnimations];
-        }
-        containerLayer.speed = 1.0;
-    });
-}
-
-- (void)handleDisplayLink {
-    double timeOffset = [self.contextTransitioning containerView].layer.timeOffset;
-    timeOffset -= self.completeSpeed/30.0;
-    [self.contextTransitioning containerView].layer.timeOffset = timeOffset;
-}
-
-#pragma mark - Handle Layer
-- (void)pauseLayer:(CALayer*)layer {
-    CFTimeInterval pausedTime = [layer convertTime:CACurrentMediaTime() fromLayer:nil];
-    layer.speed = 0.0;
-    layer.timeOffset = pausedTime;
-    self.pausedTime = pausedTime;
-}
-
-- (void)resumeLayer:(CALayer*)layer {
-    CFTimeInterval pausedTime = [layer timeOffset];
-    layer.speed = 1.0;
-    layer.timeOffset = 0.0;
-    layer.beginTime = 0.0;
-    CFTimeInterval timeSincePause = [layer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
-    layer.beginTime = timeSincePause;
-}
-@end
 
