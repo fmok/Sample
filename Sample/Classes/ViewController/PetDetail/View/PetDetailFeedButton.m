@@ -32,6 +32,7 @@
 #pragma mark - Public methods
 - (void)feedButtonShakeAnimation
 {
+    self.userInteractionEnabled = NO;
     [self.layer removeAllAnimations];
     
     CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
@@ -64,7 +65,7 @@
     [self.layer addAnimation:pathAnimation forKey:@"pathAnimation"];
     
     CAKeyframeAnimation *scaleX=[CAKeyframeAnimation animationWithKeyPath:@"transform.scale.x"];
-    scaleX.values = @[@1.0, @1.1, @1.0];
+    scaleX.values = @[@1.0, @1.2, @1.0];
     scaleX.keyTimes = @[@0.0, @0.5,@1.0];
     scaleX.repeatCount = MAXFLOAT;
     scaleX.autoreverses = YES;
@@ -73,7 +74,7 @@
     [self.layer addAnimation:scaleX forKey:@"scaleX"];
     
     CAKeyframeAnimation *scaleY=[CAKeyframeAnimation animationWithKeyPath:@"transform.scale.y"];
-    scaleY.values = @[@1.0, @1.1, @1.0];
+    scaleY.values = @[@1.0, @1.2, @1.0];
     scaleY.keyTimes = @[@0.0, @0.5,@1.0];
     scaleY.repeatCount = MAXFLOAT;
     scaleY.autoreverses = YES;
@@ -86,6 +87,7 @@
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
     [self addFeedButtonWaveAnimation];
+    self.userInteractionEnabled = YES;
 }
 
 
