@@ -9,12 +9,8 @@
 #import "PurchaseRecordsViewController.h"
 #import "PulledTableView.h"
 
-typedef NS_ENUM(NSInteger, PurchaseRecordsScrollType) {
-    PurchaseRecordsScrollTypeAdd,
-    PurchaseRecordsScrollTypeMul
-};
-
-CGFloat const step = 0.8;
+static CGFloat const step = 0.8;
+static CGFloat const cellHeight = 30.f;
 
 @interface PurchaseRecordsViewController ()<
     UITableViewDelegate,
@@ -22,8 +18,8 @@ CGFloat const step = 0.8;
 {
     CADisplayLink *_link;
     CGFloat distance;
-    NSArray *testArr;
-    PurchaseRecordsScrollType currentType;
+    NSMutableArray *testArr;
+    BOOL isNeedScroll;
 }
 @property (nonatomic, strong) PulledTableView *purchaseRecordsList;
 
@@ -47,8 +43,8 @@ CGFloat const step = 0.8;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     distance = 0;
-    currentType = PurchaseRecordsScrollTypeAdd;
-    testArr = @[@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20];
+    testArr = [NSMutableArray arrayWithArray:@[@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20]];
+//    [testArr addObjectsFromArray:testArr];
     WS(weakSelf);
     [self.view addSubview:self.purchaseRecordsList];
     [self.purchaseRecordsList mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -91,41 +87,13 @@ CGFloat const step = 0.8;
 - (void)linkStepHandler
 {
     [self.purchaseRecordsList setContentOffset:CGPointMake(0, distance)];
-    if (distance >= self.purchaseRecordsList.contentSize.height-self.purchaseRecordsList.ml_height && currentType == PurchaseRecordsScrollTypeAdd) {
-        [self pauseAnimation];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            currentType = PurchaseRecordsScrollTypeMul;
-            [self addTimer];
-        });
-    } else if (distance <= 0 && currentType == PurchaseRecordsScrollTypeMul) {
-        [self pauseAnimation];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            currentType = PurchaseRecordsScrollTypeAdd;
-            [self addTimer];
-        });
-    } else {
-        switch (currentType) {
-            case PurchaseRecordsScrollTypeAdd:
-            {
-                distance += step;
-            }
-                break;
-            case PurchaseRecordsScrollTypeMul:
-            {
-                distance -= step;
-            }
-                break;
-                
-            default:
-                break;
-        }
-    }
+    distance += step;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 30.f;
+    return cellHeight;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -160,14 +128,20 @@ CGFloat const step = 0.8;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return testArr.count;
+    return 999;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger tmp = [[testArr objectAtIndex:indexPath.row] integerValue];
+    static NSInteger index = 0;
+    if (index >= testArr.count) {
+        index = 1;
+    } else {
+        index += 1;
+    }
+    NSInteger tmp = [[testArr objectAtIndex:index-1] integerValue];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"*** %@ ***", @(tmp)];
+    cell.textLabel.text = [NSString stringWithFormat:@"***&&&### %@ ###&&&***", @(tmp)];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
