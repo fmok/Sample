@@ -11,6 +11,10 @@
 #define A_DURATION (4)
 
 @interface PetDetailFeedButton()<CAAnimationDelegate>
+{
+    callBack _callBack;
+}
+
 @end
 
 @implementation PetDetailFeedButton
@@ -30,7 +34,7 @@
 }
 
 #pragma mark - Public methods
-- (void)feedButtonShakeAnimation
+- (void)feedButtonShakeAnimation:(void(^)(BOOL isFinished))callBack
 {
     self.userInteractionEnabled = NO;
     [self.layer removeAllAnimations];
@@ -44,6 +48,7 @@
     animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     
     [self.layer addAnimation:animation forKey:@"shakeAnimation"];
+    _callBack = callBack;
 }
 
 #pragma mark - Private methods
@@ -88,6 +93,7 @@
 {
     [self addFeedButtonWaveAnimation];
     self.userInteractionEnabled = YES;
+    _callBack(YES);
 }
 
 

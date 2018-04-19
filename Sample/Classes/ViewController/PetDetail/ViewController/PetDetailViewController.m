@@ -85,8 +85,11 @@
 #pragma mark - Private methods
 - (void)feedAction:(UIButton *)sender
 {
-    TTDPRINT(@"feed");
-    [self.feedButton feedButtonShakeAnimation];
+    [self.feedButton feedButtonShakeAnimation:^(BOOL isFinished) {
+        if (isFinished) {
+            TTDPRINT(@"feed");
+        }
+    }];
 }
 
 #pragma mark - getter & setter

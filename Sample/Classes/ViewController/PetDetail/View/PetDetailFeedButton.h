@@ -10,8 +10,10 @@
 
 static CGFloat const W_H_FeedButton = 100.f;
 
+typedef void(^callBack)(BOOL isFinished);
+
 @interface PetDetailFeedButton : UIButton
 
-- (void)feedButtonShakeAnimation;
+- (void)feedButtonShakeAnimation:(void(^)(BOOL isFinished))callBack;
 
 @end
