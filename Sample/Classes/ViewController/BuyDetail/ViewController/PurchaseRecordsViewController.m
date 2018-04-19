@@ -30,21 +30,27 @@ static CGFloat const cellHeight = 30.f;
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [self removeTimer];
+    if (isNeedScroll) {
+        [self removeTimer];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self beginAnimation];
+    if (isNeedScroll) {
+        [self beginAnimation];
+    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     distance = 0;
-    testArr = [NSMutableArray arrayWithArray:@[@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20]];
-//    [testArr addObjectsFromArray:testArr];
+    NSArray *littleArr = @[@1,@2,@3];
+    NSArray *largeArr = @[@1,@2,@3,@4,@5,@6,@7,@8,@9,@10,@11,@12,@13,@14,@15,@16,@17,@18,@19,@20];
+    testArr = [NSMutableArray arrayWithArray:largeArr];
+    isNeedScroll = (testArr.count > 3);
     WS(weakSelf);
     [self.view addSubview:self.purchaseRecordsList];
     [self.purchaseRecordsList mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -128,12 +134,16 @@ static CGFloat const cellHeight = 30.f;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 999;
+    if (isNeedScroll) {
+        return 999;
+    } else {
+        return testArr.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSInteger index = 0;
+    NSInteger index = indexPath.row;
     if (index >= testArr.count) {
         index = 1;
     } else {
