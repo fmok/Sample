@@ -38,6 +38,7 @@
 		573A8E9D208840CB00B89BF6 /* BookLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 573A8E9C208840CB00B89BF6 /* BookLayout.m */; };
 		573A8EA02088459500B89BF6 /* FMCardsStackFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 573A8E9F2088459500B89BF6 /* FMCardsStackFlowLayout.m */; };
 		573A8EA62088683800B89BF6 /* UITableViewCell+showAnimaiton.m in Sources */ = {isa = PBXBuildFile; fileRef = 573A8EA52088683800B89BF6 /* UITableViewCell+showAnimaiton.m */; };
+		573A8EA920886CD800B89BF6 /* PetDetailFeedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 573A8EA820886CD800B89BF6 /* PetDetailFeedButton.m */; };
 		573F2E7C206E19E40011C77A /* PurchaseRecordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F2E7B206E19E40011C77A /* PurchaseRecordsViewController.m */; };
 		573F2E7F206E1BA40011C77A /* DescripationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F2E7E206E1BA40011C77A /* DescripationViewController.m */; };
 		573F2E88206E2C180011C77A /* MyPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F2E87206E2C180011C77A /* MyPurchaseViewController.m */; };
@@ -210,6 +211,8 @@
 		573A8E9F2088459500B89BF6 /* FMCardsStackFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMCardsStackFlowLayout.m; sourceTree = "<group>"; };
 		573A8EA42088683800B89BF6 /* UITableViewCell+showAnimaiton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+showAnimaiton.h"; sourceTree = "<group>"; };
 		573A8EA52088683800B89BF6 /* UITableViewCell+showAnimaiton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+showAnimaiton.m"; sourceTree = "<group>"; };
+		573A8EA720886CD800B89BF6 /* PetDetailFeedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetDetailFeedButton.h; sourceTree = "<group>"; };
+		573A8EA820886CD800B89BF6 /* PetDetailFeedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetDetailFeedButton.m; sourceTree = "<group>"; };
 		573F2E7A206E19E40011C77A /* PurchaseRecordsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchaseRecordsViewController.h; sourceTree = "<group>"; };
 		573F2E7B206E19E40011C77A /* PurchaseRecordsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchaseRecordsViewController.m; sourceTree = "<group>"; };
 		573F2E7D206E1BA40011C77A /* DescripationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DescripationViewController.h; sourceTree = "<group>"; };
@@ -581,6 +584,8 @@
 				57D5CC742074ABB7009E65C6 /* PetDetailBottomPetDesView.m */,
 				573A8E9E2088459500B89BF6 /* FMCardsStackFlowLayout.h */,
 				573A8E9F2088459500B89BF6 /* FMCardsStackFlowLayout.m */,
+				573A8EA720886CD800B89BF6 /* PetDetailFeedButton.h */,
+				573A8EA820886CD800B89BF6 /* PetDetailFeedButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1770,6 +1775,7 @@
 				5769D90020871EC100FA0F62 /* CardsScrollView.m in Sources */,
 				572E6A7A20637F1D008114EA /* MBProgressHUD.m in Sources */,
 				57B5444C20627C5800701F9C /* PulledCollectionView.m in Sources */,
+				573A8EA920886CD800B89BF6 /* PetDetailFeedButton.m in Sources */,
 				57DED55E2067D36500E24607 /* UIImage+RoundedCorner.m in Sources */,
 				578E7B11207C5990001D351D /* LTSCalendarDayItem.m in Sources */,
 				57C21B812071FC7900F70562 /* PetDetailControl.m in Sources */,

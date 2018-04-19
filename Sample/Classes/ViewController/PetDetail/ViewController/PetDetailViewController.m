@@ -9,6 +9,7 @@
 #import "PetDetailViewController.h"
 #import "PetDetailControl.h"
 #import "PetDetailBottomPetDesView.h"
+#import "PetDetailFeedButton.h"
 
 #define H_TopView_PetDetail (kScreenWidth*(120.f/375.f))
 
@@ -18,6 +19,7 @@
 @property (nonatomic, strong) UIImageView *topImgView;
 @property (nonatomic, strong) UILabel *petDesLabel;
 @property (nonatomic, strong) PetDetailBottomPetDesView *bottomPetDesView;
+@property (nonatomic, strong) PetDetailFeedButton *feedButton;
 
 @end
 
@@ -63,6 +65,12 @@
         make.width.mas_equalTo(width);
         make.height.mas_equalTo(height);
     }];
+    [self.view addSubview:self.feedButton];
+//    [self.feedButton mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.equalTo(weakSelf.view);
+//        make.top.equalTo(weakSelf.bottomPetDesView.mas_bottom).offset(20.f);
+//        make.size.mas_equalTo(CGSizeMake(W_H_FeedButton, W_H_FeedButton));
+//    }];
     
     [self.control loadData];
 }
@@ -72,6 +80,13 @@
 {
     self.title = CHANGE_TO_STRING(name);
     self.petDesLabel.text = CHANGE_TO_STRING(petDes);
+}
+
+#pragma mark - Private methods
+- (void)feedAction:(UIButton *)sender
+{
+    TTDPRINT(@"feed");
+    [self.feedButton feedButtonShakeAnimation];
 }
 
 #pragma mark - getter & setter
@@ -138,6 +153,21 @@
         _dataSource = [[NSMutableArray alloc] init];
     }
     return _dataSource;
+}
+
+- (PetDetailFeedButton *)feedButton
+{
+    if (!_feedButton) {
+        _feedButton = [[PetDetailFeedButton alloc] initWithFrame:CGRectMake((kScreenWidth-W_H_FeedButton)/2.f, kScreenHeight-W_H_FeedButton-40.f, W_H_FeedButton, W_H_FeedButton)];
+        _feedButton.backgroundColor = SRGBCOLOR_HEX(0x167EFB);
+        _feedButton.layer.cornerRadius = W_H_FeedButton/2.f;
+        _feedButton.clipsToBounds = YES;
+        [_feedButton setTitle:@"喂养" forState:UIControlStateNormal];
+        [_feedButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _feedButton.titleLabel.font = [UIFont systemFontOfSize:20.f];
+        [_feedButton addTarget:self action:@selector(feedAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _feedButton;
 }
 
 - (void)didReceiveMemoryWarning {
