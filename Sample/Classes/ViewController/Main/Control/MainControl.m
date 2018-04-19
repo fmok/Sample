@@ -12,7 +12,6 @@
 #import "BuyDetailViewController.h"
 
 static NSString *const kCollectionViewCellReusedIdentifierStr = @"kCollectionViewCellReusedIdentifierStr";
-//static NSString *const kCollectionSectionHeaderViewReusedIdentifierStr = @"kCollectionSectionHeaderViewReusedIdentifierStr";
 
 @implementation MainControl
 
@@ -24,7 +23,6 @@ static NSString *const kCollectionViewCellReusedIdentifierStr = @"kCollectionVie
 - (void)registerCell
 {
     [self.vc.pulledCollectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:kCollectionViewCellReusedIdentifierStr];
-//    [self.vc.pulledCollectionView registerClass:[CollectionSectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCollectionSectionHeaderViewReusedIdentifierStr];
 }
 
 - (void)loadData
@@ -59,16 +57,6 @@ static NSString *const kCollectionViewCellReusedIdentifierStr = @"kCollectionVie
     BuyDetailViewController *vc = [[BuyDetailViewController alloc] init];
     vc.title = @"双鱼座·风向";
     [self.vc.fm_navigationController pushViewController:vc animated:YES];
-}
-
-- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
-{
-//    if (indexPath.section == 0) {
-//        CollectionSectionHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:kCollectionSectionHeaderViewReusedIdentifierStr forIndexPath:indexPath];
-//        header.delegate = self;
-//        return header;
-//    }
-    return nil;
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -108,9 +96,6 @@ static NSString *const kCollectionViewCellReusedIdentifierStr = @"kCollectionVie
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
 {
-//    if (section == 0) {
-//        return CGSizeMake(kScreenWidth-2*gap_left_right_main, 40.f);
-//    }
     return CGSizeZero;
 }
 

@@ -143,7 +143,7 @@
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
 {
     TTDPRINT(@"%@",navigationAction.request.URL.absoluteString);
-    NSString *urlStr = [navigationAction.request.URL absoluteString];
+//    NSString *urlStr = [navigationAction.request.URL absoluteString];
     NSString *scheme = [navigationAction.request.URL scheme];
     if ([scheme isEqualToString:@"http"] || [scheme isEqualToString:@"https"]) {
         
