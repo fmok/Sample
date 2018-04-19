@@ -143,7 +143,7 @@ static CGFloat const cellHeight = 30.f;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger index = indexPath.row;
+    static NSInteger index = 0;
     if (index >= testArr.count) {
         index = 1;
     } else {
