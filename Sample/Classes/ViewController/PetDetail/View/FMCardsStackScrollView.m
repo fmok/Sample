@@ -103,6 +103,19 @@ static NSString *const kCardStackSingleCellReusedIdentifier = @"CardStackSingleC
     }
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    /**
+     垂直方向禁止拖动，并规避directionalLockEnabled==YES时，45°角拖动可以斜向拖动的系统bug
+     */
+    CGFloat y = scrollView.contentOffset.y;
+    CGPoint point = scrollView.contentOffset;
+    if (y != 0) {
+        point.y = 0;
+        scrollView.contentOffset = point;
+    }
+}
+
 #pragma mark - getter & setter
 - (PulledCollectionView *)cardCollectionView
 {
@@ -114,11 +127,11 @@ static NSString *const kCardStackSingleCellReusedIdentifier = @"CardStackSingleC
         flowLayout.minimumLineSpacing = 0.0f;
         _cardCollectionView = [[PulledCollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, H_CardsStackSingleCell) collectionViewLayout:flowLayout];
         _cardCollectionView.backgroundColor = [UIColor clearColor];
+        _cardCollectionView.bounces = YES;
         _cardCollectionView.alwaysBounceHorizontal = YES;
         _cardCollectionView.directionalLockEnabled = YES;
         _cardCollectionView.scrollsToTop = NO;
         _cardCollectionView.pagingEnabled = YES;
-        _cardCollectionView.bounces = NO;
         _cardCollectionView.showsHorizontalScrollIndicator = NO;
         _cardCollectionView.delegate = self;
         _cardCollectionView.dataSource = self;

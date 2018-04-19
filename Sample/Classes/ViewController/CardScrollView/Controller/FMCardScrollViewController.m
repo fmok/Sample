@@ -43,7 +43,6 @@
                                                    @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1522832855283&di=5055948873ff244e4d910a8be8d0f738&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F13%2F45%2F48%2F86R58PICfF6_1024.jpg"
                                                    ]];
     CardsScrollView *cardScrollView  = [[CardsScrollView alloc] initWithFrame:CGRectMake(0, kNavBarAndStateHeight, self.view.ml_width, [CardsScrollView heightForCardScrollView:testUrlArr.count])];
-    cardScrollView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:cardScrollView];
     
     [cardScrollView setCards:testUrlArr];

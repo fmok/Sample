@@ -12,7 +12,7 @@
 #define kCardMaxCount 3
 #define kVerticalSpacting_up 0.0f //上间距
 #define kVerticalSpacting_bottom 10.0f //下间距
-#define kCardSpacting 15.f//卡片距离
+#define kCardSpacting 15.f //卡片距离
 
 #define kCGAffineTransformMakeScale(i) CGAffineTransformMakeScale(1-(i > kCardMaxCount?kCardMaxCount:i)*0.05, 1-(i > kCardMaxCount?kCardMaxCount:i)*0.05)
 #define kCGAffineTransformTranslate(i) CGAffineTransformTranslate(cardView.transform, 0, -(i > kCardMaxCount?kCardMaxCount:i)*kCardSpacting)
