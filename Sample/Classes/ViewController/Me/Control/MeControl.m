@@ -11,6 +11,7 @@
 #import "FMAlertView.h"
 #import "MyPurchaseViewController.h"
 #import "FMH5ViewController_wk.h"
+#import "UITableViewCell+showAnimaiton.h"
 
 static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr";
 
@@ -89,6 +90,11 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [cell tableView:tableView forRowAtIndexPath:indexPath animationStyle:UITableViewCellDisplayAnimationLeft];
 }
 
 #pragma mark - KVO
