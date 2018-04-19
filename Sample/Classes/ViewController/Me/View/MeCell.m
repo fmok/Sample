@@ -26,6 +26,7 @@ static CGFloat const leftImageW_H = 40.f;
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self addSubview:self.bgContentView];
         [self.bgContentView addSubview:self.leftImgView];
         [self.bgContentView addSubview:self.contenLabel];

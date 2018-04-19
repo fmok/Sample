@@ -42,7 +42,6 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSString *cls = [self.vc.settingArr[indexPath.row] objectForKey:kMeVCClassName];
     FMBaseViewController *vc = nil;
     if ([cls isEqualToString:@"FMH5ViewController_wk"]) {
