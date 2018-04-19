@@ -8,6 +8,8 @@
 
 #import "FMCardsStackScrollView.h"
 #import "PulledCollectionView.h"
+#import "BookLayout.h"
+#import "FMCardsStackFlowLayout.h"
 
 static NSString *const kCardStackSingleCellReusedIdentifier = @"CardStackSingleCell";
 
@@ -62,6 +64,11 @@ static NSString *const kCardStackSingleCellReusedIdentifier = @"CardStackSingleC
     currentCardIndex = idx;
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:idx inSection:0];
     [self.cardCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
+}
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -120,11 +127,8 @@ static NSString *const kCardStackSingleCellReusedIdentifier = @"CardStackSingleC
 - (PulledCollectionView *)cardCollectionView
 {
     if (!_cardCollectionView) {
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        FMCardsStackFlowLayout *flowLayout = [[FMCardsStackFlowLayout alloc] init];
         flowLayout.itemSize = CGSizeMake(kScreenWidth, H_CardsStackSingleCell);
-        flowLayout.minimumInteritemSpacing = 0.0f;
-        flowLayout.minimumLineSpacing = 0.0f;
         _cardCollectionView = [[PulledCollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, H_CardsStackSingleCell) collectionViewLayout:flowLayout];
         _cardCollectionView.backgroundColor = [UIColor clearColor];
         _cardCollectionView.bounces = YES;
