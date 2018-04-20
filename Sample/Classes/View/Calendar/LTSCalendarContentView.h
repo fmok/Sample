@@ -28,6 +28,8 @@
 //
 @property (nonatomic, strong, readonly) NSIndexPath *currentSelectedIndexPath;
 
+@property (nonatomic, assign) BOOL isShowBottomLine;
+
 - (void)setSingleWeek:(BOOL)singleWeek;
 ///下一页
 - (void)getDateDatas;

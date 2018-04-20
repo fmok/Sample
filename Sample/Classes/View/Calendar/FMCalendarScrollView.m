@@ -52,7 +52,6 @@
 #pragma mark - Public methods
 - (void)scrollToSingleWeek
 {
-    
     LTSCalendarAppearance *appearce = [LTSCalendarAppearance share];
     // 表需要滑动的距离
     CGFloat tableCountDistance = appearce.weekDayHeight*(appearce.weeksToDisplay-1);

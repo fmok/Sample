@@ -553,4 +553,14 @@
     return _bottomLine;
 }
 
+- (void)setIsShowBottomLine:(BOOL)isShowBottomLine
+{
+    self.bottomLine.hidden = !isShowBottomLine;
+}
+
+- (BOOL)isShowBottomLine
+{
+    return !self.bottomLine.hidden;
+}
+
 @end

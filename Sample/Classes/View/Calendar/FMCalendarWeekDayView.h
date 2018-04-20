@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static CGFloat const H_CalendarWeekDayView = 40.f;
+
 @interface FMCalendarWeekDayView : UIView
 
 //+ (void)beforeReloadAppearance;

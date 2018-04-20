@@ -46,11 +46,10 @@ static CGFloat const W_H_TodayBtn = 20.f;
         } else {
             make.top.equalTo(weakSelf.mas_topLayoutGuide).offset(kNavBarHeight);
         }
-        make.height.mas_equalTo(40.f);
+        make.height.mas_equalTo(H_CalendarWeekDayView);
     }];
     // calendar
     self.manager.calenderScrollView = [[FMCalendarScrollView alloc] initWithFrame:CGRectMake(0, 0, W_CalendarScrollView, [FMCalendarScrollView heightForCalendarScrollView])];
-    self.manager.calenderScrollView.bgColor = [UIColor redColor];
     // tableView
     [self.view addSubview:self.calendarTableView];
     [self.calendarTableView mas_makeConstraints:^(MASConstraintMaker *make) {
