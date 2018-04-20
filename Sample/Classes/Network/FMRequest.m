@@ -29,6 +29,18 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        YTKNetworkAgent *agent = [YTKNetworkAgent sharedAgent];
+        NSSet *acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", @"text/css", nil];
+        NSString *keypath = @"jsonResponseSerializer.acceptableContentTypes";
+        [agent setValue:acceptableContentTypes forKeyPath:keypath];
+    }
+    return self;
+}
+
 #pragma mark - Public methods
 - (void)startWithNoBack
 {
@@ -205,7 +217,7 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
 - (NSTimeInterval)requestTimeoutInterval {
     return 30;
 }
-
+// 请求头
 - (NSDictionary *)requestHeaderFieldValueDictionary {
     return @{
              @"udid": [APPSettingManager udid],

@@ -48,15 +48,4 @@
     return YTKRequestMethodGET;
 }
 
-#warning todo
-/**
-    由于当前的接口 header 的 content-type
-    一部分为 text/html，一部分没有加header，所以本接口暂时重写以下方法，对于header为空的情况待验证
-    对于以后新写的接口 统一 content-type 为 application/json，此方法即可删除
- */
-- (YTKResponseSerializerType)responseSerializerType
-{
-    return YTKResponseSerializerTypeHTTP;
-}
-
 @end

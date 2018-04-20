@@ -92,6 +92,11 @@
     }];
 }
 
+- (void)feedAnimation
+{
+    
+}
+
 #pragma mark - getter & setter
 - (PetDetailControl *)control
 {
