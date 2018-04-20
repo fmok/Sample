@@ -9,6 +9,7 @@
 #import "FMCalendarViewController.h"
 #import "FMCalendarControl.h"
 #import "UIImage+Resize.h"
+#import "FMCalendarSingleView.h"
 
 static CGFloat const W_H_TodayBtn = 20.f;
 

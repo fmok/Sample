@@ -24,6 +24,7 @@
 		572E6A8D2063CA55008114EA /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A892063CA55008114EA /* CHANGELOG.md */; };
 		572E6A8E2063CA55008114EA /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A8B2063CA55008114EA /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		572E6A8F2063CA55008114EA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A8C2063CA55008114EA /* README.md */; };
+		5730A6422089F1480049602D /* FMCalendarSingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5730A6412089F1480049602D /* FMCalendarSingleView.m */; };
 		5737957D206B39AB00388BCC /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 5737957C206B39AB00388BCC /* nav.png */; };
 		57379581206B4ACB00388BCC /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379580206B4ACA00388BCC /* SwipeView.m */; };
 		57379585206B4B4700388BCC /* FMSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379584206B4B4700388BCC /* FMSegmentControl.m */; };
@@ -184,6 +185,8 @@
 		572E6A8A2063CA55008114EA /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		572E6A8B2063CA55008114EA /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		572E6A8C2063CA55008114EA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5730A6402089F1480049602D /* FMCalendarSingleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMCalendarSingleView.h; sourceTree = "<group>"; };
+		5730A6412089F1480049602D /* FMCalendarSingleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMCalendarSingleView.m; sourceTree = "<group>"; };
 		5737957C206B39AB00388BCC /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav.png; sourceTree = "<group>"; };
 		5737957F206B4ACA00388BCC /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
 		57379580206B4ACA00388BCC /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
@@ -862,6 +865,8 @@
 		578E7B1A207C5A20001D351D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5730A6402089F1480049602D /* FMCalendarSingleView.h */,
+				5730A6412089F1480049602D /* FMCalendarSingleView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1800,6 +1805,7 @@
 				57B5444320627B6900701F9C /* FMRequest.m in Sources */,
 				5737958E206B6EC900388BCC /* MainControl.m in Sources */,
 				578E7B1E207C6679001D351D /* FMCalendarViewController.m in Sources */,
+				5730A6422089F1480049602D /* FMCalendarSingleView.m in Sources */,
 				57B544842062850000701F9C /* APPSettingManager.m in Sources */,
 				5740FA48206CE705006F20A5 /* BuyDetailControl.m in Sources */,
 				5769D8DF2086E7AB00FA0F62 /* FMNavigationBar.m in Sources */,
