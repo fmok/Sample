@@ -75,6 +75,11 @@
 		578320B0206A3B7400E2D67F /* closed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 578320A9206A3B7400E2D67F /* closed@2x.png */; };
 		578320B1206A3B7400E2D67F /* closed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 578320AA206A3B7400E2D67F /* closed@3x.png */; };
 		578320B7206A53D400E2D67F /* FMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578320B6206A53D400E2D67F /* FMAlertView.m */; };
+		5787C856208D800700852640 /* FMWaterFallFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C855208D800700852640 /* FMWaterFallFlowViewController.m */; };
+		5787C859208D802400852640 /* FMWaterFallFlowControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C858208D802400852640 /* FMWaterFallFlowControl.m */; };
+		5787C85C208D820A00852640 /* LMHWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C85A208D820A00852640 /* LMHWaterFallLayout.m */; };
+		5787C85F208D83C100852640 /* FMWaterFallFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C85E208D83C100852640 /* FMWaterFallFlowCell.m */; };
+		5787C862208D88BC00852640 /* FMShopInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C861208D88BC00852640 /* FMShopInfo.m */; };
 		578E7B0D207C5990001D351D /* LTSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7AF9207C5990001D351D /* LTSCalendarAppearance.m */; };
 		578E7B0E207C5990001D351D /* LTSCalendarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7AFB207C5990001D351D /* LTSCalendarCollectionCell.m */; };
 		578E7B0F207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7AFD207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.m */; };
@@ -283,6 +288,16 @@
 		578320AA206A3B7400E2D67F /* closed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closed@3x.png"; sourceTree = "<group>"; };
 		578320B5206A53D400E2D67F /* FMAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMAlertView.h; sourceTree = "<group>"; };
 		578320B6206A53D400E2D67F /* FMAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMAlertView.m; sourceTree = "<group>"; };
+		5787C854208D800700852640 /* FMWaterFallFlowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMWaterFallFlowViewController.h; sourceTree = "<group>"; };
+		5787C855208D800700852640 /* FMWaterFallFlowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMWaterFallFlowViewController.m; sourceTree = "<group>"; };
+		5787C857208D802400852640 /* FMWaterFallFlowControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMWaterFallFlowControl.h; sourceTree = "<group>"; };
+		5787C858208D802400852640 /* FMWaterFallFlowControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMWaterFallFlowControl.m; sourceTree = "<group>"; };
+		5787C85A208D820A00852640 /* LMHWaterFallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMHWaterFallLayout.m; sourceTree = "<group>"; };
+		5787C85B208D820A00852640 /* LMHWaterFallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMHWaterFallLayout.h; sourceTree = "<group>"; };
+		5787C85D208D83C100852640 /* FMWaterFallFlowCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMWaterFallFlowCell.h; sourceTree = "<group>"; };
+		5787C85E208D83C100852640 /* FMWaterFallFlowCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMWaterFallFlowCell.m; sourceTree = "<group>"; };
+		5787C860208D88BC00852640 /* FMShopInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMShopInfo.h; sourceTree = "<group>"; };
+		5787C861208D88BC00852640 /* FMShopInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMShopInfo.m; sourceTree = "<group>"; };
 		578E7AF8207C5990001D351D /* LTSCalendarAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarAppearance.h; sourceTree = "<group>"; };
 		578E7AF9207C5990001D351D /* LTSCalendarAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarAppearance.m; sourceTree = "<group>"; };
 		578E7AFA207C5990001D351D /* LTSCalendarCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarCollectionCell.h; sourceTree = "<group>"; };
@@ -807,6 +822,55 @@
 			path = FMAlertView;
 			sourceTree = "<group>";
 		};
+		5787C84F208D7F1E00852640 /* WaterFallFlow */ = {
+			isa = PBXGroup;
+			children = (
+				5787C853208D7FA700852640 /* Model */,
+				5787C852208D7FA100852640 /* View */,
+				5787C851208D7F9B00852640 /* Control */,
+				5787C850208D7F9400852640 /* Controller */,
+			);
+			path = WaterFallFlow;
+			sourceTree = "<group>";
+		};
+		5787C850208D7F9400852640 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5787C854208D800700852640 /* FMWaterFallFlowViewController.h */,
+				5787C855208D800700852640 /* FMWaterFallFlowViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5787C851208D7F9B00852640 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				5787C85B208D820A00852640 /* LMHWaterFallLayout.h */,
+				5787C85A208D820A00852640 /* LMHWaterFallLayout.m */,
+				5787C857208D802400852640 /* FMWaterFallFlowControl.h */,
+				5787C858208D802400852640 /* FMWaterFallFlowControl.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		5787C852208D7FA100852640 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5787C85D208D83C100852640 /* FMWaterFallFlowCell.h */,
+				5787C85E208D83C100852640 /* FMWaterFallFlowCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5787C853208D7FA700852640 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5787C860208D88BC00852640 /* FMShopInfo.h */,
+				5787C861208D88BC00852640 /* FMShopInfo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		578E7AF7207C5990001D351D /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -974,6 +1038,7 @@
 				578E7B17207C59E6001D351D /* Canlender */,
 				57206A4D208445140017F7F8 /* Web */,
 				5769D8F420871DCF00FA0F62 /* CardScrollView */,
+				5787C84F208D7F1E00852640 /* WaterFallFlow */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1750,13 +1815,16 @@
 				5769D8EC2086EBFC00FA0F62 /* UIViewController+FMNavigationBar.m in Sources */,
 				57D5CC752074ABB7009E65C6 /* PetDetailBottomPetDesView.m in Sources */,
 				57C3D55E20689BF400E0B8BA /* MainViewController.m in Sources */,
+				5787C859208D802400852640 /* FMWaterFallFlowControl.m in Sources */,
 				57B5440F2062727F00701F9C /* main.m in Sources */,
+				5787C85C208D820A00852640 /* LMHWaterFallLayout.m in Sources */,
 				57B54440206278B600701F9C /* TestViewController.m in Sources */,
 				57DED55B2067D23500E24607 /* UIImage+Resize.m in Sources */,
 				5740FA3B206CBA97006F20A5 /* FMScrollLabel.m in Sources */,
 				5769D8F920871E2900FA0F62 /* FMCardScrollViewController.m in Sources */,
 				5737E6132073A12B008AF33C /* CardStackSingleCell.m in Sources */,
 				575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */,
+				5787C85F208D83C100852640 /* FMWaterFallFlowCell.m in Sources */,
 				57B5444920627C2C00701F9C /* PulledTableView.m in Sources */,
 				57C3D559206898CA00E0B8BA /* MeControl.m in Sources */,
 				57379594206B789F00388BCC /* CollectionSectionHeaderView.m in Sources */,
@@ -1777,6 +1845,7 @@
 				57C21B712071CA3400F70562 /* MyPurchaseCellListView.m in Sources */,
 				57B5445420627EF700701F9C /* SHError.m in Sources */,
 				573F2E7C206E19E40011C77A /* PurchaseRecordsViewController.m in Sources */,
+				5787C862208D88BC00852640 /* FMShopInfo.m in Sources */,
 				5769D90020871EC100FA0F62 /* CardsScrollView.m in Sources */,
 				572E6A7A20637F1D008114EA /* MBProgressHUD.m in Sources */,
 				57B5444C20627C5800701F9C /* PulledCollectionView.m in Sources */,
@@ -1800,6 +1869,7 @@
 				57C21B7E2071FC6500F70562 /* PetDetailViewController.m in Sources */,
 				57C3D56D2068C45F00E0B8BA /* UIView+Utilities.m in Sources */,
 				5737E60C2073338E008AF33C /* FMTabsView.m in Sources */,
+				5787C856208D800700852640 /* FMWaterFallFlowViewController.m in Sources */,
 				578E7B10207C5990001D351D /* LTSCalendarContentView.m in Sources */,
 				5769D8F22086EE1800FA0F62 /* FMPercentDrivenInteractiveTransition.m in Sources */,
 				57B5444320627B6900701F9C /* FMRequest.m in Sources */,

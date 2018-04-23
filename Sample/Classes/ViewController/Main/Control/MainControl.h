@@ -12,7 +12,7 @@
 @interface MainControl : NSObject<
     UICollectionViewDelegate,
     UICollectionViewDataSource,
-    PulledCollectionViewTypeDelegate,
+    PulledCollectionViewDelegate,
     CollectionSectionHeaderViewDelegate,
     MainHeaderViewDelegate>
 

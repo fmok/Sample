@@ -15,7 +15,7 @@ typedef NS_ENUM(NSUInteger, PulledCollectionViewType){
     PulledCollectionViewTypeDown
 };
 
-@protocol PulledCollectionViewTypeDelegate <NSObject>
+@protocol PulledCollectionViewDelegate <NSObject>
 
 @optional
 
@@ -26,7 +26,7 @@ typedef NS_ENUM(NSUInteger, PulledCollectionViewType){
 
 @interface PulledCollectionView : UICollectionView
 
-@property (nonatomic, weak  ) id<PulledCollectionViewTypeDelegate>pulledDelegate;
+@property (nonatomic, weak  ) id<PulledCollectionViewDelegate>pulledDelegate;
 @property (nonatomic, assign) BOOL isHeader; //是否开启下拉刷新
 @property (nonatomic, assign) BOOL isFooter; //是否开启上拉加载
 @property (nonatomic, assign) NSUInteger page;

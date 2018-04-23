@@ -26,6 +26,12 @@
 #pragma mark - Private methods
 /**
  导航初始设置
+ defalut:
+     alpha: 0,
+     titleTextAttributes: NSFontAttributeName: [UIFont boldSystemFontOfSize:20.f], NSForegroundColorAttributeName: [UIColor whiteColor]
+     shadowImage: nil
+     tintColor: [UIColor whiteColor]
+     leftBarButtonItems: @[backBtn]
  */
 - (void)setNavInitialSetup
 {

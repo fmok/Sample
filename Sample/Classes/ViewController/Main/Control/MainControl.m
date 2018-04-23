@@ -36,7 +36,7 @@ static NSString *const kCollectionViewCellReusedIdentifierStr = @"kCollectionVie
     [self.vc.headerView updateContent];
 }
 
-#pragma mark - PulledCollectionViewTypeDelegate
+#pragma mark - PulledCollectionViewDelegate
 - (void)refreshWithPulledCollectionView:(PulledCollectionView *)collectionView
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

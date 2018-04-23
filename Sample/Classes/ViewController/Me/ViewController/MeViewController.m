@@ -14,6 +14,7 @@
 #import "FMCalendarViewController.h"
 #import "FMH5ViewController_wk.h"
 #import "FMCardScrollViewController.h"
+#import "FMWaterFallFlowViewController.h"
 
 @interface MeViewController ()
 
@@ -116,13 +117,18 @@
                          kMeVCLogoStr: @"upDown"
                          },
                        @{
-                         kMeVCTitle: @"H5_wk",
+                         kMeVCTitle: @"H5_wk(without cookie)",
                          kMeVCClassName: NSStringFromClass([FMH5ViewController_wk class]),
                          kMeVCLogoStr: @"upDown"
                          },
                        @{
                          kMeVCTitle: @"CardScroll",
                          kMeVCClassName: NSStringFromClass([FMCardScrollViewController class]),
+                         kMeVCLogoStr: @"upDown"
+                         },
+                       @{
+                         kMeVCTitle: @"WaterFall Flow",
+                         kMeVCClassName: NSStringFromClass([FMWaterFallFlowViewController class]),
                          kMeVCLogoStr: @"upDown"
                          },
                        nil];
