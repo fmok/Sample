@@ -22,6 +22,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+        self.backgroundColor = [UIColor whiteColor];
+        self.layer.cornerRadius = 8.f;
+        self.clipsToBounds = YES;
         [self addSubview:self.imgView];
         [self addSubview:self.priceLabel];
     }
@@ -34,11 +37,11 @@
     WS(weakSelf);
     [self.imgView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.and.top.and.right.equalTo(weakSelf);
-        make.bottom.equalTo(weakSelf).offset(-20.f);
+        make.bottom.equalTo(weakSelf).offset(-30.f);
     }];
     [self.priceLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.and.bottom.equalTo(weakSelf);
-        make.height.mas_equalTo(20.f);
+        make.height.mas_equalTo(30.f);
     }];
     
     [super updateConstraints];
@@ -63,7 +66,7 @@
 {
     if (!_imgView) {
         _imgView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        _imgView.backgroundColor = [UIColor grayColor];
+        _imgView.backgroundColor = [UIColor lightGrayColor];
         _imgView.contentMode = UIViewContentModeScaleAspectFill;
         _imgView.clipsToBounds = YES;
     }

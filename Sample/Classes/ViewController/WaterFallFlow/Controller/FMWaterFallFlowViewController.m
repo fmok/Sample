@@ -59,7 +59,7 @@
         LMHWaterFallLayout *flowLayout = [[LMHWaterFallLayout alloc] init];
         flowLayout.delegate = self.control;
         _collectionView = [[PulledCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-        _collectionView.backgroundColor = [UIColor whiteColor];
+        _collectionView.backgroundColor = SRGBCOLOR_HEX(0xf6f6f6);
         _collectionView.dataSource = self.control;
         _collectionView.delegate = self.control;
         _collectionView.pulledDelegate = self.control;

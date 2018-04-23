@@ -87,7 +87,7 @@ static NSString *const kFMWaterFallFlowCellReusedIdentifier = @"FMWaterFallFlowC
 
 - (CGFloat)rowMarginInWaterFallLayout:(LMHWaterFallLayout *)waterFallLayout
 {
-    return 20;
+    return 10;
 }
 
 - (NSUInteger)columnCountInWaterFallLayout:(LMHWaterFallLayout *)waterFallLayout
