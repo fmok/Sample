@@ -23,8 +23,6 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-        self.layer.cornerRadius = 8.f;
-        self.clipsToBounds = YES;
         [self addSubview:self.imgView];
         [self addSubview:self.priceLabel];
     }
