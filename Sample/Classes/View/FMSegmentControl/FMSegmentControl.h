@@ -32,6 +32,8 @@ static NSString *const kSegmentControlBorderWidth = @"borderWidth";
 @property (nonatomic, weak) id<FMSegmentControlDelegate> delegate;
 @property (nonatomic, strong) NSMutableDictionary *configureDic;
 
+void configureDic(UIColor *titleColorNormal, UIColor *titleColorSelected, UIFont *titleFont, UIColor *segBgColorNormal, UIColor *segBgColorSelected, UIColor *borderColor, CGFloat cornerRadius, CGFloat borderWidth);
+
 - (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items configureDic:(NSDictionary *)configureDic currentIndex:(NSInteger)currentIndex;
 
 - (void)scrollToIndex:(NSInteger)index;

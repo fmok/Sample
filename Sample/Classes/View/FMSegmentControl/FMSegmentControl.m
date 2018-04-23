@@ -30,6 +30,8 @@
 
 @end
 
+FMSegmentControl *sgControl_self_OC = nil;
+
 @interface FMSegmentControl ()
 
 @property (nonatomic, strong) NSArray *items;
@@ -42,6 +44,19 @@
 @end
 
 @implementation FMSegmentControl
+
+void configureDic(UIColor *titleColorNormal, UIColor *titleColorSelected, UIFont *titleFont, UIColor *segBgColorNormal, UIColor *segBgColorSelected, UIColor *borderColor, CGFloat cornerRadius, CGFloat borderWidth) {
+    [sgControl_self_OC.configureDic setValuesForKeysWithDictionary:@{
+                                                                     kSegmentControlTitleColorNormal:titleColorNormal,
+                                                                     kSegmentControlTitleColorSelected:titleColorSelected,
+                                                                     kSegmentControlTitleFont:titleFont,
+                                                                     kSegmentControlSegBgColorNormal:segBgColorNormal,
+                                                                     kSegmentControlSegBgColorSelected:segBgColorSelected,
+                                                                     kSegmentControlBorderColor:borderColor,
+                                                                     kSegmentControlBorderWidth:@(cornerRadius),
+                                                                     kSegmentControlCornerRadius:@(borderWidth)
+                                                                     }];
+}
 
 - (void)dealloc
 {
@@ -57,6 +72,7 @@
         [self setUp];
         self.items = items;
         self.currentIndex = currentIndex;
+        sgControl_self_OC = self;
     }
     return self;
 }
