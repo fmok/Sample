@@ -15,6 +15,7 @@
 #import "FMH5ViewController_wk.h"
 #import "FMCardScrollViewController.h"
 #import "FMWaterFallFlowViewController.h"
+#import "FMPickerViewController.h"
 
 @interface MeViewController ()
 
@@ -129,6 +130,11 @@
                        @{
                          kMeVCTitle: @"WaterFall Flow",
                          kMeVCClassName: NSStringFromClass([FMWaterFallFlowViewController class]),
+                         kMeVCLogoStr: @"upDown"
+                         },
+                       @{
+                         kMeVCTitle: @"Time Area Custom Picker",
+                         kMeVCClassName: NSStringFromClass([FMPickerViewController class]),
                          kMeVCLogoStr: @"upDown"
                          },
                        nil];

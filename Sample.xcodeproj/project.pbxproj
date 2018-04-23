@@ -82,6 +82,16 @@
 		5787C862208D88BC00852640 /* FMShopInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C861208D88BC00852640 /* FMShopInfo.m */; };
 		5787C865208D8E4D00852640 /* FMWaterFallFlowShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C864208D8E4D00852640 /* FMWaterFallFlowShopModel.m */; };
 		5787C867208D8E7B00852640 /* shop.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5787C866208D8E7A00852640 /* shop.plist */; };
+		5787C86D208DDE5000852640 /* FMPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C86C208DDE5000852640 /* FMPickerViewController.m */; };
+		5787C870208DDE6000852640 /* FMPickerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C86F208DDE6000852640 /* FMPickerControl.m */; };
+		5787C880208DDEF700852640 /* NSCalendar+STPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C873208DDEF600852640 /* NSCalendar+STPicker.m */; };
+		5787C881208DDEF700852640 /* STPickerArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C875208DDEF600852640 /* STPickerArea.m */; };
+		5787C882208DDEF700852640 /* STPickerDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C877208DDEF600852640 /* STPickerDate.m */; };
+		5787C883208DDEF700852640 /* STPickerSingle.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C879208DDEF600852640 /* STPickerSingle.m */; };
+		5787C884208DDEF700852640 /* STPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C87B208DDEF600852640 /* STPickerView.m */; };
+		5787C885208DDEF700852640 /* STPickerViewUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C87D208DDEF600852640 /* STPickerViewUI.m */; };
+		5787C886208DDEF700852640 /* UIView+STPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C87F208DDEF600852640 /* UIView+STPicker.m */; };
+		5787C888208DE06E00852640 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5787C887208DE06E00852640 /* area.plist */; };
 		578E7B0D207C5990001D351D /* LTSCalendarAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7AF9207C5990001D351D /* LTSCalendarAppearance.m */; };
 		578E7B0E207C5990001D351D /* LTSCalendarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7AFB207C5990001D351D /* LTSCalendarCollectionCell.m */; };
 		578E7B0F207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7AFD207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.m */; };
@@ -302,6 +312,25 @@
 		5787C863208D8E4D00852640 /* FMWaterFallFlowShopModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMWaterFallFlowShopModel.h; sourceTree = "<group>"; };
 		5787C864208D8E4D00852640 /* FMWaterFallFlowShopModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMWaterFallFlowShopModel.m; sourceTree = "<group>"; };
 		5787C866208D8E7A00852640 /* shop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = shop.plist; sourceTree = "<group>"; };
+		5787C86B208DDE5000852640 /* FMPickerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMPickerViewController.h; sourceTree = "<group>"; };
+		5787C86C208DDE5000852640 /* FMPickerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMPickerViewController.m; sourceTree = "<group>"; };
+		5787C86E208DDE6000852640 /* FMPickerControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMPickerControl.h; sourceTree = "<group>"; };
+		5787C86F208DDE6000852640 /* FMPickerControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMPickerControl.m; sourceTree = "<group>"; };
+		5787C872208DDEF600852640 /* NSCalendar+STPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCalendar+STPicker.h"; sourceTree = "<group>"; };
+		5787C873208DDEF600852640 /* NSCalendar+STPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCalendar+STPicker.m"; sourceTree = "<group>"; };
+		5787C874208DDEF600852640 /* STPickerArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerArea.h; sourceTree = "<group>"; };
+		5787C875208DDEF600852640 /* STPickerArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerArea.m; sourceTree = "<group>"; };
+		5787C876208DDEF600852640 /* STPickerDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerDate.h; sourceTree = "<group>"; };
+		5787C877208DDEF600852640 /* STPickerDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerDate.m; sourceTree = "<group>"; };
+		5787C878208DDEF600852640 /* STPickerSingle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerSingle.h; sourceTree = "<group>"; };
+		5787C879208DDEF600852640 /* STPickerSingle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerSingle.m; sourceTree = "<group>"; };
+		5787C87A208DDEF600852640 /* STPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerView.h; sourceTree = "<group>"; };
+		5787C87B208DDEF600852640 /* STPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerView.m; sourceTree = "<group>"; };
+		5787C87C208DDEF600852640 /* STPickerViewUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerViewUI.h; sourceTree = "<group>"; };
+		5787C87D208DDEF600852640 /* STPickerViewUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerViewUI.m; sourceTree = "<group>"; };
+		5787C87E208DDEF600852640 /* UIView+STPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+STPicker.h"; sourceTree = "<group>"; };
+		5787C87F208DDEF600852640 /* UIView+STPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+STPicker.m"; sourceTree = "<group>"; };
+		5787C887208DE06E00852640 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		578E7AF8207C5990001D351D /* LTSCalendarAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarAppearance.h; sourceTree = "<group>"; };
 		578E7AF9207C5990001D351D /* LTSCalendarAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTSCalendarAppearance.m; sourceTree = "<group>"; };
 		578E7AFA207C5990001D351D /* LTSCalendarCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTSCalendarCollectionCell.h; sourceTree = "<group>"; };
@@ -877,6 +906,55 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5787C868208DDDD400852640 /* TimeAreaCustomPicker */ = {
+			isa = PBXGroup;
+			children = (
+				5787C86A208DDE3B00852640 /* Control */,
+				5787C869208DDE3300852640 /* Controller */,
+			);
+			path = TimeAreaCustomPicker;
+			sourceTree = "<group>";
+		};
+		5787C869208DDE3300852640 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5787C86B208DDE5000852640 /* FMPickerViewController.h */,
+				5787C86C208DDE5000852640 /* FMPickerViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5787C86A208DDE3B00852640 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				5787C86E208DDE6000852640 /* FMPickerControl.h */,
+				5787C86F208DDE6000852640 /* FMPickerControl.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		5787C871208DDEF600852640 /* STPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				5787C887208DE06E00852640 /* area.plist */,
+				5787C872208DDEF600852640 /* NSCalendar+STPicker.h */,
+				5787C873208DDEF600852640 /* NSCalendar+STPicker.m */,
+				5787C874208DDEF600852640 /* STPickerArea.h */,
+				5787C875208DDEF600852640 /* STPickerArea.m */,
+				5787C876208DDEF600852640 /* STPickerDate.h */,
+				5787C877208DDEF600852640 /* STPickerDate.m */,
+				5787C878208DDEF600852640 /* STPickerSingle.h */,
+				5787C879208DDEF600852640 /* STPickerSingle.m */,
+				5787C87A208DDEF600852640 /* STPickerView.h */,
+				5787C87B208DDEF600852640 /* STPickerView.m */,
+				5787C87C208DDEF600852640 /* STPickerViewUI.h */,
+				5787C87D208DDEF600852640 /* STPickerViewUI.m */,
+				5787C87E208DDEF600852640 /* UIView+STPicker.h */,
+				5787C87F208DDEF600852640 /* UIView+STPicker.m */,
+			);
+			path = STPickerView;
+			sourceTree = "<group>";
+		};
 		578E7AF7207C5990001D351D /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1044,6 +1122,7 @@
 				57206A4D208445140017F7F8 /* Web */,
 				5769D8F420871DCF00FA0F62 /* CardScrollView */,
 				5787C84F208D7F1E00852640 /* WaterFallFlow */,
+				5787C868208DDDD400852640 /* TimeAreaCustomPicker */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1051,6 +1130,7 @@
 		57B544352062780E00701F9C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5787C871208DDEF600852640 /* STPickerView */,
 				5769D8FD20871E9800FA0F62 /* CardScrollView */,
 				57206A6C20848DCD0017F7F8 /* FMFuncButton */,
 				578E7AF7207C5990001D351D /* Calendar */,
@@ -1578,6 +1658,7 @@
 				57DED5542067CF7B00E24607 /* tabbar_me@2x.png in Resources */,
 				57206A54208451120017F7F8 /* top_navigation_close_h5@2x.png in Resources */,
 				5787C867208D8E7B00852640 /* shop.plist in Resources */,
+				5787C888208DE06E00852640 /* area.plist in Resources */,
 				57DED5522067CF7B00E24607 /* tabbar_home_selected@2x.png in Resources */,
 				57DED5572067CF7B00E24607 /* tabbar_me_selected@3x.png in Resources */,
 				57206A58208451820017F7F8 /* reader_toolbar_share@2x.png in Resources */,
@@ -1807,6 +1888,7 @@
 				5787C865208D8E4D00852640 /* FMWaterFallFlowShopModel.m in Sources */,
 				572E6A8E2063CA55008114EA /* JSONKit.m in Sources */,
 				57C3D555206896A900E0B8BA /* MeViewController.m in Sources */,
+				5787C884208DDEF700852640 /* STPickerView.m in Sources */,
 				5769D8E52086EA1500FA0F62 /* UIViewController+FMFlag.m in Sources */,
 				57DED5612067D39600E24607 /* UIImage+Alpha.m in Sources */,
 				575F9AAF2064EC710031BC49 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
@@ -1820,6 +1902,7 @@
 				57379591206B714300388BCC /* CollectionViewCell.m in Sources */,
 				5769D8EC2086EBFC00FA0F62 /* UIViewController+FMNavigationBar.m in Sources */,
 				57D5CC752074ABB7009E65C6 /* PetDetailBottomPetDesView.m in Sources */,
+				5787C885208DDEF700852640 /* STPickerViewUI.m in Sources */,
 				57C3D55E20689BF400E0B8BA /* MainViewController.m in Sources */,
 				5787C859208D802400852640 /* FMWaterFallFlowControl.m in Sources */,
 				57B5440F2062727F00701F9C /* main.m in Sources */,
@@ -1829,6 +1912,8 @@
 				5740FA3B206CBA97006F20A5 /* FMScrollLabel.m in Sources */,
 				5769D8F920871E2900FA0F62 /* FMCardScrollViewController.m in Sources */,
 				5737E6132073A12B008AF33C /* CardStackSingleCell.m in Sources */,
+				5787C881208DDEF700852640 /* STPickerArea.m in Sources */,
+				5787C86D208DDE5000852640 /* FMPickerViewController.m in Sources */,
 				575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */,
 				5787C85F208D83C100852640 /* FMWaterFallFlowCell.m in Sources */,
 				57B5444920627C2C00701F9C /* PulledTableView.m in Sources */,
@@ -1839,6 +1924,7 @@
 				5769D90320871EE100FA0F62 /* CardView.m in Sources */,
 				578E7B16207C5990001D351D /* LTSCircleView.m in Sources */,
 				575F9AAE2064EC710031BC49 /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				5787C883208DDEF700852640 /* STPickerSingle.m in Sources */,
 				57C21B742071CC9F00F70562 /* MyPurchaseCard.m in Sources */,
 				57B543FE2062727F00701F9C /* AppDelegate.m in Sources */,
 				5769D8EF2086ED9800FA0F62 /* UIViewController+FMNavigationItem.m in Sources */,
@@ -1846,6 +1932,7 @@
 				578E7B21207C6690001D351D /* FMCalendarControl.m in Sources */,
 				57B5448D2062881E00701F9C /* FMRuntimeEngine.m in Sources */,
 				5769D8E22086E89300FA0F62 /* FMNavMaskView.m in Sources */,
+				5787C880208DDEF700852640 /* NSCalendar+STPicker.m in Sources */,
 				572E6A7920637F1D008114EA /* HUD.m in Sources */,
 				57B5445020627CB700701F9C /* FMNavigationController.m in Sources */,
 				57C21B712071CA3400F70562 /* MyPurchaseCellListView.m in Sources */,
@@ -1855,10 +1942,12 @@
 				5769D90020871EC100FA0F62 /* CardsScrollView.m in Sources */,
 				572E6A7A20637F1D008114EA /* MBProgressHUD.m in Sources */,
 				57B5444C20627C5800701F9C /* PulledCollectionView.m in Sources */,
+				5787C882208DDEF700852640 /* STPickerDate.m in Sources */,
 				573A8EA920886CD800B89BF6 /* PetDetailFeedButton.m in Sources */,
 				57DED55E2067D36500E24607 /* UIImage+RoundedCorner.m in Sources */,
 				578E7B11207C5990001D351D /* LTSCalendarDayItem.m in Sources */,
 				57C21B812071FC7900F70562 /* PetDetailControl.m in Sources */,
+				5787C870208DDE6000852640 /* FMPickerControl.m in Sources */,
 				57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */,
 				57C21B842071FD4400F70562 /* UIResponder+Router.m in Sources */,
 				573F2E91206E586E0011C77A /* MyPurchaseCell.m in Sources */,
@@ -1883,6 +1972,7 @@
 				578E7B1E207C6679001D351D /* FMCalendarViewController.m in Sources */,
 				5730A6422089F1480049602D /* FMCalendarSingleView.m in Sources */,
 				57B544842062850000701F9C /* APPSettingManager.m in Sources */,
+				5787C886208DDEF700852640 /* UIView+STPicker.m in Sources */,
 				5740FA48206CE705006F20A5 /* BuyDetailControl.m in Sources */,
 				5769D8DF2086E7AB00FA0F62 /* FMNavigationBar.m in Sources */,
 				578E7B0F207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
