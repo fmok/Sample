@@ -95,7 +95,6 @@
 		578E7B21207C6690001D351D /* FMCalendarControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 578E7B20207C6690001D351D /* FMCalendarControl.m */; };
 		5797133E2079C52D0014AB4F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5797133D2079C52D0014AB4F /* Images.xcassets */; };
 		57B543FE2062727F00701F9C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B543FD2062727F00701F9C /* AppDelegate.m */; };
-		57B544042062727F00701F9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B544022062727F00701F9C /* Main.storyboard */; };
 		57B544072062727F00701F9C /* Sample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57B544052062727F00701F9C /* Sample.xcdatamodeld */; };
 		57B544092062727F00701F9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B544082062727F00701F9C /* Assets.xcassets */; };
 		57B5440C2062727F00701F9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B5440A2062727F00701F9C /* LaunchScreen.storyboard */; };
@@ -330,7 +329,6 @@
 		57B543F92062727F00701F9C /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B543FC2062727F00701F9C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		57B543FD2062727F00701F9C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		57B544032062727F00701F9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		57B544062062727F00701F9C /* Sample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sample.xcdatamodel; sourceTree = "<group>"; };
 		57B544082062727F00701F9C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B5440B2062727F00701F9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -980,7 +978,6 @@
 				57B543FD2062727F00701F9C /* AppDelegate.m */,
 				57B5445B206282CF00701F9C /* Dependencies */,
 				57DED5462067CF7B00E24607 /* Resource */,
-				57B544022062727F00701F9C /* Main.storyboard */,
 				57B544082062727F00701F9C /* Assets.xcassets */,
 				57B5440A2062727F00701F9C /* LaunchScreen.storyboard */,
 				57B5440D2062727F00701F9C /* Info.plist */,
@@ -1598,7 +1595,6 @@
 				5797133E2079C52D0014AB4F /* Images.xcassets in Resources */,
 				572E6A7720637F1D008114EA /* btnCheck.png in Resources */,
 				57B544092062727F00701F9C /* Assets.xcassets in Resources */,
-				57B544042062727F00701F9C /* Main.storyboard in Resources */,
 				57DED5512067CF7B00E24607 /* tabbar_home@3x.png in Resources */,
 				57DED5552067CF7B00E24607 /* tabbar_me@3x.png in Resources */,
 				5737957D206B39AB00388BCC /* nav.png in Resources */,
@@ -1928,14 +1924,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		57B544022062727F00701F9C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				57B544032062727F00701F9C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		57B5440A2062727F00701F9C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
