@@ -63,6 +63,8 @@
         _collectionView.dataSource = self.control;
         _collectionView.delegate = self.control;
         _collectionView.pulledDelegate = self.control;
+        _collectionView.isHeader = YES;
+        _collectionView.isFooter = YES;
     }
     return _collectionView;
 }

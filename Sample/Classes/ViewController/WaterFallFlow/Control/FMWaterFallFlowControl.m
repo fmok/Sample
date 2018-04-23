@@ -23,9 +23,17 @@ static NSString *const kFMWaterFallFlowCellReusedIdentifier = @"FMWaterFallFlowC
 
 - (void)loadData
 {
+    [self testCatchData:NO];
+}
+
+#pragma mark - Private methods
+- (void)testCatchData:(BOOL)isLoadMore
+{
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
-        [self.vc.shops removeAllObjects];
+        if (!isLoadMore) {
+            [self.vc.shops removeAllObjects];
+        }
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"shop" ofType:@"plist"];
         NSArray *shops = [[NSArray alloc] initWithContentsOfFile:filePath];
         
@@ -42,21 +50,24 @@ static NSString *const kFMWaterFallFlowCellReusedIdentifier = @"FMWaterFallFlowC
     });
 }
 
-#pragma mark - Private methods
-
 #pragma mark - PulledCollectionViewDelegate
 - (void)refreshWithPulledCollectionView:(PulledCollectionView *)collectionView
 {
-    
+    [self testCatchData:NO];
+    [self.vc.collectionView finishRefreshCollectionViewWithType:PulledCollectionViewTypeDown isUpdateTime:YES];
 }
 
 - (void)loadMoreWithPulledCollectionView:(PulledCollectionView *)collectionView
 {
-    
+    [self testCatchData:YES];
+    [self.vc.collectionView finishRefreshCollectionViewWithType:PulledCollectionViewTypeUp isUpdateTime:NO];
 }
 
 #pragma mark - UICollectionViewDelegate
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    TTDPRINT(@"");
+}
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
