@@ -32,14 +32,15 @@
 - (void)updateConstraints
 {
     // 尽量减少使用 平级子控件之间 的约束
+    CGFloat H_price = 30.f;
     WS(weakSelf);
     [self.imgView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.and.top.and.right.equalTo(weakSelf);
-        make.bottom.equalTo(weakSelf).offset(-30.f);
+        make.bottom.equalTo(weakSelf).offset(-H_price);
     }];
     [self.priceLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.and.right.and.bottom.equalTo(weakSelf);
-        make.height.mas_equalTo(30.f);
+        make.height.mas_equalTo(H_price);
     }];
     
     [super updateConstraints];
