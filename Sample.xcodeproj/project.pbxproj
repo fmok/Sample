@@ -1061,7 +1061,7 @@
 				5740FA30206C8A9A006F20A5 /* FMScrollLabel */,
 				57379582206B4B2500388BCC /* FMSegmentControl */,
 				578320B4206A53BD00E2D67F /* FMAlertView */,
-				57DED5422067C7FE00E24607 /* TabBar */,
+				57DED5422067C7FE00E24607 /* FMTabBarVC */,
 				57B5444D20627CB700701F9C /* Navigation */,
 				57B544362062787700701F9C /* PulledCollectionView */,
 				57B544372062787700701F9C /* PulledTableView */,
@@ -1367,13 +1367,13 @@
 			path = Nav;
 			sourceTree = "<group>";
 		};
-		57DED5422067C7FE00E24607 /* TabBar */ = {
+		57DED5422067C7FE00E24607 /* FMTabBarVC */ = {
 			isa = PBXGroup;
 			children = (
 				57DED5432067C81700E24607 /* FMTabBarViewController.h */,
 				57DED5442067C81700E24607 /* FMTabBarViewController.m */,
 			);
-			path = TabBar;
+			path = FMTabBarVC;
 			sourceTree = "<group>";
 		};
 		57DED5462067CF7B00E24607 /* Resource */ = {
