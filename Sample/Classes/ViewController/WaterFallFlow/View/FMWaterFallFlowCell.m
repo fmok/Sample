@@ -33,7 +33,7 @@
     // 尽量减少使用 平级子控件之间 的约束
     WS(weakSelf);
     [self.imgView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.left.and.top.and.bottom.equalTo(weakSelf);
+        make.left.and.top.and.right.equalTo(weakSelf);
         make.bottom.equalTo(weakSelf).offset(-20.f);
     }];
     [self.priceLabel mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -63,8 +63,9 @@
 {
     if (!_imgView) {
         _imgView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        _imgView.backgroundColor = [UIColor yellowColor];
+        _imgView.backgroundColor = [UIColor grayColor];
         _imgView.contentMode = UIViewContentModeScaleAspectFill;
+        _imgView.clipsToBounds = YES;
     }
     return _imgView;
 }

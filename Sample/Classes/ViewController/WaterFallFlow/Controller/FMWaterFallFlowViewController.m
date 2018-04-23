@@ -22,6 +22,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setUpNav];
+    WS(weakSelf);
+    [self.view addSubview:self.collectionView];
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(weakSelf.view);
+    }];
+    
+    [self.control registerCell];
+    [self.control loadData];
 }
 
 #pragma mark - Private methods
@@ -32,7 +40,7 @@
     self.fm_navigationBar.titleTextAttributes = @{
                                                   NSFontAttributeName: [UIFont boldSystemFontOfSize:20.f],
                                                   NSForegroundColorAttributeName: [UIColor blackColor]
-                                                  };
+                                                };
 }
 
 #pragma mark - getter & setter
@@ -51,6 +59,7 @@
         LMHWaterFallLayout *flowLayout = [[LMHWaterFallLayout alloc] init];
         flowLayout.delegate = self.control;
         _collectionView = [[PulledCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.dataSource = self.control;
         _collectionView.delegate = self.control;
         _collectionView.pulledDelegate = self.control;

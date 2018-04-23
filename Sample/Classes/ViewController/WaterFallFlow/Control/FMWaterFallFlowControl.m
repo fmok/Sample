@@ -9,6 +9,7 @@
 #import "FMWaterFallFlowControl.h"
 #import "FMWaterFallFlowCell.h"
 #import "FMShopInfo.h"
+#import "FMWaterFallFlowShopModel.h"
 
 static NSString *const kFMWaterFallFlowCellReusedIdentifier = @"FMWaterFallFlowCell";
 
@@ -22,7 +23,23 @@ static NSString *const kFMWaterFallFlowCellReusedIdentifier = @"FMWaterFallFlowC
 
 - (void)loadData
 {
-    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [self.vc.shops removeAllObjects];
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"shop" ofType:@"plist"];
+        NSArray *shops = [[NSArray alloc] initWithContentsOfFile:filePath];
+        
+        NSError *error;
+        for (NSDictionary *dic in shops) {
+            FMWaterFallFlowShopModel *model = [[FMWaterFallFlowShopModel alloc] initWithDictionary:dic error:&error];
+            if (!error) {
+                [self.vc.shops addObject:model];
+            } else {
+                TTDPRINT(@"\n*** %@ ***\n", error);
+            }
+        }
+        [self.vc.collectionView reloadData];
+    });
 }
 
 #pragma mark - Private methods
@@ -48,10 +65,7 @@ static NSString *const kFMWaterFallFlowCellReusedIdentifier = @"FMWaterFallFlowC
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
-    
-//    self.collectionView.mj_footer.hidden = self.shops.count == 0;
-    
+{   
     return self.vc.shops.count;
 }
 
@@ -59,7 +73,7 @@ static NSString *const kFMWaterFallFlowCellReusedIdentifier = @"FMWaterFallFlowC
 {
     
     FMWaterFallFlowCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFMWaterFallFlowCellReusedIdentifier forIndexPath:indexPath];
-    FMShopInfo *model = self.vc.shops[indexPath.item];
+    FMWaterFallFlowShopModel *model = self.vc.shops[indexPath.item];
     [cell updateContentWithImgUrl:model.img price:model.price];
     return cell;
 }
@@ -67,7 +81,7 @@ static NSString *const kFMWaterFallFlowCellReusedIdentifier = @"FMWaterFallFlowC
 #pragma mark - LMHWaterFallLayoutDelegate
 - (CGFloat)waterFallLayout:(LMHWaterFallLayout *)waterFallLayout heightForItemAtIndexPath:(NSUInteger)indexPath itemWidth:(CGFloat)itemWidth
 {
-    FMShopInfo * shop = self.vc.shops[indexPath];
+    FMWaterFallFlowShopModel * shop = self.vc.shops[indexPath];
     return itemWidth * shop.h / shop.w;
 }
 
