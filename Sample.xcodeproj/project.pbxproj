@@ -77,7 +77,7 @@
 		578320B7206A53D400E2D67F /* FMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 578320B6206A53D400E2D67F /* FMAlertView.m */; };
 		5787C856208D800700852640 /* FMWaterFallFlowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C855208D800700852640 /* FMWaterFallFlowViewController.m */; };
 		5787C859208D802400852640 /* FMWaterFallFlowControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C858208D802400852640 /* FMWaterFallFlowControl.m */; };
-		5787C85C208D820A00852640 /* LMHWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C85A208D820A00852640 /* LMHWaterFallLayout.m */; };
+		5787C85C208D820A00852640 /* FMWaterFallFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C85A208D820A00852640 /* FMWaterFallFlowLayout.m */; };
 		5787C85F208D83C100852640 /* FMWaterFallFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C85E208D83C100852640 /* FMWaterFallFlowCell.m */; };
 		5787C862208D88BC00852640 /* FMShopInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C861208D88BC00852640 /* FMShopInfo.m */; };
 		5787C865208D8E4D00852640 /* FMWaterFallFlowShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5787C864208D8E4D00852640 /* FMWaterFallFlowShopModel.m */; };
@@ -293,8 +293,8 @@
 		5787C855208D800700852640 /* FMWaterFallFlowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMWaterFallFlowViewController.m; sourceTree = "<group>"; };
 		5787C857208D802400852640 /* FMWaterFallFlowControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMWaterFallFlowControl.h; sourceTree = "<group>"; };
 		5787C858208D802400852640 /* FMWaterFallFlowControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMWaterFallFlowControl.m; sourceTree = "<group>"; };
-		5787C85A208D820A00852640 /* LMHWaterFallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMHWaterFallLayout.m; sourceTree = "<group>"; };
-		5787C85B208D820A00852640 /* LMHWaterFallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMHWaterFallLayout.h; sourceTree = "<group>"; };
+		5787C85A208D820A00852640 /* FMWaterFallFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMWaterFallFlowLayout.m; sourceTree = "<group>"; };
+		5787C85B208D820A00852640 /* FMWaterFallFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMWaterFallFlowLayout.h; sourceTree = "<group>"; };
 		5787C85D208D83C100852640 /* FMWaterFallFlowCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMWaterFallFlowCell.h; sourceTree = "<group>"; };
 		5787C85E208D83C100852640 /* FMWaterFallFlowCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMWaterFallFlowCell.m; sourceTree = "<group>"; };
 		5787C860208D88BC00852640 /* FMShopInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMShopInfo.h; sourceTree = "<group>"; };
@@ -848,8 +848,8 @@
 		5787C851208D7F9B00852640 /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				5787C85B208D820A00852640 /* LMHWaterFallLayout.h */,
-				5787C85A208D820A00852640 /* LMHWaterFallLayout.m */,
+				5787C85B208D820A00852640 /* FMWaterFallFlowLayout.h */,
+				5787C85A208D820A00852640 /* FMWaterFallFlowLayout.m */,
 				5787C857208D802400852640 /* FMWaterFallFlowControl.h */,
 				5787C858208D802400852640 /* FMWaterFallFlowControl.m */,
 			);
@@ -1823,7 +1823,7 @@
 				57C3D55E20689BF400E0B8BA /* MainViewController.m in Sources */,
 				5787C859208D802400852640 /* FMWaterFallFlowControl.m in Sources */,
 				57B5440F2062727F00701F9C /* main.m in Sources */,
-				5787C85C208D820A00852640 /* LMHWaterFallLayout.m in Sources */,
+				5787C85C208D820A00852640 /* FMWaterFallFlowLayout.m in Sources */,
 				57B54440206278B600701F9C /* TestViewController.m in Sources */,
 				57DED55B2067D23500E24607 /* UIImage+Resize.m in Sources */,
 				5740FA3B206CBA97006F20A5 /* FMScrollLabel.m in Sources */,

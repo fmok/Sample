@@ -10,7 +10,7 @@
 #import "FMWaterFallFlowViewController.h"
 
 @interface FMWaterFallFlowControl : NSObject<
-    LMHWaterFallLayoutDelegate,
+    FMWaterFallFlowLayoutDelegate,
     UICollectionViewDelegate,
     UICollectionViewDataSource,
     PulledCollectionViewDelegate>

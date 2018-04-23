@@ -7,7 +7,7 @@
 //
 
 #import "FMBaseViewController.h"
-#import "LMHWaterFallLayout.h"
+#import "FMWaterFallFlowLayout.h"
 #import "PulledCollectionView.h"
 
 @interface FMWaterFallFlowViewController : FMBaseViewController

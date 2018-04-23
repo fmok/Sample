@@ -56,7 +56,7 @@
 - (PulledCollectionView *)collectionView
 {
     if (!_collectionView) {
-        LMHWaterFallLayout *flowLayout = [[LMHWaterFallLayout alloc] init];
+        FMWaterFallFlowLayout *flowLayout = [[FMWaterFallFlowLayout alloc] init];
         flowLayout.delegate = self.control;
         _collectionView = [[PulledCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         _collectionView.backgroundColor = SRGBCOLOR_HEX(0xf6f6f6);

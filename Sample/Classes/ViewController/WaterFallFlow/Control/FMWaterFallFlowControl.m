@@ -90,18 +90,18 @@ static NSString *const kFMWaterFallFlowCellReusedIdentifier = @"FMWaterFallFlowC
 }
 
 #pragma mark - LMHWaterFallLayoutDelegate
-- (CGFloat)waterFallLayout:(LMHWaterFallLayout *)waterFallLayout heightForItemAtIndexPath:(NSUInteger)indexPath itemWidth:(CGFloat)itemWidth
+- (CGFloat)waterFallLayout:(FMWaterFallFlowLayout *)waterFallLayout heightForItemAtIndexPath:(NSUInteger)indexPath itemWidth:(CGFloat)itemWidth
 {
     FMWaterFallFlowShopModel * shop = self.vc.shops[indexPath];
     return itemWidth * shop.h / shop.w;
 }
 
-- (CGFloat)rowMarginInWaterFallLayout:(LMHWaterFallLayout *)waterFallLayout
+- (CGFloat)rowMarginInWaterFallLayout:(FMWaterFallFlowLayout *)waterFallLayout
 {
     return 10;
 }
 
-- (NSUInteger)columnCountInWaterFallLayout:(LMHWaterFallLayout *)waterFallLayout
+- (NSUInteger)columnCountInWaterFallLayout:(FMWaterFallFlowLayout *)waterFallLayout
 {
     return 2;
 }
