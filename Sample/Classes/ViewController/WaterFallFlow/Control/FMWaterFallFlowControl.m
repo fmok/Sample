@@ -82,8 +82,7 @@ static NSString *const kFMWaterFallFlowCellReusedIdentifier = @"FMWaterFallFlowC
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    FMWaterFallFlowCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFMWaterFallFlowCellReusedIdentifier forIndexPath:indexPath];
+    FMWaterFallFlowCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:kFMWaterFallFlowCellReusedIdentifier forIndexPath:indexPath];
     FMWaterFallFlowShopModel *model = self.vc.shops[indexPath.item];
     [cell updateContentWithImgUrl:model.img price:model.price];
     return cell;
