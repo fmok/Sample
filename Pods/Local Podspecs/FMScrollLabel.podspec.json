@@ -1,0 +1,26 @@
+{
+  "name": "FMScrollLabel",
+  "version": "0.0.1",
+  "summary": "高效跑马灯 label",
+  "description": "高效跑马灯 label",
+  "homepage": "http://FMScrollLabel/FMScrollLabel",
+  "license": "MIT (FMScrollLabel)",
+  "authors": {
+    "wangjiuyin": "1528123808@qq.com"
+  },
+  "source": {
+    "git": "",
+    "tag": "0.0.1"
+  },
+  "source_files": [
+    "Source",
+    "Source/**/*.{h,m}"
+  ],
+  "exclude_files": "Source/Exclude",
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

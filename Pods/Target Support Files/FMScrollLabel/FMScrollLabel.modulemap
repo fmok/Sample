@@ -1,0 +1,6 @@
+framework module FMScrollLabel {
+  umbrella header "FMScrollLabel-umbrella.h"
+
+  export *
+  module * { export * }
+}
