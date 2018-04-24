@@ -30,9 +30,19 @@
 
 @end
 
-FMSegmentControl *sgControl_self_OC = nil;
+FMSegmentControl *segControl_self_OC = nil;
 
 @interface FMSegmentControl ()
+{
+    UIColor *titleColorNormal;
+    UIColor *titleColorSelected;
+    UIFont *titleFont;
+    UIColor *segBgColorNormal;
+    UIColor *segBgColorSelected;
+    UIColor *borderColor;
+    CGFloat borderWidth;
+    CGFloat cornerRadius;
+}
 
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, assign) NSInteger currentIndex;
@@ -46,33 +56,35 @@ FMSegmentControl *sgControl_self_OC = nil;
 @implementation FMSegmentControl
 
 void configureDic(UIColor *titleColorNormal, UIColor *titleColorSelected, UIFont *titleFont, UIColor *segBgColorNormal, UIColor *segBgColorSelected, UIColor *borderColor, CGFloat cornerRadius, CGFloat borderWidth) {
-    [sgControl_self_OC.configureDic setValuesForKeysWithDictionary:@{
-                                                                     kSegmentControlTitleColorNormal:titleColorNormal,
-                                                                     kSegmentControlTitleColorSelected:titleColorSelected,
-                                                                     kSegmentControlTitleFont:titleFont,
-                                                                     kSegmentControlSegBgColorNormal:segBgColorNormal,
-                                                                     kSegmentControlSegBgColorSelected:segBgColorSelected,
-                                                                     kSegmentControlBorderColor:borderColor,
-                                                                     kSegmentControlBorderWidth:@(cornerRadius),
-                                                                     kSegmentControlCornerRadius:@(borderWidth)
-                                                                     }];
+    segControl_self_OC->titleColorNormal = (titleColorNormal?:[UIColor whiteColor]);
+    segControl_self_OC->titleColorSelected = (titleColorSelected?:[UIColor whiteColor]);
+    segControl_self_OC->titleFont = (titleFont?:[UIFont systemFontOfSize:14.f]);
+    segControl_self_OC->segBgColorNormal = (segBgColorNormal?:SRGBCOLOR_HEX(0x6075FB));
+    segControl_self_OC->segBgColorSelected = (segBgColorSelected?:SRGBCOLOR_HEX(0xBED2EF));
+    segControl_self_OC->borderColor = (borderColor?:[UIColor clearColor]);
+    segControl_self_OC->borderWidth = (borderWidth);
+    segControl_self_OC->cornerRadius = (cornerRadius);
+    segControl_self_OC = nil;  // 需要手动释放 segControl_self_OC，否则会造成循环引用
 }
 
 - (void)dealloc
 {
+    
 }
 
-- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items configureDic:(NSDictionary *)configureDic currentIndex:(NSInteger)currentIndex
+- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items currentIndex:(NSInteger)currentIndex configureBlock:(FMSegmentControlConfigBlock)block
 {
     self = [super initWithFrame:frame];
     if (self) {
-        if (configureDic) {
-            [self.configureDic setValuesForKeysWithDictionary:configureDic];
+        segControl_self_OC = self;
+        if (block) {
+            block(YES);
+        } else {
+            configureDic(nil, nil, nil, nil, nil, nil, 0.f, 0.f);
         }
         [self setUp];
         self.items = items;
         self.currentIndex = currentIndex;
-        sgControl_self_OC = self;
     }
     return self;
 }
@@ -92,7 +104,7 @@ void configureDic(UIColor *titleColorNormal, UIColor *titleColorSelected, UIFont
     }
     
     _indicatorView.frame = [self elementFrameAtIndex:self.currentIndex];
-    _indicatorView.layer.cornerRadius = [[self.configureDic objectForKey:kSegmentControlCornerRadius] floatValue];
+    _indicatorView.layer.cornerRadius = cornerRadius;
 }
 
 #pragma mark - Publice Method
@@ -112,10 +124,10 @@ void configureDic(UIColor *titleColorNormal, UIColor *titleColorSelected, UIFont
 #pragma mark - Private methods
 - (void)setUp
 {
-    self.backgroundColor = [self.configureDic objectForKey:kSegmentControlSegBgColorNormal];
-    self.layer.cornerRadius = [[self.configureDic objectForKey:kSegmentControlCornerRadius] floatValue];
-    self.layer.borderWidth = [[self.configureDic objectForKey:kSegmentControlBorderWidth] floatValue];
-    self.layer.borderColor = ((UIColor *)[self.configureDic objectForKey:kSegmentControlBorderColor]).CGColor;
+    self.backgroundColor = segBgColorNormal;
+    self.layer.cornerRadius = cornerRadius;
+    self.layer.borderWidth = borderWidth;
+    self.layer.borderColor = borderColor.CGColor;
     self.layer.masksToBounds = YES;
     
     [self addSubview:self.titleLabelsView];
@@ -133,15 +145,15 @@ void configureDic(UIColor *titleColorNormal, UIColor *titleColorSelected, UIFont
     for (int i = 0; i < self.items.count; i ++) {
         UILabel *titleLabel = [[UILabel alloc] init];
         titleLabel.text = self.items[i];
-        titleLabel.font = [self.configureDic objectForKey:kSegmentControlTitleFont];
-        titleLabel.textColor = [self.configureDic objectForKey:kSegmentControlTitleColorNormal];
+        titleLabel.font = titleFont;
+        titleLabel.textColor = titleColorNormal;
         titleLabel.textAlignment = NSTextAlignmentCenter;
         [_titleLabelsView addSubview:titleLabel];
         
         UILabel *selectedTitleLabel = [[UILabel alloc] init];
         selectedTitleLabel.text = self.items[i];
-        selectedTitleLabel.font = [self.configureDic objectForKey:kSegmentControlTitleFont];
-        selectedTitleLabel.textColor = [self.configureDic objectForKey:kSegmentControlTitleColorSelected];
+        selectedTitleLabel.font = titleFont;
+        selectedTitleLabel.textColor = titleColorSelected;
         selectedTitleLabel.textAlignment = NSTextAlignmentCenter;
         [_selectedTitlesLabelView addSubview:selectedTitleLabel];
     }
@@ -244,28 +256,12 @@ void configureDic(UIColor *titleColorNormal, UIColor *titleColorSelected, UIFont
 {
     if (!_indicatorView) {
         _indicatorView = [[FMMaskView alloc] init];
-        _indicatorView.backgroundColor = [self.configureDic objectForKey:kSegmentControlSegBgColorSelected];
+        _indicatorView.backgroundColor = segBgColorSelected;
         _indicatorView.layer.masksToBounds = YES;
     }
     return _indicatorView;
 }
 
-- (NSMutableDictionary *)configureDic
-{
-    if (!_configureDic) {
-        _configureDic = [[NSMutableDictionary alloc] initWithDictionary:@{
-                                                                          kSegmentControlTitleColorNormal:[UIColor whiteColor],
-                                                                          kSegmentControlTitleColorSelected:[UIColor whiteColor],
-                                                                          kSegmentControlTitleFont:[UIFont systemFontOfSize:14.f],
-                                                                          kSegmentControlSegBgColorNormal:SRGBCOLOR_HEX(0x6075FB),
-                                                                          kSegmentControlSegBgColorSelected:SRGBCOLOR_HEX(0xBED2EF),
-                                                                          kSegmentControlBorderColor:[UIColor clearColor],
-                                                                          kSegmentControlBorderWidth:@(0.f),
-                                                                          kSegmentControlCornerRadius:@(0.f)
-                                                                          }];
-    }
-    return _configureDic;
-}
 
 /*
 // Only override drawRect: if you perform custom drawing.

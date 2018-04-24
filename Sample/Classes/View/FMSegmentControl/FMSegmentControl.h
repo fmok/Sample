@@ -8,18 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-static NSString *const kSegmentControlTitleColorNormal = @"titleColorNormal";
-static NSString *const kSegmentControlTitleColorSelected = @"titleColorSelected";
-static NSString *const kSegmentControlTitleFont = @"titleFont";
-
-static NSString *const kSegmentControlSegBgColorNormal = @"segBgColorNormal";
-static NSString *const kSegmentControlSegBgColorSelected = @"segBgColorSelected";
-
-static NSString *const kSegmentControlBorderColor = @"borderColor";
-static NSString *const kSegmentControlCornerRadius = @"cornerRadius";
-static NSString *const kSegmentControlBorderWidth = @"borderWidth";
-
 @class FMSegmentControl;
+
+typedef void(^FMSegmentControlConfigBlock)(BOOL isNeed);
 
 @protocol FMSegmentControlDelegate<NSObject>
 
@@ -30,11 +21,13 @@ static NSString *const kSegmentControlBorderWidth = @"borderWidth";
 @interface FMSegmentControl : UIControl
 
 @property (nonatomic, weak) id<FMSegmentControlDelegate> delegate;
-@property (nonatomic, strong) NSMutableDictionary *configureDic;
 
 void configureDic(UIColor *titleColorNormal, UIColor *titleColorSelected, UIFont *titleFont, UIColor *segBgColorNormal, UIColor *segBgColorSelected, UIColor *borderColor, CGFloat cornerRadius, CGFloat borderWidth);
 
-- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items configureDic:(NSDictionary *)configureDic currentIndex:(NSInteger)currentIndex;
+/**
+ 在 configureBlock 中，可以调用上述C函数，添加相关属性的默认配置；block 传nil，则为默认配置
+ */
+- (instancetype)initWithFrame:(CGRect)frame items:(NSArray *)items currentIndex:(NSInteger)currentIndex configureBlock:(FMSegmentControlConfigBlock)block;
 
 - (void)scrollToIndex:(NSInteger)index;
 - (void)scrollByProgress:(CGFloat)progress;  // 0.0 - index.progress  if you want to scroll to index 2, set progress 0.0 - 2.0;
