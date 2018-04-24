@@ -18,6 +18,7 @@ target 'Sample' do
   
   # LocalLib
   pod 'FMSegmentControl', :path => './LocalLib/FMSegmentControl/'
+  pod 'Navigation', :path => './LocalLib/Navigation'
   
 
   target 'SampleTests' do

@@ -18,6 +18,7 @@ PODS:
   - JSONModel (1.7.0)
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.3)
+  - Navigation (0.0.1)
   - SDWebImage (4.3.0):
     - SDWebImage/Core (= 4.3.0)
   - SDWebImage/Core (4.3.0)
@@ -29,12 +30,15 @@ DEPENDENCIES:
   - JSONModel
   - Masonry
   - MJRefresh
+  - Navigation (from `./LocalLib/Navigation`)
   - SDWebImage
   - YTKNetwork
 
 EXTERNAL SOURCES:
   FMSegmentControl:
     :path: ./LocalLib/FMSegmentControl/
+  Navigation:
+    :path: ./LocalLib/Navigation
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
@@ -42,9 +46,10 @@ SPEC CHECKSUMS:
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  Navigation: a856638d9553e0b4d8441e1198a183fc8c5f262f
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: 9e8d6892d412edc3ec525908c156230df153641f
+PODFILE CHECKSUM: 7fbcc8f40c002cb073e5a9c0630f416bc1b921e7
 
 COCOAPODS: 1.4.0

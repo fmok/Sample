@@ -1,0 +1,26 @@
+{
+  "name": "Navigation",
+  "version": "0.0.1",
+  "summary": "easy to use",
+  "description": "an useful navigation",
+  "homepage": "http://Navigation/Navigation",
+  "license": "MIT (Navigation)",
+  "authors": {
+    "wangjiuyin": "1528123808@qq.com"
+  },
+  "source": {
+    "git": "",
+    "tag": "0.0.1"
+  },
+  "source_files": [
+    "Source",
+    "Source/**/*.{h,m}"
+  ],
+  "exclude_files": "Source/Exclude",
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}
