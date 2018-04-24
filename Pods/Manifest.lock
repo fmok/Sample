@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.0)
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
+  - FMSegmentControl (0.0.1)
   - JSONModel (1.7.0)
   - Masonry (1.1.0)
   - MJRefresh (3.1.15.3)
@@ -24,20 +25,26 @@ PODS:
     - AFNetworking (~> 3.0)
 
 DEPENDENCIES:
+  - FMSegmentControl (from `./LocalLib/FMSegmentControl/`)
   - JSONModel
   - Masonry
   - MJRefresh
   - SDWebImage
   - YTKNetwork
 
+EXTERNAL SOURCES:
+  FMSegmentControl:
+    :path: ./LocalLib/FMSegmentControl/
+
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  FMSegmentControl: 8349683c31ba921e017b0d359b7d7d0ac07eec12
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
 
-PODFILE CHECKSUM: ae222f90ca9c7f6e1cda7bc4447b57fde57ec67d
+PODFILE CHECKSUM: 9e8d6892d412edc3ec525908c156230df153641f
 
 COCOAPODS: 1.4.0

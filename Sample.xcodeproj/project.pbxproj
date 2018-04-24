@@ -27,7 +27,6 @@
 		5730A6422089F1480049602D /* FMCalendarSingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5730A6412089F1480049602D /* FMCalendarSingleView.m */; };
 		5737957D206B39AB00388BCC /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 5737957C206B39AB00388BCC /* nav.png */; };
 		57379581206B4ACB00388BCC /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379580206B4ACA00388BCC /* SwipeView.m */; };
-		57379585206B4B4700388BCC /* FMSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379584206B4B4700388BCC /* FMSegmentControl.m */; };
 		5737958E206B6EC900388BCC /* MainControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737958D206B6EC900388BCC /* MainControl.m */; };
 		57379591206B714300388BCC /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379590206B714300388BCC /* CollectionViewCell.m */; };
 		57379594206B789F00388BCC /* CollectionSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379593206B789F00388BCC /* CollectionSectionHeaderView.m */; };
@@ -206,8 +205,6 @@
 		5737957C206B39AB00388BCC /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav.png; sourceTree = "<group>"; };
 		5737957F206B4ACA00388BCC /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
 		57379580206B4ACA00388BCC /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
-		57379583206B4B4700388BCC /* FMSegmentControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMSegmentControl.h; sourceTree = "<group>"; };
-		57379584206B4B4700388BCC /* FMSegmentControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMSegmentControl.m; sourceTree = "<group>"; };
 		5737958C206B6EC900388BCC /* MainControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainControl.h; sourceTree = "<group>"; };
 		5737958D206B6EC900388BCC /* MainControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainControl.m; sourceTree = "<group>"; };
 		5737958F206B714300388BCC /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
@@ -551,15 +548,6 @@
 				57379580206B4ACA00388BCC /* SwipeView.m */,
 			);
 			path = SwipeView;
-			sourceTree = "<group>";
-		};
-		57379582206B4B2500388BCC /* FMSegmentControl */ = {
-			isa = PBXGroup;
-			children = (
-				57379583206B4B4700388BCC /* FMSegmentControl.h */,
-				57379584206B4B4700388BCC /* FMSegmentControl.m */,
-			);
-			path = FMSegmentControl;
 			sourceTree = "<group>";
 		};
 		57379586206B6E8800388BCC /* Control */ = {
@@ -1136,7 +1124,6 @@
 				578E7AF7207C5990001D351D /* Calendar */,
 				5737E6092073338E008AF33C /* FMTabsView */,
 				5740FA30206C8A9A006F20A5 /* FMScrollLabel */,
-				57379582206B4B2500388BCC /* FMSegmentControl */,
 				578320B4206A53BD00E2D67F /* FMAlertView */,
 				57DED5422067C7FE00E24607 /* FMTabBarVC */,
 				57B5444D20627CB700701F9C /* Navigation */,
@@ -1770,6 +1757,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Sample/Pods-Sample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FMSegmentControl/FMSegmentControl.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -1779,6 +1767,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMSegmentControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -1898,7 +1887,6 @@
 				57DED56E2067D42100E24607 /* UIImageView+LBBlurredImage.m in Sources */,
 				57DED56D2067D42100E24607 /* UIImageEffects.m in Sources */,
 				57C3D56A2068BBAE00E0B8BA /* FMConstants.m in Sources */,
-				57379585206B4B4700388BCC /* FMSegmentControl.m in Sources */,
 				57379591206B714300388BCC /* CollectionViewCell.m in Sources */,
 				5769D8EC2086EBFC00FA0F62 /* UIViewController+FMNavigationBar.m in Sources */,
 				57D5CC752074ABB7009E65C6 /* PetDetailBottomPetDesView.m in Sources */,

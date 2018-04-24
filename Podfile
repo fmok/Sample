@@ -15,6 +15,10 @@ target 'Sample' do
   pod 'Masonry'
   pod 'MJRefresh'
   
+  
+  # LocalLib
+  pod 'FMSegmentControl', :path => './LocalLib/FMSegmentControl/'
+  
 
   target 'SampleTests' do
     inherit! :search_paths
