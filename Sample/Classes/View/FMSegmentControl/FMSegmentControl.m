@@ -8,6 +8,8 @@
 
 #import "FMSegmentControl.h"
 
+#define SRGBCOLOR_HEX(hex) SRGBCOLOR(((hex & 0xFF0000 )>>16), ((hex & 0x00FF00 )>>8), (hex & 0x0000FF))
+
 @interface FMMaskView : UIView
 
 @property (nonatomic, strong) CAShapeLayer *maskView;
