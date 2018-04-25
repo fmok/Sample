@@ -143,6 +143,8 @@
 		57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5672067D42100E24607 /* UIImage+ImageEffects.m */; };
 		57DED56D2067D42100E24607 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5692067D42100E24607 /* UIImageEffects.m */; };
 		57DED56E2067D42100E24607 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED56B2067D42100E24607 /* UIImageView+LBBlurredImage.m */; };
+		57E51DF92090512E0061EEEB /* NSURLSessionDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E51DF82090512E0061EEEB /* NSURLSessionDemoViewController.m */; };
+		57E51DFC2090513A0061EEEB /* NSURLSessionDemoControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E51DFB2090513A0061EEEB /* NSURLSessionDemoControl.m */; };
 		8646EF97853BD87ABD83D2D1 /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF9E3C2A30A459CB6D5BCFF /* Pods_Sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -418,6 +420,10 @@
 		57DED5692067D42100E24607 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		57DED56A2067D42100E24607 /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
 		57DED56B2067D42100E24607 /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
+		57E51DF72090512E0061EEEB /* NSURLSessionDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLSessionDemoViewController.h; sourceTree = "<group>"; };
+		57E51DF82090512E0061EEEB /* NSURLSessionDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionDemoViewController.m; sourceTree = "<group>"; };
+		57E51DFA2090513A0061EEEB /* NSURLSessionDemoControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLSessionDemoControl.h; sourceTree = "<group>"; };
+		57E51DFB2090513A0061EEEB /* NSURLSessionDemoControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionDemoControl.m; sourceTree = "<group>"; };
 		653BD37EA248C6612B6D4B63 /* Pods-SampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleTests/Pods-SampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C23F3861CA5B9F7966F887D /* Pods-SampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SampleUITests/Pods-SampleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D84C02F3A80B149BED8BD63 /* Pods-SampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleTests/Pods-SampleTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1075,6 +1081,7 @@
 				5769D8F420871DCF00FA0F62 /* CardScrollView */,
 				5787C84F208D7F1E00852640 /* WaterFallFlow */,
 				5787C868208DDDD400852640 /* TimeAreaCustomPicker */,
+				57E51DF3209037970061EEEB /* NSURLSesscion_ */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1439,6 +1446,41 @@
 				57DED56B2067D42100E24607 /* UIImageView+LBBlurredImage.m */,
 			);
 			path = LBBlurredImage;
+			sourceTree = "<group>";
+		};
+		57E51DF3209037970061EEEB /* NSURLSesscion_ */ = {
+			isa = PBXGroup;
+			children = (
+				57E51DF6209051100061EEEB /* View */,
+				57E51DF5209051080061EEEB /* Control */,
+				57E51DF4209050FD0061EEEB /* Controller */,
+			);
+			path = NSURLSesscion_;
+			sourceTree = "<group>";
+		};
+		57E51DF4209050FD0061EEEB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57E51DF72090512E0061EEEB /* NSURLSessionDemoViewController.h */,
+				57E51DF82090512E0061EEEB /* NSURLSessionDemoViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		57E51DF5209051080061EEEB /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				57E51DFA2090513A0061EEEB /* NSURLSessionDemoControl.h */,
+				57E51DFB2090513A0061EEEB /* NSURLSessionDemoControl.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		57E51DF6209051100061EEEB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5FBE49CCB59ACFE1DD51C69F /* Frameworks */ = {
@@ -1864,6 +1906,7 @@
 				57B5445420627EF700701F9C /* SHError.m in Sources */,
 				573F2E7C206E19E40011C77A /* PurchaseRecordsViewController.m in Sources */,
 				5787C862208D88BC00852640 /* FMShopInfo.m in Sources */,
+				57E51DF92090512E0061EEEB /* NSURLSessionDemoViewController.m in Sources */,
 				5769D90020871EC100FA0F62 /* CardsScrollView.m in Sources */,
 				572E6A7A20637F1D008114EA /* MBProgressHUD.m in Sources */,
 				57B5444C20627C5800701F9C /* PulledCollectionView.m in Sources */,
@@ -1876,6 +1919,7 @@
 				57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */,
 				57C21B842071FD4400F70562 /* UIResponder+Router.m in Sources */,
 				573F2E91206E586E0011C77A /* MyPurchaseCell.m in Sources */,
+				57E51DFC2090513A0061EEEB /* NSURLSessionDemoControl.m in Sources */,
 				578E7B13207C5990001D351D /* FMCalendarScrollView.m in Sources */,
 				5740FA4F206D0645006F20A5 /* BuyDetailCardSendWordView.m in Sources */,
 				57C3D5672068A7DB00E0B8BA /* TestHeaderView.m in Sources */,

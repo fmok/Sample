@@ -91,10 +91,10 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
     return 1;
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [cell tableView:tableView forRowAtIndexPath:indexPath animationStyle:UITableViewCellDisplayAnimationLeft];
-}
+//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [cell tableView:tableView forRowAtIndexPath:indexPath animationStyle:UITableViewCellDisplayAnimationLeft];
+//}
 
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context

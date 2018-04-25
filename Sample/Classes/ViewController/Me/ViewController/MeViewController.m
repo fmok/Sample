@@ -16,6 +16,7 @@
 #import "FMCardScrollViewController.h"
 #import "FMWaterFallFlowViewController.h"
 #import "FMPickerViewController.h"
+#import "NSURLSessionDemoViewController.h"
 
 @interface MeViewController ()
 
@@ -135,6 +136,11 @@
                        @{
                          kMeVCTitle: @"Time Area Custom Picker",
                          kMeVCClassName: NSStringFromClass([FMPickerViewController class]),
+                         kMeVCLogoStr: @"upDown"
+                         },
+                       @{
+                         kMeVCTitle: @"Breakpoint continuingly",
+                         kMeVCClassName: NSStringFromClass([NSURLSessionDemoViewController class]),
                          kMeVCLogoStr: @"upDown"
                          },
                        nil];
