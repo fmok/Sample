@@ -38,6 +38,11 @@ static CGFloat const gap_left_right = 20.f;
 
 @implementation NSURLSessionDemoViewController
 
+- (void)dealloc
+{
+    TTDPRINT(@"%s", __func__);
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -45,7 +50,7 @@ static CGFloat const gap_left_right = 20.f;
     [self configUI];
     
     self.playBtn.enabled = NO;
-    NSString *caches =[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *caches = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
     NSString *filePath = [caches stringByAppendingPathComponent:FileLength];
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
     if (dict) {
