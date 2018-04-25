@@ -1081,7 +1081,7 @@
 				5769D8F420871DCF00FA0F62 /* CardScrollView */,
 				5787C84F208D7F1E00852640 /* WaterFallFlow */,
 				5787C868208DDDD400852640 /* TimeAreaCustomPicker */,
-				57E51DF3209037970061EEEB /* NSURLSesscion_ */,
+				57E51DF3209037970061EEEB /* BreakpointContinuingly */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1448,14 +1448,14 @@
 			path = LBBlurredImage;
 			sourceTree = "<group>";
 		};
-		57E51DF3209037970061EEEB /* NSURLSesscion_ */ = {
+		57E51DF3209037970061EEEB /* BreakpointContinuingly */ = {
 			isa = PBXGroup;
 			children = (
 				57E51DF6209051100061EEEB /* View */,
 				57E51DF5209051080061EEEB /* Control */,
 				57E51DF4209050FD0061EEEB /* Controller */,
 			);
-			path = NSURLSesscion_;
+			path = BreakpointContinuingly;
 			sourceTree = "<group>";
 		};
 		57E51DF4209050FD0061EEEB /* Controller */ = {
