@@ -25,6 +25,9 @@ PODS:
   - SDWebImage/Core (4.3.0)
   - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
 
 DEPENDENCIES:
   - FMScrollLabel (from `./LocalLib/FMScrollLabel`)
@@ -35,6 +38,7 @@ DEPENDENCIES:
   - Navigation (from `./LocalLib/Navigation`)
   - SDWebImage
   - YTKNetwork
+  - YYCategories
 
 EXTERNAL SOURCES:
   FMScrollLabel:
@@ -54,7 +58,8 @@ SPEC CHECKSUMS:
   Navigation: a856638d9553e0b4d8441e1198a183fc8c5f262f
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
 
-PODFILE CHECKSUM: b46ca960d85a177ea136ef9abc22bf7690ec89f2
+PODFILE CHECKSUM: 647fdd22f5fab8e0056a6f782c632310d6acc20c
 
 COCOAPODS: 1.4.0

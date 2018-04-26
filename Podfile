@@ -14,6 +14,8 @@ target 'Sample' do
   pod 'SDWebImage'
   pod 'Masonry'
   pod 'MJRefresh'
+  pod 'YYCategories'
+  
   
   
   # LocalLib
