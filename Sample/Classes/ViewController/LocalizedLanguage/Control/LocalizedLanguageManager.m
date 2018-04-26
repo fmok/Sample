@@ -27,11 +27,13 @@ static NSString *const LocalizedLanguage_en = @"en";
 }
 
 #pragma mark - Public methods
-- (void)setDefaultLanguageEnvironment
+- (void)configDefaultLanguageEnvironment
 {
+    BOOL isNeedSaveToLocal = NO;
     NSString *lan = [self getLocalLanguage];
     if (!lan) {
         lan = [self getSystemLangusge];
+        isNeedSaveToLocal = YES;
     }
     
     if ([lan hasPrefix:LocalizedLanguage_zh_Hans]) {
@@ -42,6 +44,12 @@ static NSString *const LocalizedLanguage_en = @"en";
         _currentType = LocalizedLanguageType_en;
     } else{
         _currentType = LocalizedLanguageType_zh_Hans;
+    }
+    if (lan && isNeedSaveToLocal) {
+        if ([lan hasPrefix:LocalizedLanguage_zh_TW] || [lan hasPrefix:LocalizedLanguage_zh_HK] || [lan hasPrefix:LocalizedLanguage_zh_Hant]) {
+            lan = LocalizedLanguage_zh_Hant;
+        }
+        [[NSUserDefaults standardUserDefaults] setObject:lan forKey:kLocalizedLanguageKeyIdentifier];
     }
 }
 

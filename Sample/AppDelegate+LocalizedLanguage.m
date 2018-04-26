@@ -7,13 +7,12 @@
 //
 
 #import "AppDelegate+LocalizedLanguage.h"
-#import "LocalizedLanguageManager.h"
 
 @implementation AppDelegate (LocalizedLanguage)
 
 - (void)configLocalizedLanguage
 {
-    [[LocalizedLanguageManager shareManager] setDefaultLanguageEnvironment];
+    [[LocalizedLanguageManager shareManager] configDefaultLanguageEnvironment];
 }
 
 @end
