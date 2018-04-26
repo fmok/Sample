@@ -8,7 +8,6 @@
 
 #import "LocalizedLanguageManager.h"
 
-static NSString *const kLocalizedLanguageKeyIdentifier = @"kLocalizedLanguageKeyIdentifier";
 static NSString *const LocalizedLanguage_zh_Hans = @"zh-Hans";
 static NSString *const LocalizedLanguage_zh_Hant = @"zh-Hant";
 static NSString *const LocalizedLanguage_zh_TW = @"zh-TW";
@@ -44,6 +43,11 @@ static NSString *const LocalizedLanguage_en = @"en";
     } else{
         _currentType = LocalizedLanguageType_zh_Hans;
     }
+}
+
+- (NSString *)getShowValueWithLocalizedStrKey:(NSString *)key
+{
+    return [self getShowValueWithLocalizedStrKey:key andLanTable:@"Localized"];
 }
 
 - (NSString *)getShowValueWithLocalizedStrKey:(NSString *)key andLanTable:(NSString *)table

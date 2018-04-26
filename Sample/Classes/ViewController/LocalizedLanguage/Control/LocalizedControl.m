@@ -34,7 +34,7 @@
         default:
             break;
     }
-    showValue = [[LocalizedLanguageManager shareManager] getShowValueWithLocalizedStrKey:@"LocalizedLanguage_testTextStr" andLanTable:@"Localized"];
+    showValue = [[LocalizedLanguageManager shareManager] getShowValueWithLocalizedStrKey:@"LocalizedLanguage_testTextStr"];
     [self.vc updateTestLabel:showValue];
 }
 

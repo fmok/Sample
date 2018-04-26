@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#define kLocalizedLanguageKeyIdentifier @"kLocalizedLanguageKeyIdentifier"
+#define FMLocalizedString(key) [NSString stringWithFormat:[[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:[[NSUserDefaults standardUserDefaults] objectForKey:kLocalizedLanguageKeyIdentifier] ofType:@"lproj"]] localizedStringForKey:@"%@" value:nil table:@"Localized"], key]
+
 typedef NS_OPTIONS(NSInteger, LocalizedLanguageType) {
     LocalizedLanguageType_zh_Hans = 1 << 0,
     LocalizedLanguageType_zh_Hant = 1 << 1,
@@ -26,6 +29,12 @@ typedef NS_OPTIONS(NSInteger, LocalizedLanguageType) {
  */
 - (void)setDefaultLanguageEnvironment;
 /**
+ 默认查询 table == Localized.strings
+ 返回 currentType 对应的 language value
+ */
+- (NSString *)getShowValueWithLocalizedStrKey:(NSString *)key;
+/**
+ 查询 table 中
  返回 currentType 对应的 language value
  */
 - (NSString *)getShowValueWithLocalizedStrKey:(NSString *)key andLanTable:(NSString *)table;
