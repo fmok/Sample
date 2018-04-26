@@ -17,6 +17,7 @@
 #import "FMWaterFallFlowViewController.h"
 #import "FMPickerViewController.h"
 #import "NSURLSessionDemoViewController.h"
+#import "LocalizedViewController.h"
 
 @interface MeViewController ()
 
@@ -139,8 +140,13 @@
                          kMeVCLogoStr: @"upDown"
                          },
                        @{
-                         kMeVCTitle: @"Breakpoint continuingly",
+                         kMeVCTitle: @"基于NSURLSessionDataTask断点续传",
                          kMeVCClassName: NSStringFromClass([NSURLSessionDemoViewController class]),
+                         kMeVCLogoStr: @"upDown"
+                         },
+                       @{
+                         kMeVCTitle: @"多语言版本",
+                         kMeVCClassName: NSStringFromClass([LocalizedViewController class]),
                          kMeVCLogoStr: @"upDown"
                          },
                        nil];
