@@ -10,4 +10,6 @@
 
 @interface LocalizedViewController : FMBaseViewController
 
+- (void)updateTestLabel:(NSString *)str;
+
 @end

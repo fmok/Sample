@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "FMTabBarViewController.h"
+#import "AppDelegate+LocalizedLanguage.h"
 
 @interface AppDelegate ()
 
@@ -27,6 +28,8 @@
     self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];
+    
+    [self configLocalizedLanguage];
     
     return YES;
 }

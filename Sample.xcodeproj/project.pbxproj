@@ -42,6 +42,9 @@
 		5718F3FE20917EA1001859F1 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5718F3FD20917EA1001859F1 /* UserNotifications.framework */; };
 		5718F41E2091A1E7001859F1 /* Localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5718F4202091A1E7001859F1 /* Localized.strings */; };
 		5718F4292091A46D001859F1 /* LocalizedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5718F4282091A46D001859F1 /* LocalizedViewController.m */; };
+		5718F42D2091A9CB001859F1 /* LocalizedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5718F42C2091A9CB001859F1 /* LocalizedControl.m */; };
+		5718F4302091AD52001859F1 /* LocalizedLanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5718F42F2091AD52001859F1 /* LocalizedLanguageManager.m */; };
+		5718F4332091B807001859F1 /* AppDelegate+LocalizedLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5718F4322091B807001859F1 /* AppDelegate+LocalizedLanguage.m */; };
 		57206A51208445760017F7F8 /* FMH5ViewController_wk.m in Sources */ = {isa = PBXBuildFile; fileRef = 57206A50208445760017F7F8 /* FMH5ViewController_wk.m */; };
 		57206A54208451120017F7F8 /* top_navigation_close_h5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57206A53208451120017F7F8 /* top_navigation_close_h5@2x.png */; };
 		57206A57208451820017F7F8 /* reader_toolbar_share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57206A55208451820017F7F8 /* reader_toolbar_share@3x.png */; };
@@ -258,6 +261,12 @@
 		5718F4242091A2DC001859F1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localized.strings"; sourceTree = "<group>"; };
 		5718F4272091A46D001859F1 /* LocalizedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizedViewController.h; sourceTree = "<group>"; };
 		5718F4282091A46D001859F1 /* LocalizedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizedViewController.m; sourceTree = "<group>"; };
+		5718F42B2091A9CB001859F1 /* LocalizedControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizedControl.h; sourceTree = "<group>"; };
+		5718F42C2091A9CB001859F1 /* LocalizedControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizedControl.m; sourceTree = "<group>"; };
+		5718F42E2091AD52001859F1 /* LocalizedLanguageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalizedLanguageManager.h; sourceTree = "<group>"; };
+		5718F42F2091AD52001859F1 /* LocalizedLanguageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizedLanguageManager.m; sourceTree = "<group>"; };
+		5718F4312091B807001859F1 /* AppDelegate+LocalizedLanguage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+LocalizedLanguage.h"; sourceTree = "<group>"; };
+		5718F4322091B807001859F1 /* AppDelegate+LocalizedLanguage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+LocalizedLanguage.m"; sourceTree = "<group>"; };
 		57206A4F208445760017F7F8 /* FMH5ViewController_wk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMH5ViewController_wk.h; sourceTree = "<group>"; };
 		57206A50208445760017F7F8 /* FMH5ViewController_wk.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMH5ViewController_wk.m; sourceTree = "<group>"; };
 		57206A53208451120017F7F8 /* top_navigation_close_h5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_navigation_close_h5@2x.png"; sourceTree = "<group>"; };
@@ -740,6 +749,7 @@
 		5718F4252091A440001859F1 /* LocalizedLanguage */ = {
 			isa = PBXGroup;
 			children = (
+				5718F42A2091A9B6001859F1 /* Control */,
 				5718F4262091A45A001859F1 /* Controller */,
 			);
 			path = LocalizedLanguage;
@@ -752,6 +762,17 @@
 				5718F4282091A46D001859F1 /* LocalizedViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5718F42A2091A9B6001859F1 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				5718F42B2091A9CB001859F1 /* LocalizedControl.h */,
+				5718F42C2091A9CB001859F1 /* LocalizedControl.m */,
+				5718F42E2091AD52001859F1 /* LocalizedLanguageManager.h */,
+				5718F42F2091AD52001859F1 /* LocalizedLanguageManager.m */,
+			);
+			path = Control;
 			sourceTree = "<group>";
 		};
 		57206A4D208445140017F7F8 /* Web */ = {
@@ -1307,6 +1328,8 @@
 				57B544312062760B00701F9C /* Classes */,
 				57B543FC2062727F00701F9C /* AppDelegate.h */,
 				57B543FD2062727F00701F9C /* AppDelegate.m */,
+				5718F4312091B807001859F1 /* AppDelegate+LocalizedLanguage.h */,
+				5718F4322091B807001859F1 /* AppDelegate+LocalizedLanguage.m */,
 				57B5445B206282CF00701F9C /* Dependencies */,
 				57DED5462067CF7B00E24607 /* Resource */,
 				57B544082062727F00701F9C /* Assets.xcassets */,
@@ -2175,6 +2198,7 @@
 				57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */,
 				572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */,
 				573A8EA02088459500B89BF6 /* FMCardsStackFlowLayout.m in Sources */,
+				5718F4302091AD52001859F1 /* LocalizedLanguageManager.m in Sources */,
 				57C3D5702068C4D300E0B8BA /* CGGeometryAdditions.m in Sources */,
 				573F2E97206E5BBC0011C77A /* MyPurchaseCellTopView.m in Sources */,
 				57B544072062727F00701F9C /* Sample.xcdatamodeld in Sources */,
@@ -2196,6 +2220,7 @@
 				57C3D56A2068BBAE00E0B8BA /* FMConstants.m in Sources */,
 				57379591206B714300388BCC /* CollectionViewCell.m in Sources */,
 				57D5CC752074ABB7009E65C6 /* PetDetailBottomPetDesView.m in Sources */,
+				5718F4332091B807001859F1 /* AppDelegate+LocalizedLanguage.m in Sources */,
 				5787C885208DDEF700852640 /* STPickerViewUI.m in Sources */,
 				57C3D55E20689BF400E0B8BA /* MainViewController.m in Sources */,
 				5787C859208D802400852640 /* FMWaterFallFlowControl.m in Sources */,
@@ -2266,6 +2291,7 @@
 				5737958E206B6EC900388BCC /* MainControl.m in Sources */,
 				578E7B1E207C6679001D351D /* FMCalendarViewController.m in Sources */,
 				5730A6422089F1480049602D /* FMCalendarSingleView.m in Sources */,
+				5718F42D2091A9CB001859F1 /* LocalizedControl.m in Sources */,
 				57B544842062850000701F9C /* APPSettingManager.m in Sources */,
 				5787C886208DDEF700852640 /* UIView+STPicker.m in Sources */,
 				5740FA48206CE705006F20A5 /* BuyDetailControl.m in Sources */,
