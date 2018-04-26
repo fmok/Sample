@@ -10,9 +10,10 @@
 
 static NSString *const LocalizedLanguage_zh_Hans = @"zh-Hans";
 static NSString *const LocalizedLanguage_zh_Hant = @"zh-Hant";
+static NSString *const LocalizedLanguage_en = @"en";
+
 static NSString *const LocalizedLanguage_zh_TW = @"zh-TW";
 static NSString *const LocalizedLanguage_zh_HK = @"zh-HK";
-static NSString *const LocalizedLanguage_en = @"en";
 
 @implementation LocalizedLanguageManager
 
