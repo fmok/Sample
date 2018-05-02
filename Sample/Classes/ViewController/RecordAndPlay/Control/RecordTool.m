@@ -1,18 +1,16 @@
 //
-//  LVRecordTool.m
-//  RecordAndPlayVoice
+//  RecordTool.m
+//  Sample
 //
-//  Created by PBOC CS on 15/3/14.
-//  Copyright (c) 2015年 liuchunlao. All rights reserved.
+//  Created by wjy on 2018/5/2.
+//  Copyright © 2018年 wjy. All rights reserved.
 //
 
 #define LVRecordFielName @"lvRecord.caf"
 
-#import "LVRecordTool.h"
+#import "RecordTool.h"
 
-@interface LVRecordTool () <AVAudioRecorderDelegate>
-
-
+@interface RecordTool () <AVAudioRecorderDelegate>
 
 /** 录音文件地址 */
 @property (nonatomic, strong) NSURL *recordFileUrl;
@@ -24,8 +22,20 @@
 
 @end
 
-@implementation LVRecordTool
+@implementation RecordTool
 
++ (instancetype)sharedRecordTool
+{
+    static RecordTool *tool = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        tool = [[RecordTool alloc] init];
+    });
+    return tool;
+}
+
+
+#pragma mark - Public methods
 - (void)startRecording {
     // 录音时停止播放 删除曾经生成的文件
     [self stopPlaying];
@@ -49,34 +59,6 @@
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     [timer fire];
     self.timer = timer;
-}
-
-- (void)updateImage {
-    
-    [self.recorder updateMeters];
-    double lowPassResults = pow(10, (0.05 * [self.recorder peakPowerForChannel:0]));
-    CGFloat result  = 10 * (CGFloat)lowPassResults;
-    NSLog(@"%f", result);
-    NSInteger no = 0;
-    if (result > 0 && result <= 1.3) {
-        no = 1;
-    } else if (result > 1.3 && result <= 2) {
-        no = 2;
-    } else if (result > 2 && result <= 3.0) {
-        no = 3;
-    } else if (result > 3.0 && result <= 3.0) {
-        no = 4;
-    } else if (result > 5.0 && result <= 10) {
-        no = 5;
-    } else if (result > 10 && result <= 40) {
-        no = 6;
-    } else if (result > 40) {
-        no = 7;
-    }
-    
-    if (self.delegate && [self.delegate respondsToSelector:@selector(recordTool:didstartRecoring:)]) {
-        [self.delegate recordTool:self didstartRecoring:no];
-    }
 }
 
 - (void)stopRecording {
@@ -107,29 +89,43 @@
     [self.player stop];
 }
 
-static id instance;
-#pragma mark - 单例
-+ (instancetype)sharedRecordTool {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        if (instance == nil) {
-            instance = [[self alloc] init];
-        }
-    });
-    return instance;
+- (void)destructionRecordingFile {
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (self.recordFileUrl) {
+        [fileManager removeItemAtURL:self.recordFileUrl error:NULL];
+    }
 }
 
-+ (instancetype)allocWithZone:(struct _NSZone *)zone {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        if (instance == nil) {
-            instance = [super allocWithZone:zone];
-        }
-    });
-    return instance;
+#pragma mark -
+- (void)updateImage {
+    
+    [self.recorder updateMeters];
+    double lowPassResults = pow(10, (0.05 * [self.recorder peakPowerForChannel:0]));
+    CGFloat result  = 10 * (CGFloat)lowPassResults;
+    NSLog(@"%f", result);
+    NSInteger no = 0;
+    if (result > 0 && result <= 1.3) {
+        no = 1;
+    } else if (result > 1.3 && result <= 2) {
+        no = 2;
+    } else if (result > 2 && result <= 3.0) {
+        no = 3;
+    } else if (result > 3.0 && result <= 3.0) {
+        no = 4;
+    } else if (result > 5.0 && result <= 10) {
+        no = 5;
+    } else if (result > 10 && result <= 40) {
+        no = 6;
+    } else if (result > 40) {
+        no = 7;
+    }
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(recordTool:didstartRecoring:)]) {
+        [self.delegate recordTool:self didstartRecoring:no];
+    }
 }
-
-#pragma mark - 懒加载
+#pragma mark - getter & setter
 - (AVAudioRecorder *)recorder {
     if (!_recorder) {
         
@@ -159,14 +155,6 @@ static id instance;
         [_recorder prepareToRecord];
     }
     return _recorder;
-}
-
-- (void)destructionRecordingFile {
-
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (self.recordFileUrl) {
-        [fileManager removeItemAtURL:self.recordFileUrl error:NULL];
-    }
 }
 
 #pragma mark - AVAudioRecorderDelegate

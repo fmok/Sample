@@ -52,7 +52,7 @@
 		57206A6F20848DF20017F7F8 /* FMFuncButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 57206A6E20848DF20017F7F8 /* FMFuncButton.m */; };
 		572297DC209958C300A02A66 /* RecordAndPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297DB209958C300A02A66 /* RecordAndPlayViewController.m */; };
 		572297DF209958D000A02A66 /* RecordAndPlayControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297DE209958D000A02A66 /* RecordAndPlayControl.m */; };
-		572297E220995A6B00A02A66 /* LVRecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297E020995A6A00A02A66 /* LVRecordTool.m */; };
+		572297E220995A6B00A02A66 /* RecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297E020995A6A00A02A66 /* RecordTool.m */; };
 		572297EC20995B2900A02A66 /* mic_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 572297E420995B2800A02A66 /* mic_3.png */; };
 		572297ED20995B2900A02A66 /* mic_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 572297E520995B2800A02A66 /* mic_6.png */; };
 		572297EE20995B2900A02A66 /* mic_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 572297E620995B2800A02A66 /* mic_5.png */; };
@@ -292,8 +292,8 @@
 		572297DB209958C300A02A66 /* RecordAndPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordAndPlayViewController.m; sourceTree = "<group>"; };
 		572297DD209958D000A02A66 /* RecordAndPlayControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordAndPlayControl.h; sourceTree = "<group>"; };
 		572297DE209958D000A02A66 /* RecordAndPlayControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordAndPlayControl.m; sourceTree = "<group>"; };
-		572297E020995A6A00A02A66 /* LVRecordTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVRecordTool.m; sourceTree = "<group>"; };
-		572297E120995A6A00A02A66 /* LVRecordTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVRecordTool.h; sourceTree = "<group>"; };
+		572297E020995A6A00A02A66 /* RecordTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordTool.m; sourceTree = "<group>"; };
+		572297E120995A6A00A02A66 /* RecordTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordTool.h; sourceTree = "<group>"; };
 		572297E420995B2800A02A66 /* mic_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_3.png; sourceTree = "<group>"; };
 		572297E520995B2800A02A66 /* mic_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_6.png; sourceTree = "<group>"; };
 		572297E620995B2800A02A66 /* mic_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_5.png; sourceTree = "<group>"; };
@@ -867,8 +867,8 @@
 		572297D82099586900A02A66 /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				572297E120995A6A00A02A66 /* LVRecordTool.h */,
-				572297E020995A6A00A02A66 /* LVRecordTool.m */,
+				572297E120995A6A00A02A66 /* RecordTool.h */,
+				572297E020995A6A00A02A66 /* RecordTool.m */,
 				572297DD209958D000A02A66 /* RecordAndPlayControl.h */,
 				572297DE209958D000A02A66 /* RecordAndPlayControl.m */,
 			);
@@ -2315,7 +2315,7 @@
 				57DED5612067D39600E24607 /* UIImage+Alpha.m in Sources */,
 				575F9AAF2064EC710031BC49 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				573A8EA62088683800B89BF6 /* UITableViewCell+showAnimaiton.m in Sources */,
-				572297E220995A6B00A02A66 /* LVRecordTool.m in Sources */,
+				572297E220995A6B00A02A66 /* RecordTool.m in Sources */,
 				575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				57B5444620627B8B00701F9C /* TestControl.m in Sources */,
 				5718F3EC20917AFD001859F1 /* FTHShareComponentAdapter.m in Sources */,

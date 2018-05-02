@@ -7,7 +7,7 @@
 //
 
 #import "RecordView.h"
-#import "LVRecordTool.h"
+#import "RecordTool.h"
 #import "HUD.h"
 #import "RecordMicView.h"
 
@@ -16,11 +16,11 @@ static NSString *const recordTipStr_loosenEnd = @"松开 结束";
 static NSString *const recordTipStr_loosenCancel = @"松开 取消";
 
 @interface RecordView ()<
-    LVRecordToolDelegate>
+    RecordToolDelegate>
 
 @property (nonatomic, strong) UIView *topLine;
 @property (nonatomic, strong) UIButton *recordButton;
-@property (nonatomic, strong) LVRecordTool *recordTool;
+@property (nonatomic, strong) RecordTool *recordTool;
 @property (nonatomic, strong) RecordMicView *micView;
 
 @end
@@ -110,13 +110,13 @@ static NSString *const recordTipStr_loosenCancel = @"松开 取消";
     });
 }
 
-#pragma mark - LVRecordToolDelegate
-- (void)recordTool:(LVRecordTool *)recordTool didstartRecoring:(NSInteger)no
+#pragma mark - RecordToolDelegate
+- (void)recordTool:(RecordTool *)recordTool didstartRecoring:(NSInteger)no
 {
     [self.micView setMicImageWithIndex:no];
 }
 
-- (void)recordToolDidEndRecord:(LVRecordTool *)recordTool
+- (void)recordToolDidEndRecord:(RecordTool *)recordTool
 {
     [self.micView removeRecordMic];
 }
@@ -151,10 +151,10 @@ static NSString *const recordTipStr_loosenCancel = @"松开 取消";
     return _recordButton;
 }
 
-- (LVRecordTool *)recordTool
+- (RecordTool *)recordTool
 {
     if (!_recordTool) {
-        _recordTool = [LVRecordTool sharedRecordTool];
+        _recordTool = [RecordTool sharedRecordTool];
         _recordTool.delegate = self;
     }
     return _recordTool;
