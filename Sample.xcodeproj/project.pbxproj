@@ -52,6 +52,17 @@
 		57206A6F20848DF20017F7F8 /* FMFuncButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 57206A6E20848DF20017F7F8 /* FMFuncButton.m */; };
 		572297DC209958C300A02A66 /* RecordAndPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297DB209958C300A02A66 /* RecordAndPlayViewController.m */; };
 		572297DF209958D000A02A66 /* RecordAndPlayControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297DE209958D000A02A66 /* RecordAndPlayControl.m */; };
+		572297E220995A6B00A02A66 /* LVRecordTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297E020995A6A00A02A66 /* LVRecordTool.m */; };
+		572297EC20995B2900A02A66 /* mic_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 572297E420995B2800A02A66 /* mic_3.png */; };
+		572297ED20995B2900A02A66 /* mic_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 572297E520995B2800A02A66 /* mic_6.png */; };
+		572297EE20995B2900A02A66 /* mic_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 572297E620995B2800A02A66 /* mic_5.png */; };
+		572297EF20995B2900A02A66 /* mic_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 572297E720995B2800A02A66 /* mic_7.png */; };
+		572297F020995B2900A02A66 /* mic_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 572297E820995B2800A02A66 /* mic_4.png */; };
+		572297F120995B2900A02A66 /* mic_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 572297E920995B2900A02A66 /* mic_2.png */; };
+		572297F220995B2900A02A66 /* mic_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 572297EA20995B2900A02A66 /* mic_1.png */; };
+		572297F320995B2900A02A66 /* mic_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 572297EB20995B2900A02A66 /* mic_0.png */; };
+		572297F620995B5300A02A66 /* RecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297F520995B5300A02A66 /* RecordView.m */; };
+		572297F9209968F600A02A66 /* SingleRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297F8209968F600A02A66 /* SingleRecordCell.m */; };
 		572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A6E20635B5C008114EA /* SampleListAPI.m */; };
 		572E6A7720637F1D008114EA /* btnCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A7120637F1D008114EA /* btnCheck.png */; };
 		572E6A7820637F1D008114EA /* btnCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A7220637F1D008114EA /* btnCheck@2x.png */; };
@@ -280,6 +291,20 @@
 		572297DB209958C300A02A66 /* RecordAndPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordAndPlayViewController.m; sourceTree = "<group>"; };
 		572297DD209958D000A02A66 /* RecordAndPlayControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordAndPlayControl.h; sourceTree = "<group>"; };
 		572297DE209958D000A02A66 /* RecordAndPlayControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordAndPlayControl.m; sourceTree = "<group>"; };
+		572297E020995A6A00A02A66 /* LVRecordTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVRecordTool.m; sourceTree = "<group>"; };
+		572297E120995A6A00A02A66 /* LVRecordTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVRecordTool.h; sourceTree = "<group>"; };
+		572297E420995B2800A02A66 /* mic_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_3.png; sourceTree = "<group>"; };
+		572297E520995B2800A02A66 /* mic_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_6.png; sourceTree = "<group>"; };
+		572297E620995B2800A02A66 /* mic_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_5.png; sourceTree = "<group>"; };
+		572297E720995B2800A02A66 /* mic_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_7.png; sourceTree = "<group>"; };
+		572297E820995B2800A02A66 /* mic_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_4.png; sourceTree = "<group>"; };
+		572297E920995B2900A02A66 /* mic_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_2.png; sourceTree = "<group>"; };
+		572297EA20995B2900A02A66 /* mic_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_1.png; sourceTree = "<group>"; };
+		572297EB20995B2900A02A66 /* mic_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mic_0.png; sourceTree = "<group>"; };
+		572297F420995B5300A02A66 /* RecordView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordView.h; sourceTree = "<group>"; };
+		572297F520995B5300A02A66 /* RecordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordView.m; sourceTree = "<group>"; };
+		572297F7209968F600A02A66 /* SingleRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleRecordCell.h; sourceTree = "<group>"; };
+		572297F8209968F600A02A66 /* SingleRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleRecordCell.m; sourceTree = "<group>"; };
 		572E6A6D20635B5C008114EA /* SampleListAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleListAPI.h; sourceTree = "<group>"; };
 		572E6A6E20635B5C008114EA /* SampleListAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleListAPI.m; sourceTree = "<group>"; };
 		572E6A7120637F1D008114EA /* btnCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnCheck.png; sourceTree = "<group>"; };
@@ -839,6 +864,8 @@
 		572297D82099586900A02A66 /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				572297E120995A6A00A02A66 /* LVRecordTool.h */,
+				572297E020995A6A00A02A66 /* LVRecordTool.m */,
 				572297DD209958D000A02A66 /* RecordAndPlayControl.h */,
 				572297DE209958D000A02A66 /* RecordAndPlayControl.m */,
 			);
@@ -848,8 +875,27 @@
 		572297D92099587100A02A66 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				572297F420995B5300A02A66 /* RecordView.h */,
+				572297F520995B5300A02A66 /* RecordView.m */,
+				572297F7209968F600A02A66 /* SingleRecordCell.h */,
+				572297F8209968F600A02A66 /* SingleRecordCell.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		572297E320995ADC00A02A66 /* RecordAndPlay */ = {
+			isa = PBXGroup;
+			children = (
+				572297EB20995B2900A02A66 /* mic_0.png */,
+				572297EA20995B2900A02A66 /* mic_1.png */,
+				572297E920995B2900A02A66 /* mic_2.png */,
+				572297E420995B2800A02A66 /* mic_3.png */,
+				572297E820995B2800A02A66 /* mic_4.png */,
+				572297E620995B2800A02A66 /* mic_5.png */,
+				572297E520995B2800A02A66 /* mic_6.png */,
+				572297E720995B2800A02A66 /* mic_7.png */,
+			);
+			path = RecordAndPlay;
 			sourceTree = "<group>";
 		};
 		572E6A7020637F1D008114EA /* MBProgressHUD */ = {
@@ -1752,6 +1798,7 @@
 		57DED5462067CF7B00E24607 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				572297E320995ADC00A02A66 /* RecordAndPlay */,
 				57206A52208450FD0017F7F8 /* H5 */,
 				5740FA34206C91B1006F20A5 /* Main */,
 				57C3D55F2068A10800E0B8BA /* Nav */,
@@ -1995,6 +2042,7 @@
 			files = (
 				5718F41E2091A1E7001859F1 /* Localized.strings in Resources */,
 				572E6A7820637F1D008114EA /* btnCheck@2x.png in Resources */,
+				572297F220995B2900A02A66 /* mic_1.png in Resources */,
 				572E6A8D2063CA55008114EA /* CHANGELOG.md in Resources */,
 				57DED5542067CF7B00E24607 /* tabbar_me@2x.png in Resources */,
 				57206A54208451120017F7F8 /* top_navigation_close_h5@2x.png in Resources */,
@@ -2004,6 +2052,8 @@
 				57DED5572067CF7B00E24607 /* tabbar_me_selected@3x.png in Resources */,
 				57206A58208451820017F7F8 /* reader_toolbar_share@2x.png in Resources */,
 				578320AF206A3B7400E2D67F /* closed.png in Resources */,
+				572297F320995B2900A02A66 /* mic_0.png in Resources */,
+				572297EF20995B2900A02A66 /* mic_7.png in Resources */,
 				578320B0206A3B7400E2D67F /* closed@2x.png in Resources */,
 				5718F3DC20917A56001859F1 /* UMSocialSDKResources.bundle in Resources */,
 				5718F3D320917A56001859F1 /* WeiboSDK.bundle in Resources */,
@@ -2014,9 +2064,12 @@
 				57DED5502067CF7B00E24607 /* tabbar_home@2x.png in Resources */,
 				57DED5532067CF7B00E24607 /* tabbar_home_selected@3x.png in Resources */,
 				578320B1206A3B7400E2D67F /* closed@3x.png in Resources */,
+				572297F120995B2900A02A66 /* mic_2.png in Resources */,
 				57DED5562067CF7B00E24607 /* tabbar_me_selected@2x.png in Resources */,
+				572297EE20995B2900A02A66 /* mic_5.png in Resources */,
 				57C3D5612068A11700E0B8BA /* top_navigation_back@2x.png in Resources */,
 				572E6A8F2063CA55008114EA /* README.md in Resources */,
+				572297ED20995B2900A02A66 /* mic_6.png in Resources */,
 				5797133E2079C52D0014AB4F /* Images.xcassets in Resources */,
 				572E6A7720637F1D008114EA /* btnCheck.png in Resources */,
 				57B544092062727F00701F9C /* Assets.xcassets in Resources */,
@@ -2025,6 +2078,8 @@
 				5718F3D020917A56001859F1 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				57DED5552067CF7B00E24607 /* tabbar_me@3x.png in Resources */,
 				5737957D206B39AB00388BCC /* nav.png in Resources */,
+				572297EC20995B2900A02A66 /* mic_3.png in Resources */,
+				572297F020995B2900A02A66 /* mic_4.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2243,6 +2298,7 @@
 				5718F4302091AD52001859F1 /* LocalizedLanguageManager.m in Sources */,
 				57C3D5702068C4D300E0B8BA /* CGGeometryAdditions.m in Sources */,
 				573F2E97206E5BBC0011C77A /* MyPurchaseCellTopView.m in Sources */,
+				572297F620995B5300A02A66 /* RecordView.m in Sources */,
 				57B544072062727F00701F9C /* Sample.xcdatamodeld in Sources */,
 				578320B7206A53D400E2D67F /* FMAlertView.m in Sources */,
 				57DED5452067C81700E24607 /* FMTabBarViewController.m in Sources */,
@@ -2254,6 +2310,7 @@
 				57DED5612067D39600E24607 /* UIImage+Alpha.m in Sources */,
 				575F9AAF2064EC710031BC49 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				573A8EA62088683800B89BF6 /* UITableViewCell+showAnimaiton.m in Sources */,
+				572297E220995A6B00A02A66 /* LVRecordTool.m in Sources */,
 				575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				57B5444620627B8B00701F9C /* TestControl.m in Sources */,
 				5718F3EC20917AFD001859F1 /* FTHShareComponentAdapter.m in Sources */,
@@ -2273,6 +2330,7 @@
 				57B54440206278B600701F9C /* TestViewController.m in Sources */,
 				57DED55B2067D23500E24607 /* UIImage+Resize.m in Sources */,
 				5769D8F920871E2900FA0F62 /* FMCardScrollViewController.m in Sources */,
+				572297F9209968F600A02A66 /* SingleRecordCell.m in Sources */,
 				5737E6132073A12B008AF33C /* CardStackSingleCell.m in Sources */,
 				5787C881208DDEF700852640 /* STPickerArea.m in Sources */,
 				5787C86D208DDE5000852640 /* FMPickerViewController.m in Sources */,

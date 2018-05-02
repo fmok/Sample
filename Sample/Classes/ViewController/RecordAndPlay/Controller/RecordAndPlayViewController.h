@@ -7,7 +7,12 @@
 //
 
 #import "FMBaseViewController.h"
+#import "RecordView.h"
+#import "PulledTableView.h"
 
 @interface RecordAndPlayViewController : FMBaseViewController
+
+@property (nonatomic, strong) RecordView *recordView;
+@property (nonatomic, strong) PulledTableView *recordListView;
 
 @end

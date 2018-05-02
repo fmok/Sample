@@ -8,9 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "RecordAndPlayViewController.h"
+#import "SingleRecordCell.h"
 
-@interface RecordAndPlayControl : NSObject
+@interface RecordAndPlayControl : NSObject<
+    UITableViewDelegate,
+    UITableViewDataSource>
 
 @property (nonatomic, weak) RecordAndPlayViewController *vc;
+
+- (void)registerCell;
+- (void)testLoadData;
 
 @end
