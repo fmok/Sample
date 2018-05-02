@@ -11,6 +11,10 @@
 #import "HUD.h"
 #import "RecordMicView.h"
 
+static NSString *const recordTipStr_pressStart = @"按住 开始";
+static NSString *const recordTipStr_loosenEnd = @"松开 结束";
+static NSString *const recordTipStr_loosenCancel = @"松开 取消";
+
 @interface RecordView ()<
     LVRecordToolDelegate>
 
@@ -54,10 +58,14 @@
 {
     [self.recordTool startRecording];
     [self.micView showRecordMic];
+    recordBtn.highlighted = YES;
+    recordBtn.backgroundColor = SRGBCOLOR_HEX(0xf6f6f6);
 }
 
 - (void)recordBtnDidTouchUpInside:(UIButton *)recordBtn
 {
+    recordBtn.highlighted = NO;
+    recordBtn.backgroundColor = SRGBCOLOR_HEX(0xffffff);
     double currentTime = self.recordTool.recorder.currentTime;
     NSLog(@"%lf", currentTime);
     if (currentTime < 2) {
@@ -75,7 +83,19 @@
     }
 }
 
+- (void)recordBtnDidTouchDragEnter:(UIButton *)recordBtn
+{
+    recordBtn.highlighted = YES;
+    [self.recordButton setTitle:recordTipStr_loosenEnd forState:UIControlStateHighlighted];
+}
+
 - (void)recordBtnDidTouchDragExit:(UIButton *)recordBtn
+{
+    recordBtn.highlighted = NO;
+    [self.recordButton setTitle:recordTipStr_loosenCancel forState:UIControlStateNormal];
+}
+
+- (void)recordingBtnDidTouchUpOutSide:(UIButton *)recordBtn
 {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
@@ -83,7 +103,9 @@
         [self.recordTool destructionRecordingFile];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [HUD showTipWithText:@"已取消录音"];
+            recordBtn.backgroundColor = SRGBCOLOR_HEX(0xffffff);
+            recordBtn.highlighted = NO;
+            [self.recordButton setTitle:recordTipStr_pressStart forState:UIControlStateNormal];
         });
     });
 }
@@ -116,13 +138,15 @@
         _recordButton.layer.cornerRadius = 5.f;
         _recordButton.layer.borderColor = SRGBCOLOR_HEX(0xe5e5e5).CGColor;
         _recordButton.layer.borderWidth = 1.f;
-        [_recordButton setTitle:@"按住 说话" forState:UIControlStateNormal];
-        [_recordButton setTitle:@"松开 结束" forState:UIControlStateHighlighted];
+        [_recordButton setTitle:recordTipStr_pressStart forState:UIControlStateNormal];
+        [_recordButton setTitle:recordTipStr_loosenEnd forState:UIControlStateHighlighted];
         [_recordButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         _recordButton.titleLabel.font = [UIFont systemFontOfSize:20.f];
         [_recordButton addTarget:self action:@selector(recordBtnDidTouchDown:) forControlEvents:UIControlEventTouchDown];
         [_recordButton addTarget:self action:@selector(recordBtnDidTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+        [_recordButton addTarget:self action:@selector(recordBtnDidTouchDragEnter:) forControlEvents:UIControlEventTouchDragEnter];
         [_recordButton addTarget:self action:@selector(recordBtnDidTouchDragExit:) forControlEvents:UIControlEventTouchDragExit];
+        [_recordButton addTarget:self action:@selector(recordingBtnDidTouchUpOutSide:) forControlEvents:UIControlEventTouchUpOutside];
     }
     return _recordButton;
 }
