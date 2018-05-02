@@ -6,18 +6,14 @@
 //  Copyright © 2018年 wjy. All rights reserved.
 //
 
-#define LVRecordFielName @"lvRecord.caf"
+#define RecordFielName @"Record.caf"
 
 #import "RecordTool.h"
 
 @interface RecordTool () <AVAudioRecorderDelegate>
 
-/** 录音文件地址 */
-@property (nonatomic, strong) NSURL *recordFileUrl;
-
-/** 定时器 */
+@property (nonatomic, strong) NSURL *recordFileUrl;  // 录音文件地址
 @property (nonatomic, strong) NSTimer *timer;
-
 @property (nonatomic, strong) AVAudioSession *session;
 
 @end
@@ -36,20 +32,21 @@
 
 
 #pragma mark - Public methods
-- (void)startRecording {
+- (void)startRecording
+{
     // 录音时停止播放 删除曾经生成的文件
     [self stopPlaying];
     [self destructionRecordingFile];
     
-    // 真机环境下需要的代码
     AVAudioSession *session = [AVAudioSession sharedInstance];
     NSError *sessionError;
     [session setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
     
-    if(session == nil)
+    if(session == nil) {
         NSLog(@"Error creating session: %@", [sessionError description]);
-    else
+    } else {
         [session setActive:YES error:nil];
+    }
     
     self.session = session;
     
@@ -61,7 +58,8 @@
     self.timer = timer;
 }
 
-- (void)stopRecording {
+- (void)stopRecording
+{
     if ([self.recorder isRecording]) {
         [self.recorder stop];
         [self.timer invalidate];
@@ -73,7 +71,8 @@
     }
 }
 
-- (void)playRecordingFile {
+- (void)playRecordingFile
+{
     // 播放时停止录音
     [self.recorder stop];
     
@@ -85,12 +84,13 @@
     [self.player play];
 }
 
-- (void)stopPlaying {
+- (void)stopPlaying
+{
     [self.player stop];
 }
 
-- (void)destructionRecordingFile {
-    
+- (void)destructionRecordingFile
+{
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if (self.recordFileUrl) {
         [fileManager removeItemAtURL:self.recordFileUrl error:NULL];
@@ -98,12 +98,12 @@
 }
 
 #pragma mark -
-- (void)updateImage {
-    
+- (void)updateImage
+{
     [self.recorder updateMeters];
     double lowPassResults = pow(10, (0.05 * [self.recorder peakPowerForChannel:0]));
     CGFloat result  = 10 * (CGFloat)lowPassResults;
-    NSLog(@"%f", result);
+    TTDPRINT(@"%f", result);
     NSInteger no = 0;
     if (result > 0 && result <= 1.3) {
         no = 1;
@@ -126,14 +126,15 @@
     }
 }
 #pragma mark - getter & setter
-- (AVAudioRecorder *)recorder {
+- (AVAudioRecorder *)recorder
+{
     if (!_recorder) {
         
         // 1.获取沙盒地址
         NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString *filePath = [path stringByAppendingPathComponent:LVRecordFielName];
+        NSString *filePath = [path stringByAppendingPathComponent:RecordFielName];
         self.recordFileUrl = [NSURL fileURLWithPath:filePath];
-        NSLog(@"%@", filePath);
+        TTDPRINT(@"%@", filePath);
         
         // 3.设置录音的一些参数
         NSMutableDictionary *setting = [NSMutableDictionary dictionary];
@@ -158,7 +159,8 @@
 }
 
 #pragma mark - AVAudioRecorderDelegate
-- (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag {
+- (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag
+{
     if (flag) {
         [self.session setActive:NO error:nil];
     }
