@@ -69,15 +69,18 @@ static NSString *const recordTipStr_loosenCancel = @"松开 取消";
     double currentTime = self.recordTool.recorder.currentTime;
     NSLog(@"%lf", currentTime);
     if (currentTime < 2) {
-        [HUD showTipWithText:@"说话时间太短"];
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             
-            [self.recordTool stopRecording];
+            [self.recordTool stopRecording:^(BOOL isComplete) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [HUD showTipWithText:@"说话时间太短"];
+                });
+            }];
             [self.recordTool destructionRecordingFile];
         });
     } else {
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            [self.recordTool stopRecording];
+            [self.recordTool stopRecording:nil];
         });
         TTDPRINT(@"已成功录音");
     }
@@ -99,7 +102,7 @@ static NSString *const recordTipStr_loosenCancel = @"松开 取消";
 {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         
-        [self.recordTool stopRecording];
+        [self.recordTool stopRecording:nil];
         [self.recordTool destructionRecordingFile];
         
         dispatch_async(dispatch_get_main_queue(), ^{

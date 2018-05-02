@@ -58,7 +58,7 @@
     self.timer = timer;
 }
 
-- (void)stopRecording
+- (void)stopRecording:(void(^)(BOOL isComplete))block
 {
     if ([self.recorder isRecording]) {
         [self.recorder stop];
@@ -68,6 +68,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.delegate recordToolDidEndRecord:self];
         });
+    }
+    if (block) {
+        block(YES);
     }
 }
 

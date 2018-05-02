@@ -26,7 +26,7 @@
 - (void)startRecording;
 
 /** 停止录音 */
-- (void)stopRecording;
+- (void)stopRecording:(void(^)(BOOL isComplete))block;
 
 /** 播放录音文件 */
 - (void)playRecordingFile;
