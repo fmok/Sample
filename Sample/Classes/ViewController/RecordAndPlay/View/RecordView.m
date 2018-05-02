@@ -119,6 +119,7 @@ static NSString *const recordTipStr_loosenCancel = @"松开 取消";
 - (void)recordToolDidEndRecord:(RecordTool *)recordTool
 {
     [self.micView removeRecordMic];
+    TTDPRINT(@"record did stop");
 }
 
 #pragma mark - getter & seter
