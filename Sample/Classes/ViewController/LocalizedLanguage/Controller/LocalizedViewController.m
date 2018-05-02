@@ -39,7 +39,7 @@
     self.textLabel.text = str;
 }
 
-#pragma mark - Private
+#pragma mark - Private methods
 - (void)setUpNav
 {
     [self configNavBarBackgroundImage:[UIImage imageWithColor:[UIColor whiteColor]]];

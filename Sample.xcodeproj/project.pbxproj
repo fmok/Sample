@@ -50,6 +50,8 @@
 		57206A57208451820017F7F8 /* reader_toolbar_share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57206A55208451820017F7F8 /* reader_toolbar_share@3x.png */; };
 		57206A58208451820017F7F8 /* reader_toolbar_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57206A56208451820017F7F8 /* reader_toolbar_share@2x.png */; };
 		57206A6F20848DF20017F7F8 /* FMFuncButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 57206A6E20848DF20017F7F8 /* FMFuncButton.m */; };
+		572297DC209958C300A02A66 /* RecordAndPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297DB209958C300A02A66 /* RecordAndPlayViewController.m */; };
+		572297DF209958D000A02A66 /* RecordAndPlayControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297DE209958D000A02A66 /* RecordAndPlayControl.m */; };
 		572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A6E20635B5C008114EA /* SampleListAPI.m */; };
 		572E6A7720637F1D008114EA /* btnCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A7120637F1D008114EA /* btnCheck.png */; };
 		572E6A7820637F1D008114EA /* btnCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A7220637F1D008114EA /* btnCheck@2x.png */; };
@@ -274,6 +276,10 @@
 		57206A56208451820017F7F8 /* reader_toolbar_share@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "reader_toolbar_share@2x.png"; sourceTree = "<group>"; };
 		57206A6D20848DF20017F7F8 /* FMFuncButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMFuncButton.h; sourceTree = "<group>"; };
 		57206A6E20848DF20017F7F8 /* FMFuncButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMFuncButton.m; sourceTree = "<group>"; };
+		572297DA209958C300A02A66 /* RecordAndPlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordAndPlayViewController.h; sourceTree = "<group>"; };
+		572297DB209958C300A02A66 /* RecordAndPlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordAndPlayViewController.m; sourceTree = "<group>"; };
+		572297DD209958D000A02A66 /* RecordAndPlayControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordAndPlayControl.h; sourceTree = "<group>"; };
+		572297DE209958D000A02A66 /* RecordAndPlayControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordAndPlayControl.m; sourceTree = "<group>"; };
 		572E6A6D20635B5C008114EA /* SampleListAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleListAPI.h; sourceTree = "<group>"; };
 		572E6A6E20635B5C008114EA /* SampleListAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleListAPI.m; sourceTree = "<group>"; };
 		572E6A7120637F1D008114EA /* btnCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnCheck.png; sourceTree = "<group>"; };
@@ -809,6 +815,41 @@
 				57206A6E20848DF20017F7F8 /* FMFuncButton.m */,
 			);
 			path = FMFuncButton;
+			sourceTree = "<group>";
+		};
+		572297D62099584F00A02A66 /* RecordAndPlay */ = {
+			isa = PBXGroup;
+			children = (
+				572297D92099587100A02A66 /* View */,
+				572297D82099586900A02A66 /* Control */,
+				572297D72099586000A02A66 /* Controller */,
+			);
+			path = RecordAndPlay;
+			sourceTree = "<group>";
+		};
+		572297D72099586000A02A66 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				572297DA209958C300A02A66 /* RecordAndPlayViewController.h */,
+				572297DB209958C300A02A66 /* RecordAndPlayViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		572297D82099586900A02A66 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				572297DD209958D000A02A66 /* RecordAndPlayControl.h */,
+				572297DE209958D000A02A66 /* RecordAndPlayControl.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		572297D92099587100A02A66 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		572E6A7020637F1D008114EA /* MBProgressHUD */ = {
@@ -1401,6 +1442,7 @@
 				5787C868208DDDD400852640 /* TimeAreaCustomPicker */,
 				57E51DF3209037970061EEEB /* BreakpointContinuingly */,
 				5718F4252091A440001859F1 /* LocalizedLanguage */,
+				572297D62099584F00A02A66 /* RecordAndPlay */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2227,6 +2269,7 @@
 				57B5440F2062727F00701F9C /* main.m in Sources */,
 				5787C85C208D820A00852640 /* FMWaterFallFlowLayout.m in Sources */,
 				5718F3ED20917AFD001859F1 /* FTHShareComponentDefines.m in Sources */,
+				572297DC209958C300A02A66 /* RecordAndPlayViewController.m in Sources */,
 				57B54440206278B600701F9C /* TestViewController.m in Sources */,
 				57DED55B2067D23500E24607 /* UIImage+Resize.m in Sources */,
 				5769D8F920871E2900FA0F62 /* FMCardScrollViewController.m in Sources */,
@@ -2269,6 +2312,7 @@
 				5787C870208DDE6000852640 /* FMPickerControl.m in Sources */,
 				57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */,
 				57C21B842071FD4400F70562 /* UIResponder+Router.m in Sources */,
+				572297DF209958D000A02A66 /* RecordAndPlayControl.m in Sources */,
 				573F2E91206E586E0011C77A /* MyPurchaseCell.m in Sources */,
 				57E51DFC2090513A0061EEEB /* NSURLSessionDemoControl.m in Sources */,
 				578E7B13207C5990001D351D /* FMCalendarScrollView.m in Sources */,

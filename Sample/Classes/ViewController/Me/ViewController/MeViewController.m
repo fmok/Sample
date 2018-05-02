@@ -18,6 +18,7 @@
 #import "FMPickerViewController.h"
 #import "NSURLSessionDemoViewController.h"
 #import "LocalizedViewController.h"
+#import "RecordAndPlayViewController.h"
 
 @interface MeViewController ()
 
@@ -147,6 +148,11 @@
                        @{
                          kMeVCTitle: @"多语言版本",
                          kMeVCClassName: NSStringFromClass([LocalizedViewController class]),
+                         kMeVCLogoStr: @"upDown"
+                         },
+                       @{
+                         kMeVCTitle: @"Record And Play",
+                         kMeVCClassName: NSStringFromClass([RecordAndPlayViewController class]),
                          kMeVCLogoStr: @"upDown"
                          },
                        nil];
