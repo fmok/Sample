@@ -13,7 +13,8 @@
 @protocol LVRecordToolDelegate <NSObject>
 
 @optional
-- (void)recordTool:(LVRecordTool *)recordTool didstartRecoring:(int)no;
+- (void)recordTool:(LVRecordTool *)recordTool didstartRecoring:(NSInteger)no;
+- (void)recordToolDidEndRecord:(LVRecordTool *)recordTool;
 
 @end
 

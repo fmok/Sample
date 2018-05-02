@@ -63,6 +63,7 @@
 		572297F320995B2900A02A66 /* mic_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 572297EB20995B2900A02A66 /* mic_0.png */; };
 		572297F620995B5300A02A66 /* RecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297F520995B5300A02A66 /* RecordView.m */; };
 		572297F9209968F600A02A66 /* SingleRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297F8209968F600A02A66 /* SingleRecordCell.m */; };
+		572297FC20996B0C00A02A66 /* RecordMicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297FB20996B0C00A02A66 /* RecordMicView.m */; };
 		572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A6E20635B5C008114EA /* SampleListAPI.m */; };
 		572E6A7720637F1D008114EA /* btnCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A7120637F1D008114EA /* btnCheck.png */; };
 		572E6A7820637F1D008114EA /* btnCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A7220637F1D008114EA /* btnCheck@2x.png */; };
@@ -305,6 +306,8 @@
 		572297F520995B5300A02A66 /* RecordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordView.m; sourceTree = "<group>"; };
 		572297F7209968F600A02A66 /* SingleRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleRecordCell.h; sourceTree = "<group>"; };
 		572297F8209968F600A02A66 /* SingleRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleRecordCell.m; sourceTree = "<group>"; };
+		572297FA20996B0C00A02A66 /* RecordMicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordMicView.h; sourceTree = "<group>"; };
+		572297FB20996B0C00A02A66 /* RecordMicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordMicView.m; sourceTree = "<group>"; };
 		572E6A6D20635B5C008114EA /* SampleListAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleListAPI.h; sourceTree = "<group>"; };
 		572E6A6E20635B5C008114EA /* SampleListAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleListAPI.m; sourceTree = "<group>"; };
 		572E6A7120637F1D008114EA /* btnCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnCheck.png; sourceTree = "<group>"; };
@@ -879,6 +882,8 @@
 				572297F520995B5300A02A66 /* RecordView.m */,
 				572297F7209968F600A02A66 /* SingleRecordCell.h */,
 				572297F8209968F600A02A66 /* SingleRecordCell.m */,
+				572297FA20996B0C00A02A66 /* RecordMicView.h */,
+				572297FB20996B0C00A02A66 /* RecordMicView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2322,6 +2327,7 @@
 				5718F4332091B807001859F1 /* AppDelegate+LocalizedLanguage.m in Sources */,
 				5787C885208DDEF700852640 /* STPickerViewUI.m in Sources */,
 				57C3D55E20689BF400E0B8BA /* MainViewController.m in Sources */,
+				572297FC20996B0C00A02A66 /* RecordMicView.m in Sources */,
 				5787C859208D802400852640 /* FMWaterFallFlowControl.m in Sources */,
 				57B5440F2062727F00701F9C /* main.m in Sources */,
 				5787C85C208D820A00852640 /* FMWaterFallFlowLayout.m in Sources */,

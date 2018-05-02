@@ -55,9 +55,9 @@
     
     [self.recorder updateMeters];
     double lowPassResults = pow(10, (0.05 * [self.recorder peakPowerForChannel:0]));
-    float result  = 10 * (float)lowPassResults;
+    CGFloat result  = 10 * (CGFloat)lowPassResults;
     NSLog(@"%f", result);
-    int no = 0;
+    NSInteger no = 0;
     if (result > 0 && result <= 1.3) {
         no = 1;
     } else if (result > 1.3 && result <= 2) {
@@ -74,8 +74,8 @@
         no = 7;
     }
     
-    if ([self.delegate respondsToSelector:@selector(recordTool:didstartRecoring:)]) {
-        [self.delegate recordTool:self didstartRecoring: no];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(recordTool:didstartRecoring:)]) {
+        [self.delegate recordTool:self didstartRecoring:no];
     }
 }
 
@@ -83,6 +83,11 @@
     if ([self.recorder isRecording]) {
         [self.recorder stop];
         [self.timer invalidate];
+    }
+    if (self.delegate && [self.delegate respondsToSelector:@selector(recordToolDidEndRecord:)]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.delegate recordToolDidEndRecord:self];
+        });
     }
 }
 

@@ -7,11 +7,17 @@
 //
 
 #import "RecordView.h"
+#import "LVRecordTool.h"
+#import "HUD.h"
+#import "RecordMicView.h"
 
-@interface RecordView ()
+@interface RecordView ()<
+    LVRecordToolDelegate>
 
 @property (nonatomic, strong) UIView *topLine;
 @property (nonatomic, strong) UIButton *recordButton;
+@property (nonatomic, strong) LVRecordTool *recordTool;
+@property (nonatomic, strong) RecordMicView *micView;
 
 @end
 
@@ -43,6 +49,56 @@
     return self;
 }
 
+#pragma mark - Events
+- (void)recordBtnDidTouchDown:(UIButton *)recordBtn
+{
+    [self.recordTool startRecording];
+    [self.micView showRecordMic];
+}
+
+- (void)recordBtnDidTouchUpInside:(UIButton *)recordBtn
+{
+    double currentTime = self.recordTool.recorder.currentTime;
+    NSLog(@"%lf", currentTime);
+    if (currentTime < 2) {
+        [HUD showTipWithText:@"说话时间太短"];
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            
+            [self.recordTool stopRecording];
+            [self.recordTool destructionRecordingFile];
+        });
+    } else {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            [self.recordTool stopRecording];
+        });
+        TTDPRINT(@"已成功录音");
+    }
+}
+
+- (void)recordBtnDidTouchDragExit:(UIButton *)recordBtn
+{
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        
+        [self.recordTool stopRecording];
+        [self.recordTool destructionRecordingFile];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [HUD showTipWithText:@"已取消录音"];
+        });
+    });
+}
+
+#pragma mark - LVRecordToolDelegate
+- (void)recordTool:(LVRecordTool *)recordTool didstartRecoring:(NSInteger)no
+{
+    [self.micView setMicImageWithIndex:no];
+}
+
+- (void)recordToolDidEndRecord:(LVRecordTool *)recordTool
+{
+    [self.micView removeRecordMic];
+}
+
 #pragma mark - getter & seter
 - (UIView *)topLine
 {
@@ -64,8 +120,28 @@
         [_recordButton setTitle:@"松开 结束" forState:UIControlStateHighlighted];
         [_recordButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         _recordButton.titleLabel.font = [UIFont systemFontOfSize:20.f];
+        [_recordButton addTarget:self action:@selector(recordBtnDidTouchDown:) forControlEvents:UIControlEventTouchDown];
+        [_recordButton addTarget:self action:@selector(recordBtnDidTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+        [_recordButton addTarget:self action:@selector(recordBtnDidTouchDragExit:) forControlEvents:UIControlEventTouchDragExit];
     }
     return _recordButton;
+}
+
+- (LVRecordTool *)recordTool
+{
+    if (!_recordTool) {
+        _recordTool = [LVRecordTool sharedRecordTool];
+        _recordTool.delegate = self;
+    }
+    return _recordTool;
+}
+
+- (RecordMicView *)micView
+{
+    if (!_micView) {
+        _micView = [[RecordMicView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    }
+    return _micView;
 }
 
 /*
