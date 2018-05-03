@@ -90,12 +90,14 @@ static NSString *const recordTipStr_loosenCancel = @"松开 取消";
 {
     recordBtn.highlighted = YES;
     [self.recordButton setTitle:recordTipStr_loosenEnd forState:UIControlStateHighlighted];
+    [self.micView hiddenCancelLogo];
 }
 
 - (void)recordBtnDidTouchDragExit:(UIButton *)recordBtn
 {
     recordBtn.highlighted = NO;
     [self.recordButton setTitle:recordTipStr_loosenCancel forState:UIControlStateNormal];
+    [self.micView showCancelLogo];
 }
 
 - (void)recordingBtnDidTouchUpOutSide:(UIButton *)recordBtn

@@ -16,4 +16,7 @@
 - (void)initMicFirstImage;
 - (void)setMicImageWithIndex:(NSInteger)idx;
 
+- (void)showCancelLogo;
+- (void)hiddenCancelLogo;
+
 @end

@@ -9,6 +9,9 @@
 #import "RecordMicView.h"
 
 @interface RecordMicView ()
+{
+    BOOL isMicAbleToRun;
+}
 
 @property (nonatomic, strong) UIImageView *micImageView;
 
@@ -28,6 +31,7 @@
             make.center.equalTo(self);
             make.size.mas_equalTo(CGSizeMake(frame.size.width-20.f, frame.size.height-20.f));
         }];
+        isMicAbleToRun = YES;
     }
     return self;
 }
@@ -35,6 +39,7 @@
 #pragma mark - Public methods
 - (void)showRecordMic
 {
+    isMicAbleToRun = YES;
     UIWindow *keyboardWindow = [[[UIApplication sharedApplication] windows] lastObject];
     self.center = keyboardWindow.center;
     [keyboardWindow addSubview:self];
@@ -42,6 +47,7 @@
 
 - (void)removeRecordMic
 {
+    isMicAbleToRun = YES;
     [self removeFromSuperview];
 }
 
@@ -52,8 +58,21 @@
 
 - (void)setMicImageWithIndex:(NSInteger)idx
 {
-    NSString *imageName = [NSString stringWithFormat:@"mic_%@", @(idx)];
-    self.micImageView.image = [UIImage imageNamed:imageName];
+    if (isMicAbleToRun) {
+        NSString *imageName = [NSString stringWithFormat:@"mic_%@", @(idx)];
+        self.micImageView.image = [UIImage imageNamed:imageName];
+    }
+}
+
+- (void)showCancelLogo
+{
+    self.micImageView.image = [UIImage imageNamed:@"cancel"];
+    isMicAbleToRun = NO;
+}
+
+- (void)hiddenCancelLogo
+{
+    isMicAbleToRun = YES;
 }
 
 #pragma mark - getter & setter
