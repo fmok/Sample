@@ -141,7 +141,7 @@
                          kMeVCLogoStr: @"upDown"
                          },
                        @{
-                         kMeVCTitle: @"基于NSURLSessionDataTask断点续传",
+                         kMeVCTitle: @"断点续传",
                          kMeVCClassName: NSStringFromClass([NSURLSessionDemoViewController class]),
                          kMeVCLogoStr: @"upDown"
                          },
