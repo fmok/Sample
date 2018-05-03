@@ -34,6 +34,17 @@
     return YES;
 }
 
+- (void)createDB{
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *fullPath =  [path stringByAppendingPathComponent:@"Starmiss.sqlite"];
+    [[JRDBMgr shareInstance] getHandlerWithPath:fullPath];
+//    [[JRDBMgr shareInstance] registerClazzes:@[
+//                                               [SMDocListModel class],
+//                                               [SMPushLuckModel class]
+//                                               ]];
+//    J_UpdateTable(SMDocListModel);
+    [JRDBMgr shareInstance].debugMode = YES;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
