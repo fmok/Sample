@@ -10,6 +10,8 @@
 		48B0FD8D8105888DECAABAC3 /* Pods_SampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42FBAF6C4DE1FF2792C56EA6 /* Pods_SampleUITests.framework */; };
 		495A144514E097DC2FEF156D /* Pods_SampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE0D9EA9480301327D118D4 /* Pods_SampleTests.framework */; };
 		5717B465209AB00100A0F771 /* cancel@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5717B464209AB00000A0F771 /* cancel@3x.png */; };
+		5717B46A209B07F000A0F771 /* DBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5717B469209B07F000A0F771 /* DBViewController.m */; };
+		5717B46E209B08E700A0F771 /* DBPersonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5717B46D209B08E700A0F771 /* DBPersonModel.m */; };
 		5718F3CC20917A56001859F1 /* UMMobClick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5718F3A120917A56001859F1 /* UMMobClick.framework */; };
 		5718F3CD20917A56001859F1 /* libUMessage_Sdk_1.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5718F3A320917A56001859F1 /* libUMessage_Sdk_1.4.0.a */; };
 		5718F3CE20917A56001859F1 /* libSocialQQ.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5718F3A820917A56001859F1 /* libSocialQQ.a */; };
@@ -221,6 +223,10 @@
 		42FBAF6C4DE1FF2792C56EA6 /* Pods_SampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5379F497DA83897556A33982 /* Pods-SampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SampleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SampleUITests/Pods-SampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5717B464209AB00000A0F771 /* cancel@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@3x.png"; sourceTree = "<group>"; };
+		5717B468209B07F000A0F771 /* DBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBViewController.h; sourceTree = "<group>"; };
+		5717B469209B07F000A0F771 /* DBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBViewController.m; sourceTree = "<group>"; };
+		5717B46C209B08E700A0F771 /* DBPersonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBPersonModel.h; sourceTree = "<group>"; };
+		5717B46D209B08E700A0F771 /* DBPersonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBPersonModel.m; sourceTree = "<group>"; };
 		5718F3A120917A56001859F1 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMMobClick.framework; sourceTree = "<group>"; };
 		5718F3A320917A56001859F1 /* libUMessage_Sdk_1.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.4.0.a; sourceTree = "<group>"; };
 		5718F3A420917A56001859F1 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
@@ -614,6 +620,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5717B466209B07B700A0F771 /* DBSample */ = {
+			isa = PBXGroup;
+			children = (
+				5717B46B209B08D200A0F771 /* Model */,
+				5717B467209B07DA00A0F771 /* Controller */,
+			);
+			path = DBSample;
+			sourceTree = "<group>";
+		};
+		5717B467209B07DA00A0F771 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5717B468209B07F000A0F771 /* DBViewController.h */,
+				5717B469209B07F000A0F771 /* DBViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5717B46B209B08D200A0F771 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5717B46C209B08E700A0F771 /* DBPersonModel.h */,
+				5717B46D209B08E700A0F771 /* DBPersonModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5718F39F20917A56001859F1 /* UM */ = {
 			isa = PBXGroup;
 			children = (
@@ -1497,6 +1530,7 @@
 				57E51DF3209037970061EEEB /* BreakpointContinuingly */,
 				5718F4252091A440001859F1 /* LocalizedLanguage */,
 				572297D62099584F00A02A66 /* RecordAndPlay */,
+				5717B466209B07B700A0F771 /* DBSample */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2333,6 +2367,7 @@
 				57379591206B714300388BCC /* CollectionViewCell.m in Sources */,
 				57D5CC752074ABB7009E65C6 /* PetDetailBottomPetDesView.m in Sources */,
 				5718F4332091B807001859F1 /* AppDelegate+LocalizedLanguage.m in Sources */,
+				5717B46A209B07F000A0F771 /* DBViewController.m in Sources */,
 				5787C885208DDEF700852640 /* STPickerViewUI.m in Sources */,
 				57C3D55E20689BF400E0B8BA /* MainViewController.m in Sources */,
 				572297FC20996B0C00A02A66 /* RecordMicView.m in Sources */,
@@ -2401,6 +2436,7 @@
 				57C21B7E2071FC6500F70562 /* PetDetailViewController.m in Sources */,
 				57C3D56D2068C45F00E0B8BA /* UIView+Utilities.m in Sources */,
 				5737E60C2073338E008AF33C /* FMTabsView.m in Sources */,
+				5717B46E209B08E700A0F771 /* DBPersonModel.m in Sources */,
 				5787C856208D800700852640 /* FMWaterFallFlowViewController.m in Sources */,
 				578E7B10207C5990001D351D /* LTSCalendarContentView.m in Sources */,
 				57B5444320627B6900701F9C /* FMRequest.m in Sources */,

@@ -19,6 +19,7 @@
 #import "NSURLSessionDemoViewController.h"
 #import "LocalizedViewController.h"
 #import "RecordAndPlayViewController.h"
+#import "DBViewController.h"
 
 @interface MeViewController ()
 
@@ -153,6 +154,11 @@
                        @{
                          kMeVCTitle: @"Record And Play",
                          kMeVCClassName: NSStringFromClass([RecordAndPlayViewController class]),
+                         kMeVCLogoStr: @"upDown"
+                         },
+                       @{
+                         kMeVCTitle: @"DB",
+                         kMeVCClassName: NSStringFromClass([DBViewController class]),
                          kMeVCLogoStr: @"upDown"
                          },
                        nil];
