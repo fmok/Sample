@@ -11,7 +11,7 @@
 @implementation DBPersonModel
 
 + (NSString *)jr_customPrimarykey {
-    return @"PersonID"; // 对应property的属性名
+    return @"personID"; // 对应property的属性名
 }
 
 - (id)jr_customPrimarykeyValue {

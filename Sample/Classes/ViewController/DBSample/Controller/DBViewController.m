@@ -43,12 +43,17 @@
 
 - (void)getItem
 {
+    NSString *primaryKetStr = [DBPersonModel jr_primaryKey];
     NSArray<DBPersonModel *> *itemList = J_Select(DBPersonModel)
-    .Where(@"personID = ?")
+    .Where([NSString stringWithFormat:@"%@ = ?", primaryKetStr])
     .Params(@[@"Person1"])
+    .Where(@"name like ?")
+    .Params(@[@"Bruce"])
+//    .Where(@"name like ? and age > ?")
+//    .Params(@[@"Bruce", @10])
     .list;
     if (itemList && itemList.count > 0) {
-        TTDPRINT(@"%@", itemList[0]);
+        TTDPRINT(@"\n%@\nprimaryKeyValue = %@\n", [itemList firstObject], [[itemList firstObject] jr_primaryKeyValue]);
     }
 }
 
@@ -60,6 +65,22 @@
     person.age = 30;
     person.data = @"abcdefg哈哈哈";
     [person jr_save];
+    
+    
+    DBPersonModel *person2 = [[DBPersonModel alloc] init];
+    person2.personID = @"Person2";
+    person2.name = @"Bruce";
+    person2.age = 20;
+    person2.data = @"abcdefg嘿嘿嘿";
+    [person2 jr_saveOrUpdate];
+    
+    
+    DBPersonModel *person3 = [[DBPersonModel alloc] init];
+    person3.personID = @"Person3";
+    person3.name = @"Bruce";
+    person3.age = 40;
+    person3.data = @"abcdefg呵呵呵";
+    [person3 jr_saveOrUpdate];
 }
 
 - (void)installDB
