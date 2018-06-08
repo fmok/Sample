@@ -30,7 +30,7 @@
         make.size.mas_equalTo(CGSizeMake(kScreenWidth-20.f, 40.f));
     }];
     [self configUI];
-    self.textLabel.text = FMLocalizedString(@"LocalizedLanguage_testTextStr");//[[LocalizedLanguageManager shareManager] getShowValueWithLocalizedStrKey:@"LocalizedLanguage_testTextStr"];
+    self.textLabel.text = [[LocalizedLanguageManager shareManager] getShowValueWithLocalizedStrKey:@"LocalizedLanguage_testTextStr"];
 }
 
 #pragma mark - Public methods

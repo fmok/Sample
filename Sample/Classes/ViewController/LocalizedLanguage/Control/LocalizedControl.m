@@ -34,7 +34,7 @@
         default:
             break;
     }
-    showValue = FMLocalizedString(@"LocalizedLanguage_testTextStr");//[[LocalizedLanguageManager shareManager] getShowValueWithLocalizedStrKey:@"LocalizedLanguage_testTextStr"];
+    showValue = [[LocalizedLanguageManager shareManager] getShowValueWithLocalizedStrKey:@"LocalizedLanguage_testTextStr"];
     [self.vc updateTestLabel:showValue];
 }
 

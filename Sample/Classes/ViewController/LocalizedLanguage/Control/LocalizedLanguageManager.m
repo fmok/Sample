@@ -8,12 +8,15 @@
 
 #import "LocalizedLanguageManager.h"
 
-static NSString *const LocalizedLanguage_zh_Hans = @"zh-Hans";
-static NSString *const LocalizedLanguage_zh_Hant = @"zh-Hant";
-static NSString *const LocalizedLanguage_en = @"en";
+static NSString *const LocalizedLanguage_zh_Hans = @"zh-Hans";  // 中文简体
+static NSString *const LocalizedLanguage_zh_Hant = @"zh-Hant";  // 中文繁体
+static NSString *const LocalizedLanguage_en = @"en";  // 英文
 
-static NSString *const LocalizedLanguage_zh_TW = @"zh-TW";
-static NSString *const LocalizedLanguage_zh_HK = @"zh-HK";
+static NSString *const LocalizedLanguage_zh_TW = @"zh-TW";  // 台湾
+static NSString *const LocalizedLanguage_zh_HK = @"zh-HK";  // 香港
+
+static NSString *const LocalizedLanguage_ja = @"ja";  // 日本语
+static NSString *const LocalizedLanguage_ko = @"ko";  // 韩国语
 
 @implementation LocalizedLanguageManager
 
@@ -23,6 +26,7 @@ static NSString *const LocalizedLanguage_zh_HK = @"zh-HK";
     static LocalizedLanguageManager *mamager = nil;
     dispatch_once(&onceToken, ^{
         mamager = [[LocalizedLanguageManager alloc] init];
+        mamager.isNeedSaveLanguageToLocal = NO;
     });
     return mamager;
 }
@@ -30,26 +34,30 @@ static NSString *const LocalizedLanguage_zh_HK = @"zh-HK";
 #pragma mark - Public methods
 - (void)configDefaultLanguageEnvironment
 {
-    BOOL isNeedSaveToLocal = NO;
     NSString *lan = [self getLocalLanguage];
     if (!lan) {
         lan = [self getSystemLangusge];
-        isNeedSaveToLocal = YES;
     }
-    
+    //
     if ([lan hasPrefix:LocalizedLanguage_zh_Hans]) {
         _currentType = LocalizedLanguageType_zh_Hans;
     } else if ([lan hasPrefix:LocalizedLanguage_zh_TW] || [lan hasPrefix:LocalizedLanguage_zh_HK] || [lan hasPrefix:LocalizedLanguage_zh_Hant]) {
         _currentType = LocalizedLanguageType_zh_Hant;
     } else if ([lan hasPrefix:LocalizedLanguage_en]) {
         _currentType = LocalizedLanguageType_en;
-    } else{
-        _currentType = LocalizedLanguageType_zh_Hans;
+    } else if ([lan hasPrefix:LocalizedLanguage_ja]) {
+        _currentType = LocalizedLanguageType_ja_CN;
+    } else if ([lan hasPrefix:LocalizedLanguage_ko]) {
+        _currentType = LocalizedLanguageType_ko_CN;
+    } else {  // 默认日语
+        _currentType = LocalizedLanguageType_ja_CN;
     }
-    if (lan && isNeedSaveToLocal) {
-        if ([lan hasPrefix:LocalizedLanguage_zh_TW] || [lan hasPrefix:LocalizedLanguage_zh_HK] || [lan hasPrefix:LocalizedLanguage_zh_Hant]) {
-            lan = LocalizedLanguage_zh_Hant;
-        }
+    // 统一设置 中文繁体
+    if ([lan hasPrefix:LocalizedLanguage_zh_TW] || [lan hasPrefix:LocalizedLanguage_zh_HK] || [lan hasPrefix:LocalizedLanguage_zh_Hant]) {
+        lan = LocalizedLanguage_zh_Hant;
+    }
+    // 本地化
+    if (lan && self.isNeedSaveLanguageToLocal) {
         [[NSUserDefaults standardUserDefaults] setObject:lan forKey:kLocalizedLanguageKeyIdentifier];
     }
 }
@@ -63,6 +71,10 @@ static NSString *const LocalizedLanguage_zh_HK = @"zh-HK";
 {
     NSString *showValue = nil;
     NSString *path = [[NSBundle mainBundle] pathForResource:[self getCurrentLanguageIdentifierStr] ofType:@"lproj"];
+    // 若为韩语，也显示日语（当前为加入韩语翻译）
+    if ([FMUtility isEmptyString:path] || _currentType == LocalizedLanguageType_ko_CN) {
+        path = [[NSBundle mainBundle] pathForResource:LocalizedLanguage_ja ofType:@"lproj"];  // 默认 日本语
+    }
     showValue = [[NSBundle bundleWithPath:path] localizedStringForKey:key value:nil table:table];
     return showValue;
 }
@@ -87,13 +99,23 @@ static NSString *const LocalizedLanguage_zh_HK = @"zh-HK";
             lan = LocalizedLanguage_en;
         }
             break;
-            
+        case LocalizedLanguageType_ja_CN:
+        {
+            lan = LocalizedLanguage_ja;
+        }
+            break;
+        case LocalizedLanguageType_ko_CN:
+        {
+            lan = LocalizedLanguage_ko;
+        }
+            break;
         default:
             break;
     }
-    [[NSUserDefaults standardUserDefaults] setObject:lan forKey:kLocalizedLanguageKeyIdentifier];
+    if (lan && self.isNeedSaveLanguageToLocal) {
+         [[NSUserDefaults standardUserDefaults] setObject:lan forKey:kLocalizedLanguageKeyIdentifier];
+    }
 }
-
 
 #pragma mark - Private methods
 - (NSString *)getCurrentLanguageIdentifierStr
@@ -107,6 +129,12 @@ static NSString *const LocalizedLanguage_zh_HK = @"zh-HK";
             break;
         case LocalizedLanguageType_en:
             return LocalizedLanguage_en;
+            break;
+        case LocalizedLanguageType_ja_CN:
+            return LocalizedLanguage_ja;
+            break;
+        case LocalizedLanguageType_ko_CN:
+            return LocalizedLanguage_ko;
             break;
         default:
             return LocalizedLanguage_zh_Hans;

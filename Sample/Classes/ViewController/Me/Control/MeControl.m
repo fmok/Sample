@@ -12,6 +12,7 @@
 #import "MyPurchaseViewController.h"
 #import "FMH5ViewController_wk.h"
 #import "UITableViewCell+showAnimaiton.h"
+#import "MUSAnimationTool.h"
 
 static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr";
 
@@ -83,6 +84,7 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
 {
     MeCell *cell = [tableView dequeueReusableCellWithIdentifier:kMeCellReusedIdentifierStr forIndexPath:indexPath];
     [cell updateContentWithImg:[self.vc.settingArr[indexPath.row] objectForKey:kMeVCLogoStr] contentText:[self.vc.settingArr[indexPath.row] objectForKey:kMeVCTitle]];
+    [MUSAnimationTool animate:cell type:MUSAnimationTypeTranslation];
     return cell;
 }
 
@@ -90,11 +92,6 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
 {
     return 1;
 }
-
-//- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [cell tableView:tableView forRowAtIndexPath:indexPath animationStyle:UITableViewCellDisplayAnimationLeft];
-//}
 
 #pragma mark - KVO
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context

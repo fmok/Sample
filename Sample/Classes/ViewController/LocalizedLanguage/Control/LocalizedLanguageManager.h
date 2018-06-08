@@ -12,14 +12,17 @@
 #define FMLocalizedString(key)  [NSString stringWithFormat:@"%@", [[NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@",[[NSUserDefaults standardUserDefaults] objectForKey:@"kLocalizedLanguageKeyIdentifier"]] ofType:@"lproj"]] localizedStringForKey:(key) value:nil table:@"Localized"]]
 
 typedef NS_OPTIONS(NSInteger, LocalizedLanguageType) {
-    LocalizedLanguageType_zh_Hans = 1 << 0,
-    LocalizedLanguageType_zh_Hant = 1 << 1,
-    LocalizedLanguageType_en      = 1 << 2,
+    LocalizedLanguageType_zh_Hans = 1 << 0,  // 中文简体
+    LocalizedLanguageType_zh_Hant = 1 << 1,  // 中文繁体
+    LocalizedLanguageType_en      = 1 << 2,  // 英语
+    LocalizedLanguageType_ja_CN   = 1 << 3,  // 日本语
+    LocalizedLanguageType_ko_CN   = 1 << 4,  // 韩国语
 };
 
 @interface LocalizedLanguageManager : NSObject
 
 @property (nonatomic, assign, setter=fm_setCurrentType:) LocalizedLanguageType currentType;
+@property (nonatomic, assign) BOOL isNeedSaveLanguageToLocal;  // defalut == NO
 
 + (instancetype)shareManager;
 

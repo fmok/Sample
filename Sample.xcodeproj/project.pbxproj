@@ -67,6 +67,7 @@
 		572297F620995B5300A02A66 /* RecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297F520995B5300A02A66 /* RecordView.m */; };
 		572297F9209968F600A02A66 /* SingleRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297F8209968F600A02A66 /* SingleRecordCell.m */; };
 		572297FC20996B0C00A02A66 /* RecordMicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 572297FB20996B0C00A02A66 /* RecordMicView.m */; };
+		5729D78020B7C2C800F98D95 /* MUSAnimationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5729D77F20B7C2C800F98D95 /* MUSAnimationTool.m */; };
 		572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A6E20635B5C008114EA /* SampleListAPI.m */; };
 		572E6A7720637F1D008114EA /* btnCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A7120637F1D008114EA /* btnCheck.png */; };
 		572E6A7820637F1D008114EA /* btnCheck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A7220637F1D008114EA /* btnCheck@2x.png */; };
@@ -316,6 +317,8 @@
 		572297F8209968F600A02A66 /* SingleRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleRecordCell.m; sourceTree = "<group>"; };
 		572297FA20996B0C00A02A66 /* RecordMicView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecordMicView.h; sourceTree = "<group>"; };
 		572297FB20996B0C00A02A66 /* RecordMicView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecordMicView.m; sourceTree = "<group>"; };
+		5729D77E20B7C2C800F98D95 /* MUSAnimationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSAnimationTool.h; sourceTree = "<group>"; };
+		5729D77F20B7C2C800F98D95 /* MUSAnimationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSAnimationTool.m; sourceTree = "<group>"; };
 		572E6A6D20635B5C008114EA /* SampleListAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleListAPI.h; sourceTree = "<group>"; };
 		572E6A6E20635B5C008114EA /* SampleListAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleListAPI.m; sourceTree = "<group>"; };
 		572E6A7120637F1D008114EA /* btnCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btnCheck.png; sourceTree = "<group>"; };
@@ -1792,6 +1795,8 @@
 		57C3D556206898B400E0B8BA /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				5729D77E20B7C2C800F98D95 /* MUSAnimationTool.h */,
+				5729D77F20B7C2C800F98D95 /* MUSAnimationTool.m */,
 				57C3D557206898CA00E0B8BA /* MeControl.h */,
 				57C3D558206898CA00E0B8BA /* MeControl.m */,
 			);
@@ -2449,6 +2454,7 @@
 				5740FA48206CE705006F20A5 /* BuyDetailControl.m in Sources */,
 				578E7B0F207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
 				578E7B0D207C5990001D351D /* LTSCalendarAppearance.m in Sources */,
+				5729D78020B7C2C800F98D95 /* MUSAnimationTool.m in Sources */,
 				573A8E9D208840CB00B89BF6 /* BookLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
