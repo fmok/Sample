@@ -15,8 +15,8 @@ typedef NS_OPTIONS(NSInteger, LocalizedLanguageType) {
     LocalizedLanguageType_zh_Hans = 1 << 0,  // 中文简体
     LocalizedLanguageType_zh_Hant = 1 << 1,  // 中文繁体
     LocalizedLanguageType_en      = 1 << 2,  // 英语
-    LocalizedLanguageType_ja_CN   = 1 << 3,  // 日本语
-    LocalizedLanguageType_ko_CN   = 1 << 4,  // 韩国语
+    LocalizedLanguageType_ja   = 1 << 3,  // 日本语
+    LocalizedLanguageType_ko   = 1 << 4,  // 韩国语
 };
 
 @interface LocalizedLanguageManager : NSObject

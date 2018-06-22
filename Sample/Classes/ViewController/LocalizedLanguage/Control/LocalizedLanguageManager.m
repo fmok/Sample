@@ -38,20 +38,29 @@ static NSString *const LocalizedLanguage_ko = @"ko";  // 韩国语
     if (!lan) {
         lan = [self getSystemLangusge];
     }
-    //
     if ([lan hasPrefix:LocalizedLanguage_zh_Hans]) {
         _currentType = LocalizedLanguageType_zh_Hans;
-    } else if ([lan hasPrefix:LocalizedLanguage_zh_TW] || [lan hasPrefix:LocalizedLanguage_zh_HK] || [lan hasPrefix:LocalizedLanguage_zh_Hant]) {
-        _currentType = LocalizedLanguageType_zh_Hant;
-    } else if ([lan hasPrefix:LocalizedLanguage_en]) {
-        _currentType = LocalizedLanguageType_en;
     } else if ([lan hasPrefix:LocalizedLanguage_ja]) {
-        _currentType = LocalizedLanguageType_ja_CN;
+        _currentType = LocalizedLanguageType_ja;
     } else if ([lan hasPrefix:LocalizedLanguage_ko]) {
-        _currentType = LocalizedLanguageType_ko_CN;
+        _currentType = LocalizedLanguageType_ko;
     } else {  // 默认日语
-        _currentType = LocalizedLanguageType_ja_CN;
+        _currentType = LocalizedLanguageType_ja;
     }
+//    //
+//    if ([lan hasPrefix:LocalizedLanguage_zh_Hans]) {
+//        _currentType = LocalizedLanguageType_zh_Hans;
+//    } else if ([lan hasPrefix:LocalizedLanguage_zh_TW] || [lan hasPrefix:LocalizedLanguage_zh_HK] || [lan hasPrefix:LocalizedLanguage_zh_Hant]) {
+//        _currentType = LocalizedLanguageType_zh_Hant;
+//    } else if ([lan hasPrefix:LocalizedLanguage_en]) {
+//        _currentType = LocalizedLanguageType_en;
+//    } else if ([lan hasPrefix:LocalizedLanguage_ja]) {
+//        _currentType = LocalizedLanguageType_ja;
+//    } else if ([lan hasPrefix:LocalizedLanguage_ko]) {
+//        _currentType = LocalizedLanguageType_ko;
+//    } else {  // 默认日语
+//        _currentType = LocalizedLanguageType_ja;
+//    }
     // 统一设置 中文繁体
     if ([lan hasPrefix:LocalizedLanguage_zh_TW] || [lan hasPrefix:LocalizedLanguage_zh_HK] || [lan hasPrefix:LocalizedLanguage_zh_Hant]) {
         lan = LocalizedLanguage_zh_Hant;
@@ -71,8 +80,7 @@ static NSString *const LocalizedLanguage_ko = @"ko";  // 韩国语
 {
     NSString *showValue = nil;
     NSString *path = [[NSBundle mainBundle] pathForResource:[self getCurrentLanguageIdentifierStr] ofType:@"lproj"];
-    // 若为韩语，也显示日语（当前为加入韩语翻译）
-    if ([FMUtility isEmptyString:path] || _currentType == LocalizedLanguageType_ko_CN) {
+    if ([FMUtility isEmptyString:path]) {
         path = [[NSBundle mainBundle] pathForResource:LocalizedLanguage_ja ofType:@"lproj"];  // 默认 日本语
     }
     showValue = [[NSBundle bundleWithPath:path] localizedStringForKey:key value:nil table:table];
@@ -99,12 +107,12 @@ static NSString *const LocalizedLanguage_ko = @"ko";  // 韩国语
             lan = LocalizedLanguage_en;
         }
             break;
-        case LocalizedLanguageType_ja_CN:
+        case LocalizedLanguageType_ja:
         {
             lan = LocalizedLanguage_ja;
         }
             break;
-        case LocalizedLanguageType_ko_CN:
+        case LocalizedLanguageType_ko:
         {
             lan = LocalizedLanguage_ko;
         }
@@ -130,10 +138,10 @@ static NSString *const LocalizedLanguage_ko = @"ko";  // 韩国语
         case LocalizedLanguageType_en:
             return LocalizedLanguage_en;
             break;
-        case LocalizedLanguageType_ja_CN:
+        case LocalizedLanguageType_ja:
             return LocalizedLanguage_ja;
             break;
-        case LocalizedLanguageType_ko_CN:
+        case LocalizedLanguageType_ko:
             return LocalizedLanguage_ko;
             break;
         default:
