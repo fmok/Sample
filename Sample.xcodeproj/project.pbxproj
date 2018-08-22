@@ -48,6 +48,8 @@
 		5718F42D2091A9CB001859F1 /* LocalizedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5718F42C2091A9CB001859F1 /* LocalizedControl.m */; };
 		5718F4302091AD52001859F1 /* LocalizedLanguageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5718F42F2091AD52001859F1 /* LocalizedLanguageManager.m */; };
 		5718F4332091B807001859F1 /* AppDelegate+LocalizedLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5718F4322091B807001859F1 /* AppDelegate+LocalizedLanguage.m */; };
+		571D496720F73B2300691CCD /* SampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 571D496620F73B2300691CCD /* SampleViewController.m */; };
+		571D496A20F73B3000691CCD /* SampleControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 571D496920F73B3000691CCD /* SampleControl.m */; };
 		57206A51208445760017F7F8 /* FMH5ViewController_wk.m in Sources */ = {isa = PBXBuildFile; fileRef = 57206A50208445760017F7F8 /* FMH5ViewController_wk.m */; };
 		57206A54208451120017F7F8 /* top_navigation_close_h5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57206A53208451120017F7F8 /* top_navigation_close_h5@2x.png */; };
 		57206A57208451820017F7F8 /* reader_toolbar_share@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57206A55208451820017F7F8 /* reader_toolbar_share@3x.png */; };
@@ -79,6 +81,8 @@
 		572E6A8E2063CA55008114EA /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E6A8B2063CA55008114EA /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		572E6A8F2063CA55008114EA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 572E6A8C2063CA55008114EA /* README.md */; };
 		5730A6422089F1480049602D /* FMCalendarSingleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5730A6412089F1480049602D /* FMCalendarSingleView.m */; };
+		5732F798211400A0005EEC82 /* TypewriterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5732F797211400A0005EEC82 /* TypewriterViewController.m */; };
+		5732F79B211400AC005EEC82 /* TypewriterControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5732F79A211400AC005EEC82 /* TypewriterControl.m */; };
 		5737957D206B39AB00388BCC /* nav.png in Resources */ = {isa = PBXBuildFile; fileRef = 5737957C206B39AB00388BCC /* nav.png */; };
 		57379581206B4ACB00388BCC /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57379580206B4ACA00388BCC /* SwipeView.m */; };
 		5737958E206B6EC900388BCC /* MainControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5737958D206B6EC900388BCC /* MainControl.m */; };
@@ -99,6 +103,20 @@
 		573F2E8B206E2C2B0011C77A /* MyPurchaseControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F2E8A206E2C2B0011C77A /* MyPurchaseControl.m */; };
 		573F2E91206E586E0011C77A /* MyPurchaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F2E90206E586E0011C77A /* MyPurchaseCell.m */; };
 		573F2E97206E5BBC0011C77A /* MyPurchaseCellTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F2E96206E5BBC0011C77A /* MyPurchaseCellTopView.m */; };
+		573FE862212D411500BBE2CD /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 573FE85D212D411500BBE2CD /* NSData+AES.m */; };
+		573FE863212D411500BBE2CD /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 573FE860212D411500BBE2CD /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		573FE875212D420600BBE2CD /* cardDes-CN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 573FE866212D420500BBE2CD /* cardDes-CN.plist */; };
+		573FE876212D420600BBE2CD /* cardDes-ja.plist in Resources */ = {isa = PBXBuildFile; fileRef = 573FE867212D420500BBE2CD /* cardDes-ja.plist */; };
+		573FE877212D420600BBE2CD /* cardDes-ko.plist in Resources */ = {isa = PBXBuildFile; fileRef = 573FE868212D420500BBE2CD /* cardDes-ko.plist */; };
+		573FE878212D420600BBE2CD /* cardMeaning-CN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 573FE86A212D420500BBE2CD /* cardMeaning-CN.plist */; };
+		573FE879212D420600BBE2CD /* cardMeaning-ja.plist in Resources */ = {isa = PBXBuildFile; fileRef = 573FE86B212D420500BBE2CD /* cardMeaning-ja.plist */; };
+		573FE87A212D420600BBE2CD /* cardMeaning-ko.plist in Resources */ = {isa = PBXBuildFile; fileRef = 573FE86C212D420500BBE2CD /* cardMeaning-ko.plist */; };
+		573FE87B212D420600BBE2CD /* DalilyTarotCards-CN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 573FE86E212D420500BBE2CD /* DalilyTarotCards-CN.plist */; };
+		573FE87C212D420600BBE2CD /* DalilyTarotCards-ja.plist in Resources */ = {isa = PBXBuildFile; fileRef = 573FE86F212D420500BBE2CD /* DalilyTarotCards-ja.plist */; };
+		573FE87D212D420600BBE2CD /* DalilyTarotCards-ko.plist in Resources */ = {isa = PBXBuildFile; fileRef = 573FE870212D420500BBE2CD /* DalilyTarotCards-ko.plist */; };
+		573FE87E212D420600BBE2CD /* TarotCards-CN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 573FE872212D420500BBE2CD /* TarotCards-CN.plist */; };
+		573FE87F212D420600BBE2CD /* TarotCards-ja.plist in Resources */ = {isa = PBXBuildFile; fileRef = 573FE873212D420500BBE2CD /* TarotCards-ja.plist */; };
+		573FE880212D420600BBE2CD /* TarotCards-ko.plist in Resources */ = {isa = PBXBuildFile; fileRef = 573FE874212D420500BBE2CD /* TarotCards-ko.plist */; };
 		5740FA38206C9805006F20A5 /* upDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5740FA37206C9805006F20A5 /* upDown@2x.png */; };
 		5740FA45206CE6F0006F20A5 /* BuyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA44206CE6F0006F20A5 /* BuyDetailViewController.m */; };
 		5740FA48206CE705006F20A5 /* BuyDetailControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA47206CE705006F20A5 /* BuyDetailControl.m */; };
@@ -197,6 +215,8 @@
 		57DED56C2067D42100E24607 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5672067D42100E24607 /* UIImage+ImageEffects.m */; };
 		57DED56D2067D42100E24607 /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5692067D42100E24607 /* UIImageEffects.m */; };
 		57DED56E2067D42100E24607 /* UIImageView+LBBlurredImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED56B2067D42100E24607 /* UIImageView+LBBlurredImage.m */; };
+		57E268AA212559A8004200F3 /* AESViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E268A9212559A8004200F3 /* AESViewController.m */; };
+		57E268AD212559BA004200F3 /* AESControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E268AC212559BA004200F3 /* AESControl.m */; };
 		57E51DF92090512E0061EEEB /* NSURLSessionDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E51DF82090512E0061EEEB /* NSURLSessionDemoViewController.m */; };
 		57E51DFC2090513A0061EEEB /* NSURLSessionDemoControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E51DFB2090513A0061EEEB /* NSURLSessionDemoControl.m */; };
 		8646EF97853BD87ABD83D2D1 /* Pods_Sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFF9E3C2A30A459CB6D5BCFF /* Pods_Sample.framework */; };
@@ -290,6 +310,10 @@
 		5718F42F2091AD52001859F1 /* LocalizedLanguageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalizedLanguageManager.m; sourceTree = "<group>"; };
 		5718F4312091B807001859F1 /* AppDelegate+LocalizedLanguage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+LocalizedLanguage.h"; sourceTree = "<group>"; };
 		5718F4322091B807001859F1 /* AppDelegate+LocalizedLanguage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+LocalizedLanguage.m"; sourceTree = "<group>"; };
+		571D496520F73B2300691CCD /* SampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleViewController.h; sourceTree = "<group>"; };
+		571D496620F73B2300691CCD /* SampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleViewController.m; sourceTree = "<group>"; };
+		571D496820F73B3000691CCD /* SampleControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleControl.h; sourceTree = "<group>"; };
+		571D496920F73B3000691CCD /* SampleControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleControl.m; sourceTree = "<group>"; };
 		57206A4F208445760017F7F8 /* FMH5ViewController_wk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMH5ViewController_wk.h; sourceTree = "<group>"; };
 		57206A50208445760017F7F8 /* FMH5ViewController_wk.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMH5ViewController_wk.m; sourceTree = "<group>"; };
 		57206A53208451120017F7F8 /* top_navigation_close_h5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_navigation_close_h5@2x.png"; sourceTree = "<group>"; };
@@ -338,6 +362,10 @@
 		572E6A8C2063CA55008114EA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5730A6402089F1480049602D /* FMCalendarSingleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMCalendarSingleView.h; sourceTree = "<group>"; };
 		5730A6412089F1480049602D /* FMCalendarSingleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMCalendarSingleView.m; sourceTree = "<group>"; };
+		5732F796211400A0005EEC82 /* TypewriterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypewriterViewController.h; sourceTree = "<group>"; };
+		5732F797211400A0005EEC82 /* TypewriterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypewriterViewController.m; sourceTree = "<group>"; };
+		5732F799211400AC005EEC82 /* TypewriterControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TypewriterControl.h; sourceTree = "<group>"; };
+		5732F79A211400AC005EEC82 /* TypewriterControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypewriterControl.m; sourceTree = "<group>"; };
 		5737957C206B39AB00388BCC /* nav.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav.png; sourceTree = "<group>"; };
 		5737957F206B4ACA00388BCC /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
 		57379580206B4ACA00388BCC /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
@@ -377,6 +405,23 @@
 		573F2E90206E586E0011C77A /* MyPurchaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPurchaseCell.m; sourceTree = "<group>"; };
 		573F2E95206E5BBC0011C77A /* MyPurchaseCellTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPurchaseCellTopView.h; sourceTree = "<group>"; };
 		573F2E96206E5BBC0011C77A /* MyPurchaseCellTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPurchaseCellTopView.m; sourceTree = "<group>"; };
+		573FE85C212D411500BBE2CD /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
+		573FE85D212D411500BBE2CD /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
+		573FE85F212D411500BBE2CD /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		573FE860212D411500BBE2CD /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		573FE861212D411500BBE2CD /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		573FE866212D420500BBE2CD /* cardDes-CN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cardDes-CN.plist"; sourceTree = "<group>"; };
+		573FE867212D420500BBE2CD /* cardDes-ja.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cardDes-ja.plist"; sourceTree = "<group>"; };
+		573FE868212D420500BBE2CD /* cardDes-ko.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cardDes-ko.plist"; sourceTree = "<group>"; };
+		573FE86A212D420500BBE2CD /* cardMeaning-CN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cardMeaning-CN.plist"; sourceTree = "<group>"; };
+		573FE86B212D420500BBE2CD /* cardMeaning-ja.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cardMeaning-ja.plist"; sourceTree = "<group>"; };
+		573FE86C212D420500BBE2CD /* cardMeaning-ko.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "cardMeaning-ko.plist"; sourceTree = "<group>"; };
+		573FE86E212D420500BBE2CD /* DalilyTarotCards-CN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DalilyTarotCards-CN.plist"; sourceTree = "<group>"; };
+		573FE86F212D420500BBE2CD /* DalilyTarotCards-ja.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DalilyTarotCards-ja.plist"; sourceTree = "<group>"; };
+		573FE870212D420500BBE2CD /* DalilyTarotCards-ko.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DalilyTarotCards-ko.plist"; sourceTree = "<group>"; };
+		573FE872212D420500BBE2CD /* TarotCards-CN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TarotCards-CN.plist"; sourceTree = "<group>"; };
+		573FE873212D420500BBE2CD /* TarotCards-ja.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TarotCards-ja.plist"; sourceTree = "<group>"; };
+		573FE874212D420500BBE2CD /* TarotCards-ko.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TarotCards-ko.plist"; sourceTree = "<group>"; };
 		5740FA37206C9805006F20A5 /* upDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "upDown@2x.png"; sourceTree = "<group>"; };
 		5740FA43206CE6F0006F20A5 /* BuyDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyDetailViewController.h; sourceTree = "<group>"; };
 		5740FA44206CE6F0006F20A5 /* BuyDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailViewController.m; sourceTree = "<group>"; };
@@ -563,6 +608,10 @@
 		57DED5692067D42100E24607 /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
 		57DED56A2067D42100E24607 /* UIImageView+LBBlurredImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+LBBlurredImage.h"; sourceTree = "<group>"; };
 		57DED56B2067D42100E24607 /* UIImageView+LBBlurredImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+LBBlurredImage.m"; sourceTree = "<group>"; };
+		57E268A8212559A8004200F3 /* AESViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESViewController.h; sourceTree = "<group>"; };
+		57E268A9212559A8004200F3 /* AESViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESViewController.m; sourceTree = "<group>"; };
+		57E268AB212559BA004200F3 /* AESControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AESControl.h; sourceTree = "<group>"; };
+		57E268AC212559BA004200F3 /* AESControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AESControl.m; sourceTree = "<group>"; };
 		57E51DF72090512E0061EEEB /* NSURLSessionDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLSessionDemoViewController.h; sourceTree = "<group>"; };
 		57E51DF82090512E0061EEEB /* NSURLSessionDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionDemoViewController.m; sourceTree = "<group>"; };
 		57E51DFA2090513A0061EEEB /* NSURLSessionDemoControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSURLSessionDemoControl.h; sourceTree = "<group>"; };
@@ -847,6 +896,41 @@
 			path = Control;
 			sourceTree = "<group>";
 		};
+		571D496120F73AF400691CCD /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				571D496420F73B0F00691CCD /* View */,
+				571D496320F73B0800691CCD /* Control */,
+				571D496220F73B0200691CCD /* Controller */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+		571D496220F73B0200691CCD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				571D496520F73B2300691CCD /* SampleViewController.h */,
+				571D496620F73B2300691CCD /* SampleViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		571D496320F73B0800691CCD /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				571D496820F73B3000691CCD /* SampleControl.h */,
+				571D496920F73B3000691CCD /* SampleControl.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		571D496420F73B0F00691CCD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		57206A4D208445140017F7F8 /* Web */ = {
 			isa = PBXGroup;
 			children = (
@@ -964,6 +1048,41 @@
 				572E6A8C2063CA55008114EA /* README.md */,
 			);
 			path = JSONKit;
+			sourceTree = "<group>";
+		};
+		5732F7922114006B005EEC82 /* Typewriter */ = {
+			isa = PBXGroup;
+			children = (
+				5732F79521140088005EEC82 /* View */,
+				5732F79421140082005EEC82 /* Control */,
+				5732F7932114007C005EEC82 /* Controller */,
+			);
+			path = Typewriter;
+			sourceTree = "<group>";
+		};
+		5732F7932114007C005EEC82 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5732F796211400A0005EEC82 /* TypewriterViewController.h */,
+				5732F797211400A0005EEC82 /* TypewriterViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5732F79421140082005EEC82 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				5732F799211400AC005EEC82 /* TypewriterControl.h */,
+				5732F79A211400AC005EEC82 /* TypewriterControl.m */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		5732F79521140088005EEC82 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5737957E206B4ACA00388BCC /* SwipeView */ = {
@@ -1111,6 +1230,76 @@
 			children = (
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		573FE85B212D411500BBE2CD /* NSDate+AES */ = {
+			isa = PBXGroup;
+			children = (
+				573FE85C212D411500BBE2CD /* NSData+AES.h */,
+				573FE85D212D411500BBE2CD /* NSData+AES.m */,
+			);
+			path = "NSDate+AES";
+			sourceTree = "<group>";
+		};
+		573FE85E212D411500BBE2CD /* GTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				573FE85F212D411500BBE2CD /* GTMBase64.h */,
+				573FE860212D411500BBE2CD /* GTMBase64.m */,
+				573FE861212D411500BBE2CD /* GTMDefines.h */,
+			);
+			path = GTMBase64;
+			sourceTree = "<group>";
+		};
+		573FE864212D420500BBE2CD /* TarotCardPlist */ = {
+			isa = PBXGroup;
+			children = (
+				573FE865212D420500BBE2CD /* CardDescription */,
+				573FE869212D420500BBE2CD /* CardMeaning */,
+				573FE86D212D420500BBE2CD /* DalilyTarotCard */,
+				573FE871212D420500BBE2CD /* TarotCard */,
+			);
+			path = TarotCardPlist;
+			sourceTree = "<group>";
+		};
+		573FE865212D420500BBE2CD /* CardDescription */ = {
+			isa = PBXGroup;
+			children = (
+				573FE866212D420500BBE2CD /* cardDes-CN.plist */,
+				573FE867212D420500BBE2CD /* cardDes-ja.plist */,
+				573FE868212D420500BBE2CD /* cardDes-ko.plist */,
+			);
+			path = CardDescription;
+			sourceTree = "<group>";
+		};
+		573FE869212D420500BBE2CD /* CardMeaning */ = {
+			isa = PBXGroup;
+			children = (
+				573FE86A212D420500BBE2CD /* cardMeaning-CN.plist */,
+				573FE86B212D420500BBE2CD /* cardMeaning-ja.plist */,
+				573FE86C212D420500BBE2CD /* cardMeaning-ko.plist */,
+			);
+			path = CardMeaning;
+			sourceTree = "<group>";
+		};
+		573FE86D212D420500BBE2CD /* DalilyTarotCard */ = {
+			isa = PBXGroup;
+			children = (
+				573FE86E212D420500BBE2CD /* DalilyTarotCards-CN.plist */,
+				573FE86F212D420500BBE2CD /* DalilyTarotCards-ja.plist */,
+				573FE870212D420500BBE2CD /* DalilyTarotCards-ko.plist */,
+			);
+			path = DalilyTarotCard;
+			sourceTree = "<group>";
+		};
+		573FE871212D420500BBE2CD /* TarotCard */ = {
+			isa = PBXGroup;
+			children = (
+				573FE872212D420500BBE2CD /* TarotCards-CN.plist */,
+				573FE873212D420500BBE2CD /* TarotCards-ja.plist */,
+				573FE874212D420500BBE2CD /* TarotCards-ko.plist */,
+			);
+			path = TarotCard;
 			sourceTree = "<group>";
 		};
 		5740FA34206C91B1006F20A5 /* Main */ = {
@@ -1534,6 +1723,9 @@
 				5718F4252091A440001859F1 /* LocalizedLanguage */,
 				572297D62099584F00A02A66 /* RecordAndPlay */,
 				5717B466209B07B700A0F771 /* DBSample */,
+				571D496120F73AF400691CCD /* Sample */,
+				5732F7922114006B005EEC82 /* Typewriter */,
+				57E268A52125597D004200F3 /* AES */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1668,6 +1860,8 @@
 		57B5445B206282CF00701F9C /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				573FE85E212D411500BBE2CD /* GTMBase64 */,
+				573FE85B212D411500BBE2CD /* NSDate+AES */,
 				5718F39F20917A56001859F1 /* UM */,
 				5737957E206B4ACA00388BCC /* SwipeView */,
 				57DED5652067D42100E24607 /* LBBlurredImage */,
@@ -1845,6 +2039,7 @@
 		57DED5462067CF7B00E24607 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				573FE864212D420500BBE2CD /* TarotCardPlist */,
 				572297E320995ADC00A02A66 /* RecordAndPlay */,
 				57206A52208450FD0017F7F8 /* H5 */,
 				5740FA34206C91B1006F20A5 /* Main */,
@@ -1903,6 +2098,33 @@
 				57DED56B2067D42100E24607 /* UIImageView+LBBlurredImage.m */,
 			);
 			path = LBBlurredImage;
+			sourceTree = "<group>";
+		};
+		57E268A52125597D004200F3 /* AES */ = {
+			isa = PBXGroup;
+			children = (
+				57E268A721255997004200F3 /* Control */,
+				57E268A62125598F004200F3 /* ViewController */,
+			);
+			path = AES;
+			sourceTree = "<group>";
+		};
+		57E268A62125598F004200F3 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				57E268A8212559A8004200F3 /* AESViewController.h */,
+				57E268A9212559A8004200F3 /* AESViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		57E268A721255997004200F3 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				57E268AB212559BA004200F3 /* AESControl.h */,
+				57E268AC212559BA004200F3 /* AESControl.m */,
+			);
+			path = Control;
 			sourceTree = "<group>";
 		};
 		57E51DF3209037970061EEEB /* BreakpointContinuingly */ = {
@@ -2087,18 +2309,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				573FE875212D420600BBE2CD /* cardDes-CN.plist in Resources */,
 				5717B465209AB00100A0F771 /* cancel@3x.png in Resources */,
 				5718F41E2091A1E7001859F1 /* Localized.strings in Resources */,
 				572E6A7820637F1D008114EA /* btnCheck@2x.png in Resources */,
 				572297F220995B2900A02A66 /* mic_1.png in Resources */,
 				572E6A8D2063CA55008114EA /* CHANGELOG.md in Resources */,
 				57DED5542067CF7B00E24607 /* tabbar_me@2x.png in Resources */,
+				573FE87B212D420600BBE2CD /* DalilyTarotCards-CN.plist in Resources */,
+				573FE87A212D420600BBE2CD /* cardMeaning-ko.plist in Resources */,
+				573FE877212D420600BBE2CD /* cardDes-ko.plist in Resources */,
 				57206A54208451120017F7F8 /* top_navigation_close_h5@2x.png in Resources */,
 				5787C867208D8E7B00852640 /* shop.plist in Resources */,
 				5787C888208DE06E00852640 /* area.plist in Resources */,
 				57DED5522067CF7B00E24607 /* tabbar_home_selected@2x.png in Resources */,
 				57DED5572067CF7B00E24607 /* tabbar_me_selected@3x.png in Resources */,
 				57206A58208451820017F7F8 /* reader_toolbar_share@2x.png in Resources */,
+				573FE87F212D420600BBE2CD /* TarotCards-ja.plist in Resources */,
 				578320AF206A3B7400E2D67F /* closed.png in Resources */,
 				572297F320995B2900A02A66 /* mic_0.png in Resources */,
 				572297EF20995B2900A02A66 /* mic_7.png in Resources */,
@@ -2119,15 +2346,22 @@
 				572E6A8F2063CA55008114EA /* README.md in Resources */,
 				572297ED20995B2900A02A66 /* mic_6.png in Resources */,
 				5797133E2079C52D0014AB4F /* Images.xcassets in Resources */,
+				573FE880212D420600BBE2CD /* TarotCards-ko.plist in Resources */,
 				572E6A7720637F1D008114EA /* btnCheck.png in Resources */,
 				57B544092062727F00701F9C /* Assets.xcassets in Resources */,
+				573FE87D212D420600BBE2CD /* DalilyTarotCards-ko.plist in Resources */,
 				5718F3DA20917A56001859F1 /* UMSocialSDKPromptResources.bundle in Resources */,
 				57DED5512067CF7B00E24607 /* tabbar_home@3x.png in Resources */,
 				5718F3D020917A56001859F1 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				57DED5552067CF7B00E24607 /* tabbar_me@3x.png in Resources */,
+				573FE876212D420600BBE2CD /* cardDes-ja.plist in Resources */,
 				5737957D206B39AB00388BCC /* nav.png in Resources */,
 				572297EC20995B2900A02A66 /* mic_3.png in Resources */,
 				572297F020995B2900A02A66 /* mic_4.png in Resources */,
+				573FE878212D420600BBE2CD /* cardMeaning-CN.plist in Resources */,
+				573FE87E212D420600BBE2CD /* TarotCards-CN.plist in Resources */,
+				573FE87C212D420600BBE2CD /* DalilyTarotCards-ja.plist in Resources */,
+				573FE879212D420600BBE2CD /* cardMeaning-ja.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2343,12 +2577,14 @@
 				57C3D5522068944600E0B8BA /* FMBaseViewController.m in Sources */,
 				5769D8FC20871E3B00FA0F62 /* FMCardScrollControl.m in Sources */,
 				572E6A842063ABD1008114EA /* CardInfoModel.m in Sources */,
+				57E268AA212559A8004200F3 /* AESViewController.m in Sources */,
 				5769D9062087348A00FA0F62 /* UIImageView+RoundCorner.m in Sources */,
 				57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */,
 				572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */,
 				573A8EA02088459500B89BF6 /* FMCardsStackFlowLayout.m in Sources */,
 				5718F4302091AD52001859F1 /* LocalizedLanguageManager.m in Sources */,
 				57C3D5702068C4D300E0B8BA /* CGGeometryAdditions.m in Sources */,
+				5732F79B211400AC005EEC82 /* TypewriterControl.m in Sources */,
 				573F2E97206E5BBC0011C77A /* MyPurchaseCellTopView.m in Sources */,
 				572297F620995B5300A02A66 /* RecordView.m in Sources */,
 				57B544072062727F00701F9C /* Sample.xcdatamodeld in Sources */,
@@ -2359,6 +2595,7 @@
 				572E6A8E2063CA55008114EA /* JSONKit.m in Sources */,
 				57C3D555206896A900E0B8BA /* MeViewController.m in Sources */,
 				5787C884208DDEF700852640 /* STPickerView.m in Sources */,
+				573FE862212D411500BBE2CD /* NSData+AES.m in Sources */,
 				57DED5612067D39600E24607 /* UIImage+Alpha.m in Sources */,
 				575F9AAF2064EC710031BC49 /* UITableView+FDTemplateLayoutCellDebug.m in Sources */,
 				573A8EA62088683800B89BF6 /* UITableViewCell+showAnimaiton.m in Sources */,
@@ -2368,6 +2605,7 @@
 				5718F3EC20917AFD001859F1 /* FTHShareComponentAdapter.m in Sources */,
 				57DED56E2067D42100E24607 /* UIImageView+LBBlurredImage.m in Sources */,
 				57DED56D2067D42100E24607 /* UIImageEffects.m in Sources */,
+				5732F798211400A0005EEC82 /* TypewriterViewController.m in Sources */,
 				57C3D56A2068BBAE00E0B8BA /* FMConstants.m in Sources */,
 				57379591206B714300388BCC /* CollectionViewCell.m in Sources */,
 				57D5CC752074ABB7009E65C6 /* PetDetailBottomPetDesView.m in Sources */,
@@ -2377,6 +2615,7 @@
 				57C3D55E20689BF400E0B8BA /* MainViewController.m in Sources */,
 				572297FC20996B0C00A02A66 /* RecordMicView.m in Sources */,
 				5787C859208D802400852640 /* FMWaterFallFlowControl.m in Sources */,
+				573FE863212D411500BBE2CD /* GTMBase64.m in Sources */,
 				57B5440F2062727F00701F9C /* main.m in Sources */,
 				5787C85C208D820A00852640 /* FMWaterFallFlowLayout.m in Sources */,
 				5718F3ED20917AFD001859F1 /* FTHShareComponentDefines.m in Sources */,
@@ -2405,12 +2644,14 @@
 				5718F3EE20917AFD001859F1 /* FTHShareComponentEditView.m in Sources */,
 				5740FA52206D09FD006F20A5 /* BuyDetailCardRelatedView.m in Sources */,
 				578E7B21207C6690001D351D /* FMCalendarControl.m in Sources */,
+				57E268AD212559BA004200F3 /* AESControl.m in Sources */,
 				57B5448D2062881E00701F9C /* FMRuntimeEngine.m in Sources */,
 				5787C880208DDEF700852640 /* NSCalendar+STPicker.m in Sources */,
 				572E6A7920637F1D008114EA /* HUD.m in Sources */,
 				57C21B712071CA3400F70562 /* MyPurchaseCellListView.m in Sources */,
 				57B5445420627EF700701F9C /* SHError.m in Sources */,
 				573F2E7C206E19E40011C77A /* PurchaseRecordsViewController.m in Sources */,
+				571D496720F73B2300691CCD /* SampleViewController.m in Sources */,
 				5787C862208D88BC00852640 /* FMShopInfo.m in Sources */,
 				57E51DF92090512E0061EEEB /* NSURLSessionDemoViewController.m in Sources */,
 				5769D90020871EC100FA0F62 /* CardsScrollView.m in Sources */,
@@ -2452,6 +2693,7 @@
 				57B544842062850000701F9C /* APPSettingManager.m in Sources */,
 				5787C886208DDEF700852640 /* UIView+STPicker.m in Sources */,
 				5740FA48206CE705006F20A5 /* BuyDetailControl.m in Sources */,
+				571D496A20F73B3000691CCD /* SampleControl.m in Sources */,
 				578E7B0F207C5990001D351D /* LTSCalendarCollectionViewFlowLayout.m in Sources */,
 				578E7B0D207C5990001D351D /* LTSCalendarAppearance.m in Sources */,
 				5729D78020B7C2C800F98D95 /* MUSAnimationTool.m in Sources */,

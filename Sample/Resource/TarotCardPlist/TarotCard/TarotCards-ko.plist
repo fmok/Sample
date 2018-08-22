@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>version</key>
+	<integer>1</integer>
+	<key>links</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>0</integer>
+			<key>keywords</key>
+			<string>开始、自由、天真、流浪、大胆、旅行 </string>
+			<key>element</key>
+			<string>风</string>
+			<key>front</key>
+			<string>자유, 형태에 빠지지 않음, 무사기, 순수, 천진난만, 가능성, 발상력, 천재</string>
+			<key>back</key>
+			<string>경솔, 제멋대로 굶, 낙오자</string>
+			<key>description</key>
+			<string>服：ペルソナ、⼈人格、性質（派⼿手な柄：落ち着きの無さ　朝顔の模様：新たな始まり）</string>
+			<key>stars</key>
+			<string>天王星</string>
+			<key>name</key>
+			<string>바보</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>1</integer>
+			<key>keywords</key>
+			<string>观察、开始、创造</string>
+			<key>element</key>
+			<string>风</string>
+			<key>front</key>
+			<string>기원, 가능성, 활기, 재능, 기회, 감각, 창조</string>
+			<key>back</key>
+			<string>혼미, 무기력, 슬럼프, 배반, 겉돎, 바이오 리듬 저하, 소극성</string>
+			<key>description</key>
+			<string>インフィニティ：無限の⼒力力</string>
+			<key>stars</key>
+			<string>水星</string>
+			<key>name</key>
+			<string>마술사</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>2</integer>
+			<key>keywords</key>
+			<string>等待、智慧、理性、消极、静止</string>
+			<key>element</key>
+			<string>水</string>
+			<key>front</key>
+			<string>지식, 총명 비밀, 신비, 영지 </string>
+			<key>back</key>
+			<string>잔혹, 무례함 </string>
+			<key>description</key>
+			<string>海海：潜在意識、深い感情</string>
+			<key>stars</key>
+			<string>月亮</string>
+			<key>name</key>
+			<string>여교황</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>3</integer>
+			<key>keywords</key>
+			<string>高贵、热情、丰收</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>번영, 풍양, 모권, 애정, 정열, 풍만, 포용력, 여성적 매력, 가정의 형성</string>
+			<key>back</key>
+			<string>좌절, 경솔, 허영심, 질투, 감정적, 낭비, 정서 불안정, 나태</string>
+			<key>description</key>
+			<string>穀物：豊穣</string>
+			<key>stars</key>
+			<string>金星</string>
+			<key>name</key>
+			<string>여제</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>4</integer>
+			<key>keywords</key>
+			<string>权力、威严、支配</string>
+			<key>element</key>
+			<string>火</string>
+			<key>front</key>
+			<string>지배, 안정, 성취·달성, 남성적, 권위, 행동력, 의사, 책임감이 강함</string>
+			<key>back</key>
+			<string>미숙, 횡포, 오안불손, 오만, 시먹음, 독단적, 의지 박약, 무책임</string>
+			<key>description</key>
+			<string>牧⽺羊：牧⽺羊座の特質（情熱、⾏行行動⼒力力）</string>
+			<key>stars</key>
+			<string>牡羊座</string>
+			<key>name</key>
+			<string>황제</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>5</integer>
+			<key>keywords</key>
+			<string>宗教、传统、援助、仪式</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>자비, 연대·협조성, 신뢰, 존경, 상냥함, 배려, 자신, 법령·규율의 준수</string>
+			<key>back</key>
+			<string>수구성(앙시앵 레짐), 속박, 주저, 불신감, 독선, 도피, 허영, 나태, 공연한 참견</string>
+			<key>description</key>
+			<string>僧侶（バラとユリ）：ヒューマニズム、慈悲と峻厳</string>
+			<key>stars</key>
+			<string>金牛座</string>
+			<key>name</key>
+			<string>교황</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>6</integer>
+			<key>keywords</key>
+			<string>选择、爱情、性、结合、罗曼蒂克</string>
+			<key>element</key>
+			<string>风</string>
+			<key>front</key>
+			<string>유혹과 싸움, 자신에의 신뢰, 가치관의 확립, 정열, 공감, 선택, 정, 깊은 결부, 결혼합일, 연애·성애, 취미의</string>
+			<key>back</key>
+			<string>유혹, 부도덕, 실연, 헛돎, 무시, 집중력 결여, 공허, 결혼 생활의 파탄</string>
+			<key>description</key>
+			<string>裸：本⼼心、⾃自由</string>
+			<key>stars</key>
+			<string>双子座</string>
+			<key>name</key>
+			<string>연인</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>7</integer>
+			<key>keywords</key>
+			<string>意志、自律、胜利、旅程、胜利、空虚</string>
+			<key>element</key>
+			<string>水</string>
+			<key>front</key>
+			<string>승리, 정복, 원군, 행동력, 성공, 적극력, 돌진력, 개척 정신, 독립·해방</string>
+			<key>back</key>
+			<string>폭주, 부주의, 제멋대로 함, 실패, 독단력, 방약 무인, 초조해함, 좌절, 호전적</string>
+			<key>description</key>
+			<string>⽉月の顔（笑と怒怒）：対⽴立する⼆二つの⼒力力</string>
+			<key>stars</key>
+			<string>巨蟹座</string>
+			<key>name</key>
+			<string>전차</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>8</integer>
+			<key>keywords</key>
+			<string>力量、勇气、信心、耐心</string>
+			<key>element</key>
+			<string>火</string>
+			<key>front</key>
+			<string>역량의 크기, 강고한 의지, 불요불굴, 이성, 자제, 실행력, 지혜, 용기, 냉정, 지구전</string>
+			<key>back</key>
+			<string>어리광, 소극성, 무기력, 임무 전가, 우유부단, 권세를 텀</string>
+			<key>description</key>
+			<string>インフィニティ：無限の⼒力力</string>
+			<key>stars</key>
+			<string>狮子座</string>
+			<key>name</key>
+			<string>힘</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>9</integer>
+			<key>keywords</key>
+			<string>谨慎、内敛、自省、孤独、引导</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>경험칙, 고상한 조언, 은닉, 정신, 신중, 사려깊음, 배려, 단독 행동</string>
+			<key>back</key>
+			<string>폐쇄성, 음습, 소극적, 무계획, 오해, 비관적, 의혹</string>
+			<key>description</key>
+			<string>ヘキサグラム：天地の三⻆角の合、６（恋⼈人）との関連</string>
+			<key>stars</key>
+			<string>纯女座</string>
+			<key>name</key>
+			<string>은자</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>10</integer>
+			<key>keywords</key>
+			<string>契机、转变、进展、运气</string>
+			<key>element</key>
+			<string>火</string>
+			<key>front</key>
+			<string>전환점, 행운의 도래, 찬스, 변화, 결과, 만나, 해결, 정해진 운명</string>
+			<key>back</key>
+			<string>정세의 급격한 악화, 엇갈림, 격하, 사고의 도래</string>
+			<key>description</key>
+			<string>獣頭⼈人身：堕落した⼈人間、獣のパワー</string>
+			<key>stars</key>
+			<string>木星</string>
+			<key>name</key>
+			<string>운명의 바퀴</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>11</integer>
+			<key>keywords</key>
+			<string>公正、均衡、责任</string>
+			<key>element</key>
+			<string>风</string>
+			<key>front</key>
+			<string>공정·공평, 선행, 균형, 성의, 선의, 양립</string>
+			<key>back</key>
+			<string>부정, 편향, 불균형, 일방통행, 피고의 입장에 놓여짐</string>
+			<key>description</key>
+			<string>両刃の剣：知性、裁き</string>
+			<key>stars</key>
+			<string>天秤座</string>
+			<key>name</key>
+			<string>정의</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>12</integer>
+			<key>keywords</key>
+			<string>牺牲、等待、换位思考、以退为进</string>
+			<key>element</key>
+			<string>水</string>
+			<key>front</key>
+			<string>수행, 인내, 봉사, 노력, 시련, 착실, 억제, 타협</string>
+			<key>back</key>
+			<string>헛수고, 오기, 태만, 자포자기, 욕망에 짐</string>
+			<key>description</key>
+			<string>吊す：犠牲、贖罪、苦⾏行行</string>
+			<key>stars</key>
+			<string>海王星</string>
+			<key>name</key>
+			<string>매달린 사람</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>13</integer>
+			<key>keywords</key>
+			<string>结束、转变、新生</string>
+			<key>element</key>
+			<string>水</string>
+			<key>front</key>
+			<string>종말, 파멸, 이산, 종국, 청산, 결착, 죽음의 전조</string>
+			<key>back</key>
+			<string>재시작, 신전개, 상승, 좌절에서 회복</string>
+			<key>description</key>
+			<string>⾺馬：エネルギー、本能</string>
+			<key>stars</key>
+			<string>天蝎座</string>
+			<key>name</key>
+			<string>죽음</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>14</integer>
+			<key>keywords</key>
+			<string>协调、配合、节制、净化、治疗</string>
+			<key>element</key>
+			<string>火</string>
+			<key>front</key>
+			<string>조화, 자제, 절도, 헌신</string>
+			<key>back</key>
+			<string>낭비, 소모, 생활의 혼란</string>
+			<key>description</key>
+			<string>ミカエル：試練、メッセージ、調整</string>
+			<key>stars</key>
+			<string>射手座</string>
+			<key>name</key>
+			<string>절제</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>15</integer>
+			<key>keywords</key>
+			<string>欲望、束缚、沉溺、物质</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>배반, 구속, 타락</string>
+			<key>back</key>
+			<string>회복, 각성, 새로운 만남</string>
+			<key>description</key>
+			<string>ブドウ：酩酊</string>
+			<key>stars</key>
+			<string>摩羯座</string>
+			<key>name</key>
+			<string>악마</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>16</integer>
+			<key>keywords</key>
+			<string>骤变、灾难、破坏、意外</string>
+			<key>element</key>
+			<string>火</string>
+			<key>front</key>
+			<string>붕괴, 재해, 비극</string>
+			<key>back</key>
+			<string>긴박, 갑작스런 사고, 오해</string>
+			<key>description</key>
+			<string>塔：⽬目的、誇示、倨傲、幽閉</string>
+			<key>stars</key>
+			<string>火星</string>
+			<key>name</key>
+			<string>탑</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>17</integer>
+			<key>keywords</key>
+			<string>希望、祝福</string>
+			<key>element</key>
+			<string>风</string>
+			<key>front</key>
+			<string>희망, 번쩍임, 소원이 이루어짐</string>
+			<key>back</key>
+			<string>실망, 무기력, 허황된 소망</string>
+			<key>description</key>
+			<string>星：導き、希望</string>
+			<key>stars</key>
+			<string>水瓶座</string>
+			<key>name</key>
+			<string>별</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>18</integer>
+			<key>keywords</key>
+			<string>不安、多变、忧郁、刻薄 </string>
+			<key>element</key>
+			<string>水</string>
+			<key>front</key>
+			<string>불안정, 환혹, 현실 도피, 잠재하는 위험, 기만, 유예 없는 선택</string>
+			<key>back</key>
+			<string>실패가 되지 않는 잘못, 과거로부터의 탈각, 서서히 호전, (막연한) 미래로의 희망, 뛰어난 직감</string>
+			<key>description</key>
+			<string>塔：異異界の扉、閉じこもること</string>
+			<key>stars</key>
+			<string>双鱼座</string>
+			<key>name</key>
+			<string>달</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>19</integer>
+			<key>keywords</key>
+			<string>成功、自由、喜悦、阳光</string>
+			<key>element</key>
+			<string>火</string>
+			<key>front</key>
+			<string>성공, 탄생, 축복, 약속된 장래</string>
+			<key>back</key>
+			<string>부진, 낙담, 쇠퇴, 낙태·유산</string>
+			<key>description</key>
+			<string>光（直線と曲線）：顕在意識と潜在意識</string>
+			<key>stars</key>
+			<string>太阳</string>
+			<key>name</key>
+			<string>태양</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>20</integer>
+			<key>keywords</key>
+			<string>复活、觉醒、回忆</string>
+			<key>element</key>
+			<string>水</string>
+			<key>front</key>
+			<string>부활, 결과, 발전</string>
+			<key>back</key>
+			<string>회한, 한계, 나쁜 소식</string>
+			<key>description</key>
+			<string>海海：宇宙意識</string>
+			<key>stars</key>
+			<string>冥王星</string>
+			<key>name</key>
+			<string>심판</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>21</integer>
+			<key>keywords</key>
+			<string>复活、觉醒、回忆</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>완전, 총합, 성취</string>
+			<key>back</key>
+			<string>미완성, 임계점, 조화의 붕괴</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>세계</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+	</array>
+	<key>error</key>
+	<integer>0</integer>
+	<key>page</key>
+	<integer>22</integer>
+</dict>
+</plist>

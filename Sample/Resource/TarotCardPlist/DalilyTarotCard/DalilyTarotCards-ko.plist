@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>error</key>
+	<integer>0</integer>
+	<key>links</key>
+	<array>
+		<dict>
+			<key>back_des</key>
+			<string>바보카드는 갓 태어난 아기 또는 이제 막 학교에 입학하는 아이 또는 이제 막 사회에 발을 내미는 사회 초년생으로 모든 것이 낯설고 앞날에 대한 호기심 반대로 불안감 등이 마음속에 공존하고 있습니다. 그것이 패기로도 나타날 수도 있지만 도가 지나치면 자칫 위기에 봉착할 수도 있습니다. </string>
+			<key>front_des</key>
+			<string>바보카드는 갓 태어난 아기 또는 이제 막 학교에 입학하는 아이 또는 이제 막 사회에 발을 내미는 사회 초년생으로 모든 것이 낯설고 앞날에 대한 호기심 반대로 불안감 등이 마음속에 공존하고 있습니다. 그것이 패기로도 나타날 수도 있지만 도가 지나치면 자칫 위기에 봉착할 수도 있습니다. </string>
+			<key>id</key>
+			<integer>0</integer>
+			<key>name</key>
+			<string>바보</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>당신은 오늘 마법이라도 부려야 할 모양 입니다. 마술사가 사람들 앞에서 놀라운 재능을 부리듯이 당신도 오늘 마술사처럼 내안에 잠재능력이 표출될 수 있습니다.</string>
+			<key>front_des</key>
+			<string>당신은 오늘 마법이라도 부려야 할 모양 입니다. 마술사가 사람들 앞에서 놀라운 재능을 부리듯이 당신도 오늘 마술사처럼 내안에 잠재능력이 표출될 수 있습니다.</string>
+			<key>id</key>
+			<integer>1</integer>
+			<key>name</key>
+			<string>마술사</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>어떤 일이나 장래의 목표를 세울때 조건이나 겉으로 드러나는 화려함에 현혹되지 말고 당신 자신이 하고 싶거나 진심으로 마음을 쏟을 수 있는 일을 하도록 하세요! 그 순수하고 정직한 열정이 당신을 성숙시킬 것 입니다.</string>
+			<key>front_des</key>
+			<string>어떤 일이나 장래의 목표를 세울때 조건이나 겉으로 드러나는 화려함에 현혹되지 말고 당신 자신이 하고 싶거나 진심으로 마음을 쏟을 수 있는 일을 하도록 하세요! 그 순수하고 정직한 열정이 당신을 성숙시킬 것 입니다.</string>
+			<key>id</key>
+			<integer>2</integer>
+			<key>name</key>
+			<string>여교황</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>오늘 당신은 우아하고 풍요롭고 매우 여우있어 보이며 어머니 같은 포근함도 느껴집니다. 그래서 더 아름다워 보입니다. 오늘은 특별히 여성의 부드럽고 상냥하고 남을 배려하는 그런 마음으로 하루를 보내면 어떨까요? 외모와 패션에도 좀 신경을 쓰면서 말이죠...!</string>
+			<key>front_des</key>
+			<string>오늘 당신은 우아하고 풍요롭고 매우 여우있어 보이며 어머니 같은 포근함도 느껴집니다. 그래서 더 아름다워 보입니다. 오늘은 특별히 여성의 부드럽고 상냥하고 남을 배려하는 그런 마음으로 하루를 보내면 어떨까요? 외모와 패션에도 좀 신경을 쓰면서 말이죠...!</string>
+			<key>id</key>
+			<integer>3</integer>
+			<key>name</key>
+			<string>여제</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>타로에서의 황제카드처럼 황제라 함은 누가 봐도 권위가 있고, 리더십이 있듯이 오늘은 당신도 황제카드의 황제처럼 주인공이 되어보는 것은 어떨까요? 단 너무 지나쳐서 독선이 되면 곤란하겠지요!</string>
+			<key>front_des</key>
+			<string>타로에서의 황제카드처럼 황제라 함은 누가 봐도 권위가 있고, 리더십이 있듯이 오늘은 당신도 황제카드의 황제처럼 주인공이 되어보는 것은 어떨까요? 단 너무 지나쳐서 독선이 되면 곤란하겠지요!</string>
+			<key>id</key>
+			<integer>4</integer>
+			<key>name</key>
+			<string>황제</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>오늘은 교화의 가르침대로 자비와 덕으로 사람을 대하고, 또 긍정적인 마음으로, 조금은 낙천적으로, 윗 사람으로부터 좋은 이야기도 들으면서 나름대로의 지혜를 쌓는 하루를 보내면 좋겠습니다.</string>
+			<key>front_des</key>
+			<string>오늘은 교화의 가르침대로 자비와 덕으로 사람을 대하고, 또 긍정적인 마음으로, 조금은 낙천적으로, 윗 사람으로부터 좋은 이야기도 들으면서 나름대로의 지혜를 쌓는 하루를 보내면 좋겠습니다.</string>
+			<key>id</key>
+			<integer>5</integer>
+			<key>name</key>
+			<string>교황</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>오늘은 연애운이 있는 날인가 봅니다. 하지만 남자는 여자를 바라보지만 여자는 위쪽을 바라보고 있습니다. 남녀간의 관계는 항상 이런 식인가 봅니다. 당신이 남자라면 좀 더 적극적이고, 남자다운 모습을 보여 주어야 할 것이며, 여자라면 눈높이를 조금 낮춰야 겠네요?</string>
+			<key>front_des</key>
+			<string>오늘은 연애운이 있는 날인가 봅니다. 하지만 남자는 여자를 바라보지만 여자는 위쪽을 바라보고 있습니다. 남녀간의 관계는 항상 이런 식인가 봅니다. 당신이 남자라면 좀 더 적극적이고, 남자다운 모습을 보여 주어야 할 것이며, 여자라면 눈높이를 조금 낮춰야 겠네요?</string>
+			<key>id</key>
+			<integer>6</integer>
+			<key>name</key>
+			<string>연인</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>그 동안에 감성적이고 달콤한 사랑에 빠져 있었다면 오늘은 차를 타고 밖으로 나가보시면 어떨까요? 꼭 차를 타고 나가야 되는 것은 아니지만 차가 갖는 기동력이 있으니까요! (안전운전) </string>
+			<key>front_des</key>
+			<string>그 동안에 감성적이고 달콤한 사랑에 빠져 있었다면 오늘은 차를 타고 밖으로 나가보시면 어떨까요? 꼭 차를 타고 나가야 되는 것은 아니지만 차가 갖는 기동력이 있으니까요! (안전운전) </string>
+			<key>id</key>
+			<integer>7</integer>
+			<key>name</key>
+			<string>전차</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>현재 연애를 하고 계신가요? 그렇다면 오늘은 용기를 가지고 상대방에게 프로포즈하는 것은 어떨까요? 나의 패기를 보여주고, 상대방의 좋은점을 칭찬하고, 단점을 너그러히 수용하며, 조금의 인내를 가지고 기다리면 상대방이 나에게 마음을 열지 않을까요?</string>
+			<key>front_des</key>
+			<string>현재 연애를 하고 계신가요? 그렇다면 오늘은 용기를 가지고 상대방에게 프로포즈하는 것은 어떨까요? 나의 패기를 보여주고, 상대방의 좋은점을 칭찬하고, 단점을 너그러히 수용하며, 조금의 인내를 가지고 기다리면 상대방이 나에게 마음을 열지 않을까요?</string>
+			<key>id</key>
+			<integer>8</integer>
+			<key>name</key>
+			<string>힘</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>사람은 누구나 살아가면서 여러가지 어려움에 직면하게 되며, 선택의 기로에 놓이기도 합니다. 그러한 상황에서 혼자만의 힘으로 풀어나가기란 참으로 어려울 것입니다.</string>
+			<key>front_des</key>
+			<string>사람은 누구나 살아가면서 여러가지 어려움에 직면하게 되며, 선택의 기로에 놓이기도 합니다. 그러한 상황에서 혼자만의 힘으로 풀어나가기란 참으로 어려울 것입니다.</string>
+			<key>id</key>
+			<integer>9</integer>
+			<key>name</key>
+			<string>은자</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>당신은 지금 인생의 전환기에 놓여 있습니다. 그렇다고 해서 지금 당신의 생활이 나쁜 상황이란 건 아닙니다. 당신은 충분히 열심히 살고 있으나 좀 더 여유롭고 성숙된 삶을 살기 위한 생각이 머리속을 조금 복작하게 할 뿐입니다.</string>
+			<key>front_des</key>
+			<string>당신은 지금 인생의 전환기에 놓여 있습니다. 그렇다고 해서 지금 당신의 생활이 나쁜 상황이란 건 아닙니다. 당신은 충분히 열심히 살고 있으나 좀 더 여유롭고 성숙된 삶을 살기 위한 생각이 머리속을 조금 복작하게 할 뿐입니다.</string>
+			<key>id</key>
+			<integer>10</integer>
+			<key>name</key>
+			<string>운명의 바퀴</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>살아가면서 어떤 선택의 순간이나 결정해야 할 일이 생길수 있습니다. 그러한 순간에 가장 중요한 것은 사적인 감정을 배제하고 진실과 중립적인 마음으로 냉정하게 판단하는 것이 중요하며 또 그것이 좋은 결과로 이어질 것입니다. 정의는 승리한다고 할까요?</string>
+			<key>front_des</key>
+			<string>살아가면서 어떤 선택의 순간이나 결정해야 할 일이 생길수 있습니다. 그러한 순간에 가장 중요한 것은 사적인 감정을 배제하고 진실과 중립적인 마음으로 냉정하게 판단하는 것이 중요하며 또 그것이 좋은 결과로 이어질 것입니다. 정의는 승리한다고 할까요?</string>
+			<key>id</key>
+			<integer>11</integer>
+			<key>name</key>
+			<string>정의</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>인생을 살다보면 하던 일이 정체되고, 열심히 혼자 고군분투 해 보지만 성과도 없고, 나의 입지도 줄어드는 고난의 시기가 분명 있을 겁니다.</string>
+			<key>front_des</key>
+			<string>인생을 살다보면 하던 일이 정체되고, 열심히 혼자 고군분투 해 보지만 성과도 없고, 나의 입지도 줄어드는 고난의 시기가 분명 있을 겁니다.</string>
+			<key>id</key>
+			<integer>12</integer>
+			<key>name</key>
+			<string>매달린 사람</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>지금 현재 당신을 짓누르고 있는 무언가가 있다면, 연애이든 일이든 또는 내가 가지고 있는 물건이든 과감히 버리고 새로운 곳, 새로운 인연을 찾아야 할 때 입니다. </string>
+			<key>front_des</key>
+			<string>지금 현재 당신을 짓누르고 있는 무언가가 있다면, 연애이든 일이든 또는 내가 가지고 있는 물건이든 과감히 버리고 새로운 곳, 새로운 인연을 찾아야 할 때 입니다. </string>
+			<key>id</key>
+			<integer>13</integer>
+			<key>name</key>
+			<string>죽음</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>바쁜 현대의 생활속에서 정신없이 앞만 보고 달려오다 보면 예기치 일을 만나서 어려움을 겪을 수가 있습니다. 만일 자동차가 브레이크가 없다면 얼마나 위험하겠습니까? 잠시 쉬어가며 뒤를 돌아보며 건강도 살피는 그런 시간을 갖는 것이 좋을 것 같습니다.</string>
+			<key>front_des</key>
+			<string>바쁜 현대의 생활속에서 정신없이 앞만 보고 달려오다 보면 예기치 일을 만나서 어려움을 겪을 수가 있습니다. 만일 자동차가 브레이크가 없다면 얼마나 위험하겠습니까? 잠시 쉬어가며 뒤를 돌아보며 건강도 살피는 그런 시간을 갖는 것이 좋을 것 같습니다.</string>
+			<key>id</key>
+			<integer>14</integer>
+			<key>name</key>
+			<string>절제</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>성, 마약, 투기...등 우리를 유혹하는 많은 유혹들이 있는데, 설사 잠시 유혹에 넘어갔다 하더라도 나만이 아닌 나를 생각하는 주위의 사람들을 생각해서라도 빠른 시일안에 벗어나길 바랍니다.</string>
+			<key>front_des</key>
+			<string>성, 마약, 투기...등 우리를 유혹하는 많은 유혹들이 있는데, 설사 잠시 유혹에 넘어갔다 하더라도 나만이 아닌 나를 생각하는 주위의 사람들을 생각해서라도 빠른 시일안에 벗어나길 바랍니다.</string>
+			<key>id</key>
+			<integer>15</integer>
+			<key>name</key>
+			<string>악마</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>오늘은 너무 어수선하고 되는일도 하나 없고 난장판같은 하루가 될 것 같으니 조금 몸을 사리는 것이 좋겠습니다. 또한 그 동안 쌓아왔던 공든탑이 무너질 수도 있으니 이를 어찌할까요? 그러나 그것이 진정 공든탑이라면 저리 쉽게 무너지지는 않을 겁니다.</string>
+			<key>front_des</key>
+			<string>오늘은 너무 어수선하고 되는일도 하나 없고 난장판같은 하루가 될 것 같으니 조금 몸을 사리는 것이 좋겠습니다. 또한 그 동안 쌓아왔던 공든탑이 무너질 수도 있으니 이를 어찌할까요? 그러나 그것이 진정 공든탑이라면 저리 쉽게 무너지지는 않을 겁니다.</string>
+			<key>id</key>
+			<integer>16</integer>
+			<key>name</key>
+			<string>탑</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>그 동안 열심히 살아오면서 힘들고 어려운 시기도 있었고 또 쓰디쓴 실패를 맛보기도 했습니다. 그러나 이대로 주저앉을 수는 없고 마음의 안정을 하고 치유하는 시기 입니다.</string>
+			<key>front_des</key>
+			<string>그 동안 열심히 살아오면서 힘들고 어려운 시기도 있었고 또 쓰디쓴 실패를 맛보기도 했습니다. 그러나 이대로 주저앉을 수는 없고 마음의 안정을 하고 치유하는 시기 입니다.</string>
+			<key>id</key>
+			<integer>17</integer>
+			<key>name</key>
+			<string>별</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>카드와 같다면 이렇게 생각해 보는 것은 어떨까요? 신이 나를 시험에 들게 하는가 보다고, 시험에 통과를 한다면 좀 더 성숙된 위치에 서게 되지 않을까요? 어쨋든 달 카드, 달의 음침한 기운은 하루 빨리 벗어나도록 해야 겠습니다.오늘의 운세은 달은 음의 기운이며 음침한 기운이며, 어둡고 부정적이며 태양과 반대되는 개념으로 비추어 집니다.</string>
+			<key>front_des</key>
+			<string>카드와 같다면 이렇게 생각해 보는 것은 어떨까요? 신이 나를 시험에 들게 하는가 보다고, 시험에 통과를 한다면 좀 더 성숙된 위치에 서게 되지 않을까요? 어쨋든 달 카드, 달의 음침한 기운은 하루 빨리 벗어나도록 해야 겠습니다.오늘의 운세은 달은 음의 기운이며 음침한 기운이며, 어둡고 부정적이며 태양과 반대되는 개념으로 비추어 집니다.</string>
+			<key>id</key>
+			<integer>18</integer>
+			<key>name</key>
+			<string>달</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>그 동안의 어려움, 시련이 모두 끝나고 즐거운 날이 도래하였습니다. 어찌보면 시험에 통과했다고도 말할 수 있겠습니다. 만일 당신이 시험에서 중도 포기 했다면 아마도 맛보지 못할 시간일지도 모릅니다.</string>
+			<key>front_des</key>
+			<string>그 동안의 어려움, 시련이 모두 끝나고 즐거운 날이 도래하였습니다. 어찌보면 시험에 통과했다고도 말할 수 있겠습니다. 만일 당신이 시험에서 중도 포기 했다면 아마도 맛보지 못할 시간일지도 모릅니다.</string>
+			<key>id</key>
+			<integer>19</integer>
+			<key>name</key>
+			<string>태양</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>오늘은 내가 지금까지 해 온 일에 대해서 심판 받는 날입니다. 오늘 이후로 새로운 사람으로 거듭나지 않을까 생각 됩니다.</string>
+			<key>front_des</key>
+			<string>오늘은 내가 지금까지 해 온 일에 대해서 심판 받는 날입니다. 오늘 이후로 새로운 사람으로 거듭나지 않을까 생각 됩니다.</string>
+			<key>id</key>
+			<integer>20</integer>
+			<key>name</key>
+			<string>심판</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>back_des</key>
+			<string>당신이 지금의 위치에 있기까지 많은 것을 경험하고 많은 어려움을 이겨내었습니다. 카드의 의미를 놓고 보면 정점에 도달햇고 거기에는 행복함과 모든 것이 충족되어진 상태 입니다.</string>
+			<key>front_des</key>
+			<string>당신이 지금의 위치에 있기까지 많은 것을 경험하고 많은 어려움을 이겨내었습니다. 카드의 의미를 놓고 보면 정점에 도달햇고 거기에는 행복함과 모든 것이 충족되어진 상태 입니다.</string>
+			<key>id</key>
+			<integer>21</integer>
+			<key>name</key>
+			<string>세계</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+	</array>
+	<key>page</key>
+	<integer>22</integer>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>

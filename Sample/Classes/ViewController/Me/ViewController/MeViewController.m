@@ -20,6 +20,8 @@
 #import "LocalizedViewController.h"
 #import "RecordAndPlayViewController.h"
 #import "DBViewController.h"
+#import "TypewriterViewController.h"
+#import "AESViewController.h"
 
 @interface MeViewController ()
 
@@ -159,6 +161,16 @@
                        @{
                          kMeVCTitle: @"DB",
                          kMeVCClassName: NSStringFromClass([DBViewController class]),
+                         kMeVCLogoStr: @"upDown"
+                         },
+                       @{
+                         kMeVCTitle: @"TypeWriter",
+                         kMeVCClassName: NSStringFromClass([TypewriterViewController class]),
+                         kMeVCLogoStr: @"upDown"
+                         },
+                       @{
+                         kMeVCTitle: @"AES",
+                         kMeVCClassName: NSStringFromClass([AESViewController class]),
                          kMeVCLogoStr: @"upDown"
                          },
                        nil];
