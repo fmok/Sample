@@ -43,6 +43,7 @@
 
 - (void)getItem
 {
+    /*
     NSString *primaryKetStr = [DBPersonModel jr_primaryKey];
     NSArray<DBPersonModel *> *itemList = J_Select(DBPersonModel)
     .Where([NSString stringWithFormat:@"%@ = ?", primaryKetStr])
@@ -55,6 +56,17 @@
     if (itemList && itemList.count > 0) {
         TTDPRINT(@"\n%@\nprimaryKeyValue = %@\n", [itemList firstObject], [[itemList firstObject] jr_primaryKeyValue]);
     }
+     */
+    
+    NSArray<DBPersonModel *> *doclist = J_Select(DBPersonModel)
+    .Where(@"personID = ?")
+    .Params(@[@"Person2"])
+    .list;
+    
+    DBPersonModel *person = [doclist firstObject];
+    person.age = 10000;
+    [person jr_updateColumns:@[@"age"]];
+    
 }
 
 - (void)testDB
@@ -86,7 +98,7 @@
 - (void)installDB
 {
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *fullPath = [path stringByAppendingString:@"Sample.db"];
+    NSString *fullPath = [path stringByAppendingString:@"/Sample.db"];
     TTDPRINT(@"fullPath: %@", fullPath);
     [[JRDBMgr shareInstance] setDefaultDatabasePath:fullPath];
     [[JRDBMgr shareInstance] registerClazz:[DBPersonModel class]];
