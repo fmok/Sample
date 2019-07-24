@@ -34,8 +34,8 @@
 - (id)requestArgument
 {
     return @{
-             @"vs" : [APPSettingManager appVersion],
-             @"userDevice" : [APPSettingManager osVersion],
+//             @"vs" : [APPSettingManager appVersion],
+//             @"userDevice" : [APPSettingManager osVersion],
              @"iosidfa" : [APPSettingManager idfaString],
              @"apikey" : @"FEE4A532A7844136BEDFAA35AA9F08D7",
              @"seed" : @"210307647746",

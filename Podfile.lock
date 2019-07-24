@@ -1,18 +1,18 @@
 PODS:
-  - AFNetworking (3.2.0):
-    - AFNetworking/NSURLSession (= 3.2.0)
-    - AFNetworking/Reachability (= 3.2.0)
-    - AFNetworking/Security (= 3.2.0)
-    - AFNetworking/Serialization (= 3.2.0)
-    - AFNetworking/UIKit (= 3.2.0)
-  - AFNetworking/NSURLSession (3.2.0):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.0)
-  - AFNetworking/Security (3.2.0)
-  - AFNetworking/Serialization (3.2.0)
-  - AFNetworking/UIKit (3.2.0):
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - FMDB (2.7.2):
     - FMDB/standard (= 2.7.2)
@@ -46,28 +46,40 @@ DEPENDENCIES:
   - YTKNetwork
   - YYCategories
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - FMDB
+    - JRDB
+    - JSONModel
+    - Masonry
+    - MJRefresh
+    - SDWebImage
+    - YTKNetwork
+    - YYCategories
+
 EXTERNAL SOURCES:
   FMScrollLabel:
-    :path: ./LocalLib/FMScrollLabel
+    :path: "./LocalLib/FMScrollLabel"
   FMSegmentControl:
-    :path: ./LocalLib/FMSegmentControl/
+    :path: "./LocalLib/FMSegmentControl/"
   Navigation:
-    :path: ./LocalLib/Navigation
+    :path: "./LocalLib/Navigation"
 
 SPEC CHECKSUMS:
-  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
-  FMScrollLabel: fea492455c80da3ffeaccc7eb876d213ea0c8419
-  FMSegmentControl: 8349683c31ba921e017b0d359b7d7d0ac07eec12
-  JRDB: a938c2f425189fe1f50e8df4b39454db3fee9c7c
+  FMScrollLabel: 6ae28c95724989c036a8e0a5b87284b003310d1e
+  FMSegmentControl: dfefcd6997825e747fa1ff4ed69211a1c7512b91
+  JRDB: 3d39482c7314ee58e4c0a8617f131324ccabc214
   JSONModel: 840bc0fcffb24b8454d2c026bf26fea454b8e98d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
-  Navigation: a856638d9553e0b4d8441e1198a183fc8c5f262f
+  Navigation: 08554bbf17d53cf1a7c3d340adf55c305a71f593
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
   YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
 
 PODFILE CHECKSUM: 130465588ca734cdb6aaed70057292aa1f976fda
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.7.2
