@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "FMTabBarViewController.h"
 #import "AppDelegate+LocalizedLanguage.h"
-#import "FMRequest.h"
+#import "FMNetWorkConfigure.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +21,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     //
-    [FMRequest configureNetWorkUrlFilter];
+    [FMNetWorkConfigure netWorkGlobalConfigure];
     //
     FMTabBarViewController *tabVC = [[FMTabBarViewController alloc] initWithNibName:nil bundle:nil];
     FMNavigationController *nav = [[FMNavigationController alloc] initWithRootViewController:tabVC];

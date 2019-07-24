@@ -10,7 +10,6 @@
 #import "JSONModel.h"
 #import "SHError.h"
 #import "UIDeviceHardware.h"
-#import "FMUrlArgumentsFilter.h"
 
 static NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
 
@@ -29,27 +28,7 @@ static NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERR
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
-+ (void)initialize
-{
-    //
-    YTKNetworkAgent *agent = [YTKNetworkAgent sharedAgent];
-    NSSet *acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", @"text/css", nil];
-    NSString *keypath = @"jsonResponseSerializer.acceptableContentTypes";
-    [agent setValue:acceptableContentTypes forKeyPath:keypath];
-}
-
 #pragma mark - Public methods
-+ (void)configureNetWorkUrlFilter
-{
-    YTKNetworkConfig *configure = [YTKNetworkConfig sharedConfig];
-    FMUrlArgumentsFilter *urlFilter = [FMUrlArgumentsFilter filterWithArguments:@{
-                                                                                  @"vs" : [APPSettingManager appVersion],
-                                                                                  @"userDevice" : [APPSettingManager osVersion],
-                                                                                  @"iosidfa" : [APPSettingManager idfaString]
-                                                                                  }];
-    [configure addUrlFilter:urlFilter];
-}
-
 - (void)startWithNoBack
 {
     [self startWithJsonModelClass:nil success:nil failure:nil];

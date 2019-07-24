@@ -200,6 +200,7 @@
 		57C3D56D2068C45F00E0B8BA /* UIView+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D56B2068C45E00E0B8BA /* UIView+Utilities.m */; };
 		57C3D5702068C4D300E0B8BA /* CGGeometryAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C3D56E2068C4D200E0B8BA /* CGGeometryAdditions.m */; };
 		57CF17B122E8425500AD3EA4 /* FMUrlArgumentsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CF17B022E8425500AD3EA4 /* FMUrlArgumentsFilter.m */; };
+		57CF17B422E8644F00AD3EA4 /* FMNetWorkConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CF17B322E8644F00AD3EA4 /* FMNetWorkConfigure.m */; };
 		57D5CC752074ABB7009E65C6 /* PetDetailBottomPetDesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D5CC742074ABB7009E65C6 /* PetDetailBottomPetDesView.m */; };
 		57DED5452067C81700E24607 /* FMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57DED5442067C81700E24607 /* FMTabBarViewController.m */; };
 		57DED5502067CF7B00E24607 /* tabbar_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57DED5482067CF7B00E24607 /* tabbar_home@2x.png */; };
@@ -587,6 +588,8 @@
 		57C3D56F2068C4D200E0B8BA /* CGGeometryAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGGeometryAdditions.h; sourceTree = "<group>"; };
 		57CF17AF22E8425500AD3EA4 /* FMUrlArgumentsFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMUrlArgumentsFilter.h; sourceTree = "<group>"; };
 		57CF17B022E8425500AD3EA4 /* FMUrlArgumentsFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMUrlArgumentsFilter.m; sourceTree = "<group>"; };
+		57CF17B222E8644F00AD3EA4 /* FMNetWorkConfigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMNetWorkConfigure.h; sourceTree = "<group>"; };
+		57CF17B322E8644F00AD3EA4 /* FMNetWorkConfigure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMNetWorkConfigure.m; sourceTree = "<group>"; };
 		57D5CC732074ABB7009E65C6 /* PetDetailBottomPetDesView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PetDetailBottomPetDesView.h; sourceTree = "<group>"; };
 		57D5CC742074ABB7009E65C6 /* PetDetailBottomPetDesView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PetDetailBottomPetDesView.m; sourceTree = "<group>"; };
 		57DED5432067C81700E24607 /* FMTabBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMTabBarViewController.h; sourceTree = "<group>"; };
@@ -1734,6 +1737,8 @@
 				57B5445120627EF600701F9C /* Error */,
 				57B5444120627B6900701F9C /* FMRequest.h */,
 				57B5444220627B6900701F9C /* FMRequest.m */,
+				57CF17B222E8644F00AD3EA4 /* FMNetWorkConfigure.h */,
+				57CF17B322E8644F00AD3EA4 /* FMNetWorkConfigure.m */,
 				57CF17AF22E8425500AD3EA4 /* FMUrlArgumentsFilter.h */,
 				57CF17B022E8425500AD3EA4 /* FMUrlArgumentsFilter.m */,
 			);
@@ -2583,6 +2588,7 @@
 				575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */,
 				5718F3EF20917AFD001859F1 /* FTHShareComponentToolbar.m in Sources */,
 				5787C85F208D83C100852640 /* FMWaterFallFlowCell.m in Sources */,
+				57CF17B422E8644F00AD3EA4 /* FMNetWorkConfigure.m in Sources */,
 				57B5444920627C2C00701F9C /* PulledTableView.m in Sources */,
 				57C3D559206898CA00E0B8BA /* MeControl.m in Sources */,
 				57379594206B789F00388BCC /* CollectionSectionHeaderView.m in Sources */,
