@@ -15,11 +15,10 @@
 static NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
 
 @interface FMRequest()
-{
-    NSInteger _responseCode;
-    NSString *_responseMessage;
-    BOOL _isCacheData;
-}
+
+@property (nonatomic, assign, readwrite) NSInteger responseCode;
+@property (nonatomic, strong, readwrite) NSString *responseMessage;
+@property (nonatomic, assign, readwrite) BOOL isCacheData;
 
 @end
 
@@ -37,16 +36,20 @@ static NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERR
     NSSet *acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", @"text/css", nil];
     NSString *keypath = @"jsonResponseSerializer.acceptableContentTypes";
     [agent setValue:acceptableContentTypes forKeyPath:keypath];
-    //
+}
+
+#pragma mark - Public methods
++ (void)configureNetWorkUrlFilter
+{
     YTKNetworkConfig *configure = [YTKNetworkConfig sharedConfig];
     FMUrlArgumentsFilter *urlFilter = [FMUrlArgumentsFilter filterWithArguments:@{
                                                                                   @"vs" : [APPSettingManager appVersion],
                                                                                   @"userDevice" : [APPSettingManager osVersion],
+                                                                                  @"iosidfa" : [APPSettingManager idfaString]
                                                                                   }];
     [configure addUrlFilter:urlFilter];
 }
 
-#pragma mark - Public methods
 - (void)startWithNoBack
 {
     [self startWithJsonModelClass:nil success:nil failure:nil];
@@ -60,12 +63,11 @@ static NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERR
     void (^SuccessBlock)(YTKBaseRequest *request) = ^(YTKBaseRequest *request) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         id obj = [weakSelf responseJSONObject];
-    TTDPRINT(@"\n----------------%@-----------------\nCode:%@\nMessage:%@\n%@\nrequest.requestArgument:\n%@\n----------------------------------------\n",
+    TTDPRINT(@"\n----------------%@-----------------\nCode:%@\nMessage:%@\n%@\n----------------------------------------\n",
              (weakSelf.responseCode==0)?@"Success":@"业务错误",
              @(weakSelf.responseCode),
              weakSelf.responseMessage,
-             [request.requestUrl hasPrefix:@"http"]?(request.requestUrl):([NSString stringWithFormat:@"%@%@",request.baseUrl,request.requestUrl]),
-             request.requestArgument);
+             request);
         
         if (success) {
             if (weakSelf.responseCode != 0) {
@@ -124,7 +126,7 @@ static NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERR
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     TTDPRINT(@"\n---------------Failure------------------\nstatusCode:%@\n%@\n----------------------------------------\n",
              @(request.response.statusCode),
-             [request.requestUrl hasPrefix:@"http"]?(request.requestUrl):([NSString stringWithFormat:@"%@%@", request.baseUrl, request.requestUrl]));
+             request);
         
         if (failure) {
             failure((FMRequest *)request, [SHError errorWithError:request.error].localizedDescription);

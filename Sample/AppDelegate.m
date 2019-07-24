@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "FMTabBarViewController.h"
 #import "AppDelegate+LocalizedLanguage.h"
+#import "FMRequest.h"
 
 @interface AppDelegate ()
 
@@ -19,19 +20,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    //
+    [FMRequest configureNetWorkUrlFilter];
+    //
     FMTabBarViewController *tabVC = [[FMTabBarViewController alloc] initWithNibName:nil bundle:nil];
     FMNavigationController *nav = [[FMNavigationController alloc] initWithRootViewController:tabVC];
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
-    
     self.window.rootViewController = nav;
-    
     [self.window makeKeyAndVisible];
-    
+    //
     [self configLocalizedLanguage];
-    
     return YES;
 }
 

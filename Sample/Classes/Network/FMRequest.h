@@ -24,6 +24,11 @@ typedef NS_ENUM(NSInteger, NetworkAPIHelperErrorCode) {
 @property (nonatomic, assign, readonly) BOOL isCacheData;
 
 /**
+ 设置公用参数
+ */
++ (void)configureNetWorkUrlFilter;
+
+/**
  注：若传入modelClass，返回即为该model类型；若不传modelClass，返回为NSDictionary或NSString
  */
 - (void)startWithNoBack;
