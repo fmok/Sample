@@ -11,7 +11,7 @@
 #import "SHError.h"
 #import "UIDeviceHardware.h"
 
-NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
+static NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
 
 @interface FMRequest()
 {
@@ -55,50 +55,45 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
     void (^SuccessBlock)(YTKBaseRequest *request) = ^(YTKBaseRequest *request) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         id obj = [weakSelf responseJSONObject];
-        
-        TTDPRINT(@"\n----------------%@-----------------\nCode:%@\nMessage:%@\n%@\nrequest.requestArgument:\n%@\n----------------------------------------\n",
-                 (weakSelf.responseCode==0)?@"Success":@"业务错误", @(weakSelf.responseCode), weakSelf.responseMessage,[request.requestUrl hasPrefix:@"http"]?(request.requestUrl):([NSString stringWithFormat:@"%@%@",request.baseUrl,request.requestUrl]), request.requestArgument);
-        
+    TTDPRINT(@"\n----------------%@-----------------\nCode:%@\nMessage:%@\n%@\nrequest.requestArgument:\n%@\n----------------------------------------\n",
+             (weakSelf.responseCode==0)?@"Success":@"业务错误",
+             @(weakSelf.responseCode),
+             weakSelf.responseMessage,
+             [request.requestUrl hasPrefix:@"http"]?(request.requestUrl):([NSString stringWithFormat:@"%@%@",request.baseUrl,request.requestUrl]),
+             request.requestArgument);
         
         if (success) {
-            
             if (weakSelf.responseCode != 0) {
                 success((FMRequest *)request, _responseMessage);
                 return ;
             }
-            
             if (!obj) {
                 if (failure) {
                     failure((FMRequest *)request, @"");
                 }
                 return ;
             }
-            
             NSError *err = nil;
             JSONModel *model = nil;
             
             if (obj && [obj isKindOfClass:[NSDictionary class]]) {
                 
-                @try
-                {
+                @try {
                     if (modelClass) {
                         model = [(JSONModel *)[modelClass alloc] initWithDictionary:obj error:&err];
                         if (!err) {
                             _isCacheData = NO;
                         }
                     }
-                }
-                @catch (NSException *exception) {
+                } @catch (NSException *exception) {
                     err = [NSError errorWithDomain:kNetworkDataParseErrorDomain
                                               code:NetworkAPIHelperErrorCodeModelParse
                                           userInfo:@{
                                                      NSLocalizedDescriptionKey: @"JSONModel解析错误[数据类型不匹配]"
                                                      }];
-                }
-                @finally {
+                } @finally {
                     
                 }
-                
                 if (err) {
                     if (failure) {
                         failure((FMRequest *)request, [SHError errorWithError:err].localizedDescription);
@@ -122,11 +117,10 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
     
     void (^FailureBlock)(YTKBaseRequest *request) = ^(YTKBaseRequest *request) {
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    TTDPRINT(@"\n---------------Failure------------------\nstatusCode:%@\n%@\n----------------------------------------\n",
+             @(request.response.statusCode),
+             [request.requestUrl hasPrefix:@"http"]?(request.requestUrl):([NSString stringWithFormat:@"%@%@", request.baseUrl, request.requestUrl]));
         
-        TTDPRINT(@"\n---------------Failure------------------\nstatusCode:%@\n%@\n----------------------------------------\n",
-                 @(request.response.statusCode),
-                 [request.requestUrl hasPrefix:@"http"]?(request.requestUrl):([NSString stringWithFormat:@"%@%@",
-                                                                               request.baseUrl,request.requestUrl]));
         if (failure) {
             failure((FMRequest *)request, [SHError errorWithError:request.error].localizedDescription);
         }
@@ -227,16 +221,13 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
 }
 
 #pragma mark - Private function
-- (id)responseJSONObject {
-    
+- (id)responseJSONObject
+{
     id obj = [super responseJSONObject];
-    
     if ([[self.response MIMEType] isEqualToString:@"text/html"]) {
         obj = [super responseString];
     }
-    
     obj = [self responseJSONObjectFilter:obj];
-    
     return obj;
 }
 
@@ -247,7 +238,6 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
 - (id)responseJSONObjectFilter:(id)obj_
 {
     id obj = nil;
-    
     if ([obj_ isKindOfClass:[NSString class]]) {
         NSError *serializationError = nil;
         NSData *data = nil;
@@ -264,27 +254,21 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
         obj = obj_;
     }
     
-    NSInteger jmCode = -1;
+    NSInteger fmCode = -1;
     NSString *message = @"";
-    
     if (obj && [obj isKindOfClass:[NSDictionary class]]) {
-        
         id code = obj[@"error"];
         message = CHANGE_TO_STRING(obj[@"message"]);
-        
         if ([code isKindOfClass:[NSNumber class]]) {
-            jmCode = [code integerValue];
+            fmCode = [code integerValue];
         } else if ([code isKindOfClass:[NSString class]]) {
-            jmCode = [code integerValue];
+            fmCode = [code integerValue];
         }
-#warning todo
         // 暂时全部字段返回
 //        obj = obj[@"list"];
     }
-    
-    _responseCode = jmCode;
+    _responseCode = fmCode;
     _responseMessage = message;
-    
     return obj;
 }
 
