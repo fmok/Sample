@@ -33,14 +33,11 @@
 
 - (id)requestArgument
 {
-    return @{
-             @"apikey" : @"FEE4A532A7844136BEDFAA35AA9F08D7",
-             @"seed" : @"210307647746",
-             @"hash" : @"94534067356eac3bbd004ebf2db46842",
-             @"vs" : @"7.8.18",
-             @"userDevice" : @"10.3.3",
-             @"iosidfa" : [APPSettingManager idfaString]
-             };
+    NSMutableDictionary *mdic = [NSMutableDictionary dictionaryWithDictionary:[super requestArgument]];
+    [mdic setObject:@"FEE4A532A7844136BEDFAA35AA9F08D7" forKey:@"apikey"];
+    [mdic setObject:@"210307647746" forKey:@"seed"];
+    [mdic setObject:@"94534067356eac3bbd004ebf2db46842" forKey:@"hash"];
+    return mdic;
 }
 
 - (YTKRequestMethod)requestMethod

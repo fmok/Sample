@@ -219,6 +219,16 @@ static NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERR
              @"User-Agent": [[self class] userAgent]
              };
 }
+/**
+ 设置部分公共参数，子类可重写，需要调用 super
+ */
+- (id)requestArgument
+{
+    return @{
+             @"vs" : [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],//@"7.8.18",
+             @"iosidfa" : [APPSettingManager idfaString]
+             };
+}
 
 #pragma mark - Private function
 - (id)responseJSONObject
@@ -264,7 +274,7 @@ static NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERR
         } else if ([code isKindOfClass:[NSString class]]) {
             fmCode = [code integerValue];
         }
-        // 暂时全部字段返回
+        // 此处注释掉，暂时全部字段返回
 //        obj = obj[@"list"];
     }
     _responseCode = fmCode;
