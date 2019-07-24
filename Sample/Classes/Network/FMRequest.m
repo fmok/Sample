@@ -29,16 +29,12 @@ static NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERR
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
-- (instancetype)init
++ (void)initialize
 {
-    self = [super init];
-    if (self) {
-        YTKNetworkAgent *agent = [YTKNetworkAgent sharedAgent];
-        NSSet *acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", @"text/css", nil];
-        NSString *keypath = @"jsonResponseSerializer.acceptableContentTypes";
-        [agent setValue:acceptableContentTypes forKeyPath:keypath];
-    }
-    return self;
+    YTKNetworkAgent *agent = [YTKNetworkAgent sharedAgent];
+    NSSet *acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/plain", @"text/html", @"text/css", nil];
+    NSString *keypath = @"jsonResponseSerializer.acceptableContentTypes";
+    [agent setValue:acceptableContentTypes forKeyPath:keypath];
 }
 
 #pragma mark - Public methods
@@ -205,30 +201,31 @@ static NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERR
 #pragma mark - Override
 - (NSString *)baseUrl
 {
-    return [NSString stringWithFormat:@"%@",kAPIBaseURL];
+    return kAPIBaseURL;
 }
 
-- (NSTimeInterval)requestTimeoutInterval {
+- (NSTimeInterval)requestTimeoutInterval
+{
     return 30;
 }
 // 请求头
-- (NSDictionary *)requestHeaderFieldValueDictionary {
-    return @{
-             @"udid": [APPSettingManager udid],
-             @"systemVersion": [APPSettingManager osVersion],
-             @"User-Agent": [[self class] userAgent]
-             };
-}
-/**
- 设置部分公共参数，子类可重写，需要调用 super
- */
-- (id)requestArgument
-{
-    return @{
-             @"vs" : [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],//@"7.8.18",
-             @"iosidfa" : [APPSettingManager idfaString]
-             };
-}
+//- (NSDictionary *)requestHeaderFieldValueDictionary
+//{
+//    return @{
+//             @"udid": [APPSettingManager udid],
+//             @"systemVersion": [APPSettingManager osVersion],
+//             @"User-Agent": [[self class] userAgent]
+//             };
+//}
+
+//- (id)requestArgument
+//{
+//    return @{
+//             @"vs" : [APPSettingManager appVersion],
+//             @"userDevice" : [APPSettingManager osVersion],
+//             @"iosidfa" : [APPSettingManager idfaString]
+//             };
+//}
 
 #pragma mark - Private function
 - (id)responseJSONObject

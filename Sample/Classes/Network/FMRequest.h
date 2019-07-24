@@ -39,6 +39,7 @@ typedef NS_ENUM(NSInteger, NetworkAPIHelperErrorCode) {
 - (void)responseJsonModelCompleteWithModel:(id)model;
 
 /*
+ errorCode == 0
  **/
 - (BOOL)responseIsNormal;
 

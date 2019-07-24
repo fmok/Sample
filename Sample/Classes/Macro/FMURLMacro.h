@@ -10,9 +10,10 @@
 #define FMURLMacro_h
 
 // base url
-#define kProtocol       (@"https")
-#define kCCURL          (@"www.xxwolo.com")
-#define kAPIBaseURL     ([NSString stringWithFormat:@"%@://%@/ccsrv",kProtocol,kCCURL])
+#define kProtocol       @"https"
+#define kCCURL          @"www.xxwolo.com"
+#define kAPIBaseURL     [NSString stringWithFormat:@"%@://%@",kProtocol,kCCURL]
+#define kCCSRV          @"/ccsrv"
 
 
 #endif /* FMURLMacro_h */
