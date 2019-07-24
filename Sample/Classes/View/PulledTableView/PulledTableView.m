@@ -93,7 +93,6 @@
     MJRefreshComponent *refreshView = nil;
     if (type == PulledTableViewTypeDown) {
         refreshView = self.mj_header;
-#warning todo
         //暂时未处理“记录刷新时间”
 //        [(MJRefreshNormalHeader *)refreshView endRefreshingWithUpdateTime:isUpdate];
     } else if (type == PulledTableViewTypeUp) {
