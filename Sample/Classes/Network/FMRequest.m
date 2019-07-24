@@ -15,8 +15,8 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
 
 @interface FMRequest()
 {
-    NSInteger _responseJMCode;
-    NSString *_responseJMMessage;
+    NSInteger _responseCode;
+    NSString *_responseMessage;
     BOOL _isCacheData;
 }
 
@@ -57,13 +57,13 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
         id obj = [weakSelf responseJSONObject];
         
         TTDPRINT(@"\n----------------%@-----------------\nCode:%@\nMessage:%@\n%@\nrequest.requestArgument:\n%@\n----------------------------------------\n",
-                 (weakSelf.responseJMCode==0)?@"Success":@"业务错误", @(weakSelf.responseJMCode), weakSelf.responseJMMessage,[request.requestUrl hasPrefix:@"http"]?(request.requestUrl):([NSString stringWithFormat:@"%@%@",request.baseUrl,request.requestUrl]), request.requestArgument);
+                 (weakSelf.responseCode==0)?@"Success":@"业务错误", @(weakSelf.responseCode), weakSelf.responseMessage,[request.requestUrl hasPrefix:@"http"]?(request.requestUrl):([NSString stringWithFormat:@"%@%@",request.baseUrl,request.requestUrl]), request.requestArgument);
         
         
         if (success) {
             
-            if (weakSelf.responseJMCode != 0) {
-                success((FMRequest *)request, _responseJMMessage);
+            if (weakSelf.responseCode != 0) {
+                success((FMRequest *)request, _responseMessage);
                 return ;
             }
             
@@ -199,7 +199,7 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
 - (BOOL)responseIsNormal
 {
     BOOL isNormal = NO;
-    if (self.responseJMCode == 0) {
+    if (self.responseCode == 0) {
         isNormal = YES;
     }
     return isNormal;
@@ -282,8 +282,8 @@ NSString *const kNetworkDataParseErrorDomain = @"FMRequest.JSON.PARSE.ERROR";
 //        obj = obj[@"list"];
     }
     
-    _responseJMCode = jmCode;
-    _responseJMMessage = message;
+    _responseCode = jmCode;
+    _responseMessage = message;
     
     return obj;
 }

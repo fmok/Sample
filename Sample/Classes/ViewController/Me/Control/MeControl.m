@@ -84,7 +84,7 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
 {
     MeCell *cell = [tableView dequeueReusableCellWithIdentifier:kMeCellReusedIdentifierStr forIndexPath:indexPath];
     [cell updateContentWithImg:[self.vc.settingArr[indexPath.row] objectForKey:kMeVCLogoStr] contentText:[self.vc.settingArr[indexPath.row] objectForKey:kMeVCTitle]];
-    [MUSAnimationTool animate:cell type:MUSAnimationTypeTranslation];
+//    [MUSAnimationTool animate:cell type:MUSAnimationTypeTranslation];
     return cell;
 }
 

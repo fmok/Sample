@@ -1619,6 +1619,37 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		579A3A942159D7C500D2C9C1 /* 视频录制 */ = {
+			isa = PBXGroup;
+			children = (
+				579A3A972159D7E000D2C9C1 /* View */,
+				579A3A962159D7D900D2C9C1 /* Control */,
+				579A3A952159D7D100D2C9C1 /* Controller */,
+			);
+			path = "视频录制";
+			sourceTree = "<group>";
+		};
+		579A3A952159D7D100D2C9C1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		579A3A962159D7D900D2C9C1 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		579A3A972159D7E000D2C9C1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		57B543F02062727F00701F9C = {
 			isa = PBXGroup;
 			children = (
@@ -1726,6 +1757,7 @@
 				571D496120F73AF400691CCD /* Sample */,
 				5732F7922114006B005EEC82 /* Typewriter */,
 				57E268A52125597D004200F3 /* AES */,
+				579A3A942159D7C500D2C9C1 /* 视频录制 */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

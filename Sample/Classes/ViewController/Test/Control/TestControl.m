@@ -85,7 +85,7 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
             [weakSelf serializeData:modelObj];
         } else {
             // 业务错误
-            [weakSelf.vc showHUDTip:request.responseJMMessage];
+            [weakSelf.vc showHUDTip:request.responseMessage];
         }
         [weakSelf.vc.pulledTableView finishRefreshTableWithType:PulledTableViewTypeDown isUpdateTime:isRight];
     } failure:^(FMRequest *request, id modelObj) {
@@ -110,7 +110,7 @@ static NSString *const kCellReusedIdentifier = @"kCellReusedIdentifier";
         if (isRight) {
             [weakSelf serializeData:modelObj];
         } else {
-            [weakSelf.vc showHUDTip:request.responseJMMessage];
+            [weakSelf.vc showHUDTip:request.responseMessage];
         }
         [weakSelf.vc.pulledTableView finishRefreshTableWithType:PulledTableViewTypeUp isUpdateTime:isRight];
     } failure:^(FMRequest *request, id modelObj) {

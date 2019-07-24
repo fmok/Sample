@@ -19,8 +19,8 @@ typedef NS_ENUM(NSInteger, NetworkAPIHelperErrorCode) {
 
 @interface FMRequest : YTKRequest
 
-@property (nonatomic, assign, readonly) NSInteger responseJMCode;
-@property (nonatomic, strong, readonly) NSString *responseJMMessage;
+@property (nonatomic, assign, readonly) NSInteger responseCode;
+@property (nonatomic, strong, readonly) NSString *responseMessage;
 @property (nonatomic, assign, readonly) BOOL isCacheData;
 
 /***/

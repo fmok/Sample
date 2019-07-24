@@ -57,7 +57,7 @@ static double const perStepIncrease = .5f;  // 每次刷新的增量（像素）
 {
     if (!displayLink) {
         displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(handleDisplayLink)];
-//        displayLink.frameInterval = 2;
+        displayLink.frameInterval = 2;
         [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
     }
     if (displayLink.isPaused) {

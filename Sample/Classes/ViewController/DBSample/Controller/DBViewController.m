@@ -65,7 +65,7 @@
     
     DBPersonModel *person = [doclist firstObject];
     person.age = 10000;
-    [person jr_updateColumns:@[@"age"]];
+    [person jr_updateColumns:nil];
     
 }
 
