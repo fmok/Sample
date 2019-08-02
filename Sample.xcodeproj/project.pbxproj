@@ -123,6 +123,8 @@
 		5740FA4B206CEEAA006F20A5 /* BuyDetailCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA4A206CEEAA006F20A5 /* BuyDetailCardView.m */; };
 		5740FA4F206D0645006F20A5 /* BuyDetailCardSendWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA4E206D0645006F20A5 /* BuyDetailCardSendWordView.m */; };
 		5740FA52206D09FD006F20A5 /* BuyDetailCardRelatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA51206D09FD006F20A5 /* BuyDetailCardRelatedView.m */; };
+		574DA31722F428B2007483D5 /* FMFunctionalProgrammingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574DA31622F428B2007483D5 /* FMFunctionalProgrammingController.m */; };
+		574DA31A22F42CCB007483D5 /* FMCalulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 574DA31922F42CCB007483D5 /* FMCalulator.m */; };
 		5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57572589206A17BB0085D6BF /* MeHeaderView.m */; };
 		575F9AA22064D0DF0031BC49 /* InfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA12064D0DF0031BC49 /* InfoCell.m */; };
 		575F9AAC2064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 575F9AA52064EC710031BC49 /* UITableView+FDIndexPathHeightCache.m */; };
@@ -436,6 +438,10 @@
 		5740FA4E206D0645006F20A5 /* BuyDetailCardSendWordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailCardSendWordView.m; sourceTree = "<group>"; };
 		5740FA50206D09FD006F20A5 /* BuyDetailCardRelatedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyDetailCardRelatedView.h; sourceTree = "<group>"; };
 		5740FA51206D09FD006F20A5 /* BuyDetailCardRelatedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailCardRelatedView.m; sourceTree = "<group>"; };
+		574DA31522F428B2007483D5 /* FMFunctionalProgrammingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMFunctionalProgrammingController.h; sourceTree = "<group>"; };
+		574DA31622F428B2007483D5 /* FMFunctionalProgrammingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMFunctionalProgrammingController.m; sourceTree = "<group>"; };
+		574DA31822F42CCB007483D5 /* FMCalulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMCalulator.h; sourceTree = "<group>"; };
+		574DA31922F42CCB007483D5 /* FMCalulator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMCalulator.m; sourceTree = "<group>"; };
 		57572588206A17BB0085D6BF /* MeHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MeHeaderView.h; sourceTree = "<group>"; };
 		57572589206A17BB0085D6BF /* MeHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeHeaderView.m; sourceTree = "<group>"; };
 		575F9AA02064D0DF0031BC49 /* InfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoCell.h; sourceTree = "<group>"; };
@@ -1377,6 +1383,25 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		574DA31222F42715007483D5 /* 函数式编程 */ = {
+			isa = PBXGroup;
+			children = (
+				574DA31822F42CCB007483D5 /* FMCalulator.h */,
+				574DA31922F42CCB007483D5 /* FMCalulator.m */,
+				574DA31422F42877007483D5 /* Controller */,
+			);
+			path = "函数式编程";
+			sourceTree = "<group>";
+		};
+		574DA31422F42877007483D5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				574DA31522F428B2007483D5 /* FMFunctionalProgrammingController.h */,
+				574DA31622F428B2007483D5 /* FMFunctionalProgrammingController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		57572587206A17A40085D6BF /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1768,6 +1793,7 @@
 				5732F7922114006B005EEC82 /* Typewriter */,
 				57E268A52125597D004200F3 /* AES */,
 				579A3A942159D7C500D2C9C1 /* 视频录制 */,
+				574DA31222F42715007483D5 /* 函数式编程 */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2540,6 +2566,7 @@
 				57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */,
 				572E6A6F20635B5C008114EA /* SampleListAPI.m in Sources */,
 				573A8EA02088459500B89BF6 /* FMCardsStackFlowLayout.m in Sources */,
+				574DA31A22F42CCB007483D5 /* FMCalulator.m in Sources */,
 				5718F4302091AD52001859F1 /* LocalizedLanguageManager.m in Sources */,
 				57C3D5702068C4D300E0B8BA /* CGGeometryAdditions.m in Sources */,
 				5732F79B211400AC005EEC82 /* TypewriterControl.m in Sources */,
@@ -2595,6 +2622,7 @@
 				572E6A872063AFE3008114EA /* CardListModel.m in Sources */,
 				5737E61020735375008AF33C /* FMCardsStackScrollView.m in Sources */,
 				5769D90320871EE100FA0F62 /* CardView.m in Sources */,
+				574DA31722F428B2007483D5 /* FMFunctionalProgrammingController.m in Sources */,
 				578E7B16207C5990001D351D /* LTSCircleView.m in Sources */,
 				575F9AAE2064EC710031BC49 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				5787C883208DDEF700852640 /* STPickerSingle.m in Sources */,

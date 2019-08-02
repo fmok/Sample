@@ -22,6 +22,7 @@
 #import "DBViewController.h"
 #import "TypewriterViewController.h"
 #import "AESViewController.h"
+#import "FMFunctionalProgrammingController.h"
 
 @interface MeViewController ()
 
@@ -171,6 +172,11 @@
                        @{
                          kMeVCTitle: @"AES",
                          kMeVCClassName: NSStringFromClass([AESViewController class]),
+                         kMeVCLogoStr: @"upDown"
+                         },
+                       @{
+                         kMeVCTitle: @"Functional Programming",
+                         kMeVCClassName: NSStringFromClass([FMFunctionalProgrammingController class]),
                          kMeVCLogoStr: @"upDown"
                          },
                        nil];
