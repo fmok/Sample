@@ -25,12 +25,17 @@
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     FMCalulator *fcal = [[FMCalulator alloc] init];
-    NSInteger result = [fcal caculator:^NSInteger(NSInteger result) {
+    NSInteger result1 = [fcal caculator:^NSInteger(NSInteger result) {
         result += 10;
         result *= 10;
         return result;
     }].result;
-    TTDPRINT(@"%@", @(result));
+    TTDPRINT(@"%@", @(result1));
+    NSInteger result2 = [fcal caculator:^NSInteger(NSInteger result) {
+        result *= 100;
+        return result;
+    }].result;
+    TTDPRINT(@"%@", @(result2));
 }
 
 #pragma mark - Private methods

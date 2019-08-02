@@ -12,7 +12,11 @@
 
 - (FMCalulator *)caculator:(NSInteger (^)(NSInteger result))calulator
 {
-    _result += calulator(_result);
+    if (_result == 0) {
+        _result += calulator(_result);
+    } else {
+        _result = calulator(_result);
+    }
     return self;
 }
 
