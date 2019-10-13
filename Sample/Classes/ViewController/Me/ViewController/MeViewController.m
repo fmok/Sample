@@ -23,6 +23,7 @@
 #import "TypewriterViewController.h"
 #import "AESViewController.h"
 #import "FMFunctionalProgrammingController.h"
+#import "FMWebViewController_WK.h"
 
 @interface MeViewController ()
 
@@ -177,6 +178,11 @@
                        @{
                          kMeVCTitle: @"Functional Programming",
                          kMeVCClassName: NSStringFromClass([FMFunctionalProgrammingController class]),
+                         kMeVCLogoStr: @"upDown"
+                         },
+                       @{
+                         kMeVCTitle: @"WK",
+                         kMeVCClassName: NSStringFromClass([FMWebViewController_WK class]),
                          kMeVCLogoStr: @"upDown"
                          },
                        nil];

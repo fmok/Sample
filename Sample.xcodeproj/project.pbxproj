@@ -123,6 +123,9 @@
 		5740FA4B206CEEAA006F20A5 /* BuyDetailCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA4A206CEEAA006F20A5 /* BuyDetailCardView.m */; };
 		5740FA4F206D0645006F20A5 /* BuyDetailCardSendWordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA4E206D0645006F20A5 /* BuyDetailCardSendWordView.m */; };
 		5740FA52206D09FD006F20A5 /* BuyDetailCardRelatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5740FA51206D09FD006F20A5 /* BuyDetailCardRelatedView.m */; };
+		5747F67F234D8D14006E60C3 /* FMWebViewController_WK.m in Sources */ = {isa = PBXBuildFile; fileRef = 5747F67E234D8D14006E60C3 /* FMWebViewController_WK.m */; };
+		5747F682234DB521006E60C3 /* black-back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5747F680234DB521006E60C3 /* black-back@2x.png */; };
+		5747F683234DB521006E60C3 /* black-back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5747F681234DB521006E60C3 /* black-back@3x.png */; };
 		574DA31722F428B2007483D5 /* FMFunctionalProgrammingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 574DA31622F428B2007483D5 /* FMFunctionalProgrammingController.m */; };
 		574DA31A22F42CCB007483D5 /* FMCalulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 574DA31922F42CCB007483D5 /* FMCalulator.m */; };
 		5757258A206A17BB0085D6BF /* MeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57572589206A17BB0085D6BF /* MeHeaderView.m */; };
@@ -187,6 +190,7 @@
 		57B544842062850000701F9C /* APPSettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B544832062850000701F9C /* APPSettingManager.m */; };
 		57B544882062863D00701F9C /* UIDeviceHardware.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B544872062863D00701F9C /* UIDeviceHardware.m */; };
 		57B5448D2062881E00701F9C /* FMRuntimeEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B5448C2062881E00701F9C /* FMRuntimeEngine.m */; };
+		57B981212330FBCA000512B8 /* TarotCards-EN.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57B981202330FBCA000512B8 /* TarotCards-EN.plist */; };
 		57C21B712071CA3400F70562 /* MyPurchaseCellListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C21B702071CA3400F70562 /* MyPurchaseCellListView.m */; };
 		57C21B742071CC9F00F70562 /* MyPurchaseCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C21B732071CC9F00F70562 /* MyPurchaseCard.m */; };
 		57C21B7E2071FC6500F70562 /* PetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57C21B7D2071FC6500F70562 /* PetDetailViewController.m */; };
@@ -438,6 +442,10 @@
 		5740FA4E206D0645006F20A5 /* BuyDetailCardSendWordView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailCardSendWordView.m; sourceTree = "<group>"; };
 		5740FA50206D09FD006F20A5 /* BuyDetailCardRelatedView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyDetailCardRelatedView.h; sourceTree = "<group>"; };
 		5740FA51206D09FD006F20A5 /* BuyDetailCardRelatedView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailCardRelatedView.m; sourceTree = "<group>"; };
+		5747F67D234D8D14006E60C3 /* FMWebViewController_WK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMWebViewController_WK.h; sourceTree = "<group>"; };
+		5747F67E234D8D14006E60C3 /* FMWebViewController_WK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMWebViewController_WK.m; sourceTree = "<group>"; };
+		5747F680234DB521006E60C3 /* black-back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-back@2x.png"; sourceTree = "<group>"; };
+		5747F681234DB521006E60C3 /* black-back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "black-back@3x.png"; sourceTree = "<group>"; };
 		574DA31522F428B2007483D5 /* FMFunctionalProgrammingController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMFunctionalProgrammingController.h; sourceTree = "<group>"; };
 		574DA31622F428B2007483D5 /* FMFunctionalProgrammingController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMFunctionalProgrammingController.m; sourceTree = "<group>"; };
 		574DA31822F42CCB007483D5 /* FMCalulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMCalulator.h; sourceTree = "<group>"; };
@@ -564,6 +572,7 @@
 		57B54489206286D700701F9C /* FMURLMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMURLMacro.h; sourceTree = "<group>"; };
 		57B5448B2062881E00701F9C /* FMRuntimeEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FMRuntimeEngine.h; sourceTree = "<group>"; };
 		57B5448C2062881E00701F9C /* FMRuntimeEngine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FMRuntimeEngine.m; sourceTree = "<group>"; };
+		57B981202330FBCA000512B8 /* TarotCards-EN.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TarotCards-EN.plist"; sourceTree = "<group>"; };
 		57C21B6F2071CA3400F70562 /* MyPurchaseCellListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPurchaseCellListView.h; sourceTree = "<group>"; };
 		57C21B702071CA3400F70562 /* MyPurchaseCellListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPurchaseCellListView.m; sourceTree = "<group>"; };
 		57C21B722071CC9F00F70562 /* MyPurchaseCard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPurchaseCard.h; sourceTree = "<group>"; };
@@ -1307,6 +1316,7 @@
 		573FE871212D420500BBE2CD /* TarotCard */ = {
 			isa = PBXGroup;
 			children = (
+				57B981202330FBCA000512B8 /* TarotCards-EN.plist */,
 				573FE872212D420500BBE2CD /* TarotCards-CN.plist */,
 				573FE873212D420500BBE2CD /* TarotCards-ja.plist */,
 				573FE874212D420500BBE2CD /* TarotCards-ko.plist */,
@@ -1381,6 +1391,15 @@
 			children = (
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		5747F67C234D8C81006E60C3 /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				5747F67D234D8D14006E60C3 /* FMWebViewController_WK.h */,
+				5747F67E234D8D14006E60C3 /* FMWebViewController_WK.m */,
+			);
+			path = WKWebView;
 			sourceTree = "<group>";
 		};
 		574DA31222F42715007483D5 /* 函数式编程 */ = {
@@ -1794,6 +1813,7 @@
 				57E268A52125597D004200F3 /* AES */,
 				579A3A942159D7C500D2C9C1 /* 视频录制 */,
 				574DA31222F42715007483D5 /* 函数式编程 */,
+				5747F67C234D8C81006E60C3 /* WKWebView */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -2089,6 +2109,8 @@
 		57C3D55F2068A10800E0B8BA /* Nav */ = {
 			isa = PBXGroup;
 			children = (
+				5747F680234DB521006E60C3 /* black-back@2x.png */,
+				5747F681234DB521006E60C3 /* black-back@3x.png */,
 				5737957C206B39AB00388BCC /* nav.png */,
 				57C3D5602068A11700E0B8BA /* top_navigation_back@2x.png */,
 			);
@@ -2406,7 +2428,9 @@
 				57DED5562067CF7B00E24607 /* tabbar_me_selected@2x.png in Resources */,
 				572297EE20995B2900A02A66 /* mic_5.png in Resources */,
 				57C3D5612068A11700E0B8BA /* top_navigation_back@2x.png in Resources */,
+				5747F683234DB521006E60C3 /* black-back@3x.png in Resources */,
 				572E6A8F2063CA55008114EA /* README.md in Resources */,
+				5747F682234DB521006E60C3 /* black-back@2x.png in Resources */,
 				572297ED20995B2900A02A66 /* mic_6.png in Resources */,
 				5797133E2079C52D0014AB4F /* Images.xcassets in Resources */,
 				573FE880212D420600BBE2CD /* TarotCards-ko.plist in Resources */,
@@ -2420,6 +2444,7 @@
 				573FE876212D420600BBE2CD /* cardDes-ja.plist in Resources */,
 				5737957D206B39AB00388BCC /* nav.png in Resources */,
 				572297EC20995B2900A02A66 /* mic_3.png in Resources */,
+				57B981212330FBCA000512B8 /* TarotCards-EN.plist in Resources */,
 				572297F020995B2900A02A66 /* mic_4.png in Resources */,
 				573FE878212D420600BBE2CD /* cardMeaning-CN.plist in Resources */,
 				573FE87E212D420600BBE2CD /* TarotCards-CN.plist in Resources */,
@@ -2678,6 +2703,7 @@
 				5730A6422089F1480049602D /* FMCalendarSingleView.m in Sources */,
 				5718F42D2091A9CB001859F1 /* LocalizedControl.m in Sources */,
 				57B544842062850000701F9C /* APPSettingManager.m in Sources */,
+				5747F67F234D8D14006E60C3 /* FMWebViewController_WK.m in Sources */,
 				5787C886208DDEF700852640 /* UIView+STPicker.m in Sources */,
 				5740FA48206CE705006F20A5 /* BuyDetailControl.m in Sources */,
 				571D496A20F73B3000691CCD /* SampleControl.m in Sources */,

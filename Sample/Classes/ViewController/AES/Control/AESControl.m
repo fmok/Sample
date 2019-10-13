@@ -17,19 +17,27 @@
 static NSString *const PlistName_CardMeaning_CN = @"cardMeaning-CN";
 static NSString *const PlistName_CardMeaning_ja = @"cardMeaning-ja";
 static NSString *const Plistname_CardMeaning_ko = @"cardMeaning-ko";
+static NSString *const PlistName_CardMeaning_EN = @"cardMeaning-EN";
 // 描述
 static NSString *const PlistName_CardDes_CN = @"cardDes-CN";
 static NSString *const PlistName_CardDes_ja = @"cardDes-ja";
 static NSString *const PlistName_CardDes_ko = @"cardDes-ko";
+static NSString *const PlistName_CardDes_EN = @"cardDes-EN";
 // 【每日一占】
 static NSString *const PlistName_DalilyTarotCards_CN = @"DalilyTarotCards-CN";
 static NSString *const PlistName_DalilyTarotCards_ja = @"DalilyTarotCards-ja";
 static NSString *const PlistName_DalilyTarotCards_ko = @"DalilyTarotCards-ko";
+static NSString *const PlistName_DalilyTarotCards_EN = @"DalilyTarotCards-EN";
 //
 static NSString *const PlistName_TarotCards_CN = @"TarotCards-CN";
 static NSString *const PlistName_TarotCards_ja = @"TarotCards-ja";
 static NSString *const PlistName_TarotCards_ko = @"TarotCards-ko";
-
+static NSString *const PlistName_TarotCards_EN = @"TarotCards-EN";
+//大卡小卡lplist
+static NSString *const PlistName_TarotCatCards_CN = @"TarotCatCards-CN";
+static NSString *const PlistName_TarotCatCards_ja = @"TarotCatCards-JP";
+static NSString *const PlistName_TarotCatCards_ko = @"TarotCatCards-KR";
+static NSString *const PlistName_TarotCatCards_EN = @"TarotCatCards-EN";
 /**
  user-defined directory
  */
@@ -37,6 +45,7 @@ static NSString *const UDefinedDirectoryTarotCard = @"TarotCard";
 static NSString *const UDefinedDirectoryCardMeaning = @"CardMeaning";
 static NSString *const UDefinedDirectoryCardDescription = @"CardDescription";
 static NSString *const UDefinedDirectoryDalilyTarotCard = @"DalilyTarotCard";
+static NSString *const UDefinedDirectoryTarotCatCard = @"TarotCatCards";
 
 
 /**
@@ -65,25 +74,35 @@ static NSString *const AESIv = @"N3nLasdhgypjZu3r";
  *****************************************************************************************/
 - (void)AESDeal
 {
-    // TarotCard
-    [self AESEncryptWithFileName:PlistName_TarotCards_CN setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryTarotCard];
-    [self AESEncryptWithFileName:PlistName_TarotCards_ja setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryTarotCard];
-    [self AESEncryptWithFileName:PlistName_TarotCards_ko setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryTarotCard];
+    // 【CardMeaning】
+//    [self AESEncryptWithFileName:PlistName_CardMeaning_CN setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardMeaning];
+//    [self AESEncryptWithFileName:PlistName_CardMeaning_ja setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardMeaning];
+//    [self AESEncryptWithFileName:Plistname_CardMeaning_ko setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardMeaning];
+//    [self AESEncryptWithFileName:PlistName_CardMeaning_EN setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardMeaning];
     
-    // CardMeaning
-    [self AESEncryptWithFileName:PlistName_CardMeaning_CN setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardMeaning];
-    [self AESEncryptWithFileName:PlistName_CardMeaning_ja setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardMeaning];
-    [self AESEncryptWithFileName:Plistname_CardMeaning_ko setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardMeaning];
+    // 【CardDescription】
+//    [self AESEncryptWithFileName:PlistName_CardDes_CN setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardDescription];
+//    [self AESEncryptWithFileName:PlistName_CardDes_ja setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardDescription];
+//    [self AESEncryptWithFileName:PlistName_CardDes_ko setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardDescription];
+//    [self AESEncryptWithFileName:PlistName_CardDes_EN setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardDescription];
     
-    // CardDescription
-    [self AESEncryptWithFileName:PlistName_CardDes_CN setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardDescription];
-    [self AESEncryptWithFileName:PlistName_CardDes_ja setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardDescription];
-    [self AESEncryptWithFileName:PlistName_CardDes_ko setType:[NSArray class] userDefinedDirectory:UDefinedDirectoryCardDescription];
+    // 【TarotCard】
+//    [self AESEncryptWithFileName:PlistName_TarotCards_CN setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryTarotCard];
+//    [self AESEncryptWithFileName:PlistName_TarotCards_ja setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryTarotCard];
+//    [self AESEncryptWithFileName:PlistName_TarotCards_ko setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryTarotCard];
+//    [self AESEncryptWithFileName:PlistName_TarotCards_EN setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryTarotCard];
     
     // 【每日一占】
-    [self AESEncryptWithFileName:PlistName_DalilyTarotCards_CN setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryDalilyTarotCard];
-    [self AESEncryptWithFileName:PlistName_DalilyTarotCards_ja setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryDalilyTarotCard];
-    [self AESEncryptWithFileName:PlistName_DalilyTarotCards_ko setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryDalilyTarotCard];
+//    [self AESEncryptWithFileName:PlistName_DalilyTarotCards_CN setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryDalilyTarotCard];
+//    [self AESEncryptWithFileName:PlistName_DalilyTarotCards_ja setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryDalilyTarotCard];
+//    [self AESEncryptWithFileName:PlistName_DalilyTarotCards_ko setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryDalilyTarotCard];
+//    [self AESEncryptWithFileName:PlistName_DalilyTarotCards_EN setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryDalilyTarotCard];
+    
+    // 【大小牌】UDefinedDirectoryTarotCatCard
+//    [self AESEncryptWithFileName:PlistName_TarotCatCards_ja setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryTarotCatCard];
+//    [self AESEncryptWithFileName:PlistName_TarotCatCards_ko setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryTarotCatCard];
+//    [self AESEncryptWithFileName:PlistName_TarotCatCards_CN setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryTarotCatCard];
+//    [self AESEncryptWithFileName:PlistName_TarotCatCards_EN setType:[NSDictionary class] userDefinedDirectory:UDefinedDirectoryTarotCatCard];
 }
 
 - (void)AESEncryptWithFileName:(NSString *)name setType:(Class)cls userDefinedDirectory:(NSString *)uDirectory

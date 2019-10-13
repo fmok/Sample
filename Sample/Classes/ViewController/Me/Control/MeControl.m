@@ -13,6 +13,7 @@
 #import "FMH5ViewController_wk.h"
 #import "UITableViewCell+showAnimaiton.h"
 #import "MUSAnimationTool.h"
+#import "FMWebViewController_WK.h"
 
 static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr";
 
@@ -47,6 +48,11 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
     FMBaseViewController *vc = nil;
     if ([cls isEqualToString:@"FMH5ViewController_wk"]) {
         vc = [[FMH5ViewController_wk alloc] initWithAddress:@"https://www.baidu.com"];
+    } else if ([cls isEqualToString:@"FMWebViewController_WK"]) {
+        vc = [[NSClassFromString(cls) alloc] init];
+        ((FMWebViewController_WK *)vc).url = [NSURL URLWithString:@"https://www.jiemian.com"];
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        vc = nav;
     } else {
         vc = [[NSClassFromString(cls) alloc] init];
     }
@@ -84,7 +90,7 @@ static NSString *const kMeCellReusedIdentifierStr = @"kMeCellReusedIdentifierStr
 {
     MeCell *cell = [tableView dequeueReusableCellWithIdentifier:kMeCellReusedIdentifierStr forIndexPath:indexPath];
     [cell updateContentWithImg:[self.vc.settingArr[indexPath.row] objectForKey:kMeVCLogoStr] contentText:[self.vc.settingArr[indexPath.row] objectForKey:kMeVCTitle]];
-//    [MUSAnimationTool animate:cell type:MUSAnimationTypeTranslation];
+    [MUSAnimationTool animate:cell type:MUSAnimationTypeTranslation];
     return cell;
 }
 

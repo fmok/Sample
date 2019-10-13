@@ -446,10 +446,1130 @@
 			<key>type</key>
 			<string>A</string>
 		</dict>
+		<dict>
+			<key>id</key>
+			<integer>22</integer>
+			<key>keywords</key>
+			<string> 풍부한 감성, 우유분단함</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string> 풍부한 감성, 우유분단함</string>
+			<key>back</key>
+			<string> 풍부한 감성, 우유분단함</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>컵의 왕 </string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>23</integer>
+			<key>keywords</key>
+			<string>풍부한 감성, 사랑, 감수성</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>풍부한 감성, 사랑, 감수성</string>
+			<key>back</key>
+			<string>풍부한 감성, 사랑, 감수성</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>컵의 여왕</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>24</integer>
+			<key>keywords</key>
+			<string>프로포즈, 제안, 새로운 기회</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>프로포즈, 제안, 새로운 기회</string>
+			<key>back</key>
+			<string>프로포즈, 제안, 새로운 기회</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>컵의 기사</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>25</integer>
+			<key>keywords</key>
+			<string>상상력, 감수성, 기발함</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>상상력, 감수성, 기발함</string>
+			<key>back</key>
+			<string>상상력, 감수성, 기발함</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>컵의 시종</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>26</integer>
+			<key>keywords</key>
+			<string>감성, 애정, 사랑의 시작</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>감성, 애정, 사랑의 시작</string>
+			<key>back</key>
+			<string>감성, 애정, 사랑의 시작</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>에이스 컵</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>27</integer>
+			<key>keywords</key>
+			<string> 교환, 의사소통, 협상</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string> 교환, 의사소통, 협상</string>
+			<key>back</key>
+			<string> 교환, 의사소통, 협상</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>컵2</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>28</integer>
+			<key>keywords</key>
+			<string>유희, 축하, 화합</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>유희, 축하, 화합</string>
+			<key>back</key>
+			<string>유희, 축하, 화합</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>컵3</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>29</integer>
+			<key>keywords</key>
+			<string>무관심, 짜증, 지겨움</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>무관심, 짜증, 지겨움</string>
+			<key>back</key>
+			<string>무관심, 짜증, 지겨움</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>컵4</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>30</integer>
+			<key>keywords</key>
+			<string>실망, 안타까움, 되돌릴 수 없음</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>실망, 안타까움, 되돌릴 수 없음</string>
+			<key>back</key>
+			<string>실망, 안타까움, 되돌릴 수 없음</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>컵5</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>31</integer>
+			<key>keywords</key>
+			<string>회상, 옛 추억, 순수함</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>회상, 옛 추억, 순수함</string>
+			<key>back</key>
+			<string>회상, 옛 추억, 순수함</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>컵6</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>32</integer>
+			<key>keywords</key>
+			<string>허상, 환상, 비현실성</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>허상, 환상, 비현실성</string>
+			<key>back</key>
+			<string>허상, 환상, 비현실성</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>컵7</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>33</integer>
+			<key>keywords</key>
+			<string> 미련, 발걸음이 무거움, 새로운 시작</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string> 미련, 발걸음이 무거움, 새로운 시작</string>
+			<key>back</key>
+			<string> 미련, 발걸음이 무거움, 새로운 시작</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>컵8</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>34</integer>
+			<key>keywords</key>
+			<string>여유로움, 만족함, 풍족함</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>여유로움, 만족함, 풍족함</string>
+			<key>back</key>
+			<string>여유로움, 만족함, 풍족함</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>컵9</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>35</integer>
+			<key>keywords</key>
+			<string>행복, 즐거움, 화목함 </string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>행복, 즐거움, 화목함 </string>
+			<key>back</key>
+			<string>행복, 즐거움, 화목함 </string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>컵10</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>36</integer>
+			<key>keywords</key>
+			<string>냉철함, 논리적, 엄격함</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>냉철함, 논리적, 엄격함</string>
+			<key>back</key>
+			<string>냉철함, 논리적, 엄격함</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>검의 왕</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>37</integer>
+			<key>keywords</key>
+			<string>단호함, 차가움, 냉정함</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>단호함, 차가움, 냉정함</string>
+			<key>back</key>
+			<string>단호함, 차가움, 냉정함</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>검의 여왕 </string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>38</integer>
+			<key>keywords</key>
+			<string>전속력, 질주, 불안정</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>전속력, 질주, 불안정</string>
+			<key>back</key>
+			<string>전속력, 질주, 불안정</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>검의 기사</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>39</integer>
+			<key>keywords</key>
+			<string>가벼움, 약함, 순간재치</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>가벼움, 약함, 순간재치</string>
+			<key>back</key>
+			<string>가벼움, 약함, 순간재치</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>검의 시종</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>40</integer>
+			<key>keywords</key>
+			<string>기회포착, 고민, 구체성 결여</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>기회포착, 고민, 구체성 결여</string>
+			<key>back</key>
+			<string>기회포착, 고민, 구체성 결여</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>에이스 검</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>41</integer>
+			<key>keywords</key>
+			<string>두려움, 회피, 방어자세</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>두려움, 회피, 방어자세</string>
+			<key>back</key>
+			<string>두려움, 회피, 방어자세</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>검2</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>42</integer>
+			<key>keywords</key>
+			<string>아픈 상처, 이별, 슬픔</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>아픈 상처, 이별, 슬픔</string>
+			<key>back</key>
+			<string>아픈 상처, 이별, 슬픔</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>검3</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>43</integer>
+			<key>keywords</key>
+			<string>휴식, 정체기, 포기  </string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>휴식, 정체기, 포기  </string>
+			<key>back</key>
+			<string>휴식, 정체기, 포기  </string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>검4</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>44</integer>
+			<key>keywords</key>
+			<string>실패, 패배, 비참함</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>실패, 패배, 비참함</string>
+			<key>back</key>
+			<string>실패, 패배, 비참함</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>검5</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>45</integer>
+			<key>keywords</key>
+			<string>여행, 이동수, 참잡함</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>여행, 이동수, 참잡함</string>
+			<key>back</key>
+			<string>여행, 이동수, 참잡함</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>검6</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>46</integer>
+			<key>keywords</key>
+			<string>도망, 미련, 아쉬움</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>도망, 미련, 아쉬움</string>
+			<key>back</key>
+			<string>도망, 미련, 아쉬움</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>검7</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>47</integer>
+			<key>keywords</key>
+			<string>속박, 정체기, 막막</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>속박, 정체기, 막막</string>
+			<key>back</key>
+			<string>속박, 정체기, 막막</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>검8</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>48</integer>
+			<key>keywords</key>
+			<string>근심, 두려움, 걱정</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>근심, 두려움, 걱정</string>
+			<key>back</key>
+			<string>근심, 두려움, 걱정</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>검9</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>49</integer>
+			<key>keywords</key>
+			<string> 끝, 시작, 아픔</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string> 끝, 시작, 아픔</string>
+			<key>back</key>
+			<string> 끝, 시작, 아픔</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>검10</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>50</integer>
+			<key>keywords</key>
+			<string>열정, 적극적, 능동적</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>열정, 적극적, 능동적</string>
+			<key>back</key>
+			<string>열정, 적극적, 능동적</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>지팡이의 왕 </string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>51</integer>
+			<key>keywords</key>
+			<string> 오지랖, 불피요한 일들, 분주함</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string> 오지랖, 불피요한 일들, 분주함</string>
+			<key>back</key>
+			<string> 오지랖, 불피요한 일들, 분주함</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>지팡이의 여왕</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>52</integer>
+			<key>keywords</key>
+			<string>혈기왕성, 열정적, 충동적</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>혈기왕성, 열정적, 충동적</string>
+			<key>back</key>
+			<string>혈기왕성, 열정적, 충동적</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>지팡이의 기사</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>53</integer>
+			<key>keywords</key>
+			<string> 호기심, 새로운 시작, 설레임</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string> 호기심, 새로운 시작, 설레임</string>
+			<key>back</key>
+			<string> 호기심, 새로운 시작, 설레임</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>지팡이의 시종</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>54</integer>
+			<key>keywords</key>
+			<string>기회, 자신감, 진취적</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>기회, 자신감, 진취적</string>
+			<key>back</key>
+			<string>기회, 자신감, 진취적</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>에이스 지팡이</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>55</integer>
+			<key>keywords</key>
+			<string>계획, 승진, 정체기</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>계획, 승진, 정체기</string>
+			<key>back</key>
+			<string>계획, 승진, 정체기</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>지팡이2</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>56</integer>
+			<key>keywords</key>
+			<string> 동경, 새로운 계획, 그리움</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string> 동경, 새로운 계획, 그리움</string>
+			<key>back</key>
+			<string> 동경, 새로운 계획, 그리움</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>지팡이3</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>57</integer>
+			<key>keywords</key>
+			<string>안락, 안정, 축하</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>안락, 안정, 축하</string>
+			<key>back</key>
+			<string>안락, 안정, 축하</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>지팡이4</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>58</integer>
+			<key>keywords</key>
+			<string>불 안정, 난잡함, 비효율성 </string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>불 안정, 난잡함, 비효율성 </string>
+			<key>back</key>
+			<string>불 안정, 난잡함, 비효율성 </string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>지팡이5</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>59</integer>
+			<key>keywords</key>
+			<string>승리, 축하, 합격</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>승리, 축하, 합격</string>
+			<key>back</key>
+			<string>승리, 축하, 합격</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>지팡이6</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>60</integer>
+			<key>keywords</key>
+			<string>현상유지, 방어적, 급급함</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>현상유지, 방어적, 급급함</string>
+			<key>back</key>
+			<string>현상유지, 방어적, 급급함</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>지팡이7</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>61</integer>
+			<key>keywords</key>
+			<string>많은 일, 많은 이성</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>완전, 총합, 성취</string>
+			<key>back</key>
+			<string>완전, 총합, 성취</string>
+			<key>description</key>
+			<string>완전, 총합, 성취</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>지팡이8</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>62</integer>
+			<key>keywords</key>
+			<string>오랜 투쟁, 굳은 의지, 고립 상태 </string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>오랜 투쟁, 굳은 의지, 고립 상태 </string>
+			<key>back</key>
+			<string>오랜 투쟁, 굳은 의지, 고립 상태 </string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>지팡이9</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>63</integer>
+			<key>keywords</key>
+			<string>압박감, 부담감, 스트레스 </string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>압박감, 부담감, 스트레스 </string>
+			<key>back</key>
+			<string>압박감, 부담감, 스트레스 </string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>지팡이10</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>64</integer>
+			<key>keywords</key>
+			<string>바위, 견고함, 권위 </string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>바위, 견고함, 권위 </string>
+			<key>back</key>
+			<string>바위, 견고함, 권위 </string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>동전의 왕</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>65</integer>
+			<key>keywords</key>
+			<string>현모양처, 안정적, 건설적</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>현모양처, 안정적, 건설적</string>
+			<key>back</key>
+			<string>현모양처, 안정적, 건설적</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>동전의 여왕</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>66</integer>
+			<key>keywords</key>
+			<string> 흙기사, 새로운 기회, 우직함</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string> 흙기사, 새로운 기회, 우직함</string>
+			<key>back</key>
+			<string> 흙기사, 새로운 기회, 우직함</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>동전의 기사</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>67</integer>
+			<key>keywords</key>
+			<string>신중, 집중력, 정성</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>신중, 집중력, 정성</string>
+			<key>back</key>
+			<string>신중, 집중력, 정성</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>동전의 시종</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>68</integer>
+			<key>keywords</key>
+			<string>새로운 기회, 취업, 승진</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>새로운 기회, 취업, 승진</string>
+			<key>back</key>
+			<string>새로운 기회, 취업, 승진</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>에이스 동전</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>69</integer>
+			<key>keywords</key>
+			<string>뫼비우스, 2가지 일, 반복되는 결과</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>뫼비우스, 2가지 일, 반복되는 결과</string>
+			<key>back</key>
+			<string>뫼비우스, 2가지 일, 반복되는 결과</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>동전2</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>70</integer>
+			<key>keywords</key>
+			<string> 안정적, 발전적, 가치있는 일</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string> 안정적, 발전적, 가치있는 일</string>
+			<key>back</key>
+			<string> 안정적, 발전적, 가치있는 일</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>동전3</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>71</integer>
+			<key>keywords</key>
+			<string> 고집, 집착, 양보불가</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string> 고집, 집착, 양보불가</string>
+			<key>back</key>
+			<string> 고집, 집착, 양보불가</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>동전4</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>72</integer>
+			<key>keywords</key>
+			<string>외로움, 궁핍, 금전적 어려움 </string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>외로움, 궁핍, 금전적 어려움 </string>
+			<key>back</key>
+			<string>외로움, 궁핍, 금전적 어려움 </string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>동전5</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>73</integer>
+			<key>keywords</key>
+			<string>정확한 배분, 투자, 손해</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>정확한 배분, 투자, 손해</string>
+			<key>back</key>
+			<string>정확한 배분, 투자, 손해</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>동전6</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>74</integer>
+			<key>keywords</key>
+			<string>심사숙고, 욕심, 많은 생각</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>심사숙고, 욕심, 많은 생각</string>
+			<key>back</key>
+			<string>심사숙고, 욕심, 많은 생각</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>동전7</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>75</integer>
+			<key>keywords</key>
+			<string>오랜 기간, 인내, 끈기</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>오랜 기간, 인내, 끈기</string>
+			<key>back</key>
+			<string>오랜 기간, 인내, 끈기</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>동전8</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>76</integer>
+			<key>keywords</key>
+			<string>부유함, 풍요로움, 여유</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>부유함, 풍요로움, 여유</string>
+			<key>back</key>
+			<string>부유함, 풍요로움, 여유</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>동전9</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>77</integer>
+			<key>keywords</key>
+			<string>가족, 풍족, 안정적 조직 </string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>가족, 풍족, 안정적 조직 </string>
+			<key>back</key>
+			<string>가족, 풍족, 안정적 조직 </string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>동전10</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
 	</array>
 	<key>error</key>
 	<integer>0</integer>
 	<key>page</key>
-	<integer>22</integer>
+	<integer>78</integer>
 </dict>
 </plist>

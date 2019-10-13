@@ -1,0 +1,1575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>version</key>
+	<integer>1</integer>
+	<key>links</key>
+	<array>
+		<dict>
+			<key>id</key>
+			<integer>0</integer>
+			<key>keywords</key>
+			<string>Innocence Free spirit, Recklessness</string>
+			<key>element</key>
+			<string>风</string>
+			<key>front</key>
+			<string>Innovation, New idea, Spontaneity, Freedom, Spiritual Transformation</string>
+			<key>back</key>
+			<string>Chaos, Naiveté, Irresponsibility, Rebelliousness, Delusions</string>
+			<key>description</key>
+			<string>服：ペルソナ、⼈人格、性質（派⼿手な柄：落ち着きの無さ　朝顔の模様：新たな始まり）</string>
+			<key>stars</key>
+			<string>天王星</string>
+			<key>name</key>
+			<string>The Fool</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>1</integer>
+			<key>keywords</key>
+			<string>Willpower, Desire, Trickery</string>
+			<key>element</key>
+			<string>风</string>
+			<key>front</key>
+			<string>Transformation, Intelligence, Autonomy, Initiative, Diplomacy</string>
+			<key>back</key>
+			<string>Lack of Scruples, Deceit, Ineptitude, Lack of Will, Insecurity</string>
+			<key>description</key>
+			<string>インフィニティ：無限の⼒力力</string>
+			<key>stars</key>
+			<string>水星</string>
+			<key>name</key>
+			<string>The Magician</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>2</integer>
+			<key>keywords</key>
+			<string>Intuitive, Inner Voice, Lack of Center</string>
+			<key>element</key>
+			<string>水</string>
+			<key>front</key>
+			<string>Motherhood, Intuition, Mysticism, Neutrality, Wisdom</string>
+			<key>back</key>
+			<string>Secrets, Contradictions, Emotional Coldness, Depression, Secret Intentions, Fortune</string>
+			<key>description</key>
+			<string>海海：潜在意識、深い感情</string>
+			<key>stars</key>
+			<string>月亮</string>
+			<key>name</key>
+			<string>The High Priestess</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>3</integer>
+			<key>keywords</key>
+			<string>Fertility, Nature, Emptiness</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Love, Creativity, Abundance, Beauty, Growth</string>
+			<key>back</key>
+			<string>Lack of Firmness, Self-Neglect, Over-Protectiveness, Pity, Being Rejected</string>
+			<key>description</key>
+			<string>穀物：豊穣</string>
+			<key>stars</key>
+			<string>金星</string>
+			<key>name</key>
+			<string>The Empress</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>4</integer>
+			<key>keywords</key>
+			<string>Authority, Structure, Tyranny</string>
+			<key>element</key>
+			<string>火</string>
+			<key>front</key>
+			<string>Power, Success, Leadership, Adventure, Authority</string>
+			<key>back</key>
+			<string>Severity, Inflexibility, Aggression, Punishment, Cruelty</string>
+			<key>description</key>
+			<string>牧⽺羊：牧⽺羊座の特質（情熱、⾏行行動⼒力力）</string>
+			<key>stars</key>
+			<string>牡羊座</string>
+			<key>name</key>
+			<string>The Emperor</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>5</integer>
+			<key>keywords</key>
+			<string>Radition, Conformity, Rebellion</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Spiritual Guidance, Hierarchy, Faith, Ritual, Knowledge</string>
+			<key>back</key>
+			<string>Dogmatism, Patriarchy, Inflexibility, Indoctrination, Secret Societies</string>
+			<key>description</key>
+			<string>僧侶（バラとユリ）：ヒューマニズム、慈悲と峻厳</string>
+			<key>stars</key>
+			<string>金牛座</string>
+			<key>name</key>
+			<string>The Hierophant</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>6</integer>
+			<key>keywords</key>
+			<string>Duality, Union, Disharmony</string>
+			<key>element</key>
+			<string>风</string>
+			<key>front</key>
+			<string>Love, Communication, Intimacy, Proposal of Marriage, Pregnancy</string>
+			<key>back</key>
+			<string>Promiscuity, Affairs, Codependency, Lack of Trust, Manipulation</string>
+			<key>description</key>
+			<string>裸：本⼼心、⾃自由</string>
+			<key>stars</key>
+			<string>双子座</string>
+			<key>name</key>
+			<string> The Lovers</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>7</integer>
+			<key>keywords</key>
+			<string>Direction, Control, Aggression</string>
+			<key>element</key>
+			<string>水</string>
+			<key>front</key>
+			<string>Determination, Strength, Courage, Power, Victory</string>
+			<key>back</key>
+			<string>Lack of Focus, Worries, Confusion, Paranoia, Distractions</string>
+			<key>description</key>
+			<string>⽉月の顔（笑と怒怒）：対⽴立する⼆二つの⼒力力</string>
+			<key>stars</key>
+			<string>巨蟹座</string>
+			<key>name</key>
+			<string>The Chariot</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>8</integer>
+			<key>keywords</key>
+			<string>Bravery, Compassion, Insecurity</string>
+			<key>element</key>
+			<string>火</string>
+			<key>front</key>
+			<string>Physical and Psychic Strength, Intelligence, Health and Vitality, Joy, Leadership</string>
+			<key>back</key>
+			<string>Anger, Cruelty, Loss of Control, Cowardice, Violence</string>
+			<key>description</key>
+			<string>インフィニティ：無限の⼒力力</string>
+			<key>stars</key>
+			<string>狮子座</string>
+			<key>name</key>
+			<string>Strength</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>9</integer>
+			<key>keywords</key>
+			<string>Inner Guidance, Solation, Lost your way</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Reflection, Study, Solitude, Detachment, Introspection</string>
+			<key>back</key>
+			<string>Isolation, Lack of Communication, Alienation, Perfectionism, Rejection</string>
+			<key>description</key>
+			<string>ヘキサグラム：天地の三⻆角の合、６（恋⼈人）との関連</string>
+			<key>stars</key>
+			<string>纯女座</string>
+			<key>name</key>
+			<string>The Hermit</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>10</integer>
+			<key>keywords</key>
+			<string>Change, Cycles, Clinging to Control</string>
+			<key>element</key>
+			<string>火</string>
+			<key>front</key>
+			<string>New Opportunities, Changes, Surprises, Possibilities, Unforeseen Events</string>
+			<key>back</key>
+			<string>Resistance to Change, Excessive Optimism, Setbacks, Ups and Downs, Losses</string>
+			<key>description</key>
+			<string>獣頭⼈人身：堕落した⼈人間、獣のパワー</string>
+			<key>stars</key>
+			<string>木星</string>
+			<key>name</key>
+			<string>Wheel of Fortune</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>11</integer>
+			<key>keywords</key>
+			<string>Clarity, Truth, Unfairness</string>
+			<key>element</key>
+			<string>风</string>
+			<key>front</key>
+			<string>Balance, Justice, Equality, Legality, Honesty</string>
+			<key>back</key>
+			<string>Indecision, Injustice, Crime, Disadvantage, Lack of Judgment</string>
+			<key>description</key>
+			<string>両刃の剣：知性、裁き</string>
+			<key>stars</key>
+			<string>天秤座</string>
+			<key>name</key>
+			<string>Justice</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>12</integer>
+			<key>keywords</key>
+			<string>Sacrifice, Release, Stalling </string>
+			<key>element</key>
+			<string>水</string>
+			<key>front</key>
+			<string>Obedience, Delay, Mysticism, Sacrifices</string>
+			<key>back</key>
+			<string>Stagnation, Defeat, Unfulfilled Promises, Denial</string>
+			<key>description</key>
+			<string>吊す：犠牲、贖罪、苦⾏行行</string>
+			<key>stars</key>
+			<string>海王星</string>
+			<key>name</key>
+			<string>The Hanged Man</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>13</integer>
+			<key>keywords</key>
+			<string>Beginnings, Change, Decay</string>
+			<key>element</key>
+			<string>水</string>
+			<key>front</key>
+			<string>Deep Changes, Loss, Failure, End of a Situation or Friendship, Loss of Income or Financial Security</string>
+			<key>back</key>
+			<string>Stagnation, Slow Changes, Immobility, Danger of Accidents, Inertia</string>
+			<key>description</key>
+			<string>⾺馬：エネルギー、本能</string>
+			<key>stars</key>
+			<string>天蝎座</string>
+			<key>name</key>
+			<string>Death </string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>14</integer>
+			<key>keywords</key>
+			<string>Patience, Extremes, Excess</string>
+			<key>element</key>
+			<string>火</string>
+			<key>front</key>
+			<string>Control, Harmony, Balance, Moderation, Tolerance</string>
+			<key>back</key>
+			<string>Lack of Balance, Bad Behavior, Mistakes, Need for Cooperation, Lack of Communication</string>
+			<key>description</key>
+			<string>ミカエル：試練、メッセージ、調整</string>
+			<key>stars</key>
+			<string>射手座</string>
+			<key>name</key>
+			<string>Temperance</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>15</integer>
+			<key>keywords</key>
+			<string>Materialism, Playfulness, Release</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Selfishness, Jealousy, Resentment, Self-Deception, Violence</string>
+			<key>back</key>
+			<string>Liberation, Understanding, Hard Work, Self-Discipline, Responsibility</string>
+			<key>description</key>
+			<string>ブドウ：酩酊</string>
+			<key>stars</key>
+			<string>摩羯座</string>
+			<key>name</key>
+			<string>The Devil</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>16</integer>
+			<key>keywords</key>
+			<string>Disaster, Delayed Disaster</string>
+			<key>element</key>
+			<string>火</string>
+			<key>front</key>
+			<string>Destruction, Problems, Situations that Must Change, Profound Transformation, Warnings</string>
+			<key>back</key>
+			<string>Accidents, Confusion, Stormy weather, Egocentrism, Fights</string>
+			<key>description</key>
+			<string>塔：⽬目的、誇示、倨傲、幽閉</string>
+			<key>stars</key>
+			<string>火星</string>
+			<key>name</key>
+			<string>The Tower</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>17</integer>
+			<key>keywords</key>
+			<string>Faith, Rejuvenation, Insecurity</string>
+			<key>element</key>
+			<string>风</string>
+			<key>front</key>
+			<string>Youth, Beauty, Creativity, Clarity of Vision, Self-Confidence</string>
+			<key>back</key>
+			<string>Loss of Will, Disinterest, Lack of Empathy, Repression, Miscommunication</string>
+			<key>description</key>
+			<string>星：導き、希望</string>
+			<key>stars</key>
+			<string>水瓶座</string>
+			<key>name</key>
+			<string>The Star</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>18</integer>
+			<key>keywords</key>
+			<string>Illusions, Intuition, Fear</string>
+			<key>element</key>
+			<string>水</string>
+			<key>front</key>
+			<string>Melancholy, Depression, Confusion, Anguish, Deception</string>
+			<key>back</key>
+			<string>Resolution, Joy, Overcoming Obstacles, Enlightenment, Silence</string>
+			<key>description</key>
+			<string>塔：異異界の扉、閉じこもること</string>
+			<key>stars</key>
+			<string>双鱼座</string>
+			<key>name</key>
+			<string>The Moon</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>19</integer>
+			<key>keywords</key>
+			<string>Celebration, Positivity, Sadness</string>
+			<key>element</key>
+			<string>火</string>
+			<key>front</key>
+			<string>Success, Happiness, Harmony, Luck, Optimism</string>
+			<key>back</key>
+			<string>Bad Luck, Delays, Obstacles, Lost Opportunities, Vanity</string>
+			<key>description</key>
+			<string>光（直線と曲線）：顕在意識と潜在意識</string>
+			<key>stars</key>
+			<string>太阳</string>
+			<key>name</key>
+			<string>The Sun</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>20</integer>
+			<key>keywords</key>
+			<string>Reckoning, Awakening, Doubt</string>
+			<key>element</key>
+			<string>水</string>
+			<key>front</key>
+			<string>Improvement, An Awakening of Consciousness, A Change of Perspective, Inspiration, Forgiveness</string>
+			<key>back</key>
+			<string>Oppression, Need for Advice, Lack of Restraint, Suffocating Environment, Subject to Trial</string>
+			<key>description</key>
+			<string>海海：宇宙意識</string>
+			<key>stars</key>
+			<string>冥王星</string>
+			<key>name</key>
+			<string>Judgment</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>21</integer>
+			<key>keywords</key>
+			<string> Harmony, Completion, No Closure</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Having the World at Your Feet, Success, Reward, Fulfillment, Travel</string>
+			<key>back</key>
+			<string>Suffering, Anxiety, Lack of Self-Confidence, Inability to See the Bigger Picture, Inability to Fulfill Commitments</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>The World</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>22</integer>
+			<key>keywords</key>
+			<string>Compassion, Control, Coldness</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Compassion, Control, Coldness</string>
+			<key>back</key>
+			<string>Compassion, Control, Coldness</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>King of Cups</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>23</integer>
+			<key>keywords</key>
+			<string>Calm, Comfort, Martyrdom</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Calm, Comfort, Martyrdom</string>
+			<key>back</key>
+			<string>Calm, Comfort, Martyrdom</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Queen of Cups</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>24</integer>
+			<key>keywords</key>
+			<string>Idealist, Romantic, Moodiness</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Idealist, Romantic, Moodiness</string>
+			<key>back</key>
+			<string>Idealist, Romantic, Moodiness</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Knight of Cups</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>25</integer>
+			<key>keywords</key>
+			<string>Dreamer, Sensitivity, Emotional Immaturity</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Dreamer, Sensitivity, Emotional Immaturity</string>
+			<key>back</key>
+			<string>Dreamer, Sensitivity, Emotional Immaturity</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Page of Cups</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>26</integer>
+			<key>keywords</key>
+			<string>Spirituality, Intuition, Emotional Loss</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Spirituality, Intuition, Emotional Loss</string>
+			<key>back</key>
+			<string>Spirituality, Intuition, Emotional Loss</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Ace of Cup</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>27</integer>
+			<key>keywords</key>
+			<string>Partnership, Connection, Imbalance</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Partnership, Connection, Imbalance</string>
+			<key>back</key>
+			<string>Partnership, Connection, Imbalance</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Two of Cups</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>28</integer>
+			<key>keywords</key>
+			<string>Community, Happiness, Overindulgence</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Community, Happiness, Overindulgence</string>
+			<key>back</key>
+			<string>Community, Happiness, Overindulgence</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Three of Cups</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>29</integer>
+			<key>keywords</key>
+			<string>Contemplation, Disconnectedness, Sudden Awareness</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Contemplation, Disconnectedness, Sudden Awareness</string>
+			<key>back</key>
+			<string>Contemplation, Disconnectedness, Sudden Awareness</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Four of Cups</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>30</integer>
+			<key>keywords</key>
+			<string> Harmony, Completion, No Closure</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Grief, Self-Pity, Acceptance</string>
+			<key>back</key>
+			<string>Grief, Self-Pity, Acceptance</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Five of Cups</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>31</integer>
+			<key>keywords</key>
+			<string>Happy Memories, Healing, Moving Forward</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Happy Memories, Healing, Moving Forward</string>
+			<key>back</key>
+			<string>Happy Memories, Healing, Moving Forward</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Six of Cups</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>32</integer>
+			<key>keywords</key>
+			<string>Choices, Daydreaming, Lack of Purpose</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Choices, Daydreaming, Lack of Purpose</string>
+			<key>back</key>
+			<string>Choices, Daydreaming, Lack of Purpose</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Seven of Cups</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>33</integer>
+			<key>keywords</key>
+			<string>Disillusionment, Leaving Behind, Avoidance</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Disillusionment, Leaving Behind, Avoidance</string>
+			<key>back</key>
+			<string>Disillusionment, Leaving Behind, Avoidance</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Eight of Cups</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>34</integer>
+			<key>keywords</key>
+			<string>Emotional Stability, Luxury, Lack of Inner Joy</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Emotional Stability, Luxury, Lack of Inner Joy</string>
+			<key>back</key>
+			<string>Emotional Stability, Luxury, Lack of Inner Joy</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Nine of Cups</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>35</integer>
+			<key>keywords</key>
+			<string>Fulfillment,Shattered Dreams, Broken Family</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Fulfillment,Shattered Dreams, Broken Family</string>
+			<key>back</key>
+			<string>Fulfillment,Shattered Dreams, Broken Family</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Ten of Cups</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>36</integer>
+			<key>keywords</key>
+			<string>Discipline, Truth, Manipulative</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Discipline, Truth, Manipulative</string>
+			<key>back</key>
+			<string>Discipline, Truth, Manipulative</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>King of Swords</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>37</integer>
+			<key>keywords</key>
+			<string>Complexity, Perceptiveness, Cold Hearted</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Complexity, Perceptiveness, Cold Hearted</string>
+			<key>back</key>
+			<string>Complexity, Perceptiveness, Cold Hearted</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Queen of Swords</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>38</integer>
+			<key>keywords</key>
+			<string>Impulsiveness, Defending Beliefs, No Direction</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Impulsiveness, Defending Beliefs, No Direction</string>
+			<key>back</key>
+			<string>Impulsiveness, Defending Beliefs, No Direction</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Knight of Swords</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>39</integer>
+			<key>keywords</key>
+			<string>Restlessness, Mental Energy, Deception</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Restlessness, Mental Energy, Deception</string>
+			<key>back</key>
+			<string>Restlessness, Mental Energy, Deception</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Page of Swords</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>40</integer>
+			<key>keywords</key>
+			<string>Clarity, Sharp Mind, Confusion</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Clarity, Sharp Mind, Confusion</string>
+			<key>back</key>
+			<string>Clarity, Sharp Mind, Confusion</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Ace of Sword</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>41</integer>
+			<key>keywords</key>
+			<string>Indecision, Stalemate, Lesser of Two Evils</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Indecision, Stalemate, Lesser of Two Evils</string>
+			<key>back</key>
+			<string>Indecision, Stalemate, Lesser of Two Evils</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Two of Swords</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>42</integer>
+			<key>keywords</key>
+			<string>Suffering, Grief, Recovery, Forgiveness, Moving On</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Suffering, Grief, Recovery, Forgiveness, Moving On</string>
+			<key>back</key>
+			<string>Suffering, Grief, Recovery, Forgiveness, Moving On</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Three of Swords</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>43</integer>
+			<key>keywords</key>
+			<string>Restoration, Contemplation, Restlessness</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Restoration, Contemplation, Restlessness</string>
+			<key>back</key>
+			<string>Restoration, Contemplation, Restlessness</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Four of Swords</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>44</integer>
+			<key>keywords</key>
+			<string>Sneakiness, Lingering Resentment</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Sneakiness, Lingering Resentment</string>
+			<key>back</key>
+			<string>Sneakiness, Lingering Resentment</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Five of Swords</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>45</integer>
+			<key>keywords</key>
+			<string>Moving On, Emotional Baggage, Unresolved Issues</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Moving On, Emotional Baggage, Unresolved Issues</string>
+			<key>back</key>
+			<string>Moving On, Emotional Baggage, Unresolved Issues</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Six of Swords</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>46</integer>
+			<key>keywords</key>
+			<string>Deception, Trickery, Deception</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Deception, Trickery, Deception</string>
+			<key>back</key>
+			<string>Deception, Trickery, Deception</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Seven of Swords</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>47</integer>
+			<key>keywords</key>
+			<string>Imprisonment, Entrapment, Freedom</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Imprisonment, Entrapment, Freedom</string>
+			<key>back</key>
+			<string>Imprisonment, Entrapment, Freedom</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Eight of Swords</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>48</integer>
+			<key>keywords</key>
+			<string>Hopelessness, Trauma, Hope</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Hopelessness, Trauma, Hope</string>
+			<key>back</key>
+			<string>Hopelessness, Trauma, Hope</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Nine of Swords</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>49</integer>
+			<key>keywords</key>
+			<string>Collapse, Defeat, Get Worse</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Collapse, Defeat, Get Worse</string>
+			<key>back</key>
+			<string>Collapse, Defeat, Get Worse</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Ten of Swords</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>50</integer>
+			<key>keywords</key>
+			<string>Leader, Overcoming Challenges, Impulsive</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Leader, Overcoming Challenges, Impulsive</string>
+			<key>back</key>
+			<string>Leader, Overcoming Challenges, Impulsive</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>King of Wands</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>51</integer>
+			<key>keywords</key>
+			<string>Determination, Joy, Selfishness</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Determination, Joy, Selfishness</string>
+			<key>back</key>
+			<string>Determination, Joy, Selfishness</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Queen of Wands</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>52</integer>
+			<key>keywords</key>
+			<string>Adventure, Fearlessness, Anger</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Adventure, Fearlessness, Anger</string>
+			<key>back</key>
+			<string>Adventure, Fearlessness, Anger</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Knight of Wands</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>53</integer>
+			<key>keywords</key>
+			<string>Excitement, Freedom, Lack of Direction</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Excitement, Freedom, Lack of Direction</string>
+			<key>back</key>
+			<string>Excitement, Freedom, Lack of Direction</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Page of Wands</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>54</integer>
+			<key>keywords</key>
+			<string>Inspiration, Desire, Lack of Energy</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Inspiration, Desire, Lack of Energy</string>
+			<key>back</key>
+			<string>Inspiration, Desire, Lack of Energy</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Ace of Wand</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>55</integer>
+			<key>keywords</key>
+			<string>Leaving Home, Fear of Change, Playing Safe</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Leaving Home, Fear of Change, Playing Safe</string>
+			<key>back</key>
+			<string>Leaving Home, Fear of Change, Playing Safe</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Two of Wands</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>56</integer>
+			<key>keywords</key>
+			<string>Rapid Growth, Obstacles</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Rapid Growth, Obstacles</string>
+			<key>back</key>
+			<string>Rapid Growth, Obstacles</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Three of Wands</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>57</integer>
+			<key>keywords</key>
+			<string>Home, Celebration, Lack of Support</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Home, Celebration, Lack of Support</string>
+			<key>back</key>
+			<string>Home, Celebration, Lack of Support</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Four of Wands</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>58</integer>
+			<key>keywords</key>
+			<string>Rivalry, Conflict, Avoiding Conflict</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Rivalry, Conflict, Avoiding Conflict</string>
+			<key>back</key>
+			<string>Rivalry, Conflict, Avoiding Conflict</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Five of Wands</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>59</integer>
+			<key>keywords</key>
+			<string>Success, Public Reward, Excess Pride</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Success, Public Reward, Excess Pride</string>
+			<key>back</key>
+			<string>Success, Public Reward, Excess Pride</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Six of Wands</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>60</integer>
+			<key>keywords</key>
+			<string>Defensive, Maintaining Control, Give Up</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Defensive, Maintaining Control, Give Up</string>
+			<key>back</key>
+			<string>Defensive, Maintaining Control, Give Up</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Seven of Wands</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>61</integer>
+			<key>keywords</key>
+			<string>Movement, Quick Decisions, Panic</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Movement, Quick Decisions, Panic</string>
+			<key>back</key>
+			<string>Movement, Quick Decisions, Panic</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Eight of Wands</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>62</integer>
+			<key>keywords</key>
+			<string>Grit, Last Stand, Exhaustion</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Grit, Last Stand, Exhaustion</string>
+			<key>back</key>
+			<string>Grit, Last Stand, Exhaustion</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Nine of Wands</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>63</integer>
+			<key>keywords</key>
+			<string>Responsibility, Burden, Inability to Delegate</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Responsibility, Burden, Inability to Delegate</string>
+			<key>back</key>
+			<string>Responsibility, Burden, Inability to Delegate</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Ten of Wands</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>64</integer>
+			<key>keywords</key>
+			<string>Prosperity, Security, Greed</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Prosperity, Security, Greed</string>
+			<key>back</key>
+			<string>Prosperity, Security, Greed</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>King of Pentacles</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>65</integer>
+			<key>keywords</key>
+			<string>Financial Security, Self-Centeredness</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Financial Security, Self-Centeredness</string>
+			<key>back</key>
+			<string>Financial Security, Self-Centeredness</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Queen of Pentacles</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>66</integer>
+			<key>keywords</key>
+			<string>Responsibility, Laziness, Obsessiveness</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Responsibility, Laziness, Obsessiveness</string>
+			<key>back</key>
+			<string>Responsibility, Laziness, Obsessiveness</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Knight of Pentacles</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>67</integer>
+			<key>keywords</key>
+			<string>Desire, Diligence, Lack of Commitment</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Desire, Diligence, Lack of Commitment</string>
+			<key>back</key>
+			<string>Desire, Diligence, Lack of Commitment</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Page of Pentacles</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>68</integer>
+			<key>keywords</key>
+			<string>New Venture, Lost Opportunity</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>New Venture, Lost Opportunity</string>
+			<key>back</key>
+			<string>New Venture, Lost Opportunity</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Ace of Pentacle</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>69</integer>
+			<key>keywords</key>
+			<string>Balancing Decisions, Priorities, Loss of Balance</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Balancing Decisions, Priorities, Loss of Balance</string>
+			<key>back</key>
+			<string>Balancing Decisions, Priorities, Loss of Balance</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Two of Pentacles</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>70</integer>
+			<key>keywords</key>
+			<string>Collaboration, Building, Lack of Teamwork</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Collaboration, Building, Lack of Teamwork</string>
+			<key>back</key>
+			<string>Collaboration, Building, Lack of Teamwork</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Three of Pentacles</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>71</integer>
+			<key>keywords</key>
+			<string>Frugality, Security, Greediness</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Frugality, Security, Greediness</string>
+			<key>back</key>
+			<string>Frugality, Security, Greediness</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Four of Pentacles</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>72</integer>
+			<key>keywords</key>
+			<string>Poverty, Insecurity, Reversed: Recovery</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Poverty, Insecurity, Reversed: Recovery</string>
+			<key>back</key>
+			<string>poverty, Insecurity, Reversed: Recovery</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Five of Pentacles</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>73</integer>
+			<key>keywords</key>
+			<string>Generosity, Sharing, Strings Attached</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Generosity, Sharing, Strings Attached</string>
+			<key>back</key>
+			<string>Generosity, Sharing, Strings Attached</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Six of Pentacles</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>74</integer>
+			<key>keywords</key>
+			<string>Perseverance, Diligence, Work without Results</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Perseverance, Diligence, Work without Results</string>
+			<key>back</key>
+			<string>Perseverance, Diligence, Work without Results</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Seven of Pentacles</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>75</integer>
+			<key>keywords</key>
+			<string>High Standards, Lack of Passion</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>High Standards, Lack of Passion</string>
+			<key>back</key>
+			<string>High Standards, Lack of Passion</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Eight of Pentacles</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>76</integer>
+			<key>keywords</key>
+			<string>Rewards, Luxury, Reckless Spending</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Rewards, Luxury, Reckless Spending</string>
+			<key>back</key>
+			<string>Rewards, Luxury, Reckless Spending</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Nine of Pentacles</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+		<dict>
+			<key>id</key>
+			<integer>77</integer>
+			<key>keywords</key>
+			<string>Culmination, Inheritance, Fleeting Success</string>
+			<key>element</key>
+			<string>土</string>
+			<key>front</key>
+			<string>Culmination, Inheritance, Fleeting Success</string>
+			<key>back</key>
+			<string>Culmination, Inheritance, Fleeting Success</string>
+			<key>description</key>
+			<string>愚者との関連</string>
+			<key>stars</key>
+			<string>土星</string>
+			<key>name</key>
+			<string>Ten of Pentacles</string>
+			<key>type</key>
+			<string>A</string>
+		</dict>
+	</array>
+	<key>error</key>
+	<integer>0</integer>
+	<key>page</key>
+	<integer>78</integer>
+</dict>
+</plist>
